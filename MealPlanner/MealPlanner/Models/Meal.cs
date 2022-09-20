@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MealPlanner.Models
 {
-    public class Meal
+    public class Meal : IAliment
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

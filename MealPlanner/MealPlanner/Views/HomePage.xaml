@@ -95,20 +95,63 @@
                     <DataTemplate>
                         <StackLayout>
                             <Frame BackgroundColor="White" Margin="10, 10, 10, 10" BorderColor="#f5f5f5" CornerRadius="8" Padding="8">
-                                <Grid RowDefinitions="Auto, 90, Auto, 1, Auto" ColumnDefinitions="90, *">
-                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold" Margin="0,0,0,0"></Label>
-                                    <ImageButton Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" BackgroundColor="Gray" CornerRadius="8" WidthRequest="90" HeightRequest="90" Clicked="EditMeal_Clicked"/>
-                                    <Grid Grid.Row="1" Grid.Column="1" RowDefinitions="Auto, Auto">
-                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold"></Label>
-                                        <Label Grid.Row="1" Grid.Column="0" Text="+ Orange Juice (200 g)" FontSize="Caption"></Label>
-                                        <Label Grid.Row="2" Grid.Column="0" Text="+ Greek Yogurt (350 g)" FontSize="Caption"></Label>
-                                    </Grid>
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" FontAttributes="Bold"></Label>
 
-                                    <Button Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" CornerRadius="10" FontSize="Micro" Text="+ Add Food" Clicked="AddFood_Clicked"></Button>
+                                    <StackLayout BindableLayout.ItemsSource="{Binding Aliments}">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid RowDefinitions="50, Auto" ColumnDefinitions="50, Auto">
+                                                    <ImageButton Grid.Row="0" Grid.Column="0" BackgroundColor="Gray" CornerRadius="8" WidthRequest="90" HeightRequest="90" Clicked="EditMeal_Clicked"/>
+                                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto, Auto, Auto" VerticalOptions="Center">
+                                                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Name}" FontAttributes="Bold" FontSize="Caption"></Label>
+                                                        <Label Grid.Row="1" Grid.Column="0" FontSize="Caption">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="Prot : "/>
+                                                                    <Span Text="{Binding Proteins}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="1" Grid.Column="1" FontSize="Caption">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="Carbs : "/>
+                                                                    <Span Text="{Binding Carbs}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="1" Grid.Column="2" FontSize="Caption">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="Fats : "/>
+                                                                    <Span Text="{Binding Fats}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="1" Grid.Column="3" FontSize="Caption" FontAttributes="Bold">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="Calories : "/>
+                                                                    <Span Text="{Binding Calories}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                    </Grid>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </StackLayout>
 
-                                    <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="LightGray"/>
+                                    <Label Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" Text="+ Add Food" TextColor="Green" Margin="0, 15, 0, 5">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="AddFood_Tapped"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
 
-                                    <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                                    <BoxView HeightRequest="1" BackgroundColor="LightGray"/>
+
+                                    <StackLayout Orientation="Horizontal">
                                         <Label FontAttributes="Bold" FontSize="Caption" Text="Proteins :" VerticalOptions="Center"></Label>
                                         <Label FontAttributes="Bold" FontSize="Caption" Text="{Binding Protein}" VerticalOptions="Center"></Label>
 
@@ -121,7 +164,7 @@
                                         <Label HorizontalOptions="EndAndExpand" FontAttributes="Bold" Text="Calories :"></Label>
                                         <Label FontAttributes="Bold" Text="{Binding Calories}"></Label>
                                     </StackLayout>
-                                </Grid>
+                                </StackLayout>
                             </Frame>
                         </StackLayout>
                     </DataTemplate>

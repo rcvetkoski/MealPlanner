@@ -17,7 +17,7 @@ namespace MealPlanner.Views
             Navigation.PushAsync(new MealPage());
         }
 
-        private void AddFood_Clicked(object sender, EventArgs e)
+        private void AddFood_Tapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AddFoodPage());
         }
