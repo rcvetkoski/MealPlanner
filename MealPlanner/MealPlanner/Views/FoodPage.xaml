@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MealPlanner.ViewModels"
+             x:Class="MealPlanner.Views.FoodPage">
+
+    <ContentPage.BindingContext>
+        <vm:FoodPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+
+            <Entry Placeholder="Jambon"/>
+            <Entry Placeholder="Description"/>
+            <Entry Placeholder="Taille de portion"/>
+
+
+            <Grid Margin="10" VerticalOptions="FillAndExpand">
+                <Frame Grid.Row="0" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
+                    <Label Text="200 g"/>
+                </Frame>
+
+                <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Margin="5,0,10,5" CornerRadius="8">
+                    <Label Text="356 Cal"/>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
+                    <Label Text="Prot 40 g"/>
+                </Frame>
+
+                <Frame Grid.Row="2" Grid.Column="1" Margin="5,0,10,5" CornerRadius="8">
+                    <Label Text="Carbs 154 g"/>
+                </Frame>
+
+                <Frame Grid.Row="2" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
+                    <Label Text="Fats 23 g"/>
+                </Frame>
+            </Grid>
+
+            <Button BackgroundColor="LightGreen" Text="Save"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
