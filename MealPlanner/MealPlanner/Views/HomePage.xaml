@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealPlanner.Views.HomePage"
+             xmlns:vm="clr-namespace:MealPlanner.ViewModels"
+             xmlns:controls="clr-namespace:MealPlanner.Controls"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:HomeViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal" Margin="0, 0, 15, 0">
+            <Label Text="{Binding Title}" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+            <Label Text="Monday" TextColor="White" FontSize="Medium" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </Shell.TitleView>
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Example Item" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Frame BackgroundColor="{StaticResource Primary}" Margin="0, -25, 0, 0" CornerRadius="25" Padding="2, 25, 2, 0">
+                <Grid ColumnDefinitions="*,*,Auto,100" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" Margin="10" RowSpacing="0">
+
+                    <Label Grid.Row="0" Grid.Column="0" VerticalOptions="End" Text="Protein"/>
+                    <Label Grid.Row="0" Grid.Column="1" VerticalOptions="End" HorizontalOptions="EndAndExpand">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding DaylyProteins}"/>
+                                <Span Text="   /"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="0" Grid.Column="2" VerticalOptions="End" HorizontalOptions="End" FontAttributes="Bold" Text="{Binding User.TargetProteins}"/>
+                    <ProgressBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Progress="{Binding DaylyProteinProgress}" VerticalOptions="Center"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" VerticalOptions="End" Text="Carbs"/>
+                    <Label Grid.Row="2" Grid.Column="1" VerticalOptions="End" HorizontalOptions="EndAndExpand">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding DaylyCarbs}"/>
+                                <Span Text="   /"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="2" Grid.Column="2" VerticalOptions="End" HorizontalOptions="End" FontAttributes="Bold" Text="{Binding User.TargetCarbs}"/>
+                    <ProgressBar Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Progress="0.35" VerticalOptions="Center"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" VerticalOptions="End" Text="Fats"/>
+                    <Label Grid.Row="4" Grid.Column="1" VerticalOptions="End" HorizontalOptions="EndAndExpand">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding DaylyFats}"/>
+                                <Span Text="   /"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="4" Grid.Column="2" VerticalOptions="End" HorizontalOptions="End" FontAttributes="Bold" Text="{Binding User.TargetFats}"/>
+                    <ProgressBar Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Progress="0.35" VerticalOptions="Center"/>
+
+                    <StackLayout Grid.Row="0" Grid.RowSpan="5" Grid.Column="3" VerticalOptions="Center" Spacing="0">
+                        <Label HorizontalOptions="Center" Text="256"/>
+                        <Label HorizontalOptions="Center" Text="of"/>
+                        <Label HorizontalOptions="Center" FontAttributes="Bold" Text="{Binding User.TargetCalories}"/>
+                    </StackLayout>
+                    <controls:CircleCountdown 
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Grid.Row="0" Grid.RowSpan="5" Grid.Column="3"
+                        Progress="0.35"
+                        ProgressStartColor="HotPink"
+                        ProgressEndColor="HotPink"
+                        StrokeWidth="12">
+                    </controls:CircleCountdown>
+                    <Label Grid.Row="5" Grid.Column="3" HorizontalOptions="Center" FontAttributes="Bold" Text="Calories"/>
+                </Grid>
+            </Frame>
+
+            <CollectionView ItemsSource="{Binding DayMeals}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame BackgroundColor="White" Margin="10, 10, 10, 10" BorderColor="#f5f5f5" CornerRadius="8" Padding="8">
+                                <Grid RowDefinitions="Auto, 90, Auto, 1, Auto" ColumnDefinitions="90, *">
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold" Margin="0,0,0,0"></Label>
+                                    <ImageButton Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" BackgroundColor="Gray" CornerRadius="8" WidthRequest="90" HeightRequest="90" Clicked="EditMeal_Clicked"/>
+                                    <Grid Grid.Row="1" Grid.Column="1" RowDefinitions="Auto, Auto">
+                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold"></Label>
+                                        <Label Grid.Row="1" Grid.Column="0" Text="+ Orange Juice (200 g)" FontSize="Caption"></Label>
+                                        <Label Grid.Row="2" Grid.Column="0" Text="+ Greek Yogurt (350 g)" FontSize="Caption"></Label>
+                                    </Grid>
+
+                                    <Button Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" CornerRadius="10" FontSize="Micro" Text="+ Add Food" Clicked="AddFood_Clicked"></Button>
+
+                                    <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="LightGray"/>
+
+                                    <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                                        <Label FontAttributes="Bold" FontSize="Caption" Text="Proteins :" VerticalOptions="Center"></Label>
+                                        <Label FontAttributes="Bold" FontSize="Caption" Text="{Binding Protein}" VerticalOptions="Center"></Label>
+
+                                        <Label FontAttributes="Bold" FontSize="Caption" Text="Carbs :" VerticalOptions="Center"></Label>
+                                        <Label FontAttributes="Bold" FontSize="Caption" Text="{Binding Carbs}" VerticalOptions="Center"></Label>
+
+                                        <Label FontAttributes="Bold" FontSize="Caption" Text="Fats :" VerticalOptions="Center"></Label>
+                                        <Label FontAttributes="Bold" FontSize="Caption" Text="{Binding Fats}" VerticalOptions="Center"></Label>
+
+                                        <Label HorizontalOptions="EndAndExpand" FontAttributes="Bold" Text="Calories :"></Label>
+                                        <Label FontAttributes="Bold" Text="{Binding Calories}"></Label>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

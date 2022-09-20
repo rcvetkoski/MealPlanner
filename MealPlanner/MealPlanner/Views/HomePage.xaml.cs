@@ -5,16 +5,21 @@ using Xamarin.Forms.Xaml;
 
 namespace MealPlanner.Views
 {
-    public partial class AboutPage : ContentPage
+    public partial class HomePage : ContentPage
     {
-        public AboutPage()
+        public HomePage()
         {
             InitializeComponent();
         }
 
         private void EditMeal_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new FoodPage());
+            Navigation.PushAsync(new MealPage());
+        }
+
+        private void AddFood_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddFoodPage());
         }
     }
 }
