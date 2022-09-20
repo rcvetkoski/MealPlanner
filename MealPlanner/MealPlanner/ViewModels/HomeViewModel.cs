@@ -19,13 +19,19 @@ namespace MealPlanner.ViewModels
 
             DayMeals = new ObservableCollection<DayMeal>();
             DayMeals.CollectionChanged += DayMeals_CollectionChanged;
+
+            // Breakfast
             var breakfast = new DayMeal() { Name = "Breakfast", Order = 1, Calories = 756, Proteins = 53, Carbs = 198, Fats = 26 };
             breakfast.Aliments.Add(new Meal() { Name = "Tortilla Wraps", Calories = 756, Proteins = 53, Carbs = 198, Fats = 26 });
             breakfast.Aliments.Add(new Food() { Name = "Skim milk", Calories = 136, Proteins = 12, Carbs = 0, Fats = 4 });
             DayMeals.Add(breakfast);
+
+            // Lunch
             var lunch = new DayMeal() { Name = "Lunch", Order = 2, Calories = 756, Proteins = 53, Carbs = 198, Fats = 26 };
-            DayMeals.Add(lunch);
             lunch.Aliments.Add(new Food() { Name = "Egg", Calories = 116, Proteins = 6, Carbs = 0, Fats = 5 });
+            DayMeals.Add(lunch);
+
+            // Other
             DayMeals.Add(new DayMeal() { Name = "Dinner", Order = 2 });
             DayMeals.Add(new DayMeal() { Name = "Snack", Order = 3 });
         }
