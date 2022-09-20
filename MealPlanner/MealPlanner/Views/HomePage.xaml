@@ -34,7 +34,7 @@
         <StackLayout>
             
             <Frame BackgroundColor="{StaticResource Primary}" Margin="0, -25, 0, 0" CornerRadius="25" Padding="2, 25, 2, 0">
-                <Grid ColumnDefinitions="*,*,Auto,120" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" Margin="10">
+                <Grid ColumnDefinitions="*,*,Auto,140" RowDefinitions="Auto, 15, Auto, 15, Auto, 15" Margin="10" RowSpacing="2">
 
                     <Label Grid.Row="0" Grid.Column="0" VerticalOptions="End" Text="Protein"/>
                     <Label Grid.Row="0" Grid.Column="1" VerticalOptions="End" HorizontalOptions="EndAndExpand">
@@ -86,7 +86,7 @@
                         ProgressEndColor="HotPink"
                         StrokeWidth="12">
                     </controls:CircleCountdown>
-                    <Label Grid.Row="5" Grid.Column="3" HorizontalOptions="Center" FontAttributes="Bold" Text="Calories"/>
+                    <Label Grid.Row="4" Grid.RowSpan="2" Grid.Column="3" VerticalOptions="End" HorizontalOptions="Center" FontAttributes="Bold" Text="Calories"/>
                 </Grid>
             </Frame>
 
