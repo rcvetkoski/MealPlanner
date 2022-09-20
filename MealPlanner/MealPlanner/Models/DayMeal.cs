@@ -1,19 +1,19 @@
-﻿using SQLite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MealPlanner.Models
 {
-    public class Meal
+    public class DayMeal
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
         public string Name { get; set; }
+        public int Order { get; set; }
         public double Calories { get; set; }
-        public double Proteins { get; set; }
+        public double Protein { get; set; }
         public double Carbs { get; set; }
         public double Fats { get; set; }
-        public List<Food> Foods { get; set; }   
+
+        public List<IAliment> Aliments { get; set; }    
+
     }
 }

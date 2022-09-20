@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealPlanner.Views.AddFoodPage">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Label Text="Add Food Page!" HorizontalOptions="CenterAndExpand" />
+
+            <SearchBar Placeholder="Search for food"/>
+
+            <Grid Margin="10">
+                <RadioButton Grid.Column="0" Content="Food" IsChecked="True"/>
+                <RadioButton Grid.Column="1" Content="Meal"/>
+                <RadioButton Grid.Column="2" Content="Library"/>
+            </Grid>
+
+
+
+            <Button HorizontalOptions="Center" CornerRadius="10" IsVisible="True" FontSize="Micro" Text="Create Food" Clicked="CreateFood_Clicked"></Button>
+            <Button HorizontalOptions="Center" CornerRadius="10" IsVisible="False" FontSize="Micro" Text="Create Meal" Clicked="CreateMeal_Clicked"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

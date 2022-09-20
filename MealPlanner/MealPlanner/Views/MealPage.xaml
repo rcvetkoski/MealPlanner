@@ -1,57 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:MealPlanner.ViewModels" xmlns:controls="clr-namespace:MealPlanner.Controls"
-             x:Class="MealPlanner.Views.FoodPage">
-
-    <ContentPage.BindingContext>
-        <vm:FoodPageViewModel />
-    </ContentPage.BindingContext>
-
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:MealPlanner.Controls"
+             x:Class="MealPlanner.Views.MealPage">
     <ContentPage.Content>
         <StackLayout Margin="10">
+            <Label Text="Meal Page!" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+            <Entry Placeholder="Name"/>
+            <Entry Placeholder="Portion"/>
+            <Editor Placeholder="Description"/>
 
-            <Entry Placeholder="Name" FontAttributes="Bold" TextColor="Black"/>
+            <Button CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Clicked="AddFood_Clicked"/>
 
-
-            <!--<Grid Margin="10" VerticalOptions="FillAndExpand">
-                <Frame Grid.Row="0" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
-                    <Label Text="200 g"/>
-                </Frame>
-
-                <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Margin="5,0,10,5" CornerRadius="8">
-                    <Label Text="356 Cal"/>
-                </Frame>
-
-                <Frame Grid.Row="1" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
-                    <Label Text="Prot 40 g"/>
-                </Frame>
-
-                <Frame Grid.Row="2" Grid.Column="1" Margin="5,0,10,5" CornerRadius="8">
-                    <Label Text="Carbs 154 g"/>
-                </Frame>
-
-                <Frame Grid.Row="2" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
-                    <Label Text="Fats 23 g"/>
-                </Frame>
-            </Grid>-->
-
-            <Entry Placeholder="Description"/>
-            <Entry Placeholder="Taille de portion"/>
-            <Entry Placeholder="Calories"/>
-            <Entry Placeholder="Proteins"/>
-            <Entry Placeholder="Carbs"/>
-            <Entry Placeholder="Fat"/>
+            <Label Text="Egg"/>
+            <Label Text="Jambon"/>
+            <Label Text="Cheese"/>
 
 
-
-            <Grid ColumnDefinitions="100, *" RowDefinitions="100, Auto" Margin="15">
+            <Grid ColumnDefinitions="100, *" RowDefinitions="100, Auto" Margin="15" VerticalOptions="EndAndExpand">
                 <controls:CircleCountdown 
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
@@ -86,10 +51,8 @@
                 </Frame>
             </Grid>
 
+            <Button CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
 
-
-
-            <Button BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Text="Save"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
