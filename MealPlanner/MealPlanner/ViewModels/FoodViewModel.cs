@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MealPlanner.ViewModels
 {
-    public class FoodPageViewModel
+    public class FoodViewModel
     {
     }
 }

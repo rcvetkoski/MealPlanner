@@ -21,14 +21,14 @@ namespace MealPlanner.ViewModels
             DayMeals.CollectionChanged += DayMeals_CollectionChanged;
 
             // Breakfast
-            var breakfast = new DayMeal() { Name = "Breakfast", Order = 1, Calories = 756, Proteins = 53, Carbs = 198, Fats = 26 };
+            var breakfast = new DayMeal() { Name = "Breakfast", Order = 1 };
             breakfast.Aliments.Add(new Meal() { Name = "Tortilla Wraps", Calories = 756, Proteins = 53, Carbs = 198, Fats = 26 });
             breakfast.Aliments.Add(new Food() { Name = "Skim milk", Calories = 136, Proteins = 12, Carbs = 0, Fats = 4 });
             DayMeals.Add(breakfast);
 
             // Lunch
-            var lunch = new DayMeal() { Name = "Lunch", Order = 2, Calories = 756, Proteins = 53, Carbs = 198, Fats = 26 };
-            lunch.Aliments.Add(new Food() { Name = "Egg", Calories = 116, Proteins = 6, Carbs = 0, Fats = 5 });
+            var lunch = new DayMeal() { Name = "Lunch", Order = 2 };
+            lunch.Aliments.Add(new Food() { Name = "Egg", Calories = 116, Proteins = 6, Carbs = 1, Fats = 5 });
             DayMeals.Add(lunch);
 
             // Other
@@ -41,13 +41,26 @@ namespace MealPlanner.ViewModels
             DaylyProteins += (e.NewItems[0] as DayMeal).Proteins;
             DaylyCarbs += (e.NewItems[0] as DayMeal).Carbs;
             DaylyFats += (e.NewItems[0] as DayMeal).Fats;
+            DaylyCalories += (e.NewItems[0] as DayMeal).Calories;
         }
 
         public User User { get; set; }  
 
         public ObservableCollection<DayMeal> DayMeals { get; set; }
 
-        public double DaylyCalories { get; set; }
+        private double daylyCalories;
+        public double DaylyCalories
+        {
+            get
+            {
+                return daylyCalories;
+            }
+            set
+            {
+                daylyCalories = value;
+                DaylyCaloriesProgress = daylyCalories / User.TargetCalories;
+            }
+        }
         public double DaylyCaloriesProgress { get; set; }
 
 

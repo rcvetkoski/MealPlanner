@@ -5,7 +5,7 @@
              x:Class="MealPlanner.Views.FoodPage">
 
     <ContentPage.BindingContext>
-        <vm:FoodPageViewModel />
+        <vm:FoodViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Resources>

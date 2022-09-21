@@ -58,7 +58,7 @@
                             </Label.FormattedText>
                         </Label>
                         <Label Grid.Row="2" Grid.Column="2" VerticalOptions="End" HorizontalOptions="End" FontAttributes="Bold" Text="{Binding User.TargetCarbs}"/>
-                        <ProgressBar Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Progress="0.35" VerticalOptions="Center"/>
+                        <ProgressBar Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Progress="{Binding DaylyCarbsProgress}" VerticalOptions="Center"/>
 
                         <Label Grid.Row="4" Grid.Column="0" VerticalOptions="End" Text="Fats"/>
                         <Label Grid.Row="4" Grid.Column="1" VerticalOptions="End" HorizontalOptions="EndAndExpand">
@@ -70,10 +70,10 @@
                             </Label.FormattedText>
                         </Label>
                         <Label Grid.Row="4" Grid.Column="2" VerticalOptions="End" HorizontalOptions="End" FontAttributes="Bold" Text="{Binding User.TargetFats}"/>
-                        <ProgressBar Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Progress="0.35" VerticalOptions="Center"/>
+                        <ProgressBar Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Progress="{Binding DaylyFatsProgress}" VerticalOptions="Center"/>
 
                         <StackLayout Grid.Row="0" Grid.RowSpan="5" Grid.Column="3" VerticalOptions="Center" Spacing="0">
-                            <Label HorizontalOptions="Center" Text="256"/>
+                            <Label HorizontalOptions="Center" Text="{Binding DaylyCalories}"/>
                             <Label HorizontalOptions="Center" Text="of"/>
                             <Label HorizontalOptions="Center" FontAttributes="Bold" Text="{Binding User.TargetCalories}"/>
                         </StackLayout>
@@ -81,7 +81,7 @@
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand"
                         Grid.Row="0" Grid.RowSpan="5" Grid.Column="3"
-                        Progress="0.35"
+                        Progress="{Binding DaylyCaloriesProgress}"
                         ProgressStartColor="HotPink"
                         ProgressEndColor="HotPink"
                         StrokeWidth="12">

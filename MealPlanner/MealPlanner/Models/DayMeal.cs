@@ -10,6 +10,15 @@ namespace MealPlanner.Models
         public DayMeal()
         {
             Aliments = new ObservableCollection<IAliment>();
+            Aliments.CollectionChanged += Aliments_CollectionChanged;
+        }
+
+        private void Aliments_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            Calories += (e.NewItems[0] as IAliment).Calories;
+            Proteins += (e.NewItems[0] as IAliment).Proteins;
+            Carbs += (e.NewItems[0] as IAliment).Carbs;
+            Fats += (e.NewItems[0] as IAliment).Fats;
         }
 
         public string Name { get; set; }

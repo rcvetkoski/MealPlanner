@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MealPlanner.Models
 {
-    public class IAliment
+    public interface IAliment
     {
         double Calories { get; set; }
         double Proteins { get; set; }
