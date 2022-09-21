@@ -10,15 +10,27 @@ namespace MealPlanner.ViewModels
     public class FoodViewModel : BaseViewModel
     {
         public string Name { get; set; }
-        public double Portion { get; set; } 
-        public string Description { get; set; } 
-        public double Proteins { get;set; } 
-        public double Carbs { get; set; }   
-        public double Fats { get; set; }    
-        public double Calories { get; set; }    
+        public double Portion { get; set; }
+        public string Description { get; set; }
+
+        private double proteins;
+        public double Proteins { get { return proteins; } set { proteins = value; OnPropertyChanged("Proteins"); }
+        }
+
+        private double carbs;
+        public double Carbs { get { return carbs; } set { carbs = value; OnPropertyChanged("Carbs"); } }
+
+        private double fats;
+        public double Fats { get { return fats; } set { fats = value; OnPropertyChanged("Fats"); } }
+
+        private double calories;
+        public double Calories { get { return calories; } set { calories = value; OnPropertyChanged("Calories"); } }
+
+
+
+
 
         public ICommand SaveCommand { get; set; }
-
 
         public FoodViewModel()
         {

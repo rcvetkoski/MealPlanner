@@ -42,7 +42,6 @@
                 </Frame>
             </Grid>-->
 
-            <Entry x:Name="Description" Placeholder="Description" Text="{Binding Description}"/>
             <Entry x:Name="Portion" Placeholder="Taille de portion" Keyboard="Numeric" Text="{Binding Portion}"/>
             <Entry x:Name="Calories" Placeholder="Calories" Keyboard="Numeric" Text="{Binding Calories}"/>
             <Entry x:Name="Proteins" Placeholder="Proteins" Keyboard="Numeric" Text="{Binding Proteins}"/>
@@ -83,13 +82,28 @@
                                 <FormattedString>
                                     <Span Text="{Binding Proteins}"/>
                                     <Span Text="   /"/>
-                                    <Span Text="{Binding Proteins}"/>
+                                    <Span Text="{Binding RefData.User.TargetProteins}"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        
-                        <Label Grid.Row="1" Grid.Column="2" Text="90 / 309 g" VerticalOptions="Center"/>
-                        <Label Grid.Row="2" Grid.Column="2" Text="35 / 120 g" VerticalOptions="Center"/>
+                        <Label Grid.Row="1" Grid.Column="2" VerticalOptions="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Carbs}"/>
+                                    <Span Text="   /"/>
+                                    <Span Text="{Binding RefData.User.TargetCarbs}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Row="2" Grid.Column="2" VerticalOptions="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Fats}"/>
+                                    <Span Text="   /"/>
+                                    <Span Text="{Binding RefData.User.TargetFats}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </Grid>
                 </Frame>
             </Grid>
