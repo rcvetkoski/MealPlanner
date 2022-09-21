@@ -12,8 +12,6 @@ namespace MealPlanner
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(FoodPage), typeof(FoodPage));
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
         }
 
     }

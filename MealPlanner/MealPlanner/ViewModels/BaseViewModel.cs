@@ -1,7 +1,9 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers;
+using MealPlanner.Models;
 using MealPlanner.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
@@ -11,6 +13,9 @@ namespace MealPlanner.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+
+        public ReferentialData RefData { get => App.RefData; }
+
 
         bool isBusy = false;
         public bool IsBusy

@@ -17,7 +17,7 @@
     <ContentPage.Content>
         <StackLayout Margin="10">
 
-            <Entry Placeholder="Name" FontAttributes="Bold" TextColor="Black"/>
+            <Entry x:Name="Name" Placeholder="Name" Text="{Binding Name}" FontAttributes="Bold" TextColor="Black"/>
 
 
             <!--<Grid Margin="10" VerticalOptions="FillAndExpand">
@@ -42,13 +42,12 @@
                 </Frame>
             </Grid>-->
 
-            <Entry Placeholder="Description"/>
-            <Entry Placeholder="Taille de portion"/>
-            <Entry Placeholder="Calories"/>
-            <Entry Placeholder="Proteins"/>
-            <Entry Placeholder="Carbs"/>
-            <Entry Placeholder="Fat"/>
-
+            <Entry x:Name="Description" Placeholder="Description" Text="{Binding Description}"/>
+            <Entry x:Name="Portion" Placeholder="Taille de portion" Keyboard="Numeric" Text="{Binding Portion}"/>
+            <Entry x:Name="Calories" Placeholder="Calories" Keyboard="Numeric" Text="{Binding Calories}"/>
+            <Entry x:Name="Proteins" Placeholder="Proteins" Keyboard="Numeric" Text="{Binding Proteins}"/>
+            <Entry x:Name="Carbs" Placeholder="Carbs" Keyboard="Numeric" Text="{Binding Carbs}"/>
+            <Entry x:Name="Fats" Placeholder="Fats" Keyboard="Numeric" Text="{Binding Fats}"/>
 
 
             <Grid ColumnDefinitions="100, *" RowDefinitions="100, Auto" Margin="15">
@@ -79,7 +78,16 @@
                         <ProgressBar Grid.Row="1" Grid.Column="1" Progress="0.25" VerticalOptions="Center"/>
                         <ProgressBar Grid.Row="2" Grid.Column="1" Progress="0.55" VerticalOptions="Center"/>
 
-                        <Label Grid.Row="0" Grid.Column="2" Text="55 / 193 g" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Proteins}"/>
+                                    <Span Text="   /"/>
+                                    <Span Text="{Binding Proteins}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        
                         <Label Grid.Row="1" Grid.Column="2" Text="90 / 309 g" VerticalOptions="Center"/>
                         <Label Grid.Row="2" Grid.Column="2" Text="35 / 120 g" VerticalOptions="Center"/>
                     </Grid>
@@ -87,9 +95,7 @@
             </Grid>
 
 
-
-
-            <Button BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Text="Save"/>
+            <Button BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Text="Save" Command="{Binding SaveCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

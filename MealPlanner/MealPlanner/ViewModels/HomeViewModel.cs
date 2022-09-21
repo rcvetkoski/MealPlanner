@@ -14,7 +14,7 @@ namespace MealPlanner.ViewModels
         {
             Title = "Home";
 
-            User = new User() { Age = 32, Height = 180, Weight = 69, TargetCalories = 2986, TargetProteins = 300, TargetCarbs = 323, TargetFats = 89 };
+            //User = new User() { Age = 32, Height = 180, Weight = 69, TargetCalories = 2986, TargetProteins = 300, TargetCarbs = 323, TargetFats = 89 };
 
 
             DayMeals = new ObservableCollection<DayMeal>();
@@ -44,8 +44,6 @@ namespace MealPlanner.ViewModels
             DaylyCalories += (e.NewItems[0] as DayMeal).Calories;
         }
 
-        public User User { get; set; }  
-
         public ObservableCollection<DayMeal> DayMeals { get; set; }
 
         private double daylyCalories;
@@ -58,7 +56,7 @@ namespace MealPlanner.ViewModels
             set
             {
                 daylyCalories = value;
-                DaylyCaloriesProgress = daylyCalories / User.TargetCalories;
+                DaylyCaloriesProgress = daylyCalories / RefData.User.TargetCalories;
             }
         }
         public double DaylyCaloriesProgress { get; set; }
@@ -71,7 +69,7 @@ namespace MealPlanner.ViewModels
             set
             {
                 daylyProteins = value;
-                DaylyProteinProgress = daylyProteins / User.TargetProteins;
+                DaylyProteinProgress = daylyProteins / RefData.User.TargetProteins;
             }
         }
         public double DaylyProteinProgress { get; set; }
@@ -84,7 +82,7 @@ namespace MealPlanner.ViewModels
             set
             {
                 daylyCarbs = value;
-                DaylyCarbsProgress = daylyCarbs / User.TargetCarbs; 
+                DaylyCarbsProgress = daylyCarbs / RefData.User.TargetCarbs; 
             }
         }
         public double DaylyCarbsProgress { get; set; }
@@ -97,7 +95,7 @@ namespace MealPlanner.ViewModels
             set
             {
                 daylyFats = value;
-                DaylyFatsProgress = daylyFats / User.TargetFats;
+                DaylyFatsProgress = daylyFats / RefData.User.TargetFats;
             }
         }
         public double DaylyFatsProgress { get; set; }

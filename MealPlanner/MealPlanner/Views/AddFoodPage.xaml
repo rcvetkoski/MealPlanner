@@ -25,6 +25,23 @@
             <Button HorizontalOptions="Center" CornerRadius="10" IsVisible="{Binding IsFoodChecked}" FontSize="Micro" Text="Create Food" Clicked="CreateFood_Clicked"></Button>
             <Button HorizontalOptions="Center" CornerRadius="10" IsVisible="{Binding IsMealChecked}" FontSize="Micro" Text="Create Meal" Clicked="CreateMeal_Clicked"></Button>
 
+
+
+            <CollectionView ItemsSource="{Binding RefData.Foods}" IsVisible="{Binding IsFoodChecked}" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Label Grid.Column="0" Text="{Binding Name}"/>
+                            <Label Grid.Column="1" Text="{Binding Proteins}"/>
+                            <Label Grid.Column="2" Text="{Binding Carbs}"/>
+                            <Label Grid.Column="3" Text="{Binding Fats}"/>
+                            <Label Grid.Column="4" Text="{Binding Calories}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

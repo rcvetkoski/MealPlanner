@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace MealPlanner.Helpers
+namespace MealPlanner.Services
 {
-    public  class Database
+    public class Database : IDataBase
     {
         private SQLiteAsyncConnection dbConnection;
         public const string DatabaseFilename = "MealPlanner.db3";
@@ -28,6 +28,7 @@ namespace MealPlanner.Helpers
 
         private Task CreateTables()
         {
+            dbConnection.CreateTableAsync<User>();
             dbConnection.CreateTableAsync<Meal>();
             dbConnection.CreateTableAsync<Food>();
             dbConnection.CreateTableAsync<MealFood>().Wait();
@@ -45,6 +46,51 @@ namespace MealPlanner.Helpers
 
 
 
+        #region User
+
+        /// <summary>
+        /// Returns a User object default id is 1
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<User> GetUserAsync()
+        {
+            return dbConnection.GetAsync<User>(1);
+        }
+
+        /// <summary>
+        /// Inserts new User in database
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public Task<int> AddUserAsync(User user)
+        {
+            return dbConnection.InsertAsync(user);
+        }
+
+        /// <summary>
+        /// Updates a User in database if it exists
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public Task<int> UpdateUserAsync(User user)
+        {
+            if (GetFoodAsync(user.Id) != null)
+                return dbConnection.UpdateAsync(user);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableUser()
+        {
+            return dbConnection.DropTableAsync<User>();
+        }
+
+        #endregion
 
         #region Meal
 
