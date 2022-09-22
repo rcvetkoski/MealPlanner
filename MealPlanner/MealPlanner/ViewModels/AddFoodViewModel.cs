@@ -69,6 +69,8 @@ namespace MealPlanner.ViewModels
             if(answer)
             {
                 SelectedMealFood.Aliments.Add(aliment);
+                RefData.DaylyCalories += aliment.Calories;
+                await Application.Current.MainPage.Navigation.PopAsync();
             }
         });
 

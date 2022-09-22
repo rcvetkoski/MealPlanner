@@ -38,70 +38,10 @@ namespace MealPlanner.ViewModels
 
         private void DayMeals_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            DaylyProteins += (e.NewItems[0] as DayMeal).Proteins;
-            DaylyCarbs += (e.NewItems[0] as DayMeal).Carbs;
-            DaylyFats += (e.NewItems[0] as DayMeal).Fats;
-            DaylyCalories += (e.NewItems[0] as DayMeal).Calories;
+            RefData.DaylyProteins += (e.NewItems[0] as DayMeal).Proteins;
+            RefData.DaylyCarbs += (e.NewItems[0] as DayMeal).Carbs;
+            RefData.DaylyFats += (e.NewItems[0] as DayMeal).Fats;
+            RefData.DaylyCalories += (e.NewItems[0] as DayMeal).Calories;
         }
-
-
-        private double daylyCalories;
-        public double DaylyCalories
-        {
-            get
-            {
-                return daylyCalories;
-            }
-            set
-            {
-                daylyCalories = value;
-                DaylyCaloriesProgress = daylyCalories / RefData.User.TargetCalories;
-                OnPropertyChanged("DaylyCaloriesProgress");
-            }
-        }
-        public double DaylyCaloriesProgress { get; set; }
-
-
-        private double daylyProteins;
-        public double DaylyProteins
-        {
-            get { return daylyProteins; }
-            set
-            {
-                daylyProteins = value;
-                DaylyProteinProgress = daylyProteins / RefData.User.TargetProteins;
-                OnPropertyChanged("DaylyProteinProgress");
-            }
-        }
-        public double DaylyProteinProgress { get; set; }
-
-
-        private double daylyCarbs;
-        public double DaylyCarbs
-        {
-            get { return daylyCarbs; }
-            set
-            {
-                daylyCarbs = value;
-                DaylyCarbsProgress = daylyCarbs / RefData.User.TargetCarbs;
-                OnPropertyChanged("DaylyCarbsProgress");
-            }
-        }
-        public double DaylyCarbsProgress { get; set; }
-
-
-        private double daylyFats;
-        public double DaylyFats
-        {
-            get { return daylyFats; }
-            set
-            {
-                daylyFats = value;
-                DaylyFatsProgress = daylyFats / RefData.User.TargetFats;
-                OnPropertyChanged("DaylyFatsProgress");
-            }
-        }
-        public double DaylyFatsProgress { get; set; }
-
     }
 }

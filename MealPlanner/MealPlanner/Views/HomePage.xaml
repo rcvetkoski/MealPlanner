@@ -40,40 +40,40 @@
                         <Label Grid.Row="0" Grid.Column="1" VerticalOptions="End" HorizontalOptions="EndAndExpand">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="{Binding DaylyProteins}"/>
+                                    <Span Text="{Binding RefData.DaylyProteins}"/>
                                     <Span Text="   /"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
                         <Label Grid.Row="0" Grid.Column="2" VerticalOptions="End" HorizontalOptions="End" FontAttributes="Bold" Text="{Binding RefData.User.TargetProteins}"/>
-                        <ProgressBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Progress="{Binding DaylyProteinProgress}" VerticalOptions="Center"/>
+                        <ProgressBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Progress="{Binding RefData.DaylyProteinProgress}" VerticalOptions="Center"/>
 
                         <Label Grid.Row="2" Grid.Column="0" VerticalOptions="End" Text="Carbs"/>
                         <Label Grid.Row="2" Grid.Column="1" VerticalOptions="End" HorizontalOptions="EndAndExpand">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="{Binding DaylyCarbs}"/>
+                                    <Span Text="{Binding RefData.DaylyCarbs}"/>
                                     <Span Text="   /"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
                         <Label Grid.Row="2" Grid.Column="2" VerticalOptions="End" HorizontalOptions="End" FontAttributes="Bold" Text="{Binding RefData.User.TargetCarbs}"/>
-                        <ProgressBar Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Progress="{Binding DaylyCarbsProgress}" VerticalOptions="Center"/>
+                        <ProgressBar Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Progress="{Binding RefData.DaylyCarbsProgress}" VerticalOptions="Center"/>
 
                         <Label Grid.Row="4" Grid.Column="0" VerticalOptions="End" Text="Fats"/>
                         <Label Grid.Row="4" Grid.Column="1" VerticalOptions="End" HorizontalOptions="EndAndExpand">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="{Binding DaylyFats}"/>
+                                    <Span Text="{Binding RefData.DaylyFats}"/>
                                     <Span Text="   /"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
                         <Label Grid.Row="4" Grid.Column="2" VerticalOptions="End" HorizontalOptions="End" FontAttributes="Bold" Text="{Binding RefData.User.TargetFats}"/>
-                        <ProgressBar Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Progress="{Binding DaylyFatsProgress}" VerticalOptions="Center"/>
+                        <ProgressBar Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Progress="{Binding RefData.DaylyFatsProgress}" VerticalOptions="Center"/>
 
                         <StackLayout Grid.Row="0" Grid.RowSpan="5" Grid.Column="3" VerticalOptions="Center" Spacing="0">
-                            <Label HorizontalOptions="Center" Text="{Binding DaylyCalories}"/>
+                            <Label HorizontalOptions="Center" Text="{Binding RefData.DaylyCalories}"/>
                             <Label HorizontalOptions="Center" Text="of"/>
                             <Label HorizontalOptions="Center" FontAttributes="Bold" Text="{Binding RefData.User.TargetCalories}"/>
                         </StackLayout>
@@ -81,7 +81,7 @@
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand"
                         Grid.Row="0" Grid.RowSpan="5" Grid.Column="3"
-                        Progress="{Binding DaylyCaloriesProgress}"
+                        Progress="{Binding RefData.DaylyCaloriesProgress}"
                         ProgressStartColor="HotPink"
                         ProgressEndColor="HotPink"
                         StrokeWidth="12">
@@ -90,8 +90,8 @@
                     </Grid>
                 </Frame>
 
-                <StackLayout BindableLayout.ItemsSource="{Binding RefData.DayMeals}">
-                    <BindableLayout.ItemTemplate>
+                <CollectionView ItemsSource="{Binding RefData.DayMeals}">
+                    <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
                                 <Frame BackgroundColor="White" Margin="10, 10, 10, 10" BorderColor="LightGray" CornerRadius="8" Padding="8" HasShadow="False">
@@ -169,8 +169,8 @@
                                 </Frame>
                             </StackLayout>
                         </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
