@@ -11,31 +11,61 @@
         
     <ContentPage.Content>
         <StackLayout>
-            
-            <SearchBar Placeholder="Search for food"/>
 
-            <Grid Margin="10">
+            <SearchBar x:Name="searchBar" Placeholder="Search for food" SearchCommand="{Binding PerformSearch}" SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
+
+            <Grid Margin="20" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
                 <RadioButton Grid.Column="0" Content="Food" IsChecked="{Binding IsFoodChecked}"/>
                 <RadioButton Grid.Column="1" Content="Meal" IsChecked="{Binding IsMealChecked}"/>
                 <RadioButton Grid.Column="2" Content="Library" IsChecked="{Binding IsLibraryChecked}"/>
             </Grid>
 
 
-
-            <Button HorizontalOptions="Center" CornerRadius="10" IsVisible="{Binding IsFoodChecked}" FontSize="Micro" Text="Create Food" Clicked="CreateFood_Clicked"></Button>
+            <Button HorizontalOptions="Center" CornerRadius="10" IsVisible="{Binding IsFoodChecked}"  FontSize="Micro" Text="Create Food" Clicked="CreateFood_Clicked"></Button>
             <Button HorizontalOptions="Center" CornerRadius="10" IsVisible="{Binding IsMealChecked}" FontSize="Micro" Text="Create Meal" Clicked="CreateMeal_Clicked"></Button>
 
 
 
-            <CollectionView ItemsSource="{Binding RefData.Foods}" IsVisible="{Binding IsFoodChecked}" SelectionMode="Single">
+            <CollectionView ItemsSource="{Binding SearchResults}" IsVisible="{Binding IsFoodChecked}" 
+                            SelectedItem="{Binding SelectedAliment}"
+                            SelectionChangedCommand="{Binding SelectedAlimentCommand}" SelectionChangedCommandParameter="{Binding SelectedAliment}" SelectionMode="Single"
+                            Margin="10, 20, 10, 10">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Label Grid.Column="0" Text="{Binding Name}"/>
-                            <Label Grid.Column="1" Text="{Binding Proteins}"/>
-                            <Label Grid.Column="2" Text="{Binding Carbs}"/>
-                            <Label Grid.Column="3" Text="{Binding Fats}"/>
-                            <Label Grid.Column="4" Text="{Binding Calories}"/>
+                        <Grid Margin="5" ColumnDefinitions="*,Auto,Auto,Auto,Auto">
+                            <Label Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Proteins}"/>
+                                        <Span Text=" p"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Column="2" VerticalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Carbs}"/>
+                                        <Span Text=" c"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Column="3" Text="{Binding Fats}" VerticalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Fats}"/>
+                                        <Span Text=" f"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Column="4" VerticalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Calories}"/>
+                                        <Span Text=" c"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

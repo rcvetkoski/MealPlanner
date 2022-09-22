@@ -14,17 +14,23 @@ namespace MealPlanner.ViewModels
         public string Description { get; set; }
 
         private double proteins;
-        public double Proteins { get { return proteins; } set { proteins = value; OnPropertyChanged("Proteins"); }
-        }
+        public double Proteins { get { return proteins; } set { proteins = value; ProteinsProgress = proteins / RefData.User.TargetProteins; OnPropertyChanged("Proteins"); OnPropertyChanged("ProteinsProgress"); } }
+        public double ProteinsProgress { get; set; }
 
         private double carbs;
-        public double Carbs { get { return carbs; } set { carbs = value; OnPropertyChanged("Carbs"); } }
+        public double Carbs { get { return carbs; } set { carbs = value; CarbsProgress = carbs / RefData.User.TargetCarbs; OnPropertyChanged("Carbs"); OnPropertyChanged("CarbsProgress"); } }
+        public double CarbsProgress { get; set; }
+
 
         private double fats;
-        public double Fats { get { return fats; } set { fats = value; OnPropertyChanged("Fats"); } }
+        public double Fats { get { return fats; } set { fats = value; FatsProgress = fats / RefData.User.TargetFats; OnPropertyChanged("Fats"); OnPropertyChanged("FatsProgress"); } }
+        public double FatsProgress { get; set; }
+
 
         private double calories;
-        public double Calories { get { return calories; } set { calories = value; OnPropertyChanged("Calories"); } }
+        public double Calories { get { return calories; } set { calories = value; CaloriesProgress = calories / RefData.User.TargetCalories; OnPropertyChanged("Calories"); OnPropertyChanged("CaloriesProgress"); } }
+        public double CaloriesProgress { get; set; }
+
 
 
 
@@ -34,6 +40,7 @@ namespace MealPlanner.ViewModels
 
         public FoodViewModel()
         {
+            Title = "Food";
             SaveCommand = new Command(SaveFood);
         }
 

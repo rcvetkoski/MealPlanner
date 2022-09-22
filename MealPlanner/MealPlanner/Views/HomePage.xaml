@@ -90,7 +90,7 @@
                     </Grid>
                 </Frame>
 
-                <StackLayout BindableLayout.ItemsSource="{Binding DayMeals}">
+                <StackLayout BindableLayout.ItemsSource="{Binding RefData.DayMeals}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
@@ -146,7 +146,7 @@
 
                                         <Label Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" Text="+ Add Food" TextColor="Green" Margin="0, 15, 0, 5">
                                             <Label.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="AddFood_Tapped"/>
+                                                <TapGestureRecognizer Tapped="AddFood_Tapped" CommandParameter="{Binding .}"/>
                                             </Label.GestureRecognizers>
                                         </Label>
 

@@ -10,6 +10,7 @@ namespace MealPlanner.Helpers
     public class ReferentialData
     {
         public User User { get; set; }
+        public ObservableCollection<DayMeal> DayMeals { get; set; }
         public ObservableCollection<Food> Foods { get; set; }
 
 

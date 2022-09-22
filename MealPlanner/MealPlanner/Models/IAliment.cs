@@ -6,6 +6,7 @@ namespace MealPlanner.Models
 {
     public interface IAliment
     {
+        string Name { get; set; }   
         double Calories { get; set; }
         double Proteins { get; set; }
         double Carbs { get; set; }

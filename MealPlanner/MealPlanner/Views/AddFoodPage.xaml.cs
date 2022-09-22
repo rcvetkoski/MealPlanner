@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MealPlanner.Models;
+using MealPlanner.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,12 @@ namespace MealPlanner.Views
         public AddFoodPage()
         {
             InitializeComponent();
+        }
+
+        public AddFoodPage(DayMeal dayMeal)
+        {
+            InitializeComponent();
+            (BindingContext as AddFoodViewModel).SelectedMealFood = dayMeal;
         }
 
         private void CreateFood_Clicked(object sender, EventArgs e)

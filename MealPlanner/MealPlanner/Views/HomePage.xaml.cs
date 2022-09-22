@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MealPlanner.Models;
+using MealPlanner.ViewModels;
+using System;
 using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,7 +21,7 @@ namespace MealPlanner.Views
 
         private void AddFood_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AddFoodPage());
+            Navigation.PushAsync(new AddFoodPage((e as TappedEventArgs).Parameter as DayMeal));
         }
     }
 }
