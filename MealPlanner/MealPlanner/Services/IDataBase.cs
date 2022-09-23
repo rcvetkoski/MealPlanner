@@ -15,7 +15,6 @@ namespace MealPlanner.Services
         Task<int> DropTableUser();
 
 
-
         // Meal
         Task<Meal> GetMealAsync(int id);
         Task<List<Meal>> GetAllMealsAsync();
@@ -36,13 +35,19 @@ namespace MealPlanner.Services
         Task<MealFood> GetMealFoodAsync(int id);
         Task<List<MealFood>> GetMealFoodsAsync(int meal_id, int food_id);
         Task<List<MealFood>> GetAllMealFoodsAsync();
-        Task<int> AddRoutineExerciseAsync(MealFood mealFood);
+        Task<int> AddMealFoodAsync(MealFood mealFood);
         Task<int> UpdateMealFood(MealFood mealFood);
         Task<int> DeleteMealFoodAsync(MealFood mealFood);
-        Task<int> DeleteAllMealFoodAsync();
+        Task<int> DeleteAllMealFoodsAsync();
         Task<int> DropTableMealFood();
 
-
-
+        //DayMeal
+        Task<DayMeal> GetDayMealAsync(int id);
+        Task<List<DayMeal>> GetAllDayMealsAsync();
+        Task<int> AddDayMealAsync(DayMeal dayMeal);
+        Task<int> UpdateDayMeal(DayMeal dayMeal);
+        Task<int> DeleteDayMealAsync(DayMeal dayMeal);
+        Task<int> DeleteAllDayMealsAsync();
+        Task<int> DropTableDayMeal();
     }
 }

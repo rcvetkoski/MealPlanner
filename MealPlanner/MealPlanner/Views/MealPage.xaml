@@ -1,21 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:MealPlanner.Controls"
+             xmlns:vm="clr-namespace:MealPlanner.ViewModels"
              x:Class="MealPlanner.Views.MealPage">
+
+    <ContentPage.BindingContext>
+        <vm:MealViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout Margin="10">
             <Label Text="Meal Page!" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
-            <Entry Placeholder="Name"/>
-            <Entry Placeholder="Portion"/>
-            <Editor Placeholder="Description"/>
+            <Entry Placeholder="Name" Text="{Binding Name}"/>
+            <Entry Placeholder="Portion" Text="{Binding Portion}"/>
+            <Editor Placeholder="Description" Text="{Binding Description}"/>
 
             <Button CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Clicked="AddFood_Clicked"/>
 
-            <Label Text="Egg"/>
-            <Label Text="Jambon"/>
-            <Label Text="Cheese"/>
 
-
+            <CollectionView ItemsSource="{Binding RefData.Foods}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="5" ColumnDefinitions="*,Auto,Auto,Auto,Auto">
+                            <Label Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Proteins}"/>
+                                        <Span Text=" p"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Column="2" VerticalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Carbs}"/>
+                                        <Span Text=" c"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Column="3" Text="{Binding Fats}" VerticalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Fats}"/>
+                                        <Span Text=" f"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Column="4" VerticalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Calories}"/>
+                                        <Span Text=" c"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            
+            
             <Grid ColumnDefinitions="100, *" RowDefinitions="100, Auto" Margin="15" VerticalOptions="EndAndExpand">
                 <controls:CircleCountdown 
                     HorizontalOptions="FillAndExpand"

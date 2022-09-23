@@ -70,6 +70,10 @@ namespace MealPlanner.ViewModels
             {
                 SelectedMealFood.Aliments.Add(aliment);
                 RefData.DaylyCalories += aliment.Calories;
+                RefData.DaylyProteins += aliment.Proteins;
+                RefData.DaylyCarbs += aliment.Carbs;
+                RefData.DaylyFats += aliment.Fats;
+
                 await Application.Current.MainPage.Navigation.PopAsync();
             }
         });

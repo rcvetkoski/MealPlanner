@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -14,6 +15,8 @@ namespace MealPlanner.Helpers
         public User User { get; set; }
         public ObservableCollection<DayMeal> DayMeals { get; set; }
         public ObservableCollection<Food> Foods { get; set; }
+        public ObservableCollection<MealFood> MealFoods { get; set; }
+
 
 
         public ReferentialData()
@@ -34,6 +37,37 @@ namespace MealPlanner.Helpers
 
 
             Foods = App.DataBaseRepo.GetAllFoodsAsync().Result.ToObservableCollection();
+
+            var dayMeals = App.DataBaseRepo.GetAllDayMealsAsync().Result;
+            if (dayMeals.Any())
+            {
+                DayMeals = dayMeals.OrderBy(x=> x.Order).ToList().ToObservableCollection();
+            }
+            else
+            {
+                DayMeals = new ObservableCollection<DayMeal>();
+
+                // Breakfast
+                var breakfast = new DayMeal() { Name = "Breakfast", Order = 1 };
+                DayMeals.Add(breakfast);
+
+                // Lunch
+                var lunch = new DayMeal() { Name = "Lunch", Order = 2 };
+                DayMeals.Add(lunch);
+
+                // Dinner
+                var dinner = new DayMeal() { Name = "Dinner", Order = 3 };
+                DayMeals.Add(dinner);
+
+                // Snacks
+                var snack = new DayMeal() { Name = "Snack", Order = 4 };
+                DayMeals.Add(snack);
+
+                App.DataBaseRepo.AddDayMealAsync(breakfast);
+                App.DataBaseRepo.AddDayMealAsync(lunch);
+                App.DataBaseRepo.AddDayMealAsync(dinner);
+                App.DataBaseRepo.AddDayMealAsync(snack);
+            }
         }
 
 
