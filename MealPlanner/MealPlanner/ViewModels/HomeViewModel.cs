@@ -13,15 +13,6 @@ namespace MealPlanner.ViewModels
         public HomeViewModel()
         {
             Title = "Home";
-            RefData.DayMeals.CollectionChanged += DayMeals_CollectionChanged;
-        }
-
-        private void DayMeals_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            RefData.DaylyProteins += (e.NewItems[0] as DayMeal).Proteins;
-            RefData.DaylyCarbs += (e.NewItems[0] as DayMeal).Carbs;
-            RefData.DaylyFats += (e.NewItems[0] as DayMeal).Fats;
-            RefData.DaylyCalories += (e.NewItems[0] as DayMeal).Calories;
         }
     }
 }

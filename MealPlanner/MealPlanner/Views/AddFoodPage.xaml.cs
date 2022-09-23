@@ -19,6 +19,13 @@ namespace MealPlanner.Views
             InitializeComponent();
         }
 
+        public AddFoodPage(Meal currentMeal)
+        {
+            InitializeComponent();
+            (BindingContext as AddFoodViewModel).CurrentMeal = currentMeal; 
+            (BindingContext as AddFoodViewModel).MealSwitchVisibility = false;
+        }
+
         public AddFoodPage(DayMeal dayMeal)
         {
             InitializeComponent();

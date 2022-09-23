@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MealPlanner.Models;
+using MealPlanner.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +21,7 @@ namespace MealPlanner.Views
 
         private void AddFood_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AddFoodPage());
+            Navigation.PushAsync(new AddFoodPage((BindingContext as MealViewModel).CurrentMeal));
         }
     }
 }

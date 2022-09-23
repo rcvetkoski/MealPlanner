@@ -32,17 +32,14 @@ namespace MealPlanner.ViewModels
         public double CaloriesProgress { get; set; }
 
 
-
-
-
-
-        public ICommand SaveCommand { get; set; }
-
         public FoodViewModel()
         {
             Title = "Food";
             SaveCommand = new Command(SaveFood);
         }
+
+
+        public ICommand SaveCommand { get; set; }
 
         private async void SaveFood()
         {

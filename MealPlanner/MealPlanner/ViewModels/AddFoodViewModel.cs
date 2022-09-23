@@ -14,13 +14,18 @@ namespace MealPlanner.ViewModels
         public AddFoodViewModel()
         {
             Title = "AddFood";
+            MealSwitchVisibility = true;
             IsFoodChecked = true;
             searchResults = new List<Food>();
             foreach (var item in RefData.Foods)
                 searchResults.Add(item);
         }
 
+        private bool mealSwitchVisibility;
+        public bool MealSwitchVisibility { get { return mealSwitchVisibility; } set { mealSwitchVisibility = value; OnPropertyChanged("MealSwitchVisibility"); } }
+
         public DayMeal SelectedMealFood { get; set; }
+        public Meal CurrentMeal { get; set; }
 
         private bool isFoodChecked;
         public bool IsFoodChecked { get { return isFoodChecked; } set { isFoodChecked = value; OnPropertyChanged("IsFoodChecked"); } }
@@ -66,13 +71,28 @@ namespace MealPlanner.ViewModels
             IAliment aliment = parameter as IAliment;
             bool answer = await Application.Current.MainPage.DisplayAlert(aliment.Name, aliment.Proteins + " p" + " " + aliment.Calories + " cal", "Add", "Close");
 
-            if(answer)
+            if(answer && MealSwitchVisibility)
             {
                 SelectedMealFood.Aliments.Add(aliment);
                 RefData.DaylyCalories += aliment.Calories;
                 RefData.DaylyProteins += aliment.Proteins;
                 RefData.DaylyCarbs += aliment.Carbs;
                 RefData.DaylyFats += aliment.Fats;
+
+                DayMealAliment dayMealAliment = new DayMealAliment();
+                dayMealAliment.DayMealId = SelectedMealFood.Id;
+                dayMealAliment.AlimentId = aliment.Id;
+
+                await App.DataBaseRepo.AddDayMealAlimentAsync(dayMealAliment);
+                await Application.Current.MainPage.Navigation.PopAsync();
+            }
+            else if(answer)
+            {
+                CurrentMeal.Foods.Add(aliment as Food);
+                CurrentMeal.Calories += aliment.Calories;
+                CurrentMeal.Proteins += aliment.Proteins;
+                CurrentMeal.Carbs += aliment.Carbs;
+                CurrentMeal.Fats += aliment.Fats;
 
                 await Application.Current.MainPage.Navigation.PopAsync();
             }

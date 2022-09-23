@@ -16,7 +16,7 @@
 
             <Grid Margin="20" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
                 <RadioButton Grid.Column="0" Content="Food" IsChecked="{Binding IsFoodChecked}"/>
-                <RadioButton Grid.Column="1" Content="Meal" IsChecked="{Binding IsMealChecked}"/>
+                <RadioButton Grid.Column="1" Content="Meal" IsChecked="{Binding IsMealChecked}" IsVisible="{Binding MealSwitchVisibility}"/>
                 <RadioButton Grid.Column="2" Content="Library" IsChecked="{Binding IsLibraryChecked}"/>
             </Grid>
 
@@ -26,7 +26,7 @@
 
 
 
-            <CollectionView ItemsSource="{Binding RefData.Foods}" IsVisible="{Binding IsFoodChecked}" 
+            <CollectionView ItemsSource="{Binding RefData.Aliments}"
                             SelectedItem="{Binding SelectedAliment}"
                             SelectionChangedCommand="{Binding SelectedAlimentCommand}" SelectionChangedCommandParameter="{Binding SelectedAliment}" SelectionMode="Single"
                             Margin="10, 20, 10, 10">

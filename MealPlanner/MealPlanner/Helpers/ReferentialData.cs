@@ -14,8 +14,11 @@ namespace MealPlanner.Helpers
     {
         public User User { get; set; }
         public ObservableCollection<DayMeal> DayMeals { get; set; }
+        public ObservableCollection<Meal> Meals { get; set; }
         public ObservableCollection<Food> Foods { get; set; }
         public ObservableCollection<MealFood> MealFoods { get; set; }
+        public ObservableCollection<IAliment> Aliments { get; set; }
+
 
 
 
@@ -26,6 +29,7 @@ namespace MealPlanner.Helpers
 
         private void InitDB()
         {
+            // User
             try
             {
                 User =  App.DataBaseRepo.GetUserAsync().Result;
@@ -36,8 +40,13 @@ namespace MealPlanner.Helpers
             }
 
 
+            // Foods
             Foods = App.DataBaseRepo.GetAllFoodsAsync().Result.ToObservableCollection();
 
+            // Meals
+            Meals = App.DataBaseRepo.GetAllMealsAsync().Result.ToObservableCollection();
+
+            // DayMeals
             var dayMeals = App.DataBaseRepo.GetAllDayMealsAsync().Result;
             if (dayMeals.Any())
             {
@@ -68,21 +77,45 @@ namespace MealPlanner.Helpers
                 App.DataBaseRepo.AddDayMealAsync(dinner);
                 App.DataBaseRepo.AddDayMealAsync(snack);
             }
+
+
+            // Aliments
+            Aliments = new ObservableCollection<IAliment>();
+
+            foreach (Meal meal in Meals)
+                Aliments.Add(meal as IAliment);
+
+            foreach (Food food in Foods)
+                Aliments.Add(food as IAliment);
+
+
+            // Add aliments to DayMeal if any
+            var dayMealAliments = App.DataBaseRepo.GetAllDayMealAlimentsAsync().Result;
+            foreach(DayMealAliment item in dayMealAliments)
+            {
+                DayMeal dayMeal = DayMeals.Where(x => x.Id == item.DayMealId).First();
+                IAliment aliment = Aliments.Where(x => x.Id == item.AlimentId).First();
+
+                if(aliment != null)
+                {
+                    dayMeal?.Aliments.Add(aliment);
+
+                    DaylyProteins += aliment.Proteins;
+                    DaylyCarbs += aliment.Carbs;
+                    DaylyFats += aliment.Fats;
+                    DaylyCalories += aliment.Calories;
+                }
+            }
         }
 
 
-
-        #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        private void DayMeals_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
-
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            DaylyProteins += (e.NewItems[0] as DayMeal).Proteins;
+            DaylyCarbs += (e.NewItems[0] as DayMeal).Carbs;
+            DaylyFats += (e.NewItems[0] as DayMeal).Fats;
+            DaylyCalories += (e.NewItems[0] as DayMeal).Calories;
         }
-        #endregion
 
 
 
@@ -147,5 +180,19 @@ namespace MealPlanner.Helpers
             }
         }
         public double DaylyFatsProgress { get; set; }
+
+
+
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            var changed = PropertyChanged;
+            if (changed == null)
+                return;
+
+            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
     }
 }

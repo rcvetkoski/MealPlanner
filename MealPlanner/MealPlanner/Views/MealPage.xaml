@@ -18,7 +18,7 @@
             <Button CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Clicked="AddFood_Clicked"/>
 
 
-            <CollectionView ItemsSource="{Binding RefData.Foods}">
+            <CollectionView ItemsSource="{Binding CurrentMeal.Foods}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="5" ColumnDefinitions="*,Auto,Auto,Auto,Auto">
@@ -73,16 +73,17 @@
                     StrokeWidth="10"/>
 
                 <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
-                    <Label HorizontalOptions="Center" Text="500" FontAttributes="Bold"/>
-                    <Label HorizontalOptions="Center" Text="of 1.700"/>
+                    <Label HorizontalOptions="Center" Text="{Binding CurrentMeal.Calories}" FontAttributes="Bold"/>
+                    <Label HorizontalOptions="Center" Text="of" FontAttributes="Bold"/>
+                    <Label HorizontalOptions="Center" Text="{Binding RefData.User.TargetCalories}"/>
                 </StackLayout>
 
                 <Label Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Text="Calories"/>
 
                 <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" BackgroundColor="White" Margin="4, 4, 4, 15" BorderColor="#f7f7f7" CornerRadius="12" Padding="0">
-                    <Grid Margin="10" ColumnDefinitions="Auto, *, Auto">
+                    <Grid Margin="10" ColumnDefinitions="Auto, *, Auto, Auto">
 
-                        <Label Grid.Row="0" Grid.Column="0" Text="Prot" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="0" Text="Proteins" VerticalOptions="Center"/>
                         <Label Grid.Row="1" Grid.Column="0" Text="Carbs" VerticalOptions="Center"/>
                         <Label Grid.Row="2" Grid.Column="0" Text="Fats" VerticalOptions="Center"/>
 
@@ -90,14 +91,38 @@
                         <ProgressBar Grid.Row="1" Grid.Column="1" Progress="0.25" VerticalOptions="Center"/>
                         <ProgressBar Grid.Row="2" Grid.Column="1" Progress="0.55" VerticalOptions="Center"/>
 
-                        <Label Grid.Row="0" Grid.Column="2" Text="55 / 193 g" VerticalOptions="Center"/>
-                        <Label Grid.Row="1" Grid.Column="2" Text="90 / 309 g" VerticalOptions="Center"/>
-                        <Label Grid.Row="2" Grid.Column="2" Text="35 / 120 g" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding CurrentMeal.Proteins}"/>
+                                    <Span Text="   /"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Row="0" Grid.Column="3" Text="{Binding RefData.User.TargetProteins}" VerticalOptions="Center"/>
+                        <Label Grid.Row="1" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding CurrentMeal.Carbs}"/>
+                                    <Span Text="   /"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Row="1" Grid.Column="3" Text="{Binding RefData.User.TargetCarbs}" VerticalOptions="Center"/>
+                        <Label Grid.Row="2" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding CurrentMeal.Fats}"/>
+                                    <Span Text="   /"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Row="2" Grid.Column="3" Text="{Binding RefData.User.TargetFats}" VerticalOptions="Center"/>
                     </Grid>
                 </Frame>
             </Grid>
 
-            <Button CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
+            <Button CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Command="{Binding SaveCommand}"/>
 
         </StackLayout>
     </ContentPage.Content>
