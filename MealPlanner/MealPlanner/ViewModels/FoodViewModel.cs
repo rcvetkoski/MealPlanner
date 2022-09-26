@@ -52,6 +52,7 @@ namespace MealPlanner.ViewModels
 
             await App.DataBaseRepo.AddFoodAsync(food);
             App.RefData.Foods.Add(food);
+            App.RefData.Aliments.Add(food);
             await Application.Current.MainPage.Navigation.PopAsync();
         }
     }
