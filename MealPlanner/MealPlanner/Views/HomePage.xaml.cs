@@ -5,6 +5,7 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
+using Xamarin.RSControls.Controls;
 
 namespace MealPlanner.Views
 {
@@ -21,7 +22,15 @@ namespace MealPlanner.Views
 
             if(aliment is Meal)
             {
-                Navigation.PushAsync(new MealPage());
+                RSPopup rSPopup = new RSPopup();
+                rSPopup.SetTitle(aliment.Name);
+                this.RSPopupCustomView.BindingContext = aliment;
+                rSPopup.SetCustomView(this.RSPopupCustomView);
+                rSPopup.AddAction("Update", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral);
+                rSPopup.AddAction("Modify", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive);
+                rSPopup.Show();
+
+                //Navigation.PushAsync(new MealPage());
             }
             else if(aliment is Food)
                 Navigation.PushAsync(new FoodPage());

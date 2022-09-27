@@ -15,6 +15,7 @@ namespace MealPlanner.Droid
         {
             base.OnCreate(savedInstanceState);
 
+            Xamarin.RSControls.Droid.RSAppContext.RSContext = this;
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
