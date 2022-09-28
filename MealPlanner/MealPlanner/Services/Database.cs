@@ -1,4 +1,5 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers.Enums;
+using MealPlanner.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -401,14 +402,14 @@ namespace MealPlanner.Services
         /// <param name="dayMeal_id"></param>
         /// <param name="aliment_id"></param>
         /// <returns></returns>
-        public Task<List<DayMealAliment>> GetDayMealAlimentsAsync(int dayMeal_id = 0, int aliment_id = 0)
+        public Task<List<DayMealAliment>> GetDayMealAlimentsAsync(AlimentTypeEnum alimentType, int dayMeal_id = 0, int aliment_id = 0)
         {
             if (dayMeal_id != 0 && aliment_id != 0)
-                return dbConnection.Table<DayMealAliment>().Where(x => x.DayMealId == dayMeal_id && x.AlimentId == aliment_id).ToListAsync();
+                return dbConnection.Table<DayMealAliment>().Where(x => x.DayMealId == dayMeal_id && x.AlimentId == aliment_id && x.AlimentType == alimentType).ToListAsync();
             else if (dayMeal_id != 0)
                 return dbConnection.Table<DayMealAliment>().Where(x => x.DayMealId == dayMeal_id).ToListAsync();
             else if (aliment_id != 0)
-                return dbConnection.Table<DayMealAliment>().Where(x => x.AlimentId == aliment_id).ToListAsync();
+                return dbConnection.Table<DayMealAliment>().Where(x => x.AlimentId == aliment_id && x.AlimentType == alimentType).ToListAsync();
             else
                 return Task.FromResult(new List<DayMealAliment>());
         }

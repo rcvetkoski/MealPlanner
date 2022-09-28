@@ -14,7 +14,7 @@ namespace MealPlanner.ViewModels
             AlimentProteins = aliment.Proteins;
             AlimentCarbs = aliment.Carbs;
             AlimentFats = aliment.Fats;
-            AlimentPortion = aliment.Portion;
+            AlimentServingSize = aliment.ServingSize;
             AlimentUnit = aliment.Unit;
             AlimentNumberOfPortions = aliment.NumberOfPortions;
         }
@@ -83,7 +83,7 @@ namespace MealPlanner.ViewModels
         public double AlimentFatsProgress { get; set; }
 
 
-        public double AlimentPortion { get;set; }
+        public double AlimentServingSize { get;set; }
         public double AlimentNumberOfPortions { get; set; }
 
         public AlimentUnitEnum AlimentUnit { get; set; }

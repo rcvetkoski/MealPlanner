@@ -21,7 +21,7 @@
         <ScrollView Orientation="Vertical">
             <StackLayout Margin="10">
 
-                <rsControls:RSEntry x:Name="Name" Placeholder="Name" Text="{Binding Name}" FontAttributes="Bold" TextColor="Black"/>
+                <rsControls:RSEntry Helper="Mandatory" Placeholder="Name" Text="{Binding Name}" FontAttributes="Bold" IsPlaceholderAlwaysFloating="True" />
 
                 <!--<Grid Margin="10" VerticalOptions="FillAndExpand">
                 <Frame Grid.Row="0" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
@@ -45,12 +45,12 @@
                 </Frame>
             </Grid>-->
 
-                <rsControls:RSNumericEntry x:Name="Portion" Placeholder="Portion" Text="{Binding Portion}" CustomUnit="g"/>
-                <rsControls:RSEnumPicker x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding Unit}"/>
-                <rsControls:RSNumericEntry x:Name="Calories" Placeholder="Calories" Text="{Binding Calories}"/>
-                <rsControls:RSNumericEntry x:Name="Proteins" Placeholder="Proteins" Text="{Binding Proteins}"/>
-                <rsControls:RSNumericEntry x:Name="Carbs" Placeholder="Carbs" Text="{Binding Carbs}"/>
-                <rsControls:RSNumericEntry x:Name="Fats" Placeholder="Fats" Text="{Binding Fats}"/>
+                <rsControls:RSNumericEntry Placeholder="Serving size" Text="{Binding ServingSize}" Helper="Mandatory" CustomUnit="g" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSEnumPicker x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Placeholder="Proteins" Text="{Binding Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Placeholder="Carbs" Text="{Binding Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Placeholder="Fats" Text="{Binding Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Placeholder="Calories" Text="{Binding Calories}" Helper="calories are calculated automatically if empty" IsPlaceholderAlwaysFloating="True"/>
 
 
                 <Grid ColumnDefinitions="100, *" RowDefinitions="100, Auto" Margin="15">

@@ -43,7 +43,7 @@ namespace MealPlanner.Views
             Navigation.PushAsync(new MealPage());
         }
 
-        private async void CollectionView_SelectionChanged(object sender, EventArgs e)
+        private void CollectionView_SelectionChanged(object sender, EventArgs e)
         {
             IAliment aliment = (sender as Grid).BindingContext as IAliment;
             //bool answer = await Application.Current.MainPage.DisplayAlert(aliment.Name, aliment.Proteins + " p" + " " + aliment.Calories + " cal", "Add", "Close");
@@ -58,48 +58,43 @@ namespace MealPlanner.Views
             {
                 var vm = this.BindingContext as AddFoodViewModel;
 
-                vm.SelectedMealFood.Aliments.Add(aliment);
-                vm.RefData.DaylyCalories += aliment.Calories;
-                vm.RefData.DaylyProteins += aliment.Proteins;
-                vm.RefData.DaylyCarbs += aliment.Carbs;
-                vm.RefData.DaylyFats += aliment.Fats;
+                if (vm.MealSwitchVisibility)
+                {
+                    vm.SelectedMealFood.Aliments.Add(aliment);
+                    vm.RefData.DaylyCalories += aliment.Calories;
+                    vm.RefData.DaylyProteins += aliment.Proteins;
+                    vm.RefData.DaylyCarbs += aliment.Carbs;
+                    vm.RefData.DaylyFats += aliment.Fats;
 
-                DayMealAliment dayMealAliment = new DayMealAliment();
-                dayMealAliment.DayMealId = vm.SelectedMealFood.Id;
-                dayMealAliment.AlimentId = aliment.Id;
+                    DayMealAliment dayMealAliment = new DayMealAliment();
+                    dayMealAliment.DayMealId = vm.SelectedMealFood.Id;
+                    dayMealAliment.AlimentId = aliment.Id;
+                    dayMealAliment.AlimentType = aliment.AlimentType;
 
-                await App.DataBaseRepo.AddDayMealAlimentAsync(dayMealAliment);
-                await Application.Current.MainPage.Navigation.PopAsync();
+                    await App.DataBaseRepo.AddDayMealAlimentAsync(dayMealAliment);
+                    await Application.Current.MainPage.Navigation.PopAsync();
+                }
+                else
+                {
+                    vm.CurrentMeal.Foods.Add(aliment as Food);
+                    vm.CurrentMeal.Calories += aliment.Calories;
+                    vm.CurrentMeal.Proteins += aliment.Proteins;
+                    vm.CurrentMeal.Carbs += aliment.Carbs;
+                    vm.CurrentMeal.Fats += aliment.Fats;
+
+                    await Application.Current.MainPage.Navigation.PopAsync();
+                }
+
             }));
             rSPopup.Show();
+        }
 
-            //var vm = this.BindingContext as AddFoodViewModel;
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
 
-            //if (answer && vm.MealSwitchVisibility)
-            //{
-            //    vm.SelectedMealFood.Aliments.Add(aliment);
-            //    vm.RefData.DaylyCalories += aliment.Calories;
-            //    vm.RefData.DaylyProteins += aliment.Proteins;
-            //    vm.RefData.DaylyCarbs += aliment.Carbs;
-            //    vm.RefData.DaylyFats += aliment.Fats;
-
-            //    DayMealAliment dayMealAliment = new DayMealAliment();
-            //    dayMealAliment.DayMealId = vm.SelectedMealFood.Id;
-            //    dayMealAliment.AlimentId = aliment.Id;
-
-            //    await App.DataBaseRepo.AddDayMealAlimentAsync(dayMealAliment);
-            //    await Application.Current.MainPage.Navigation.PopAsync();
-            //}
-            //else if (answer)
-            //{
-            //    vm.CurrentMeal.Foods.Add(aliment as Food);
-            //    vm.CurrentMeal.Calories += aliment.Calories;
-            //    vm.CurrentMeal.Proteins += aliment.Proteins;
-            //    vm.CurrentMeal.Carbs += aliment.Carbs;
-            //    vm.CurrentMeal.Fats += aliment.Fats;
-
-            //    await Application.Current.MainPage.Navigation.PopAsync();
-            //}
+            if((BindingContext as AddFoodViewModel).FilteredAliments != null)
+                (BindingContext as AddFoodViewModel).FilteredAlimentsRefresh();
         }
     }
 }

@@ -13,9 +13,10 @@ namespace MealPlanner.Models
         double Proteins { get; set; }
         double Carbs { get; set; }
         double Fats { get; set; }
-        double Portion { get; set; }
+        double ServingSize { get; set; }
         int NumberOfPortions { get; set; }
 
         AlimentUnitEnum Unit { get; set; }
+        AlimentTypeEnum AlimentType { get; }
     }
 }

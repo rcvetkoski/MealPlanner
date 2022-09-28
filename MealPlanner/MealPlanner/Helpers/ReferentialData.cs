@@ -103,7 +103,7 @@ namespace MealPlanner.Helpers
             foreach(DayMealAliment item in dayMealAliments)
             {
                 DayMeal dayMeal = DayMeals.Where(x => x.Id == item.DayMealId).First();
-                IAliment aliment = Aliments.Where(x => x.Id == item.AlimentId).First();
+                IAliment aliment = Aliments.Where(x => x.Id == item.AlimentId && x.AlimentType == item.AlimentType).First();
 
                 if(aliment != null)
                 {

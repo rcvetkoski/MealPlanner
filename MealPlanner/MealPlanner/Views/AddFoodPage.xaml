@@ -85,9 +85,9 @@
                     </Grid>
 
                     <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto, Auto" ColumnDefinitions="*, Auto" RowSpacing="0" Margin="5">
-                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" RSEntryStyle="FilledBorder" Text="{Binding AlimentPortion}" Placeholder="Portion" CustomUnit="g"/>
+                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" RSEntryStyle="FilledBorder" Text="{Binding AlimentServingSize}" Placeholder="Serving Size" CustomUnit="g"/>
                         <rsControls:RSEnumPicker Grid.Row="0" Grid.Column="1" x:TypeArguments="enums:AlimentUnitEnum" RSEntryStyle="FilledBorder" SelectedItem="{Binding AlimentUnit}" Placeholder="Unit" Margin="10,0,0,0"/>
-                        <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding AlimentNumberOfPortions}" RSEntryStyle="FilledBorder" Placeholder="Number of portions"/>
+                        <rsControls:RSNumericUpDown Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding AlimentNumberOfPortions}" RSEntryStyle="FilledBorder" Placeholder="Number of portions"/>
                     </Grid>
                 </Grid>
             </StackLayout>
@@ -111,12 +111,22 @@
 
 
 
-            <CollectionView ItemsSource="{Binding RefData.Aliments}" Margin="10, 20, 10, 10">
+            <CollectionView x:Name="collectionView" ItemsSource="{Binding FilteredAliments}" Margin="10, 20, 10, 10">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Margin="5" ColumnDefinitions="*,Auto,Auto,Auto,Auto">
+                        <Grid Margin="2" RowDefinitions="Auto, Auto, 1" ColumnDefinitions="*,Auto,Auto,Auto">
                             <Label Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
-                            <Label Grid.Column="1" VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                            <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding ServingSize}"/>
+                                        <Span Text=" "/>
+                                        <Span Text="{Binding Unit}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="1" Grid.Column="1" VerticalOptions="Center">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="{Binding Proteins}"/>
@@ -124,7 +134,7 @@
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label Grid.Column="2" VerticalOptions="Center">
+                            <Label Grid.Row="1" Grid.Column="2" VerticalOptions="Center">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="{Binding Carbs}"/>
@@ -132,7 +142,7 @@
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label Grid.Column="3" Text="{Binding Fats}" VerticalOptions="Center">
+                            <Label Grid.Row="1" Grid.Column="3" Text="{Binding Fats}" VerticalOptions="Center">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="{Binding Fats}"/>
@@ -140,14 +150,15 @@
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label Grid.Column="4" VerticalOptions="Center">
+                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="{Binding Calories}"/>
-                                        <Span Text=" c"/>
+                                        <Span Text=" cal"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
+                            <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="LightGray"/>
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="CollectionView_SelectionChanged"/>
                             </Grid.GestureRecognizers>

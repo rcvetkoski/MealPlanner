@@ -32,7 +32,7 @@ namespace MealPlanner.ViewModels
             DayMeal dayMeal = objects[0] as DayMeal;
             IAliment aliment = objects[1] as IAliment;
 
-            DayMealAliment dayMealAliment = App.DataBaseRepo.GetDayMealAlimentsAsync(dayMeal.Id, aliment.Id).Result.FirstOrDefault();
+            DayMealAliment dayMealAliment = App.DataBaseRepo.GetDayMealAlimentsAsync(aliment.AlimentType, dayMeal.Id, aliment.Id).Result.FirstOrDefault();
 
             if(dayMealAliment != null)
                 App.DataBaseRepo.DeleteDayMealAlimentAsync(dayMealAliment);

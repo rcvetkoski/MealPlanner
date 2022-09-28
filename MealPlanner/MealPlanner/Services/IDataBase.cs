@@ -1,4 +1,5 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers.Enums;
+using MealPlanner.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -54,7 +55,7 @@ namespace MealPlanner.Services
         //DayMealAliment
         Task<DayMealAliment> GetDayMealAlimentAsync(int id);
         Task<List<DayMealAliment>> GetAllDayMealAlimentsAsync();
-        Task<List<DayMealAliment>> GetDayMealAlimentsAsync(int dayMeal_id, int aliment_id);
+        Task<List<DayMealAliment>> GetDayMealAlimentsAsync(AlimentTypeEnum alimentType,int dayMeal_id, int aliment_id);
         Task<int> AddDayMealAlimentAsync(DayMealAliment dayMealAliment);
         Task<int> DeleteDayMealAlimentAsync(DayMealAliment dayMealAliment);
         Task<int> DeleteAllDayMealAlimentsAsync();

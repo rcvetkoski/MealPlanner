@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using MealPlanner.Helpers.Enums;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,5 +12,6 @@ namespace MealPlanner.Models
         public int Id { get; set; } 
         public int DayMealId { get; set; }
         public int AlimentId { get; set; }
+        public AlimentTypeEnum AlimentType { get; set; }
     }
 }
