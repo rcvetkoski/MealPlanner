@@ -2,6 +2,7 @@
 using MealPlanner.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -21,6 +22,16 @@ namespace MealPlanner.ViewModels
         public MealViewModel()
         {
             CurrentMeal = new Meal();
+
+            // Add id
+            var lastMeal = RefData.Meals.OrderByDescending(x => x.Id).FirstOrDefault();
+            if (lastMeal != null)
+                CurrentMeal.Id = lastMeal.Id + 1;
+            else
+            {
+                CurrentMeal.Id = 1;
+            }
+
             SaveCommand = new Command(SaveFood);
         }
 

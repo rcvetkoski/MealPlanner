@@ -206,6 +206,15 @@
                                                             <ImageButton Grid.Row="0" Grid.Column="0" BackgroundColor="Gray" CornerRadius="8" WidthRequest="90" HeightRequest="90" Clicked="EditMeal_Clicked"/>
                                                             <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="*, *" ColumnDefinitions="Auto, Auto, Auto, *" Margin="0, 7, 0, 7">
                                                                 <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding Name}" FontAttributes="Bold" FontSize="Caption"/>
+                                                                <Label Grid.Row="0" Grid.Column="3" HorizontalOptions="EndAndExpand" FontSize="Caption">
+                                                                    <Label.FormattedText>
+                                                                        <FormattedString>
+                                                                            <Span Text="{Binding ServingSize}"/>
+                                                                            <Span Text=" "/>
+                                                                            <Span Text="{Binding Unit}"/>
+                                                                        </FormattedString>
+                                                                    </Label.FormattedText>
+                                                                </Label>
                                                                 <Label Grid.Row="1" Grid.Column="0" FontSize="Caption">
                                                                     <Label.FormattedText>
                                                                         <FormattedString>

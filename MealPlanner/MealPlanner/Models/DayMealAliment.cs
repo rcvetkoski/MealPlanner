@@ -13,5 +13,6 @@ namespace MealPlanner.Models
         public int DayMealId { get; set; }
         public int AlimentId { get; set; }
         public AlimentTypeEnum AlimentType { get; set; }
+        public double ServingSize { get; set; }
     }
 }

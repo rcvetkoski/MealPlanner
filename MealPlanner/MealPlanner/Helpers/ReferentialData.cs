@@ -1,5 +1,6 @@
 ﻿using MealPlanner.Helpers.Extensions;
 using MealPlanner.Models;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -102,11 +103,14 @@ namespace MealPlanner.Helpers
             var dayMealAliments = App.DataBaseRepo.GetAllDayMealAlimentsAsync().Result;
             foreach(DayMealAliment item in dayMealAliments)
             {
-                DayMeal dayMeal = DayMeals.Where(x => x.Id == item.DayMealId).First();
-                IAliment aliment = Aliments.Where(x => x.Id == item.AlimentId && x.AlimentType == item.AlimentType).First();
+                DayMeal dayMeal = DayMeals.Where(x => x.Id == item.DayMealId).FirstOrDefault();
+                IAliment existingAliment = Aliments.Where(x => x.Id == item.AlimentId && x.AlimentType == item.AlimentType).FirstOrDefault();
 
-                if(aliment != null)
+                if(existingAliment != null)
                 {
+                    IAliment aliment = CreateAndCopyAlimentProperties(existingAliment);
+                    aliment.ServingSize = item.ServingSize;
+
                     dayMeal?.Aliments.Add(aliment);
 
                     DaylyProteins += aliment.Proteins;
@@ -115,6 +119,39 @@ namespace MealPlanner.Helpers
                     DaylyCalories += aliment.Calories;
                 }
             }
+
+            // Add foods to Meal
+            var MealFoods = App.DataBaseRepo.GetAllMealFoodsAsync().Result;
+            foreach (MealFood mealFood in MealFoods)
+            {
+                Meal meal = Meals.Where(x=> x.Id == mealFood.MealId).FirstOrDefault();
+                Food food = Foods.Where(x => x.Id == mealFood.FoodId).FirstOrDefault();
+
+                if(meal != null)
+                    meal.Foods.Add(food);
+            }
+        }
+
+        public IAliment CreateAndCopyAlimentProperties(IAliment existingAliment)
+        {
+            IAliment aliment;
+
+            if (existingAliment.AlimentType == Enums.AlimentTypeEnum.Meal)
+                aliment = new Meal();
+            else
+                aliment = new Food();
+
+
+            // Fill properties
+            aliment.Id = existingAliment.Id;
+            aliment.Name = existingAliment.Name;
+            aliment.Unit = existingAliment.Unit;
+            aliment.Proteins = existingAliment.Proteins;
+            aliment.Carbs = existingAliment.Carbs;
+            aliment.Fats = existingAliment.Fats;
+            aliment.Calories = existingAliment.Calories;
+
+            return aliment;
         }
 
 
