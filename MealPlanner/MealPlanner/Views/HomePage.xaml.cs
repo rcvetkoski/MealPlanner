@@ -24,6 +24,7 @@ namespace MealPlanner.Views
             {
                 RSPopup rSPopup = new RSPopup();
                 rSPopup.SetTitle(aliment.Name);
+
                 this.RSPopupCustomView.BindingContext = new AlimentPopUpViewModel(aliment);
                 rSPopup.SetCustomView(this.RSPopupCustomView);
                 rSPopup.AddAction("Update", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral);

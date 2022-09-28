@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MealPlanner.Helpers.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,5 +13,9 @@ namespace MealPlanner.Models
         double Proteins { get; set; }
         double Carbs { get; set; }
         double Fats { get; set; }
+        double Portion { get; set; }
+        int NumberOfPortions { get; set; }
+
+        AlimentUnitEnum Unit { get; set; }
     }
 }

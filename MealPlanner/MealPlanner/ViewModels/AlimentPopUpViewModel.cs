@@ -1,4 +1,5 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers.Enums;
+using MealPlanner.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,7 +13,10 @@ namespace MealPlanner.ViewModels
             AlimentCalories = aliment.Calories;
             AlimentProteins = aliment.Proteins;
             AlimentCarbs = aliment.Carbs;
-            AlimentFats = aliment.Fats; 
+            AlimentFats = aliment.Fats;
+            AlimentPortion = aliment.Portion;
+            AlimentUnit = aliment.Unit;
+            AlimentNumberOfPortions = aliment.NumberOfPortions;
         }
 
 
@@ -79,6 +83,9 @@ namespace MealPlanner.ViewModels
         public double AlimentFatsProgress { get; set; }
 
 
-        public double AlimentPortion { get;set; }   
+        public double AlimentPortion { get;set; }
+        public double AlimentNumberOfPortions { get; set; }
+
+        public AlimentUnitEnum AlimentUnit { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using MealPlanner.Helpers.Enums;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,10 +27,13 @@ namespace MealPlanner.Models
 
         private double fats;
         public double Fats { get { return fats; } set { fats = value; OnPropertyChanged("Fats"); } }
+        public double Portion { get; set; }
+        public int NumberOfPortions { get; set; }
+
+        public AlimentUnitEnum Unit { get; set; }
 
         [Ignore]
-        public ObservableCollection<Food> Foods { get; set; }   
-
+        public ObservableCollection<Food> Foods { get; set; }
 
         public Meal()
         {

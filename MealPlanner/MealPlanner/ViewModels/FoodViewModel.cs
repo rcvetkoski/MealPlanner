@@ -1,4 +1,5 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers.Enums;
+using MealPlanner.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,6 +12,7 @@ namespace MealPlanner.ViewModels
     {
         public string Name { get; set; }
         public double Portion { get; set; }
+        public AlimentUnitEnum Unit { get; set; }
         public string Description { get; set; }
 
         private double proteins;
@@ -49,6 +51,8 @@ namespace MealPlanner.ViewModels
             food.Carbs = Carbs;
             food.Fats = Fats;
             food.Calories = Calories;
+            food.Portion = Portion;
+            food.Unit = Unit;
 
             await App.DataBaseRepo.AddFoodAsync(food);
             App.RefData.Foods.Add(food);

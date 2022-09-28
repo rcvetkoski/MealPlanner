@@ -4,9 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Xamarin.Forms;
 
 namespace MealPlanner.Helpers
 {
@@ -24,6 +26,13 @@ namespace MealPlanner.Helpers
 
         public ReferentialData()
         {
+            //var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            //var path = Path.Combine(basePath, "MealPlanner.db3");
+            //if (File.Exists(path))
+            //{
+            //    File.Delete(path);
+            //}
+
             InitDB();
         }
 
