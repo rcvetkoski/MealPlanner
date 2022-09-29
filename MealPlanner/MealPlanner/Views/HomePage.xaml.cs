@@ -2,6 +2,7 @@
 using MealPlanner.ViewModels;
 using System;
 using System.ComponentModel;
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
@@ -14,30 +15,6 @@ namespace MealPlanner.Views
         public HomePage()
         {
             InitializeComponent();
-        }
-
-        private void EditMeal_Clicked(object sender, EventArgs e)
-        {
-            var aliment = (sender as Xamarin.Forms.ImageButton).BindingContext as IAliment;
-
-            if(aliment is IAliment)
-            {
-                RSPopup rSPopup = new RSPopup();
-                rSPopup.SetTitle(aliment.Name);
-
-                this.RSPopupCustomView.BindingContext = new AlimentPopUpViewModel(aliment);
-                rSPopup.SetCustomView(this.RSPopupCustomView);
-                rSPopup.AddAction("Update", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral);
-                rSPopup.AddAction("Modify", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(() => 
-                {
-                    Navigation.PushAsync(new MealPage());
-                }));
-                rSPopup.Show();
-
-                //Navigation.PushAsync(new MealPage());
-            }
-            else if(aliment is Food)
-                Navigation.PushAsync(new FoodPage());
         }
 
         private void AddFood_Tapped(object sender, EventArgs e)

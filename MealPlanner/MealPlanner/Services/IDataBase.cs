@@ -55,7 +55,9 @@ namespace MealPlanner.Services
         //DayMealAliment
         Task<DayMealAliment> GetDayMealAlimentAsync(int id);
         Task<List<DayMealAliment>> GetAllDayMealAlimentsAsync();
+        Task<DayMealAliment> GetDayMealAlimentAsync(AlimentTypeEnum alimentType, int dayMeal_id, int aliment_id);
         Task<List<DayMealAliment>> GetDayMealAlimentsAsync(AlimentTypeEnum alimentType,int dayMeal_id, int aliment_id);
+        Task<int> UpdateDayMealAliment(DayMealAliment dayMealAliment);
         Task<int> AddDayMealAlimentAsync(DayMealAliment dayMealAliment);
         Task<int> DeleteDayMealAlimentAsync(DayMealAliment dayMealAliment);
         Task<int> DeleteAllDayMealAlimentsAsync();

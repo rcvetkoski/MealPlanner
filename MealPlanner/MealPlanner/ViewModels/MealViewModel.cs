@@ -41,6 +41,7 @@ namespace MealPlanner.ViewModels
         private async void SaveFood()
         {
             CurrentMeal.Name = Name;
+            CurrentMeal.OriginalServingSize = ServingSize;
             CurrentMeal.ServingSize = ServingSize;
             CurrentMeal.Unit = Unit;
             CurrentMeal.Description = Description;

@@ -397,8 +397,24 @@ namespace MealPlanner.Services
         }
 
         /// <summary>
-        /// Returns a list of DayMealAliment based on dayMeal_id or aliment_id
+        /// Returns a DayMealAliment based on dayMeal_id , aliment_id and alimentType
         /// </summary>
+        /// <param name="alimentType"></param>
+        /// <param name="dayMeal_id"></param>
+        /// <param name="aliment_id"></param>
+        /// <returns></returns>
+        public Task<DayMealAliment> GetDayMealAlimentAsync(AlimentTypeEnum alimentType, int dayMeal_id = 0, int aliment_id = 0)
+        {
+            if (dayMeal_id != 0 && aliment_id != 0)
+                return dbConnection.Table<DayMealAliment>().Where(x => x.DayMealId == dayMeal_id && x.AlimentId == aliment_id && x.AlimentType == alimentType).FirstOrDefaultAsync();
+            else
+                return null;
+        }
+
+        /// <summary>
+        /// Returns a list of DayMealAliment based on dayMeal_id or aliment_id or alimentType
+        /// </summary>
+        /// <param name="alimentType"></param>
         /// <param name="dayMeal_id"></param>
         /// <param name="aliment_id"></param>
         /// <returns></returns>

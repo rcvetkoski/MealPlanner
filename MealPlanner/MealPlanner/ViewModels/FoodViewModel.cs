@@ -55,6 +55,7 @@ namespace MealPlanner.ViewModels
             food.Carbs = Carbs;
             food.Fats = Fats;
             food.Calories = Calories;
+            food.OriginalServingSize = ServingSize;
             food.ServingSize = ServingSize;
             food.Unit = Unit;
 

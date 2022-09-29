@@ -51,8 +51,13 @@ namespace MealPlanner.Views
             RSPopup rSPopup = new RSPopup();
             rSPopup.SetTitle(existingAliment.Name);
 
-            this.RSPopupCustomView2.BindingContext = new AlimentPopUpViewModel(existingAliment);
-            rSPopup.SetCustomView(this.RSPopupCustomView2);
+
+            AlimentPopUpViewModel rsPopupBindingContext;
+            RSPopupAlimentDetailPage rSPopupAlimentDetailPage = new RSPopupAlimentDetailPage();
+            rSPopupAlimentDetailPage.BindingContext = new AlimentPopUpViewModel(existingAliment);
+            rsPopupBindingContext = rSPopupAlimentDetailPage.BindingContext as AlimentPopUpViewModel;
+
+            rSPopup.SetCustomView(rSPopupAlimentDetailPage);
             rSPopup.AddAction("Cancel", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive);
             rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(async () => 
             {
@@ -60,19 +65,28 @@ namespace MealPlanner.Views
 
                 if (vm.MealSwitchVisibility)
                 {
-                    IAliment aliment = vm.RefData.CreateAndCopyAlimentProperties(existingAliment);
-                    aliment.ServingSize = (this.RSPopupCustomView2.BindingContext as AlimentPopUpViewModel).AlimentServingSize;
+                    var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
+                    IAliment aliment = vm.RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
+
+                    var lastDayMealId = (BindingContext as AddFoodViewModel).RefData.DayMealAliments.OrderByDescending(x=> x.Id).FirstOrDefault();
+                    if (lastDayMealId != null)
+                        aliment.DayMealAlimentID = lastDayMealId.Id + 1;
+                    else
+                        aliment.DayMealAlimentID = 1;
+
+                    aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
+
 
                     vm.SelectedMealFood.Aliments.Add(aliment);
-                    vm.RefData.DaylyProteins += aliment.Proteins;
-                    vm.RefData.DaylyCarbs += aliment.Carbs;
-                    vm.RefData.DaylyFats += aliment.Fats;
-                    vm.RefData.DaylyCalories += aliment.Calories;
+                    vm.RefData.DaylyProteins += rsPopupBindingContext.AlimentProteins;
+                    vm.RefData.DaylyCarbs += rsPopupBindingContext.AlimentCarbs;
+                    vm.RefData.DaylyFats += rsPopupBindingContext.AlimentFats;
+                    vm.RefData.DaylyCalories += rsPopupBindingContext.AlimentCalories;
 
                     DayMealAliment dayMealAliment = new DayMealAliment();
                     dayMealAliment.DayMealId = vm.SelectedMealFood.Id;
                     dayMealAliment.AlimentId = aliment.Id;
-                    dayMealAliment.ServingSize = (this.RSPopupCustomView2.BindingContext as AlimentPopUpViewModel).AlimentServingSize;
+                    dayMealAliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
                     dayMealAliment.AlimentType = aliment.AlimentType;
 
                     await App.DataBaseRepo.AddDayMealAlimentAsync(dayMealAliment);
@@ -80,8 +94,9 @@ namespace MealPlanner.Views
                 }
                 else
                 {
-                    IAliment aliment = vm.RefData.CreateAndCopyAlimentProperties(existingAliment);
-                    aliment.ServingSize = (this.RSPopupCustomView2.BindingContext as AlimentPopUpViewModel).AlimentServingSize;
+                    var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
+                    IAliment aliment = vm.RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
+                    aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
 
                     MealFood mealFood = new MealFood();
                     mealFood.MealId = vm.CurrentMeal.Id;

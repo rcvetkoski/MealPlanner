@@ -27,8 +27,11 @@ namespace MealPlanner.Models
 
         private double fats;
         public double Fats { get { return fats; } set { fats = value; OnPropertyChanged("Fats"); } }
-        public double ServingSize { get; set; }
-        public int NumberOfPortions { get; set; } = 1;
+        public double OriginalServingSize { get; set; }
+
+        private double servingSize;
+        public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); } }
+        public int DayMealAlimentID { get; set; } = 0;
 
         public AlimentUnitEnum Unit { get; set; }
         public AlimentTypeEnum AlimentType { get { return AlimentTypeEnum.Meal; } }

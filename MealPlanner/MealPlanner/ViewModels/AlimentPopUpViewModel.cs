@@ -3,20 +3,23 @@ using MealPlanner.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace MealPlanner.ViewModels
 {
     public class AlimentPopUpViewModel : BaseViewModel
     {
+        private IAliment aliment;
+
         public AlimentPopUpViewModel(IAliment aliment)
         {
+            this.aliment = aliment;
             AlimentCalories = aliment.Calories;
             AlimentProteins = aliment.Proteins;
             AlimentCarbs = aliment.Carbs;
             AlimentFats = aliment.Fats;
             AlimentServingSize = aliment.ServingSize;
             AlimentUnit = aliment.Unit;
-            AlimentNumberOfPortions = aliment.NumberOfPortions;
         }
 
 
@@ -82,10 +85,20 @@ namespace MealPlanner.ViewModels
         }
         public double AlimentFatsProgress { get; set; }
 
-
-        public double AlimentServingSize { get;set; }
-        public double AlimentNumberOfPortions { get; set; }
+        private double alimentServingSize;
+        public double AlimentServingSize { get { return alimentServingSize; } set { alimentServingSize = value; UpdateNutrimentValues(); OnPropertyChanged("AlimentServingSize"); } }
 
         public AlimentUnitEnum AlimentUnit { get; set; }
+
+
+        private void UpdateNutrimentValues()
+        {
+            double ratio = AlimentServingSize / aliment.OriginalServingSize;
+
+            AlimentCalories = aliment.Calories * ratio;
+            AlimentProteins = aliment.Proteins * ratio;
+            AlimentCarbs = aliment.Carbs * ratio;
+            AlimentFats = aliment.Fats * ratio;
+        }
     }
 }
