@@ -89,6 +89,8 @@ namespace MealPlanner.ViewModels
                     DayMealAliment dayMealAliment = await App.DataBaseRepo.GetDayMealAlimentAsync(aliment.DayMealAlimentID);
                     dayMealAliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
                     await App.DataBaseRepo.UpdateDayMealAliment(dayMealAliment);
+
+                    rSPopup.Close();
                 }));
 
                 // Edit
