@@ -74,6 +74,13 @@ namespace MealPlanner.ViewModels
                     RefData.DaylyFats -= aliment.Fats;
                     RefData.DaylyCalories -= aliment.ServingSize;
 
+                    // Update dayMeal
+                    dayMeal.Proteins -= aliment.Proteins;
+                    dayMeal.Carbs -= aliment.Carbs;
+                    dayMeal.Fats -= aliment.Fats;
+                    dayMeal.Calories -= aliment.Calories;
+
+
                     aliment.Proteins = rSPopupAlimentDetailPageBindingContext.AlimentProteins;
                     aliment.Carbs = rSPopupAlimentDetailPageBindingContext.AlimentCarbs;
                     aliment.Fats = rSPopupAlimentDetailPageBindingContext.AlimentFats;
@@ -85,6 +92,13 @@ namespace MealPlanner.ViewModels
                     RefData.DaylyCarbs += aliment.Carbs;
                     RefData.DaylyFats += aliment.Fats;
                     RefData.DaylyCalories += aliment.ServingSize;
+
+                    // Update dayMeal
+                    dayMeal.Proteins += aliment.Proteins;
+                    dayMeal.Carbs += aliment.Carbs;
+                    dayMeal.Fats += aliment.Fats;
+                    dayMeal.Calories += aliment.Calories;
+
 
                     DayMealAliment dayMealAliment = await App.DataBaseRepo.GetDayMealAlimentAsync(aliment.DayMealAlimentID);
                     dayMealAliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;

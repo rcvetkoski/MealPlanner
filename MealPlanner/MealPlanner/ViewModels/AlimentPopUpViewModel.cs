@@ -2,6 +2,7 @@
 using MealPlanner.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
@@ -11,14 +12,18 @@ namespace MealPlanner.ViewModels
     {
         private IAliment aliment;
 
-        public AlimentPopUpViewModel(IAliment aliment)
+        public AlimentPopUpViewModel(IAliment selectedAliment)
         {
+            var aliment = RefData.Aliments.Where(x=> x.Id == selectedAliment.Id && x.AlimentType == selectedAliment.AlimentType).FirstOrDefault();
+
+
             this.aliment = aliment;
+
             AlimentCalories = aliment.Calories;
             AlimentProteins = aliment.Proteins;
             AlimentCarbs = aliment.Carbs;
             AlimentFats = aliment.Fats;
-            AlimentServingSize = aliment.ServingSize;
+            AlimentServingSize = selectedAliment.ServingSize;
             AlimentUnit = aliment.Unit;
         }
 
