@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
+             xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
+             xmlns:controls="clr-namespace:MealPlanner.Controls"
+             x:Class="MealPlanner.Views.RSPopupAlimentDetailPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal">
+            <Grid ColumnDefinitions="100, *" RowDefinitions="100, Auto">
+                <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Spacing="0">
+                    <Label HorizontalOptions="Center" Text="{Binding AlimentCalories, StringFormat='{0:N1}'}"/>
+                    <Label HorizontalOptions="Center" Text="kcal" FontAttributes="Bold"/>
+                </StackLayout>
+                <controls:CircleCountdown 
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            Grid.Row="0" Grid.Column="0"
+                            Progress="{Binding AlimentCaloriesProgress}"
+                            ProgressStartColor="HotPink"
+                            ProgressEndColor="HotPink"
+                            StrokeWidth="12">
+                </controls:CircleCountdown>
+
+                <Grid Grid.Row="0" Grid.Column="1" ColumnDefinitions="*, *, *" RowDefinitions="Auto, Auto, Auto" VerticalOptions="Center" Margin="5">
+
+                    <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding AlimentProteinProgress, StringFormat='{0:N1}'}"/>
+                                <Span Text=" %"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding AlimentProteins, StringFormat='{0:N1}'}"/>
+                                <Span Text=" g"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="2" Grid.Column="0" Text="Proteins" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding AlimentCarbsProgress, StringFormat='{0:N1}'}"/>
+                                <Span Text=" %"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="1" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding AlimentCarbs, StringFormat='{0:N1}'}"/>
+                                <Span Text=" g"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="2" Grid.Column="1" Text="Carbs" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding AlimentFatsProgress, StringFormat='{0:N1}'}"/>
+                                <Span Text=" %"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="1" Grid.Column="2" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding AlimentFats, StringFormat='{0:N1}'}"/>
+                                <Span Text=" g"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="2" Grid.Column="2" Text="Fats" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto" ColumnDefinitions="2*, *" RowSpacing="0" Margin="5">
+                    <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" RSEntryStyle="FilledBorder" Text="{Binding AlimentServingSize}" Placeholder="Portion"/>
+                    <rsControls:RSEnumPicker Grid.Row="0" Grid.Column="1" x:TypeArguments="enums:AlimentUnitEnum" RSEntryStyle="FilledBorder" SelectedItem="{Binding AlimentUnit}" Placeholder="Unit" Margin="10,0,0,0"/>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

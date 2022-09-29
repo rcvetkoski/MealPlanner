@@ -1,4 +1,5 @@
 ﻿using MealPlanner.Helpers;
+using MealPlanner.Helpers.Enums;
 using MealPlanner.Models;
 using MealPlanner.Services;
 using System;
@@ -16,6 +17,8 @@ namespace MealPlanner.ViewModels
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
         public ReferentialData RefData { get => App.RefData; }
+
+        public AlimentUnitEnum AlimentUnitEnum { get; set; }
 
 
         bool isBusy = false;

@@ -1,4 +1,5 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers.Enums;
+using MealPlanner.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,8 @@ namespace MealPlanner.Services
             dbConnection.CreateTableAsync<User>();
             dbConnection.CreateTableAsync<Meal>();
             dbConnection.CreateTableAsync<Food>();
+            dbConnection.CreateTableAsync<DayMeal>();
+            dbConnection.CreateTableAsync<DayMealAliment>();
             dbConnection.CreateTableAsync<MealFood>().Wait();
             return Task.CompletedTask;
         }
@@ -250,7 +253,7 @@ namespace MealPlanner.Services
         /// </summary>
         /// <param name="mealFood"></param>
         /// <returns></returns>
-        public Task<int> AddRoutineExerciseAsync(MealFood mealFood)
+        public Task<int> AddMealFoodAsync(MealFood mealFood)
         {
             return dbConnection.InsertAsync(mealFood);
         }
@@ -282,7 +285,7 @@ namespace MealPlanner.Services
         /// Deletes all MealFood from database
         /// </summary>
         /// <returns></returns>
-        public Task<int> DeleteAllMealFoodAsync()
+        public Task<int> DeleteAllMealFoodsAsync()
         {
             return dbConnection.DeleteAllAsync<MealFood>();
         }
@@ -294,6 +297,188 @@ namespace MealPlanner.Services
         public Task<int> DropTableMealFood()
         {
             return dbConnection.DropTableAsync<MealFood>();
+        }
+
+        #endregion
+
+        #region DayMeal
+
+        /// <summary>
+        /// Returns a MeDayMealalFood from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<DayMeal> GetDayMealAsync(int id)
+        {
+            return dbConnection.GetAsync<DayMeal>(id);
+        }
+
+        /// <summary>
+        /// Returns all DayMeal from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<DayMeal>> GetAllDayMealsAsync()
+        {
+            return dbConnection.Table<DayMeal>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts a DayMeal in database
+        /// </summary>
+        /// <param name="dayMeal"></param>
+        /// <returns></returns>
+        public Task<int> AddDayMealAsync(DayMeal dayMeal)
+        {
+            return dbConnection.InsertAsync(dayMeal);
+        }
+
+        /// <summary>
+        /// Updates a DayMeal from database
+        /// </summary>
+        /// <param name="dayMeal"></param>
+        /// <returns></returns>
+        public Task<int> UpdateDayMeal(DayMeal dayMeal)
+        {
+            if (GetMealFoodAsync(dayMeal.Id) != null)
+                return dbConnection.UpdateAsync(dayMeal);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Deletes a DayMeal from database
+        /// </summary>
+        /// <param name="dayMeal"></param>
+        /// <returns></returns>
+        public Task<int> DeleteDayMealAsync(DayMeal dayMeal)
+        {
+            return dbConnection.DeleteAsync(dayMeal);
+        }
+
+        /// <summary>
+        /// Deletes all DayMeal from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DeleteAllDayMealsAsync()
+        {
+            return dbConnection.DeleteAllAsync<DayMeal>();
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableDayMeal()
+        {
+            return dbConnection.DropTableAsync<DayMeal>();
+        }
+
+        #endregion
+
+        #region DayMealAliment
+
+        /// <summary>
+        /// Returns a DayMealAliment from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<DayMealAliment> GetDayMealAlimentAsync(int id)
+        {
+            return dbConnection.GetAsync<DayMealAliment>(id);
+        }
+
+        /// <summary>
+        /// Returns all DayMealAliment from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<DayMealAliment>> GetAllDayMealAlimentsAsync()
+        {
+            return dbConnection.Table<DayMealAliment>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Returns a DayMealAliment based on dayMeal_id , aliment_id and alimentType
+        /// </summary>
+        /// <param name="alimentType"></param>
+        /// <param name="dayMeal_id"></param>
+        /// <param name="aliment_id"></param>
+        /// <returns></returns>
+        public Task<DayMealAliment> GetDayMealAlimentAsync(AlimentTypeEnum alimentType, int dayMeal_id = 0, int aliment_id = 0)
+        {
+            if (dayMeal_id != 0 && aliment_id != 0)
+                return dbConnection.Table<DayMealAliment>().Where(x => x.DayMealId == dayMeal_id && x.AlimentId == aliment_id && x.AlimentType == alimentType).FirstOrDefaultAsync();
+            else
+                return null;
+        }
+
+        /// <summary>
+        /// Returns a list of DayMealAliment based on dayMeal_id or aliment_id or alimentType
+        /// </summary>
+        /// <param name="alimentType"></param>
+        /// <param name="dayMeal_id"></param>
+        /// <param name="aliment_id"></param>
+        /// <returns></returns>
+        public Task<List<DayMealAliment>> GetDayMealAlimentsAsync(AlimentTypeEnum alimentType, int dayMeal_id = 0, int aliment_id = 0)
+        {
+            if (dayMeal_id != 0 && aliment_id != 0)
+                return dbConnection.Table<DayMealAliment>().Where(x => x.DayMealId == dayMeal_id && x.AlimentId == aliment_id && x.AlimentType == alimentType).ToListAsync();
+            else if (dayMeal_id != 0)
+                return dbConnection.Table<DayMealAliment>().Where(x => x.DayMealId == dayMeal_id).ToListAsync();
+            else if (aliment_id != 0)
+                return dbConnection.Table<DayMealAliment>().Where(x => x.AlimentId == aliment_id && x.AlimentType == alimentType).ToListAsync();
+            else
+                return Task.FromResult(new List<DayMealAliment>());
+        }
+
+        /// <summary>
+        /// Inserts a DayMealAliment in database
+        /// </summary>
+        /// <param name="dayMealAliment"></param>
+        /// <returns></returns>
+        public Task<int> AddDayMealAlimentAsync(DayMealAliment dayMealAliment)
+        {
+            return dbConnection.InsertAsync(dayMealAliment);
+        }
+
+        /// <summary>
+        /// Updates a DayMealAliment from database
+        /// </summary>
+        /// <param name="dayMealAliment"></param>
+        /// <returns></returns>
+        public Task<int> UpdateDayMealAliment(DayMealAliment dayMealAliment)
+        {
+            if (GetMealFoodAsync(dayMealAliment.Id) != null)
+                return dbConnection.UpdateAsync(dayMealAliment);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Deletes a DayMealAliment from database
+        /// </summary>
+        /// <param name="dayMealAliment"></param>
+        /// <returns></returns>
+        public Task<int> DeleteDayMealAlimentAsync(DayMealAliment dayMealAliment)
+        {
+            return dbConnection.DeleteAsync(dayMealAliment);
+        }
+
+        /// <summary>
+        /// Deletes all DayMealAliment from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DeleteAllDayMealAlimentsAsync()
+        {
+            return dbConnection.DeleteAllAsync<DayMealAliment>();
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableDayMealAliment()
+        {
+            return dbConnection.DropTableAsync<DayMealAliment>();
         }
 
         #endregion

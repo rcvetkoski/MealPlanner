@@ -1,4 +1,5 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers.Enums;
+using MealPlanner.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,6 @@ namespace MealPlanner.Services
         Task<int> AddUserAsync(User user);
         Task<int> UpdateUserAsync(User user);
         Task<int> DropTableUser();
-
 
 
         // Meal
@@ -36,13 +36,31 @@ namespace MealPlanner.Services
         Task<MealFood> GetMealFoodAsync(int id);
         Task<List<MealFood>> GetMealFoodsAsync(int meal_id, int food_id);
         Task<List<MealFood>> GetAllMealFoodsAsync();
-        Task<int> AddRoutineExerciseAsync(MealFood mealFood);
+        Task<int> AddMealFoodAsync(MealFood mealFood);
         Task<int> UpdateMealFood(MealFood mealFood);
         Task<int> DeleteMealFoodAsync(MealFood mealFood);
-        Task<int> DeleteAllMealFoodAsync();
+        Task<int> DeleteAllMealFoodsAsync();
         Task<int> DropTableMealFood();
 
+        //DayMeal
+        Task<DayMeal> GetDayMealAsync(int id);
+        Task<List<DayMeal>> GetAllDayMealsAsync();
+        Task<int> AddDayMealAsync(DayMeal dayMeal);
+        Task<int> UpdateDayMeal(DayMeal dayMeal);
+        Task<int> DeleteDayMealAsync(DayMeal dayMeal);
+        Task<int> DeleteAllDayMealsAsync();
+        Task<int> DropTableDayMeal();
 
 
+        //DayMealAliment
+        Task<DayMealAliment> GetDayMealAlimentAsync(int id);
+        Task<List<DayMealAliment>> GetAllDayMealAlimentsAsync();
+        Task<DayMealAliment> GetDayMealAlimentAsync(AlimentTypeEnum alimentType, int dayMeal_id, int aliment_id);
+        Task<List<DayMealAliment>> GetDayMealAlimentsAsync(AlimentTypeEnum alimentType,int dayMeal_id, int aliment_id);
+        Task<int> UpdateDayMealAliment(DayMealAliment dayMealAliment);
+        Task<int> AddDayMealAlimentAsync(DayMealAliment dayMealAliment);
+        Task<int> DeleteDayMealAlimentAsync(DayMealAliment dayMealAliment);
+        Task<int> DeleteAllDayMealAlimentsAsync();
+        Task<int> DropTableDayMealAliment();
     }
 }

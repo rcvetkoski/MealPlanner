@@ -27,13 +27,15 @@ namespace MealPlanner.Models
             }
             else if(e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
             {
-                Calories -= (e.NewItems[0] as IAliment).Calories;
-                Proteins -= (e.NewItems[0] as IAliment).Proteins;
-                Carbs -= (e.NewItems[0] as IAliment).Carbs;
-                Fats -= (e.NewItems[0] as IAliment).Fats;
+                Calories -= (e.OldItems[0] as IAliment).Calories;
+                Proteins -= (e.OldItems[0] as IAliment).Proteins;
+                Carbs -= (e.OldItems[0] as IAliment).Carbs;
+                Fats -= (e.OldItems[0] as IAliment).Fats;
             }
         }
 
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Order { get; set; }
 

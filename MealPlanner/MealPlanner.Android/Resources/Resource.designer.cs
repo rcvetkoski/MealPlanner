@@ -13415,6 +13415,4004 @@ namespace MealPlanner.Droid
 			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge_gravity_bottom_start = global::MealPlanner.Droid.Resource.Xml.standalone_badge_gravity_bottom_start;
 			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge_gravity_top_start = global::MealPlanner.Droid.Resource.Xml.standalone_badge_gravity_top_start;
 			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge_offset = global::MealPlanner.Droid.Resource.Xml.standalone_badge_offset;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_fade_in = global::MealPlanner.Droid.Resource.Animation.abc_fade_in;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_fade_out = global::MealPlanner.Droid.Resource.Animation.abc_fade_out;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::MealPlanner.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_popup_enter = global::MealPlanner.Droid.Resource.Animation.abc_popup_enter;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_popup_exit = global::MealPlanner.Droid.Resource.Animation.abc_popup_exit;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom = global::MealPlanner.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_slide_in_bottom = global::MealPlanner.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_slide_in_top = global::MealPlanner.Droid.Resource.Animation.abc_slide_in_top;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_slide_out_bottom = global::MealPlanner.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_slide_out_top = global::MealPlanner.Droid.Resource.Animation.abc_slide_out_top;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_tooltip_enter = global::MealPlanner.Droid.Resource.Animation.abc_tooltip_enter;
+			global::Xamarin.RSControls.Droid.Resource.Animation.abc_tooltip_exit = global::MealPlanner.Droid.Resource.Animation.abc_tooltip_exit;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation = global::MealPlanner.Droid.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation = global::MealPlanner.Droid.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_checkbox_to_checked_icon_null_animation = global::MealPlanner.Droid.Resource.Animation.btn_checkbox_to_checked_icon_null_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation = global::MealPlanner.Droid.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation = global::MealPlanner.Droid.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation = global::MealPlanner.Droid.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation = global::MealPlanner.Droid.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation = global::MealPlanner.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation = global::MealPlanner.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation = global::MealPlanner.Droid.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation = global::MealPlanner.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation = global::MealPlanner.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation;
+			global::Xamarin.RSControls.Droid.Resource.Animation.design_bottom_sheet_slide_in = global::MealPlanner.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::Xamarin.RSControls.Droid.Resource.Animation.design_bottom_sheet_slide_out = global::MealPlanner.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::Xamarin.RSControls.Droid.Resource.Animation.design_snackbar_in = global::MealPlanner.Droid.Resource.Animation.design_snackbar_in;
+			global::Xamarin.RSControls.Droid.Resource.Animation.design_snackbar_out = global::MealPlanner.Droid.Resource.Animation.design_snackbar_out;
+			global::Xamarin.RSControls.Droid.Resource.Animation.EnterFromLeft = global::MealPlanner.Droid.Resource.Animation.EnterFromLeft;
+			global::Xamarin.RSControls.Droid.Resource.Animation.EnterFromRight = global::MealPlanner.Droid.Resource.Animation.EnterFromRight;
+			global::Xamarin.RSControls.Droid.Resource.Animation.ExitToLeft = global::MealPlanner.Droid.Resource.Animation.ExitToLeft;
+			global::Xamarin.RSControls.Droid.Resource.Animation.ExitToRight = global::MealPlanner.Droid.Resource.Animation.ExitToRight;
+			global::Xamarin.RSControls.Droid.Resource.Animation.fragment_fast_out_extra_slow_in = global::MealPlanner.Droid.Resource.Animation.fragment_fast_out_extra_slow_in;
+			global::Xamarin.RSControls.Droid.Resource.Animation.mtrl_bottom_sheet_slide_in = global::MealPlanner.Droid.Resource.Animation.mtrl_bottom_sheet_slide_in;
+			global::Xamarin.RSControls.Droid.Resource.Animation.mtrl_bottom_sheet_slide_out = global::MealPlanner.Droid.Resource.Animation.mtrl_bottom_sheet_slide_out;
+			global::Xamarin.RSControls.Droid.Resource.Animation.mtrl_card_lowers_interpolator = global::MealPlanner.Droid.Resource.Animation.mtrl_card_lowers_interpolator;
+			global::Xamarin.RSControls.Droid.Resource.Animation.nav_default_enter_anim = global::MealPlanner.Droid.Resource.Animation.nav_default_enter_anim;
+			global::Xamarin.RSControls.Droid.Resource.Animation.nav_default_exit_anim = global::MealPlanner.Droid.Resource.Animation.nav_default_exit_anim;
+			global::Xamarin.RSControls.Droid.Resource.Animation.nav_default_pop_enter_anim = global::MealPlanner.Droid.Resource.Animation.nav_default_pop_enter_anim;
+			global::Xamarin.RSControls.Droid.Resource.Animation.nav_default_pop_exit_anim = global::MealPlanner.Droid.Resource.Animation.nav_default_pop_exit_anim;
+			global::Xamarin.RSControls.Droid.Resource.Animator.design_appbar_state_list_animator = global::MealPlanner.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::Xamarin.RSControls.Droid.Resource.Animator.design_fab_hide_motion_spec = global::MealPlanner.Droid.Resource.Animator.design_fab_hide_motion_spec;
+			global::Xamarin.RSControls.Droid.Resource.Animator.design_fab_show_motion_spec = global::MealPlanner.Droid.Resource.Animator.design_fab_show_motion_spec;
+			global::Xamarin.RSControls.Droid.Resource.Animator.fade_in_scale_in = global::MealPlanner.Droid.Resource.Animator.fade_in_scale_in;
+			global::Xamarin.RSControls.Droid.Resource.Animator.fade_out_scale_out = global::MealPlanner.Droid.Resource.Animator.fade_out_scale_out;
+			global::Xamarin.RSControls.Droid.Resource.Animator.fragment_close_enter = global::MealPlanner.Droid.Resource.Animator.fragment_close_enter;
+			global::Xamarin.RSControls.Droid.Resource.Animator.fragment_close_exit = global::MealPlanner.Droid.Resource.Animator.fragment_close_exit;
+			global::Xamarin.RSControls.Droid.Resource.Animator.fragment_fade_enter = global::MealPlanner.Droid.Resource.Animator.fragment_fade_enter;
+			global::Xamarin.RSControls.Droid.Resource.Animator.fragment_fade_exit = global::MealPlanner.Droid.Resource.Animator.fragment_fade_exit;
+			global::Xamarin.RSControls.Droid.Resource.Animator.fragment_open_enter = global::MealPlanner.Droid.Resource.Animator.fragment_open_enter;
+			global::Xamarin.RSControls.Droid.Resource.Animator.fragment_open_exit = global::MealPlanner.Droid.Resource.Animator.fragment_open_exit;
+			global::Xamarin.RSControls.Droid.Resource.Animator.mtrl_btn_state_list_anim = global::MealPlanner.Droid.Resource.Animator.mtrl_btn_state_list_anim;
+			global::Xamarin.RSControls.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::MealPlanner.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
+			global::Xamarin.RSControls.Droid.Resource.Animator.mtrl_card_state_list_anim = global::MealPlanner.Droid.Resource.Animator.mtrl_card_state_list_anim;
+			global::Xamarin.RSControls.Droid.Resource.Animator.mtrl_chip_state_list_anim = global::MealPlanner.Droid.Resource.Animator.mtrl_chip_state_list_anim;
+			global::Xamarin.RSControls.Droid.Resource.Animator.mtrl_extended_fab_hide_motion_spec = global::MealPlanner.Droid.Resource.Animator.mtrl_extended_fab_hide_motion_spec;
+			global::Xamarin.RSControls.Droid.Resource.Animator.mtrl_extended_fab_show_motion_spec = global::MealPlanner.Droid.Resource.Animator.mtrl_extended_fab_show_motion_spec;
+			global::Xamarin.RSControls.Droid.Resource.Animator.mtrl_extended_fab_state_list_animator = global::MealPlanner.Droid.Resource.Animator.mtrl_extended_fab_state_list_animator;
+			global::Xamarin.RSControls.Droid.Resource.Animator.mtrl_fab_hide_motion_spec = global::MealPlanner.Droid.Resource.Animator.mtrl_fab_hide_motion_spec;
+			global::Xamarin.RSControls.Droid.Resource.Animator.mtrl_fab_show_motion_spec = global::MealPlanner.Droid.Resource.Animator.mtrl_fab_show_motion_spec;
+			global::Xamarin.RSControls.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec = global::MealPlanner.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec;
+			global::Xamarin.RSControls.Droid.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec = global::MealPlanner.Droid.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec;
+			global::Xamarin.RSControls.Droid.Resource.Animator.nav_default_enter_anim = global::MealPlanner.Droid.Resource.Animator.nav_default_enter_anim;
+			global::Xamarin.RSControls.Droid.Resource.Animator.nav_default_exit_anim = global::MealPlanner.Droid.Resource.Animator.nav_default_exit_anim;
+			global::Xamarin.RSControls.Droid.Resource.Animator.nav_default_pop_enter_anim = global::MealPlanner.Droid.Resource.Animator.nav_default_pop_enter_anim;
+			global::Xamarin.RSControls.Droid.Resource.Animator.nav_default_pop_exit_anim = global::MealPlanner.Droid.Resource.Animator.nav_default_pop_exit_anim;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.action = global::MealPlanner.Droid.Resource.Attribute.action;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionBarDivider = global::MealPlanner.Droid.Resource.Attribute.actionBarDivider;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionBarItemBackground = global::MealPlanner.Droid.Resource.Attribute.actionBarItemBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionBarPopupTheme = global::MealPlanner.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionBarSize = global::MealPlanner.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionBarSplitStyle = global::MealPlanner.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionBarStyle = global::MealPlanner.Droid.Resource.Attribute.actionBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionBarTabBarStyle = global::MealPlanner.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionBarTabStyle = global::MealPlanner.Droid.Resource.Attribute.actionBarTabStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionBarTabTextStyle = global::MealPlanner.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionBarTheme = global::MealPlanner.Droid.Resource.Attribute.actionBarTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionBarWidgetTheme = global::MealPlanner.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionButtonStyle = global::MealPlanner.Droid.Resource.Attribute.actionButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionDropDownStyle = global::MealPlanner.Droid.Resource.Attribute.actionDropDownStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionLayout = global::MealPlanner.Droid.Resource.Attribute.actionLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionMenuTextAppearance = global::MealPlanner.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionMenuTextColor = global::MealPlanner.Droid.Resource.Attribute.actionMenuTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeBackground = global::MealPlanner.Droid.Resource.Attribute.actionModeBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeCloseButtonStyle = global::MealPlanner.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeCloseDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeCopyDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeCutDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeFindDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModePasteDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModePopupWindowStyle = global::MealPlanner.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeSelectAllDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeShareDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeSplitBackground = global::MealPlanner.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeStyle = global::MealPlanner.Droid.Resource.Attribute.actionModeStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeWebSearchDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionOverflowButtonStyle = global::MealPlanner.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionOverflowMenuStyle = global::MealPlanner.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionProviderClass = global::MealPlanner.Droid.Resource.Attribute.actionProviderClass;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionTextColorAlpha = global::MealPlanner.Droid.Resource.Attribute.actionTextColorAlpha;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionViewClass = global::MealPlanner.Droid.Resource.Attribute.actionViewClass;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.activityChooserViewStyle = global::MealPlanner.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.adjustable = global::MealPlanner.Droid.Resource.Attribute.adjustable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.alertDialogButtonGroupStyle = global::MealPlanner.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.alertDialogCenterButtons = global::MealPlanner.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.alertDialogStyle = global::MealPlanner.Droid.Resource.Attribute.alertDialogStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.alertDialogTheme = global::MealPlanner.Droid.Resource.Attribute.alertDialogTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.allowDividerAbove = global::MealPlanner.Droid.Resource.Attribute.allowDividerAbove;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.allowDividerAfterLastItem = global::MealPlanner.Droid.Resource.Attribute.allowDividerAfterLastItem;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.allowDividerBelow = global::MealPlanner.Droid.Resource.Attribute.allowDividerBelow;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.allowStacking = global::MealPlanner.Droid.Resource.Attribute.allowStacking;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.alpha = global::MealPlanner.Droid.Resource.Attribute.alpha;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.alphabeticModifiers = global::MealPlanner.Droid.Resource.Attribute.alphabeticModifiers;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.animationMode = global::MealPlanner.Droid.Resource.Attribute.animationMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.appBarLayoutStyle = global::MealPlanner.Droid.Resource.Attribute.appBarLayoutStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.argType = global::MealPlanner.Droid.Resource.Attribute.argType;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.arrowHeadLength = global::MealPlanner.Droid.Resource.Attribute.arrowHeadLength;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.arrowShaftLength = global::MealPlanner.Droid.Resource.Attribute.arrowShaftLength;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.autoCompleteTextViewStyle = global::MealPlanner.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.autoSizeMaxTextSize = global::MealPlanner.Droid.Resource.Attribute.autoSizeMaxTextSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.autoSizeMinTextSize = global::MealPlanner.Droid.Resource.Attribute.autoSizeMinTextSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.autoSizePresetSizes = global::MealPlanner.Droid.Resource.Attribute.autoSizePresetSizes;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.autoSizeStepGranularity = global::MealPlanner.Droid.Resource.Attribute.autoSizeStepGranularity;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.autoSizeTextType = global::MealPlanner.Droid.Resource.Attribute.autoSizeTextType;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.background = global::MealPlanner.Droid.Resource.Attribute.background;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.backgroundColor = global::MealPlanner.Droid.Resource.Attribute.backgroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.backgroundInsetBottom = global::MealPlanner.Droid.Resource.Attribute.backgroundInsetBottom;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.backgroundInsetEnd = global::MealPlanner.Droid.Resource.Attribute.backgroundInsetEnd;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.backgroundInsetStart = global::MealPlanner.Droid.Resource.Attribute.backgroundInsetStart;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.backgroundInsetTop = global::MealPlanner.Droid.Resource.Attribute.backgroundInsetTop;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.backgroundOverlayColorAlpha = global::MealPlanner.Droid.Resource.Attribute.backgroundOverlayColorAlpha;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.backgroundSplit = global::MealPlanner.Droid.Resource.Attribute.backgroundSplit;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.backgroundStacked = global::MealPlanner.Droid.Resource.Attribute.backgroundStacked;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.backgroundTint = global::MealPlanner.Droid.Resource.Attribute.backgroundTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.backgroundTintMode = global::MealPlanner.Droid.Resource.Attribute.backgroundTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.badgeGravity = global::MealPlanner.Droid.Resource.Attribute.badgeGravity;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.badgeStyle = global::MealPlanner.Droid.Resource.Attribute.badgeStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.badgeTextColor = global::MealPlanner.Droid.Resource.Attribute.badgeTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.barLength = global::MealPlanner.Droid.Resource.Attribute.barLength;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.behavior_autoHide = global::MealPlanner.Droid.Resource.Attribute.behavior_autoHide;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.behavior_autoShrink = global::MealPlanner.Droid.Resource.Attribute.behavior_autoShrink;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.behavior_draggable = global::MealPlanner.Droid.Resource.Attribute.behavior_draggable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.behavior_expandedOffset = global::MealPlanner.Droid.Resource.Attribute.behavior_expandedOffset;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.behavior_fitToContents = global::MealPlanner.Droid.Resource.Attribute.behavior_fitToContents;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.behavior_halfExpandedRatio = global::MealPlanner.Droid.Resource.Attribute.behavior_halfExpandedRatio;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.behavior_hideable = global::MealPlanner.Droid.Resource.Attribute.behavior_hideable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.behavior_overlapTop = global::MealPlanner.Droid.Resource.Attribute.behavior_overlapTop;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.behavior_peekHeight = global::MealPlanner.Droid.Resource.Attribute.behavior_peekHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.behavior_saveFlags = global::MealPlanner.Droid.Resource.Attribute.behavior_saveFlags;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.behavior_skipCollapsed = global::MealPlanner.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.borderlessButtonStyle = global::MealPlanner.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.borderWidth = global::MealPlanner.Droid.Resource.Attribute.borderWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.bottomAppBarStyle = global::MealPlanner.Droid.Resource.Attribute.bottomAppBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.bottomNavigationStyle = global::MealPlanner.Droid.Resource.Attribute.bottomNavigationStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.bottomSheetDialogTheme = global::MealPlanner.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.bottomSheetStyle = global::MealPlanner.Droid.Resource.Attribute.bottomSheetStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.boxBackgroundColor = global::MealPlanner.Droid.Resource.Attribute.boxBackgroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.boxBackgroundMode = global::MealPlanner.Droid.Resource.Attribute.boxBackgroundMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.boxCollapsedPaddingTop = global::MealPlanner.Droid.Resource.Attribute.boxCollapsedPaddingTop;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.boxCornerRadiusBottomEnd = global::MealPlanner.Droid.Resource.Attribute.boxCornerRadiusBottomEnd;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.boxCornerRadiusBottomStart = global::MealPlanner.Droid.Resource.Attribute.boxCornerRadiusBottomStart;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.boxCornerRadiusTopEnd = global::MealPlanner.Droid.Resource.Attribute.boxCornerRadiusTopEnd;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.boxCornerRadiusTopStart = global::MealPlanner.Droid.Resource.Attribute.boxCornerRadiusTopStart;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.boxStrokeColor = global::MealPlanner.Droid.Resource.Attribute.boxStrokeColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.boxStrokeErrorColor = global::MealPlanner.Droid.Resource.Attribute.boxStrokeErrorColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.boxStrokeWidth = global::MealPlanner.Droid.Resource.Attribute.boxStrokeWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.boxStrokeWidthFocused = global::MealPlanner.Droid.Resource.Attribute.boxStrokeWidthFocused;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonBarButtonStyle = global::MealPlanner.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonBarNegativeButtonStyle = global::MealPlanner.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonBarNeutralButtonStyle = global::MealPlanner.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonBarPositiveButtonStyle = global::MealPlanner.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonBarStyle = global::MealPlanner.Droid.Resource.Attribute.buttonBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonCompat = global::MealPlanner.Droid.Resource.Attribute.buttonCompat;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonGravity = global::MealPlanner.Droid.Resource.Attribute.buttonGravity;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonIconDimen = global::MealPlanner.Droid.Resource.Attribute.buttonIconDimen;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonPanelSideLayout = global::MealPlanner.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonStyle = global::MealPlanner.Droid.Resource.Attribute.buttonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonStyleSmall = global::MealPlanner.Droid.Resource.Attribute.buttonStyleSmall;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonTint = global::MealPlanner.Droid.Resource.Attribute.buttonTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.buttonTintMode = global::MealPlanner.Droid.Resource.Attribute.buttonTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cardBackgroundColor = global::MealPlanner.Droid.Resource.Attribute.cardBackgroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cardCornerRadius = global::MealPlanner.Droid.Resource.Attribute.cardCornerRadius;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cardElevation = global::MealPlanner.Droid.Resource.Attribute.cardElevation;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cardForegroundColor = global::MealPlanner.Droid.Resource.Attribute.cardForegroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cardMaxElevation = global::MealPlanner.Droid.Resource.Attribute.cardMaxElevation;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cardPreventCornerOverlap = global::MealPlanner.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cardUseCompatPadding = global::MealPlanner.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cardViewStyle = global::MealPlanner.Droid.Resource.Attribute.cardViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.checkBoxPreferenceStyle = global::MealPlanner.Droid.Resource.Attribute.checkBoxPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.checkboxStyle = global::MealPlanner.Droid.Resource.Attribute.checkboxStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.checkedButton = global::MealPlanner.Droid.Resource.Attribute.checkedButton;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.checkedChip = global::MealPlanner.Droid.Resource.Attribute.checkedChip;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.checkedIcon = global::MealPlanner.Droid.Resource.Attribute.checkedIcon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.checkedIconEnabled = global::MealPlanner.Droid.Resource.Attribute.checkedIconEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.checkedIconTint = global::MealPlanner.Droid.Resource.Attribute.checkedIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.checkedIconVisible = global::MealPlanner.Droid.Resource.Attribute.checkedIconVisible;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.checkedTextViewStyle = global::MealPlanner.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipBackgroundColor = global::MealPlanner.Droid.Resource.Attribute.chipBackgroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipCornerRadius = global::MealPlanner.Droid.Resource.Attribute.chipCornerRadius;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipEndPadding = global::MealPlanner.Droid.Resource.Attribute.chipEndPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipGroupStyle = global::MealPlanner.Droid.Resource.Attribute.chipGroupStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipIcon = global::MealPlanner.Droid.Resource.Attribute.chipIcon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipIconEnabled = global::MealPlanner.Droid.Resource.Attribute.chipIconEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipIconSize = global::MealPlanner.Droid.Resource.Attribute.chipIconSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipIconTint = global::MealPlanner.Droid.Resource.Attribute.chipIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipIconVisible = global::MealPlanner.Droid.Resource.Attribute.chipIconVisible;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipMinHeight = global::MealPlanner.Droid.Resource.Attribute.chipMinHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipMinTouchTargetSize = global::MealPlanner.Droid.Resource.Attribute.chipMinTouchTargetSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipSpacing = global::MealPlanner.Droid.Resource.Attribute.chipSpacing;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipSpacingHorizontal = global::MealPlanner.Droid.Resource.Attribute.chipSpacingHorizontal;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipSpacingVertical = global::MealPlanner.Droid.Resource.Attribute.chipSpacingVertical;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipStandaloneStyle = global::MealPlanner.Droid.Resource.Attribute.chipStandaloneStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipStartPadding = global::MealPlanner.Droid.Resource.Attribute.chipStartPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipStrokeColor = global::MealPlanner.Droid.Resource.Attribute.chipStrokeColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipStrokeWidth = global::MealPlanner.Droid.Resource.Attribute.chipStrokeWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipStyle = global::MealPlanner.Droid.Resource.Attribute.chipStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.chipSurfaceColor = global::MealPlanner.Droid.Resource.Attribute.chipSurfaceColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.closeIcon = global::MealPlanner.Droid.Resource.Attribute.closeIcon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.closeIconEnabled = global::MealPlanner.Droid.Resource.Attribute.closeIconEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.closeIconEndPadding = global::MealPlanner.Droid.Resource.Attribute.closeIconEndPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.closeIconSize = global::MealPlanner.Droid.Resource.Attribute.closeIconSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.closeIconStartPadding = global::MealPlanner.Droid.Resource.Attribute.closeIconStartPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.closeIconTint = global::MealPlanner.Droid.Resource.Attribute.closeIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.closeIconVisible = global::MealPlanner.Droid.Resource.Attribute.closeIconVisible;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.closeItemLayout = global::MealPlanner.Droid.Resource.Attribute.closeItemLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.collapseContentDescription = global::MealPlanner.Droid.Resource.Attribute.collapseContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.collapsedTitleGravity = global::MealPlanner.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.collapsedTitleTextAppearance = global::MealPlanner.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.collapseIcon = global::MealPlanner.Droid.Resource.Attribute.collapseIcon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.collectionViewStyle = global::MealPlanner.Droid.Resource.Attribute.collectionViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.color = global::MealPlanner.Droid.Resource.Attribute.color;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorAccent = global::MealPlanner.Droid.Resource.Attribute.colorAccent;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorBackgroundFloating = global::MealPlanner.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorButtonNormal = global::MealPlanner.Droid.Resource.Attribute.colorButtonNormal;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorControlActivated = global::MealPlanner.Droid.Resource.Attribute.colorControlActivated;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorControlHighlight = global::MealPlanner.Droid.Resource.Attribute.colorControlHighlight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorControlNormal = global::MealPlanner.Droid.Resource.Attribute.colorControlNormal;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorError = global::MealPlanner.Droid.Resource.Attribute.colorError;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorOnBackground = global::MealPlanner.Droid.Resource.Attribute.colorOnBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorOnError = global::MealPlanner.Droid.Resource.Attribute.colorOnError;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorOnPrimary = global::MealPlanner.Droid.Resource.Attribute.colorOnPrimary;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorOnPrimarySurface = global::MealPlanner.Droid.Resource.Attribute.colorOnPrimarySurface;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorOnSecondary = global::MealPlanner.Droid.Resource.Attribute.colorOnSecondary;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorOnSurface = global::MealPlanner.Droid.Resource.Attribute.colorOnSurface;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorPrimary = global::MealPlanner.Droid.Resource.Attribute.colorPrimary;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorPrimaryDark = global::MealPlanner.Droid.Resource.Attribute.colorPrimaryDark;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorPrimarySurface = global::MealPlanner.Droid.Resource.Attribute.colorPrimarySurface;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorPrimaryVariant = global::MealPlanner.Droid.Resource.Attribute.colorPrimaryVariant;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorSecondary = global::MealPlanner.Droid.Resource.Attribute.colorSecondary;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorSecondaryVariant = global::MealPlanner.Droid.Resource.Attribute.colorSecondaryVariant;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorSurface = global::MealPlanner.Droid.Resource.Attribute.colorSurface;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.colorSwitchThumbNormal = global::MealPlanner.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.commitIcon = global::MealPlanner.Droid.Resource.Attribute.commitIcon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentDescription = global::MealPlanner.Droid.Resource.Attribute.contentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentInsetEnd = global::MealPlanner.Droid.Resource.Attribute.contentInsetEnd;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentInsetEndWithActions = global::MealPlanner.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentInsetLeft = global::MealPlanner.Droid.Resource.Attribute.contentInsetLeft;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentInsetRight = global::MealPlanner.Droid.Resource.Attribute.contentInsetRight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentInsetStart = global::MealPlanner.Droid.Resource.Attribute.contentInsetStart;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentInsetStartWithNavigation = global::MealPlanner.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentPadding = global::MealPlanner.Droid.Resource.Attribute.contentPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentPaddingBottom = global::MealPlanner.Droid.Resource.Attribute.contentPaddingBottom;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentPaddingLeft = global::MealPlanner.Droid.Resource.Attribute.contentPaddingLeft;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentPaddingRight = global::MealPlanner.Droid.Resource.Attribute.contentPaddingRight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentPaddingTop = global::MealPlanner.Droid.Resource.Attribute.contentPaddingTop;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.contentScrim = global::MealPlanner.Droid.Resource.Attribute.contentScrim;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.controlBackground = global::MealPlanner.Droid.Resource.Attribute.controlBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.coordinatorLayoutStyle = global::MealPlanner.Droid.Resource.Attribute.coordinatorLayoutStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cornerFamily = global::MealPlanner.Droid.Resource.Attribute.cornerFamily;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cornerFamilyBottomLeft = global::MealPlanner.Droid.Resource.Attribute.cornerFamilyBottomLeft;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cornerFamilyBottomRight = global::MealPlanner.Droid.Resource.Attribute.cornerFamilyBottomRight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cornerFamilyTopLeft = global::MealPlanner.Droid.Resource.Attribute.cornerFamilyTopLeft;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cornerFamilyTopRight = global::MealPlanner.Droid.Resource.Attribute.cornerFamilyTopRight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cornerRadius = global::MealPlanner.Droid.Resource.Attribute.cornerRadius;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cornerSize = global::MealPlanner.Droid.Resource.Attribute.cornerSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cornerSizeBottomLeft = global::MealPlanner.Droid.Resource.Attribute.cornerSizeBottomLeft;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cornerSizeBottomRight = global::MealPlanner.Droid.Resource.Attribute.cornerSizeBottomRight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cornerSizeTopLeft = global::MealPlanner.Droid.Resource.Attribute.cornerSizeTopLeft;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.cornerSizeTopRight = global::MealPlanner.Droid.Resource.Attribute.cornerSizeTopRight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.counterEnabled = global::MealPlanner.Droid.Resource.Attribute.counterEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.counterMaxLength = global::MealPlanner.Droid.Resource.Attribute.counterMaxLength;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.counterOverflowTextAppearance = global::MealPlanner.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.counterOverflowTextColor = global::MealPlanner.Droid.Resource.Attribute.counterOverflowTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.counterTextAppearance = global::MealPlanner.Droid.Resource.Attribute.counterTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.counterTextColor = global::MealPlanner.Droid.Resource.Attribute.counterTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.customNavigationLayout = global::MealPlanner.Droid.Resource.Attribute.customNavigationLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.data = global::MealPlanner.Droid.Resource.Attribute.data;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dataPattern = global::MealPlanner.Droid.Resource.Attribute.dataPattern;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dayInvalidStyle = global::MealPlanner.Droid.Resource.Attribute.dayInvalidStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.daySelectedStyle = global::MealPlanner.Droid.Resource.Attribute.daySelectedStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dayStyle = global::MealPlanner.Droid.Resource.Attribute.dayStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dayTodayStyle = global::MealPlanner.Droid.Resource.Attribute.dayTodayStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.defaultQueryHint = global::MealPlanner.Droid.Resource.Attribute.defaultQueryHint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.defaultValue = global::MealPlanner.Droid.Resource.Attribute.defaultValue;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dependency = global::MealPlanner.Droid.Resource.Attribute.dependency;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.destination = global::MealPlanner.Droid.Resource.Attribute.destination;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dialogCornerRadius = global::MealPlanner.Droid.Resource.Attribute.dialogCornerRadius;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dialogIcon = global::MealPlanner.Droid.Resource.Attribute.dialogIcon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dialogLayout = global::MealPlanner.Droid.Resource.Attribute.dialogLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dialogMessage = global::MealPlanner.Droid.Resource.Attribute.dialogMessage;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dialogPreferenceStyle = global::MealPlanner.Droid.Resource.Attribute.dialogPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dialogPreferredPadding = global::MealPlanner.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dialogTheme = global::MealPlanner.Droid.Resource.Attribute.dialogTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dialogTitle = global::MealPlanner.Droid.Resource.Attribute.dialogTitle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.disableDependentsState = global::MealPlanner.Droid.Resource.Attribute.disableDependentsState;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.displayOptions = global::MealPlanner.Droid.Resource.Attribute.displayOptions;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.divider = global::MealPlanner.Droid.Resource.Attribute.divider;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dividerHorizontal = global::MealPlanner.Droid.Resource.Attribute.dividerHorizontal;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dividerPadding = global::MealPlanner.Droid.Resource.Attribute.dividerPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dividerVertical = global::MealPlanner.Droid.Resource.Attribute.dividerVertical;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.drawableBottomCompat = global::MealPlanner.Droid.Resource.Attribute.drawableBottomCompat;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.drawableEndCompat = global::MealPlanner.Droid.Resource.Attribute.drawableEndCompat;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.drawableLeftCompat = global::MealPlanner.Droid.Resource.Attribute.drawableLeftCompat;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.drawableRightCompat = global::MealPlanner.Droid.Resource.Attribute.drawableRightCompat;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.drawableSize = global::MealPlanner.Droid.Resource.Attribute.drawableSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.drawableStartCompat = global::MealPlanner.Droid.Resource.Attribute.drawableStartCompat;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.drawableTint = global::MealPlanner.Droid.Resource.Attribute.drawableTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.drawableTintMode = global::MealPlanner.Droid.Resource.Attribute.drawableTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.drawableTopCompat = global::MealPlanner.Droid.Resource.Attribute.drawableTopCompat;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.drawerArrowStyle = global::MealPlanner.Droid.Resource.Attribute.drawerArrowStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.drawerLayoutStyle = global::MealPlanner.Droid.Resource.Attribute.drawerLayoutStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::MealPlanner.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dropDownListViewStyle = global::MealPlanner.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.dropdownPreferenceStyle = global::MealPlanner.Droid.Resource.Attribute.dropdownPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.editTextBackground = global::MealPlanner.Droid.Resource.Attribute.editTextBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.editTextColor = global::MealPlanner.Droid.Resource.Attribute.editTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.editTextPreferenceStyle = global::MealPlanner.Droid.Resource.Attribute.editTextPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.editTextStyle = global::MealPlanner.Droid.Resource.Attribute.editTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.elevation = global::MealPlanner.Droid.Resource.Attribute.elevation;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.elevationOverlayColor = global::MealPlanner.Droid.Resource.Attribute.elevationOverlayColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.elevationOverlayEnabled = global::MealPlanner.Droid.Resource.Attribute.elevationOverlayEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.enableCopying = global::MealPlanner.Droid.Resource.Attribute.enableCopying;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.enabled = global::MealPlanner.Droid.Resource.Attribute.enabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.endIconCheckable = global::MealPlanner.Droid.Resource.Attribute.endIconCheckable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.endIconContentDescription = global::MealPlanner.Droid.Resource.Attribute.endIconContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.endIconDrawable = global::MealPlanner.Droid.Resource.Attribute.endIconDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.endIconMode = global::MealPlanner.Droid.Resource.Attribute.endIconMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.endIconTint = global::MealPlanner.Droid.Resource.Attribute.endIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.endIconTintMode = global::MealPlanner.Droid.Resource.Attribute.endIconTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.enforceMaterialTheme = global::MealPlanner.Droid.Resource.Attribute.enforceMaterialTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.enforceTextAppearance = global::MealPlanner.Droid.Resource.Attribute.enforceTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.ensureMinTouchTargetSize = global::MealPlanner.Droid.Resource.Attribute.ensureMinTouchTargetSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.enterAnim = global::MealPlanner.Droid.Resource.Attribute.enterAnim;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.entries = global::MealPlanner.Droid.Resource.Attribute.entries;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.entryValues = global::MealPlanner.Droid.Resource.Attribute.entryValues;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.errorContentDescription = global::MealPlanner.Droid.Resource.Attribute.errorContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.errorEnabled = global::MealPlanner.Droid.Resource.Attribute.errorEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.errorIconDrawable = global::MealPlanner.Droid.Resource.Attribute.errorIconDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.errorIconTint = global::MealPlanner.Droid.Resource.Attribute.errorIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.errorIconTintMode = global::MealPlanner.Droid.Resource.Attribute.errorIconTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.errorTextAppearance = global::MealPlanner.Droid.Resource.Attribute.errorTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.errorTextColor = global::MealPlanner.Droid.Resource.Attribute.errorTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.exitAnim = global::MealPlanner.Droid.Resource.Attribute.exitAnim;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable = global::MealPlanner.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.expanded = global::MealPlanner.Droid.Resource.Attribute.expanded;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.expandedTitleGravity = global::MealPlanner.Droid.Resource.Attribute.expandedTitleGravity;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.expandedTitleMargin = global::MealPlanner.Droid.Resource.Attribute.expandedTitleMargin;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.expandedTitleMarginBottom = global::MealPlanner.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.expandedTitleMarginEnd = global::MealPlanner.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.expandedTitleMarginStart = global::MealPlanner.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.expandedTitleMarginTop = global::MealPlanner.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.expandedTitleTextAppearance = global::MealPlanner.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.extendedFloatingActionButtonStyle = global::MealPlanner.Droid.Resource.Attribute.extendedFloatingActionButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.extendMotionSpec = global::MealPlanner.Droid.Resource.Attribute.extendMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fabAlignmentMode = global::MealPlanner.Droid.Resource.Attribute.fabAlignmentMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fabAnimationMode = global::MealPlanner.Droid.Resource.Attribute.fabAnimationMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fabCradleMargin = global::MealPlanner.Droid.Resource.Attribute.fabCradleMargin;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fabCradleRoundedCornerRadius = global::MealPlanner.Droid.Resource.Attribute.fabCradleRoundedCornerRadius;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fabCradleVerticalOffset = global::MealPlanner.Droid.Resource.Attribute.fabCradleVerticalOffset;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fabCustomSize = global::MealPlanner.Droid.Resource.Attribute.fabCustomSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fabSize = global::MealPlanner.Droid.Resource.Attribute.fabSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fastScrollEnabled = global::MealPlanner.Droid.Resource.Attribute.fastScrollEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::MealPlanner.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::MealPlanner.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable = global::MealPlanner.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable = global::MealPlanner.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.firstBaselineToTopHeight = global::MealPlanner.Droid.Resource.Attribute.firstBaselineToTopHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.floatingActionButtonStyle = global::MealPlanner.Droid.Resource.Attribute.floatingActionButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.font = global::MealPlanner.Droid.Resource.Attribute.font;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fontFamily = global::MealPlanner.Droid.Resource.Attribute.fontFamily;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fontProviderAuthority = global::MealPlanner.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fontProviderCerts = global::MealPlanner.Droid.Resource.Attribute.fontProviderCerts;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fontProviderFetchStrategy = global::MealPlanner.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fontProviderFetchTimeout = global::MealPlanner.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fontProviderPackage = global::MealPlanner.Droid.Resource.Attribute.fontProviderPackage;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fontProviderQuery = global::MealPlanner.Droid.Resource.Attribute.fontProviderQuery;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fontStyle = global::MealPlanner.Droid.Resource.Attribute.fontStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fontVariationSettings = global::MealPlanner.Droid.Resource.Attribute.fontVariationSettings;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fontWeight = global::MealPlanner.Droid.Resource.Attribute.fontWeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.foregroundInsidePadding = global::MealPlanner.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.fragment = global::MealPlanner.Droid.Resource.Attribute.fragment;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.gapBetweenBars = global::MealPlanner.Droid.Resource.Attribute.gapBetweenBars;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.gestureInsetBottomIgnored = global::MealPlanner.Droid.Resource.Attribute.gestureInsetBottomIgnored;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.goIcon = global::MealPlanner.Droid.Resource.Attribute.goIcon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.graph = global::MealPlanner.Droid.Resource.Attribute.graph;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.haloColor = global::MealPlanner.Droid.Resource.Attribute.haloColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.haloRadius = global::MealPlanner.Droid.Resource.Attribute.haloRadius;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.headerLayout = global::MealPlanner.Droid.Resource.Attribute.headerLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.height = global::MealPlanner.Droid.Resource.Attribute.height;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.helperText = global::MealPlanner.Droid.Resource.Attribute.helperText;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.helperTextEnabled = global::MealPlanner.Droid.Resource.Attribute.helperTextEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.helperTextTextAppearance = global::MealPlanner.Droid.Resource.Attribute.helperTextTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.helperTextTextColor = global::MealPlanner.Droid.Resource.Attribute.helperTextTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.hideMotionSpec = global::MealPlanner.Droid.Resource.Attribute.hideMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.hideOnContentScroll = global::MealPlanner.Droid.Resource.Attribute.hideOnContentScroll;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.hideOnScroll = global::MealPlanner.Droid.Resource.Attribute.hideOnScroll;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.hintAnimationEnabled = global::MealPlanner.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.hintEnabled = global::MealPlanner.Droid.Resource.Attribute.hintEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.hintTextAppearance = global::MealPlanner.Droid.Resource.Attribute.hintTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.hintTextColor = global::MealPlanner.Droid.Resource.Attribute.hintTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.homeAsUpIndicator = global::MealPlanner.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.homeLayout = global::MealPlanner.Droid.Resource.Attribute.homeLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.horizontalOffset = global::MealPlanner.Droid.Resource.Attribute.horizontalOffset;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.hoveredFocusedTranslationZ = global::MealPlanner.Droid.Resource.Attribute.hoveredFocusedTranslationZ;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.icon = global::MealPlanner.Droid.Resource.Attribute.icon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.iconEndPadding = global::MealPlanner.Droid.Resource.Attribute.iconEndPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.iconGravity = global::MealPlanner.Droid.Resource.Attribute.iconGravity;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.iconifiedByDefault = global::MealPlanner.Droid.Resource.Attribute.iconifiedByDefault;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.iconPadding = global::MealPlanner.Droid.Resource.Attribute.iconPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.iconSize = global::MealPlanner.Droid.Resource.Attribute.iconSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.iconSpaceReserved = global::MealPlanner.Droid.Resource.Attribute.iconSpaceReserved;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.iconStartPadding = global::MealPlanner.Droid.Resource.Attribute.iconStartPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.iconTint = global::MealPlanner.Droid.Resource.Attribute.iconTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.iconTintMode = global::MealPlanner.Droid.Resource.Attribute.iconTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.imageButtonStyle = global::MealPlanner.Droid.Resource.Attribute.imageButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.indeterminateProgressStyle = global::MealPlanner.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.initialActivityCount = global::MealPlanner.Droid.Resource.Attribute.initialActivityCount;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.initialExpandedChildrenCount = global::MealPlanner.Droid.Resource.Attribute.initialExpandedChildrenCount;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.insetForeground = global::MealPlanner.Droid.Resource.Attribute.insetForeground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.isLightTheme = global::MealPlanner.Droid.Resource.Attribute.isLightTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.isMaterialTheme = global::MealPlanner.Droid.Resource.Attribute.isMaterialTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.isPreferenceVisible = global::MealPlanner.Droid.Resource.Attribute.isPreferenceVisible;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemBackground = global::MealPlanner.Droid.Resource.Attribute.itemBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemFillColor = global::MealPlanner.Droid.Resource.Attribute.itemFillColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemHorizontalPadding = global::MealPlanner.Droid.Resource.Attribute.itemHorizontalPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemHorizontalTranslationEnabled = global::MealPlanner.Droid.Resource.Attribute.itemHorizontalTranslationEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemIconPadding = global::MealPlanner.Droid.Resource.Attribute.itemIconPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemIconSize = global::MealPlanner.Droid.Resource.Attribute.itemIconSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemIconTint = global::MealPlanner.Droid.Resource.Attribute.itemIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemMaxLines = global::MealPlanner.Droid.Resource.Attribute.itemMaxLines;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemPadding = global::MealPlanner.Droid.Resource.Attribute.itemPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemRippleColor = global::MealPlanner.Droid.Resource.Attribute.itemRippleColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemShapeAppearance = global::MealPlanner.Droid.Resource.Attribute.itemShapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemShapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Attribute.itemShapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemShapeFillColor = global::MealPlanner.Droid.Resource.Attribute.itemShapeFillColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemShapeInsetBottom = global::MealPlanner.Droid.Resource.Attribute.itemShapeInsetBottom;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemShapeInsetEnd = global::MealPlanner.Droid.Resource.Attribute.itemShapeInsetEnd;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemShapeInsetStart = global::MealPlanner.Droid.Resource.Attribute.itemShapeInsetStart;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemShapeInsetTop = global::MealPlanner.Droid.Resource.Attribute.itemShapeInsetTop;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemSpacing = global::MealPlanner.Droid.Resource.Attribute.itemSpacing;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemStrokeColor = global::MealPlanner.Droid.Resource.Attribute.itemStrokeColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemStrokeWidth = global::MealPlanner.Droid.Resource.Attribute.itemStrokeWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemTextAppearance = global::MealPlanner.Droid.Resource.Attribute.itemTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemTextAppearanceActive = global::MealPlanner.Droid.Resource.Attribute.itemTextAppearanceActive;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemTextAppearanceInactive = global::MealPlanner.Droid.Resource.Attribute.itemTextAppearanceInactive;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.itemTextColor = global::MealPlanner.Droid.Resource.Attribute.itemTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.key = global::MealPlanner.Droid.Resource.Attribute.key;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.keylines = global::MealPlanner.Droid.Resource.Attribute.keylines;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.labelBehavior = global::MealPlanner.Droid.Resource.Attribute.labelBehavior;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.labelStyle = global::MealPlanner.Droid.Resource.Attribute.labelStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.labelVisibilityMode = global::MealPlanner.Droid.Resource.Attribute.labelVisibilityMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.lastBaselineToBottomHeight = global::MealPlanner.Droid.Resource.Attribute.lastBaselineToBottomHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.launchSingleTop = global::MealPlanner.Droid.Resource.Attribute.launchSingleTop;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layout = global::MealPlanner.Droid.Resource.Attribute.layout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layoutManager = global::MealPlanner.Droid.Resource.Attribute.layoutManager;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layout_anchor = global::MealPlanner.Droid.Resource.Attribute.layout_anchor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layout_anchorGravity = global::MealPlanner.Droid.Resource.Attribute.layout_anchorGravity;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layout_behavior = global::MealPlanner.Droid.Resource.Attribute.layout_behavior;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layout_collapseMode = global::MealPlanner.Droid.Resource.Attribute.layout_collapseMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layout_collapseParallaxMultiplier = global::MealPlanner.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layout_dodgeInsetEdges = global::MealPlanner.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layout_insetEdge = global::MealPlanner.Droid.Resource.Attribute.layout_insetEdge;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layout_keyline = global::MealPlanner.Droid.Resource.Attribute.layout_keyline;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layout_scrollFlags = global::MealPlanner.Droid.Resource.Attribute.layout_scrollFlags;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.layout_scrollInterpolator = global::MealPlanner.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.liftOnScroll = global::MealPlanner.Droid.Resource.Attribute.liftOnScroll;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.liftOnScrollTargetViewId = global::MealPlanner.Droid.Resource.Attribute.liftOnScrollTargetViewId;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.lineHeight = global::MealPlanner.Droid.Resource.Attribute.lineHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.lineSpacing = global::MealPlanner.Droid.Resource.Attribute.lineSpacing;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listChoiceBackgroundIndicator = global::MealPlanner.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listChoiceIndicatorMultipleAnimated = global::MealPlanner.Droid.Resource.Attribute.listChoiceIndicatorMultipleAnimated;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listChoiceIndicatorSingleAnimated = global::MealPlanner.Droid.Resource.Attribute.listChoiceIndicatorSingleAnimated;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listDividerAlertDialog = global::MealPlanner.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listItemLayout = global::MealPlanner.Droid.Resource.Attribute.listItemLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listLayout = global::MealPlanner.Droid.Resource.Attribute.listLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listMenuViewStyle = global::MealPlanner.Droid.Resource.Attribute.listMenuViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listPopupWindowStyle = global::MealPlanner.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listPreferredItemHeight = global::MealPlanner.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listPreferredItemHeightLarge = global::MealPlanner.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listPreferredItemHeightSmall = global::MealPlanner.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listPreferredItemPaddingEnd = global::MealPlanner.Droid.Resource.Attribute.listPreferredItemPaddingEnd;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listPreferredItemPaddingLeft = global::MealPlanner.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listPreferredItemPaddingRight = global::MealPlanner.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.listPreferredItemPaddingStart = global::MealPlanner.Droid.Resource.Attribute.listPreferredItemPaddingStart;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.logo = global::MealPlanner.Droid.Resource.Attribute.logo;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.logoDescription = global::MealPlanner.Droid.Resource.Attribute.logoDescription;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialAlertDialogBodyTextStyle = global::MealPlanner.Droid.Resource.Attribute.materialAlertDialogBodyTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialAlertDialogTheme = global::MealPlanner.Droid.Resource.Attribute.materialAlertDialogTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialAlertDialogTitleIconStyle = global::MealPlanner.Droid.Resource.Attribute.materialAlertDialogTitleIconStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialAlertDialogTitlePanelStyle = global::MealPlanner.Droid.Resource.Attribute.materialAlertDialogTitlePanelStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialAlertDialogTitleTextStyle = global::MealPlanner.Droid.Resource.Attribute.materialAlertDialogTitleTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialButtonOutlinedStyle = global::MealPlanner.Droid.Resource.Attribute.materialButtonOutlinedStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialButtonStyle = global::MealPlanner.Droid.Resource.Attribute.materialButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialButtonToggleGroupStyle = global::MealPlanner.Droid.Resource.Attribute.materialButtonToggleGroupStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialCalendarDay = global::MealPlanner.Droid.Resource.Attribute.materialCalendarDay;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialCalendarFullscreenTheme = global::MealPlanner.Droid.Resource.Attribute.materialCalendarFullscreenTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialCalendarHeaderConfirmButton = global::MealPlanner.Droid.Resource.Attribute.materialCalendarHeaderConfirmButton;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialCalendarHeaderDivider = global::MealPlanner.Droid.Resource.Attribute.materialCalendarHeaderDivider;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialCalendarHeaderLayout = global::MealPlanner.Droid.Resource.Attribute.materialCalendarHeaderLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialCalendarHeaderSelection = global::MealPlanner.Droid.Resource.Attribute.materialCalendarHeaderSelection;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialCalendarHeaderTitle = global::MealPlanner.Droid.Resource.Attribute.materialCalendarHeaderTitle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialCalendarHeaderToggleButton = global::MealPlanner.Droid.Resource.Attribute.materialCalendarHeaderToggleButton;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialCalendarStyle = global::MealPlanner.Droid.Resource.Attribute.materialCalendarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialCalendarTheme = global::MealPlanner.Droid.Resource.Attribute.materialCalendarTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialCardViewStyle = global::MealPlanner.Droid.Resource.Attribute.materialCardViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.materialThemeOverlay = global::MealPlanner.Droid.Resource.Attribute.materialThemeOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.maxActionInlineWidth = global::MealPlanner.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.maxButtonHeight = global::MealPlanner.Droid.Resource.Attribute.maxButtonHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.maxCharacterCount = global::MealPlanner.Droid.Resource.Attribute.maxCharacterCount;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.maxHeight = global::MealPlanner.Droid.Resource.Attribute.maxHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.maxImageSize = global::MealPlanner.Droid.Resource.Attribute.maxImageSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.maxLines = global::MealPlanner.Droid.Resource.Attribute.maxLines;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.maxWidth = global::MealPlanner.Droid.Resource.Attribute.maxWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.measureWithLargestChild = global::MealPlanner.Droid.Resource.Attribute.measureWithLargestChild;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.menu = global::MealPlanner.Droid.Resource.Attribute.menu;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.mimeType = global::MealPlanner.Droid.Resource.Attribute.mimeType;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.min = global::MealPlanner.Droid.Resource.Attribute.min;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.minTouchTargetSize = global::MealPlanner.Droid.Resource.Attribute.minTouchTargetSize;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.multiChoiceItemLayout = global::MealPlanner.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.navGraph = global::MealPlanner.Droid.Resource.Attribute.navGraph;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.navigationContentDescription = global::MealPlanner.Droid.Resource.Attribute.navigationContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.navigationIcon = global::MealPlanner.Droid.Resource.Attribute.navigationIcon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.navigationMode = global::MealPlanner.Droid.Resource.Attribute.navigationMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.navigationViewStyle = global::MealPlanner.Droid.Resource.Attribute.navigationViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.negativeButtonText = global::MealPlanner.Droid.Resource.Attribute.negativeButtonText;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.nullable = global::MealPlanner.Droid.Resource.Attribute.nullable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.number = global::MealPlanner.Droid.Resource.Attribute.number;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.numericModifiers = global::MealPlanner.Droid.Resource.Attribute.numericModifiers;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.order = global::MealPlanner.Droid.Resource.Attribute.order;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.orderingFromXml = global::MealPlanner.Droid.Resource.Attribute.orderingFromXml;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.overlapAnchor = global::MealPlanner.Droid.Resource.Attribute.overlapAnchor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.paddingBottomNoButtons = global::MealPlanner.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.paddingBottomSystemWindowInsets = global::MealPlanner.Droid.Resource.Attribute.paddingBottomSystemWindowInsets;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.paddingEnd = global::MealPlanner.Droid.Resource.Attribute.paddingEnd;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.paddingLeftSystemWindowInsets = global::MealPlanner.Droid.Resource.Attribute.paddingLeftSystemWindowInsets;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.paddingRightSystemWindowInsets = global::MealPlanner.Droid.Resource.Attribute.paddingRightSystemWindowInsets;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.paddingStart = global::MealPlanner.Droid.Resource.Attribute.paddingStart;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.paddingTopNoTitle = global::MealPlanner.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.panelBackground = global::MealPlanner.Droid.Resource.Attribute.panelBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.panelMenuListTheme = global::MealPlanner.Droid.Resource.Attribute.panelMenuListTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.panelMenuListWidth = global::MealPlanner.Droid.Resource.Attribute.panelMenuListWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.passwordToggleContentDescription = global::MealPlanner.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.passwordToggleDrawable = global::MealPlanner.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.passwordToggleEnabled = global::MealPlanner.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.passwordToggleTint = global::MealPlanner.Droid.Resource.Attribute.passwordToggleTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.passwordToggleTintMode = global::MealPlanner.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.persistent = global::MealPlanner.Droid.Resource.Attribute.persistent;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.placeholderText = global::MealPlanner.Droid.Resource.Attribute.placeholderText;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.placeholderTextAppearance = global::MealPlanner.Droid.Resource.Attribute.placeholderTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.placeholderTextColor = global::MealPlanner.Droid.Resource.Attribute.placeholderTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.popEnterAnim = global::MealPlanner.Droid.Resource.Attribute.popEnterAnim;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.popExitAnim = global::MealPlanner.Droid.Resource.Attribute.popExitAnim;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.popupMenuBackground = global::MealPlanner.Droid.Resource.Attribute.popupMenuBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.popupMenuStyle = global::MealPlanner.Droid.Resource.Attribute.popupMenuStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.popupTheme = global::MealPlanner.Droid.Resource.Attribute.popupTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.popUpTo = global::MealPlanner.Droid.Resource.Attribute.popUpTo;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.popUpToInclusive = global::MealPlanner.Droid.Resource.Attribute.popUpToInclusive;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.popupWindowStyle = global::MealPlanner.Droid.Resource.Attribute.popupWindowStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.positiveButtonText = global::MealPlanner.Droid.Resource.Attribute.positiveButtonText;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.preferenceCategoryStyle = global::MealPlanner.Droid.Resource.Attribute.preferenceCategoryStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.preferenceCategoryTitleTextAppearance = global::MealPlanner.Droid.Resource.Attribute.preferenceCategoryTitleTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.preferenceFragmentCompatStyle = global::MealPlanner.Droid.Resource.Attribute.preferenceFragmentCompatStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.preferenceFragmentListStyle = global::MealPlanner.Droid.Resource.Attribute.preferenceFragmentListStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.preferenceFragmentStyle = global::MealPlanner.Droid.Resource.Attribute.preferenceFragmentStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.preferenceInformationStyle = global::MealPlanner.Droid.Resource.Attribute.preferenceInformationStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.preferenceScreenStyle = global::MealPlanner.Droid.Resource.Attribute.preferenceScreenStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.preferenceStyle = global::MealPlanner.Droid.Resource.Attribute.preferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.preferenceTheme = global::MealPlanner.Droid.Resource.Attribute.preferenceTheme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.prefixText = global::MealPlanner.Droid.Resource.Attribute.prefixText;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.prefixTextAppearance = global::MealPlanner.Droid.Resource.Attribute.prefixTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.prefixTextColor = global::MealPlanner.Droid.Resource.Attribute.prefixTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.preserveIconSpacing = global::MealPlanner.Droid.Resource.Attribute.preserveIconSpacing;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.pressedTranslationZ = global::MealPlanner.Droid.Resource.Attribute.pressedTranslationZ;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.progressBarPadding = global::MealPlanner.Droid.Resource.Attribute.progressBarPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.progressBarStyle = global::MealPlanner.Droid.Resource.Attribute.progressBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.queryBackground = global::MealPlanner.Droid.Resource.Attribute.queryBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.queryHint = global::MealPlanner.Droid.Resource.Attribute.queryHint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.radioButtonStyle = global::MealPlanner.Droid.Resource.Attribute.radioButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.rangeFillColor = global::MealPlanner.Droid.Resource.Attribute.rangeFillColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.ratingBarStyle = global::MealPlanner.Droid.Resource.Attribute.ratingBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.ratingBarStyleIndicator = global::MealPlanner.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.ratingBarStyleSmall = global::MealPlanner.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.recyclerViewStyle = global::MealPlanner.Droid.Resource.Attribute.recyclerViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.reverseLayout = global::MealPlanner.Droid.Resource.Attribute.reverseLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.rippleColor = global::MealPlanner.Droid.Resource.Attribute.rippleColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.scrimAnimationDuration = global::MealPlanner.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.scrimBackground = global::MealPlanner.Droid.Resource.Attribute.scrimBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.scrimVisibleHeightTrigger = global::MealPlanner.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.scrollViewStyle = global::MealPlanner.Droid.Resource.Attribute.scrollViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.searchHintIcon = global::MealPlanner.Droid.Resource.Attribute.searchHintIcon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.searchIcon = global::MealPlanner.Droid.Resource.Attribute.searchIcon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.searchViewStyle = global::MealPlanner.Droid.Resource.Attribute.searchViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.seekBarIncrement = global::MealPlanner.Droid.Resource.Attribute.seekBarIncrement;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.seekBarPreferenceStyle = global::MealPlanner.Droid.Resource.Attribute.seekBarPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.seekBarStyle = global::MealPlanner.Droid.Resource.Attribute.seekBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.selectable = global::MealPlanner.Droid.Resource.Attribute.selectable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.selectableItemBackground = global::MealPlanner.Droid.Resource.Attribute.selectableItemBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.selectableItemBackgroundBorderless = global::MealPlanner.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.selectionRequired = global::MealPlanner.Droid.Resource.Attribute.selectionRequired;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.shapeAppearance = global::MealPlanner.Droid.Resource.Attribute.shapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.shapeAppearanceLargeComponent = global::MealPlanner.Droid.Resource.Attribute.shapeAppearanceLargeComponent;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.shapeAppearanceMediumComponent = global::MealPlanner.Droid.Resource.Attribute.shapeAppearanceMediumComponent;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.shapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Attribute.shapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.shapeAppearanceSmallComponent = global::MealPlanner.Droid.Resource.Attribute.shapeAppearanceSmallComponent;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.shouldDisableView = global::MealPlanner.Droid.Resource.Attribute.shouldDisableView;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.showAsAction = global::MealPlanner.Droid.Resource.Attribute.showAsAction;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.showDividers = global::MealPlanner.Droid.Resource.Attribute.showDividers;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.showMotionSpec = global::MealPlanner.Droid.Resource.Attribute.showMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.showSeekBarValue = global::MealPlanner.Droid.Resource.Attribute.showSeekBarValue;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.showText = global::MealPlanner.Droid.Resource.Attribute.showText;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.showTitle = global::MealPlanner.Droid.Resource.Attribute.showTitle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.shrinkMotionSpec = global::MealPlanner.Droid.Resource.Attribute.shrinkMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.singleChoiceItemLayout = global::MealPlanner.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.singleLine = global::MealPlanner.Droid.Resource.Attribute.singleLine;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.singleLineTitle = global::MealPlanner.Droid.Resource.Attribute.singleLineTitle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.singleSelection = global::MealPlanner.Droid.Resource.Attribute.singleSelection;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.sliderStyle = global::MealPlanner.Droid.Resource.Attribute.sliderStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.snackbarButtonStyle = global::MealPlanner.Droid.Resource.Attribute.snackbarButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.snackbarStyle = global::MealPlanner.Droid.Resource.Attribute.snackbarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.snackbarTextViewStyle = global::MealPlanner.Droid.Resource.Attribute.snackbarTextViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.spanCount = global::MealPlanner.Droid.Resource.Attribute.spanCount;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.spinBars = global::MealPlanner.Droid.Resource.Attribute.spinBars;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.spinnerDropDownItemStyle = global::MealPlanner.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.spinnerStyle = global::MealPlanner.Droid.Resource.Attribute.spinnerStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.splitTrack = global::MealPlanner.Droid.Resource.Attribute.splitTrack;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.srcCompat = global::MealPlanner.Droid.Resource.Attribute.srcCompat;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.stackFromEnd = global::MealPlanner.Droid.Resource.Attribute.stackFromEnd;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.startDestination = global::MealPlanner.Droid.Resource.Attribute.startDestination;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.startIconCheckable = global::MealPlanner.Droid.Resource.Attribute.startIconCheckable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.startIconContentDescription = global::MealPlanner.Droid.Resource.Attribute.startIconContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.startIconDrawable = global::MealPlanner.Droid.Resource.Attribute.startIconDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.startIconTint = global::MealPlanner.Droid.Resource.Attribute.startIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.startIconTintMode = global::MealPlanner.Droid.Resource.Attribute.startIconTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.state_above_anchor = global::MealPlanner.Droid.Resource.Attribute.state_above_anchor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.state_collapsed = global::MealPlanner.Droid.Resource.Attribute.state_collapsed;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.state_collapsible = global::MealPlanner.Droid.Resource.Attribute.state_collapsible;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.state_dragged = global::MealPlanner.Droid.Resource.Attribute.state_dragged;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.state_liftable = global::MealPlanner.Droid.Resource.Attribute.state_liftable;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.state_lifted = global::MealPlanner.Droid.Resource.Attribute.state_lifted;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.statusBarBackground = global::MealPlanner.Droid.Resource.Attribute.statusBarBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.statusBarForeground = global::MealPlanner.Droid.Resource.Attribute.statusBarForeground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.statusBarScrim = global::MealPlanner.Droid.Resource.Attribute.statusBarScrim;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.strokeColor = global::MealPlanner.Droid.Resource.Attribute.strokeColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.strokeWidth = global::MealPlanner.Droid.Resource.Attribute.strokeWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.subMenuArrow = global::MealPlanner.Droid.Resource.Attribute.subMenuArrow;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.submitBackground = global::MealPlanner.Droid.Resource.Attribute.submitBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.subtitle = global::MealPlanner.Droid.Resource.Attribute.subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.subtitleTextAppearance = global::MealPlanner.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.subtitleTextColor = global::MealPlanner.Droid.Resource.Attribute.subtitleTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.subtitleTextStyle = global::MealPlanner.Droid.Resource.Attribute.subtitleTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.suffixText = global::MealPlanner.Droid.Resource.Attribute.suffixText;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.suffixTextAppearance = global::MealPlanner.Droid.Resource.Attribute.suffixTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.suffixTextColor = global::MealPlanner.Droid.Resource.Attribute.suffixTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.suggestionRowLayout = global::MealPlanner.Droid.Resource.Attribute.suggestionRowLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.summary = global::MealPlanner.Droid.Resource.Attribute.summary;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.summaryOff = global::MealPlanner.Droid.Resource.Attribute.summaryOff;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.summaryOn = global::MealPlanner.Droid.Resource.Attribute.summaryOn;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.swipeRefreshLayoutProgressSpinnerBackgroundColor = global::MealPlanner.Droid.Resource.Attribute.swipeRefreshLayoutProgressSpinnerBackgroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.switchMinWidth = global::MealPlanner.Droid.Resource.Attribute.switchMinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.switchPadding = global::MealPlanner.Droid.Resource.Attribute.switchPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.switchPreferenceCompatStyle = global::MealPlanner.Droid.Resource.Attribute.switchPreferenceCompatStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.switchPreferenceStyle = global::MealPlanner.Droid.Resource.Attribute.switchPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.switchStyle = global::MealPlanner.Droid.Resource.Attribute.switchStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.switchTextAppearance = global::MealPlanner.Droid.Resource.Attribute.switchTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.switchTextOff = global::MealPlanner.Droid.Resource.Attribute.switchTextOff;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.switchTextOn = global::MealPlanner.Droid.Resource.Attribute.switchTextOn;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabBackground = global::MealPlanner.Droid.Resource.Attribute.tabBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabContentStart = global::MealPlanner.Droid.Resource.Attribute.tabContentStart;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabGravity = global::MealPlanner.Droid.Resource.Attribute.tabGravity;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabIconTint = global::MealPlanner.Droid.Resource.Attribute.tabIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabIconTintMode = global::MealPlanner.Droid.Resource.Attribute.tabIconTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabIndicator = global::MealPlanner.Droid.Resource.Attribute.tabIndicator;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabIndicatorAnimationDuration = global::MealPlanner.Droid.Resource.Attribute.tabIndicatorAnimationDuration;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabIndicatorColor = global::MealPlanner.Droid.Resource.Attribute.tabIndicatorColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabIndicatorFullWidth = global::MealPlanner.Droid.Resource.Attribute.tabIndicatorFullWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabIndicatorGravity = global::MealPlanner.Droid.Resource.Attribute.tabIndicatorGravity;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabIndicatorHeight = global::MealPlanner.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabInlineLabel = global::MealPlanner.Droid.Resource.Attribute.tabInlineLabel;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabMaxWidth = global::MealPlanner.Droid.Resource.Attribute.tabMaxWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabMinWidth = global::MealPlanner.Droid.Resource.Attribute.tabMinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabMode = global::MealPlanner.Droid.Resource.Attribute.tabMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabPadding = global::MealPlanner.Droid.Resource.Attribute.tabPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabPaddingBottom = global::MealPlanner.Droid.Resource.Attribute.tabPaddingBottom;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabPaddingEnd = global::MealPlanner.Droid.Resource.Attribute.tabPaddingEnd;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabPaddingStart = global::MealPlanner.Droid.Resource.Attribute.tabPaddingStart;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabPaddingTop = global::MealPlanner.Droid.Resource.Attribute.tabPaddingTop;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabRippleColor = global::MealPlanner.Droid.Resource.Attribute.tabRippleColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabSelectedTextColor = global::MealPlanner.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabStyle = global::MealPlanner.Droid.Resource.Attribute.tabStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabTextAppearance = global::MealPlanner.Droid.Resource.Attribute.tabTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabTextColor = global::MealPlanner.Droid.Resource.Attribute.tabTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tabUnboundedRipple = global::MealPlanner.Droid.Resource.Attribute.tabUnboundedRipple;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.targetPackage = global::MealPlanner.Droid.Resource.Attribute.targetPackage;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAllCaps = global::MealPlanner.Droid.Resource.Attribute.textAllCaps;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceBody1 = global::MealPlanner.Droid.Resource.Attribute.textAppearanceBody1;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceBody2 = global::MealPlanner.Droid.Resource.Attribute.textAppearanceBody2;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceButton = global::MealPlanner.Droid.Resource.Attribute.textAppearanceButton;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceCaption = global::MealPlanner.Droid.Resource.Attribute.textAppearanceCaption;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceHeadline1 = global::MealPlanner.Droid.Resource.Attribute.textAppearanceHeadline1;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceHeadline2 = global::MealPlanner.Droid.Resource.Attribute.textAppearanceHeadline2;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceHeadline3 = global::MealPlanner.Droid.Resource.Attribute.textAppearanceHeadline3;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceHeadline4 = global::MealPlanner.Droid.Resource.Attribute.textAppearanceHeadline4;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceHeadline5 = global::MealPlanner.Droid.Resource.Attribute.textAppearanceHeadline5;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceHeadline6 = global::MealPlanner.Droid.Resource.Attribute.textAppearanceHeadline6;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceLargePopupMenu = global::MealPlanner.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceLineHeightEnabled = global::MealPlanner.Droid.Resource.Attribute.textAppearanceLineHeightEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceListItem = global::MealPlanner.Droid.Resource.Attribute.textAppearanceListItem;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceListItemSecondary = global::MealPlanner.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceListItemSmall = global::MealPlanner.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceOverline = global::MealPlanner.Droid.Resource.Attribute.textAppearanceOverline;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearancePopupMenuHeader = global::MealPlanner.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle = global::MealPlanner.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceSearchResultTitle = global::MealPlanner.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceSmallPopupMenu = global::MealPlanner.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceSubtitle1 = global::MealPlanner.Droid.Resource.Attribute.textAppearanceSubtitle1;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textAppearanceSubtitle2 = global::MealPlanner.Droid.Resource.Attribute.textAppearanceSubtitle2;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textColorAlertDialogListItem = global::MealPlanner.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textColorSearchUrl = global::MealPlanner.Droid.Resource.Attribute.textColorSearchUrl;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textEndPadding = global::MealPlanner.Droid.Resource.Attribute.textEndPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textInputLayoutFocusedRectEnabled = global::MealPlanner.Droid.Resource.Attribute.textInputLayoutFocusedRectEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textInputStyle = global::MealPlanner.Droid.Resource.Attribute.textInputStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textLocale = global::MealPlanner.Droid.Resource.Attribute.textLocale;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.textStartPadding = global::MealPlanner.Droid.Resource.Attribute.textStartPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.theme = global::MealPlanner.Droid.Resource.Attribute.theme;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.themeLineHeight = global::MealPlanner.Droid.Resource.Attribute.themeLineHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.thickness = global::MealPlanner.Droid.Resource.Attribute.thickness;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.thumbColor = global::MealPlanner.Droid.Resource.Attribute.thumbColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.thumbElevation = global::MealPlanner.Droid.Resource.Attribute.thumbElevation;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.thumbRadius = global::MealPlanner.Droid.Resource.Attribute.thumbRadius;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.thumbTextPadding = global::MealPlanner.Droid.Resource.Attribute.thumbTextPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.thumbTint = global::MealPlanner.Droid.Resource.Attribute.thumbTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.thumbTintMode = global::MealPlanner.Droid.Resource.Attribute.thumbTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tickColor = global::MealPlanner.Droid.Resource.Attribute.tickColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tickColorActive = global::MealPlanner.Droid.Resource.Attribute.tickColorActive;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tickColorInactive = global::MealPlanner.Droid.Resource.Attribute.tickColorInactive;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tickMark = global::MealPlanner.Droid.Resource.Attribute.tickMark;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tickMarkTint = global::MealPlanner.Droid.Resource.Attribute.tickMarkTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tickMarkTintMode = global::MealPlanner.Droid.Resource.Attribute.tickMarkTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tint = global::MealPlanner.Droid.Resource.Attribute.tint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tintMode = global::MealPlanner.Droid.Resource.Attribute.tintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.title = global::MealPlanner.Droid.Resource.Attribute.title;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.titleEnabled = global::MealPlanner.Droid.Resource.Attribute.titleEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.titleMargin = global::MealPlanner.Droid.Resource.Attribute.titleMargin;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.titleMarginBottom = global::MealPlanner.Droid.Resource.Attribute.titleMarginBottom;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.titleMarginEnd = global::MealPlanner.Droid.Resource.Attribute.titleMarginEnd;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.titleMargins = global::MealPlanner.Droid.Resource.Attribute.titleMargins;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.titleMarginStart = global::MealPlanner.Droid.Resource.Attribute.titleMarginStart;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.titleMarginTop = global::MealPlanner.Droid.Resource.Attribute.titleMarginTop;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.titleTextAppearance = global::MealPlanner.Droid.Resource.Attribute.titleTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.titleTextColor = global::MealPlanner.Droid.Resource.Attribute.titleTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.titleTextStyle = global::MealPlanner.Droid.Resource.Attribute.titleTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.toolbarId = global::MealPlanner.Droid.Resource.Attribute.toolbarId;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.toolbarNavigationButtonStyle = global::MealPlanner.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.toolbarStyle = global::MealPlanner.Droid.Resource.Attribute.toolbarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tooltipForegroundColor = global::MealPlanner.Droid.Resource.Attribute.tooltipForegroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tooltipFrameBackground = global::MealPlanner.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tooltipStyle = global::MealPlanner.Droid.Resource.Attribute.tooltipStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.tooltipText = global::MealPlanner.Droid.Resource.Attribute.tooltipText;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.track = global::MealPlanner.Droid.Resource.Attribute.track;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.trackColor = global::MealPlanner.Droid.Resource.Attribute.trackColor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.trackColorActive = global::MealPlanner.Droid.Resource.Attribute.trackColorActive;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.trackColorInactive = global::MealPlanner.Droid.Resource.Attribute.trackColorInactive;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.trackHeight = global::MealPlanner.Droid.Resource.Attribute.trackHeight;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.trackTint = global::MealPlanner.Droid.Resource.Attribute.trackTint;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.trackTintMode = global::MealPlanner.Droid.Resource.Attribute.trackTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.transitionShapeAppearance = global::MealPlanner.Droid.Resource.Attribute.transitionShapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.ttcIndex = global::MealPlanner.Droid.Resource.Attribute.ttcIndex;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.updatesContinuously = global::MealPlanner.Droid.Resource.Attribute.updatesContinuously;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.uri = global::MealPlanner.Droid.Resource.Attribute.uri;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.useCompatPadding = global::MealPlanner.Droid.Resource.Attribute.useCompatPadding;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.useMaterialThemeColors = global::MealPlanner.Droid.Resource.Attribute.useMaterialThemeColors;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.useSimpleSummaryProvider = global::MealPlanner.Droid.Resource.Attribute.useSimpleSummaryProvider;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.values = global::MealPlanner.Droid.Resource.Attribute.values;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.verticalOffset = global::MealPlanner.Droid.Resource.Attribute.verticalOffset;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.viewInflaterClass = global::MealPlanner.Droid.Resource.Attribute.viewInflaterClass;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.voiceIcon = global::MealPlanner.Droid.Resource.Attribute.voiceIcon;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.widgetLayout = global::MealPlanner.Droid.Resource.Attribute.widgetLayout;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.windowActionBar = global::MealPlanner.Droid.Resource.Attribute.windowActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.windowActionBarOverlay = global::MealPlanner.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.windowActionModeOverlay = global::MealPlanner.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.windowFixedHeightMajor = global::MealPlanner.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.windowFixedHeightMinor = global::MealPlanner.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.windowFixedWidthMajor = global::MealPlanner.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.windowFixedWidthMinor = global::MealPlanner.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.windowMinWidthMajor = global::MealPlanner.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.windowMinWidthMinor = global::MealPlanner.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.windowNoTitle = global::MealPlanner.Droid.Resource.Attribute.windowNoTitle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.yearSelectedStyle = global::MealPlanner.Droid.Resource.Attribute.yearSelectedStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.yearStyle = global::MealPlanner.Droid.Resource.Attribute.yearStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.yearTodayStyle = global::MealPlanner.Droid.Resource.Attribute.yearTodayStyle;
+			global::Xamarin.RSControls.Droid.Resource.Boolean.abc_action_bar_embed_tabs = global::MealPlanner.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Xamarin.RSControls.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::MealPlanner.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::Xamarin.RSControls.Droid.Resource.Boolean.config_materialPreferenceIconSpaceReserved = global::MealPlanner.Droid.Resource.Boolean.config_materialPreferenceIconSpaceReserved;
+			global::Xamarin.RSControls.Droid.Resource.Boolean.mtrl_btn_textappearance_all_caps = global::MealPlanner.Droid.Resource.Boolean.mtrl_btn_textappearance_all_caps;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark = global::MealPlanner.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_background_cache_hint_selector_material_light = global::MealPlanner.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_btn_colored_borderless_text_material = global::MealPlanner.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_btn_colored_text_material = global::MealPlanner.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_color_highlight_material = global::MealPlanner.Droid.Resource.Color.abc_color_highlight_material;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_decor_view_status_guard = global::MealPlanner.Droid.Resource.Color.abc_decor_view_status_guard;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_decor_view_status_guard_light = global::MealPlanner.Droid.Resource.Color.abc_decor_view_status_guard_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_hint_foreground_material_dark = global::MealPlanner.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_hint_foreground_material_light = global::MealPlanner.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_primary_text_disable_only_material_dark = global::MealPlanner.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_primary_text_disable_only_material_light = global::MealPlanner.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_primary_text_material_dark = global::MealPlanner.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_primary_text_material_light = global::MealPlanner.Droid.Resource.Color.abc_primary_text_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_search_url_text = global::MealPlanner.Droid.Resource.Color.abc_search_url_text;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_search_url_text_normal = global::MealPlanner.Droid.Resource.Color.abc_search_url_text_normal;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_search_url_text_pressed = global::MealPlanner.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_search_url_text_selected = global::MealPlanner.Droid.Resource.Color.abc_search_url_text_selected;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_secondary_text_material_dark = global::MealPlanner.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_secondary_text_material_light = global::MealPlanner.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_tint_btn_checkable = global::MealPlanner.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_tint_default = global::MealPlanner.Droid.Resource.Color.abc_tint_default;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_tint_edittext = global::MealPlanner.Droid.Resource.Color.abc_tint_edittext;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_tint_seek_thumb = global::MealPlanner.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_tint_spinner = global::MealPlanner.Droid.Resource.Color.abc_tint_spinner;
+			global::Xamarin.RSControls.Droid.Resource.Color.abc_tint_switch_track = global::MealPlanner.Droid.Resource.Color.abc_tint_switch_track;
+			global::Xamarin.RSControls.Droid.Resource.Color.accent_material_dark = global::MealPlanner.Droid.Resource.Color.accent_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.accent_material_light = global::MealPlanner.Droid.Resource.Color.accent_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.androidx_core_ripple_material_light = global::MealPlanner.Droid.Resource.Color.androidx_core_ripple_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.androidx_core_secondary_text_default_material_light = global::MealPlanner.Droid.Resource.Color.androidx_core_secondary_text_default_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.background_floating_material_dark = global::MealPlanner.Droid.Resource.Color.background_floating_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.background_floating_material_light = global::MealPlanner.Droid.Resource.Color.background_floating_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.background_material_dark = global::MealPlanner.Droid.Resource.Color.background_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.background_material_light = global::MealPlanner.Droid.Resource.Color.background_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.bright_foreground_disabled_material_dark = global::MealPlanner.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.bright_foreground_disabled_material_light = global::MealPlanner.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.bright_foreground_inverse_material_dark = global::MealPlanner.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.bright_foreground_inverse_material_light = global::MealPlanner.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.bright_foreground_material_dark = global::MealPlanner.Droid.Resource.Color.bright_foreground_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.bright_foreground_material_light = global::MealPlanner.Droid.Resource.Color.bright_foreground_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.browser_actions_bg_grey = global::MealPlanner.Droid.Resource.Color.browser_actions_bg_grey;
+			global::Xamarin.RSControls.Droid.Resource.Color.browser_actions_divider_color = global::MealPlanner.Droid.Resource.Color.browser_actions_divider_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.browser_actions_text_color = global::MealPlanner.Droid.Resource.Color.browser_actions_text_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.browser_actions_title_color = global::MealPlanner.Droid.Resource.Color.browser_actions_title_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.button_material_dark = global::MealPlanner.Droid.Resource.Color.button_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.button_material_light = global::MealPlanner.Droid.Resource.Color.button_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.cardview_dark_background = global::MealPlanner.Droid.Resource.Color.cardview_dark_background;
+			global::Xamarin.RSControls.Droid.Resource.Color.cardview_light_background = global::MealPlanner.Droid.Resource.Color.cardview_light_background;
+			global::Xamarin.RSControls.Droid.Resource.Color.cardview_shadow_end_color = global::MealPlanner.Droid.Resource.Color.cardview_shadow_end_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.cardview_shadow_start_color = global::MealPlanner.Droid.Resource.Color.cardview_shadow_start_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.checkbox_themeable_attribute_color = global::MealPlanner.Droid.Resource.Color.checkbox_themeable_attribute_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_bottom_navigation_shadow_color = global::MealPlanner.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_box_stroke_color = global::MealPlanner.Droid.Resource.Color.design_box_stroke_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_background = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_background;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_error = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_error;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_on_background = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_on_background;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_on_error = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_on_error;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_on_primary = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_on_primary;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_on_secondary = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_on_secondary;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_on_surface = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_on_surface;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_primary = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_primary;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_primary_dark = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_primary_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_primary_variant = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_primary_variant;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_secondary = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_secondary;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_secondary_variant = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_secondary_variant;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_dark_default_color_surface = global::MealPlanner.Droid.Resource.Color.design_dark_default_color_surface;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_background = global::MealPlanner.Droid.Resource.Color.design_default_color_background;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_error = global::MealPlanner.Droid.Resource.Color.design_default_color_error;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_on_background = global::MealPlanner.Droid.Resource.Color.design_default_color_on_background;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_on_error = global::MealPlanner.Droid.Resource.Color.design_default_color_on_error;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_on_primary = global::MealPlanner.Droid.Resource.Color.design_default_color_on_primary;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_on_secondary = global::MealPlanner.Droid.Resource.Color.design_default_color_on_secondary;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_on_surface = global::MealPlanner.Droid.Resource.Color.design_default_color_on_surface;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_primary = global::MealPlanner.Droid.Resource.Color.design_default_color_primary;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_primary_dark = global::MealPlanner.Droid.Resource.Color.design_default_color_primary_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_primary_variant = global::MealPlanner.Droid.Resource.Color.design_default_color_primary_variant;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_secondary = global::MealPlanner.Droid.Resource.Color.design_default_color_secondary;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_secondary_variant = global::MealPlanner.Droid.Resource.Color.design_default_color_secondary_variant;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_default_color_surface = global::MealPlanner.Droid.Resource.Color.design_default_color_surface;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_error = global::MealPlanner.Droid.Resource.Color.design_error;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_fab_shadow_end_color = global::MealPlanner.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_fab_shadow_mid_color = global::MealPlanner.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_fab_shadow_start_color = global::MealPlanner.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_fab_stroke_end_inner_color = global::MealPlanner.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_fab_stroke_end_outer_color = global::MealPlanner.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_fab_stroke_top_inner_color = global::MealPlanner.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_fab_stroke_top_outer_color = global::MealPlanner.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_icon_tint = global::MealPlanner.Droid.Resource.Color.design_icon_tint;
+			global::Xamarin.RSControls.Droid.Resource.Color.design_snackbar_background_color = global::MealPlanner.Droid.Resource.Color.design_snackbar_background_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.dim_foreground_disabled_material_dark = global::MealPlanner.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.dim_foreground_disabled_material_light = global::MealPlanner.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.dim_foreground_material_dark = global::MealPlanner.Droid.Resource.Color.dim_foreground_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.dim_foreground_material_light = global::MealPlanner.Droid.Resource.Color.dim_foreground_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.error_color_material_dark = global::MealPlanner.Droid.Resource.Color.error_color_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.error_color_material_light = global::MealPlanner.Droid.Resource.Color.error_color_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.foreground_material_dark = global::MealPlanner.Droid.Resource.Color.foreground_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.foreground_material_light = global::MealPlanner.Droid.Resource.Color.foreground_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.highlighted_text_material_dark = global::MealPlanner.Droid.Resource.Color.highlighted_text_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.highlighted_text_material_light = global::MealPlanner.Droid.Resource.Color.highlighted_text_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_blue_grey_800 = global::MealPlanner.Droid.Resource.Color.material_blue_grey_800;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_blue_grey_900 = global::MealPlanner.Droid.Resource.Color.material_blue_grey_900;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_blue_grey_950 = global::MealPlanner.Droid.Resource.Color.material_blue_grey_950;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_deep_teal_200 = global::MealPlanner.Droid.Resource.Color.material_deep_teal_200;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_deep_teal_500 = global::MealPlanner.Droid.Resource.Color.material_deep_teal_500;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_grey_100 = global::MealPlanner.Droid.Resource.Color.material_grey_100;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_grey_300 = global::MealPlanner.Droid.Resource.Color.material_grey_300;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_grey_50 = global::MealPlanner.Droid.Resource.Color.material_grey_50;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_grey_600 = global::MealPlanner.Droid.Resource.Color.material_grey_600;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_grey_800 = global::MealPlanner.Droid.Resource.Color.material_grey_800;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_grey_850 = global::MealPlanner.Droid.Resource.Color.material_grey_850;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_grey_900 = global::MealPlanner.Droid.Resource.Color.material_grey_900;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_on_background_disabled = global::MealPlanner.Droid.Resource.Color.material_on_background_disabled;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_on_background_emphasis_high_type = global::MealPlanner.Droid.Resource.Color.material_on_background_emphasis_high_type;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_on_background_emphasis_medium = global::MealPlanner.Droid.Resource.Color.material_on_background_emphasis_medium;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_on_primary_disabled = global::MealPlanner.Droid.Resource.Color.material_on_primary_disabled;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_on_primary_emphasis_high_type = global::MealPlanner.Droid.Resource.Color.material_on_primary_emphasis_high_type;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_on_primary_emphasis_medium = global::MealPlanner.Droid.Resource.Color.material_on_primary_emphasis_medium;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_on_surface_disabled = global::MealPlanner.Droid.Resource.Color.material_on_surface_disabled;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_on_surface_emphasis_high_type = global::MealPlanner.Droid.Resource.Color.material_on_surface_emphasis_high_type;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_on_surface_emphasis_medium = global::MealPlanner.Droid.Resource.Color.material_on_surface_emphasis_medium;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_on_surface_stroke = global::MealPlanner.Droid.Resource.Color.material_on_surface_stroke;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_slider_active_tick_marks_color = global::MealPlanner.Droid.Resource.Color.material_slider_active_tick_marks_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_slider_active_track_color = global::MealPlanner.Droid.Resource.Color.material_slider_active_track_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_slider_halo_color = global::MealPlanner.Droid.Resource.Color.material_slider_halo_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_slider_inactive_tick_marks_color = global::MealPlanner.Droid.Resource.Color.material_slider_inactive_tick_marks_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_slider_inactive_track_color = global::MealPlanner.Droid.Resource.Color.material_slider_inactive_track_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.material_slider_thumb_color = global::MealPlanner.Droid.Resource.Color.material_slider_thumb_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_btn_bg_color_selector = global::MealPlanner.Droid.Resource.Color.mtrl_btn_bg_color_selector;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_btn_ripple_color = global::MealPlanner.Droid.Resource.Color.mtrl_btn_ripple_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_btn_stroke_color_selector = global::MealPlanner.Droid.Resource.Color.mtrl_btn_stroke_color_selector;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_btn_text_btn_bg_color_selector = global::MealPlanner.Droid.Resource.Color.mtrl_btn_text_btn_bg_color_selector;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color = global::MealPlanner.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_btn_text_color_disabled = global::MealPlanner.Droid.Resource.Color.mtrl_btn_text_color_disabled;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_btn_text_color_selector = global::MealPlanner.Droid.Resource.Color.mtrl_btn_text_color_selector;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_btn_transparent_bg_color = global::MealPlanner.Droid.Resource.Color.mtrl_btn_transparent_bg_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_calendar_item_stroke_color = global::MealPlanner.Droid.Resource.Color.mtrl_calendar_item_stroke_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_calendar_selected_range = global::MealPlanner.Droid.Resource.Color.mtrl_calendar_selected_range;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_card_view_foreground = global::MealPlanner.Droid.Resource.Color.mtrl_card_view_foreground;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_card_view_ripple = global::MealPlanner.Droid.Resource.Color.mtrl_card_view_ripple;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_chip_background_color = global::MealPlanner.Droid.Resource.Color.mtrl_chip_background_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_chip_close_icon_tint = global::MealPlanner.Droid.Resource.Color.mtrl_chip_close_icon_tint;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_chip_surface_color = global::MealPlanner.Droid.Resource.Color.mtrl_chip_surface_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_chip_text_color = global::MealPlanner.Droid.Resource.Color.mtrl_chip_text_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_choice_chip_background_color = global::MealPlanner.Droid.Resource.Color.mtrl_choice_chip_background_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_choice_chip_ripple_color = global::MealPlanner.Droid.Resource.Color.mtrl_choice_chip_ripple_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_choice_chip_text_color = global::MealPlanner.Droid.Resource.Color.mtrl_choice_chip_text_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_error = global::MealPlanner.Droid.Resource.Color.mtrl_error;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_fab_bg_color_selector = global::MealPlanner.Droid.Resource.Color.mtrl_fab_bg_color_selector;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_fab_icon_text_color_selector = global::MealPlanner.Droid.Resource.Color.mtrl_fab_icon_text_color_selector;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_fab_ripple_color = global::MealPlanner.Droid.Resource.Color.mtrl_fab_ripple_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_filled_background_color = global::MealPlanner.Droid.Resource.Color.mtrl_filled_background_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_filled_icon_tint = global::MealPlanner.Droid.Resource.Color.mtrl_filled_icon_tint;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_filled_stroke_color = global::MealPlanner.Droid.Resource.Color.mtrl_filled_stroke_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_indicator_text_color = global::MealPlanner.Droid.Resource.Color.mtrl_indicator_text_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_navigation_item_background_color = global::MealPlanner.Droid.Resource.Color.mtrl_navigation_item_background_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_navigation_item_icon_tint = global::MealPlanner.Droid.Resource.Color.mtrl_navigation_item_icon_tint;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_navigation_item_text_color = global::MealPlanner.Droid.Resource.Color.mtrl_navigation_item_text_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_on_primary_text_btn_text_color_selector = global::MealPlanner.Droid.Resource.Color.mtrl_on_primary_text_btn_text_color_selector;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_outlined_icon_tint = global::MealPlanner.Droid.Resource.Color.mtrl_outlined_icon_tint;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_outlined_stroke_color = global::MealPlanner.Droid.Resource.Color.mtrl_outlined_stroke_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_popupmenu_overlay_color = global::MealPlanner.Droid.Resource.Color.mtrl_popupmenu_overlay_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_scrim_color = global::MealPlanner.Droid.Resource.Color.mtrl_scrim_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_tabs_colored_ripple_color = global::MealPlanner.Droid.Resource.Color.mtrl_tabs_colored_ripple_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_tabs_icon_color_selector = global::MealPlanner.Droid.Resource.Color.mtrl_tabs_icon_color_selector;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_tabs_icon_color_selector_colored = global::MealPlanner.Droid.Resource.Color.mtrl_tabs_icon_color_selector_colored;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_tabs_legacy_text_color_selector = global::MealPlanner.Droid.Resource.Color.mtrl_tabs_legacy_text_color_selector;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_tabs_ripple_color = global::MealPlanner.Droid.Resource.Color.mtrl_tabs_ripple_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color = global::MealPlanner.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_textinput_disabled_color = global::MealPlanner.Droid.Resource.Color.mtrl_textinput_disabled_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::MealPlanner.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_textinput_focused_box_stroke_color = global::MealPlanner.Droid.Resource.Color.mtrl_textinput_focused_box_stroke_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::MealPlanner.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.mtrl_text_btn_text_color_selector = global::MealPlanner.Droid.Resource.Color.mtrl_text_btn_text_color_selector;
+			global::Xamarin.RSControls.Droid.Resource.Color.notification_action_color_filter = global::MealPlanner.Droid.Resource.Color.notification_action_color_filter;
+			global::Xamarin.RSControls.Droid.Resource.Color.notification_icon_bg_color = global::MealPlanner.Droid.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.notification_material_background_media_default_color = global::MealPlanner.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.preference_fallback_accent_color = global::MealPlanner.Droid.Resource.Color.preference_fallback_accent_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.primary_dark_material_dark = global::MealPlanner.Droid.Resource.Color.primary_dark_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.primary_dark_material_light = global::MealPlanner.Droid.Resource.Color.primary_dark_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.primary_material_dark = global::MealPlanner.Droid.Resource.Color.primary_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.primary_material_light = global::MealPlanner.Droid.Resource.Color.primary_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.primary_text_default_material_dark = global::MealPlanner.Droid.Resource.Color.primary_text_default_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.primary_text_default_material_light = global::MealPlanner.Droid.Resource.Color.primary_text_default_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.primary_text_disabled_material_dark = global::MealPlanner.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.primary_text_disabled_material_light = global::MealPlanner.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.radiobutton_themeable_attribute_color = global::MealPlanner.Droid.Resource.Color.radiobutton_themeable_attribute_color;
+			global::Xamarin.RSControls.Droid.Resource.Color.ripple_material_dark = global::MealPlanner.Droid.Resource.Color.ripple_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.ripple_material_light = global::MealPlanner.Droid.Resource.Color.ripple_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.RSPickerColorStateList = global::MealPlanner.Droid.Resource.Color.RSPickerColorStateList;
+			global::Xamarin.RSControls.Droid.Resource.Color.RSRectangleBorderShapeColorStateList = global::MealPlanner.Droid.Resource.Color.RSRectangleBorderShapeColorStateList;
+			global::Xamarin.RSControls.Droid.Resource.Color.secondary_text_default_material_dark = global::MealPlanner.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.secondary_text_default_material_light = global::MealPlanner.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.secondary_text_disabled_material_dark = global::MealPlanner.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.secondary_text_disabled_material_light = global::MealPlanner.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.switch_thumb_disabled_material_dark = global::MealPlanner.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.switch_thumb_disabled_material_light = global::MealPlanner.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.switch_thumb_material_dark = global::MealPlanner.Droid.Resource.Color.switch_thumb_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.switch_thumb_material_light = global::MealPlanner.Droid.Resource.Color.switch_thumb_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.switch_thumb_normal_material_dark = global::MealPlanner.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.switch_thumb_normal_material_light = global::MealPlanner.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Color.test_mtrl_calendar_day = global::MealPlanner.Droid.Resource.Color.test_mtrl_calendar_day;
+			global::Xamarin.RSControls.Droid.Resource.Color.test_mtrl_calendar_day_selected = global::MealPlanner.Droid.Resource.Color.test_mtrl_calendar_day_selected;
+			global::Xamarin.RSControls.Droid.Resource.Color.tooltip_background_dark = global::MealPlanner.Droid.Resource.Color.tooltip_background_dark;
+			global::Xamarin.RSControls.Droid.Resource.Color.tooltip_background_light = global::MealPlanner.Droid.Resource.Color.tooltip_background_light;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_content_inset_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_default_height_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_elevation_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_stacked_max_height = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_button_min_height_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_button_min_width_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material = global::MealPlanner.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height = global::MealPlanner.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_alert_dialog_button_dimen = global::MealPlanner.Droid.Resource.Dimension.abc_alert_dialog_button_dimen;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_button_inset_horizontal_material = global::MealPlanner.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_button_inset_vertical_material = global::MealPlanner.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_button_padding_horizontal_material = global::MealPlanner.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_button_padding_vertical_material = global::MealPlanner.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::MealPlanner.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_config_prefDialogWidth = global::MealPlanner.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_control_corner_material = global::MealPlanner.Droid.Resource.Dimension.abc_control_corner_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_control_inset_material = global::MealPlanner.Droid.Resource.Dimension.abc_control_inset_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_control_padding_material = global::MealPlanner.Droid.Resource.Dimension.abc_control_padding_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_corner_radius_material = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_corner_radius_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_fixed_height_major = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_fixed_height_minor = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_fixed_width_major = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_fixed_width_minor = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_min_width_major = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_min_width_minor = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_padding_material = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_padding_top_material = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dialog_title_divider_material = global::MealPlanner.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_disabled_alpha_material_dark = global::MealPlanner.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_disabled_alpha_material_light = global::MealPlanner.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dropdownitem_icon_width = global::MealPlanner.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left = global::MealPlanner.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right = global::MealPlanner.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material = global::MealPlanner.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::MealPlanner.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_edit_text_inset_top_material = global::MealPlanner.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_floating_window_z = global::MealPlanner.Droid.Resource.Dimension.abc_floating_window_z;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_list_item_height_large_material = global::MealPlanner.Droid.Resource.Dimension.abc_list_item_height_large_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_list_item_height_material = global::MealPlanner.Droid.Resource.Dimension.abc_list_item_height_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_list_item_height_small_material = global::MealPlanner.Droid.Resource.Dimension.abc_list_item_height_small_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material = global::MealPlanner.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_panel_menu_list_width = global::MealPlanner.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_progress_bar_height_material = global::MealPlanner.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_search_view_preferred_height = global::MealPlanner.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_search_view_preferred_width = global::MealPlanner.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_seekbar_track_background_height_material = global::MealPlanner.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material = global::MealPlanner.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_select_dialog_padding_start_material = global::MealPlanner.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_switch_padding = global::MealPlanner.Droid.Resource.Dimension.abc_switch_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_body_1_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_body_2_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_button_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_caption_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_display_1_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_display_2_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_display_3_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_display_4_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_headline_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_large_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_medium_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_menu_header_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_menu_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_small_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_subhead_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_title_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_title_material_toolbar = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.action_bar_size = global::MealPlanner.Droid.Resource.Dimension.action_bar_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.appcompat_dialog_background_inset = global::MealPlanner.Droid.Resource.Dimension.appcompat_dialog_background_inset;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.browser_actions_context_menu_max_width = global::MealPlanner.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.browser_actions_context_menu_min_padding = global::MealPlanner.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.cardview_compat_inset_shadow = global::MealPlanner.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.cardview_default_elevation = global::MealPlanner.Droid.Resource.Dimension.cardview_default_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.cardview_default_radius = global::MealPlanner.Droid.Resource.Dimension.cardview_default_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.compat_button_inset_horizontal_material = global::MealPlanner.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.compat_button_inset_vertical_material = global::MealPlanner.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.compat_button_padding_horizontal_material = global::MealPlanner.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.compat_button_padding_vertical_material = global::MealPlanner.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.compat_control_corner_material = global::MealPlanner.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.compat_notification_large_icon_max_height = global::MealPlanner.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.compat_notification_large_icon_max_width = global::MealPlanner.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.default_dimension = global::MealPlanner.Droid.Resource.Dimension.default_dimension;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.def_drawer_elevation = global::MealPlanner.Droid.Resource.Dimension.def_drawer_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_appbar_elevation = global::MealPlanner.Droid.Resource.Dimension.design_appbar_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::MealPlanner.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width = global::MealPlanner.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_navigation_active_text_size = global::MealPlanner.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_navigation_elevation = global::MealPlanner.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_navigation_height = global::MealPlanner.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_navigation_icon_size = global::MealPlanner.Droid.Resource.Dimension.design_bottom_navigation_icon_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_navigation_item_max_width = global::MealPlanner.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_navigation_item_min_width = global::MealPlanner.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_navigation_margin = global::MealPlanner.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_navigation_shadow_height = global::MealPlanner.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_navigation_text_size = global::MealPlanner.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_sheet_elevation = global::MealPlanner.Droid.Resource.Dimension.design_bottom_sheet_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation = global::MealPlanner.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min = global::MealPlanner.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_fab_border_width = global::MealPlanner.Droid.Resource.Dimension.design_fab_border_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_fab_elevation = global::MealPlanner.Droid.Resource.Dimension.design_fab_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_fab_image_size = global::MealPlanner.Droid.Resource.Dimension.design_fab_image_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_fab_size_mini = global::MealPlanner.Droid.Resource.Dimension.design_fab_size_mini;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_fab_size_normal = global::MealPlanner.Droid.Resource.Dimension.design_fab_size_normal;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_fab_translation_z_hovered_focused = global::MealPlanner.Droid.Resource.Dimension.design_fab_translation_z_hovered_focused;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_fab_translation_z_pressed = global::MealPlanner.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_navigation_elevation = global::MealPlanner.Droid.Resource.Dimension.design_navigation_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_navigation_icon_padding = global::MealPlanner.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_navigation_icon_size = global::MealPlanner.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_navigation_item_horizontal_padding = global::MealPlanner.Droid.Resource.Dimension.design_navigation_item_horizontal_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_navigation_item_icon_padding = global::MealPlanner.Droid.Resource.Dimension.design_navigation_item_icon_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_navigation_max_width = global::MealPlanner.Droid.Resource.Dimension.design_navigation_max_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_navigation_padding_bottom = global::MealPlanner.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_navigation_separator_vertical_padding = global::MealPlanner.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_snackbar_action_inline_max_width = global::MealPlanner.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_snackbar_action_text_color_alpha = global::MealPlanner.Droid.Resource.Dimension.design_snackbar_action_text_color_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_snackbar_background_corner_radius = global::MealPlanner.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_snackbar_elevation = global::MealPlanner.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::MealPlanner.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_snackbar_max_width = global::MealPlanner.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_snackbar_min_width = global::MealPlanner.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_snackbar_padding_horizontal = global::MealPlanner.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_snackbar_padding_vertical = global::MealPlanner.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::MealPlanner.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_snackbar_text_size = global::MealPlanner.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_tab_max_width = global::MealPlanner.Droid.Resource.Dimension.design_tab_max_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_tab_scrollable_min_width = global::MealPlanner.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_tab_text_size = global::MealPlanner.Droid.Resource.Dimension.design_tab_text_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_tab_text_size_2line = global::MealPlanner.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.design_textinput_caption_translate_y = global::MealPlanner.Droid.Resource.Dimension.design_textinput_caption_translate_y;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.disabled_alpha_material_dark = global::MealPlanner.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.disabled_alpha_material_light = global::MealPlanner.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.fastscroll_default_thickness = global::MealPlanner.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.fastscroll_margin = global::MealPlanner.Droid.Resource.Dimension.fastscroll_margin;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.fastscroll_minimum_range = global::MealPlanner.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.highlight_alpha_material_colored = global::MealPlanner.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.highlight_alpha_material_dark = global::MealPlanner.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.highlight_alpha_material_light = global::MealPlanner.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.hint_alpha_material_dark = global::MealPlanner.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.hint_alpha_material_light = global::MealPlanner.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.hint_pressed_alpha_material_dark = global::MealPlanner.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.hint_pressed_alpha_material_light = global::MealPlanner.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::MealPlanner.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::MealPlanner.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::MealPlanner.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.material_emphasis_disabled = global::MealPlanner.Droid.Resource.Dimension.material_emphasis_disabled;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.material_emphasis_high_type = global::MealPlanner.Droid.Resource.Dimension.material_emphasis_high_type;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.material_emphasis_medium = global::MealPlanner.Droid.Resource.Dimension.material_emphasis_medium;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.material_text_view_test_line_height = global::MealPlanner.Droid.Resource.Dimension.material_text_view_test_line_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.material_text_view_test_line_height_override = global::MealPlanner.Droid.Resource.Dimension.material_text_view_test_line_height_override;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom = global::MealPlanner.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_end = global::MealPlanner.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_end;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_start = global::MealPlanner.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_start;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_top = global::MealPlanner.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_top;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_alert_dialog_picker_background_inset = global::MealPlanner.Droid.Resource.Dimension.mtrl_alert_dialog_picker_background_inset;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_badge_horizontal_edge_offset = global::MealPlanner.Droid.Resource.Dimension.mtrl_badge_horizontal_edge_offset;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_badge_long_text_horizontal_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_badge_long_text_horizontal_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_badge_radius = global::MealPlanner.Droid.Resource.Dimension.mtrl_badge_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset = global::MealPlanner.Droid.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_badge_text_size = global::MealPlanner.Droid.Resource.Dimension.mtrl_badge_text_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_badge_with_text_radius = global::MealPlanner.Droid.Resource.Dimension.mtrl_badge_with_text_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode = global::MealPlanner.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin = global::MealPlanner.Droid.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin = global::MealPlanner.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius = global::MealPlanner.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset = global::MealPlanner.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_bottomappbar_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_bottomappbar_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_corner_radius = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_corner_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_dialog_btn_min_width = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_dialog_btn_min_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_disabled_elevation = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_disabled_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_disabled_z = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_disabled_z;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_elevation = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_focused_z = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_focused_z;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_hovered_z = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_hovered_z;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_icon_btn_padding_left = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_icon_btn_padding_left;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_icon_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_icon_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_inset = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_inset;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_letter_spacing = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_letter_spacing;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_padding_bottom = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_padding_bottom;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_padding_left = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_padding_left;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_padding_right = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_padding_right;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_padding_top = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_padding_top;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_pressed_z = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_pressed_z;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_stroke_size = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_stroke_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_text_btn_icon_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_text_btn_icon_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_left = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_left;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_text_size = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_text_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_btn_z = global::MealPlanner.Droid.Resource.Dimension.mtrl_btn_z;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_action_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_action_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_action_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_action_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_bottom_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_bottom_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_content_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_content_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_days_of_week_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_days_of_week_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_day_corner = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_day_corner;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_day_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_day_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_day_horizontal_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_day_horizontal_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_day_today_stroke = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_day_today_stroke;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_day_vertical_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_day_vertical_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_day_width = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_day_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_dialog_background_inset = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_dialog_background_inset;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_header_content_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_header_content_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_header_divider_thickness = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_header_divider_thickness;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_header_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_header_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_header_height_fullscreen = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_header_height_fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_header_selection_line_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_header_selection_line_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_header_text_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_header_text_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_top = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_top;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_landscape_header_width = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_landscape_header_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_month_horizontal_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_month_horizontal_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_month_vertical_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_month_vertical_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_navigation_bottom_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_navigation_bottom_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_navigation_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_navigation_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_navigation_top_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_navigation_top_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_text_input_padding_top = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_text_input_padding_top;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_year_corner = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_year_corner;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_year_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_year_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_year_horizontal_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_year_horizontal_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_year_vertical_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_year_vertical_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_calendar_year_width = global::MealPlanner.Droid.Resource.Dimension.mtrl_calendar_year_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_card_checked_icon_margin = global::MealPlanner.Droid.Resource.Dimension.mtrl_card_checked_icon_margin;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_card_checked_icon_size = global::MealPlanner.Droid.Resource.Dimension.mtrl_card_checked_icon_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_card_corner_radius = global::MealPlanner.Droid.Resource.Dimension.mtrl_card_corner_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_card_dragged_z = global::MealPlanner.Droid.Resource.Dimension.mtrl_card_dragged_z;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_card_elevation = global::MealPlanner.Droid.Resource.Dimension.mtrl_card_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_card_spacing = global::MealPlanner.Droid.Resource.Dimension.mtrl_card_spacing;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z = global::MealPlanner.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_chip_text_size = global::MealPlanner.Droid.Resource.Dimension.mtrl_chip_text_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_edittext_rectangle_top_offset = global::MealPlanner.Droid.Resource.Dimension.mtrl_edittext_rectangle_top_offset;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation = global::MealPlanner.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset = global::MealPlanner.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_bottom_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_bottom_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_corner_radius = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_corner_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_disabled_elevation = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_disabled_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_disabled_translation_z = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_disabled_translation_z;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_elevation = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_end_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_end_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_end_padding_icon = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_end_padding_icon;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_icon_size = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_icon_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_icon_text_spacing = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_icon_text_spacing;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_min_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_min_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_min_width = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_min_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_start_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_start_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_start_padding_icon = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_start_padding_icon;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_top_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_top_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_base = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_base;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_pressed = global::MealPlanner.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_pressed;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_fab_elevation = global::MealPlanner.Droid.Resource.Dimension.mtrl_fab_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_fab_min_touch_target = global::MealPlanner.Droid.Resource.Dimension.mtrl_fab_min_touch_target;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused = global::MealPlanner.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed = global::MealPlanner.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_high_ripple_default_alpha = global::MealPlanner.Droid.Resource.Dimension.mtrl_high_ripple_default_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_high_ripple_focused_alpha = global::MealPlanner.Droid.Resource.Dimension.mtrl_high_ripple_focused_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_high_ripple_hovered_alpha = global::MealPlanner.Droid.Resource.Dimension.mtrl_high_ripple_hovered_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_high_ripple_pressed_alpha = global::MealPlanner.Droid.Resource.Dimension.mtrl_high_ripple_pressed_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_large_touch_target = global::MealPlanner.Droid.Resource.Dimension.mtrl_large_touch_target;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_low_ripple_default_alpha = global::MealPlanner.Droid.Resource.Dimension.mtrl_low_ripple_default_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_low_ripple_focused_alpha = global::MealPlanner.Droid.Resource.Dimension.mtrl_low_ripple_focused_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_low_ripple_hovered_alpha = global::MealPlanner.Droid.Resource.Dimension.mtrl_low_ripple_hovered_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_low_ripple_pressed_alpha = global::MealPlanner.Droid.Resource.Dimension.mtrl_low_ripple_pressed_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_min_touch_target_size = global::MealPlanner.Droid.Resource.Dimension.mtrl_min_touch_target_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_navigation_elevation = global::MealPlanner.Droid.Resource.Dimension.mtrl_navigation_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_navigation_item_icon_size = global::MealPlanner.Droid.Resource.Dimension.mtrl_navigation_item_icon_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin = global::MealPlanner.Droid.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin = global::MealPlanner.Droid.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_shape_corner_size_large_component = global::MealPlanner.Droid.Resource.Dimension.mtrl_shape_corner_size_large_component;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_shape_corner_size_medium_component = global::MealPlanner.Droid.Resource.Dimension.mtrl_shape_corner_size_medium_component;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_shape_corner_size_small_component = global::MealPlanner.Droid.Resource.Dimension.mtrl_shape_corner_size_small_component;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_slider_halo_radius = global::MealPlanner.Droid.Resource.Dimension.mtrl_slider_halo_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_slider_label_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_slider_label_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_slider_label_radius = global::MealPlanner.Droid.Resource.Dimension.mtrl_slider_label_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_slider_label_square_side = global::MealPlanner.Droid.Resource.Dimension.mtrl_slider_label_square_side;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_slider_thumb_elevation = global::MealPlanner.Droid.Resource.Dimension.mtrl_slider_thumb_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_slider_thumb_radius = global::MealPlanner.Droid.Resource.Dimension.mtrl_slider_thumb_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_slider_track_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_slider_track_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_slider_track_side_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_slider_track_side_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_slider_track_top = global::MealPlanner.Droid.Resource.Dimension.mtrl_slider_track_top;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_slider_widget_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_slider_widget_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_snackbar_action_text_color_alpha = global::MealPlanner.Droid.Resource.Dimension.mtrl_snackbar_action_text_color_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::MealPlanner.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha = global::MealPlanner.Droid.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_snackbar_margin = global::MealPlanner.Droid.Resource.Dimension.mtrl_snackbar_margin;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_switch_thumb_elevation = global::MealPlanner.Droid.Resource.Dimension.mtrl_switch_thumb_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium = global::MealPlanner.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small = global::MealPlanner.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default = global::MealPlanner.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused = global::MealPlanner.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_textinput_counter_margin_start = global::MealPlanner.Droid.Resource.Dimension.mtrl_textinput_counter_margin_start;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_textinput_end_icon_margin_start = global::MealPlanner.Droid.Resource.Dimension.mtrl_textinput_end_icon_margin_start;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_textinput_start_icon_margin_end = global::MealPlanner.Droid.Resource.Dimension.mtrl_textinput_start_icon_margin_end;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_toolbar_default_height = global::MealPlanner.Droid.Resource.Dimension.mtrl_toolbar_default_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_tooltip_arrowSize = global::MealPlanner.Droid.Resource.Dimension.mtrl_tooltip_arrowSize;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_tooltip_cornerSize = global::MealPlanner.Droid.Resource.Dimension.mtrl_tooltip_cornerSize;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_tooltip_minHeight = global::MealPlanner.Droid.Resource.Dimension.mtrl_tooltip_minHeight;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_tooltip_minWidth = global::MealPlanner.Droid.Resource.Dimension.mtrl_tooltip_minWidth;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_tooltip_padding = global::MealPlanner.Droid.Resource.Dimension.mtrl_tooltip_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.mtrl_transition_shared_axis_slide_distance = global::MealPlanner.Droid.Resource.Dimension.mtrl_transition_shared_axis_slide_distance;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_action_icon_size = global::MealPlanner.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_action_text_size = global::MealPlanner.Droid.Resource.Dimension.notification_action_text_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_big_circle_margin = global::MealPlanner.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_content_margin_start = global::MealPlanner.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_large_icon_height = global::MealPlanner.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_large_icon_width = global::MealPlanner.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_main_column_padding_top = global::MealPlanner.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_media_narrow_margin = global::MealPlanner.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_right_icon_size = global::MealPlanner.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_right_side_padding_top = global::MealPlanner.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_small_icon_background_padding = global::MealPlanner.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_small_icon_size_as_large = global::MealPlanner.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_subtext_size = global::MealPlanner.Droid.Resource.Dimension.notification_subtext_size;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_top_pad = global::MealPlanner.Droid.Resource.Dimension.notification_top_pad;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.notification_top_pad_large_text = global::MealPlanner.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.preference_dropdown_padding_start = global::MealPlanner.Droid.Resource.Dimension.preference_dropdown_padding_start;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.preference_icon_minWidth = global::MealPlanner.Droid.Resource.Dimension.preference_icon_minWidth;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.preference_seekbar_padding_horizontal = global::MealPlanner.Droid.Resource.Dimension.preference_seekbar_padding_horizontal;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.preference_seekbar_padding_vertical = global::MealPlanner.Droid.Resource.Dimension.preference_seekbar_padding_vertical;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.preference_seekbar_value_minWidth = global::MealPlanner.Droid.Resource.Dimension.preference_seekbar_value_minWidth;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.test_mtrl_calendar_day_cornerSize = global::MealPlanner.Droid.Resource.Dimension.test_mtrl_calendar_day_cornerSize;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.text_view_height = global::MealPlanner.Droid.Resource.Dimension.text_view_height;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.text_view_width = global::MealPlanner.Droid.Resource.Dimension.text_view_width;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.tooltip_corner_radius = global::MealPlanner.Droid.Resource.Dimension.tooltip_corner_radius;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.tooltip_horizontal_padding = global::MealPlanner.Droid.Resource.Dimension.tooltip_horizontal_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.tooltip_margin = global::MealPlanner.Droid.Resource.Dimension.tooltip_margin;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::MealPlanner.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.tooltip_precise_anchor_threshold = global::MealPlanner.Droid.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.tooltip_vertical_padding = global::MealPlanner.Droid.Resource.Dimension.tooltip_vertical_padding;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.tooltip_y_offset_non_touch = global::MealPlanner.Droid.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.tooltip_y_offset_touch = global::MealPlanner.Droid.Resource.Dimension.tooltip_y_offset_touch;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_action_bar_item_background_material = global::MealPlanner.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_borderless_material = global::MealPlanner.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_check_material = global::MealPlanner.Droid.Resource.Drawable.abc_btn_check_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_check_material_anim = global::MealPlanner.Droid.Resource.Drawable.abc_btn_check_material_anim;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::MealPlanner.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::MealPlanner.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_colored_material = global::MealPlanner.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_default_mtrl_shape = global::MealPlanner.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_radio_material = global::MealPlanner.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_radio_material_anim = global::MealPlanner.Droid.Resource.Drawable.abc_btn_radio_material_anim;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::MealPlanner.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::MealPlanner.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::MealPlanner.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::MealPlanner.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_cab_background_internal_bg = global::MealPlanner.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_cab_background_top_material = global::MealPlanner.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_control_background_material = global::MealPlanner.Droid.Resource.Drawable.abc_control_background_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_dialog_material_background = global::MealPlanner.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_edit_text_material = global::MealPlanner.Droid.Resource.Drawable.abc_edit_text_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_ab_back_material = global::MealPlanner.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::MealPlanner.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_clear_material = global::MealPlanner.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_go_search_api_material = global::MealPlanner.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_menu_overflow_material = global::MealPlanner.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_search_api_material = global::MealPlanner.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ic_voice_search_api_material = global::MealPlanner.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_item_background_holo_dark = global::MealPlanner.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_item_background_holo_light = global::MealPlanner.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_divider_material = global::MealPlanner.Droid.Resource.Drawable.abc_list_divider_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_focused_holo = global::MealPlanner.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_longpressed_holo = global::MealPlanner.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_pressed_holo_dark = global::MealPlanner.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_pressed_holo_light = global::MealPlanner.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::MealPlanner.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::MealPlanner.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::MealPlanner.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light = global::MealPlanner.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_selector_holo_dark = global::MealPlanner.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_list_selector_holo_light = global::MealPlanner.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::MealPlanner.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_popup_background_mtrl_mult = global::MealPlanner.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ratingbar_indicator_material = global::MealPlanner.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ratingbar_material = global::MealPlanner.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_ratingbar_small_material = global::MealPlanner.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::MealPlanner.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::MealPlanner.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_seekbar_thumb_material = global::MealPlanner.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_seekbar_tick_mark_material = global::MealPlanner.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_seekbar_track_material = global::MealPlanner.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_spinner_textfield_background_material = global::MealPlanner.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_switch_thumb_material = global::MealPlanner.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_tab_indicator_material = global::MealPlanner.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_textfield_search_material = global::MealPlanner.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_text_cursor_material = global::MealPlanner.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_vector_test = global::MealPlanner.Droid.Resource.Drawable.abc_vector_test;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.avd_hide_password = global::MealPlanner.Droid.Resource.Drawable.avd_hide_password;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.avd_show_password = global::MealPlanner.Droid.Resource.Drawable.avd_show_password;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.btn_checkbox_checked_mtrl = global::MealPlanner.Droid.Resource.Drawable.btn_checkbox_checked_mtrl;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation = global::MealPlanner.Droid.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.btn_checkbox_unchecked_mtrl = global::MealPlanner.Droid.Resource.Drawable.btn_checkbox_unchecked_mtrl;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation = global::MealPlanner.Droid.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.btn_radio_off_mtrl = global::MealPlanner.Droid.Resource.Drawable.btn_radio_off_mtrl;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.btn_radio_off_to_on_mtrl_animation = global::MealPlanner.Droid.Resource.Drawable.btn_radio_off_to_on_mtrl_animation;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.btn_radio_on_mtrl = global::MealPlanner.Droid.Resource.Drawable.btn_radio_on_mtrl;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.btn_radio_on_to_off_mtrl_animation = global::MealPlanner.Droid.Resource.Drawable.btn_radio_on_to_off_mtrl_animation;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.chatBuble = global::MealPlanner.Droid.Resource.Drawable.chatBuble;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.custom_design_password_eye = global::MealPlanner.Droid.Resource.Drawable.custom_design_password_eye;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.design_fab_background = global::MealPlanner.Droid.Resource.Drawable.design_fab_background;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.design_ic_visibility = global::MealPlanner.Droid.Resource.Drawable.design_ic_visibility;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.design_ic_visibility_off = global::MealPlanner.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.design_password_eye = global::MealPlanner.Droid.Resource.Drawable.design_password_eye;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.design_snackbar_background = global::MealPlanner.Droid.Resource.Drawable.design_snackbar_background;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.ic_arrow_down_24dp = global::MealPlanner.Droid.Resource.Drawable.ic_arrow_down_24dp;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.ic_mtrl_checked_circle = global::MealPlanner.Droid.Resource.Drawable.ic_mtrl_checked_circle;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.ic_mtrl_chip_checked_black = global::MealPlanner.Droid.Resource.Drawable.ic_mtrl_chip_checked_black;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle = global::MealPlanner.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.ic_mtrl_chip_close_circle = global::MealPlanner.Droid.Resource.Drawable.ic_mtrl_chip_close_circle;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.material_ic_calendar_black_24dp = global::MealPlanner.Droid.Resource.Drawable.material_ic_calendar_black_24dp;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.material_ic_clear_black_24dp = global::MealPlanner.Droid.Resource.Drawable.material_ic_clear_black_24dp;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.material_ic_edit_black_24dp = global::MealPlanner.Droid.Resource.Drawable.material_ic_edit_black_24dp;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.material_ic_keyboard_arrow_left_black_24dp = global::MealPlanner.Droid.Resource.Drawable.material_ic_keyboard_arrow_left_black_24dp;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.material_ic_keyboard_arrow_right_black_24dp = global::MealPlanner.Droid.Resource.Drawable.material_ic_keyboard_arrow_right_black_24dp;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.material_ic_menu_arrow_down_black_24dp = global::MealPlanner.Droid.Resource.Drawable.material_ic_menu_arrow_down_black_24dp;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.material_ic_menu_arrow_up_black_24dp = global::MealPlanner.Droid.Resource.Drawable.material_ic_menu_arrow_up_black_24dp;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.mtrl_dialog_background = global::MealPlanner.Droid.Resource.Drawable.mtrl_dialog_background;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.mtrl_dropdown_arrow = global::MealPlanner.Droid.Resource.Drawable.mtrl_dropdown_arrow;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.mtrl_ic_arrow_drop_down = global::MealPlanner.Droid.Resource.Drawable.mtrl_ic_arrow_drop_down;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.mtrl_ic_arrow_drop_up = global::MealPlanner.Droid.Resource.Drawable.mtrl_ic_arrow_drop_up;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.mtrl_ic_cancel = global::MealPlanner.Droid.Resource.Drawable.mtrl_ic_cancel;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.mtrl_ic_error = global::MealPlanner.Droid.Resource.Drawable.mtrl_ic_error;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.mtrl_popupmenu_background = global::MealPlanner.Droid.Resource.Drawable.mtrl_popupmenu_background;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.mtrl_popupmenu_background_dark = global::MealPlanner.Droid.Resource.Drawable.mtrl_popupmenu_background_dark;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.mtrl_tabs_default_indicator = global::MealPlanner.Droid.Resource.Drawable.mtrl_tabs_default_indicator;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.navigation_empty_icon = global::MealPlanner.Droid.Resource.Drawable.navigation_empty_icon;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notification_action_background = global::MealPlanner.Droid.Resource.Drawable.notification_action_background;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notification_bg = global::MealPlanner.Droid.Resource.Drawable.notification_bg;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notification_bg_low = global::MealPlanner.Droid.Resource.Drawable.notification_bg_low;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notification_bg_low_normal = global::MealPlanner.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notification_bg_low_pressed = global::MealPlanner.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notification_bg_normal = global::MealPlanner.Droid.Resource.Drawable.notification_bg_normal;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notification_bg_normal_pressed = global::MealPlanner.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notification_icon_background = global::MealPlanner.Droid.Resource.Drawable.notification_icon_background;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notification_template_icon_bg = global::MealPlanner.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notification_template_icon_low_bg = global::MealPlanner.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notification_tile_bg = global::MealPlanner.Droid.Resource.Drawable.notification_tile_bg;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.notify_panel_notification_icon_bg = global::MealPlanner.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.preference_list_divider_material = global::MealPlanner.Droid.Resource.Drawable.preference_list_divider_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.RSChevron = global::MealPlanner.Droid.Resource.Drawable.RSChevron;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.RSOvalShapeDrawable = global::MealPlanner.Droid.Resource.Drawable.RSOvalShapeDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.RSRectangleBorderShape = global::MealPlanner.Droid.Resource.Drawable.RSRectangleBorderShape;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.RSRectangleBorderShapeFocused = global::MealPlanner.Droid.Resource.Drawable.RSRectangleBorderShapeFocused;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.rs_dialog_background_inset = global::MealPlanner.Droid.Resource.Drawable.rs_dialog_background_inset;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.rs_tooltip_arrow_down = global::MealPlanner.Droid.Resource.Drawable.rs_tooltip_arrow_down;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.rs_tooltip_arrow_up = global::MealPlanner.Droid.Resource.Drawable.rs_tooltip_arrow_up;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.tab_about = global::MealPlanner.Droid.Resource.Drawable.tab_about;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.tab_feed = global::MealPlanner.Droid.Resource.Drawable.tab_feed;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.test_custom_background = global::MealPlanner.Droid.Resource.Drawable.test_custom_background;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.tooltip_frame_dark = global::MealPlanner.Droid.Resource.Drawable.tooltip_frame_dark;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.tooltip_frame_light = global::MealPlanner.Droid.Resource.Drawable.tooltip_frame_light;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_action_clickable_span = global::MealPlanner.Droid.Resource.Id.accessibility_action_clickable_span;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_0 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_0;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_1 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_1;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_10 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_10;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_11 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_11;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_12 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_12;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_13 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_13;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_14 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_14;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_15 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_15;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_16 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_16;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_17 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_17;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_18 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_18;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_19 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_19;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_2 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_2;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_20 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_20;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_21 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_21;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_22 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_22;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_23 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_23;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_24 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_24;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_25 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_25;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_26 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_26;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_27 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_27;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_28 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_28;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_29 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_29;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_3 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_3;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_30 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_30;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_31 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_31;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_4 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_4;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_5 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_5;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_6 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_6;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_7 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_7;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_8 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_8;
+			global::Xamarin.RSControls.Droid.Resource.Id.accessibility_custom_action_9 = global::MealPlanner.Droid.Resource.Id.accessibility_custom_action_9;
+			global::Xamarin.RSControls.Droid.Resource.Id.action0 = global::MealPlanner.Droid.Resource.Id.action0;
+			global::Xamarin.RSControls.Droid.Resource.Id.actions = global::MealPlanner.Droid.Resource.Id.actions;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_bar = global::MealPlanner.Droid.Resource.Id.action_bar;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_bar_activity_content = global::MealPlanner.Droid.Resource.Id.action_bar_activity_content;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_bar_container = global::MealPlanner.Droid.Resource.Id.action_bar_container;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_bar_root = global::MealPlanner.Droid.Resource.Id.action_bar_root;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_bar_spinner = global::MealPlanner.Droid.Resource.Id.action_bar_spinner;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_bar_subtitle = global::MealPlanner.Droid.Resource.Id.action_bar_subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_bar_title = global::MealPlanner.Droid.Resource.Id.action_bar_title;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_container = global::MealPlanner.Droid.Resource.Id.action_container;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_context_bar = global::MealPlanner.Droid.Resource.Id.action_context_bar;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_destructive = global::MealPlanner.Droid.Resource.Id.action_destructive;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_divider = global::MealPlanner.Droid.Resource.Id.action_divider;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_image = global::MealPlanner.Droid.Resource.Id.action_image;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_menu_divider = global::MealPlanner.Droid.Resource.Id.action_menu_divider;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_menu_presenter = global::MealPlanner.Droid.Resource.Id.action_menu_presenter;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_mode_bar = global::MealPlanner.Droid.Resource.Id.action_mode_bar;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_mode_bar_stub = global::MealPlanner.Droid.Resource.Id.action_mode_bar_stub;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_mode_close_button = global::MealPlanner.Droid.Resource.Id.action_mode_close_button;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_neutral = global::MealPlanner.Droid.Resource.Id.action_neutral;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_positive = global::MealPlanner.Droid.Resource.Id.action_positive;
+			global::Xamarin.RSControls.Droid.Resource.Id.action_text = global::MealPlanner.Droid.Resource.Id.action_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.activity_chooser_view_content = global::MealPlanner.Droid.Resource.Id.activity_chooser_view_content;
+			global::Xamarin.RSControls.Droid.Resource.Id.add = global::MealPlanner.Droid.Resource.Id.add;
+			global::Xamarin.RSControls.Droid.Resource.Id.alertTitle = global::MealPlanner.Droid.Resource.Id.alertTitle;
+			global::Xamarin.RSControls.Droid.Resource.Id.all = global::MealPlanner.Droid.Resource.Id.all;
+			global::Xamarin.RSControls.Droid.Resource.Id.ALT = global::MealPlanner.Droid.Resource.Id.ALT;
+			global::Xamarin.RSControls.Droid.Resource.Id.always = global::MealPlanner.Droid.Resource.Id.always;
+			global::Xamarin.RSControls.Droid.Resource.Id.async = global::MealPlanner.Droid.Resource.Id.async;
+			global::Xamarin.RSControls.Droid.Resource.Id.auto = global::MealPlanner.Droid.Resource.Id.auto;
+			global::Xamarin.RSControls.Droid.Resource.Id.auto_complete_imageView = global::MealPlanner.Droid.Resource.Id.auto_complete_imageView;
+			global::Xamarin.RSControls.Droid.Resource.Id.auto_complete_textView = global::MealPlanner.Droid.Resource.Id.auto_complete_textView;
+			global::Xamarin.RSControls.Droid.Resource.Id.beginning = global::MealPlanner.Droid.Resource.Id.beginning;
+			global::Xamarin.RSControls.Droid.Resource.Id.blocking = global::MealPlanner.Droid.Resource.Id.blocking;
+			global::Xamarin.RSControls.Droid.Resource.Id.bottom = global::MealPlanner.Droid.Resource.Id.bottom;
+			global::Xamarin.RSControls.Droid.Resource.Id.bottomtab_navarea = global::MealPlanner.Droid.Resource.Id.bottomtab_navarea;
+			global::Xamarin.RSControls.Droid.Resource.Id.bottomtab_tabbar = global::MealPlanner.Droid.Resource.Id.bottomtab_tabbar;
+			global::Xamarin.RSControls.Droid.Resource.Id.BOTTOM_END = global::MealPlanner.Droid.Resource.Id.BOTTOM_END;
+			global::Xamarin.RSControls.Droid.Resource.Id.BOTTOM_START = global::MealPlanner.Droid.Resource.Id.BOTTOM_START;
+			global::Xamarin.RSControls.Droid.Resource.Id.browser_actions_header_text = global::MealPlanner.Droid.Resource.Id.browser_actions_header_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.browser_actions_menu_items = global::MealPlanner.Droid.Resource.Id.browser_actions_menu_items;
+			global::Xamarin.RSControls.Droid.Resource.Id.browser_actions_menu_item_icon = global::MealPlanner.Droid.Resource.Id.browser_actions_menu_item_icon;
+			global::Xamarin.RSControls.Droid.Resource.Id.browser_actions_menu_item_text = global::MealPlanner.Droid.Resource.Id.browser_actions_menu_item_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.browser_actions_menu_view = global::MealPlanner.Droid.Resource.Id.browser_actions_menu_view;
+			global::Xamarin.RSControls.Droid.Resource.Id.buttonPanel = global::MealPlanner.Droid.Resource.Id.buttonPanel;
+			global::Xamarin.RSControls.Droid.Resource.Id.buttons = global::MealPlanner.Droid.Resource.Id.buttons;
+			global::Xamarin.RSControls.Droid.Resource.Id.cancel_action = global::MealPlanner.Droid.Resource.Id.cancel_action;
+			global::Xamarin.RSControls.Droid.Resource.Id.cancel_button = global::MealPlanner.Droid.Resource.Id.cancel_button;
+			global::Xamarin.RSControls.Droid.Resource.Id.center = global::MealPlanner.Droid.Resource.Id.center;
+			global::Xamarin.RSControls.Droid.Resource.Id.center_horizontal = global::MealPlanner.Droid.Resource.Id.center_horizontal;
+			global::Xamarin.RSControls.Droid.Resource.Id.center_vertical = global::MealPlanner.Droid.Resource.Id.center_vertical;
+			global::Xamarin.RSControls.Droid.Resource.Id.checkbox = global::MealPlanner.Droid.Resource.Id.checkbox;
+			global::Xamarin.RSControls.Droid.Resource.Id.@checked = global::MealPlanner.Droid.Resource.Id.@checked;
+			global::Xamarin.RSControls.Droid.Resource.Id.chip = global::MealPlanner.Droid.Resource.Id.chip;
+			global::Xamarin.RSControls.Droid.Resource.Id.chip1 = global::MealPlanner.Droid.Resource.Id.chip1;
+			global::Xamarin.RSControls.Droid.Resource.Id.chip2 = global::MealPlanner.Droid.Resource.Id.chip2;
+			global::Xamarin.RSControls.Droid.Resource.Id.chip3 = global::MealPlanner.Droid.Resource.Id.chip3;
+			global::Xamarin.RSControls.Droid.Resource.Id.chip_group = global::MealPlanner.Droid.Resource.Id.chip_group;
+			global::Xamarin.RSControls.Droid.Resource.Id.chronometer = global::MealPlanner.Droid.Resource.Id.chronometer;
+			global::Xamarin.RSControls.Droid.Resource.Id.clear_text = global::MealPlanner.Droid.Resource.Id.clear_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.clip_horizontal = global::MealPlanner.Droid.Resource.Id.clip_horizontal;
+			global::Xamarin.RSControls.Droid.Resource.Id.clip_vertical = global::MealPlanner.Droid.Resource.Id.clip_vertical;
+			global::Xamarin.RSControls.Droid.Resource.Id.closeButton = global::MealPlanner.Droid.Resource.Id.closeButton;
+			global::Xamarin.RSControls.Droid.Resource.Id.collapseActionView = global::MealPlanner.Droid.Resource.Id.collapseActionView;
+			global::Xamarin.RSControls.Droid.Resource.Id.confirm_button = global::MealPlanner.Droid.Resource.Id.confirm_button;
+			global::Xamarin.RSControls.Droid.Resource.Id.container = global::MealPlanner.Droid.Resource.Id.container;
+			global::Xamarin.RSControls.Droid.Resource.Id.content = global::MealPlanner.Droid.Resource.Id.content;
+			global::Xamarin.RSControls.Droid.Resource.Id.contentPanel = global::MealPlanner.Droid.Resource.Id.contentPanel;
+			global::Xamarin.RSControls.Droid.Resource.Id.contentView = global::MealPlanner.Droid.Resource.Id.contentView;
+			global::Xamarin.RSControls.Droid.Resource.Id.coordinator = global::MealPlanner.Droid.Resource.Id.coordinator;
+			global::Xamarin.RSControls.Droid.Resource.Id.CTRL = global::MealPlanner.Droid.Resource.Id.CTRL;
+			global::Xamarin.RSControls.Droid.Resource.Id.custom = global::MealPlanner.Droid.Resource.Id.custom;
+			global::Xamarin.RSControls.Droid.Resource.Id.customPanel = global::MealPlanner.Droid.Resource.Id.customPanel;
+			global::Xamarin.RSControls.Droid.Resource.Id.cut = global::MealPlanner.Droid.Resource.Id.cut;
+			global::Xamarin.RSControls.Droid.Resource.Id.date_picker_actions = global::MealPlanner.Droid.Resource.Id.date_picker_actions;
+			global::Xamarin.RSControls.Droid.Resource.Id.decor_content_parent = global::MealPlanner.Droid.Resource.Id.decor_content_parent;
+			global::Xamarin.RSControls.Droid.Resource.Id.default_activity_button = global::MealPlanner.Droid.Resource.Id.default_activity_button;
+			global::Xamarin.RSControls.Droid.Resource.Id.design_bottom_sheet = global::MealPlanner.Droid.Resource.Id.design_bottom_sheet;
+			global::Xamarin.RSControls.Droid.Resource.Id.design_menu_item_action_area = global::MealPlanner.Droid.Resource.Id.design_menu_item_action_area;
+			global::Xamarin.RSControls.Droid.Resource.Id.design_menu_item_action_area_stub = global::MealPlanner.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::Xamarin.RSControls.Droid.Resource.Id.design_menu_item_text = global::MealPlanner.Droid.Resource.Id.design_menu_item_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.design_navigation_view = global::MealPlanner.Droid.Resource.Id.design_navigation_view;
+			global::Xamarin.RSControls.Droid.Resource.Id.dialog_button = global::MealPlanner.Droid.Resource.Id.dialog_button;
+			global::Xamarin.RSControls.Droid.Resource.Id.dialog_message = global::MealPlanner.Droid.Resource.Id.dialog_message;
+			global::Xamarin.RSControls.Droid.Resource.Id.dialog_title = global::MealPlanner.Droid.Resource.Id.dialog_title;
+			global::Xamarin.RSControls.Droid.Resource.Id.disableHome = global::MealPlanner.Droid.Resource.Id.disableHome;
+			global::Xamarin.RSControls.Droid.Resource.Id.dropdown_menu = global::MealPlanner.Droid.Resource.Id.dropdown_menu;
+			global::Xamarin.RSControls.Droid.Resource.Id.edit_query = global::MealPlanner.Droid.Resource.Id.edit_query;
+			global::Xamarin.RSControls.Droid.Resource.Id.end = global::MealPlanner.Droid.Resource.Id.end;
+			global::Xamarin.RSControls.Droid.Resource.Id.end_padder = global::MealPlanner.Droid.Resource.Id.end_padder;
+			global::Xamarin.RSControls.Droid.Resource.Id.enterAlways = global::MealPlanner.Droid.Resource.Id.enterAlways;
+			global::Xamarin.RSControls.Droid.Resource.Id.enterAlwaysCollapsed = global::MealPlanner.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::Xamarin.RSControls.Droid.Resource.Id.exitUntilCollapsed = global::MealPlanner.Droid.Resource.Id.exitUntilCollapsed;
+			global::Xamarin.RSControls.Droid.Resource.Id.expanded_menu = global::MealPlanner.Droid.Resource.Id.expanded_menu;
+			global::Xamarin.RSControls.Droid.Resource.Id.expand_activities_button = global::MealPlanner.Droid.Resource.Id.expand_activities_button;
+			global::Xamarin.RSControls.Droid.Resource.Id.fade = global::MealPlanner.Droid.Resource.Id.fade;
+			global::Xamarin.RSControls.Droid.Resource.Id.fill = global::MealPlanner.Droid.Resource.Id.fill;
+			global::Xamarin.RSControls.Droid.Resource.Id.filled = global::MealPlanner.Droid.Resource.Id.filled;
+			global::Xamarin.RSControls.Droid.Resource.Id.fill_horizontal = global::MealPlanner.Droid.Resource.Id.fill_horizontal;
+			global::Xamarin.RSControls.Droid.Resource.Id.fill_vertical = global::MealPlanner.Droid.Resource.Id.fill_vertical;
+			global::Xamarin.RSControls.Droid.Resource.Id.fitToContents = global::MealPlanner.Droid.Resource.Id.fitToContents;
+			global::Xamarin.RSControls.Droid.Resource.Id.@fixed = global::MealPlanner.Droid.Resource.Id.@fixed;
+			global::Xamarin.RSControls.Droid.Resource.Id.floating = global::MealPlanner.Droid.Resource.Id.floating;
+			global::Xamarin.RSControls.Droid.Resource.Id.flyoutcontent_appbar = global::MealPlanner.Droid.Resource.Id.flyoutcontent_appbar;
+			global::Xamarin.RSControls.Droid.Resource.Id.forever = global::MealPlanner.Droid.Resource.Id.forever;
+			global::Xamarin.RSControls.Droid.Resource.Id.fragment_container_view_tag = global::MealPlanner.Droid.Resource.Id.fragment_container_view_tag;
+			global::Xamarin.RSControls.Droid.Resource.Id.FUNCTION = global::MealPlanner.Droid.Resource.Id.FUNCTION;
+			global::Xamarin.RSControls.Droid.Resource.Id.ghost_view = global::MealPlanner.Droid.Resource.Id.ghost_view;
+			global::Xamarin.RSControls.Droid.Resource.Id.ghost_view_holder = global::MealPlanner.Droid.Resource.Id.ghost_view_holder;
+			global::Xamarin.RSControls.Droid.Resource.Id.gone = global::MealPlanner.Droid.Resource.Id.gone;
+			global::Xamarin.RSControls.Droid.Resource.Id.group_divider = global::MealPlanner.Droid.Resource.Id.group_divider;
+			global::Xamarin.RSControls.Droid.Resource.Id.headerMonthTitle = global::MealPlanner.Droid.Resource.Id.headerMonthTitle;
+			global::Xamarin.RSControls.Droid.Resource.Id.headerYearTitle = global::MealPlanner.Droid.Resource.Id.headerYearTitle;
+			global::Xamarin.RSControls.Droid.Resource.Id.hideable = global::MealPlanner.Droid.Resource.Id.hideable;
+			global::Xamarin.RSControls.Droid.Resource.Id.home = global::MealPlanner.Droid.Resource.Id.home;
+			global::Xamarin.RSControls.Droid.Resource.Id.homeAsUp = global::MealPlanner.Droid.Resource.Id.homeAsUp;
+			global::Xamarin.RSControls.Droid.Resource.Id.icon = global::MealPlanner.Droid.Resource.Id.icon;
+			global::Xamarin.RSControls.Droid.Resource.Id.icon_frame = global::MealPlanner.Droid.Resource.Id.icon_frame;
+			global::Xamarin.RSControls.Droid.Resource.Id.icon_group = global::MealPlanner.Droid.Resource.Id.icon_group;
+			global::Xamarin.RSControls.Droid.Resource.Id.ifRoom = global::MealPlanner.Droid.Resource.Id.ifRoom;
+			global::Xamarin.RSControls.Droid.Resource.Id.image = global::MealPlanner.Droid.Resource.Id.image;
+			global::Xamarin.RSControls.Droid.Resource.Id.info = global::MealPlanner.Droid.Resource.Id.info;
+			global::Xamarin.RSControls.Droid.Resource.Id.italic = global::MealPlanner.Droid.Resource.Id.italic;
+			global::Xamarin.RSControls.Droid.Resource.Id.item_touch_helper_previous_elevation = global::MealPlanner.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Id.labeled = global::MealPlanner.Droid.Resource.Id.labeled;
+			global::Xamarin.RSControls.Droid.Resource.Id.left = global::MealPlanner.Droid.Resource.Id.left;
+			global::Xamarin.RSControls.Droid.Resource.Id.leftButton = global::MealPlanner.Droid.Resource.Id.leftButton;
+			global::Xamarin.RSControls.Droid.Resource.Id.line1 = global::MealPlanner.Droid.Resource.Id.line1;
+			global::Xamarin.RSControls.Droid.Resource.Id.line3 = global::MealPlanner.Droid.Resource.Id.line3;
+			global::Xamarin.RSControls.Droid.Resource.Id.linearLayout = global::MealPlanner.Droid.Resource.Id.linearLayout;
+			global::Xamarin.RSControls.Droid.Resource.Id.linearLayout2 = global::MealPlanner.Droid.Resource.Id.linearLayout2;
+			global::Xamarin.RSControls.Droid.Resource.Id.listMode = global::MealPlanner.Droid.Resource.Id.listMode;
+			global::Xamarin.RSControls.Droid.Resource.Id.list_item = global::MealPlanner.Droid.Resource.Id.list_item;
+			global::Xamarin.RSControls.Droid.Resource.Id.main_appbar = global::MealPlanner.Droid.Resource.Id.main_appbar;
+			global::Xamarin.RSControls.Droid.Resource.Id.main_tablayout = global::MealPlanner.Droid.Resource.Id.main_tablayout;
+			global::Xamarin.RSControls.Droid.Resource.Id.main_toolbar = global::MealPlanner.Droid.Resource.Id.main_toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Id.main_viewpager = global::MealPlanner.Droid.Resource.Id.main_viewpager;
+			global::Xamarin.RSControls.Droid.Resource.Id.masked = global::MealPlanner.Droid.Resource.Id.masked;
+			global::Xamarin.RSControls.Droid.Resource.Id.media_actions = global::MealPlanner.Droid.Resource.Id.media_actions;
+			global::Xamarin.RSControls.Droid.Resource.Id.media_controller_compat_view_tag = global::MealPlanner.Droid.Resource.Id.media_controller_compat_view_tag;
+			global::Xamarin.RSControls.Droid.Resource.Id.message = global::MealPlanner.Droid.Resource.Id.message;
+			global::Xamarin.RSControls.Droid.Resource.Id.META = global::MealPlanner.Droid.Resource.Id.META;
+			global::Xamarin.RSControls.Droid.Resource.Id.middle = global::MealPlanner.Droid.Resource.Id.middle;
+			global::Xamarin.RSControls.Droid.Resource.Id.mini = global::MealPlanner.Droid.Resource.Id.mini;
+			global::Xamarin.RSControls.Droid.Resource.Id.month = global::MealPlanner.Droid.Resource.Id.month;
+			global::Xamarin.RSControls.Droid.Resource.Id.monthView = global::MealPlanner.Droid.Resource.Id.monthView;
+			global::Xamarin.RSControls.Droid.Resource.Id.month_grid = global::MealPlanner.Droid.Resource.Id.month_grid;
+			global::Xamarin.RSControls.Droid.Resource.Id.month_navigation_bar = global::MealPlanner.Droid.Resource.Id.month_navigation_bar;
+			global::Xamarin.RSControls.Droid.Resource.Id.month_navigation_fragment_toggle = global::MealPlanner.Droid.Resource.Id.month_navigation_fragment_toggle;
+			global::Xamarin.RSControls.Droid.Resource.Id.month_navigation_next = global::MealPlanner.Droid.Resource.Id.month_navigation_next;
+			global::Xamarin.RSControls.Droid.Resource.Id.month_navigation_previous = global::MealPlanner.Droid.Resource.Id.month_navigation_previous;
+			global::Xamarin.RSControls.Droid.Resource.Id.month_title = global::MealPlanner.Droid.Resource.Id.month_title;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_calendar_days_of_week = global::MealPlanner.Droid.Resource.Id.mtrl_calendar_days_of_week;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_calendar_day_selector_frame = global::MealPlanner.Droid.Resource.Id.mtrl_calendar_day_selector_frame;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_calendar_frame = global::MealPlanner.Droid.Resource.Id.mtrl_calendar_frame;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_calendar_main_pane = global::MealPlanner.Droid.Resource.Id.mtrl_calendar_main_pane;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_calendar_months = global::MealPlanner.Droid.Resource.Id.mtrl_calendar_months;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_calendar_selection_frame = global::MealPlanner.Droid.Resource.Id.mtrl_calendar_selection_frame;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_calendar_text_input_frame = global::MealPlanner.Droid.Resource.Id.mtrl_calendar_text_input_frame;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_calendar_year_selector_frame = global::MealPlanner.Droid.Resource.Id.mtrl_calendar_year_selector_frame;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_card_checked_layer_id = global::MealPlanner.Droid.Resource.Id.mtrl_card_checked_layer_id;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_child_content_container = global::MealPlanner.Droid.Resource.Id.mtrl_child_content_container;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_internal_children_alpha_tag = global::MealPlanner.Droid.Resource.Id.mtrl_internal_children_alpha_tag;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_motion_snapshot_view = global::MealPlanner.Droid.Resource.Id.mtrl_motion_snapshot_view;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_picker_fullscreen = global::MealPlanner.Droid.Resource.Id.mtrl_picker_fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_picker_header = global::MealPlanner.Droid.Resource.Id.mtrl_picker_header;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_picker_header_selection_text = global::MealPlanner.Droid.Resource.Id.mtrl_picker_header_selection_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_picker_header_title_and_selection = global::MealPlanner.Droid.Resource.Id.mtrl_picker_header_title_and_selection;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_picker_header_toggle = global::MealPlanner.Droid.Resource.Id.mtrl_picker_header_toggle;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_picker_text_input_date = global::MealPlanner.Droid.Resource.Id.mtrl_picker_text_input_date;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_picker_text_input_range_end = global::MealPlanner.Droid.Resource.Id.mtrl_picker_text_input_range_end;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_picker_text_input_range_start = global::MealPlanner.Droid.Resource.Id.mtrl_picker_text_input_range_start;
+			global::Xamarin.RSControls.Droid.Resource.Id.mtrl_picker_title_text = global::MealPlanner.Droid.Resource.Id.mtrl_picker_title_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.multiply = global::MealPlanner.Droid.Resource.Id.multiply;
+			global::Xamarin.RSControls.Droid.Resource.Id.navigation_header_container = global::MealPlanner.Droid.Resource.Id.navigation_header_container;
+			global::Xamarin.RSControls.Droid.Resource.Id.nav_controller_view_tag = global::MealPlanner.Droid.Resource.Id.nav_controller_view_tag;
+			global::Xamarin.RSControls.Droid.Resource.Id.never = global::MealPlanner.Droid.Resource.Id.never;
+			global::Xamarin.RSControls.Droid.Resource.Id.none = global::MealPlanner.Droid.Resource.Id.none;
+			global::Xamarin.RSControls.Droid.Resource.Id.normal = global::MealPlanner.Droid.Resource.Id.normal;
+			global::Xamarin.RSControls.Droid.Resource.Id.noScroll = global::MealPlanner.Droid.Resource.Id.noScroll;
+			global::Xamarin.RSControls.Droid.Resource.Id.notification_background = global::MealPlanner.Droid.Resource.Id.notification_background;
+			global::Xamarin.RSControls.Droid.Resource.Id.notification_main_column = global::MealPlanner.Droid.Resource.Id.notification_main_column;
+			global::Xamarin.RSControls.Droid.Resource.Id.notification_main_column_container = global::MealPlanner.Droid.Resource.Id.notification_main_column_container;
+			global::Xamarin.RSControls.Droid.Resource.Id.off = global::MealPlanner.Droid.Resource.Id.off;
+			global::Xamarin.RSControls.Droid.Resource.Id.on = global::MealPlanner.Droid.Resource.Id.on;
+			global::Xamarin.RSControls.Droid.Resource.Id.outline = global::MealPlanner.Droid.Resource.Id.outline;
+			global::Xamarin.RSControls.Droid.Resource.Id.pager_title_strip = global::MealPlanner.Droid.Resource.Id.pager_title_strip;
+			global::Xamarin.RSControls.Droid.Resource.Id.parallax = global::MealPlanner.Droid.Resource.Id.parallax;
+			global::Xamarin.RSControls.Droid.Resource.Id.parentPanel = global::MealPlanner.Droid.Resource.Id.parentPanel;
+			global::Xamarin.RSControls.Droid.Resource.Id.parent_matrix = global::MealPlanner.Droid.Resource.Id.parent_matrix;
+			global::Xamarin.RSControls.Droid.Resource.Id.password_toggle = global::MealPlanner.Droid.Resource.Id.password_toggle;
+			global::Xamarin.RSControls.Droid.Resource.Id.peekHeight = global::MealPlanner.Droid.Resource.Id.peekHeight;
+			global::Xamarin.RSControls.Droid.Resource.Id.pin = global::MealPlanner.Droid.Resource.Id.pin;
+			global::Xamarin.RSControls.Droid.Resource.Id.progress_circular = global::MealPlanner.Droid.Resource.Id.progress_circular;
+			global::Xamarin.RSControls.Droid.Resource.Id.progress_horizontal = global::MealPlanner.Droid.Resource.Id.progress_horizontal;
+			global::Xamarin.RSControls.Droid.Resource.Id.radio = global::MealPlanner.Droid.Resource.Id.radio;
+			global::Xamarin.RSControls.Droid.Resource.Id.recycler_view = global::MealPlanner.Droid.Resource.Id.recycler_view;
+			global::Xamarin.RSControls.Droid.Resource.Id.relativeLayout = global::MealPlanner.Droid.Resource.Id.relativeLayout;
+			global::Xamarin.RSControls.Droid.Resource.Id.right = global::MealPlanner.Droid.Resource.Id.right;
+			global::Xamarin.RSControls.Droid.Resource.Id.rightButton = global::MealPlanner.Droid.Resource.Id.rightButton;
+			global::Xamarin.RSControls.Droid.Resource.Id.right_icon = global::MealPlanner.Droid.Resource.Id.right_icon;
+			global::Xamarin.RSControls.Droid.Resource.Id.right_side = global::MealPlanner.Droid.Resource.Id.right_side;
+			global::Xamarin.RSControls.Droid.Resource.Id.rounded = global::MealPlanner.Droid.Resource.Id.rounded;
+			global::Xamarin.RSControls.Droid.Resource.Id.row_index_key = global::MealPlanner.Droid.Resource.Id.row_index_key;
+			global::Xamarin.RSControls.Droid.Resource.Id.rsTextInputLayout = global::MealPlanner.Droid.Resource.Id.rsTextInputLayout;
+			global::Xamarin.RSControls.Droid.Resource.Id.save_non_transition_alpha = global::MealPlanner.Droid.Resource.Id.save_non_transition_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Id.save_overlay_view = global::MealPlanner.Droid.Resource.Id.save_overlay_view;
+			global::Xamarin.RSControls.Droid.Resource.Id.scale = global::MealPlanner.Droid.Resource.Id.scale;
+			global::Xamarin.RSControls.Droid.Resource.Id.screen = global::MealPlanner.Droid.Resource.Id.screen;
+			global::Xamarin.RSControls.Droid.Resource.Id.scroll = global::MealPlanner.Droid.Resource.Id.scroll;
+			global::Xamarin.RSControls.Droid.Resource.Id.scrollable = global::MealPlanner.Droid.Resource.Id.scrollable;
+			global::Xamarin.RSControls.Droid.Resource.Id.scrollIndicatorDown = global::MealPlanner.Droid.Resource.Id.scrollIndicatorDown;
+			global::Xamarin.RSControls.Droid.Resource.Id.scrollIndicatorUp = global::MealPlanner.Droid.Resource.Id.scrollIndicatorUp;
+			global::Xamarin.RSControls.Droid.Resource.Id.scrollView = global::MealPlanner.Droid.Resource.Id.scrollView;
+			global::Xamarin.RSControls.Droid.Resource.Id.search_badge = global::MealPlanner.Droid.Resource.Id.search_badge;
+			global::Xamarin.RSControls.Droid.Resource.Id.search_bar = global::MealPlanner.Droid.Resource.Id.search_bar;
+			global::Xamarin.RSControls.Droid.Resource.Id.search_button = global::MealPlanner.Droid.Resource.Id.search_button;
+			global::Xamarin.RSControls.Droid.Resource.Id.search_close_btn = global::MealPlanner.Droid.Resource.Id.search_close_btn;
+			global::Xamarin.RSControls.Droid.Resource.Id.search_edit_frame = global::MealPlanner.Droid.Resource.Id.search_edit_frame;
+			global::Xamarin.RSControls.Droid.Resource.Id.search_go_btn = global::MealPlanner.Droid.Resource.Id.search_go_btn;
+			global::Xamarin.RSControls.Droid.Resource.Id.search_mag_icon = global::MealPlanner.Droid.Resource.Id.search_mag_icon;
+			global::Xamarin.RSControls.Droid.Resource.Id.search_plate = global::MealPlanner.Droid.Resource.Id.search_plate;
+			global::Xamarin.RSControls.Droid.Resource.Id.search_src_text = global::MealPlanner.Droid.Resource.Id.search_src_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.search_voice_btn = global::MealPlanner.Droid.Resource.Id.search_voice_btn;
+			global::Xamarin.RSControls.Droid.Resource.Id.seekbar = global::MealPlanner.Droid.Resource.Id.seekbar;
+			global::Xamarin.RSControls.Droid.Resource.Id.seekbar_value = global::MealPlanner.Droid.Resource.Id.seekbar_value;
+			global::Xamarin.RSControls.Droid.Resource.Id.selected = global::MealPlanner.Droid.Resource.Id.selected;
+			global::Xamarin.RSControls.Droid.Resource.Id.select_dialog_listview = global::MealPlanner.Droid.Resource.Id.select_dialog_listview;
+			global::Xamarin.RSControls.Droid.Resource.Id.separator = global::MealPlanner.Droid.Resource.Id.separator;
+			global::Xamarin.RSControls.Droid.Resource.Id.shellcontent_appbar = global::MealPlanner.Droid.Resource.Id.shellcontent_appbar;
+			global::Xamarin.RSControls.Droid.Resource.Id.shellcontent_toolbar = global::MealPlanner.Droid.Resource.Id.shellcontent_toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Id.SHIFT = global::MealPlanner.Droid.Resource.Id.SHIFT;
+			global::Xamarin.RSControls.Droid.Resource.Id.shortcut = global::MealPlanner.Droid.Resource.Id.shortcut;
+			global::Xamarin.RSControls.Droid.Resource.Id.showCustom = global::MealPlanner.Droid.Resource.Id.showCustom;
+			global::Xamarin.RSControls.Droid.Resource.Id.showHome = global::MealPlanner.Droid.Resource.Id.showHome;
+			global::Xamarin.RSControls.Droid.Resource.Id.showTitle = global::MealPlanner.Droid.Resource.Id.showTitle;
+			global::Xamarin.RSControls.Droid.Resource.Id.skipCollapsed = global::MealPlanner.Droid.Resource.Id.skipCollapsed;
+			global::Xamarin.RSControls.Droid.Resource.Id.slide = global::MealPlanner.Droid.Resource.Id.slide;
+			global::Xamarin.RSControls.Droid.Resource.Id.sliding_tabs = global::MealPlanner.Droid.Resource.Id.sliding_tabs;
+			global::Xamarin.RSControls.Droid.Resource.Id.snackbar_action = global::MealPlanner.Droid.Resource.Id.snackbar_action;
+			global::Xamarin.RSControls.Droid.Resource.Id.snackbar_text = global::MealPlanner.Droid.Resource.Id.snackbar_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.snap = global::MealPlanner.Droid.Resource.Id.snap;
+			global::Xamarin.RSControls.Droid.Resource.Id.snapMargins = global::MealPlanner.Droid.Resource.Id.snapMargins;
+			global::Xamarin.RSControls.Droid.Resource.Id.spacer = global::MealPlanner.Droid.Resource.Id.spacer;
+			global::Xamarin.RSControls.Droid.Resource.Id.special_effects_controller_view_tag = global::MealPlanner.Droid.Resource.Id.special_effects_controller_view_tag;
+			global::Xamarin.RSControls.Droid.Resource.Id.spinner = global::MealPlanner.Droid.Resource.Id.spinner;
+			global::Xamarin.RSControls.Droid.Resource.Id.split_action_bar = global::MealPlanner.Droid.Resource.Id.split_action_bar;
+			global::Xamarin.RSControls.Droid.Resource.Id.src_atop = global::MealPlanner.Droid.Resource.Id.src_atop;
+			global::Xamarin.RSControls.Droid.Resource.Id.src_in = global::MealPlanner.Droid.Resource.Id.src_in;
+			global::Xamarin.RSControls.Droid.Resource.Id.src_over = global::MealPlanner.Droid.Resource.Id.src_over;
+			global::Xamarin.RSControls.Droid.Resource.Id.start = global::MealPlanner.Droid.Resource.Id.start;
+			global::Xamarin.RSControls.Droid.Resource.Id.status_bar_latest_event_content = global::MealPlanner.Droid.Resource.Id.status_bar_latest_event_content;
+			global::Xamarin.RSControls.Droid.Resource.Id.stretch = global::MealPlanner.Droid.Resource.Id.stretch;
+			global::Xamarin.RSControls.Droid.Resource.Id.submenuarrow = global::MealPlanner.Droid.Resource.Id.submenuarrow;
+			global::Xamarin.RSControls.Droid.Resource.Id.submit_area = global::MealPlanner.Droid.Resource.Id.submit_area;
+			global::Xamarin.RSControls.Droid.Resource.Id.switchWidget = global::MealPlanner.Droid.Resource.Id.switchWidget;
+			global::Xamarin.RSControls.Droid.Resource.Id.SYM = global::MealPlanner.Droid.Resource.Id.SYM;
+			global::Xamarin.RSControls.Droid.Resource.Id.tabMode = global::MealPlanner.Droid.Resource.Id.tabMode;
+			global::Xamarin.RSControls.Droid.Resource.Id.tag_accessibility_actions = global::MealPlanner.Droid.Resource.Id.tag_accessibility_actions;
+			global::Xamarin.RSControls.Droid.Resource.Id.tag_accessibility_clickable_spans = global::MealPlanner.Droid.Resource.Id.tag_accessibility_clickable_spans;
+			global::Xamarin.RSControls.Droid.Resource.Id.tag_accessibility_heading = global::MealPlanner.Droid.Resource.Id.tag_accessibility_heading;
+			global::Xamarin.RSControls.Droid.Resource.Id.tag_accessibility_pane_title = global::MealPlanner.Droid.Resource.Id.tag_accessibility_pane_title;
+			global::Xamarin.RSControls.Droid.Resource.Id.tag_screen_reader_focusable = global::MealPlanner.Droid.Resource.Id.tag_screen_reader_focusable;
+			global::Xamarin.RSControls.Droid.Resource.Id.tag_transition_group = global::MealPlanner.Droid.Resource.Id.tag_transition_group;
+			global::Xamarin.RSControls.Droid.Resource.Id.tag_unhandled_key_event_manager = global::MealPlanner.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::Xamarin.RSControls.Droid.Resource.Id.tag_unhandled_key_listeners = global::MealPlanner.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::Xamarin.RSControls.Droid.Resource.Id.test_checkbox_android_button_tint = global::MealPlanner.Droid.Resource.Id.test_checkbox_android_button_tint;
+			global::Xamarin.RSControls.Droid.Resource.Id.test_checkbox_app_button_tint = global::MealPlanner.Droid.Resource.Id.test_checkbox_app_button_tint;
+			global::Xamarin.RSControls.Droid.Resource.Id.test_radiobutton_android_button_tint = global::MealPlanner.Droid.Resource.Id.test_radiobutton_android_button_tint;
+			global::Xamarin.RSControls.Droid.Resource.Id.test_radiobutton_app_button_tint = global::MealPlanner.Droid.Resource.Id.test_radiobutton_app_button_tint;
+			global::Xamarin.RSControls.Droid.Resource.Id.text = global::MealPlanner.Droid.Resource.Id.text;
+			global::Xamarin.RSControls.Droid.Resource.Id.text2 = global::MealPlanner.Droid.Resource.Id.text2;
+			global::Xamarin.RSControls.Droid.Resource.Id.textEnd = global::MealPlanner.Droid.Resource.Id.textEnd;
+			global::Xamarin.RSControls.Droid.Resource.Id.textinput_counter = global::MealPlanner.Droid.Resource.Id.textinput_counter;
+			global::Xamarin.RSControls.Droid.Resource.Id.textinput_error = global::MealPlanner.Droid.Resource.Id.textinput_error;
+			global::Xamarin.RSControls.Droid.Resource.Id.textinput_helper_text = global::MealPlanner.Droid.Resource.Id.textinput_helper_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.textinput_placeholder = global::MealPlanner.Droid.Resource.Id.textinput_placeholder;
+			global::Xamarin.RSControls.Droid.Resource.Id.textinput_prefix_text = global::MealPlanner.Droid.Resource.Id.textinput_prefix_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.textinput_suffix_text = global::MealPlanner.Droid.Resource.Id.textinput_suffix_text;
+			global::Xamarin.RSControls.Droid.Resource.Id.textSpacerNoButtons = global::MealPlanner.Droid.Resource.Id.textSpacerNoButtons;
+			global::Xamarin.RSControls.Droid.Resource.Id.textSpacerNoTitle = global::MealPlanner.Droid.Resource.Id.textSpacerNoTitle;
+			global::Xamarin.RSControls.Droid.Resource.Id.textStart = global::MealPlanner.Droid.Resource.Id.textStart;
+			global::Xamarin.RSControls.Droid.Resource.Id.text_input_end_icon = global::MealPlanner.Droid.Resource.Id.text_input_end_icon;
+			global::Xamarin.RSControls.Droid.Resource.Id.text_input_start_icon = global::MealPlanner.Droid.Resource.Id.text_input_start_icon;
+			global::Xamarin.RSControls.Droid.Resource.Id.time = global::MealPlanner.Droid.Resource.Id.time;
+			global::Xamarin.RSControls.Droid.Resource.Id.title = global::MealPlanner.Droid.Resource.Id.title;
+			global::Xamarin.RSControls.Droid.Resource.Id.titleDividerNoCustom = global::MealPlanner.Droid.Resource.Id.titleDividerNoCustom;
+			global::Xamarin.RSControls.Droid.Resource.Id.title_template = global::MealPlanner.Droid.Resource.Id.title_template;
+			global::Xamarin.RSControls.Droid.Resource.Id.toolbar = global::MealPlanner.Droid.Resource.Id.toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Id.top = global::MealPlanner.Droid.Resource.Id.top;
+			global::Xamarin.RSControls.Droid.Resource.Id.topPanel = global::MealPlanner.Droid.Resource.Id.topPanel;
+			global::Xamarin.RSControls.Droid.Resource.Id.TOP_END = global::MealPlanner.Droid.Resource.Id.TOP_END;
+			global::Xamarin.RSControls.Droid.Resource.Id.TOP_START = global::MealPlanner.Droid.Resource.Id.TOP_START;
+			global::Xamarin.RSControls.Droid.Resource.Id.touch_outside = global::MealPlanner.Droid.Resource.Id.touch_outside;
+			global::Xamarin.RSControls.Droid.Resource.Id.transition_current_scene = global::MealPlanner.Droid.Resource.Id.transition_current_scene;
+			global::Xamarin.RSControls.Droid.Resource.Id.transition_layout_save = global::MealPlanner.Droid.Resource.Id.transition_layout_save;
+			global::Xamarin.RSControls.Droid.Resource.Id.transition_position = global::MealPlanner.Droid.Resource.Id.transition_position;
+			global::Xamarin.RSControls.Droid.Resource.Id.transition_scene_layoutid_cache = global::MealPlanner.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::Xamarin.RSControls.Droid.Resource.Id.transition_transform = global::MealPlanner.Droid.Resource.Id.transition_transform;
+			global::Xamarin.RSControls.Droid.Resource.Id.@unchecked = global::MealPlanner.Droid.Resource.Id.@unchecked;
+			global::Xamarin.RSControls.Droid.Resource.Id.uniform = global::MealPlanner.Droid.Resource.Id.uniform;
+			global::Xamarin.RSControls.Droid.Resource.Id.unlabeled = global::MealPlanner.Droid.Resource.Id.unlabeled;
+			global::Xamarin.RSControls.Droid.Resource.Id.up = global::MealPlanner.Droid.Resource.Id.up;
+			global::Xamarin.RSControls.Droid.Resource.Id.useLogo = global::MealPlanner.Droid.Resource.Id.useLogo;
+			global::Xamarin.RSControls.Droid.Resource.Id.viewPager = global::MealPlanner.Droid.Resource.Id.viewPager;
+			global::Xamarin.RSControls.Droid.Resource.Id.view_offset_helper = global::MealPlanner.Droid.Resource.Id.view_offset_helper;
+			global::Xamarin.RSControls.Droid.Resource.Id.view_tree_lifecycle_owner = global::MealPlanner.Droid.Resource.Id.view_tree_lifecycle_owner;
+			global::Xamarin.RSControls.Droid.Resource.Id.view_tree_saved_state_registry_owner = global::MealPlanner.Droid.Resource.Id.view_tree_saved_state_registry_owner;
+			global::Xamarin.RSControls.Droid.Resource.Id.view_tree_view_model_store_owner = global::MealPlanner.Droid.Resource.Id.view_tree_view_model_store_owner;
+			global::Xamarin.RSControls.Droid.Resource.Id.visible = global::MealPlanner.Droid.Resource.Id.visible;
+			global::Xamarin.RSControls.Droid.Resource.Id.visible_removing_fragment_view_tag = global::MealPlanner.Droid.Resource.Id.visible_removing_fragment_view_tag;
+			global::Xamarin.RSControls.Droid.Resource.Id.withinBounds = global::MealPlanner.Droid.Resource.Id.withinBounds;
+			global::Xamarin.RSControls.Droid.Resource.Id.withText = global::MealPlanner.Droid.Resource.Id.withText;
+			global::Xamarin.RSControls.Droid.Resource.Id.wrap_content = global::MealPlanner.Droid.Resource.Id.wrap_content;
+			global::Xamarin.RSControls.Droid.Resource.Id.yearView = global::MealPlanner.Droid.Resource.Id.yearView;
+			global::Xamarin.RSControls.Droid.Resource.Id.zero_corner_chip = global::MealPlanner.Droid.Resource.Id.zero_corner_chip;
+			global::Xamarin.RSControls.Droid.Resource.Integer.abc_config_activityDefaultDur = global::MealPlanner.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::Xamarin.RSControls.Droid.Resource.Integer.abc_config_activityShortDur = global::MealPlanner.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::Xamarin.RSControls.Droid.Resource.Integer.app_bar_elevation_anim_duration = global::MealPlanner.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::Xamarin.RSControls.Droid.Resource.Integer.bottom_sheet_slide_duration = global::MealPlanner.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::Xamarin.RSControls.Droid.Resource.Integer.cancel_button_image_alpha = global::MealPlanner.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Integer.config_navAnimTime = global::MealPlanner.Droid.Resource.Integer.config_navAnimTime;
+			global::Xamarin.RSControls.Droid.Resource.Integer.config_tooltipAnimTime = global::MealPlanner.Droid.Resource.Integer.config_tooltipAnimTime;
+			global::Xamarin.RSControls.Droid.Resource.Integer.design_snackbar_text_max_lines = global::MealPlanner.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::Xamarin.RSControls.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms = global::MealPlanner.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms;
+			global::Xamarin.RSControls.Droid.Resource.Integer.hide_password_duration = global::MealPlanner.Droid.Resource.Integer.hide_password_duration;
+			global::Xamarin.RSControls.Droid.Resource.Integer.mtrl_badge_max_character_count = global::MealPlanner.Droid.Resource.Integer.mtrl_badge_max_character_count;
+			global::Xamarin.RSControls.Droid.Resource.Integer.mtrl_btn_anim_delay_ms = global::MealPlanner.Droid.Resource.Integer.mtrl_btn_anim_delay_ms;
+			global::Xamarin.RSControls.Droid.Resource.Integer.mtrl_btn_anim_duration_ms = global::MealPlanner.Droid.Resource.Integer.mtrl_btn_anim_duration_ms;
+			global::Xamarin.RSControls.Droid.Resource.Integer.mtrl_calendar_header_orientation = global::MealPlanner.Droid.Resource.Integer.mtrl_calendar_header_orientation;
+			global::Xamarin.RSControls.Droid.Resource.Integer.mtrl_calendar_selection_text_lines = global::MealPlanner.Droid.Resource.Integer.mtrl_calendar_selection_text_lines;
+			global::Xamarin.RSControls.Droid.Resource.Integer.mtrl_calendar_year_selector_span = global::MealPlanner.Droid.Resource.Integer.mtrl_calendar_year_selector_span;
+			global::Xamarin.RSControls.Droid.Resource.Integer.mtrl_card_anim_delay_ms = global::MealPlanner.Droid.Resource.Integer.mtrl_card_anim_delay_ms;
+			global::Xamarin.RSControls.Droid.Resource.Integer.mtrl_card_anim_duration_ms = global::MealPlanner.Droid.Resource.Integer.mtrl_card_anim_duration_ms;
+			global::Xamarin.RSControls.Droid.Resource.Integer.mtrl_chip_anim_duration = global::MealPlanner.Droid.Resource.Integer.mtrl_chip_anim_duration;
+			global::Xamarin.RSControls.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::MealPlanner.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
+			global::Xamarin.RSControls.Droid.Resource.Integer.show_password_duration = global::MealPlanner.Droid.Resource.Integer.show_password_duration;
+			global::Xamarin.RSControls.Droid.Resource.Integer.status_bar_notification_info_maxnum = global::MealPlanner.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.RSControls.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0 = global::MealPlanner.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0;
+			global::Xamarin.RSControls.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1 = global::MealPlanner.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1;
+			global::Xamarin.RSControls.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0 = global::MealPlanner.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0;
+			global::Xamarin.RSControls.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1 = global::MealPlanner.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1;
+			global::Xamarin.RSControls.Droid.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0 = global::MealPlanner.Droid.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0;
+			global::Xamarin.RSControls.Droid.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0 = global::MealPlanner.Droid.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0;
+			global::Xamarin.RSControls.Droid.Resource.Interpolator.fast_out_slow_in = global::MealPlanner.Droid.Resource.Interpolator.fast_out_slow_in;
+			global::Xamarin.RSControls.Droid.Resource.Interpolator.mtrl_fast_out_linear_in = global::MealPlanner.Droid.Resource.Interpolator.mtrl_fast_out_linear_in;
+			global::Xamarin.RSControls.Droid.Resource.Interpolator.mtrl_fast_out_slow_in = global::MealPlanner.Droid.Resource.Interpolator.mtrl_fast_out_slow_in;
+			global::Xamarin.RSControls.Droid.Resource.Interpolator.mtrl_linear = global::MealPlanner.Droid.Resource.Interpolator.mtrl_linear;
+			global::Xamarin.RSControls.Droid.Resource.Interpolator.mtrl_linear_out_slow_in = global::MealPlanner.Droid.Resource.Interpolator.mtrl_linear_out_slow_in;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_action_bar_title_item = global::MealPlanner.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_action_bar_up_container = global::MealPlanner.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_action_menu_item_layout = global::MealPlanner.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_action_menu_layout = global::MealPlanner.Droid.Resource.Layout.abc_action_menu_layout;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_action_mode_bar = global::MealPlanner.Droid.Resource.Layout.abc_action_mode_bar;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_action_mode_close_item_material = global::MealPlanner.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_activity_chooser_view = global::MealPlanner.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_activity_chooser_view_list_item = global::MealPlanner.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_alert_dialog_button_bar_material = global::MealPlanner.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_alert_dialog_material = global::MealPlanner.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_alert_dialog_title_material = global::MealPlanner.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_cascading_menu_item_layout = global::MealPlanner.Droid.Resource.Layout.abc_cascading_menu_item_layout;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_dialog_title_material = global::MealPlanner.Droid.Resource.Layout.abc_dialog_title_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_expanded_menu_layout = global::MealPlanner.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_list_menu_item_checkbox = global::MealPlanner.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_list_menu_item_icon = global::MealPlanner.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_list_menu_item_layout = global::MealPlanner.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_list_menu_item_radio = global::MealPlanner.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_popup_menu_header_item_layout = global::MealPlanner.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_popup_menu_item_layout = global::MealPlanner.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_screen_content_include = global::MealPlanner.Droid.Resource.Layout.abc_screen_content_include;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_screen_simple = global::MealPlanner.Droid.Resource.Layout.abc_screen_simple;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode = global::MealPlanner.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_screen_toolbar = global::MealPlanner.Droid.Resource.Layout.abc_screen_toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line = global::MealPlanner.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_search_view = global::MealPlanner.Droid.Resource.Layout.abc_search_view;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_select_dialog_material = global::MealPlanner.Droid.Resource.Layout.abc_select_dialog_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.abc_tooltip = global::MealPlanner.Droid.Resource.Layout.abc_tooltip;
+			global::Xamarin.RSControls.Droid.Resource.Layout.BottomTabLayout = global::MealPlanner.Droid.Resource.Layout.BottomTabLayout;
+			global::Xamarin.RSControls.Droid.Resource.Layout.browser_actions_context_menu_page = global::MealPlanner.Droid.Resource.Layout.browser_actions_context_menu_page;
+			global::Xamarin.RSControls.Droid.Resource.Layout.browser_actions_context_menu_row = global::MealPlanner.Droid.Resource.Layout.browser_actions_context_menu_row;
+			global::Xamarin.RSControls.Droid.Resource.Layout.custom_dialog = global::MealPlanner.Droid.Resource.Layout.custom_dialog;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_bottom_navigation_item = global::MealPlanner.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_bottom_sheet_dialog = global::MealPlanner.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_layout_snackbar = global::MealPlanner.Droid.Resource.Layout.design_layout_snackbar;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_layout_snackbar_include = global::MealPlanner.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_layout_tab_icon = global::MealPlanner.Droid.Resource.Layout.design_layout_tab_icon;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_layout_tab_text = global::MealPlanner.Droid.Resource.Layout.design_layout_tab_text;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_menu_item_action_area = global::MealPlanner.Droid.Resource.Layout.design_menu_item_action_area;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_navigation_item = global::MealPlanner.Droid.Resource.Layout.design_navigation_item;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_navigation_item_header = global::MealPlanner.Droid.Resource.Layout.design_navigation_item_header;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_navigation_item_separator = global::MealPlanner.Droid.Resource.Layout.design_navigation_item_separator;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_navigation_item_subheader = global::MealPlanner.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_navigation_menu = global::MealPlanner.Droid.Resource.Layout.design_navigation_menu;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_navigation_menu_item = global::MealPlanner.Droid.Resource.Layout.design_navigation_menu_item;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_text_input_end_icon = global::MealPlanner.Droid.Resource.Layout.design_text_input_end_icon;
+			global::Xamarin.RSControls.Droid.Resource.Layout.design_text_input_start_icon = global::MealPlanner.Droid.Resource.Layout.design_text_input_start_icon;
+			global::Xamarin.RSControls.Droid.Resource.Layout.expand_button = global::MealPlanner.Droid.Resource.Layout.expand_button;
+			global::Xamarin.RSControls.Droid.Resource.Layout.FallbackTabbarDoNotUse = global::MealPlanner.Droid.Resource.Layout.FallbackTabbarDoNotUse;
+			global::Xamarin.RSControls.Droid.Resource.Layout.FallbackToolbarDoNotUse = global::MealPlanner.Droid.Resource.Layout.FallbackToolbarDoNotUse;
+			global::Xamarin.RSControls.Droid.Resource.Layout.FlyoutContent = global::MealPlanner.Droid.Resource.Layout.FlyoutContent;
+			global::Xamarin.RSControls.Droid.Resource.Layout.image_frame = global::MealPlanner.Droid.Resource.Layout.image_frame;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_alert_dialog = global::MealPlanner.Droid.Resource.Layout.mtrl_alert_dialog;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_alert_dialog_actions = global::MealPlanner.Droid.Resource.Layout.mtrl_alert_dialog_actions;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_alert_dialog_title = global::MealPlanner.Droid.Resource.Layout.mtrl_alert_dialog_title;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_alert_select_dialog_item = global::MealPlanner.Droid.Resource.Layout.mtrl_alert_select_dialog_item;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_alert_select_dialog_multichoice = global::MealPlanner.Droid.Resource.Layout.mtrl_alert_select_dialog_multichoice;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_alert_select_dialog_singlechoice = global::MealPlanner.Droid.Resource.Layout.mtrl_alert_select_dialog_singlechoice;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_calendar_day = global::MealPlanner.Droid.Resource.Layout.mtrl_calendar_day;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_calendar_days_of_week = global::MealPlanner.Droid.Resource.Layout.mtrl_calendar_days_of_week;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_calendar_day_of_week = global::MealPlanner.Droid.Resource.Layout.mtrl_calendar_day_of_week;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_calendar_horizontal = global::MealPlanner.Droid.Resource.Layout.mtrl_calendar_horizontal;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_calendar_month = global::MealPlanner.Droid.Resource.Layout.mtrl_calendar_month;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_calendar_months = global::MealPlanner.Droid.Resource.Layout.mtrl_calendar_months;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_calendar_month_labeled = global::MealPlanner.Droid.Resource.Layout.mtrl_calendar_month_labeled;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_calendar_month_navigation = global::MealPlanner.Droid.Resource.Layout.mtrl_calendar_month_navigation;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_calendar_vertical = global::MealPlanner.Droid.Resource.Layout.mtrl_calendar_vertical;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_calendar_year = global::MealPlanner.Droid.Resource.Layout.mtrl_calendar_year;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_layout_snackbar = global::MealPlanner.Droid.Resource.Layout.mtrl_layout_snackbar;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_layout_snackbar_include = global::MealPlanner.Droid.Resource.Layout.mtrl_layout_snackbar_include;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_picker_actions = global::MealPlanner.Droid.Resource.Layout.mtrl_picker_actions;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_picker_dialog = global::MealPlanner.Droid.Resource.Layout.mtrl_picker_dialog;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_picker_fullscreen = global::MealPlanner.Droid.Resource.Layout.mtrl_picker_fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_picker_header_dialog = global::MealPlanner.Droid.Resource.Layout.mtrl_picker_header_dialog;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_picker_header_fullscreen = global::MealPlanner.Droid.Resource.Layout.mtrl_picker_header_fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_picker_header_selection_text = global::MealPlanner.Droid.Resource.Layout.mtrl_picker_header_selection_text;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_picker_header_title_text = global::MealPlanner.Droid.Resource.Layout.mtrl_picker_header_title_text;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_picker_header_toggle = global::MealPlanner.Droid.Resource.Layout.mtrl_picker_header_toggle;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_picker_text_input_date = global::MealPlanner.Droid.Resource.Layout.mtrl_picker_text_input_date;
+			global::Xamarin.RSControls.Droid.Resource.Layout.mtrl_picker_text_input_date_range = global::MealPlanner.Droid.Resource.Layout.mtrl_picker_text_input_date_range;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_action = global::MealPlanner.Droid.Resource.Layout.notification_action;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_action_tombstone = global::MealPlanner.Droid.Resource.Layout.notification_action_tombstone;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_media_action = global::MealPlanner.Droid.Resource.Layout.notification_media_action;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_media_cancel_action = global::MealPlanner.Droid.Resource.Layout.notification_media_cancel_action;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_template_big_media = global::MealPlanner.Droid.Resource.Layout.notification_template_big_media;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_template_big_media_custom = global::MealPlanner.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_template_big_media_narrow = global::MealPlanner.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_template_big_media_narrow_custom = global::MealPlanner.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_template_custom_big = global::MealPlanner.Droid.Resource.Layout.notification_template_custom_big;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_template_icon_group = global::MealPlanner.Droid.Resource.Layout.notification_template_icon_group;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_template_lines_media = global::MealPlanner.Droid.Resource.Layout.notification_template_lines_media;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_template_media = global::MealPlanner.Droid.Resource.Layout.notification_template_media;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_template_media_custom = global::MealPlanner.Droid.Resource.Layout.notification_template_media_custom;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_template_part_chronometer = global::MealPlanner.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Xamarin.RSControls.Droid.Resource.Layout.notification_template_part_time = global::MealPlanner.Droid.Resource.Layout.notification_template_part_time;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference = global::MealPlanner.Droid.Resource.Layout.preference;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_category = global::MealPlanner.Droid.Resource.Layout.preference_category;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_category_material = global::MealPlanner.Droid.Resource.Layout.preference_category_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_dialog_edittext = global::MealPlanner.Droid.Resource.Layout.preference_dialog_edittext;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_dropdown = global::MealPlanner.Droid.Resource.Layout.preference_dropdown;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_dropdown_material = global::MealPlanner.Droid.Resource.Layout.preference_dropdown_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_information = global::MealPlanner.Droid.Resource.Layout.preference_information;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_information_material = global::MealPlanner.Droid.Resource.Layout.preference_information_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_list_fragment = global::MealPlanner.Droid.Resource.Layout.preference_list_fragment;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_material = global::MealPlanner.Droid.Resource.Layout.preference_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_recyclerview = global::MealPlanner.Droid.Resource.Layout.preference_recyclerview;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_widget_checkbox = global::MealPlanner.Droid.Resource.Layout.preference_widget_checkbox;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_widget_seekbar = global::MealPlanner.Droid.Resource.Layout.preference_widget_seekbar;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_widget_seekbar_material = global::MealPlanner.Droid.Resource.Layout.preference_widget_seekbar_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_widget_switch = global::MealPlanner.Droid.Resource.Layout.preference_widget_switch;
+			global::Xamarin.RSControls.Droid.Resource.Layout.preference_widget_switch_compat = global::MealPlanner.Droid.Resource.Layout.preference_widget_switch_compat;
+			global::Xamarin.RSControls.Droid.Resource.Layout.RootLayout = global::MealPlanner.Droid.Resource.Layout.RootLayout;
+			global::Xamarin.RSControls.Droid.Resource.Layout.RSAutoCompleteListItem = global::MealPlanner.Droid.Resource.Layout.RSAutoCompleteListItem;
+			global::Xamarin.RSControls.Droid.Resource.Layout.RSMonthViewItem = global::MealPlanner.Droid.Resource.Layout.RSMonthViewItem;
+			global::Xamarin.RSControls.Droid.Resource.Layout.RSMonthYearPickerDialog = global::MealPlanner.Droid.Resource.Layout.RSMonthYearPickerDialog;
+			global::Xamarin.RSControls.Droid.Resource.Layout.RSTextInputLayout = global::MealPlanner.Droid.Resource.Layout.RSTextInputLayout;
+			global::Xamarin.RSControls.Droid.Resource.Layout.RSYearItemView = global::MealPlanner.Droid.Resource.Layout.RSYearItemView;
+			global::Xamarin.RSControls.Droid.Resource.Layout.rs_dialog_view = global::MealPlanner.Droid.Resource.Layout.rs_dialog_view;
+			global::Xamarin.RSControls.Droid.Resource.Layout.select_dialog_item_material = global::MealPlanner.Droid.Resource.Layout.select_dialog_item_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.select_dialog_multichoice_material = global::MealPlanner.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.select_dialog_singlechoice_material = global::MealPlanner.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::Xamarin.RSControls.Droid.Resource.Layout.ShellContent = global::MealPlanner.Droid.Resource.Layout.ShellContent;
+			global::Xamarin.RSControls.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::MealPlanner.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Xamarin.RSControls.Droid.Resource.Layout.Tabbar = global::MealPlanner.Droid.Resource.Layout.Tabbar;
+			global::Xamarin.RSControls.Droid.Resource.Layout.test_action_chip = global::MealPlanner.Droid.Resource.Layout.test_action_chip;
+			global::Xamarin.RSControls.Droid.Resource.Layout.test_chip_zero_corner_radius = global::MealPlanner.Droid.Resource.Layout.test_chip_zero_corner_radius;
+			global::Xamarin.RSControls.Droid.Resource.Layout.test_design_checkbox = global::MealPlanner.Droid.Resource.Layout.test_design_checkbox;
+			global::Xamarin.RSControls.Droid.Resource.Layout.test_design_radiobutton = global::MealPlanner.Droid.Resource.Layout.test_design_radiobutton;
+			global::Xamarin.RSControls.Droid.Resource.Layout.test_reflow_chipgroup = global::MealPlanner.Droid.Resource.Layout.test_reflow_chipgroup;
+			global::Xamarin.RSControls.Droid.Resource.Layout.test_toolbar = global::MealPlanner.Droid.Resource.Layout.test_toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Layout.test_toolbar_custom_background = global::MealPlanner.Droid.Resource.Layout.test_toolbar_custom_background;
+			global::Xamarin.RSControls.Droid.Resource.Layout.test_toolbar_elevation = global::MealPlanner.Droid.Resource.Layout.test_toolbar_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Layout.test_toolbar_surface = global::MealPlanner.Droid.Resource.Layout.test_toolbar_surface;
+			global::Xamarin.RSControls.Droid.Resource.Layout.text_view_without_line_height = global::MealPlanner.Droid.Resource.Layout.text_view_without_line_height;
+			global::Xamarin.RSControls.Droid.Resource.Layout.text_view_with_line_height_from_appearance = global::MealPlanner.Droid.Resource.Layout.text_view_with_line_height_from_appearance;
+			global::Xamarin.RSControls.Droid.Resource.Layout.text_view_with_line_height_from_layout = global::MealPlanner.Droid.Resource.Layout.text_view_with_line_height_from_layout;
+			global::Xamarin.RSControls.Droid.Resource.Layout.text_view_with_line_height_from_style = global::MealPlanner.Droid.Resource.Layout.text_view_with_line_height_from_style;
+			global::Xamarin.RSControls.Droid.Resource.Layout.text_view_with_theme_line_height = global::MealPlanner.Droid.Resource.Layout.text_view_with_theme_line_height;
+			global::Xamarin.RSControls.Droid.Resource.Layout.Toolbar = global::MealPlanner.Droid.Resource.Layout.Toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Plurals.mtrl_badge_content_description = global::MealPlanner.Droid.Resource.Plurals.mtrl_badge_content_description;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_action_bar_home_description = global::MealPlanner.Droid.Resource.String.abc_action_bar_home_description;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_action_bar_up_description = global::MealPlanner.Droid.Resource.String.abc_action_bar_up_description;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_action_menu_overflow_description = global::MealPlanner.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_action_mode_done = global::MealPlanner.Droid.Resource.String.abc_action_mode_done;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_activitychooserview_choose_application = global::MealPlanner.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_activity_chooser_view_see_all = global::MealPlanner.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_capital_off = global::MealPlanner.Droid.Resource.String.abc_capital_off;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_capital_on = global::MealPlanner.Droid.Resource.String.abc_capital_on;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_menu_alt_shortcut_label = global::MealPlanner.Droid.Resource.String.abc_menu_alt_shortcut_label;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_menu_ctrl_shortcut_label = global::MealPlanner.Droid.Resource.String.abc_menu_ctrl_shortcut_label;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_menu_delete_shortcut_label = global::MealPlanner.Droid.Resource.String.abc_menu_delete_shortcut_label;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_menu_enter_shortcut_label = global::MealPlanner.Droid.Resource.String.abc_menu_enter_shortcut_label;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_menu_function_shortcut_label = global::MealPlanner.Droid.Resource.String.abc_menu_function_shortcut_label;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_menu_meta_shortcut_label = global::MealPlanner.Droid.Resource.String.abc_menu_meta_shortcut_label;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_menu_shift_shortcut_label = global::MealPlanner.Droid.Resource.String.abc_menu_shift_shortcut_label;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_menu_space_shortcut_label = global::MealPlanner.Droid.Resource.String.abc_menu_space_shortcut_label;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_menu_sym_shortcut_label = global::MealPlanner.Droid.Resource.String.abc_menu_sym_shortcut_label;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_prepend_shortcut_label = global::MealPlanner.Droid.Resource.String.abc_prepend_shortcut_label;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_searchview_description_clear = global::MealPlanner.Droid.Resource.String.abc_searchview_description_clear;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_searchview_description_query = global::MealPlanner.Droid.Resource.String.abc_searchview_description_query;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_searchview_description_search = global::MealPlanner.Droid.Resource.String.abc_searchview_description_search;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_searchview_description_submit = global::MealPlanner.Droid.Resource.String.abc_searchview_description_submit;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_searchview_description_voice = global::MealPlanner.Droid.Resource.String.abc_searchview_description_voice;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_search_hint = global::MealPlanner.Droid.Resource.String.abc_search_hint;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_shareactionprovider_share_with = global::MealPlanner.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::MealPlanner.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::Xamarin.RSControls.Droid.Resource.String.abc_toolbar_collapse_description = global::MealPlanner.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::Xamarin.RSControls.Droid.Resource.String.appbar_scrolling_view_behavior = global::MealPlanner.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::Xamarin.RSControls.Droid.Resource.String.app_name = global::MealPlanner.Droid.Resource.String.app_name;
+			global::Xamarin.RSControls.Droid.Resource.String.bottom_sheet_behavior = global::MealPlanner.Droid.Resource.String.bottom_sheet_behavior;
+			global::Xamarin.RSControls.Droid.Resource.String.character_counter_content_description = global::MealPlanner.Droid.Resource.String.character_counter_content_description;
+			global::Xamarin.RSControls.Droid.Resource.String.character_counter_overflowed_content_description = global::MealPlanner.Droid.Resource.String.character_counter_overflowed_content_description;
+			global::Xamarin.RSControls.Droid.Resource.String.character_counter_pattern = global::MealPlanner.Droid.Resource.String.character_counter_pattern;
+			global::Xamarin.RSControls.Droid.Resource.String.chip_text = global::MealPlanner.Droid.Resource.String.chip_text;
+			global::Xamarin.RSControls.Droid.Resource.String.clear_text_end_icon_content_description = global::MealPlanner.Droid.Resource.String.clear_text_end_icon_content_description;
+			global::Xamarin.RSControls.Droid.Resource.String.copy = global::MealPlanner.Droid.Resource.String.copy;
+			global::Xamarin.RSControls.Droid.Resource.String.copy_toast_msg = global::MealPlanner.Droid.Resource.String.copy_toast_msg;
+			global::Xamarin.RSControls.Droid.Resource.String.error_icon_content_description = global::MealPlanner.Droid.Resource.String.error_icon_content_description;
+			global::Xamarin.RSControls.Droid.Resource.String.expand_button_title = global::MealPlanner.Droid.Resource.String.expand_button_title;
+			global::Xamarin.RSControls.Droid.Resource.String.exposed_dropdown_menu_content_description = global::MealPlanner.Droid.Resource.String.exposed_dropdown_menu_content_description;
+			global::Xamarin.RSControls.Droid.Resource.String.fab_transformation_scrim_behavior = global::MealPlanner.Droid.Resource.String.fab_transformation_scrim_behavior;
+			global::Xamarin.RSControls.Droid.Resource.String.fab_transformation_sheet_behavior = global::MealPlanner.Droid.Resource.String.fab_transformation_sheet_behavior;
+			global::Xamarin.RSControls.Droid.Resource.String.fallback_menu_item_copy_link = global::MealPlanner.Droid.Resource.String.fallback_menu_item_copy_link;
+			global::Xamarin.RSControls.Droid.Resource.String.fallback_menu_item_open_in_browser = global::MealPlanner.Droid.Resource.String.fallback_menu_item_open_in_browser;
+			global::Xamarin.RSControls.Droid.Resource.String.fallback_menu_item_share_link = global::MealPlanner.Droid.Resource.String.fallback_menu_item_share_link;
+			global::Xamarin.RSControls.Droid.Resource.String.hello = global::MealPlanner.Droid.Resource.String.hello;
+			global::Xamarin.RSControls.Droid.Resource.String.hide_bottom_view_on_scroll_behavior = global::MealPlanner.Droid.Resource.String.hide_bottom_view_on_scroll_behavior;
+			global::Xamarin.RSControls.Droid.Resource.String.icon_content_description = global::MealPlanner.Droid.Resource.String.icon_content_description;
+			global::Xamarin.RSControls.Droid.Resource.String.item_view_role_description = global::MealPlanner.Droid.Resource.String.item_view_role_description;
+			global::Xamarin.RSControls.Droid.Resource.String.material_slider_range_end = global::MealPlanner.Droid.Resource.String.material_slider_range_end;
+			global::Xamarin.RSControls.Droid.Resource.String.material_slider_range_start = global::MealPlanner.Droid.Resource.String.material_slider_range_start;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_badge_numberless_content_description = global::MealPlanner.Droid.Resource.String.mtrl_badge_numberless_content_description;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_chip_close_icon_content_description = global::MealPlanner.Droid.Resource.String.mtrl_chip_close_icon_content_description;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_exceed_max_badge_number_content_description = global::MealPlanner.Droid.Resource.String.mtrl_exceed_max_badge_number_content_description;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_exceed_max_badge_number_suffix = global::MealPlanner.Droid.Resource.String.mtrl_exceed_max_badge_number_suffix;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_a11y_next_month = global::MealPlanner.Droid.Resource.String.mtrl_picker_a11y_next_month;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_a11y_prev_month = global::MealPlanner.Droid.Resource.String.mtrl_picker_a11y_prev_month;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_announce_current_selection = global::MealPlanner.Droid.Resource.String.mtrl_picker_announce_current_selection;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_cancel = global::MealPlanner.Droid.Resource.String.mtrl_picker_cancel;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_confirm = global::MealPlanner.Droid.Resource.String.mtrl_picker_confirm;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_date_header_selected = global::MealPlanner.Droid.Resource.String.mtrl_picker_date_header_selected;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_date_header_title = global::MealPlanner.Droid.Resource.String.mtrl_picker_date_header_title;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_date_header_unselected = global::MealPlanner.Droid.Resource.String.mtrl_picker_date_header_unselected;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_day_of_week_column_header = global::MealPlanner.Droid.Resource.String.mtrl_picker_day_of_week_column_header;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_invalid_format = global::MealPlanner.Droid.Resource.String.mtrl_picker_invalid_format;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_invalid_format_example = global::MealPlanner.Droid.Resource.String.mtrl_picker_invalid_format_example;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_invalid_format_use = global::MealPlanner.Droid.Resource.String.mtrl_picker_invalid_format_use;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_invalid_range = global::MealPlanner.Droid.Resource.String.mtrl_picker_invalid_range;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_navigate_to_year_description = global::MealPlanner.Droid.Resource.String.mtrl_picker_navigate_to_year_description;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_out_of_range = global::MealPlanner.Droid.Resource.String.mtrl_picker_out_of_range;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_range_header_only_end_selected = global::MealPlanner.Droid.Resource.String.mtrl_picker_range_header_only_end_selected;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_range_header_only_start_selected = global::MealPlanner.Droid.Resource.String.mtrl_picker_range_header_only_start_selected;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_range_header_selected = global::MealPlanner.Droid.Resource.String.mtrl_picker_range_header_selected;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_range_header_title = global::MealPlanner.Droid.Resource.String.mtrl_picker_range_header_title;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_range_header_unselected = global::MealPlanner.Droid.Resource.String.mtrl_picker_range_header_unselected;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_save = global::MealPlanner.Droid.Resource.String.mtrl_picker_save;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_text_input_date_hint = global::MealPlanner.Droid.Resource.String.mtrl_picker_text_input_date_hint;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_text_input_date_range_end_hint = global::MealPlanner.Droid.Resource.String.mtrl_picker_text_input_date_range_end_hint;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_text_input_date_range_start_hint = global::MealPlanner.Droid.Resource.String.mtrl_picker_text_input_date_range_start_hint;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_text_input_day_abbr = global::MealPlanner.Droid.Resource.String.mtrl_picker_text_input_day_abbr;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_text_input_month_abbr = global::MealPlanner.Droid.Resource.String.mtrl_picker_text_input_month_abbr;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_text_input_year_abbr = global::MealPlanner.Droid.Resource.String.mtrl_picker_text_input_year_abbr;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_toggle_to_calendar_input_mode = global::MealPlanner.Droid.Resource.String.mtrl_picker_toggle_to_calendar_input_mode;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_toggle_to_day_selection = global::MealPlanner.Droid.Resource.String.mtrl_picker_toggle_to_day_selection;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_toggle_to_text_input_mode = global::MealPlanner.Droid.Resource.String.mtrl_picker_toggle_to_text_input_mode;
+			global::Xamarin.RSControls.Droid.Resource.String.mtrl_picker_toggle_to_year_selection = global::MealPlanner.Droid.Resource.String.mtrl_picker_toggle_to_year_selection;
+			global::Xamarin.RSControls.Droid.Resource.String.nav_app_bar_navigate_up_description = global::MealPlanner.Droid.Resource.String.nav_app_bar_navigate_up_description;
+			global::Xamarin.RSControls.Droid.Resource.String.nav_app_bar_open_drawer_description = global::MealPlanner.Droid.Resource.String.nav_app_bar_open_drawer_description;
+			global::Xamarin.RSControls.Droid.Resource.String.not_set = global::MealPlanner.Droid.Resource.String.not_set;
+			global::Xamarin.RSControls.Droid.Resource.String.overflow_tab_title = global::MealPlanner.Droid.Resource.String.overflow_tab_title;
+			global::Xamarin.RSControls.Droid.Resource.String.password_toggle_content_description = global::MealPlanner.Droid.Resource.String.password_toggle_content_description;
+			global::Xamarin.RSControls.Droid.Resource.String.path_password_eye = global::MealPlanner.Droid.Resource.String.path_password_eye;
+			global::Xamarin.RSControls.Droid.Resource.String.path_password_eye_mask_strike_through = global::MealPlanner.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::Xamarin.RSControls.Droid.Resource.String.path_password_eye_mask_visible = global::MealPlanner.Droid.Resource.String.path_password_eye_mask_visible;
+			global::Xamarin.RSControls.Droid.Resource.String.path_password_strike_through = global::MealPlanner.Droid.Resource.String.path_password_strike_through;
+			global::Xamarin.RSControls.Droid.Resource.String.preference_copied = global::MealPlanner.Droid.Resource.String.preference_copied;
+			global::Xamarin.RSControls.Droid.Resource.String.search_menu_title = global::MealPlanner.Droid.Resource.String.search_menu_title;
+			global::Xamarin.RSControls.Droid.Resource.String.status_bar_notification_info_overflow = global::MealPlanner.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Xamarin.RSControls.Droid.Resource.String.summary_collapsed_preference_list = global::MealPlanner.Droid.Resource.String.summary_collapsed_preference_list;
+			global::Xamarin.RSControls.Droid.Resource.String.v7_preference_off = global::MealPlanner.Droid.Resource.String.v7_preference_off;
+			global::Xamarin.RSControls.Droid.Resource.String.v7_preference_on = global::MealPlanner.Droid.Resource.String.v7_preference_on;
+			global::Xamarin.RSControls.Droid.Resource.Style.AlertDialog_AppCompat = global::MealPlanner.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.AlertDialog_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.AndroidThemeColorAccentYellow = global::MealPlanner.Droid.Resource.Style.AndroidThemeColorAccentYellow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Animation_AppCompat_Dialog = global::MealPlanner.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Animation_AppCompat_DropDownUp = global::MealPlanner.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::Xamarin.RSControls.Droid.Resource.Style.Animation_AppCompat_Tooltip = global::MealPlanner.Droid.Resource.Style.Animation_AppCompat_Tooltip;
+			global::Xamarin.RSControls.Droid.Resource.Style.Animation_Design_BottomSheetDialog = global::MealPlanner.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Animation_MaterialComponents_BottomSheetDialog = global::MealPlanner.Droid.Resource.Style.Animation_MaterialComponents_BottomSheetDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.AppCompatDialogStyle = global::MealPlanner.Droid.Resource.Style.AppCompatDialogStyle;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_AlertDialog_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Animation_AppCompat_Dialog = global::MealPlanner.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::MealPlanner.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip = global::MealPlanner.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_CardView = global::MealPlanner.Droid.Resource.Style.Base_CardView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon = global::MealPlanner.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel = global::MealPlanner.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text = global::MealPlanner.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Badge = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Badge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Button = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Button;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6 = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2 = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::MealPlanner.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert_Framework;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::MealPlanner.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::MealPlanner.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Light = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::MealPlanner.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::MealPlanner.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::MealPlanner.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_Theme_MaterialComponents = global::MealPlanner.Droid.Resource.Style.Base_V14_Theme_MaterialComponents;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::MealPlanner.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::MealPlanner.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge = global::MealPlanner.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light = global::MealPlanner.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::MealPlanner.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::MealPlanner.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::MealPlanner.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge = global::MealPlanner.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::MealPlanner.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::MealPlanner.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::MealPlanner.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V21_Theme_MaterialComponents = global::MealPlanner.Droid.Resource.Style.Base_V21_Theme_MaterialComponents;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Dialog = global::MealPlanner.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Light = global::MealPlanner.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Light_Dialog = global::MealPlanner.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V22_Theme_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V23_Theme_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V26_Theme_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_V26_Theme_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::MealPlanner.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V28_Theme_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_V28_Theme_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V28_Theme_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Base_V28_Theme_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::MealPlanner.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V7_Theme_AppCompat = global::MealPlanner.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::MealPlanner.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::MealPlanner.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::MealPlanner.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::MealPlanner.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::MealPlanner.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Button = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_EditText = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ListView = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_SearchView = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Spinner = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_TextView = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_TextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::MealPlanner.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_Design_TabLayout = global::MealPlanner.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView = global::MealPlanner.Droid.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView = global::MealPlanner.Droid.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip = global::MealPlanner.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu = global::MealPlanner.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu = global::MealPlanner.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::MealPlanner.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow = global::MealPlanner.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_MaterialComponents_Slider = global::MealPlanner.Droid.Resource.Style.Base_Widget_MaterialComponents_Slider;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText = global::MealPlanner.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout = global::MealPlanner.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout;
+			global::Xamarin.RSControls.Droid.Resource.Style.Base_Widget_MaterialComponents_TextView = global::MealPlanner.Droid.Resource.Style.Base_Widget_MaterialComponents_TextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.CardView = global::MealPlanner.Droid.Resource.Style.CardView;
+			global::Xamarin.RSControls.Droid.Resource.Style.CardView_Dark = global::MealPlanner.Droid.Resource.Style.CardView_Dark;
+			global::Xamarin.RSControls.Droid.Resource.Style.CardView_Light = global::MealPlanner.Droid.Resource.Style.CardView_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.collectionViewTheme = global::MealPlanner.Droid.Resource.Style.collectionViewTheme;
+			global::Xamarin.RSControls.Droid.Resource.Style.EmptyTheme = global::MealPlanner.Droid.Resource.Style.EmptyTheme;
+			global::Xamarin.RSControls.Droid.Resource.Style.MainTheme = global::MealPlanner.Droid.Resource.Style.MainTheme;
+			global::Xamarin.RSControls.Droid.Resource.Style.MainTheme_Base = global::MealPlanner.Droid.Resource.Style.MainTheme_Base;
+			global::Xamarin.RSControls.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents = global::MealPlanner.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents;
+			global::Xamarin.RSControls.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text = global::MealPlanner.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text;
+			global::Xamarin.RSControls.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar = global::MealPlanner.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar;
+			global::Xamarin.RSControls.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner = global::MealPlanner.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner;
+			global::Xamarin.RSControls.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon = global::MealPlanner.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::Xamarin.RSControls.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked = global::MealPlanner.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked;
+			global::Xamarin.RSControls.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel = global::MealPlanner.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::Xamarin.RSControls.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked = global::MealPlanner.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked;
+			global::Xamarin.RSControls.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text = global::MealPlanner.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text;
+			global::Xamarin.RSControls.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked = global::MealPlanner.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked;
+			global::Xamarin.RSControls.Droid.Resource.Style.PagerTabStripText = global::MealPlanner.Droid.Resource.Style.PagerTabStripText;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_AppCompat = global::MealPlanner.Droid.Resource.Style.Platform_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_MaterialComponents = global::MealPlanner.Droid.Resource.Style.Platform_MaterialComponents;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_MaterialComponents_Dialog = global::MealPlanner.Droid.Resource.Style.Platform_MaterialComponents_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_MaterialComponents_Light = global::MealPlanner.Droid.Resource.Style.Platform_MaterialComponents_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_MaterialComponents_Light_Dialog = global::MealPlanner.Droid.Resource.Style.Platform_MaterialComponents_Light_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat = global::MealPlanner.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::MealPlanner.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_V21_AppCompat = global::MealPlanner.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_V21_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_V25_AppCompat = global::MealPlanner.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_V25_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner = global::MealPlanner.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference = global::MealPlanner.Droid.Resource.Style.Preference;
+			global::Xamarin.RSControls.Droid.Resource.Style.PreferenceCategoryTitleTextStyle = global::MealPlanner.Droid.Resource.Style.PreferenceCategoryTitleTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Style.PreferenceFragment = global::MealPlanner.Droid.Resource.Style.PreferenceFragment;
+			global::Xamarin.RSControls.Droid.Resource.Style.PreferenceFragmentList = global::MealPlanner.Droid.Resource.Style.PreferenceFragmentList;
+			global::Xamarin.RSControls.Droid.Resource.Style.PreferenceFragmentList_Material = global::MealPlanner.Droid.Resource.Style.PreferenceFragmentList_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.PreferenceFragment_Material = global::MealPlanner.Droid.Resource.Style.PreferenceFragment_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.PreferenceSummaryTextStyle = global::MealPlanner.Droid.Resource.Style.PreferenceSummaryTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Style.PreferenceThemeOverlay = global::MealPlanner.Droid.Resource.Style.PreferenceThemeOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Style.PreferenceThemeOverlay_v14 = global::MealPlanner.Droid.Resource.Style.PreferenceThemeOverlay_v14;
+			global::Xamarin.RSControls.Droid.Resource.Style.PreferenceThemeOverlay_v14_Material = global::MealPlanner.Droid.Resource.Style.PreferenceThemeOverlay_v14_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_Category = global::MealPlanner.Droid.Resource.Style.Preference_Category;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_Category_Material = global::MealPlanner.Droid.Resource.Style.Preference_Category_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_CheckBoxPreference = global::MealPlanner.Droid.Resource.Style.Preference_CheckBoxPreference;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_CheckBoxPreference_Material = global::MealPlanner.Droid.Resource.Style.Preference_CheckBoxPreference_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_DialogPreference = global::MealPlanner.Droid.Resource.Style.Preference_DialogPreference;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_DialogPreference_EditTextPreference = global::MealPlanner.Droid.Resource.Style.Preference_DialogPreference_EditTextPreference;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_DialogPreference_EditTextPreference_Material = global::MealPlanner.Droid.Resource.Style.Preference_DialogPreference_EditTextPreference_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_DialogPreference_Material = global::MealPlanner.Droid.Resource.Style.Preference_DialogPreference_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_DropDown = global::MealPlanner.Droid.Resource.Style.Preference_DropDown;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_DropDown_Material = global::MealPlanner.Droid.Resource.Style.Preference_DropDown_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_Information = global::MealPlanner.Droid.Resource.Style.Preference_Information;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_Information_Material = global::MealPlanner.Droid.Resource.Style.Preference_Information_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_Material = global::MealPlanner.Droid.Resource.Style.Preference_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_PreferenceScreen = global::MealPlanner.Droid.Resource.Style.Preference_PreferenceScreen;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_PreferenceScreen_Material = global::MealPlanner.Droid.Resource.Style.Preference_PreferenceScreen_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_SeekBarPreference = global::MealPlanner.Droid.Resource.Style.Preference_SeekBarPreference;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_SeekBarPreference_Material = global::MealPlanner.Droid.Resource.Style.Preference_SeekBarPreference_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_SwitchPreference = global::MealPlanner.Droid.Resource.Style.Preference_SwitchPreference;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_SwitchPreferenceCompat = global::MealPlanner.Droid.Resource.Style.Preference_SwitchPreferenceCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_SwitchPreferenceCompat_Material = global::MealPlanner.Droid.Resource.Style.Preference_SwitchPreferenceCompat_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.Preference_SwitchPreference_Material = global::MealPlanner.Droid.Resource.Style.Preference_SwitchPreference_Material;
+			global::Xamarin.RSControls.Droid.Resource.Style.RSDialogAnimationTheme = global::MealPlanner.Droid.Resource.Style.RSDialogAnimationTheme;
+			global::Xamarin.RSControls.Droid.Resource.Style.RSDialogAnimation_Window = global::MealPlanner.Droid.Resource.Style.RSDialogAnimation_Window;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::MealPlanner.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::MealPlanner.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::MealPlanner.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::MealPlanner.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.RSControls.Droid.Resource.Style.scrollViewScrollBars = global::MealPlanner.Droid.Resource.Style.scrollViewScrollBars;
+			global::Xamarin.RSControls.Droid.Resource.Style.scrollViewTheme = global::MealPlanner.Droid.Resource.Style.scrollViewTheme;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_BottomRightCut = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_BottomRightCut;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_Cut = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_Cut;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_TopLeftCut = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_TopLeftCut;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize = global::MealPlanner.Droid.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearance_MaterialComponents = global::MealPlanner.Droid.Resource.Style.ShapeAppearance_MaterialComponents;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent = global::MealPlanner.Droid.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent = global::MealPlanner.Droid.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent = global::MealPlanner.Droid.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Test = global::MealPlanner.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Test;
+			global::Xamarin.RSControls.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Tooltip = global::MealPlanner.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Tooltip;
+			global::Xamarin.RSControls.Droid.Resource.Style.TestStyleWithLineHeight = global::MealPlanner.Droid.Resource.Style.TestStyleWithLineHeight;
+			global::Xamarin.RSControls.Droid.Resource.Style.TestStyleWithLineHeightAppearance = global::MealPlanner.Droid.Resource.Style.TestStyleWithLineHeightAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Style.TestStyleWithoutLineHeight = global::MealPlanner.Droid.Resource.Style.TestStyleWithoutLineHeight;
+			global::Xamarin.RSControls.Droid.Resource.Style.TestStyleWithThemeLineHeightAttribute = global::MealPlanner.Droid.Resource.Style.TestStyleWithThemeLineHeightAttribute;
+			global::Xamarin.RSControls.Droid.Resource.Style.TestThemeWithLineHeight = global::MealPlanner.Droid.Resource.Style.TestThemeWithLineHeight;
+			global::Xamarin.RSControls.Droid.Resource.Style.TestThemeWithLineHeightDisabled = global::MealPlanner.Droid.Resource.Style.TestThemeWithLineHeightDisabled;
+			global::Xamarin.RSControls.Droid.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::MealPlanner.Droid.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.RSControls.Droid.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar = global::MealPlanner.Droid.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar = global::MealPlanner.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day = global::MealPlanner.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.RSControls.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::MealPlanner.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Body1 = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Body2 = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Button = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Caption = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Display1 = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Display2 = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Display3 = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Display4 = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Headline = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Inverse = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Large = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Medium = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Menu = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Small = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Subhead = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Title = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::MealPlanner.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Compat_Notification = global::MealPlanner.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Info = global::MealPlanner.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::MealPlanner.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::MealPlanner.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::MealPlanner.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Media = global::MealPlanner.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Time = global::MealPlanner.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::MealPlanner.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Title = global::MealPlanner.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::MealPlanner.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::MealPlanner.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Design_Counter = global::MealPlanner.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow = global::MealPlanner.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Design_Error = global::MealPlanner.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Design_HelperText = global::MealPlanner.Droid.Resource.Style.TextAppearance_Design_HelperText;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Design_Hint = global::MealPlanner.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Design_Placeholder = global::MealPlanner.Droid.Resource.Style.TextAppearance_Design_Placeholder;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Design_Prefix = global::MealPlanner.Droid.Resource.Style.TextAppearance_Design_Prefix;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message = global::MealPlanner.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Design_Suffix = global::MealPlanner.Droid.Resource.Style.TextAppearance_Design_Suffix;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Design_Tab = global::MealPlanner.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Badge = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Badge;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1 = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2 = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Button = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Button;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Caption = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Caption;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Chip = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Chip;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline1 = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline1;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline2 = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline2;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline3 = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline3;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline4 = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline4;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline5 = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline5;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline6 = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline6;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Overline = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Overline;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle1 = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle1;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle2 = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle2;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_MaterialComponents_Tooltip = global::MealPlanner.Droid.Resource.Style.TextAppearance_MaterialComponents_Tooltip;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::MealPlanner.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::MealPlanner.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::MealPlanner.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlayColorAccentRed = global::MealPlanner.Droid.Resource.Style.ThemeOverlayColorAccentRed;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_AppCompat = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_Design_TextInputEditText = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_Design_TextInputEditText;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert_Framework;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary;
+			global::Xamarin.RSControls.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface = global::MealPlanner.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_DayNight = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_Dialog = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_Empty = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_Empty;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_Light = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_AppCompat_NoActionBar = global::MealPlanner.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_Design = global::MealPlanner.Droid.Resource.Style.Theme_Design;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_Design_BottomSheetDialog = global::MealPlanner.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_Design_Light = global::MealPlanner.Droid.Resource.Style.Theme_Design_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::MealPlanner.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_Design_Light_NoActionBar = global::MealPlanner.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_Design_NoActionBar = global::MealPlanner.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Dialog = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_BarSize = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_BarSize;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_LargeTouch = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_LargeTouch;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge = global::MealPlanner.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ActionBar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ActionButton = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ActionMode = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Button = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ButtonBar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Button_Borderless = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Button_Colored = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Button_Small = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_EditText = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ImageButton = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_SearchView = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ListMenuView = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ListView = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ListView_Menu = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_PopupMenu = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_PopupWindow = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ProgressBar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_RatingBar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_SearchView = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_SeekBar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Spinner = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_TextView = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_TextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Toolbar = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::MealPlanner.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Compat_NotificationActionContainer = global::MealPlanner.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Compat_NotificationActionText = global::MealPlanner.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Design_AppBarLayout = global::MealPlanner.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Design_BottomNavigationView = global::MealPlanner.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Design_BottomSheet_Modal = global::MealPlanner.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Design_CollapsingToolbar = global::MealPlanner.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Design_FloatingActionButton = global::MealPlanner.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Design_NavigationView = global::MealPlanner.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::MealPlanner.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Design_Snackbar = global::MealPlanner.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Design_TabLayout = global::MealPlanner.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Design_TextInputEditText = global::MealPlanner.Droid.Resource.Style.Widget_Design_TextInputEditText;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Design_TextInputLayout = global::MealPlanner.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Primary = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Primary;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Solid = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Solid;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Surface = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Surface;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Badge = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Badge;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_CardView = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_CardView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_CheckedTextView = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_CheckedTextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_NavigationView = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_NavigationView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_ShapeableImageView = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_ShapeableImageView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Slider = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Slider;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Snackbar = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Snackbar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_TextView = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_TextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TabLayout = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TabLayout;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_TextView = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_TextView;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Toolbar = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Primary = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Primary;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Surface = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Surface;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_MaterialComponents_Tooltip = global::MealPlanner.Droid.Resource.Style.Widget_MaterialComponents_Tooltip;
+			global::Xamarin.RSControls.Droid.Resource.Style.Widget_Support_CoordinatorLayout = global::MealPlanner.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar = global::MealPlanner.Droid.Resource.Styleable.ActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBarLayout = global::MealPlanner.Droid.Resource.Styleable.ActionBarLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::MealPlanner.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_background = global::MealPlanner.Droid.Resource.Styleable.ActionBar_background;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_backgroundSplit = global::MealPlanner.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_backgroundStacked = global::MealPlanner.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_contentInsetEnd = global::MealPlanner.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::MealPlanner.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_contentInsetLeft = global::MealPlanner.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_contentInsetRight = global::MealPlanner.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_contentInsetStart = global::MealPlanner.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::MealPlanner.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_customNavigationLayout = global::MealPlanner.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_displayOptions = global::MealPlanner.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_divider = global::MealPlanner.Droid.Resource.Styleable.ActionBar_divider;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_elevation = global::MealPlanner.Droid.Resource.Styleable.ActionBar_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_height = global::MealPlanner.Droid.Resource.Styleable.ActionBar_height;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_hideOnContentScroll = global::MealPlanner.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator = global::MealPlanner.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_homeLayout = global::MealPlanner.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_icon = global::MealPlanner.Droid.Resource.Styleable.ActionBar_icon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::MealPlanner.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_itemPadding = global::MealPlanner.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_logo = global::MealPlanner.Droid.Resource.Styleable.ActionBar_logo;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_navigationMode = global::MealPlanner.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_popupTheme = global::MealPlanner.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_progressBarPadding = global::MealPlanner.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_progressBarStyle = global::MealPlanner.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_subtitle = global::MealPlanner.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_subtitleTextStyle = global::MealPlanner.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_title = global::MealPlanner.Droid.Resource.Styleable.ActionBar_title;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionBar_titleTextStyle = global::MealPlanner.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionMenuItemView = global::MealPlanner.Droid.Resource.Styleable.ActionMenuItemView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth = global::MealPlanner.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionMenuView = global::MealPlanner.Droid.Resource.Styleable.ActionMenuView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionMode = global::MealPlanner.Droid.Resource.Styleable.ActionMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionMode_background = global::MealPlanner.Droid.Resource.Styleable.ActionMode_background;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionMode_backgroundSplit = global::MealPlanner.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionMode_closeItemLayout = global::MealPlanner.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionMode_height = global::MealPlanner.Droid.Resource.Styleable.ActionMode_height;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionMode_subtitleTextStyle = global::MealPlanner.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActionMode_titleTextStyle = global::MealPlanner.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActivityChooserView = global::MealPlanner.Droid.Resource.Styleable.ActivityChooserView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::MealPlanner.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount = global::MealPlanner.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActivityNavigator = global::MealPlanner.Droid.Resource.Styleable.ActivityNavigator;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActivityNavigator_action = global::MealPlanner.Droid.Resource.Styleable.ActivityNavigator_action;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActivityNavigator_android_name = global::MealPlanner.Droid.Resource.Styleable.ActivityNavigator_android_name;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActivityNavigator_data = global::MealPlanner.Droid.Resource.Styleable.ActivityNavigator_data;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActivityNavigator_dataPattern = global::MealPlanner.Droid.Resource.Styleable.ActivityNavigator_dataPattern;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ActivityNavigator_targetPackage = global::MealPlanner.Droid.Resource.Styleable.ActivityNavigator_targetPackage;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AlertDialog = global::MealPlanner.Droid.Resource.Styleable.AlertDialog;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AlertDialog_android_layout = global::MealPlanner.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AlertDialog_buttonIconDimen = global::MealPlanner.Droid.Resource.Styleable.AlertDialog_buttonIconDimen;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::MealPlanner.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AlertDialog_listItemLayout = global::MealPlanner.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AlertDialog_listLayout = global::MealPlanner.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::MealPlanner.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AlertDialog_showTitle = global::MealPlanner.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::MealPlanner.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableCompat = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableItem = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableItem;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_id = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_id;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableTransition = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableTransition;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId = global::MealPlanner.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayoutStates = global::MealPlanner.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::MealPlanner.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::MealPlanner.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable = global::MealPlanner.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted = global::MealPlanner.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout_android_background = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout_elevation = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout_expanded = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout_Layout = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout_liftOnScroll = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppBarLayout_statusBarForeground = global::MealPlanner.Droid.Resource.Styleable.AppBarLayout_statusBarForeground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatImageView = global::MealPlanner.Droid.Resource.Styleable.AppCompatImageView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatImageView_android_src = global::MealPlanner.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatImageView_srcCompat = global::MealPlanner.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatImageView_tint = global::MealPlanner.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatImageView_tintMode = global::MealPlanner.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatSeekBar = global::MealPlanner.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb = global::MealPlanner.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatSeekBar_tickMark = global::MealPlanner.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::MealPlanner.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::MealPlanner.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextHelper = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_drawableBottomCompat = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_drawableBottomCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_drawableEndCompat = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_drawableEndCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_drawableLeftCompat = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_drawableLeftCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_drawableRightCompat = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_drawableRightCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_drawableStartCompat = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_drawableStartCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_drawableTint = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_drawableTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_drawableTintMode = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_drawableTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_drawableTopCompat = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_drawableTopCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_fontFamily = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_fontVariationSettings = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_fontVariationSettings;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_lineHeight = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_lineHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_textAllCaps = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTextView_textLocale = global::MealPlanner.Droid.Resource.Styleable.AppCompatTextView_textLocale;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionBarSize = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_buttonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_colorAccent = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_colorError = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_colorError;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_colorPrimary = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_controlBackground = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_dialogCornerRadius = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_dialogCornerRadius;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_dialogTheme = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_dividerVertical = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_editTextBackground = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_editTextColor = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_editTextStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_panelBackground = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_switchStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_viewInflaterClass = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_viewInflaterClass;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_windowActionBar = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BackgroundStyle = global::MealPlanner.Droid.Resource.Styleable.BackgroundStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BackgroundStyle_android_selectableItemBackground = global::MealPlanner.Droid.Resource.Styleable.BackgroundStyle_android_selectableItemBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BackgroundStyle_selectableItemBackground = global::MealPlanner.Droid.Resource.Styleable.BackgroundStyle_selectableItemBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Badge = global::MealPlanner.Droid.Resource.Styleable.Badge;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Badge_backgroundColor = global::MealPlanner.Droid.Resource.Styleable.Badge_backgroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Badge_badgeGravity = global::MealPlanner.Droid.Resource.Styleable.Badge_badgeGravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Badge_badgeTextColor = global::MealPlanner.Droid.Resource.Styleable.Badge_badgeTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Badge_horizontalOffset = global::MealPlanner.Droid.Resource.Styleable.Badge_horizontalOffset;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Badge_maxCharacterCount = global::MealPlanner.Droid.Resource.Styleable.Badge_maxCharacterCount;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Badge_number = global::MealPlanner.Droid.Resource.Styleable.Badge_number;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Badge_verticalOffset = global::MealPlanner.Droid.Resource.Styleable.Badge_verticalOffset;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar_backgroundTint = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar_backgroundTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar_elevation = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar_fabAnimationMode = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar_fabAnimationMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar_hideOnScroll = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar_hideOnScroll;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar_paddingBottomSystemWindowInsets = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar_paddingBottomSystemWindowInsets;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar_paddingLeftSystemWindowInsets = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar_paddingLeftSystemWindowInsets;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomAppBar_paddingRightSystemWindowInsets = global::MealPlanner.Droid.Resource.Styleable.BottomAppBar_paddingRightSystemWindowInsets;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomNavigationView = global::MealPlanner.Droid.Resource.Styleable.BottomNavigationView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled = global::MealPlanner.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_draggable = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_draggable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_gestureInsetBottomIgnored = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_gestureInsetBottomIgnored;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ButtonBarLayout = global::MealPlanner.Droid.Resource.Styleable.ButtonBarLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ButtonBarLayout_allowStacking = global::MealPlanner.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView = global::MealPlanner.Droid.Resource.Styleable.CardView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_android_minHeight = global::MealPlanner.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_android_minWidth = global::MealPlanner.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_cardBackgroundColor = global::MealPlanner.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_cardCornerRadius = global::MealPlanner.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_cardElevation = global::MealPlanner.Droid.Resource.Styleable.CardView_cardElevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_cardMaxElevation = global::MealPlanner.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap = global::MealPlanner.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_cardUseCompatPadding = global::MealPlanner.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_contentPadding = global::MealPlanner.Droid.Resource.Styleable.CardView_contentPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_contentPaddingBottom = global::MealPlanner.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_contentPaddingLeft = global::MealPlanner.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_contentPaddingRight = global::MealPlanner.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CardView_contentPaddingTop = global::MealPlanner.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CheckBoxPreference = global::MealPlanner.Droid.Resource.Styleable.CheckBoxPreference;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CheckBoxPreference_android_disableDependentsState = global::MealPlanner.Droid.Resource.Styleable.CheckBoxPreference_android_disableDependentsState;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CheckBoxPreference_android_summaryOff = global::MealPlanner.Droid.Resource.Styleable.CheckBoxPreference_android_summaryOff;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CheckBoxPreference_android_summaryOn = global::MealPlanner.Droid.Resource.Styleable.CheckBoxPreference_android_summaryOn;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CheckBoxPreference_disableDependentsState = global::MealPlanner.Droid.Resource.Styleable.CheckBoxPreference_disableDependentsState;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CheckBoxPreference_summaryOff = global::MealPlanner.Droid.Resource.Styleable.CheckBoxPreference_summaryOff;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CheckBoxPreference_summaryOn = global::MealPlanner.Droid.Resource.Styleable.CheckBoxPreference_summaryOn;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip = global::MealPlanner.Droid.Resource.Styleable.Chip;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ChipGroup = global::MealPlanner.Droid.Resource.Styleable.ChipGroup;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ChipGroup_checkedChip = global::MealPlanner.Droid.Resource.Styleable.ChipGroup_checkedChip;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ChipGroup_chipSpacing = global::MealPlanner.Droid.Resource.Styleable.ChipGroup_chipSpacing;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal = global::MealPlanner.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical = global::MealPlanner.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ChipGroup_selectionRequired = global::MealPlanner.Droid.Resource.Styleable.ChipGroup_selectionRequired;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ChipGroup_singleLine = global::MealPlanner.Droid.Resource.Styleable.ChipGroup_singleLine;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ChipGroup_singleSelection = global::MealPlanner.Droid.Resource.Styleable.ChipGroup_singleSelection;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_android_checkable = global::MealPlanner.Droid.Resource.Styleable.Chip_android_checkable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_android_ellipsize = global::MealPlanner.Droid.Resource.Styleable.Chip_android_ellipsize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_android_maxWidth = global::MealPlanner.Droid.Resource.Styleable.Chip_android_maxWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_android_text = global::MealPlanner.Droid.Resource.Styleable.Chip_android_text;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_android_textAppearance = global::MealPlanner.Droid.Resource.Styleable.Chip_android_textAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_android_textColor = global::MealPlanner.Droid.Resource.Styleable.Chip_android_textColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_checkedIcon = global::MealPlanner.Droid.Resource.Styleable.Chip_checkedIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_checkedIconEnabled = global::MealPlanner.Droid.Resource.Styleable.Chip_checkedIconEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_checkedIconTint = global::MealPlanner.Droid.Resource.Styleable.Chip_checkedIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_checkedIconVisible = global::MealPlanner.Droid.Resource.Styleable.Chip_checkedIconVisible;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipBackgroundColor = global::MealPlanner.Droid.Resource.Styleable.Chip_chipBackgroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipCornerRadius = global::MealPlanner.Droid.Resource.Styleable.Chip_chipCornerRadius;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipEndPadding = global::MealPlanner.Droid.Resource.Styleable.Chip_chipEndPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipIcon = global::MealPlanner.Droid.Resource.Styleable.Chip_chipIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipIconEnabled = global::MealPlanner.Droid.Resource.Styleable.Chip_chipIconEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipIconSize = global::MealPlanner.Droid.Resource.Styleable.Chip_chipIconSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipIconTint = global::MealPlanner.Droid.Resource.Styleable.Chip_chipIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipIconVisible = global::MealPlanner.Droid.Resource.Styleable.Chip_chipIconVisible;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipMinHeight = global::MealPlanner.Droid.Resource.Styleable.Chip_chipMinHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipMinTouchTargetSize = global::MealPlanner.Droid.Resource.Styleable.Chip_chipMinTouchTargetSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipStartPadding = global::MealPlanner.Droid.Resource.Styleable.Chip_chipStartPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipStrokeColor = global::MealPlanner.Droid.Resource.Styleable.Chip_chipStrokeColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipStrokeWidth = global::MealPlanner.Droid.Resource.Styleable.Chip_chipStrokeWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_chipSurfaceColor = global::MealPlanner.Droid.Resource.Styleable.Chip_chipSurfaceColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_closeIcon = global::MealPlanner.Droid.Resource.Styleable.Chip_closeIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_closeIconEnabled = global::MealPlanner.Droid.Resource.Styleable.Chip_closeIconEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_closeIconEndPadding = global::MealPlanner.Droid.Resource.Styleable.Chip_closeIconEndPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_closeIconSize = global::MealPlanner.Droid.Resource.Styleable.Chip_closeIconSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_closeIconStartPadding = global::MealPlanner.Droid.Resource.Styleable.Chip_closeIconStartPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_closeIconTint = global::MealPlanner.Droid.Resource.Styleable.Chip_closeIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_closeIconVisible = global::MealPlanner.Droid.Resource.Styleable.Chip_closeIconVisible;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_ensureMinTouchTargetSize = global::MealPlanner.Droid.Resource.Styleable.Chip_ensureMinTouchTargetSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_hideMotionSpec = global::MealPlanner.Droid.Resource.Styleable.Chip_hideMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_iconEndPadding = global::MealPlanner.Droid.Resource.Styleable.Chip_iconEndPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_iconStartPadding = global::MealPlanner.Droid.Resource.Styleable.Chip_iconStartPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_rippleColor = global::MealPlanner.Droid.Resource.Styleable.Chip_rippleColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_shapeAppearance = global::MealPlanner.Droid.Resource.Styleable.Chip_shapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_shapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Styleable.Chip_shapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_showMotionSpec = global::MealPlanner.Droid.Resource.Styleable.Chip_showMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_textEndPadding = global::MealPlanner.Droid.Resource.Styleable.Chip_textEndPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Chip_textStartPadding = global::MealPlanner.Droid.Resource.Styleable.Chip_textStartPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_maxLines = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_maxLines;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_title = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::MealPlanner.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ColorStateListItem = global::MealPlanner.Droid.Resource.Styleable.ColorStateListItem;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ColorStateListItem_alpha = global::MealPlanner.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ColorStateListItem_android_alpha = global::MealPlanner.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ColorStateListItem_android_color = global::MealPlanner.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CompoundButton = global::MealPlanner.Droid.Resource.Styleable.CompoundButton;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CompoundButton_android_button = global::MealPlanner.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CompoundButton_buttonCompat = global::MealPlanner.Droid.Resource.Styleable.CompoundButton_buttonCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CompoundButton_buttonTint = global::MealPlanner.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CompoundButton_buttonTintMode = global::MealPlanner.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CoordinatorLayout = global::MealPlanner.Droid.Resource.Styleable.CoordinatorLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CoordinatorLayout_keylines = global::MealPlanner.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CoordinatorLayout_Layout = global::MealPlanner.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::MealPlanner.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::MealPlanner.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::MealPlanner.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::MealPlanner.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::MealPlanner.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::MealPlanner.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::MealPlanner.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::MealPlanner.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference = global::MealPlanner.Droid.Resource.Styleable.DialogPreference;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_android_dialogIcon = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_android_dialogIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_android_dialogLayout = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_android_dialogLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_android_dialogMessage = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_android_dialogMessage;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_android_dialogTitle = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_android_dialogTitle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_android_negativeButtonText = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_android_negativeButtonText;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_android_positiveButtonText = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_android_positiveButtonText;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_dialogIcon = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_dialogIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_dialogLayout = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_dialogLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_dialogMessage = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_dialogMessage;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_dialogTitle = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_dialogTitle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_negativeButtonText = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_negativeButtonText;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DialogPreference_positiveButtonText = global::MealPlanner.Droid.Resource.Styleable.DialogPreference_positiveButtonText;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DrawerArrowToggle = global::MealPlanner.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::MealPlanner.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::MealPlanner.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DrawerArrowToggle_barLength = global::MealPlanner.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DrawerArrowToggle_color = global::MealPlanner.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize = global::MealPlanner.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::MealPlanner.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DrawerArrowToggle_spinBars = global::MealPlanner.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DrawerArrowToggle_thickness = global::MealPlanner.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DrawerLayout = global::MealPlanner.Droid.Resource.Styleable.DrawerLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.DrawerLayout_elevation = global::MealPlanner.Droid.Resource.Styleable.DrawerLayout_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.EditTextPreference = global::MealPlanner.Droid.Resource.Styleable.EditTextPreference;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.EditTextPreference_useSimpleSummaryProvider = global::MealPlanner.Droid.Resource.Styleable.EditTextPreference_useSimpleSummaryProvider;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ExtendedFloatingActionButton = global::MealPlanner.Droid.Resource.Styleable.ExtendedFloatingActionButton;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout = global::MealPlanner.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide = global::MealPlanner.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink = global::MealPlanner.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ExtendedFloatingActionButton_elevation = global::MealPlanner.Droid.Resource.Styleable.ExtendedFloatingActionButton_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec = global::MealPlanner.Droid.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec = global::MealPlanner.Droid.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec = global::MealPlanner.Droid.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec = global::MealPlanner.Droid.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_android_enabled = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_android_enabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_backgroundTint = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_borderWidth = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_elevation = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_fabSize = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_maxImageSize = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_maxImageSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_rippleColor = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_shapeAppearance = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_shapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding = global::MealPlanner.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FlowLayout = global::MealPlanner.Droid.Resource.Styleable.FlowLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FlowLayout_itemSpacing = global::MealPlanner.Droid.Resource.Styleable.FlowLayout_itemSpacing;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FlowLayout_lineSpacing = global::MealPlanner.Droid.Resource.Styleable.FlowLayout_lineSpacing;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamily = global::MealPlanner.Droid.Resource.Styleable.FontFamily;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamilyFont = global::MealPlanner.Droid.Resource.Styleable.FontFamilyFont;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamilyFont_android_font = global::MealPlanner.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle = global::MealPlanner.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::MealPlanner.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight = global::MealPlanner.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::MealPlanner.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamilyFont_font = global::MealPlanner.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamilyFont_fontStyle = global::MealPlanner.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::MealPlanner.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamilyFont_fontWeight = global::MealPlanner.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamilyFont_ttcIndex = global::MealPlanner.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamily_fontProviderAuthority = global::MealPlanner.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamily_fontProviderCerts = global::MealPlanner.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::MealPlanner.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::MealPlanner.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamily_fontProviderPackage = global::MealPlanner.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FontFamily_fontProviderQuery = global::MealPlanner.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ForegroundLinearLayout = global::MealPlanner.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::MealPlanner.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::MealPlanner.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::MealPlanner.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Fragment = global::MealPlanner.Droid.Resource.Styleable.Fragment;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FragmentContainerView = global::MealPlanner.Droid.Resource.Styleable.FragmentContainerView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FragmentContainerView_android_name = global::MealPlanner.Droid.Resource.Styleable.FragmentContainerView_android_name;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.FragmentContainerView_android_tag = global::MealPlanner.Droid.Resource.Styleable.FragmentContainerView_android_tag;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Fragment_android_id = global::MealPlanner.Droid.Resource.Styleable.Fragment_android_id;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Fragment_android_name = global::MealPlanner.Droid.Resource.Styleable.Fragment_android_name;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Fragment_android_tag = global::MealPlanner.Droid.Resource.Styleable.Fragment_android_tag;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor = global::MealPlanner.Droid.Resource.Styleable.GradientColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColorItem = global::MealPlanner.Droid.Resource.Styleable.GradientColorItem;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColorItem_android_color = global::MealPlanner.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColorItem_android_offset = global::MealPlanner.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_centerColor = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_centerX = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_centerY = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_endColor = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_endX = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_endY = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_gradientRadius = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_startColor = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_startX = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_startY = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_tileMode = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.GradientColor_android_type = global::MealPlanner.Droid.Resource.Styleable.GradientColor_android_type;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Insets = global::MealPlanner.Droid.Resource.Styleable.Insets;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Insets_paddingBottomSystemWindowInsets = global::MealPlanner.Droid.Resource.Styleable.Insets_paddingBottomSystemWindowInsets;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Insets_paddingLeftSystemWindowInsets = global::MealPlanner.Droid.Resource.Styleable.Insets_paddingLeftSystemWindowInsets;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Insets_paddingRightSystemWindowInsets = global::MealPlanner.Droid.Resource.Styleable.Insets_paddingRightSystemWindowInsets;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ItemsViewRendererTheme = global::MealPlanner.Droid.Resource.Styleable.ItemsViewRendererTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ItemsViewRendererTheme_collectionViewStyle = global::MealPlanner.Droid.Resource.Styleable.ItemsViewRendererTheme_collectionViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_divider = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_Layout = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.LinearLayoutCompat_showDividers = global::MealPlanner.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ListPopupWindow = global::MealPlanner.Droid.Resource.Styleable.ListPopupWindow;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::MealPlanner.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::MealPlanner.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ListPreference = global::MealPlanner.Droid.Resource.Styleable.ListPreference;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ListPreference_android_entries = global::MealPlanner.Droid.Resource.Styleable.ListPreference_android_entries;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ListPreference_android_entryValues = global::MealPlanner.Droid.Resource.Styleable.ListPreference_android_entryValues;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ListPreference_entries = global::MealPlanner.Droid.Resource.Styleable.ListPreference_entries;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ListPreference_entryValues = global::MealPlanner.Droid.Resource.Styleable.ListPreference_entryValues;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ListPreference_useSimpleSummaryProvider = global::MealPlanner.Droid.Resource.Styleable.ListPreference_useSimpleSummaryProvider;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAlertDialog = global::MealPlanner.Droid.Resource.Styleable.MaterialAlertDialog;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAlertDialogTheme = global::MealPlanner.Droid.Resource.Styleable.MaterialAlertDialogTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle = global::MealPlanner.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme = global::MealPlanner.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle = global::MealPlanner.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle = global::MealPlanner.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle = global::MealPlanner.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom = global::MealPlanner.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd = global::MealPlanner.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart = global::MealPlanner.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop = global::MealPlanner.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAutoCompleteTextView = global::MealPlanner.Droid.Resource.Styleable.MaterialAutoCompleteTextView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialAutoCompleteTextView_android_inputType = global::MealPlanner.Droid.Resource.Styleable.MaterialAutoCompleteTextView_android_inputType;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton = global::MealPlanner.Droid.Resource.Styleable.MaterialButton;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButtonToggleGroup = global::MealPlanner.Droid.Resource.Styleable.MaterialButtonToggleGroup;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButtonToggleGroup_checkedButton = global::MealPlanner.Droid.Resource.Styleable.MaterialButtonToggleGroup_checkedButton;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButtonToggleGroup_selectionRequired = global::MealPlanner.Droid.Resource.Styleable.MaterialButtonToggleGroup_selectionRequired;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButtonToggleGroup_singleSelection = global::MealPlanner.Droid.Resource.Styleable.MaterialButtonToggleGroup_singleSelection;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_android_background = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_android_background;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_android_checkable = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_android_checkable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_android_insetBottom = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_android_insetBottom;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_android_insetLeft = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_android_insetLeft;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_android_insetRight = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_android_insetRight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_android_insetTop = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_android_insetTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_backgroundTint = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_backgroundTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_backgroundTintMode = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_backgroundTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_cornerRadius = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_cornerRadius;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_elevation = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_icon = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_icon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_iconGravity = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_iconGravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_iconPadding = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_iconPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_iconSize = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_iconSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_iconTint = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_iconTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_iconTintMode = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_iconTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_rippleColor = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_rippleColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_shapeAppearance = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_shapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_shapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_shapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_strokeColor = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_strokeColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialButton_strokeWidth = global::MealPlanner.Droid.Resource.Styleable.MaterialButton_strokeWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendar = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendar;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendarItem = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendarItem;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendarItem_android_insetBottom = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendarItem_android_insetBottom;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendarItem_android_insetLeft = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendarItem_android_insetLeft;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendarItem_android_insetRight = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendarItem_android_insetRight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendarItem_android_insetTop = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendarItem_android_insetTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendarItem_itemFillColor = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendarItem_itemFillColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeColor = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendarItem_itemTextColor = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendarItem_itemTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendar_android_windowFullscreen = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendar_android_windowFullscreen;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendar_dayInvalidStyle = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendar_dayInvalidStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendar_daySelectedStyle = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendar_daySelectedStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendar_dayStyle = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendar_dayStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendar_dayTodayStyle = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendar_dayTodayStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendar_rangeFillColor = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendar_rangeFillColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendar_yearSelectedStyle = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendar_yearSelectedStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendar_yearStyle = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendar_yearStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCalendar_yearTodayStyle = global::MealPlanner.Droid.Resource.Styleable.MaterialCalendar_yearTodayStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCardView = global::MealPlanner.Droid.Resource.Styleable.MaterialCardView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCardView_android_checkable = global::MealPlanner.Droid.Resource.Styleable.MaterialCardView_android_checkable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCardView_cardForegroundColor = global::MealPlanner.Droid.Resource.Styleable.MaterialCardView_cardForegroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCardView_checkedIcon = global::MealPlanner.Droid.Resource.Styleable.MaterialCardView_checkedIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCardView_checkedIconTint = global::MealPlanner.Droid.Resource.Styleable.MaterialCardView_checkedIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCardView_rippleColor = global::MealPlanner.Droid.Resource.Styleable.MaterialCardView_rippleColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCardView_shapeAppearance = global::MealPlanner.Droid.Resource.Styleable.MaterialCardView_shapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCardView_state_dragged = global::MealPlanner.Droid.Resource.Styleable.MaterialCardView_state_dragged;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCardView_strokeColor = global::MealPlanner.Droid.Resource.Styleable.MaterialCardView_strokeColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCardView_strokeWidth = global::MealPlanner.Droid.Resource.Styleable.MaterialCardView_strokeWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCheckBox = global::MealPlanner.Droid.Resource.Styleable.MaterialCheckBox;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCheckBox_buttonTint = global::MealPlanner.Droid.Resource.Styleable.MaterialCheckBox_buttonTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors = global::MealPlanner.Droid.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialRadioButton = global::MealPlanner.Droid.Resource.Styleable.MaterialRadioButton;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialRadioButton_buttonTint = global::MealPlanner.Droid.Resource.Styleable.MaterialRadioButton_buttonTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors = global::MealPlanner.Droid.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialShape = global::MealPlanner.Droid.Resource.Styleable.MaterialShape;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialShape_shapeAppearance = global::MealPlanner.Droid.Resource.Styleable.MaterialShape_shapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialShape_shapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Styleable.MaterialShape_shapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialTextAppearance = global::MealPlanner.Droid.Resource.Styleable.MaterialTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialTextAppearance_android_lineHeight = global::MealPlanner.Droid.Resource.Styleable.MaterialTextAppearance_android_lineHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialTextAppearance_lineHeight = global::MealPlanner.Droid.Resource.Styleable.MaterialTextAppearance_lineHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialTextView = global::MealPlanner.Droid.Resource.Styleable.MaterialTextView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialTextView_android_lineHeight = global::MealPlanner.Droid.Resource.Styleable.MaterialTextView_android_lineHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialTextView_android_textAppearance = global::MealPlanner.Droid.Resource.Styleable.MaterialTextView_android_textAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MaterialTextView_lineHeight = global::MealPlanner.Droid.Resource.Styleable.MaterialTextView_lineHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuGroup = global::MealPlanner.Droid.Resource.Styleable.MenuGroup;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior = global::MealPlanner.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuGroup_android_enabled = global::MealPlanner.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuGroup_android_id = global::MealPlanner.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuGroup_android_menuCategory = global::MealPlanner.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuGroup_android_orderInCategory = global::MealPlanner.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuGroup_android_visible = global::MealPlanner.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem = global::MealPlanner.Droid.Resource.Styleable.MenuItem;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_actionLayout = global::MealPlanner.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_actionProviderClass = global::MealPlanner.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_actionViewClass = global::MealPlanner.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_alphabeticModifiers = global::MealPlanner.Droid.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_checkable = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_checked = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_enabled = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_icon = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_id = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_id;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_menuCategory = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_numericShortcut = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_onClick = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_orderInCategory = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_title = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_title;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_titleCondensed = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_android_visible = global::MealPlanner.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_contentDescription = global::MealPlanner.Droid.Resource.Styleable.MenuItem_contentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_iconTint = global::MealPlanner.Droid.Resource.Styleable.MenuItem_iconTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_iconTintMode = global::MealPlanner.Droid.Resource.Styleable.MenuItem_iconTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_numericModifiers = global::MealPlanner.Droid.Resource.Styleable.MenuItem_numericModifiers;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_showAsAction = global::MealPlanner.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuItem_tooltipText = global::MealPlanner.Droid.Resource.Styleable.MenuItem_tooltipText;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuView = global::MealPlanner.Droid.Resource.Styleable.MenuView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuView_android_headerBackground = global::MealPlanner.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuView_android_horizontalDivider = global::MealPlanner.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuView_android_itemBackground = global::MealPlanner.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::MealPlanner.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuView_android_itemTextAppearance = global::MealPlanner.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuView_android_verticalDivider = global::MealPlanner.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle = global::MealPlanner.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuView_preserveIconSpacing = global::MealPlanner.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MenuView_subMenuArrow = global::MealPlanner.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MultiSelectListPreference = global::MealPlanner.Droid.Resource.Styleable.MultiSelectListPreference;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MultiSelectListPreference_android_entries = global::MealPlanner.Droid.Resource.Styleable.MultiSelectListPreference_android_entries;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MultiSelectListPreference_android_entryValues = global::MealPlanner.Droid.Resource.Styleable.MultiSelectListPreference_android_entryValues;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MultiSelectListPreference_entries = global::MealPlanner.Droid.Resource.Styleable.MultiSelectListPreference_entries;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.MultiSelectListPreference_entryValues = global::MealPlanner.Droid.Resource.Styleable.MultiSelectListPreference_entryValues;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavAction = global::MealPlanner.Droid.Resource.Styleable.NavAction;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavAction_android_id = global::MealPlanner.Droid.Resource.Styleable.NavAction_android_id;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavAction_destination = global::MealPlanner.Droid.Resource.Styleable.NavAction_destination;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavAction_enterAnim = global::MealPlanner.Droid.Resource.Styleable.NavAction_enterAnim;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavAction_exitAnim = global::MealPlanner.Droid.Resource.Styleable.NavAction_exitAnim;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavAction_launchSingleTop = global::MealPlanner.Droid.Resource.Styleable.NavAction_launchSingleTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavAction_popEnterAnim = global::MealPlanner.Droid.Resource.Styleable.NavAction_popEnterAnim;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavAction_popExitAnim = global::MealPlanner.Droid.Resource.Styleable.NavAction_popExitAnim;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavAction_popUpTo = global::MealPlanner.Droid.Resource.Styleable.NavAction_popUpTo;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavAction_popUpToInclusive = global::MealPlanner.Droid.Resource.Styleable.NavAction_popUpToInclusive;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavArgument = global::MealPlanner.Droid.Resource.Styleable.NavArgument;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavArgument_android_defaultValue = global::MealPlanner.Droid.Resource.Styleable.NavArgument_android_defaultValue;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavArgument_android_name = global::MealPlanner.Droid.Resource.Styleable.NavArgument_android_name;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavArgument_argType = global::MealPlanner.Droid.Resource.Styleable.NavArgument_argType;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavArgument_nullable = global::MealPlanner.Droid.Resource.Styleable.NavArgument_nullable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavDeepLink = global::MealPlanner.Droid.Resource.Styleable.NavDeepLink;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavDeepLink_action = global::MealPlanner.Droid.Resource.Styleable.NavDeepLink_action;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavDeepLink_android_autoVerify = global::MealPlanner.Droid.Resource.Styleable.NavDeepLink_android_autoVerify;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavDeepLink_mimeType = global::MealPlanner.Droid.Resource.Styleable.NavDeepLink_mimeType;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavDeepLink_uri = global::MealPlanner.Droid.Resource.Styleable.NavDeepLink_uri;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavGraphNavigator = global::MealPlanner.Droid.Resource.Styleable.NavGraphNavigator;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavGraphNavigator_startDestination = global::MealPlanner.Droid.Resource.Styleable.NavGraphNavigator_startDestination;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavHost = global::MealPlanner.Droid.Resource.Styleable.NavHost;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavHost_navGraph = global::MealPlanner.Droid.Resource.Styleable.NavHost_navGraph;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView = global::MealPlanner.Droid.Resource.Styleable.NavigationView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_android_background = global::MealPlanner.Droid.Resource.Styleable.NavigationView_android_background;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::MealPlanner.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_android_maxWidth = global::MealPlanner.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_elevation = global::MealPlanner.Droid.Resource.Styleable.NavigationView_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_headerLayout = global::MealPlanner.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemBackground = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemIconPadding = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemIconPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemIconSize = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemIconSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemIconTint = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemMaxLines = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemMaxLines;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemShapeAppearance = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemShapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemShapeFillColor = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemShapeFillColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemShapeInsetBottom = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemShapeInsetBottom;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemShapeInsetEnd = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemShapeInsetEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemShapeInsetStart = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemShapeInsetStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemShapeInsetTop = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemShapeInsetTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemTextAppearance = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_itemTextColor = global::MealPlanner.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavigationView_menu = global::MealPlanner.Droid.Resource.Styleable.NavigationView_menu;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Navigator = global::MealPlanner.Droid.Resource.Styleable.Navigator;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Navigator_android_id = global::MealPlanner.Droid.Resource.Styleable.Navigator_android_id;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Navigator_android_label = global::MealPlanner.Droid.Resource.Styleable.Navigator_android_label;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavInclude = global::MealPlanner.Droid.Resource.Styleable.NavInclude;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.NavInclude_graph = global::MealPlanner.Droid.Resource.Styleable.NavInclude_graph;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PopupWindow = global::MealPlanner.Droid.Resource.Styleable.PopupWindow;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PopupWindowBackgroundState = global::MealPlanner.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::MealPlanner.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::MealPlanner.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PopupWindow_android_popupBackground = global::MealPlanner.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PopupWindow_overlapAnchor = global::MealPlanner.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference = global::MealPlanner.Droid.Resource.Styleable.Preference;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceFragment = global::MealPlanner.Droid.Resource.Styleable.PreferenceFragment;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceFragmentCompat = global::MealPlanner.Droid.Resource.Styleable.PreferenceFragmentCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceFragmentCompat_allowDividerAfterLastItem = global::MealPlanner.Droid.Resource.Styleable.PreferenceFragmentCompat_allowDividerAfterLastItem;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceFragmentCompat_android_divider = global::MealPlanner.Droid.Resource.Styleable.PreferenceFragmentCompat_android_divider;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceFragmentCompat_android_dividerHeight = global::MealPlanner.Droid.Resource.Styleable.PreferenceFragmentCompat_android_dividerHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceFragmentCompat_android_layout = global::MealPlanner.Droid.Resource.Styleable.PreferenceFragmentCompat_android_layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceFragment_allowDividerAfterLastItem = global::MealPlanner.Droid.Resource.Styleable.PreferenceFragment_allowDividerAfterLastItem;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceFragment_android_divider = global::MealPlanner.Droid.Resource.Styleable.PreferenceFragment_android_divider;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceFragment_android_dividerHeight = global::MealPlanner.Droid.Resource.Styleable.PreferenceFragment_android_dividerHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceFragment_android_layout = global::MealPlanner.Droid.Resource.Styleable.PreferenceFragment_android_layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceGroup = global::MealPlanner.Droid.Resource.Styleable.PreferenceGroup;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceGroup_android_orderingFromXml = global::MealPlanner.Droid.Resource.Styleable.PreferenceGroup_android_orderingFromXml;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceGroup_initialExpandedChildrenCount = global::MealPlanner.Droid.Resource.Styleable.PreferenceGroup_initialExpandedChildrenCount;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceGroup_orderingFromXml = global::MealPlanner.Droid.Resource.Styleable.PreferenceGroup_orderingFromXml;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceImageView = global::MealPlanner.Droid.Resource.Styleable.PreferenceImageView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceImageView_android_maxHeight = global::MealPlanner.Droid.Resource.Styleable.PreferenceImageView_android_maxHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceImageView_android_maxWidth = global::MealPlanner.Droid.Resource.Styleable.PreferenceImageView_android_maxWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceImageView_maxHeight = global::MealPlanner.Droid.Resource.Styleable.PreferenceImageView_maxHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceImageView_maxWidth = global::MealPlanner.Droid.Resource.Styleable.PreferenceImageView_maxWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_checkBoxPreferenceStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_checkBoxPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_dialogPreferenceStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_dialogPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_dropdownPreferenceStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_dropdownPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_editTextPreferenceStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_editTextPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_preferenceCategoryStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_preferenceCategoryStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_preferenceCategoryTitleTextAppearance = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_preferenceCategoryTitleTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_preferenceFragmentCompatStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_preferenceFragmentCompatStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_preferenceFragmentListStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_preferenceFragmentListStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_preferenceFragmentStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_preferenceFragmentStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_preferenceInformationStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_preferenceInformationStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_preferenceScreenStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_preferenceScreenStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_preferenceStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_preferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_preferenceTheme = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_preferenceTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_seekBarPreferenceStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_seekBarPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_switchPreferenceCompatStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_switchPreferenceCompatStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.PreferenceTheme_switchPreferenceStyle = global::MealPlanner.Droid.Resource.Styleable.PreferenceTheme_switchPreferenceStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_allowDividerAbove = global::MealPlanner.Droid.Resource.Styleable.Preference_allowDividerAbove;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_allowDividerBelow = global::MealPlanner.Droid.Resource.Styleable.Preference_allowDividerBelow;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_defaultValue = global::MealPlanner.Droid.Resource.Styleable.Preference_android_defaultValue;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_dependency = global::MealPlanner.Droid.Resource.Styleable.Preference_android_dependency;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_enabled = global::MealPlanner.Droid.Resource.Styleable.Preference_android_enabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_fragment = global::MealPlanner.Droid.Resource.Styleable.Preference_android_fragment;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_icon = global::MealPlanner.Droid.Resource.Styleable.Preference_android_icon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_iconSpaceReserved = global::MealPlanner.Droid.Resource.Styleable.Preference_android_iconSpaceReserved;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_key = global::MealPlanner.Droid.Resource.Styleable.Preference_android_key;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_layout = global::MealPlanner.Droid.Resource.Styleable.Preference_android_layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_order = global::MealPlanner.Droid.Resource.Styleable.Preference_android_order;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_persistent = global::MealPlanner.Droid.Resource.Styleable.Preference_android_persistent;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_selectable = global::MealPlanner.Droid.Resource.Styleable.Preference_android_selectable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_shouldDisableView = global::MealPlanner.Droid.Resource.Styleable.Preference_android_shouldDisableView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_singleLineTitle = global::MealPlanner.Droid.Resource.Styleable.Preference_android_singleLineTitle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_summary = global::MealPlanner.Droid.Resource.Styleable.Preference_android_summary;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_title = global::MealPlanner.Droid.Resource.Styleable.Preference_android_title;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_android_widgetLayout = global::MealPlanner.Droid.Resource.Styleable.Preference_android_widgetLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_defaultValue = global::MealPlanner.Droid.Resource.Styleable.Preference_defaultValue;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_dependency = global::MealPlanner.Droid.Resource.Styleable.Preference_dependency;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_enableCopying = global::MealPlanner.Droid.Resource.Styleable.Preference_enableCopying;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_enabled = global::MealPlanner.Droid.Resource.Styleable.Preference_enabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_fragment = global::MealPlanner.Droid.Resource.Styleable.Preference_fragment;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_icon = global::MealPlanner.Droid.Resource.Styleable.Preference_icon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_iconSpaceReserved = global::MealPlanner.Droid.Resource.Styleable.Preference_iconSpaceReserved;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_isPreferenceVisible = global::MealPlanner.Droid.Resource.Styleable.Preference_isPreferenceVisible;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_key = global::MealPlanner.Droid.Resource.Styleable.Preference_key;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_layout = global::MealPlanner.Droid.Resource.Styleable.Preference_layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_order = global::MealPlanner.Droid.Resource.Styleable.Preference_order;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_persistent = global::MealPlanner.Droid.Resource.Styleable.Preference_persistent;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_selectable = global::MealPlanner.Droid.Resource.Styleable.Preference_selectable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_shouldDisableView = global::MealPlanner.Droid.Resource.Styleable.Preference_shouldDisableView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_singleLineTitle = global::MealPlanner.Droid.Resource.Styleable.Preference_singleLineTitle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_summary = global::MealPlanner.Droid.Resource.Styleable.Preference_summary;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_title = global::MealPlanner.Droid.Resource.Styleable.Preference_title;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Preference_widgetLayout = global::MealPlanner.Droid.Resource.Styleable.Preference_widgetLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RangeSlider = global::MealPlanner.Droid.Resource.Styleable.RangeSlider;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RangeSlider_values = global::MealPlanner.Droid.Resource.Styleable.RangeSlider_values;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecycleListView = global::MealPlanner.Droid.Resource.Styleable.RecycleListView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::MealPlanner.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::MealPlanner.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView = global::MealPlanner.Droid.Resource.Styleable.RecyclerView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_android_clipToPadding = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_android_clipToPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_android_orientation = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_layoutManager = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_reverseLayout = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_spanCount = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.RecyclerView_stackFromEnd = global::MealPlanner.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ScrimInsetsFrameLayout = global::MealPlanner.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::MealPlanner.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ScrollingViewBehavior_Layout = global::MealPlanner.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::MealPlanner.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ScrollViewRendererTheme = global::MealPlanner.Droid.Resource.Styleable.ScrollViewRendererTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ScrollViewRendererTheme_scrollViewStyle = global::MealPlanner.Droid.Resource.Styleable.ScrollViewRendererTheme_scrollViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView = global::MealPlanner.Droid.Resource.Styleable.SearchView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_android_focusable = global::MealPlanner.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_android_imeOptions = global::MealPlanner.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_android_inputType = global::MealPlanner.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_android_maxWidth = global::MealPlanner.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_closeIcon = global::MealPlanner.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_commitIcon = global::MealPlanner.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_defaultQueryHint = global::MealPlanner.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_goIcon = global::MealPlanner.Droid.Resource.Styleable.SearchView_goIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_iconifiedByDefault = global::MealPlanner.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_layout = global::MealPlanner.Droid.Resource.Styleable.SearchView_layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_queryBackground = global::MealPlanner.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_queryHint = global::MealPlanner.Droid.Resource.Styleable.SearchView_queryHint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_searchHintIcon = global::MealPlanner.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_searchIcon = global::MealPlanner.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_submitBackground = global::MealPlanner.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_suggestionRowLayout = global::MealPlanner.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SearchView_voiceIcon = global::MealPlanner.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SeekBarPreference = global::MealPlanner.Droid.Resource.Styleable.SeekBarPreference;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SeekBarPreference_adjustable = global::MealPlanner.Droid.Resource.Styleable.SeekBarPreference_adjustable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SeekBarPreference_android_layout = global::MealPlanner.Droid.Resource.Styleable.SeekBarPreference_android_layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SeekBarPreference_android_max = global::MealPlanner.Droid.Resource.Styleable.SeekBarPreference_android_max;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SeekBarPreference_min = global::MealPlanner.Droid.Resource.Styleable.SeekBarPreference_min;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SeekBarPreference_seekBarIncrement = global::MealPlanner.Droid.Resource.Styleable.SeekBarPreference_seekBarIncrement;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SeekBarPreference_showSeekBarValue = global::MealPlanner.Droid.Resource.Styleable.SeekBarPreference_showSeekBarValue;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SeekBarPreference_updatesContinuously = global::MealPlanner.Droid.Resource.Styleable.SeekBarPreference_updatesContinuously;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeableImageView = global::MealPlanner.Droid.Resource.Styleable.ShapeableImageView;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeableImageView_shapeAppearance = global::MealPlanner.Droid.Resource.Styleable.ShapeableImageView_shapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeableImageView_shapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Styleable.ShapeableImageView_shapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeableImageView_strokeColor = global::MealPlanner.Droid.Resource.Styleable.ShapeableImageView_strokeColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeableImageView_strokeWidth = global::MealPlanner.Droid.Resource.Styleable.ShapeableImageView_strokeWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeAppearance = global::MealPlanner.Droid.Resource.Styleable.ShapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeAppearance_cornerFamily = global::MealPlanner.Droid.Resource.Styleable.ShapeAppearance_cornerFamily;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft = global::MealPlanner.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight = global::MealPlanner.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft = global::MealPlanner.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight = global::MealPlanner.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeAppearance_cornerSize = global::MealPlanner.Droid.Resource.Styleable.ShapeAppearance_cornerSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft = global::MealPlanner.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight = global::MealPlanner.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft = global::MealPlanner.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopRight = global::MealPlanner.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopRight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider = global::MealPlanner.Droid.Resource.Styleable.Slider;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_android_enabled = global::MealPlanner.Droid.Resource.Styleable.Slider_android_enabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_android_stepSize = global::MealPlanner.Droid.Resource.Styleable.Slider_android_stepSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_android_value = global::MealPlanner.Droid.Resource.Styleable.Slider_android_value;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_android_valueFrom = global::MealPlanner.Droid.Resource.Styleable.Slider_android_valueFrom;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_android_valueTo = global::MealPlanner.Droid.Resource.Styleable.Slider_android_valueTo;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_haloColor = global::MealPlanner.Droid.Resource.Styleable.Slider_haloColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_haloRadius = global::MealPlanner.Droid.Resource.Styleable.Slider_haloRadius;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_labelBehavior = global::MealPlanner.Droid.Resource.Styleable.Slider_labelBehavior;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_labelStyle = global::MealPlanner.Droid.Resource.Styleable.Slider_labelStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_thumbColor = global::MealPlanner.Droid.Resource.Styleable.Slider_thumbColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_thumbElevation = global::MealPlanner.Droid.Resource.Styleable.Slider_thumbElevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_thumbRadius = global::MealPlanner.Droid.Resource.Styleable.Slider_thumbRadius;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_tickColor = global::MealPlanner.Droid.Resource.Styleable.Slider_tickColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_tickColorActive = global::MealPlanner.Droid.Resource.Styleable.Slider_tickColorActive;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_tickColorInactive = global::MealPlanner.Droid.Resource.Styleable.Slider_tickColorInactive;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_trackColor = global::MealPlanner.Droid.Resource.Styleable.Slider_trackColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_trackColorActive = global::MealPlanner.Droid.Resource.Styleable.Slider_trackColorActive;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_trackColorInactive = global::MealPlanner.Droid.Resource.Styleable.Slider_trackColorInactive;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Slider_trackHeight = global::MealPlanner.Droid.Resource.Styleable.Slider_trackHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Snackbar = global::MealPlanner.Droid.Resource.Styleable.Snackbar;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SnackbarLayout = global::MealPlanner.Droid.Resource.Styleable.SnackbarLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SnackbarLayout_actionTextColorAlpha = global::MealPlanner.Droid.Resource.Styleable.SnackbarLayout_actionTextColorAlpha;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth = global::MealPlanner.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SnackbarLayout_animationMode = global::MealPlanner.Droid.Resource.Styleable.SnackbarLayout_animationMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha = global::MealPlanner.Droid.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SnackbarLayout_backgroundTint = global::MealPlanner.Droid.Resource.Styleable.SnackbarLayout_backgroundTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SnackbarLayout_backgroundTintMode = global::MealPlanner.Droid.Resource.Styleable.SnackbarLayout_backgroundTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SnackbarLayout_elevation = global::MealPlanner.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::MealPlanner.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle = global::MealPlanner.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Snackbar_snackbarStyle = global::MealPlanner.Droid.Resource.Styleable.Snackbar_snackbarStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Snackbar_snackbarTextViewStyle = global::MealPlanner.Droid.Resource.Styleable.Snackbar_snackbarTextViewStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Spinner = global::MealPlanner.Droid.Resource.Styleable.Spinner;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Spinner_android_dropDownWidth = global::MealPlanner.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Spinner_android_entries = global::MealPlanner.Droid.Resource.Styleable.Spinner_android_entries;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Spinner_android_popupBackground = global::MealPlanner.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Spinner_android_prompt = global::MealPlanner.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Spinner_popupTheme = global::MealPlanner.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.StateListDrawable = global::MealPlanner.Droid.Resource.Styleable.StateListDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.StateListDrawableItem = global::MealPlanner.Droid.Resource.Styleable.StateListDrawableItem;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.StateListDrawableItem_android_drawable = global::MealPlanner.Droid.Resource.Styleable.StateListDrawableItem_android_drawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.StateListDrawable_android_constantSize = global::MealPlanner.Droid.Resource.Styleable.StateListDrawable_android_constantSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.StateListDrawable_android_dither = global::MealPlanner.Droid.Resource.Styleable.StateListDrawable_android_dither;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.StateListDrawable_android_enterFadeDuration = global::MealPlanner.Droid.Resource.Styleable.StateListDrawable_android_enterFadeDuration;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration = global::MealPlanner.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.StateListDrawable_android_variablePadding = global::MealPlanner.Droid.Resource.Styleable.StateListDrawable_android_variablePadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.StateListDrawable_android_visible = global::MealPlanner.Droid.Resource.Styleable.StateListDrawable_android_visible;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwipeRefreshLayout = global::MealPlanner.Droid.Resource.Styleable.SwipeRefreshLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor = global::MealPlanner.Droid.Resource.Styleable.SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_android_textOff = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_android_textOn = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_android_thumb = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_showText = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_splitTrack = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_switchMinWidth = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_switchPadding = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_thumbTint = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_thumbTintMode = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_track = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_track;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_trackTint = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchCompat_trackTintMode = global::MealPlanner.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchMaterial = global::MealPlanner.Droid.Resource.Styleable.SwitchMaterial;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchMaterial_useMaterialThemeColors = global::MealPlanner.Droid.Resource.Styleable.SwitchMaterial_useMaterialThemeColors;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreference = global::MealPlanner.Droid.Resource.Styleable.SwitchPreference;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreferenceCompat = global::MealPlanner.Droid.Resource.Styleable.SwitchPreferenceCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreferenceCompat_android_disableDependentsState = global::MealPlanner.Droid.Resource.Styleable.SwitchPreferenceCompat_android_disableDependentsState;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreferenceCompat_android_summaryOff = global::MealPlanner.Droid.Resource.Styleable.SwitchPreferenceCompat_android_summaryOff;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreferenceCompat_android_summaryOn = global::MealPlanner.Droid.Resource.Styleable.SwitchPreferenceCompat_android_summaryOn;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreferenceCompat_android_switchTextOff = global::MealPlanner.Droid.Resource.Styleable.SwitchPreferenceCompat_android_switchTextOff;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreferenceCompat_android_switchTextOn = global::MealPlanner.Droid.Resource.Styleable.SwitchPreferenceCompat_android_switchTextOn;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreferenceCompat_disableDependentsState = global::MealPlanner.Droid.Resource.Styleable.SwitchPreferenceCompat_disableDependentsState;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreferenceCompat_summaryOff = global::MealPlanner.Droid.Resource.Styleable.SwitchPreferenceCompat_summaryOff;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreferenceCompat_summaryOn = global::MealPlanner.Droid.Resource.Styleable.SwitchPreferenceCompat_summaryOn;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreferenceCompat_switchTextOff = global::MealPlanner.Droid.Resource.Styleable.SwitchPreferenceCompat_switchTextOff;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreferenceCompat_switchTextOn = global::MealPlanner.Droid.Resource.Styleable.SwitchPreferenceCompat_switchTextOn;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreference_android_disableDependentsState = global::MealPlanner.Droid.Resource.Styleable.SwitchPreference_android_disableDependentsState;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreference_android_summaryOff = global::MealPlanner.Droid.Resource.Styleable.SwitchPreference_android_summaryOff;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreference_android_summaryOn = global::MealPlanner.Droid.Resource.Styleable.SwitchPreference_android_summaryOn;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreference_android_switchTextOff = global::MealPlanner.Droid.Resource.Styleable.SwitchPreference_android_switchTextOff;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreference_android_switchTextOn = global::MealPlanner.Droid.Resource.Styleable.SwitchPreference_android_switchTextOn;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreference_disableDependentsState = global::MealPlanner.Droid.Resource.Styleable.SwitchPreference_disableDependentsState;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreference_summaryOff = global::MealPlanner.Droid.Resource.Styleable.SwitchPreference_summaryOff;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreference_summaryOn = global::MealPlanner.Droid.Resource.Styleable.SwitchPreference_summaryOn;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreference_switchTextOff = global::MealPlanner.Droid.Resource.Styleable.SwitchPreference_switchTextOff;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.SwitchPreference_switchTextOn = global::MealPlanner.Droid.Resource.Styleable.SwitchPreference_switchTextOn;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabItem = global::MealPlanner.Droid.Resource.Styleable.TabItem;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabItem_android_icon = global::MealPlanner.Droid.Resource.Styleable.TabItem_android_icon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabItem_android_layout = global::MealPlanner.Droid.Resource.Styleable.TabItem_android_layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabItem_android_text = global::MealPlanner.Droid.Resource.Styleable.TabItem_android_text;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout = global::MealPlanner.Droid.Resource.Styleable.TabLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabBackground = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabContentStart = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabGravity = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabIconTint = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabIconTintMode = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabIconTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabIndicator = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabIndicator;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabIndicatorColor = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabIndicatorFullWidth = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabIndicatorFullWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabIndicatorGravity = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabIndicatorGravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabInlineLabel = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabInlineLabel;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabMaxWidth = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabMinWidth = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabMode = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabPadding = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabPaddingBottom = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabPaddingEnd = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabPaddingStart = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabPaddingTop = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabRippleColor = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabRippleColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabTextAppearance = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabTextColor = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TabLayout_tabUnboundedRipple = global::MealPlanner.Droid.Resource.Styleable.TabLayout_tabUnboundedRipple;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance = global::MealPlanner.Droid.Resource.Styleable.TextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_fontFamily = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_shadowColor = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_shadowDx = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_shadowDy = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_shadowRadius = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_textColor = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_textColorHint = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_textColorLink = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_textFontWeight = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_textFontWeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_textSize = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_textStyle = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_android_typeface = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_fontFamily = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_fontVariationSettings = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_fontVariationSettings;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_textAllCaps = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextAppearance_textLocale = global::MealPlanner.Droid.Resource.Styleable.TextAppearance_textLocale;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputEditText = global::MealPlanner.Droid.Resource.Styleable.TextInputEditText;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputEditText_textInputLayoutFocusedRectEnabled = global::MealPlanner.Droid.Resource.Styleable.TextInputEditText_textInputLayoutFocusedRectEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_android_enabled = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_android_enabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_android_hint = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_android_textColorHint = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_boxBackgroundColor = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_boxBackgroundColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_boxBackgroundMode = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_boxBackgroundMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_boxStrokeErrorColor = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_boxStrokeErrorColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_counterEnabled = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_counterMaxLength = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextColor = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_counterTextColor = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_counterTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_endIconCheckable = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_endIconCheckable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_endIconContentDescription = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_endIconContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_endIconDrawable = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_endIconDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_endIconMode = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_endIconMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_endIconTint = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_endIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_endIconTintMode = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_endIconTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_errorContentDescription = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_errorContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_errorEnabled = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_errorIconDrawable = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_errorIconDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_errorIconTint = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_errorIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_errorIconTintMode = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_errorIconTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_errorTextColor = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_errorTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_helperText = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_helperText;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_helperTextTextColor = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_helperTextTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_hintEnabled = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_hintTextColor = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_hintTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_placeholderText = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_placeholderText;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_placeholderTextAppearance = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_placeholderTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_placeholderTextColor = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_placeholderTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_prefixText = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_prefixText;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_prefixTextAppearance = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_prefixTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_prefixTextColor = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_prefixTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_shapeAppearance = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_shapeAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_startIconCheckable = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_startIconCheckable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_startIconContentDescription = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_startIconContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_startIconDrawable = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_startIconDrawable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_startIconTint = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_startIconTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_startIconTintMode = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_startIconTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_suffixText = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_suffixText;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_suffixTextAppearance = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_suffixTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.TextInputLayout_suffixTextColor = global::MealPlanner.Droid.Resource.Styleable.TextInputLayout_suffixTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ThemeEnforcement = global::MealPlanner.Droid.Resource.Styleable.ThemeEnforcement;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance = global::MealPlanner.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme = global::MealPlanner.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ThemeEnforcement_enforceTextAppearance = global::MealPlanner.Droid.Resource.Styleable.ThemeEnforcement_enforceTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar = global::MealPlanner.Droid.Resource.Styleable.Toolbar;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_android_gravity = global::MealPlanner.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_android_minHeight = global::MealPlanner.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_buttonGravity = global::MealPlanner.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_collapseContentDescription = global::MealPlanner.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_collapseIcon = global::MealPlanner.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_contentInsetEnd = global::MealPlanner.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::MealPlanner.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_contentInsetLeft = global::MealPlanner.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_contentInsetRight = global::MealPlanner.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_contentInsetStart = global::MealPlanner.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::MealPlanner.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_logo = global::MealPlanner.Droid.Resource.Styleable.Toolbar_logo;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_logoDescription = global::MealPlanner.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_maxButtonHeight = global::MealPlanner.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_menu = global::MealPlanner.Droid.Resource.Styleable.Toolbar_menu;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_navigationContentDescription = global::MealPlanner.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_navigationIcon = global::MealPlanner.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_popupTheme = global::MealPlanner.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_subtitle = global::MealPlanner.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance = global::MealPlanner.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_subtitleTextColor = global::MealPlanner.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_title = global::MealPlanner.Droid.Resource.Styleable.Toolbar_title;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_titleMargin = global::MealPlanner.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_titleMarginBottom = global::MealPlanner.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_titleMarginEnd = global::MealPlanner.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_titleMargins = global::MealPlanner.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_titleMarginStart = global::MealPlanner.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_titleMarginTop = global::MealPlanner.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_titleTextAppearance = global::MealPlanner.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Toolbar_titleTextColor = global::MealPlanner.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Tooltip = global::MealPlanner.Droid.Resource.Styleable.Tooltip;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Tooltip_android_layout_margin = global::MealPlanner.Droid.Resource.Styleable.Tooltip_android_layout_margin;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Tooltip_android_minHeight = global::MealPlanner.Droid.Resource.Styleable.Tooltip_android_minHeight;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Tooltip_android_minWidth = global::MealPlanner.Droid.Resource.Styleable.Tooltip_android_minWidth;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Tooltip_android_padding = global::MealPlanner.Droid.Resource.Styleable.Tooltip_android_padding;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Tooltip_android_text = global::MealPlanner.Droid.Resource.Styleable.Tooltip_android_text;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Tooltip_android_textAppearance = global::MealPlanner.Droid.Resource.Styleable.Tooltip_android_textAppearance;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.Tooltip_backgroundTint = global::MealPlanner.Droid.Resource.Styleable.Tooltip_backgroundTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.View = global::MealPlanner.Droid.Resource.Styleable.View;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ViewBackgroundHelper = global::MealPlanner.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ViewBackgroundHelper_android_background = global::MealPlanner.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::MealPlanner.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::MealPlanner.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ViewPager2 = global::MealPlanner.Droid.Resource.Styleable.ViewPager2;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ViewPager2_android_orientation = global::MealPlanner.Droid.Resource.Styleable.ViewPager2_android_orientation;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ViewStubCompat = global::MealPlanner.Droid.Resource.Styleable.ViewStubCompat;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ViewStubCompat_android_id = global::MealPlanner.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::MealPlanner.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::MealPlanner.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.View_android_focusable = global::MealPlanner.Droid.Resource.Styleable.View_android_focusable;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.View_android_theme = global::MealPlanner.Droid.Resource.Styleable.View_android_theme;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.View_paddingEnd = global::MealPlanner.Droid.Resource.Styleable.View_paddingEnd;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.View_paddingStart = global::MealPlanner.Droid.Resource.Styleable.View_paddingStart;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.View_theme = global::MealPlanner.Droid.Resource.Styleable.View_theme;
+			global::Xamarin.RSControls.Droid.Resource.Xml.image_share_filepaths = global::MealPlanner.Droid.Resource.Xml.image_share_filepaths;
+			global::Xamarin.RSControls.Droid.Resource.Xml.standalone_badge = global::MealPlanner.Droid.Resource.Xml.standalone_badge;
+			global::Xamarin.RSControls.Droid.Resource.Xml.standalone_badge_gravity_bottom_end = global::MealPlanner.Droid.Resource.Xml.standalone_badge_gravity_bottom_end;
+			global::Xamarin.RSControls.Droid.Resource.Xml.standalone_badge_gravity_bottom_start = global::MealPlanner.Droid.Resource.Xml.standalone_badge_gravity_bottom_start;
+			global::Xamarin.RSControls.Droid.Resource.Xml.standalone_badge_gravity_top_start = global::MealPlanner.Droid.Resource.Xml.standalone_badge_gravity_top_start;
+			global::Xamarin.RSControls.Droid.Resource.Xml.standalone_badge_offset = global::MealPlanner.Droid.Resource.Xml.standalone_badge_offset;
+			global::Xamarin.RSControls.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::MealPlanner.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 		}
 		
 		public partial class Animation
@@ -13563,85 +17561,91 @@ namespace MealPlanner.Droid
 			public const int design_fab_show_motion_spec = 2130837506;
 			
 			// aapt resource value: 0x7F020003
-			public const int fragment_close_enter = 2130837507;
+			public const int fade_in_scale_in = 2130837507;
 			
 			// aapt resource value: 0x7F020004
-			public const int fragment_close_exit = 2130837508;
+			public const int fade_out_scale_out = 2130837508;
 			
 			// aapt resource value: 0x7F020005
-			public const int fragment_fade_enter = 2130837509;
+			public const int fragment_close_enter = 2130837509;
 			
 			// aapt resource value: 0x7F020006
-			public const int fragment_fade_exit = 2130837510;
+			public const int fragment_close_exit = 2130837510;
 			
 			// aapt resource value: 0x7F020007
-			public const int fragment_open_enter = 2130837511;
+			public const int fragment_fade_enter = 2130837511;
 			
 			// aapt resource value: 0x7F020008
-			public const int fragment_open_exit = 2130837512;
+			public const int fragment_fade_exit = 2130837512;
 			
 			// aapt resource value: 0x7F020009
-			public const int linear_indeterminate_line1_head_interpolator = 2130837513;
+			public const int fragment_open_enter = 2130837513;
 			
 			// aapt resource value: 0x7F02000A
-			public const int linear_indeterminate_line1_tail_interpolator = 2130837514;
+			public const int fragment_open_exit = 2130837514;
 			
 			// aapt resource value: 0x7F02000B
-			public const int linear_indeterminate_line2_head_interpolator = 2130837515;
+			public const int linear_indeterminate_line1_head_interpolator = 2130837515;
 			
 			// aapt resource value: 0x7F02000C
-			public const int linear_indeterminate_line2_tail_interpolator = 2130837516;
+			public const int linear_indeterminate_line1_tail_interpolator = 2130837516;
 			
 			// aapt resource value: 0x7F02000D
-			public const int mtrl_btn_state_list_anim = 2130837517;
+			public const int linear_indeterminate_line2_head_interpolator = 2130837517;
 			
 			// aapt resource value: 0x7F02000E
-			public const int mtrl_btn_unelevated_state_list_anim = 2130837518;
+			public const int linear_indeterminate_line2_tail_interpolator = 2130837518;
 			
 			// aapt resource value: 0x7F02000F
-			public const int mtrl_card_state_list_anim = 2130837519;
+			public const int mtrl_btn_state_list_anim = 2130837519;
 			
 			// aapt resource value: 0x7F020010
-			public const int mtrl_chip_state_list_anim = 2130837520;
+			public const int mtrl_btn_unelevated_state_list_anim = 2130837520;
 			
 			// aapt resource value: 0x7F020011
-			public const int mtrl_extended_fab_change_size_collapse_motion_spec = 2130837521;
+			public const int mtrl_card_state_list_anim = 2130837521;
 			
 			// aapt resource value: 0x7F020012
-			public const int mtrl_extended_fab_change_size_expand_motion_spec = 2130837522;
+			public const int mtrl_chip_state_list_anim = 2130837522;
 			
 			// aapt resource value: 0x7F020013
-			public const int mtrl_extended_fab_hide_motion_spec = 2130837523;
+			public const int mtrl_extended_fab_change_size_collapse_motion_spec = 2130837523;
 			
 			// aapt resource value: 0x7F020014
-			public const int mtrl_extended_fab_show_motion_spec = 2130837524;
+			public const int mtrl_extended_fab_change_size_expand_motion_spec = 2130837524;
 			
 			// aapt resource value: 0x7F020015
-			public const int mtrl_extended_fab_state_list_animator = 2130837525;
+			public const int mtrl_extended_fab_hide_motion_spec = 2130837525;
 			
 			// aapt resource value: 0x7F020016
-			public const int mtrl_fab_hide_motion_spec = 2130837526;
+			public const int mtrl_extended_fab_show_motion_spec = 2130837526;
 			
 			// aapt resource value: 0x7F020017
-			public const int mtrl_fab_show_motion_spec = 2130837527;
+			public const int mtrl_extended_fab_state_list_animator = 2130837527;
 			
 			// aapt resource value: 0x7F020018
-			public const int mtrl_fab_transformation_sheet_collapse_spec = 2130837528;
+			public const int mtrl_fab_hide_motion_spec = 2130837528;
 			
 			// aapt resource value: 0x7F020019
-			public const int mtrl_fab_transformation_sheet_expand_spec = 2130837529;
+			public const int mtrl_fab_show_motion_spec = 2130837529;
 			
 			// aapt resource value: 0x7F02001A
-			public const int nav_default_enter_anim = 2130837530;
+			public const int mtrl_fab_transformation_sheet_collapse_spec = 2130837530;
 			
 			// aapt resource value: 0x7F02001B
-			public const int nav_default_exit_anim = 2130837531;
+			public const int mtrl_fab_transformation_sheet_expand_spec = 2130837531;
 			
 			// aapt resource value: 0x7F02001C
-			public const int nav_default_pop_enter_anim = 2130837532;
+			public const int nav_default_enter_anim = 2130837532;
 			
 			// aapt resource value: 0x7F02001D
-			public const int nav_default_pop_exit_anim = 2130837533;
+			public const int nav_default_exit_anim = 2130837533;
+			
+			// aapt resource value: 0x7F02001E
+			public const int nav_default_pop_enter_anim = 2130837534;
+			
+			// aapt resource value: 0x7F02001F
+			public const int nav_default_pop_exit_anim = 2130837535;
 			
 			static Animator()
 			{
@@ -17520,46 +21524,52 @@ namespace MealPlanner.Droid
 			public const int ripple_material_light = 2131034313;
 			
 			// aapt resource value: 0x7F0500CA
-			public const int secondary_text_default_material_dark = 2131034314;
+			public const int RSPickerColorStateList = 2131034314;
 			
 			// aapt resource value: 0x7F0500CB
-			public const int secondary_text_default_material_light = 2131034315;
+			public const int RSRectangleBorderShapeColorStateList = 2131034315;
 			
 			// aapt resource value: 0x7F0500CC
-			public const int secondary_text_disabled_material_dark = 2131034316;
+			public const int secondary_text_default_material_dark = 2131034316;
 			
 			// aapt resource value: 0x7F0500CD
-			public const int secondary_text_disabled_material_light = 2131034317;
+			public const int secondary_text_default_material_light = 2131034317;
 			
 			// aapt resource value: 0x7F0500CE
-			public const int switch_thumb_disabled_material_dark = 2131034318;
+			public const int secondary_text_disabled_material_dark = 2131034318;
 			
 			// aapt resource value: 0x7F0500CF
-			public const int switch_thumb_disabled_material_light = 2131034319;
+			public const int secondary_text_disabled_material_light = 2131034319;
 			
 			// aapt resource value: 0x7F0500D0
-			public const int switch_thumb_material_dark = 2131034320;
+			public const int switch_thumb_disabled_material_dark = 2131034320;
 			
 			// aapt resource value: 0x7F0500D1
-			public const int switch_thumb_material_light = 2131034321;
+			public const int switch_thumb_disabled_material_light = 2131034321;
 			
 			// aapt resource value: 0x7F0500D2
-			public const int switch_thumb_normal_material_dark = 2131034322;
+			public const int switch_thumb_material_dark = 2131034322;
 			
 			// aapt resource value: 0x7F0500D3
-			public const int switch_thumb_normal_material_light = 2131034323;
+			public const int switch_thumb_material_light = 2131034323;
 			
 			// aapt resource value: 0x7F0500D4
-			public const int test_mtrl_calendar_day = 2131034324;
+			public const int switch_thumb_normal_material_dark = 2131034324;
 			
 			// aapt resource value: 0x7F0500D5
-			public const int test_mtrl_calendar_day_selected = 2131034325;
+			public const int switch_thumb_normal_material_light = 2131034325;
 			
 			// aapt resource value: 0x7F0500D6
-			public const int tooltip_background_dark = 2131034326;
+			public const int test_mtrl_calendar_day = 2131034326;
 			
 			// aapt resource value: 0x7F0500D7
-			public const int tooltip_background_light = 2131034327;
+			public const int test_mtrl_calendar_day_selected = 2131034327;
+			
+			// aapt resource value: 0x7F0500D8
+			public const int tooltip_background_dark = 2131034328;
+			
+			// aapt resource value: 0x7F0500D9
+			public const int tooltip_background_light = 2131034329;
 			
 			static Color()
 			{
@@ -18841,28 +22851,34 @@ namespace MealPlanner.Droid
 			public const int test_navigation_bar_text_size = 2131100069;
 			
 			// aapt resource value: 0x7F0601A6
-			public const int tooltip_corner_radius = 2131100070;
+			public const int text_view_height = 2131100070;
 			
 			// aapt resource value: 0x7F0601A7
-			public const int tooltip_horizontal_padding = 2131100071;
+			public const int text_view_width = 2131100071;
 			
 			// aapt resource value: 0x7F0601A8
-			public const int tooltip_margin = 2131100072;
+			public const int tooltip_corner_radius = 2131100072;
 			
 			// aapt resource value: 0x7F0601A9
-			public const int tooltip_precise_anchor_extra_offset = 2131100073;
+			public const int tooltip_horizontal_padding = 2131100073;
 			
 			// aapt resource value: 0x7F0601AA
-			public const int tooltip_precise_anchor_threshold = 2131100074;
+			public const int tooltip_margin = 2131100074;
 			
 			// aapt resource value: 0x7F0601AB
-			public const int tooltip_vertical_padding = 2131100075;
+			public const int tooltip_precise_anchor_extra_offset = 2131100075;
 			
 			// aapt resource value: 0x7F0601AC
-			public const int tooltip_y_offset_non_touch = 2131100076;
+			public const int tooltip_precise_anchor_threshold = 2131100076;
 			
 			// aapt resource value: 0x7F0601AD
-			public const int tooltip_y_offset_touch = 2131100077;
+			public const int tooltip_vertical_padding = 2131100077;
+			
+			// aapt resource value: 0x7F0601AE
+			public const int tooltip_y_offset_non_touch = 2131100078;
+			
+			// aapt resource value: 0x7F0601AF
+			public const int tooltip_y_offset_touch = 2131100079;
 			
 			static Dimension()
 			{
@@ -19145,160 +23161,193 @@ namespace MealPlanner.Droid
 			public const int btn_radio_on_to_off_mtrl_animation = 2131165278;
 			
 			// aapt resource value: 0x7F07005F
-			public const int design_fab_background = 2131165279;
+			public const int chatBuble = 2131165279;
 			
 			// aapt resource value: 0x7F070060
-			public const int design_ic_visibility = 2131165280;
+			public const int custom_design_password_eye = 2131165280;
 			
 			// aapt resource value: 0x7F070061
-			public const int design_ic_visibility_off = 2131165281;
+			public const int design_fab_background = 2131165281;
 			
 			// aapt resource value: 0x7F070062
-			public const int design_password_eye = 2131165282;
+			public const int design_ic_visibility = 2131165282;
 			
 			// aapt resource value: 0x7F070063
-			public const int design_snackbar_background = 2131165283;
-			
-			// aapt resource value: 0x7F07006B
-			public const int icon_about = 2131165291;
-			
-			// aapt resource value: 0x7F07006C
-			public const int icon_feed = 2131165292;
+			public const int design_ic_visibility_off = 2131165283;
 			
 			// aapt resource value: 0x7F070064
-			public const int ic_arrow_down_24dp = 2131165284;
+			public const int design_password_eye = 2131165284;
 			
 			// aapt resource value: 0x7F070065
-			public const int ic_clock_black_24dp = 2131165285;
-			
-			// aapt resource value: 0x7F070066
-			public const int ic_keyboard_black_24dp = 2131165286;
-			
-			// aapt resource value: 0x7F070067
-			public const int ic_mtrl_checked_circle = 2131165287;
-			
-			// aapt resource value: 0x7F070068
-			public const int ic_mtrl_chip_checked_black = 2131165288;
-			
-			// aapt resource value: 0x7F070069
-			public const int ic_mtrl_chip_checked_circle = 2131165289;
-			
-			// aapt resource value: 0x7F07006A
-			public const int ic_mtrl_chip_close_circle = 2131165290;
+			public const int design_snackbar_background = 2131165285;
 			
 			// aapt resource value: 0x7F07006D
-			public const int material_cursor_drawable = 2131165293;
+			public const int icon_about = 2131165293;
 			
 			// aapt resource value: 0x7F07006E
-			public const int material_ic_calendar_black_24dp = 2131165294;
+			public const int icon_feed = 2131165294;
+			
+			// aapt resource value: 0x7F070066
+			public const int ic_arrow_down_24dp = 2131165286;
+			
+			// aapt resource value: 0x7F070067
+			public const int ic_clock_black_24dp = 2131165287;
+			
+			// aapt resource value: 0x7F070068
+			public const int ic_keyboard_black_24dp = 2131165288;
+			
+			// aapt resource value: 0x7F070069
+			public const int ic_mtrl_checked_circle = 2131165289;
+			
+			// aapt resource value: 0x7F07006A
+			public const int ic_mtrl_chip_checked_black = 2131165290;
+			
+			// aapt resource value: 0x7F07006B
+			public const int ic_mtrl_chip_checked_circle = 2131165291;
+			
+			// aapt resource value: 0x7F07006C
+			public const int ic_mtrl_chip_close_circle = 2131165292;
 			
 			// aapt resource value: 0x7F07006F
-			public const int material_ic_clear_black_24dp = 2131165295;
+			public const int material_cursor_drawable = 2131165295;
 			
 			// aapt resource value: 0x7F070070
-			public const int material_ic_edit_black_24dp = 2131165296;
+			public const int material_ic_calendar_black_24dp = 2131165296;
 			
 			// aapt resource value: 0x7F070071
-			public const int material_ic_keyboard_arrow_left_black_24dp = 2131165297;
+			public const int material_ic_clear_black_24dp = 2131165297;
 			
 			// aapt resource value: 0x7F070072
-			public const int material_ic_keyboard_arrow_next_black_24dp = 2131165298;
+			public const int material_ic_edit_black_24dp = 2131165298;
 			
 			// aapt resource value: 0x7F070073
-			public const int material_ic_keyboard_arrow_previous_black_24dp = 2131165299;
+			public const int material_ic_keyboard_arrow_left_black_24dp = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int material_ic_keyboard_arrow_right_black_24dp = 2131165300;
+			public const int material_ic_keyboard_arrow_next_black_24dp = 2131165300;
 			
 			// aapt resource value: 0x7F070075
-			public const int material_ic_menu_arrow_down_black_24dp = 2131165301;
+			public const int material_ic_keyboard_arrow_previous_black_24dp = 2131165301;
 			
 			// aapt resource value: 0x7F070076
-			public const int material_ic_menu_arrow_up_black_24dp = 2131165302;
+			public const int material_ic_keyboard_arrow_right_black_24dp = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int mtrl_dialog_background = 2131165303;
+			public const int material_ic_menu_arrow_down_black_24dp = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int mtrl_dropdown_arrow = 2131165304;
+			public const int material_ic_menu_arrow_up_black_24dp = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int mtrl_ic_arrow_drop_down = 2131165305;
+			public const int mtrl_dialog_background = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int mtrl_ic_arrow_drop_up = 2131165306;
+			public const int mtrl_dropdown_arrow = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int mtrl_ic_cancel = 2131165307;
+			public const int mtrl_ic_arrow_drop_down = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int mtrl_ic_error = 2131165308;
+			public const int mtrl_ic_arrow_drop_up = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int mtrl_navigation_bar_item_background = 2131165309;
+			public const int mtrl_ic_cancel = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int mtrl_popupmenu_background = 2131165310;
+			public const int mtrl_ic_error = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int mtrl_popupmenu_background_dark = 2131165311;
+			public const int mtrl_navigation_bar_item_background = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int mtrl_tabs_default_indicator = 2131165312;
+			public const int mtrl_popupmenu_background = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int navigation_empty_icon = 2131165313;
+			public const int mtrl_popupmenu_background_dark = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int notification_action_background = 2131165314;
+			public const int mtrl_tabs_default_indicator = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int notification_bg = 2131165315;
+			public const int navigation_empty_icon = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int notification_bg_low = 2131165316;
+			public const int notification_action_background = 2131165316;
 			
 			// aapt resource value: 0x7F070085
-			public const int notification_bg_low_normal = 2131165317;
+			public const int notification_bg = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int notification_bg_low_pressed = 2131165318;
+			public const int notification_bg_low = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int notification_bg_normal = 2131165319;
+			public const int notification_bg_low_normal = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int notification_bg_normal_pressed = 2131165320;
+			public const int notification_bg_low_pressed = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int notification_icon_background = 2131165321;
+			public const int notification_bg_normal = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int notification_template_icon_bg = 2131165322;
+			public const int notification_bg_normal_pressed = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int notification_template_icon_low_bg = 2131165323;
+			public const int notification_icon_background = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int notification_tile_bg = 2131165324;
+			public const int notification_template_icon_bg = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int notify_panel_notification_icon_bg = 2131165325;
+			public const int notification_template_icon_low_bg = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
-			public const int preference_list_divider_material = 2131165326;
+			public const int notification_tile_bg = 2131165326;
 			
 			// aapt resource value: 0x7F07008F
-			public const int test_custom_background = 2131165327;
+			public const int notify_panel_notification_icon_bg = 2131165327;
 			
 			// aapt resource value: 0x7F070090
-			public const int tooltip_frame_dark = 2131165328;
+			public const int preference_list_divider_material = 2131165328;
+			
+			// aapt resource value: 0x7F070094
+			public const int RSChevron = 2131165332;
+			
+			// aapt resource value: 0x7F070095
+			public const int RSOvalShapeDrawable = 2131165333;
+			
+			// aapt resource value: 0x7F070096
+			public const int RSRectangleBorderShape = 2131165334;
+			
+			// aapt resource value: 0x7F070097
+			public const int RSRectangleBorderShapeFocused = 2131165335;
 			
 			// aapt resource value: 0x7F070091
-			public const int tooltip_frame_light = 2131165329;
+			public const int rs_dialog_background_inset = 2131165329;
 			
 			// aapt resource value: 0x7F070092
-			public const int xamarin_logo = 2131165330;
+			public const int rs_tooltip_arrow_down = 2131165330;
+			
+			// aapt resource value: 0x7F070093
+			public const int rs_tooltip_arrow_up = 2131165331;
+			
+			// aapt resource value: 0x7F070098
+			public const int tab_about = 2131165336;
+			
+			// aapt resource value: 0x7F070099
+			public const int tab_feed = 2131165337;
+			
+			// aapt resource value: 0x7F07009A
+			public const int test_custom_background = 2131165338;
+			
+			// aapt resource value: 0x7F07009B
+			public const int tooltip_frame_dark = 2131165339;
+			
+			// aapt resource value: 0x7F07009C
+			public const int tooltip_frame_light = 2131165340;
+			
+			// aapt resource value: 0x7F07009D
+			public const int xamarin_logo = 2131165341;
 			
 			static Drawable()
 			{
@@ -19424,8 +23473,8 @@ namespace MealPlanner.Droid
 			// aapt resource value: 0x7F080032
 			public const int actionDownUp = 2131230770;
 			
-			// aapt resource value: 0x7F080045
-			public const int actions = 2131230789;
+			// aapt resource value: 0x7F080048
+			public const int actions = 2131230792;
 			
 			// aapt resource value: 0x7F080033
 			public const int actionUp = 2131230771;
@@ -19458,112 +23507,127 @@ namespace MealPlanner.Droid
 			public const int action_context_bar = 2131230780;
 			
 			// aapt resource value: 0x7F08003D
-			public const int action_divider = 2131230781;
+			public const int action_destructive = 2131230781;
 			
 			// aapt resource value: 0x7F08003E
-			public const int action_image = 2131230782;
+			public const int action_divider = 2131230782;
 			
 			// aapt resource value: 0x7F08003F
-			public const int action_menu_divider = 2131230783;
+			public const int action_image = 2131230783;
 			
 			// aapt resource value: 0x7F080040
-			public const int action_menu_presenter = 2131230784;
+			public const int action_menu_divider = 2131230784;
 			
 			// aapt resource value: 0x7F080041
-			public const int action_mode_bar = 2131230785;
+			public const int action_menu_presenter = 2131230785;
 			
 			// aapt resource value: 0x7F080042
-			public const int action_mode_bar_stub = 2131230786;
+			public const int action_mode_bar = 2131230786;
 			
 			// aapt resource value: 0x7F080043
-			public const int action_mode_close_button = 2131230787;
+			public const int action_mode_bar_stub = 2131230787;
 			
 			// aapt resource value: 0x7F080044
-			public const int action_text = 2131230788;
+			public const int action_mode_close_button = 2131230788;
+			
+			// aapt resource value: 0x7F080045
+			public const int action_neutral = 2131230789;
 			
 			// aapt resource value: 0x7F080046
-			public const int activity_chooser_view_content = 2131230790;
+			public const int action_positive = 2131230790;
 			
 			// aapt resource value: 0x7F080047
-			public const int add = 2131230791;
-			
-			// aapt resource value: 0x7F080048
-			public const int alertTitle = 2131230792;
+			public const int action_text = 2131230791;
 			
 			// aapt resource value: 0x7F080049
-			public const int aligned = 2131230793;
+			public const int activity_chooser_view_content = 2131230793;
 			
 			// aapt resource value: 0x7F08004A
-			public const int all = 2131230794;
+			public const int add = 2131230794;
 			
 			// aapt resource value: 0x7F08004B
-			public const int allStates = 2131230795;
+			public const int alertTitle = 2131230795;
+			
+			// aapt resource value: 0x7F08004C
+			public const int aligned = 2131230796;
+			
+			// aapt resource value: 0x7F08004D
+			public const int all = 2131230797;
+			
+			// aapt resource value: 0x7F08004E
+			public const int allStates = 2131230798;
 			
 			// aapt resource value: 0x7F080000
 			public const int ALT = 2131230720;
 			
-			// aapt resource value: 0x7F08004C
-			public const int always = 2131230796;
-			
-			// aapt resource value: 0x7F08004D
-			public const int animateToEnd = 2131230797;
-			
-			// aapt resource value: 0x7F08004E
-			public const int animateToStart = 2131230798;
+			// aapt resource value: 0x7F08004F
+			public const int always = 2131230799;
 			
 			// aapt resource value: 0x7F080050
-			public const int anticipate = 2131230800;
-			
-			// aapt resource value: 0x7F08004F
-			public const int antiClockwise = 2131230799;
+			public const int animateToEnd = 2131230800;
 			
 			// aapt resource value: 0x7F080051
-			public const int arc = 2131230801;
-			
-			// aapt resource value: 0x7F080052
-			public const int asConfigured = 2131230802;
+			public const int animateToStart = 2131230801;
 			
 			// aapt resource value: 0x7F080053
-			public const int async = 2131230803;
+			public const int anticipate = 2131230803;
+			
+			// aapt resource value: 0x7F080052
+			public const int antiClockwise = 2131230802;
 			
 			// aapt resource value: 0x7F080054
-			public const int auto = 2131230804;
+			public const int arc = 2131230804;
 			
 			// aapt resource value: 0x7F080055
-			public const int autoComplete = 2131230805;
+			public const int asConfigured = 2131230805;
 			
 			// aapt resource value: 0x7F080056
-			public const int autoCompleteToEnd = 2131230806;
+			public const int async = 2131230806;
 			
 			// aapt resource value: 0x7F080057
-			public const int autoCompleteToStart = 2131230807;
+			public const int auto = 2131230807;
 			
 			// aapt resource value: 0x7F080058
-			public const int barrier = 2131230808;
+			public const int autoComplete = 2131230808;
 			
 			// aapt resource value: 0x7F080059
-			public const int baseline = 2131230809;
-			
-			// aapt resource value: 0x7F08005B
-			public const int beginning = 2131230811;
+			public const int autoCompleteToEnd = 2131230809;
 			
 			// aapt resource value: 0x7F08005A
-			public const int beginOnFirstDraw = 2131230810;
+			public const int autoCompleteToStart = 2131230810;
+			
+			// aapt resource value: 0x7F08005B
+			public const int auto_complete_imageView = 2131230811;
 			
 			// aapt resource value: 0x7F08005C
-			public const int bestChoice = 2131230812;
+			public const int auto_complete_textView = 2131230812;
 			
 			// aapt resource value: 0x7F08005D
-			public const int blocking = 2131230813;
+			public const int barrier = 2131230813;
 			
 			// aapt resource value: 0x7F08005E
-			public const int bottom = 2131230814;
-			
-			// aapt resource value: 0x7F08005F
-			public const int bottomtab_navarea = 2131230815;
+			public const int baseline = 2131230814;
 			
 			// aapt resource value: 0x7F080060
-			public const int bottomtab_tabbar = 2131230816;
+			public const int beginning = 2131230816;
+			
+			// aapt resource value: 0x7F08005F
+			public const int beginOnFirstDraw = 2131230815;
+			
+			// aapt resource value: 0x7F080061
+			public const int bestChoice = 2131230817;
+			
+			// aapt resource value: 0x7F080062
+			public const int blocking = 2131230818;
+			
+			// aapt resource value: 0x7F080063
+			public const int bottom = 2131230819;
+			
+			// aapt resource value: 0x7F080064
+			public const int bottomtab_navarea = 2131230820;
+			
+			// aapt resource value: 0x7F080065
+			public const int bottomtab_tabbar = 2131230821;
 			
 			// aapt resource value: 0x7F080001
 			public const int BOTTOM_END = 2131230721;
@@ -19571,887 +23635,938 @@ namespace MealPlanner.Droid
 			// aapt resource value: 0x7F080002
 			public const int BOTTOM_START = 2131230722;
 			
-			// aapt resource value: 0x7F080061
-			public const int bounce = 2131230817;
-			
-			// aapt resource value: 0x7F080062
-			public const int bounceBoth = 2131230818;
-			
-			// aapt resource value: 0x7F080063
-			public const int bounceEnd = 2131230819;
-			
-			// aapt resource value: 0x7F080064
-			public const int bounceStart = 2131230820;
-			
-			// aapt resource value: 0x7F080065
-			public const int browser_actions_header_text = 2131230821;
-			
-			// aapt resource value: 0x7F080068
-			public const int browser_actions_menu_items = 2131230824;
-			
 			// aapt resource value: 0x7F080066
-			public const int browser_actions_menu_item_icon = 2131230822;
+			public const int bounce = 2131230822;
 			
 			// aapt resource value: 0x7F080067
-			public const int browser_actions_menu_item_text = 2131230823;
+			public const int bounceBoth = 2131230823;
+			
+			// aapt resource value: 0x7F080068
+			public const int bounceEnd = 2131230824;
 			
 			// aapt resource value: 0x7F080069
-			public const int browser_actions_menu_view = 2131230825;
+			public const int bounceStart = 2131230825;
 			
 			// aapt resource value: 0x7F08006A
-			public const int buttonPanel = 2131230826;
-			
-			// aapt resource value: 0x7F08006B
-			public const int cache_measures = 2131230827;
-			
-			// aapt resource value: 0x7F08006C
-			public const int cancel_action = 2131230828;
+			public const int browser_actions_header_text = 2131230826;
 			
 			// aapt resource value: 0x7F08006D
-			public const int cancel_button = 2131230829;
+			public const int browser_actions_menu_items = 2131230829;
+			
+			// aapt resource value: 0x7F08006B
+			public const int browser_actions_menu_item_icon = 2131230827;
+			
+			// aapt resource value: 0x7F08006C
+			public const int browser_actions_menu_item_text = 2131230828;
 			
 			// aapt resource value: 0x7F08006E
-			public const int carryVelocity = 2131230830;
+			public const int browser_actions_menu_view = 2131230830;
 			
 			// aapt resource value: 0x7F08006F
-			public const int center = 2131230831;
+			public const int buttonPanel = 2131230831;
 			
 			// aapt resource value: 0x7F080070
-			public const int center_horizontal = 2131230832;
+			public const int buttons = 2131230832;
 			
 			// aapt resource value: 0x7F080071
-			public const int center_vertical = 2131230833;
+			public const int cache_measures = 2131230833;
 			
 			// aapt resource value: 0x7F080072
-			public const int chain = 2131230834;
+			public const int cancel_action = 2131230834;
 			
 			// aapt resource value: 0x7F080073
-			public const int chains = 2131230835;
+			public const int cancel_button = 2131230835;
 			
 			// aapt resource value: 0x7F080074
-			public const int checkbox = 2131230836;
+			public const int carryVelocity = 2131230836;
 			
 			// aapt resource value: 0x7F080075
-			public const int @checked = 2131230837;
+			public const int center = 2131230837;
 			
 			// aapt resource value: 0x7F080076
-			public const int chip = 2131230838;
+			public const int center_horizontal = 2131230838;
 			
 			// aapt resource value: 0x7F080077
-			public const int chip1 = 2131230839;
+			public const int center_vertical = 2131230839;
 			
 			// aapt resource value: 0x7F080078
-			public const int chip2 = 2131230840;
+			public const int chain = 2131230840;
 			
 			// aapt resource value: 0x7F080079
-			public const int chip3 = 2131230841;
+			public const int chains = 2131230841;
 			
 			// aapt resource value: 0x7F08007A
-			public const int chip_group = 2131230842;
+			public const int checkbox = 2131230842;
 			
 			// aapt resource value: 0x7F08007B
-			public const int chronometer = 2131230843;
+			public const int @checked = 2131230843;
 			
 			// aapt resource value: 0x7F08007C
-			public const int circle_center = 2131230844;
+			public const int chip = 2131230844;
 			
 			// aapt resource value: 0x7F08007D
-			public const int clear_text = 2131230845;
+			public const int chip1 = 2131230845;
 			
 			// aapt resource value: 0x7F08007E
-			public const int clip_horizontal = 2131230846;
+			public const int chip2 = 2131230846;
 			
 			// aapt resource value: 0x7F08007F
-			public const int clip_vertical = 2131230847;
+			public const int chip3 = 2131230847;
 			
 			// aapt resource value: 0x7F080080
-			public const int clockwise = 2131230848;
+			public const int chip_group = 2131230848;
 			
 			// aapt resource value: 0x7F080081
-			public const int closest = 2131230849;
+			public const int chronometer = 2131230849;
 			
 			// aapt resource value: 0x7F080082
-			public const int collapseActionView = 2131230850;
+			public const int circle_center = 2131230850;
 			
 			// aapt resource value: 0x7F080083
-			public const int confirm_button = 2131230851;
+			public const int clear_text = 2131230851;
 			
 			// aapt resource value: 0x7F080084
-			public const int constraint = 2131230852;
+			public const int clip_horizontal = 2131230852;
 			
 			// aapt resource value: 0x7F080085
-			public const int container = 2131230853;
+			public const int clip_vertical = 2131230853;
 			
 			// aapt resource value: 0x7F080086
-			public const int content = 2131230854;
+			public const int clockwise = 2131230854;
 			
 			// aapt resource value: 0x7F080087
-			public const int contentPanel = 2131230855;
+			public const int closeButton = 2131230855;
 			
 			// aapt resource value: 0x7F080088
-			public const int contiguous = 2131230856;
+			public const int closest = 2131230856;
 			
 			// aapt resource value: 0x7F080089
-			public const int continuousVelocity = 2131230857;
+			public const int collapseActionView = 2131230857;
 			
 			// aapt resource value: 0x7F08008A
-			public const int coordinator = 2131230858;
+			public const int confirm_button = 2131230858;
 			
 			// aapt resource value: 0x7F08008B
-			public const int cos = 2131230859;
+			public const int constraint = 2131230859;
 			
 			// aapt resource value: 0x7F08008C
-			public const int counterclockwise = 2131230860;
+			public const int container = 2131230860;
+			
+			// aapt resource value: 0x7F08008D
+			public const int content = 2131230861;
+			
+			// aapt resource value: 0x7F08008E
+			public const int contentPanel = 2131230862;
+			
+			// aapt resource value: 0x7F08008F
+			public const int contentView = 2131230863;
+			
+			// aapt resource value: 0x7F080090
+			public const int contiguous = 2131230864;
+			
+			// aapt resource value: 0x7F080091
+			public const int continuousVelocity = 2131230865;
+			
+			// aapt resource value: 0x7F080092
+			public const int coordinator = 2131230866;
+			
+			// aapt resource value: 0x7F080093
+			public const int cos = 2131230867;
+			
+			// aapt resource value: 0x7F080094
+			public const int counterclockwise = 2131230868;
 			
 			// aapt resource value: 0x7F080003
 			public const int CTRL = 2131230723;
 			
-			// aapt resource value: 0x7F08008D
-			public const int currentState = 2131230861;
-			
-			// aapt resource value: 0x7F08008E
-			public const int custom = 2131230862;
-			
-			// aapt resource value: 0x7F08008F
-			public const int customPanel = 2131230863;
-			
-			// aapt resource value: 0x7F080090
-			public const int cut = 2131230864;
-			
-			// aapt resource value: 0x7F080091
-			public const int date_picker_actions = 2131230865;
-			
-			// aapt resource value: 0x7F080092
-			public const int decelerate = 2131230866;
-			
-			// aapt resource value: 0x7F080093
-			public const int decelerateAndComplete = 2131230867;
-			
-			// aapt resource value: 0x7F080094
-			public const int decor_content_parent = 2131230868;
-			
 			// aapt resource value: 0x7F080095
-			public const int default_activity_button = 2131230869;
+			public const int currentState = 2131230869;
 			
 			// aapt resource value: 0x7F080096
-			public const int deltaRelative = 2131230870;
+			public const int custom = 2131230870;
 			
 			// aapt resource value: 0x7F080097
-			public const int dependency_ordering = 2131230871;
+			public const int customPanel = 2131230871;
 			
 			// aapt resource value: 0x7F080098
-			public const int design_bottom_sheet = 2131230872;
+			public const int cut = 2131230872;
 			
 			// aapt resource value: 0x7F080099
-			public const int design_menu_item_action_area = 2131230873;
+			public const int date_picker_actions = 2131230873;
 			
 			// aapt resource value: 0x7F08009A
-			public const int design_menu_item_action_area_stub = 2131230874;
+			public const int decelerate = 2131230874;
 			
 			// aapt resource value: 0x7F08009B
-			public const int design_menu_item_text = 2131230875;
+			public const int decelerateAndComplete = 2131230875;
 			
 			// aapt resource value: 0x7F08009C
-			public const int design_navigation_view = 2131230876;
+			public const int decor_content_parent = 2131230876;
 			
 			// aapt resource value: 0x7F08009D
-			public const int dialog_button = 2131230877;
+			public const int default_activity_button = 2131230877;
 			
 			// aapt resource value: 0x7F08009E
-			public const int dimensions = 2131230878;
+			public const int deltaRelative = 2131230878;
 			
 			// aapt resource value: 0x7F08009F
-			public const int direct = 2131230879;
+			public const int dependency_ordering = 2131230879;
 			
 			// aapt resource value: 0x7F0800A0
-			public const int disableHome = 2131230880;
+			public const int design_bottom_sheet = 2131230880;
 			
 			// aapt resource value: 0x7F0800A1
-			public const int disableIntraAutoTransition = 2131230881;
+			public const int design_menu_item_action_area = 2131230881;
 			
 			// aapt resource value: 0x7F0800A2
-			public const int disablePostScroll = 2131230882;
+			public const int design_menu_item_action_area_stub = 2131230882;
 			
 			// aapt resource value: 0x7F0800A3
-			public const int disableScroll = 2131230883;
+			public const int design_menu_item_text = 2131230883;
 			
 			// aapt resource value: 0x7F0800A4
-			public const int disjoint = 2131230884;
+			public const int design_navigation_view = 2131230884;
 			
 			// aapt resource value: 0x7F0800A5
-			public const int dragAnticlockwise = 2131230885;
+			public const int dialog_button = 2131230885;
 			
 			// aapt resource value: 0x7F0800A6
-			public const int dragClockwise = 2131230886;
+			public const int dialog_message = 2131230886;
 			
 			// aapt resource value: 0x7F0800A7
-			public const int dragDown = 2131230887;
+			public const int dialog_title = 2131230887;
 			
 			// aapt resource value: 0x7F0800A8
-			public const int dragEnd = 2131230888;
+			public const int dimensions = 2131230888;
 			
 			// aapt resource value: 0x7F0800A9
-			public const int dragLeft = 2131230889;
+			public const int direct = 2131230889;
 			
 			// aapt resource value: 0x7F0800AA
-			public const int dragRight = 2131230890;
+			public const int disableHome = 2131230890;
 			
 			// aapt resource value: 0x7F0800AB
-			public const int dragStart = 2131230891;
+			public const int disableIntraAutoTransition = 2131230891;
 			
 			// aapt resource value: 0x7F0800AC
-			public const int dragUp = 2131230892;
+			public const int disablePostScroll = 2131230892;
 			
 			// aapt resource value: 0x7F0800AD
-			public const int dropdown_menu = 2131230893;
+			public const int disableScroll = 2131230893;
 			
 			// aapt resource value: 0x7F0800AE
-			public const int easeIn = 2131230894;
+			public const int disjoint = 2131230894;
 			
 			// aapt resource value: 0x7F0800AF
-			public const int easeInOut = 2131230895;
+			public const int dragAnticlockwise = 2131230895;
 			
 			// aapt resource value: 0x7F0800B0
-			public const int easeOut = 2131230896;
+			public const int dragClockwise = 2131230896;
 			
 			// aapt resource value: 0x7F0800B1
-			public const int east = 2131230897;
+			public const int dragDown = 2131230897;
 			
 			// aapt resource value: 0x7F0800B2
-			public const int edit_query = 2131230898;
+			public const int dragEnd = 2131230898;
 			
 			// aapt resource value: 0x7F0800B3
-			public const int elastic = 2131230899;
+			public const int dragLeft = 2131230899;
 			
 			// aapt resource value: 0x7F0800B4
-			public const int end = 2131230900;
+			public const int dragRight = 2131230900;
 			
 			// aapt resource value: 0x7F0800B5
-			public const int endToStart = 2131230901;
+			public const int dragStart = 2131230901;
 			
 			// aapt resource value: 0x7F0800B6
-			public const int end_padder = 2131230902;
+			public const int dragUp = 2131230902;
 			
 			// aapt resource value: 0x7F0800B7
-			public const int enterAlways = 2131230903;
+			public const int dropdown_menu = 2131230903;
 			
 			// aapt resource value: 0x7F0800B8
-			public const int enterAlwaysCollapsed = 2131230904;
+			public const int easeIn = 2131230904;
 			
 			// aapt resource value: 0x7F0800B9
-			public const int exitUntilCollapsed = 2131230905;
-			
-			// aapt resource value: 0x7F0800BB
-			public const int expanded_menu = 2131230907;
+			public const int easeInOut = 2131230905;
 			
 			// aapt resource value: 0x7F0800BA
-			public const int expand_activities_button = 2131230906;
+			public const int easeOut = 2131230906;
+			
+			// aapt resource value: 0x7F0800BB
+			public const int east = 2131230907;
 			
 			// aapt resource value: 0x7F0800BC
-			public const int fade = 2131230908;
+			public const int edit_query = 2131230908;
 			
 			// aapt resource value: 0x7F0800BD
-			public const int fill = 2131230909;
-			
-			// aapt resource value: 0x7F0800C0
-			public const int filled = 2131230912;
+			public const int elastic = 2131230909;
 			
 			// aapt resource value: 0x7F0800BE
-			public const int fill_horizontal = 2131230910;
+			public const int end = 2131230910;
 			
 			// aapt resource value: 0x7F0800BF
-			public const int fill_vertical = 2131230911;
+			public const int endToStart = 2131230911;
+			
+			// aapt resource value: 0x7F0800C0
+			public const int end_padder = 2131230912;
 			
 			// aapt resource value: 0x7F0800C1
-			public const int fitToContents = 2131230913;
+			public const int enterAlways = 2131230913;
 			
 			// aapt resource value: 0x7F0800C2
-			public const int @fixed = 2131230914;
+			public const int enterAlwaysCollapsed = 2131230914;
 			
 			// aapt resource value: 0x7F0800C3
-			public const int flip = 2131230915;
-			
-			// aapt resource value: 0x7F0800C4
-			public const int floating = 2131230916;
+			public const int exitUntilCollapsed = 2131230915;
 			
 			// aapt resource value: 0x7F0800C5
-			public const int flyoutcontent_appbar = 2131230917;
+			public const int expanded_menu = 2131230917;
+			
+			// aapt resource value: 0x7F0800C4
+			public const int expand_activities_button = 2131230916;
 			
 			// aapt resource value: 0x7F0800C6
-			public const int forever = 2131230918;
+			public const int fade = 2131230918;
 			
 			// aapt resource value: 0x7F0800C7
-			public const int fragment_container_view_tag = 2131230919;
+			public const int fill = 2131230919;
+			
+			// aapt resource value: 0x7F0800CA
+			public const int filled = 2131230922;
 			
 			// aapt resource value: 0x7F0800C8
-			public const int frost = 2131230920;
+			public const int fill_horizontal = 2131230920;
+			
+			// aapt resource value: 0x7F0800C9
+			public const int fill_vertical = 2131230921;
+			
+			// aapt resource value: 0x7F0800CB
+			public const int fitToContents = 2131230923;
+			
+			// aapt resource value: 0x7F0800CC
+			public const int @fixed = 2131230924;
+			
+			// aapt resource value: 0x7F0800CD
+			public const int flip = 2131230925;
+			
+			// aapt resource value: 0x7F0800CE
+			public const int floating = 2131230926;
+			
+			// aapt resource value: 0x7F0800CF
+			public const int flyoutcontent_appbar = 2131230927;
+			
+			// aapt resource value: 0x7F0800D0
+			public const int forever = 2131230928;
+			
+			// aapt resource value: 0x7F0800D1
+			public const int fragment_container_view_tag = 2131230929;
+			
+			// aapt resource value: 0x7F0800D2
+			public const int frost = 2131230930;
 			
 			// aapt resource value: 0x7F080004
 			public const int FUNCTION = 2131230724;
 			
-			// aapt resource value: 0x7F0800C9
-			public const int ghost_view = 2131230921;
-			
-			// aapt resource value: 0x7F0800CA
-			public const int ghost_view_holder = 2131230922;
-			
-			// aapt resource value: 0x7F0800CB
-			public const int gone = 2131230923;
-			
-			// aapt resource value: 0x7F0800CC
-			public const int graph = 2131230924;
-			
-			// aapt resource value: 0x7F0800CD
-			public const int graph_wrap = 2131230925;
-			
-			// aapt resource value: 0x7F0800CF
-			public const int grouping = 2131230927;
-			
-			// aapt resource value: 0x7F0800D0
-			public const int groups = 2131230928;
-			
-			// aapt resource value: 0x7F0800CE
-			public const int group_divider = 2131230926;
-			
-			// aapt resource value: 0x7F0800D1
-			public const int guideline = 2131230929;
-			
-			// aapt resource value: 0x7F0800D2
-			public const int header_title = 2131230930;
-			
 			// aapt resource value: 0x7F0800D3
-			public const int hideable = 2131230931;
+			public const int ghost_view = 2131230931;
 			
 			// aapt resource value: 0x7F0800D4
-			public const int home = 2131230932;
+			public const int ghost_view_holder = 2131230932;
 			
 			// aapt resource value: 0x7F0800D5
-			public const int homeAsUp = 2131230933;
+			public const int gone = 2131230933;
 			
 			// aapt resource value: 0x7F0800D6
-			public const int honorRequest = 2131230934;
+			public const int graph = 2131230934;
 			
 			// aapt resource value: 0x7F0800D7
-			public const int horizontal_only = 2131230935;
-			
-			// aapt resource value: 0x7F0800D8
-			public const int icon = 2131230936;
+			public const int graph_wrap = 2131230935;
 			
 			// aapt resource value: 0x7F0800D9
-			public const int icon_frame = 2131230937;
+			public const int grouping = 2131230937;
 			
 			// aapt resource value: 0x7F0800DA
-			public const int icon_group = 2131230938;
+			public const int groups = 2131230938;
+			
+			// aapt resource value: 0x7F0800D8
+			public const int group_divider = 2131230936;
 			
 			// aapt resource value: 0x7F0800DB
-			public const int ifRoom = 2131230939;
+			public const int guideline = 2131230939;
 			
 			// aapt resource value: 0x7F0800DC
-			public const int ignore = 2131230940;
+			public const int headerMonthTitle = 2131230940;
 			
 			// aapt resource value: 0x7F0800DD
-			public const int ignoreRequest = 2131230941;
+			public const int headerYearTitle = 2131230941;
 			
 			// aapt resource value: 0x7F0800DE
-			public const int image = 2131230942;
+			public const int header_title = 2131230942;
 			
 			// aapt resource value: 0x7F0800DF
-			public const int immediateStop = 2131230943;
+			public const int hideable = 2131230943;
 			
 			// aapt resource value: 0x7F0800E0
-			public const int included = 2131230944;
+			public const int home = 2131230944;
 			
 			// aapt resource value: 0x7F0800E1
-			public const int info = 2131230945;
+			public const int homeAsUp = 2131230945;
 			
 			// aapt resource value: 0x7F0800E2
-			public const int invisible = 2131230946;
+			public const int honorRequest = 2131230946;
 			
 			// aapt resource value: 0x7F0800E3
-			public const int inward = 2131230947;
+			public const int horizontal_only = 2131230947;
 			
 			// aapt resource value: 0x7F0800E4
-			public const int italic = 2131230948;
+			public const int icon = 2131230948;
 			
 			// aapt resource value: 0x7F0800E5
-			public const int item_touch_helper_previous_elevation = 2131230949;
+			public const int icon_frame = 2131230949;
 			
 			// aapt resource value: 0x7F0800E6
-			public const int jumpToEnd = 2131230950;
+			public const int icon_group = 2131230950;
 			
 			// aapt resource value: 0x7F0800E7
-			public const int jumpToStart = 2131230951;
+			public const int ifRoom = 2131230951;
 			
 			// aapt resource value: 0x7F0800E8
-			public const int labeled = 2131230952;
+			public const int ignore = 2131230952;
 			
 			// aapt resource value: 0x7F0800E9
-			public const int layout = 2131230953;
+			public const int ignoreRequest = 2131230953;
 			
 			// aapt resource value: 0x7F0800EA
-			public const int left = 2131230954;
+			public const int image = 2131230954;
 			
 			// aapt resource value: 0x7F0800EB
-			public const int leftToRight = 2131230955;
+			public const int immediateStop = 2131230955;
 			
 			// aapt resource value: 0x7F0800EC
-			public const int legacy = 2131230956;
+			public const int included = 2131230956;
 			
 			// aapt resource value: 0x7F0800ED
-			public const int line1 = 2131230957;
+			public const int info = 2131230957;
 			
 			// aapt resource value: 0x7F0800EE
-			public const int line3 = 2131230958;
+			public const int invisible = 2131230958;
 			
 			// aapt resource value: 0x7F0800EF
-			public const int linear = 2131230959;
+			public const int inward = 2131230959;
 			
 			// aapt resource value: 0x7F0800F0
-			public const int listMode = 2131230960;
+			public const int italic = 2131230960;
 			
 			// aapt resource value: 0x7F0800F1
-			public const int list_item = 2131230961;
+			public const int item_touch_helper_previous_elevation = 2131230961;
 			
 			// aapt resource value: 0x7F0800F2
-			public const int main_appbar = 2131230962;
+			public const int jumpToEnd = 2131230962;
 			
 			// aapt resource value: 0x7F0800F3
-			public const int main_tablayout = 2131230963;
+			public const int jumpToStart = 2131230963;
 			
 			// aapt resource value: 0x7F0800F4
-			public const int main_toolbar = 2131230964;
+			public const int labeled = 2131230964;
 			
 			// aapt resource value: 0x7F0800F5
-			public const int main_viewpager = 2131230965;
+			public const int layout = 2131230965;
 			
 			// aapt resource value: 0x7F0800F6
-			public const int masked = 2131230966;
+			public const int left = 2131230966;
 			
 			// aapt resource value: 0x7F0800F7
-			public const int match_constraint = 2131230967;
+			public const int leftButton = 2131230967;
 			
 			// aapt resource value: 0x7F0800F8
-			public const int match_parent = 2131230968;
+			public const int leftToRight = 2131230968;
 			
 			// aapt resource value: 0x7F0800F9
-			public const int material_clock_display = 2131230969;
+			public const int legacy = 2131230969;
 			
 			// aapt resource value: 0x7F0800FA
-			public const int material_clock_face = 2131230970;
+			public const int line1 = 2131230970;
 			
 			// aapt resource value: 0x7F0800FB
-			public const int material_clock_hand = 2131230971;
+			public const int line3 = 2131230971;
 			
 			// aapt resource value: 0x7F0800FC
-			public const int material_clock_period_am_button = 2131230972;
+			public const int linear = 2131230972;
 			
 			// aapt resource value: 0x7F0800FD
-			public const int material_clock_period_pm_button = 2131230973;
+			public const int linearLayout = 2131230973;
 			
 			// aapt resource value: 0x7F0800FE
-			public const int material_clock_period_toggle = 2131230974;
+			public const int linearLayout2 = 2131230974;
 			
 			// aapt resource value: 0x7F0800FF
-			public const int material_hour_text_input = 2131230975;
+			public const int listMode = 2131230975;
 			
 			// aapt resource value: 0x7F080100
-			public const int material_hour_tv = 2131230976;
+			public const int list_item = 2131230976;
 			
 			// aapt resource value: 0x7F080101
-			public const int material_label = 2131230977;
+			public const int main_appbar = 2131230977;
 			
 			// aapt resource value: 0x7F080102
-			public const int material_minute_text_input = 2131230978;
+			public const int main_tablayout = 2131230978;
 			
 			// aapt resource value: 0x7F080103
-			public const int material_minute_tv = 2131230979;
+			public const int main_toolbar = 2131230979;
 			
 			// aapt resource value: 0x7F080104
-			public const int material_textinput_timepicker = 2131230980;
+			public const int main_viewpager = 2131230980;
 			
 			// aapt resource value: 0x7F080105
-			public const int material_timepicker_cancel_button = 2131230981;
+			public const int masked = 2131230981;
 			
 			// aapt resource value: 0x7F080106
-			public const int material_timepicker_container = 2131230982;
+			public const int match_constraint = 2131230982;
 			
 			// aapt resource value: 0x7F080107
-			public const int material_timepicker_edit_text = 2131230983;
+			public const int match_parent = 2131230983;
 			
 			// aapt resource value: 0x7F080108
-			public const int material_timepicker_mode_button = 2131230984;
+			public const int material_clock_display = 2131230984;
 			
 			// aapt resource value: 0x7F080109
-			public const int material_timepicker_ok_button = 2131230985;
+			public const int material_clock_face = 2131230985;
 			
 			// aapt resource value: 0x7F08010A
-			public const int material_timepicker_view = 2131230986;
+			public const int material_clock_hand = 2131230986;
 			
 			// aapt resource value: 0x7F08010B
-			public const int material_value_index = 2131230987;
+			public const int material_clock_period_am_button = 2131230987;
 			
 			// aapt resource value: 0x7F08010C
-			public const int media_actions = 2131230988;
+			public const int material_clock_period_pm_button = 2131230988;
 			
 			// aapt resource value: 0x7F08010D
-			public const int media_controller_compat_view_tag = 2131230989;
+			public const int material_clock_period_toggle = 2131230989;
 			
 			// aapt resource value: 0x7F08010E
-			public const int message = 2131230990;
+			public const int material_hour_text_input = 2131230990;
+			
+			// aapt resource value: 0x7F08010F
+			public const int material_hour_tv = 2131230991;
+			
+			// aapt resource value: 0x7F080110
+			public const int material_label = 2131230992;
+			
+			// aapt resource value: 0x7F080111
+			public const int material_minute_text_input = 2131230993;
+			
+			// aapt resource value: 0x7F080112
+			public const int material_minute_tv = 2131230994;
+			
+			// aapt resource value: 0x7F080113
+			public const int material_textinput_timepicker = 2131230995;
+			
+			// aapt resource value: 0x7F080114
+			public const int material_timepicker_cancel_button = 2131230996;
+			
+			// aapt resource value: 0x7F080115
+			public const int material_timepicker_container = 2131230997;
+			
+			// aapt resource value: 0x7F080116
+			public const int material_timepicker_edit_text = 2131230998;
+			
+			// aapt resource value: 0x7F080117
+			public const int material_timepicker_mode_button = 2131230999;
+			
+			// aapt resource value: 0x7F080118
+			public const int material_timepicker_ok_button = 2131231000;
+			
+			// aapt resource value: 0x7F080119
+			public const int material_timepicker_view = 2131231001;
+			
+			// aapt resource value: 0x7F08011A
+			public const int material_value_index = 2131231002;
+			
+			// aapt resource value: 0x7F08011B
+			public const int media_actions = 2131231003;
+			
+			// aapt resource value: 0x7F08011C
+			public const int media_controller_compat_view_tag = 2131231004;
+			
+			// aapt resource value: 0x7F08011D
+			public const int message = 2131231005;
 			
 			// aapt resource value: 0x7F080005
 			public const int META = 2131230725;
 			
-			// aapt resource value: 0x7F08010F
-			public const int middle = 2131230991;
-			
-			// aapt resource value: 0x7F080110
-			public const int mini = 2131230992;
-			
-			// aapt resource value: 0x7F080111
-			public const int month_grid = 2131230993;
-			
-			// aapt resource value: 0x7F080112
-			public const int month_navigation_bar = 2131230994;
-			
-			// aapt resource value: 0x7F080113
-			public const int month_navigation_fragment_toggle = 2131230995;
-			
-			// aapt resource value: 0x7F080114
-			public const int month_navigation_next = 2131230996;
-			
-			// aapt resource value: 0x7F080115
-			public const int month_navigation_previous = 2131230997;
-			
-			// aapt resource value: 0x7F080116
-			public const int month_title = 2131230998;
-			
-			// aapt resource value: 0x7F080117
-			public const int motion_base = 2131230999;
-			
-			// aapt resource value: 0x7F080118
-			public const int mtrl_anchor_parent = 2131231000;
-			
-			// aapt resource value: 0x7F08011A
-			public const int mtrl_calendar_days_of_week = 2131231002;
-			
-			// aapt resource value: 0x7F080119
-			public const int mtrl_calendar_day_selector_frame = 2131231001;
-			
-			// aapt resource value: 0x7F08011B
-			public const int mtrl_calendar_frame = 2131231003;
-			
-			// aapt resource value: 0x7F08011C
-			public const int mtrl_calendar_main_pane = 2131231004;
-			
-			// aapt resource value: 0x7F08011D
-			public const int mtrl_calendar_months = 2131231005;
-			
 			// aapt resource value: 0x7F08011E
-			public const int mtrl_calendar_selection_frame = 2131231006;
+			public const int middle = 2131231006;
 			
 			// aapt resource value: 0x7F08011F
-			public const int mtrl_calendar_text_input_frame = 2131231007;
+			public const int mini = 2131231007;
 			
 			// aapt resource value: 0x7F080120
-			public const int mtrl_calendar_year_selector_frame = 2131231008;
+			public const int month = 2131231008;
 			
 			// aapt resource value: 0x7F080121
-			public const int mtrl_card_checked_layer_id = 2131231009;
+			public const int monthView = 2131231009;
 			
 			// aapt resource value: 0x7F080122
-			public const int mtrl_child_content_container = 2131231010;
+			public const int month_grid = 2131231010;
 			
 			// aapt resource value: 0x7F080123
-			public const int mtrl_internal_children_alpha_tag = 2131231011;
+			public const int month_navigation_bar = 2131231011;
 			
 			// aapt resource value: 0x7F080124
-			public const int mtrl_motion_snapshot_view = 2131231012;
+			public const int month_navigation_fragment_toggle = 2131231012;
 			
 			// aapt resource value: 0x7F080125
-			public const int mtrl_picker_fullscreen = 2131231013;
+			public const int month_navigation_next = 2131231013;
 			
 			// aapt resource value: 0x7F080126
-			public const int mtrl_picker_header = 2131231014;
+			public const int month_navigation_previous = 2131231014;
 			
 			// aapt resource value: 0x7F080127
-			public const int mtrl_picker_header_selection_text = 2131231015;
+			public const int month_title = 2131231015;
 			
 			// aapt resource value: 0x7F080128
-			public const int mtrl_picker_header_title_and_selection = 2131231016;
+			public const int motion_base = 2131231016;
 			
 			// aapt resource value: 0x7F080129
-			public const int mtrl_picker_header_toggle = 2131231017;
-			
-			// aapt resource value: 0x7F08012A
-			public const int mtrl_picker_text_input_date = 2131231018;
+			public const int mtrl_anchor_parent = 2131231017;
 			
 			// aapt resource value: 0x7F08012B
-			public const int mtrl_picker_text_input_range_end = 2131231019;
+			public const int mtrl_calendar_days_of_week = 2131231019;
+			
+			// aapt resource value: 0x7F08012A
+			public const int mtrl_calendar_day_selector_frame = 2131231018;
 			
 			// aapt resource value: 0x7F08012C
-			public const int mtrl_picker_text_input_range_start = 2131231020;
+			public const int mtrl_calendar_frame = 2131231020;
 			
 			// aapt resource value: 0x7F08012D
-			public const int mtrl_picker_title_text = 2131231021;
+			public const int mtrl_calendar_main_pane = 2131231021;
 			
 			// aapt resource value: 0x7F08012E
-			public const int mtrl_view_tag_bottom_padding = 2131231022;
+			public const int mtrl_calendar_months = 2131231022;
 			
 			// aapt resource value: 0x7F08012F
-			public const int multiply = 2131231023;
-			
-			// aapt resource value: 0x7F080131
-			public const int navigation_bar_item_icon_view = 2131231025;
-			
-			// aapt resource value: 0x7F080132
-			public const int navigation_bar_item_labels_group = 2131231026;
-			
-			// aapt resource value: 0x7F080133
-			public const int navigation_bar_item_large_label_view = 2131231027;
-			
-			// aapt resource value: 0x7F080134
-			public const int navigation_bar_item_small_label_view = 2131231028;
-			
-			// aapt resource value: 0x7F080135
-			public const int navigation_header_container = 2131231029;
+			public const int mtrl_calendar_selection_frame = 2131231023;
 			
 			// aapt resource value: 0x7F080130
-			public const int nav_controller_view_tag = 2131231024;
+			public const int mtrl_calendar_text_input_frame = 2131231024;
+			
+			// aapt resource value: 0x7F080131
+			public const int mtrl_calendar_year_selector_frame = 2131231025;
+			
+			// aapt resource value: 0x7F080132
+			public const int mtrl_card_checked_layer_id = 2131231026;
+			
+			// aapt resource value: 0x7F080133
+			public const int mtrl_child_content_container = 2131231027;
+			
+			// aapt resource value: 0x7F080134
+			public const int mtrl_internal_children_alpha_tag = 2131231028;
+			
+			// aapt resource value: 0x7F080135
+			public const int mtrl_motion_snapshot_view = 2131231029;
 			
 			// aapt resource value: 0x7F080136
-			public const int never = 2131231030;
+			public const int mtrl_picker_fullscreen = 2131231030;
 			
 			// aapt resource value: 0x7F080137
-			public const int neverCompleteToEnd = 2131231031;
+			public const int mtrl_picker_header = 2131231031;
 			
 			// aapt resource value: 0x7F080138
-			public const int neverCompleteToStart = 2131231032;
-			
-			// aapt resource value: 0x7F08013B
-			public const int none = 2131231035;
-			
-			// aapt resource value: 0x7F08013C
-			public const int normal = 2131231036;
-			
-			// aapt resource value: 0x7F08013D
-			public const int north = 2131231037;
+			public const int mtrl_picker_header_selection_text = 2131231032;
 			
 			// aapt resource value: 0x7F080139
-			public const int noScroll = 2131231033;
+			public const int mtrl_picker_header_title_and_selection = 2131231033;
 			
 			// aapt resource value: 0x7F08013A
-			public const int noState = 2131231034;
+			public const int mtrl_picker_header_toggle = 2131231034;
+			
+			// aapt resource value: 0x7F08013B
+			public const int mtrl_picker_text_input_date = 2131231035;
+			
+			// aapt resource value: 0x7F08013C
+			public const int mtrl_picker_text_input_range_end = 2131231036;
+			
+			// aapt resource value: 0x7F08013D
+			public const int mtrl_picker_text_input_range_start = 2131231037;
 			
 			// aapt resource value: 0x7F08013E
-			public const int notification_background = 2131231038;
+			public const int mtrl_picker_title_text = 2131231038;
 			
 			// aapt resource value: 0x7F08013F
-			public const int notification_main_column = 2131231039;
+			public const int mtrl_view_tag_bottom_padding = 2131231039;
 			
 			// aapt resource value: 0x7F080140
-			public const int notification_main_column_container = 2131231040;
+			public const int multiply = 2131231040;
+			
+			// aapt resource value: 0x7F080142
+			public const int navigation_bar_item_icon_view = 2131231042;
+			
+			// aapt resource value: 0x7F080143
+			public const int navigation_bar_item_labels_group = 2131231043;
+			
+			// aapt resource value: 0x7F080144
+			public const int navigation_bar_item_large_label_view = 2131231044;
+			
+			// aapt resource value: 0x7F080145
+			public const int navigation_bar_item_small_label_view = 2131231045;
+			
+			// aapt resource value: 0x7F080146
+			public const int navigation_header_container = 2131231046;
+			
+			// aapt resource value: 0x7F080141
+			public const int nav_controller_view_tag = 2131231041;
+			
+			// aapt resource value: 0x7F080147
+			public const int never = 2131231047;
+			
+			// aapt resource value: 0x7F080148
+			public const int neverCompleteToEnd = 2131231048;
+			
+			// aapt resource value: 0x7F080149
+			public const int neverCompleteToStart = 2131231049;
+			
+			// aapt resource value: 0x7F08014C
+			public const int none = 2131231052;
+			
+			// aapt resource value: 0x7F08014D
+			public const int normal = 2131231053;
+			
+			// aapt resource value: 0x7F08014E
+			public const int north = 2131231054;
+			
+			// aapt resource value: 0x7F08014A
+			public const int noScroll = 2131231050;
+			
+			// aapt resource value: 0x7F08014B
+			public const int noState = 2131231051;
+			
+			// aapt resource value: 0x7F08014F
+			public const int notification_background = 2131231055;
+			
+			// aapt resource value: 0x7F080150
+			public const int notification_main_column = 2131231056;
+			
+			// aapt resource value: 0x7F080151
+			public const int notification_main_column_container = 2131231057;
 			
 			// aapt resource value: 0x7F080006
 			public const int NO_DEBUG = 2131230726;
 			
-			// aapt resource value: 0x7F080141
-			public const int off = 2131231041;
-			
-			// aapt resource value: 0x7F080142
-			public const int on = 2131231042;
-			
-			// aapt resource value: 0x7F080143
-			public const int outline = 2131231043;
-			
-			// aapt resource value: 0x7F080144
-			public const int outward = 2131231044;
-			
-			// aapt resource value: 0x7F080145
-			public const int overshoot = 2131231045;
-			
-			// aapt resource value: 0x7F080146
-			public const int packed = 2131231046;
-			
-			// aapt resource value: 0x7F080147
-			public const int parallax = 2131231047;
-			
-			// aapt resource value: 0x7F080148
-			public const int parent = 2131231048;
-			
-			// aapt resource value: 0x7F080149
-			public const int parentPanel = 2131231049;
-			
-			// aapt resource value: 0x7F08014A
-			public const int parentRelative = 2131231050;
-			
-			// aapt resource value: 0x7F08014B
-			public const int parent_matrix = 2131231051;
-			
-			// aapt resource value: 0x7F08014C
-			public const int password_toggle = 2131231052;
-			
-			// aapt resource value: 0x7F08014D
-			public const int path = 2131231053;
-			
-			// aapt resource value: 0x7F08014E
-			public const int pathRelative = 2131231054;
-			
-			// aapt resource value: 0x7F08014F
-			public const int peekHeight = 2131231055;
-			
-			// aapt resource value: 0x7F080150
-			public const int percent = 2131231056;
-			
-			// aapt resource value: 0x7F080151
-			public const int pin = 2131231057;
-			
 			// aapt resource value: 0x7F080152
-			public const int position = 2131231058;
+			public const int off = 2131231058;
 			
 			// aapt resource value: 0x7F080153
-			public const int postLayout = 2131231059;
+			public const int on = 2131231059;
 			
 			// aapt resource value: 0x7F080154
-			public const int progress_circular = 2131231060;
+			public const int outline = 2131231060;
 			
 			// aapt resource value: 0x7F080155
-			public const int progress_horizontal = 2131231061;
+			public const int outward = 2131231061;
 			
 			// aapt resource value: 0x7F080156
-			public const int radio = 2131231062;
+			public const int overshoot = 2131231062;
 			
 			// aapt resource value: 0x7F080157
-			public const int ratio = 2131231063;
+			public const int packed = 2131231063;
 			
 			// aapt resource value: 0x7F080158
-			public const int rectangles = 2131231064;
+			public const int pager_title_strip = 2131231064;
 			
 			// aapt resource value: 0x7F080159
-			public const int recycler_view = 2131231065;
+			public const int parallax = 2131231065;
 			
 			// aapt resource value: 0x7F08015A
-			public const int reverseSawtooth = 2131231066;
+			public const int parent = 2131231066;
 			
 			// aapt resource value: 0x7F08015B
-			public const int right = 2131231067;
+			public const int parentPanel = 2131231067;
 			
 			// aapt resource value: 0x7F08015C
-			public const int rightToLeft = 2131231068;
+			public const int parentRelative = 2131231068;
 			
 			// aapt resource value: 0x7F08015D
-			public const int right_icon = 2131231069;
+			public const int parent_matrix = 2131231069;
 			
 			// aapt resource value: 0x7F08015E
-			public const int right_side = 2131231070;
+			public const int password_toggle = 2131231070;
 			
 			// aapt resource value: 0x7F08015F
-			public const int rounded = 2131231071;
+			public const int path = 2131231071;
 			
 			// aapt resource value: 0x7F080160
-			public const int row_index_key = 2131231072;
+			public const int pathRelative = 2131231072;
 			
 			// aapt resource value: 0x7F080161
-			public const int save_non_transition_alpha = 2131231073;
+			public const int peekHeight = 2131231073;
 			
 			// aapt resource value: 0x7F080162
-			public const int save_overlay_view = 2131231074;
+			public const int percent = 2131231074;
 			
 			// aapt resource value: 0x7F080163
-			public const int sawtooth = 2131231075;
+			public const int pin = 2131231075;
 			
 			// aapt resource value: 0x7F080164
-			public const int scale = 2131231076;
+			public const int position = 2131231076;
 			
 			// aapt resource value: 0x7F080165
-			public const int screen = 2131231077;
+			public const int postLayout = 2131231077;
 			
 			// aapt resource value: 0x7F080166
-			public const int scroll = 2131231078;
-			
-			// aapt resource value: 0x7F08016A
-			public const int scrollable = 2131231082;
+			public const int progress_circular = 2131231078;
 			
 			// aapt resource value: 0x7F080167
-			public const int scrollIndicatorDown = 2131231079;
+			public const int progress_horizontal = 2131231079;
 			
 			// aapt resource value: 0x7F080168
-			public const int scrollIndicatorUp = 2131231080;
+			public const int radio = 2131231080;
 			
 			// aapt resource value: 0x7F080169
-			public const int scrollView = 2131231081;
+			public const int ratio = 2131231081;
+			
+			// aapt resource value: 0x7F08016A
+			public const int rectangles = 2131231082;
 			
 			// aapt resource value: 0x7F08016B
-			public const int search_badge = 2131231083;
+			public const int recycler_view = 2131231083;
 			
 			// aapt resource value: 0x7F08016C
-			public const int search_bar = 2131231084;
+			public const int relativeLayout = 2131231084;
 			
 			// aapt resource value: 0x7F08016D
-			public const int search_button = 2131231085;
+			public const int reverseSawtooth = 2131231085;
 			
 			// aapt resource value: 0x7F08016E
-			public const int search_close_btn = 2131231086;
+			public const int right = 2131231086;
 			
 			// aapt resource value: 0x7F08016F
-			public const int search_edit_frame = 2131231087;
+			public const int rightButton = 2131231087;
 			
 			// aapt resource value: 0x7F080170
-			public const int search_go_btn = 2131231088;
+			public const int rightToLeft = 2131231088;
 			
 			// aapt resource value: 0x7F080171
-			public const int search_mag_icon = 2131231089;
+			public const int right_icon = 2131231089;
 			
 			// aapt resource value: 0x7F080172
-			public const int search_plate = 2131231090;
+			public const int right_side = 2131231090;
 			
 			// aapt resource value: 0x7F080173
-			public const int search_src_text = 2131231091;
+			public const int rounded = 2131231091;
 			
 			// aapt resource value: 0x7F080174
-			public const int search_voice_btn = 2131231092;
+			public const int row_index_key = 2131231092;
 			
 			// aapt resource value: 0x7F080175
-			public const int seekbar = 2131231093;
+			public const int rsTextInputLayout = 2131231093;
 			
 			// aapt resource value: 0x7F080176
-			public const int seekbar_value = 2131231094;
-			
-			// aapt resource value: 0x7F080178
-			public const int selected = 2131231096;
-			
-			// aapt resource value: 0x7F080179
-			public const int selection_type = 2131231097;
+			public const int save_non_transition_alpha = 2131231094;
 			
 			// aapt resource value: 0x7F080177
-			public const int select_dialog_listview = 2131231095;
+			public const int save_overlay_view = 2131231095;
+			
+			// aapt resource value: 0x7F080178
+			public const int sawtooth = 2131231096;
+			
+			// aapt resource value: 0x7F080179
+			public const int scale = 2131231097;
 			
 			// aapt resource value: 0x7F08017A
-			public const int sharedValueSet = 2131231098;
+			public const int screen = 2131231098;
 			
 			// aapt resource value: 0x7F08017B
-			public const int sharedValueUnset = 2131231099;
+			public const int scroll = 2131231099;
+			
+			// aapt resource value: 0x7F08017F
+			public const int scrollable = 2131231103;
 			
 			// aapt resource value: 0x7F08017C
-			public const int shellcontent_appbar = 2131231100;
+			public const int scrollIndicatorDown = 2131231100;
 			
 			// aapt resource value: 0x7F08017D
-			public const int shellcontent_toolbar = 2131231101;
+			public const int scrollIndicatorUp = 2131231101;
+			
+			// aapt resource value: 0x7F08017E
+			public const int scrollView = 2131231102;
+			
+			// aapt resource value: 0x7F080180
+			public const int search_badge = 2131231104;
+			
+			// aapt resource value: 0x7F080181
+			public const int search_bar = 2131231105;
+			
+			// aapt resource value: 0x7F080182
+			public const int search_button = 2131231106;
+			
+			// aapt resource value: 0x7F080183
+			public const int search_close_btn = 2131231107;
+			
+			// aapt resource value: 0x7F080184
+			public const int search_edit_frame = 2131231108;
+			
+			// aapt resource value: 0x7F080185
+			public const int search_go_btn = 2131231109;
+			
+			// aapt resource value: 0x7F080186
+			public const int search_mag_icon = 2131231110;
+			
+			// aapt resource value: 0x7F080187
+			public const int search_plate = 2131231111;
+			
+			// aapt resource value: 0x7F080188
+			public const int search_src_text = 2131231112;
+			
+			// aapt resource value: 0x7F080189
+			public const int search_voice_btn = 2131231113;
+			
+			// aapt resource value: 0x7F08018A
+			public const int seekbar = 2131231114;
+			
+			// aapt resource value: 0x7F08018B
+			public const int seekbar_value = 2131231115;
+			
+			// aapt resource value: 0x7F08018D
+			public const int selected = 2131231117;
+			
+			// aapt resource value: 0x7F08018E
+			public const int selection_type = 2131231118;
+			
+			// aapt resource value: 0x7F08018C
+			public const int select_dialog_listview = 2131231116;
+			
+			// aapt resource value: 0x7F08018F
+			public const int separator = 2131231119;
+			
+			// aapt resource value: 0x7F080190
+			public const int sharedValueSet = 2131231120;
+			
+			// aapt resource value: 0x7F080191
+			public const int sharedValueUnset = 2131231121;
+			
+			// aapt resource value: 0x7F080192
+			public const int shellcontent_appbar = 2131231122;
+			
+			// aapt resource value: 0x7F080193
+			public const int shellcontent_toolbar = 2131231123;
 			
 			// aapt resource value: 0x7F080007
 			public const int SHIFT = 2131230727;
 			
-			// aapt resource value: 0x7F08017E
-			public const int shortcut = 2131231102;
+			// aapt resource value: 0x7F080194
+			public const int shortcut = 2131231124;
 			
-			// aapt resource value: 0x7F08017F
-			public const int showCustom = 2131231103;
+			// aapt resource value: 0x7F080195
+			public const int showCustom = 2131231125;
 			
-			// aapt resource value: 0x7F080180
-			public const int showHome = 2131231104;
+			// aapt resource value: 0x7F080196
+			public const int showHome = 2131231126;
 			
-			// aapt resource value: 0x7F080181
-			public const int showTitle = 2131231105;
+			// aapt resource value: 0x7F080197
+			public const int showTitle = 2131231127;
 			
 			// aapt resource value: 0x7F080008
 			public const int SHOW_ALL = 2131230728;
@@ -20462,242 +24577,242 @@ namespace MealPlanner.Droid
 			// aapt resource value: 0x7F08000A
 			public const int SHOW_PROGRESS = 2131230730;
 			
-			// aapt resource value: 0x7F080182
-			public const int sin = 2131231106;
-			
-			// aapt resource value: 0x7F080183
-			public const int skipCollapsed = 2131231107;
-			
-			// aapt resource value: 0x7F080184
-			public const int skipped = 2131231108;
-			
-			// aapt resource value: 0x7F080185
-			public const int slide = 2131231109;
-			
-			// aapt resource value: 0x7F080186
-			public const int sliding_tabs = 2131231110;
-			
-			// aapt resource value: 0x7F080187
-			public const int snackbar_action = 2131231111;
-			
-			// aapt resource value: 0x7F080188
-			public const int snackbar_text = 2131231112;
-			
-			// aapt resource value: 0x7F080189
-			public const int snap = 2131231113;
-			
-			// aapt resource value: 0x7F08018A
-			public const int snapMargins = 2131231114;
-			
-			// aapt resource value: 0x7F08018B
-			public const int south = 2131231115;
-			
-			// aapt resource value: 0x7F08018C
-			public const int spacer = 2131231116;
-			
-			// aapt resource value: 0x7F08018D
-			public const int special_effects_controller_view_tag = 2131231117;
-			
-			// aapt resource value: 0x7F08018E
-			public const int spinner = 2131231118;
-			
-			// aapt resource value: 0x7F08018F
-			public const int spline = 2131231119;
-			
-			// aapt resource value: 0x7F080190
-			public const int split_action_bar = 2131231120;
-			
-			// aapt resource value: 0x7F080191
-			public const int spread = 2131231121;
-			
-			// aapt resource value: 0x7F080192
-			public const int spread_inside = 2131231122;
-			
-			// aapt resource value: 0x7F080193
-			public const int spring = 2131231123;
-			
-			// aapt resource value: 0x7F080194
-			public const int square = 2131231124;
-			
-			// aapt resource value: 0x7F080195
-			public const int src_atop = 2131231125;
-			
-			// aapt resource value: 0x7F080196
-			public const int src_in = 2131231126;
-			
-			// aapt resource value: 0x7F080197
-			public const int src_over = 2131231127;
-			
 			// aapt resource value: 0x7F080198
-			public const int standard = 2131231128;
+			public const int sin = 2131231128;
 			
 			// aapt resource value: 0x7F080199
-			public const int start = 2131231129;
+			public const int skipCollapsed = 2131231129;
 			
 			// aapt resource value: 0x7F08019A
-			public const int startHorizontal = 2131231130;
+			public const int skipped = 2131231130;
 			
 			// aapt resource value: 0x7F08019B
-			public const int startToEnd = 2131231131;
+			public const int slide = 2131231131;
 			
 			// aapt resource value: 0x7F08019C
-			public const int startVertical = 2131231132;
+			public const int sliding_tabs = 2131231132;
 			
 			// aapt resource value: 0x7F08019D
-			public const int staticLayout = 2131231133;
+			public const int snackbar_action = 2131231133;
 			
 			// aapt resource value: 0x7F08019E
-			public const int staticPostLayout = 2131231134;
+			public const int snackbar_text = 2131231134;
 			
 			// aapt resource value: 0x7F08019F
-			public const int status_bar_latest_event_content = 2131231135;
+			public const int snap = 2131231135;
 			
 			// aapt resource value: 0x7F0801A0
-			public const int stop = 2131231136;
+			public const int snapMargins = 2131231136;
 			
 			// aapt resource value: 0x7F0801A1
-			public const int stretch = 2131231137;
+			public const int south = 2131231137;
 			
 			// aapt resource value: 0x7F0801A2
-			public const int submenuarrow = 2131231138;
+			public const int spacer = 2131231138;
 			
 			// aapt resource value: 0x7F0801A3
-			public const int submit_area = 2131231139;
+			public const int special_effects_controller_view_tag = 2131231139;
 			
 			// aapt resource value: 0x7F0801A4
-			public const int supportScrollUp = 2131231140;
+			public const int spinner = 2131231140;
 			
 			// aapt resource value: 0x7F0801A5
-			public const int switchWidget = 2131231141;
+			public const int spline = 2131231141;
+			
+			// aapt resource value: 0x7F0801A6
+			public const int split_action_bar = 2131231142;
+			
+			// aapt resource value: 0x7F0801A7
+			public const int spread = 2131231143;
+			
+			// aapt resource value: 0x7F0801A8
+			public const int spread_inside = 2131231144;
+			
+			// aapt resource value: 0x7F0801A9
+			public const int spring = 2131231145;
+			
+			// aapt resource value: 0x7F0801AA
+			public const int square = 2131231146;
+			
+			// aapt resource value: 0x7F0801AB
+			public const int src_atop = 2131231147;
+			
+			// aapt resource value: 0x7F0801AC
+			public const int src_in = 2131231148;
+			
+			// aapt resource value: 0x7F0801AD
+			public const int src_over = 2131231149;
+			
+			// aapt resource value: 0x7F0801AE
+			public const int standard = 2131231150;
+			
+			// aapt resource value: 0x7F0801AF
+			public const int start = 2131231151;
+			
+			// aapt resource value: 0x7F0801B0
+			public const int startHorizontal = 2131231152;
+			
+			// aapt resource value: 0x7F0801B1
+			public const int startToEnd = 2131231153;
+			
+			// aapt resource value: 0x7F0801B2
+			public const int startVertical = 2131231154;
+			
+			// aapt resource value: 0x7F0801B3
+			public const int staticLayout = 2131231155;
+			
+			// aapt resource value: 0x7F0801B4
+			public const int staticPostLayout = 2131231156;
+			
+			// aapt resource value: 0x7F0801B5
+			public const int status_bar_latest_event_content = 2131231157;
+			
+			// aapt resource value: 0x7F0801B6
+			public const int stop = 2131231158;
+			
+			// aapt resource value: 0x7F0801B7
+			public const int stretch = 2131231159;
+			
+			// aapt resource value: 0x7F0801B8
+			public const int submenuarrow = 2131231160;
+			
+			// aapt resource value: 0x7F0801B9
+			public const int submit_area = 2131231161;
+			
+			// aapt resource value: 0x7F0801BA
+			public const int supportScrollUp = 2131231162;
+			
+			// aapt resource value: 0x7F0801BB
+			public const int switchWidget = 2131231163;
 			
 			// aapt resource value: 0x7F08000B
 			public const int SYM = 2131230731;
 			
-			// aapt resource value: 0x7F0801A6
-			public const int tabMode = 2131231142;
-			
-			// aapt resource value: 0x7F0801A7
-			public const int tag_accessibility_actions = 2131231143;
-			
-			// aapt resource value: 0x7F0801A8
-			public const int tag_accessibility_clickable_spans = 2131231144;
-			
-			// aapt resource value: 0x7F0801A9
-			public const int tag_accessibility_heading = 2131231145;
-			
-			// aapt resource value: 0x7F0801AA
-			public const int tag_accessibility_pane_title = 2131231146;
-			
-			// aapt resource value: 0x7F0801AB
-			public const int tag_on_apply_window_listener = 2131231147;
-			
-			// aapt resource value: 0x7F0801AC
-			public const int tag_on_receive_content_listener = 2131231148;
-			
-			// aapt resource value: 0x7F0801AD
-			public const int tag_on_receive_content_mime_types = 2131231149;
-			
-			// aapt resource value: 0x7F0801AE
-			public const int tag_screen_reader_focusable = 2131231150;
-			
-			// aapt resource value: 0x7F0801AF
-			public const int tag_state_description = 2131231151;
-			
-			// aapt resource value: 0x7F0801B0
-			public const int tag_transition_group = 2131231152;
-			
-			// aapt resource value: 0x7F0801B1
-			public const int tag_unhandled_key_event_manager = 2131231153;
-			
-			// aapt resource value: 0x7F0801B2
-			public const int tag_unhandled_key_listeners = 2131231154;
-			
-			// aapt resource value: 0x7F0801B3
-			public const int tag_window_insets_animation_callback = 2131231155;
-			
-			// aapt resource value: 0x7F0801B4
-			public const int test_checkbox_android_button_tint = 2131231156;
-			
-			// aapt resource value: 0x7F0801B5
-			public const int test_checkbox_app_button_tint = 2131231157;
-			
-			// aapt resource value: 0x7F0801B6
-			public const int test_radiobutton_android_button_tint = 2131231158;
-			
-			// aapt resource value: 0x7F0801B7
-			public const int test_radiobutton_app_button_tint = 2131231159;
-			
-			// aapt resource value: 0x7F0801B8
-			public const int text = 2131231160;
-			
-			// aapt resource value: 0x7F0801B9
-			public const int text2 = 2131231161;
-			
-			// aapt resource value: 0x7F0801BA
-			public const int textEnd = 2131231162;
-			
-			// aapt resource value: 0x7F0801C2
-			public const int textinput_counter = 2131231170;
-			
-			// aapt resource value: 0x7F0801C3
-			public const int textinput_error = 2131231171;
-			
-			// aapt resource value: 0x7F0801C4
-			public const int textinput_helper_text = 2131231172;
-			
-			// aapt resource value: 0x7F0801C5
-			public const int textinput_placeholder = 2131231173;
-			
-			// aapt resource value: 0x7F0801C6
-			public const int textinput_prefix_text = 2131231174;
-			
-			// aapt resource value: 0x7F0801C7
-			public const int textinput_suffix_text = 2131231175;
-			
-			// aapt resource value: 0x7F0801BB
-			public const int textSpacerNoButtons = 2131231163;
-			
 			// aapt resource value: 0x7F0801BC
-			public const int textSpacerNoTitle = 2131231164;
+			public const int tabMode = 2131231164;
 			
 			// aapt resource value: 0x7F0801BD
-			public const int textStart = 2131231165;
+			public const int tag_accessibility_actions = 2131231165;
 			
 			// aapt resource value: 0x7F0801BE
-			public const int textTop = 2131231166;
+			public const int tag_accessibility_clickable_spans = 2131231166;
 			
 			// aapt resource value: 0x7F0801BF
-			public const int text_input_end_icon = 2131231167;
+			public const int tag_accessibility_heading = 2131231167;
 			
 			// aapt resource value: 0x7F0801C0
-			public const int text_input_error_icon = 2131231168;
+			public const int tag_accessibility_pane_title = 2131231168;
 			
 			// aapt resource value: 0x7F0801C1
-			public const int text_input_start_icon = 2131231169;
+			public const int tag_on_apply_window_listener = 2131231169;
+			
+			// aapt resource value: 0x7F0801C2
+			public const int tag_on_receive_content_listener = 2131231170;
+			
+			// aapt resource value: 0x7F0801C3
+			public const int tag_on_receive_content_mime_types = 2131231171;
+			
+			// aapt resource value: 0x7F0801C4
+			public const int tag_screen_reader_focusable = 2131231172;
+			
+			// aapt resource value: 0x7F0801C5
+			public const int tag_state_description = 2131231173;
+			
+			// aapt resource value: 0x7F0801C6
+			public const int tag_transition_group = 2131231174;
+			
+			// aapt resource value: 0x7F0801C7
+			public const int tag_unhandled_key_event_manager = 2131231175;
 			
 			// aapt resource value: 0x7F0801C8
-			public const int time = 2131231176;
+			public const int tag_unhandled_key_listeners = 2131231176;
 			
 			// aapt resource value: 0x7F0801C9
-			public const int title = 2131231177;
+			public const int tag_window_insets_animation_callback = 2131231177;
 			
 			// aapt resource value: 0x7F0801CA
-			public const int titleDividerNoCustom = 2131231178;
+			public const int test_checkbox_android_button_tint = 2131231178;
 			
 			// aapt resource value: 0x7F0801CB
-			public const int title_template = 2131231179;
+			public const int test_checkbox_app_button_tint = 2131231179;
 			
 			// aapt resource value: 0x7F0801CC
-			public const int toggle = 2131231180;
+			public const int test_radiobutton_android_button_tint = 2131231180;
 			
 			// aapt resource value: 0x7F0801CD
-			public const int toolbar = 2131231181;
+			public const int test_radiobutton_app_button_tint = 2131231181;
 			
 			// aapt resource value: 0x7F0801CE
-			public const int top = 2131231182;
+			public const int text = 2131231182;
 			
 			// aapt resource value: 0x7F0801CF
-			public const int topPanel = 2131231183;
+			public const int text2 = 2131231183;
+			
+			// aapt resource value: 0x7F0801D0
+			public const int textEnd = 2131231184;
+			
+			// aapt resource value: 0x7F0801D8
+			public const int textinput_counter = 2131231192;
+			
+			// aapt resource value: 0x7F0801D9
+			public const int textinput_error = 2131231193;
+			
+			// aapt resource value: 0x7F0801DA
+			public const int textinput_helper_text = 2131231194;
+			
+			// aapt resource value: 0x7F0801DB
+			public const int textinput_placeholder = 2131231195;
+			
+			// aapt resource value: 0x7F0801DC
+			public const int textinput_prefix_text = 2131231196;
+			
+			// aapt resource value: 0x7F0801DD
+			public const int textinput_suffix_text = 2131231197;
+			
+			// aapt resource value: 0x7F0801D1
+			public const int textSpacerNoButtons = 2131231185;
+			
+			// aapt resource value: 0x7F0801D2
+			public const int textSpacerNoTitle = 2131231186;
+			
+			// aapt resource value: 0x7F0801D3
+			public const int textStart = 2131231187;
+			
+			// aapt resource value: 0x7F0801D4
+			public const int textTop = 2131231188;
+			
+			// aapt resource value: 0x7F0801D5
+			public const int text_input_end_icon = 2131231189;
+			
+			// aapt resource value: 0x7F0801D6
+			public const int text_input_error_icon = 2131231190;
+			
+			// aapt resource value: 0x7F0801D7
+			public const int text_input_start_icon = 2131231191;
+			
+			// aapt resource value: 0x7F0801DE
+			public const int time = 2131231198;
+			
+			// aapt resource value: 0x7F0801DF
+			public const int title = 2131231199;
+			
+			// aapt resource value: 0x7F0801E0
+			public const int titleDividerNoCustom = 2131231200;
+			
+			// aapt resource value: 0x7F0801E1
+			public const int title_template = 2131231201;
+			
+			// aapt resource value: 0x7F0801E2
+			public const int toggle = 2131231202;
+			
+			// aapt resource value: 0x7F0801E3
+			public const int toolbar = 2131231203;
+			
+			// aapt resource value: 0x7F0801E4
+			public const int top = 2131231204;
+			
+			// aapt resource value: 0x7F0801E5
+			public const int topPanel = 2131231205;
 			
 			// aapt resource value: 0x7F08000C
 			public const int TOP_END = 2131230732;
@@ -20705,98 +24820,104 @@ namespace MealPlanner.Droid
 			// aapt resource value: 0x7F08000D
 			public const int TOP_START = 2131230733;
 			
-			// aapt resource value: 0x7F0801D0
-			public const int touch_outside = 2131231184;
-			
-			// aapt resource value: 0x7F0801D1
-			public const int transitionToEnd = 2131231185;
-			
-			// aapt resource value: 0x7F0801D2
-			public const int transitionToStart = 2131231186;
-			
-			// aapt resource value: 0x7F0801D3
-			public const int transition_current_scene = 2131231187;
-			
-			// aapt resource value: 0x7F0801D4
-			public const int transition_layout_save = 2131231188;
-			
-			// aapt resource value: 0x7F0801D5
-			public const int transition_position = 2131231189;
-			
-			// aapt resource value: 0x7F0801D6
-			public const int transition_scene_layoutid_cache = 2131231190;
-			
-			// aapt resource value: 0x7F0801D7
-			public const int transition_transform = 2131231191;
-			
-			// aapt resource value: 0x7F0801D8
-			public const int triangle = 2131231192;
-			
-			// aapt resource value: 0x7F0801D9
-			public const int @unchecked = 2131231193;
-			
-			// aapt resource value: 0x7F0801DA
-			public const int uniform = 2131231194;
-			
-			// aapt resource value: 0x7F0801DB
-			public const int unlabeled = 2131231195;
-			
-			// aapt resource value: 0x7F0801DC
-			public const int up = 2131231196;
-			
-			// aapt resource value: 0x7F0801DD
-			public const int useLogo = 2131231197;
-			
-			// aapt resource value: 0x7F0801DE
-			public const int vertical_only = 2131231198;
-			
-			// aapt resource value: 0x7F0801DF
-			public const int view_offset_helper = 2131231199;
-			
-			// aapt resource value: 0x7F0801E0
-			public const int view_transition = 2131231200;
-			
-			// aapt resource value: 0x7F0801E1
-			public const int view_tree_lifecycle_owner = 2131231201;
-			
-			// aapt resource value: 0x7F0801E2
-			public const int view_tree_saved_state_registry_owner = 2131231202;
-			
-			// aapt resource value: 0x7F0801E3
-			public const int view_tree_view_model_store_owner = 2131231203;
-			
-			// aapt resource value: 0x7F0801E4
-			public const int visible = 2131231204;
-			
-			// aapt resource value: 0x7F0801E5
-			public const int visible_removing_fragment_view_tag = 2131231205;
-			
 			// aapt resource value: 0x7F0801E6
-			public const int west = 2131231206;
-			
-			// aapt resource value: 0x7F0801E8
-			public const int withinBounds = 2131231208;
+			public const int touch_outside = 2131231206;
 			
 			// aapt resource value: 0x7F0801E7
-			public const int withText = 2131231207;
+			public const int transitionToEnd = 2131231207;
+			
+			// aapt resource value: 0x7F0801E8
+			public const int transitionToStart = 2131231208;
 			
 			// aapt resource value: 0x7F0801E9
-			public const int wrap = 2131231209;
+			public const int transition_current_scene = 2131231209;
 			
 			// aapt resource value: 0x7F0801EA
-			public const int wrap_content = 2131231210;
+			public const int transition_layout_save = 2131231210;
 			
 			// aapt resource value: 0x7F0801EB
-			public const int wrap_content_constrained = 2131231211;
+			public const int transition_position = 2131231211;
 			
 			// aapt resource value: 0x7F0801EC
-			public const int x_left = 2131231212;
+			public const int transition_scene_layoutid_cache = 2131231212;
 			
 			// aapt resource value: 0x7F0801ED
-			public const int x_right = 2131231213;
+			public const int transition_transform = 2131231213;
 			
 			// aapt resource value: 0x7F0801EE
-			public const int zero_corner_chip = 2131231214;
+			public const int triangle = 2131231214;
+			
+			// aapt resource value: 0x7F0801EF
+			public const int @unchecked = 2131231215;
+			
+			// aapt resource value: 0x7F0801F0
+			public const int uniform = 2131231216;
+			
+			// aapt resource value: 0x7F0801F1
+			public const int unlabeled = 2131231217;
+			
+			// aapt resource value: 0x7F0801F2
+			public const int up = 2131231218;
+			
+			// aapt resource value: 0x7F0801F3
+			public const int useLogo = 2131231219;
+			
+			// aapt resource value: 0x7F0801F4
+			public const int vertical_only = 2131231220;
+			
+			// aapt resource value: 0x7F0801F5
+			public const int viewPager = 2131231221;
+			
+			// aapt resource value: 0x7F0801F6
+			public const int view_offset_helper = 2131231222;
+			
+			// aapt resource value: 0x7F0801F7
+			public const int view_transition = 2131231223;
+			
+			// aapt resource value: 0x7F0801F8
+			public const int view_tree_lifecycle_owner = 2131231224;
+			
+			// aapt resource value: 0x7F0801F9
+			public const int view_tree_saved_state_registry_owner = 2131231225;
+			
+			// aapt resource value: 0x7F0801FA
+			public const int view_tree_view_model_store_owner = 2131231226;
+			
+			// aapt resource value: 0x7F0801FB
+			public const int visible = 2131231227;
+			
+			// aapt resource value: 0x7F0801FC
+			public const int visible_removing_fragment_view_tag = 2131231228;
+			
+			// aapt resource value: 0x7F0801FD
+			public const int west = 2131231229;
+			
+			// aapt resource value: 0x7F0801FF
+			public const int withinBounds = 2131231231;
+			
+			// aapt resource value: 0x7F0801FE
+			public const int withText = 2131231230;
+			
+			// aapt resource value: 0x7F080200
+			public const int wrap = 2131231232;
+			
+			// aapt resource value: 0x7F080201
+			public const int wrap_content = 2131231233;
+			
+			// aapt resource value: 0x7F080202
+			public const int wrap_content_constrained = 2131231234;
+			
+			// aapt resource value: 0x7F080203
+			public const int x_left = 2131231235;
+			
+			// aapt resource value: 0x7F080204
+			public const int x_right = 2131231236;
+			
+			// aapt resource value: 0x7F080205
+			public const int yearView = 2131231237;
+			
+			// aapt resource value: 0x7F080206
+			public const int zero_corner_chip = 2131231238;
 			
 			static Id()
 			{
@@ -21338,71 +25459,89 @@ namespace MealPlanner.Droid
 			// aapt resource value: 0x7F0B007E
 			public const int RootLayout = 2131427454;
 			
-			// aapt resource value: 0x7F0B007F
-			public const int select_dialog_item_material = 2131427455;
-			
 			// aapt resource value: 0x7F0B0080
-			public const int select_dialog_multichoice_material = 2131427456;
+			public const int RSAutoCompleteListItem = 2131427456;
 			
 			// aapt resource value: 0x7F0B0081
-			public const int select_dialog_singlechoice_material = 2131427457;
+			public const int RSMonthViewItem = 2131427457;
 			
 			// aapt resource value: 0x7F0B0082
-			public const int ShellContent = 2131427458;
+			public const int RSMonthYearPickerDialog = 2131427458;
 			
 			// aapt resource value: 0x7F0B0083
-			public const int support_simple_spinner_dropdown_item = 2131427459;
+			public const int RSTextInputLayout = 2131427459;
 			
 			// aapt resource value: 0x7F0B0084
-			public const int Tabbar = 2131427460;
+			public const int RSYearItemView = 2131427460;
+			
+			// aapt resource value: 0x7F0B007F
+			public const int rs_dialog_view = 2131427455;
 			
 			// aapt resource value: 0x7F0B0085
-			public const int test_action_chip = 2131427461;
+			public const int select_dialog_item_material = 2131427461;
 			
 			// aapt resource value: 0x7F0B0086
-			public const int test_chip_zero_corner_radius = 2131427462;
+			public const int select_dialog_multichoice_material = 2131427462;
 			
 			// aapt resource value: 0x7F0B0087
-			public const int test_design_checkbox = 2131427463;
+			public const int select_dialog_singlechoice_material = 2131427463;
 			
 			// aapt resource value: 0x7F0B0088
-			public const int test_design_radiobutton = 2131427464;
+			public const int ShellContent = 2131427464;
 			
 			// aapt resource value: 0x7F0B0089
-			public const int test_navigation_bar_item_layout = 2131427465;
+			public const int support_simple_spinner_dropdown_item = 2131427465;
 			
 			// aapt resource value: 0x7F0B008A
-			public const int test_reflow_chipgroup = 2131427466;
+			public const int Tabbar = 2131427466;
 			
 			// aapt resource value: 0x7F0B008B
-			public const int test_toolbar = 2131427467;
+			public const int test_action_chip = 2131427467;
 			
 			// aapt resource value: 0x7F0B008C
-			public const int test_toolbar_custom_background = 2131427468;
+			public const int test_chip_zero_corner_radius = 2131427468;
 			
 			// aapt resource value: 0x7F0B008D
-			public const int test_toolbar_elevation = 2131427469;
+			public const int test_design_checkbox = 2131427469;
 			
 			// aapt resource value: 0x7F0B008E
-			public const int test_toolbar_surface = 2131427470;
-			
-			// aapt resource value: 0x7F0B0093
-			public const int text_view_without_line_height = 2131427475;
+			public const int test_design_radiobutton = 2131427470;
 			
 			// aapt resource value: 0x7F0B008F
-			public const int text_view_with_line_height_from_appearance = 2131427471;
+			public const int test_navigation_bar_item_layout = 2131427471;
 			
 			// aapt resource value: 0x7F0B0090
-			public const int text_view_with_line_height_from_layout = 2131427472;
+			public const int test_reflow_chipgroup = 2131427472;
 			
 			// aapt resource value: 0x7F0B0091
-			public const int text_view_with_line_height_from_style = 2131427473;
+			public const int test_toolbar = 2131427473;
 			
 			// aapt resource value: 0x7F0B0092
-			public const int text_view_with_theme_line_height = 2131427474;
+			public const int test_toolbar_custom_background = 2131427474;
+			
+			// aapt resource value: 0x7F0B0093
+			public const int test_toolbar_elevation = 2131427475;
 			
 			// aapt resource value: 0x7F0B0094
-			public const int Toolbar = 2131427476;
+			public const int test_toolbar_surface = 2131427476;
+			
+			// aapt resource value: 0x7F0B0099
+			public const int text_view_without_line_height = 2131427481;
+			
+			// aapt resource value: 0x7F0B0095
+			public const int text_view_with_line_height_from_appearance = 2131427477;
+			
+			// aapt resource value: 0x7F0B0096
+			public const int text_view_with_line_height_from_layout = 2131427478;
+			
+			// aapt resource value: 0x7F0B0097
+			public const int text_view_with_line_height_from_style = 2131427479;
+			
+			// aapt resource value: 0x7F0B0098
+			public const int text_view_with_theme_line_height = 2131427480;
+			
+			// aapt resource value: 0x7F0B009A
+			public const int Toolbar = 2131427482;
 			
 			static Layout()
 			{
@@ -21536,278 +25675,284 @@ namespace MealPlanner.Droid
 			// aapt resource value: 0x7F0E001A
 			public const int abc_toolbar_collapse_description = 2131623962;
 			
-			// aapt resource value: 0x7F0E001B
-			public const int appbar_scrolling_view_behavior = 2131623963;
-			
-			// aapt resource value: 0x7F0E001D
-			public const int bottomsheet_action_expand_halfway = 2131623965;
-			
 			// aapt resource value: 0x7F0E001C
-			public const int bottom_sheet_behavior = 2131623964;
+			public const int appbar_scrolling_view_behavior = 2131623964;
+			
+			// aapt resource value: 0x7F0E001B
+			public const int app_name = 2131623963;
 			
 			// aapt resource value: 0x7F0E001E
-			public const int character_counter_content_description = 2131623966;
+			public const int bottomsheet_action_expand_halfway = 2131623966;
+			
+			// aapt resource value: 0x7F0E001D
+			public const int bottom_sheet_behavior = 2131623965;
 			
 			// aapt resource value: 0x7F0E001F
-			public const int character_counter_overflowed_content_description = 2131623967;
+			public const int character_counter_content_description = 2131623967;
 			
 			// aapt resource value: 0x7F0E0020
-			public const int character_counter_pattern = 2131623968;
+			public const int character_counter_overflowed_content_description = 2131623968;
 			
 			// aapt resource value: 0x7F0E0021
-			public const int chip_text = 2131623969;
+			public const int character_counter_pattern = 2131623969;
 			
 			// aapt resource value: 0x7F0E0022
-			public const int clear_text_end_icon_content_description = 2131623970;
+			public const int chip_text = 2131623970;
 			
 			// aapt resource value: 0x7F0E0023
-			public const int copy = 2131623971;
+			public const int clear_text_end_icon_content_description = 2131623971;
 			
 			// aapt resource value: 0x7F0E0024
-			public const int copy_toast_msg = 2131623972;
+			public const int copy = 2131623972;
 			
 			// aapt resource value: 0x7F0E0025
-			public const int error_icon_content_description = 2131623973;
+			public const int copy_toast_msg = 2131623973;
 			
 			// aapt resource value: 0x7F0E0026
-			public const int expand_button_title = 2131623974;
+			public const int error_icon_content_description = 2131623974;
 			
 			// aapt resource value: 0x7F0E0027
-			public const int exposed_dropdown_menu_content_description = 2131623975;
+			public const int expand_button_title = 2131623975;
 			
 			// aapt resource value: 0x7F0E0028
-			public const int fab_transformation_scrim_behavior = 2131623976;
+			public const int exposed_dropdown_menu_content_description = 2131623976;
 			
 			// aapt resource value: 0x7F0E0029
-			public const int fab_transformation_sheet_behavior = 2131623977;
+			public const int fab_transformation_scrim_behavior = 2131623977;
 			
 			// aapt resource value: 0x7F0E002A
-			public const int fallback_menu_item_copy_link = 2131623978;
+			public const int fab_transformation_sheet_behavior = 2131623978;
 			
 			// aapt resource value: 0x7F0E002B
-			public const int fallback_menu_item_open_in_browser = 2131623979;
+			public const int fallback_menu_item_copy_link = 2131623979;
 			
 			// aapt resource value: 0x7F0E002C
-			public const int fallback_menu_item_share_link = 2131623980;
+			public const int fallback_menu_item_open_in_browser = 2131623980;
 			
 			// aapt resource value: 0x7F0E002D
-			public const int hide_bottom_view_on_scroll_behavior = 2131623981;
+			public const int fallback_menu_item_share_link = 2131623981;
 			
 			// aapt resource value: 0x7F0E002E
-			public const int icon_content_description = 2131623982;
+			public const int hello = 2131623982;
 			
 			// aapt resource value: 0x7F0E002F
-			public const int item_view_role_description = 2131623983;
+			public const int hide_bottom_view_on_scroll_behavior = 2131623983;
 			
 			// aapt resource value: 0x7F0E0030
-			public const int material_clock_display_divider = 2131623984;
+			public const int icon_content_description = 2131623984;
 			
 			// aapt resource value: 0x7F0E0031
-			public const int material_clock_toggle_content_description = 2131623985;
+			public const int item_view_role_description = 2131623985;
 			
 			// aapt resource value: 0x7F0E0032
-			public const int material_hour_selection = 2131623986;
+			public const int material_clock_display_divider = 2131623986;
 			
 			// aapt resource value: 0x7F0E0033
-			public const int material_hour_suffix = 2131623987;
+			public const int material_clock_toggle_content_description = 2131623987;
 			
 			// aapt resource value: 0x7F0E0034
-			public const int material_minute_selection = 2131623988;
+			public const int material_hour_selection = 2131623988;
 			
 			// aapt resource value: 0x7F0E0035
-			public const int material_minute_suffix = 2131623989;
+			public const int material_hour_suffix = 2131623989;
 			
 			// aapt resource value: 0x7F0E0036
-			public const int material_motion_easing_accelerated = 2131623990;
+			public const int material_minute_selection = 2131623990;
 			
 			// aapt resource value: 0x7F0E0037
-			public const int material_motion_easing_decelerated = 2131623991;
+			public const int material_minute_suffix = 2131623991;
 			
 			// aapt resource value: 0x7F0E0038
-			public const int material_motion_easing_emphasized = 2131623992;
+			public const int material_motion_easing_accelerated = 2131623992;
 			
 			// aapt resource value: 0x7F0E0039
-			public const int material_motion_easing_linear = 2131623993;
+			public const int material_motion_easing_decelerated = 2131623993;
 			
 			// aapt resource value: 0x7F0E003A
-			public const int material_motion_easing_standard = 2131623994;
+			public const int material_motion_easing_emphasized = 2131623994;
 			
 			// aapt resource value: 0x7F0E003B
-			public const int material_slider_range_end = 2131623995;
+			public const int material_motion_easing_linear = 2131623995;
 			
 			// aapt resource value: 0x7F0E003C
-			public const int material_slider_range_start = 2131623996;
+			public const int material_motion_easing_standard = 2131623996;
 			
 			// aapt resource value: 0x7F0E003D
-			public const int material_timepicker_am = 2131623997;
+			public const int material_slider_range_end = 2131623997;
 			
 			// aapt resource value: 0x7F0E003E
-			public const int material_timepicker_clock_mode_description = 2131623998;
+			public const int material_slider_range_start = 2131623998;
 			
 			// aapt resource value: 0x7F0E003F
-			public const int material_timepicker_hour = 2131623999;
+			public const int material_timepicker_am = 2131623999;
 			
 			// aapt resource value: 0x7F0E0040
-			public const int material_timepicker_minute = 2131624000;
+			public const int material_timepicker_clock_mode_description = 2131624000;
 			
 			// aapt resource value: 0x7F0E0041
-			public const int material_timepicker_pm = 2131624001;
+			public const int material_timepicker_hour = 2131624001;
 			
 			// aapt resource value: 0x7F0E0042
-			public const int material_timepicker_select_time = 2131624002;
+			public const int material_timepicker_minute = 2131624002;
 			
 			// aapt resource value: 0x7F0E0043
-			public const int material_timepicker_text_input_mode_description = 2131624003;
+			public const int material_timepicker_pm = 2131624003;
 			
 			// aapt resource value: 0x7F0E0044
-			public const int mtrl_badge_numberless_content_description = 2131624004;
+			public const int material_timepicker_select_time = 2131624004;
 			
 			// aapt resource value: 0x7F0E0045
-			public const int mtrl_chip_close_icon_content_description = 2131624005;
+			public const int material_timepicker_text_input_mode_description = 2131624005;
 			
 			// aapt resource value: 0x7F0E0046
-			public const int mtrl_exceed_max_badge_number_content_description = 2131624006;
+			public const int mtrl_badge_numberless_content_description = 2131624006;
 			
 			// aapt resource value: 0x7F0E0047
-			public const int mtrl_exceed_max_badge_number_suffix = 2131624007;
+			public const int mtrl_chip_close_icon_content_description = 2131624007;
 			
 			// aapt resource value: 0x7F0E0048
-			public const int mtrl_picker_a11y_next_month = 2131624008;
+			public const int mtrl_exceed_max_badge_number_content_description = 2131624008;
 			
 			// aapt resource value: 0x7F0E0049
-			public const int mtrl_picker_a11y_prev_month = 2131624009;
+			public const int mtrl_exceed_max_badge_number_suffix = 2131624009;
 			
 			// aapt resource value: 0x7F0E004A
-			public const int mtrl_picker_announce_current_selection = 2131624010;
+			public const int mtrl_picker_a11y_next_month = 2131624010;
 			
 			// aapt resource value: 0x7F0E004B
-			public const int mtrl_picker_cancel = 2131624011;
+			public const int mtrl_picker_a11y_prev_month = 2131624011;
 			
 			// aapt resource value: 0x7F0E004C
-			public const int mtrl_picker_confirm = 2131624012;
+			public const int mtrl_picker_announce_current_selection = 2131624012;
 			
 			// aapt resource value: 0x7F0E004D
-			public const int mtrl_picker_date_header_selected = 2131624013;
+			public const int mtrl_picker_cancel = 2131624013;
 			
 			// aapt resource value: 0x7F0E004E
-			public const int mtrl_picker_date_header_title = 2131624014;
+			public const int mtrl_picker_confirm = 2131624014;
 			
 			// aapt resource value: 0x7F0E004F
-			public const int mtrl_picker_date_header_unselected = 2131624015;
+			public const int mtrl_picker_date_header_selected = 2131624015;
 			
 			// aapt resource value: 0x7F0E0050
-			public const int mtrl_picker_day_of_week_column_header = 2131624016;
+			public const int mtrl_picker_date_header_title = 2131624016;
 			
 			// aapt resource value: 0x7F0E0051
-			public const int mtrl_picker_invalid_format = 2131624017;
+			public const int mtrl_picker_date_header_unselected = 2131624017;
 			
 			// aapt resource value: 0x7F0E0052
-			public const int mtrl_picker_invalid_format_example = 2131624018;
+			public const int mtrl_picker_day_of_week_column_header = 2131624018;
 			
 			// aapt resource value: 0x7F0E0053
-			public const int mtrl_picker_invalid_format_use = 2131624019;
+			public const int mtrl_picker_invalid_format = 2131624019;
 			
 			// aapt resource value: 0x7F0E0054
-			public const int mtrl_picker_invalid_range = 2131624020;
+			public const int mtrl_picker_invalid_format_example = 2131624020;
 			
 			// aapt resource value: 0x7F0E0055
-			public const int mtrl_picker_navigate_to_year_description = 2131624021;
+			public const int mtrl_picker_invalid_format_use = 2131624021;
 			
 			// aapt resource value: 0x7F0E0056
-			public const int mtrl_picker_out_of_range = 2131624022;
+			public const int mtrl_picker_invalid_range = 2131624022;
 			
 			// aapt resource value: 0x7F0E0057
-			public const int mtrl_picker_range_header_only_end_selected = 2131624023;
+			public const int mtrl_picker_navigate_to_year_description = 2131624023;
 			
 			// aapt resource value: 0x7F0E0058
-			public const int mtrl_picker_range_header_only_start_selected = 2131624024;
+			public const int mtrl_picker_out_of_range = 2131624024;
 			
 			// aapt resource value: 0x7F0E0059
-			public const int mtrl_picker_range_header_selected = 2131624025;
+			public const int mtrl_picker_range_header_only_end_selected = 2131624025;
 			
 			// aapt resource value: 0x7F0E005A
-			public const int mtrl_picker_range_header_title = 2131624026;
+			public const int mtrl_picker_range_header_only_start_selected = 2131624026;
 			
 			// aapt resource value: 0x7F0E005B
-			public const int mtrl_picker_range_header_unselected = 2131624027;
+			public const int mtrl_picker_range_header_selected = 2131624027;
 			
 			// aapt resource value: 0x7F0E005C
-			public const int mtrl_picker_save = 2131624028;
+			public const int mtrl_picker_range_header_title = 2131624028;
 			
 			// aapt resource value: 0x7F0E005D
-			public const int mtrl_picker_text_input_date_hint = 2131624029;
+			public const int mtrl_picker_range_header_unselected = 2131624029;
 			
 			// aapt resource value: 0x7F0E005E
-			public const int mtrl_picker_text_input_date_range_end_hint = 2131624030;
+			public const int mtrl_picker_save = 2131624030;
 			
 			// aapt resource value: 0x7F0E005F
-			public const int mtrl_picker_text_input_date_range_start_hint = 2131624031;
+			public const int mtrl_picker_text_input_date_hint = 2131624031;
 			
 			// aapt resource value: 0x7F0E0060
-			public const int mtrl_picker_text_input_day_abbr = 2131624032;
+			public const int mtrl_picker_text_input_date_range_end_hint = 2131624032;
 			
 			// aapt resource value: 0x7F0E0061
-			public const int mtrl_picker_text_input_month_abbr = 2131624033;
+			public const int mtrl_picker_text_input_date_range_start_hint = 2131624033;
 			
 			// aapt resource value: 0x7F0E0062
-			public const int mtrl_picker_text_input_year_abbr = 2131624034;
+			public const int mtrl_picker_text_input_day_abbr = 2131624034;
 			
 			// aapt resource value: 0x7F0E0063
-			public const int mtrl_picker_toggle_to_calendar_input_mode = 2131624035;
+			public const int mtrl_picker_text_input_month_abbr = 2131624035;
 			
 			// aapt resource value: 0x7F0E0064
-			public const int mtrl_picker_toggle_to_day_selection = 2131624036;
+			public const int mtrl_picker_text_input_year_abbr = 2131624036;
 			
 			// aapt resource value: 0x7F0E0065
-			public const int mtrl_picker_toggle_to_text_input_mode = 2131624037;
+			public const int mtrl_picker_toggle_to_calendar_input_mode = 2131624037;
 			
 			// aapt resource value: 0x7F0E0066
-			public const int mtrl_picker_toggle_to_year_selection = 2131624038;
+			public const int mtrl_picker_toggle_to_day_selection = 2131624038;
 			
 			// aapt resource value: 0x7F0E0067
-			public const int nav_app_bar_navigate_up_description = 2131624039;
+			public const int mtrl_picker_toggle_to_text_input_mode = 2131624039;
 			
 			// aapt resource value: 0x7F0E0068
-			public const int nav_app_bar_open_drawer_description = 2131624040;
+			public const int mtrl_picker_toggle_to_year_selection = 2131624040;
 			
 			// aapt resource value: 0x7F0E0069
-			public const int not_set = 2131624041;
+			public const int nav_app_bar_navigate_up_description = 2131624041;
 			
 			// aapt resource value: 0x7F0E006A
-			public const int overflow_tab_title = 2131624042;
+			public const int nav_app_bar_open_drawer_description = 2131624042;
 			
 			// aapt resource value: 0x7F0E006B
-			public const int password_toggle_content_description = 2131624043;
+			public const int not_set = 2131624043;
 			
 			// aapt resource value: 0x7F0E006C
-			public const int path_password_eye = 2131624044;
+			public const int overflow_tab_title = 2131624044;
 			
 			// aapt resource value: 0x7F0E006D
-			public const int path_password_eye_mask_strike_through = 2131624045;
+			public const int password_toggle_content_description = 2131624045;
 			
 			// aapt resource value: 0x7F0E006E
-			public const int path_password_eye_mask_visible = 2131624046;
+			public const int path_password_eye = 2131624046;
 			
 			// aapt resource value: 0x7F0E006F
-			public const int path_password_strike_through = 2131624047;
+			public const int path_password_eye_mask_strike_through = 2131624047;
 			
 			// aapt resource value: 0x7F0E0070
-			public const int preference_copied = 2131624048;
+			public const int path_password_eye_mask_visible = 2131624048;
 			
 			// aapt resource value: 0x7F0E0071
-			public const int search_menu_title = 2131624049;
+			public const int path_password_strike_through = 2131624049;
 			
 			// aapt resource value: 0x7F0E0072
-			public const int status_bar_notification_info_overflow = 2131624050;
+			public const int preference_copied = 2131624050;
 			
 			// aapt resource value: 0x7F0E0073
-			public const int summary_collapsed_preference_list = 2131624051;
+			public const int search_menu_title = 2131624051;
 			
 			// aapt resource value: 0x7F0E0074
-			public const int v7_preference_off = 2131624052;
+			public const int status_bar_notification_info_overflow = 2131624052;
 			
 			// aapt resource value: 0x7F0E0075
-			public const int v7_preference_on = 2131624053;
+			public const int summary_collapsed_preference_list = 2131624053;
+			
+			// aapt resource value: 0x7F0E0076
+			public const int v7_preference_off = 2131624054;
+			
+			// aapt resource value: 0x7F0E0077
+			public const int v7_preference_on = 2131624055;
 			
 			static String()
 			{
@@ -22518,8 +26663,8 @@ namespace MealPlanner.Droid
 			// aapt resource value: 0x7F0F00E7
 			public const int CardView_Light = 2131689703;
 			
-			// aapt resource value: 0x7F0F02F8
-			public const int collectionViewTheme = 2131690232;
+			// aapt resource value: 0x7F0F02FB
+			public const int collectionViewTheme = 2131690235;
 			
 			// aapt resource value: 0x7F0F00E8
 			public const int EmptyTheme = 2131689704;
@@ -22561,1555 +26706,1564 @@ namespace MealPlanner.Droid
 			public const int MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked = 2131689716;
 			
 			// aapt resource value: 0x7F0F00F5
-			public const int Platform_AppCompat = 2131689717;
+			public const int PagerTabStripText = 2131689717;
 			
 			// aapt resource value: 0x7F0F00F6
-			public const int Platform_AppCompat_Light = 2131689718;
+			public const int Platform_AppCompat = 2131689718;
 			
 			// aapt resource value: 0x7F0F00F7
-			public const int Platform_MaterialComponents = 2131689719;
+			public const int Platform_AppCompat_Light = 2131689719;
 			
 			// aapt resource value: 0x7F0F00F8
-			public const int Platform_MaterialComponents_Dialog = 2131689720;
+			public const int Platform_MaterialComponents = 2131689720;
 			
 			// aapt resource value: 0x7F0F00F9
-			public const int Platform_MaterialComponents_Light = 2131689721;
+			public const int Platform_MaterialComponents_Dialog = 2131689721;
 			
 			// aapt resource value: 0x7F0F00FA
-			public const int Platform_MaterialComponents_Light_Dialog = 2131689722;
+			public const int Platform_MaterialComponents_Light = 2131689722;
 			
 			// aapt resource value: 0x7F0F00FB
-			public const int Platform_ThemeOverlay_AppCompat = 2131689723;
+			public const int Platform_MaterialComponents_Light_Dialog = 2131689723;
 			
 			// aapt resource value: 0x7F0F00FC
-			public const int Platform_ThemeOverlay_AppCompat_Dark = 2131689724;
+			public const int Platform_ThemeOverlay_AppCompat = 2131689724;
 			
 			// aapt resource value: 0x7F0F00FD
-			public const int Platform_ThemeOverlay_AppCompat_Light = 2131689725;
+			public const int Platform_ThemeOverlay_AppCompat_Dark = 2131689725;
 			
 			// aapt resource value: 0x7F0F00FE
-			public const int Platform_V21_AppCompat = 2131689726;
+			public const int Platform_ThemeOverlay_AppCompat_Light = 2131689726;
 			
 			// aapt resource value: 0x7F0F00FF
-			public const int Platform_V21_AppCompat_Light = 2131689727;
+			public const int Platform_V21_AppCompat = 2131689727;
 			
 			// aapt resource value: 0x7F0F0100
-			public const int Platform_V25_AppCompat = 2131689728;
+			public const int Platform_V21_AppCompat_Light = 2131689728;
 			
 			// aapt resource value: 0x7F0F0101
-			public const int Platform_V25_AppCompat_Light = 2131689729;
+			public const int Platform_V25_AppCompat = 2131689729;
 			
 			// aapt resource value: 0x7F0F0102
-			public const int Platform_Widget_AppCompat_Spinner = 2131689730;
+			public const int Platform_V25_AppCompat_Light = 2131689730;
 			
 			// aapt resource value: 0x7F0F0103
-			public const int Preference = 2131689731;
-			
-			// aapt resource value: 0x7F0F0119
-			public const int PreferenceCategoryTitleTextStyle = 2131689753;
-			
-			// aapt resource value: 0x7F0F011A
-			public const int PreferenceFragment = 2131689754;
-			
-			// aapt resource value: 0x7F0F011C
-			public const int PreferenceFragmentList = 2131689756;
-			
-			// aapt resource value: 0x7F0F011D
-			public const int PreferenceFragmentList_Material = 2131689757;
-			
-			// aapt resource value: 0x7F0F011B
-			public const int PreferenceFragment_Material = 2131689755;
-			
-			// aapt resource value: 0x7F0F011E
-			public const int PreferenceSummaryTextStyle = 2131689758;
-			
-			// aapt resource value: 0x7F0F011F
-			public const int PreferenceThemeOverlay = 2131689759;
-			
-			// aapt resource value: 0x7F0F0120
-			public const int PreferenceThemeOverlay_v14 = 2131689760;
-			
-			// aapt resource value: 0x7F0F0121
-			public const int PreferenceThemeOverlay_v14_Material = 2131689761;
+			public const int Platform_Widget_AppCompat_Spinner = 2131689731;
 			
 			// aapt resource value: 0x7F0F0104
-			public const int Preference_Category = 2131689732;
+			public const int Preference = 2131689732;
 			
-			// aapt resource value: 0x7F0F0105
-			public const int Preference_Category_Material = 2131689733;
+			// aapt resource value: 0x7F0F011A
+			public const int PreferenceCategoryTitleTextStyle = 2131689754;
 			
-			// aapt resource value: 0x7F0F0106
-			public const int Preference_CheckBoxPreference = 2131689734;
+			// aapt resource value: 0x7F0F011B
+			public const int PreferenceFragment = 2131689755;
 			
-			// aapt resource value: 0x7F0F0107
-			public const int Preference_CheckBoxPreference_Material = 2131689735;
+			// aapt resource value: 0x7F0F011D
+			public const int PreferenceFragmentList = 2131689757;
 			
-			// aapt resource value: 0x7F0F0108
-			public const int Preference_DialogPreference = 2131689736;
+			// aapt resource value: 0x7F0F011E
+			public const int PreferenceFragmentList_Material = 2131689758;
 			
-			// aapt resource value: 0x7F0F0109
-			public const int Preference_DialogPreference_EditTextPreference = 2131689737;
+			// aapt resource value: 0x7F0F011C
+			public const int PreferenceFragment_Material = 2131689756;
 			
-			// aapt resource value: 0x7F0F010A
-			public const int Preference_DialogPreference_EditTextPreference_Material = 2131689738;
+			// aapt resource value: 0x7F0F011F
+			public const int PreferenceSummaryTextStyle = 2131689759;
 			
-			// aapt resource value: 0x7F0F010B
-			public const int Preference_DialogPreference_Material = 2131689739;
+			// aapt resource value: 0x7F0F0120
+			public const int PreferenceThemeOverlay = 2131689760;
 			
-			// aapt resource value: 0x7F0F010C
-			public const int Preference_DropDown = 2131689740;
-			
-			// aapt resource value: 0x7F0F010D
-			public const int Preference_DropDown_Material = 2131689741;
-			
-			// aapt resource value: 0x7F0F010E
-			public const int Preference_Information = 2131689742;
-			
-			// aapt resource value: 0x7F0F010F
-			public const int Preference_Information_Material = 2131689743;
-			
-			// aapt resource value: 0x7F0F0110
-			public const int Preference_Material = 2131689744;
-			
-			// aapt resource value: 0x7F0F0111
-			public const int Preference_PreferenceScreen = 2131689745;
-			
-			// aapt resource value: 0x7F0F0112
-			public const int Preference_PreferenceScreen_Material = 2131689746;
-			
-			// aapt resource value: 0x7F0F0113
-			public const int Preference_SeekBarPreference = 2131689747;
-			
-			// aapt resource value: 0x7F0F0114
-			public const int Preference_SeekBarPreference_Material = 2131689748;
-			
-			// aapt resource value: 0x7F0F0115
-			public const int Preference_SwitchPreference = 2131689749;
-			
-			// aapt resource value: 0x7F0F0117
-			public const int Preference_SwitchPreferenceCompat = 2131689751;
-			
-			// aapt resource value: 0x7F0F0118
-			public const int Preference_SwitchPreferenceCompat_Material = 2131689752;
-			
-			// aapt resource value: 0x7F0F0116
-			public const int Preference_SwitchPreference_Material = 2131689750;
+			// aapt resource value: 0x7F0F0121
+			public const int PreferenceThemeOverlay_v14 = 2131689761;
 			
 			// aapt resource value: 0x7F0F0122
-			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131689762;
+			public const int PreferenceThemeOverlay_v14_Material = 2131689762;
 			
-			// aapt resource value: 0x7F0F0123
-			public const int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131689763;
+			// aapt resource value: 0x7F0F0105
+			public const int Preference_Category = 2131689733;
+			
+			// aapt resource value: 0x7F0F0106
+			public const int Preference_Category_Material = 2131689734;
+			
+			// aapt resource value: 0x7F0F0107
+			public const int Preference_CheckBoxPreference = 2131689735;
+			
+			// aapt resource value: 0x7F0F0108
+			public const int Preference_CheckBoxPreference_Material = 2131689736;
+			
+			// aapt resource value: 0x7F0F0109
+			public const int Preference_DialogPreference = 2131689737;
+			
+			// aapt resource value: 0x7F0F010A
+			public const int Preference_DialogPreference_EditTextPreference = 2131689738;
+			
+			// aapt resource value: 0x7F0F010B
+			public const int Preference_DialogPreference_EditTextPreference_Material = 2131689739;
+			
+			// aapt resource value: 0x7F0F010C
+			public const int Preference_DialogPreference_Material = 2131689740;
+			
+			// aapt resource value: 0x7F0F010D
+			public const int Preference_DropDown = 2131689741;
+			
+			// aapt resource value: 0x7F0F010E
+			public const int Preference_DropDown_Material = 2131689742;
+			
+			// aapt resource value: 0x7F0F010F
+			public const int Preference_Information = 2131689743;
+			
+			// aapt resource value: 0x7F0F0110
+			public const int Preference_Information_Material = 2131689744;
+			
+			// aapt resource value: 0x7F0F0111
+			public const int Preference_Material = 2131689745;
+			
+			// aapt resource value: 0x7F0F0112
+			public const int Preference_PreferenceScreen = 2131689746;
+			
+			// aapt resource value: 0x7F0F0113
+			public const int Preference_PreferenceScreen_Material = 2131689747;
+			
+			// aapt resource value: 0x7F0F0114
+			public const int Preference_SeekBarPreference = 2131689748;
+			
+			// aapt resource value: 0x7F0F0115
+			public const int Preference_SeekBarPreference_Material = 2131689749;
+			
+			// aapt resource value: 0x7F0F0116
+			public const int Preference_SwitchPreference = 2131689750;
+			
+			// aapt resource value: 0x7F0F0118
+			public const int Preference_SwitchPreferenceCompat = 2131689752;
+			
+			// aapt resource value: 0x7F0F0119
+			public const int Preference_SwitchPreferenceCompat_Material = 2131689753;
+			
+			// aapt resource value: 0x7F0F0117
+			public const int Preference_SwitchPreference_Material = 2131689751;
 			
 			// aapt resource value: 0x7F0F0124
-			public const int RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131689764;
+			public const int RSDialogAnimationTheme = 2131689764;
+			
+			// aapt resource value: 0x7F0F0123
+			public const int RSDialogAnimation_Window = 2131689763;
 			
 			// aapt resource value: 0x7F0F0125
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131689765;
+			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131689765;
 			
 			// aapt resource value: 0x7F0F0126
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131689766;
+			public const int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131689766;
 			
 			// aapt resource value: 0x7F0F0127
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = 2131689767;
+			public const int RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131689767;
 			
 			// aapt resource value: 0x7F0F0128
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = 2131689768;
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131689768;
 			
 			// aapt resource value: 0x7F0F0129
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131689769;
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131689769;
 			
 			// aapt resource value: 0x7F0F012A
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = 2131689770;
-			
-			// aapt resource value: 0x7F0F0130
-			public const int RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131689776;
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = 2131689770;
 			
 			// aapt resource value: 0x7F0F012B
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown = 2131689771;
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = 2131689771;
 			
 			// aapt resource value: 0x7F0F012C
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131689772;
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131689772;
 			
 			// aapt resource value: 0x7F0F012D
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131689773;
-			
-			// aapt resource value: 0x7F0F012E
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131689774;
-			
-			// aapt resource value: 0x7F0F012F
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131689775;
-			
-			// aapt resource value: 0x7F0F0131
-			public const int RtlUnderlay_Widget_AppCompat_ActionButton = 2131689777;
-			
-			// aapt resource value: 0x7F0F0132
-			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131689778;
-			
-			// aapt resource value: 0x7F0F02F9
-			public const int scrollViewScrollBars = 2131690233;
-			
-			// aapt resource value: 0x7F0F02FA
-			public const int scrollViewTheme = 2131690234;
-			
-			// aapt resource value: 0x7F0F0139
-			public const int ShapeAppearanceOverlay = 2131689785;
-			
-			// aapt resource value: 0x7F0F013A
-			public const int ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = 2131689786;
-			
-			// aapt resource value: 0x7F0F013B
-			public const int ShapeAppearanceOverlay_BottomRightCut = 2131689787;
-			
-			// aapt resource value: 0x7F0F013C
-			public const int ShapeAppearanceOverlay_Cut = 2131689788;
-			
-			// aapt resource value: 0x7F0F013D
-			public const int ShapeAppearanceOverlay_DifferentCornerSize = 2131689789;
-			
-			// aapt resource value: 0x7F0F013E
-			public const int ShapeAppearanceOverlay_MaterialComponents_BottomSheet = 2131689790;
-			
-			// aapt resource value: 0x7F0F013F
-			public const int ShapeAppearanceOverlay_MaterialComponents_Chip = 2131689791;
-			
-			// aapt resource value: 0x7F0F0140
-			public const int ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = 2131689792;
-			
-			// aapt resource value: 0x7F0F0141
-			public const int ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton = 2131689793;
-			
-			// aapt resource value: 0x7F0F0142
-			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = 2131689794;
-			
-			// aapt resource value: 0x7F0F0143
-			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = 2131689795;
-			
-			// aapt resource value: 0x7F0F0144
-			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = 2131689796;
-			
-			// aapt resource value: 0x7F0F0145
-			public const int ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = 2131689797;
-			
-			// aapt resource value: 0x7F0F0146
-			public const int ShapeAppearanceOverlay_TopLeftCut = 2131689798;
-			
-			// aapt resource value: 0x7F0F0147
-			public const int ShapeAppearanceOverlay_TopRightDifferentCornerSize = 2131689799;
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = 2131689773;
 			
 			// aapt resource value: 0x7F0F0133
-			public const int ShapeAppearance_MaterialComponents = 2131689779;
+			public const int RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131689779;
+			
+			// aapt resource value: 0x7F0F012E
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown = 2131689774;
+			
+			// aapt resource value: 0x7F0F012F
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131689775;
+			
+			// aapt resource value: 0x7F0F0130
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131689776;
+			
+			// aapt resource value: 0x7F0F0131
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131689777;
+			
+			// aapt resource value: 0x7F0F0132
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131689778;
 			
 			// aapt resource value: 0x7F0F0134
-			public const int ShapeAppearance_MaterialComponents_LargeComponent = 2131689780;
+			public const int RtlUnderlay_Widget_AppCompat_ActionButton = 2131689780;
 			
 			// aapt resource value: 0x7F0F0135
-			public const int ShapeAppearance_MaterialComponents_MediumComponent = 2131689781;
+			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131689781;
 			
-			// aapt resource value: 0x7F0F0136
-			public const int ShapeAppearance_MaterialComponents_SmallComponent = 2131689782;
+			// aapt resource value: 0x7F0F02FC
+			public const int scrollViewScrollBars = 2131690236;
 			
-			// aapt resource value: 0x7F0F0137
-			public const int ShapeAppearance_MaterialComponents_Test = 2131689783;
+			// aapt resource value: 0x7F0F02FD
+			public const int scrollViewTheme = 2131690237;
 			
-			// aapt resource value: 0x7F0F0138
-			public const int ShapeAppearance_MaterialComponents_Tooltip = 2131689784;
+			// aapt resource value: 0x7F0F013C
+			public const int ShapeAppearanceOverlay = 2131689788;
 			
-			// aapt resource value: 0x7F0F014D
-			public const int TestStyleWithLineHeight = 2131689805;
+			// aapt resource value: 0x7F0F013D
+			public const int ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = 2131689789;
 			
-			// aapt resource value: 0x7F0F014E
-			public const int TestStyleWithLineHeightAppearance = 2131689806;
+			// aapt resource value: 0x7F0F013E
+			public const int ShapeAppearanceOverlay_BottomRightCut = 2131689790;
 			
-			// aapt resource value: 0x7F0F0150
-			public const int TestStyleWithoutLineHeight = 2131689808;
+			// aapt resource value: 0x7F0F013F
+			public const int ShapeAppearanceOverlay_Cut = 2131689791;
 			
-			// aapt resource value: 0x7F0F014F
-			public const int TestStyleWithThemeLineHeightAttribute = 2131689807;
+			// aapt resource value: 0x7F0F0140
+			public const int ShapeAppearanceOverlay_DifferentCornerSize = 2131689792;
 			
-			// aapt resource value: 0x7F0F0151
-			public const int TestThemeWithLineHeight = 2131689809;
+			// aapt resource value: 0x7F0F0141
+			public const int ShapeAppearanceOverlay_MaterialComponents_BottomSheet = 2131689793;
 			
-			// aapt resource value: 0x7F0F0152
-			public const int TestThemeWithLineHeightDisabled = 2131689810;
+			// aapt resource value: 0x7F0F0142
+			public const int ShapeAppearanceOverlay_MaterialComponents_Chip = 2131689794;
+			
+			// aapt resource value: 0x7F0F0143
+			public const int ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = 2131689795;
+			
+			// aapt resource value: 0x7F0F0144
+			public const int ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton = 2131689796;
+			
+			// aapt resource value: 0x7F0F0145
+			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = 2131689797;
+			
+			// aapt resource value: 0x7F0F0146
+			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = 2131689798;
+			
+			// aapt resource value: 0x7F0F0147
+			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = 2131689799;
 			
 			// aapt resource value: 0x7F0F0148
-			public const int Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = 2131689800;
+			public const int ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = 2131689800;
 			
 			// aapt resource value: 0x7F0F0149
-			public const int Test_Theme_MaterialComponents_MaterialCalendar = 2131689801;
+			public const int ShapeAppearanceOverlay_TopLeftCut = 2131689801;
 			
 			// aapt resource value: 0x7F0F014A
-			public const int Test_Widget_MaterialComponents_MaterialCalendar = 2131689802;
+			public const int ShapeAppearanceOverlay_TopRightDifferentCornerSize = 2131689802;
 			
-			// aapt resource value: 0x7F0F014B
-			public const int Test_Widget_MaterialComponents_MaterialCalendar_Day = 2131689803;
+			// aapt resource value: 0x7F0F0136
+			public const int ShapeAppearance_MaterialComponents = 2131689782;
 			
-			// aapt resource value: 0x7F0F014C
-			public const int Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = 2131689804;
+			// aapt resource value: 0x7F0F0137
+			public const int ShapeAppearance_MaterialComponents_LargeComponent = 2131689783;
+			
+			// aapt resource value: 0x7F0F0138
+			public const int ShapeAppearance_MaterialComponents_MediumComponent = 2131689784;
+			
+			// aapt resource value: 0x7F0F0139
+			public const int ShapeAppearance_MaterialComponents_SmallComponent = 2131689785;
+			
+			// aapt resource value: 0x7F0F013A
+			public const int ShapeAppearance_MaterialComponents_Test = 2131689786;
+			
+			// aapt resource value: 0x7F0F013B
+			public const int ShapeAppearance_MaterialComponents_Tooltip = 2131689787;
+			
+			// aapt resource value: 0x7F0F0150
+			public const int TestStyleWithLineHeight = 2131689808;
+			
+			// aapt resource value: 0x7F0F0151
+			public const int TestStyleWithLineHeightAppearance = 2131689809;
 			
 			// aapt resource value: 0x7F0F0153
-			public const int TextAppearance_AppCompat = 2131689811;
+			public const int TestStyleWithoutLineHeight = 2131689811;
+			
+			// aapt resource value: 0x7F0F0152
+			public const int TestStyleWithThemeLineHeightAttribute = 2131689810;
 			
 			// aapt resource value: 0x7F0F0154
-			public const int TextAppearance_AppCompat_Body1 = 2131689812;
+			public const int TestThemeWithLineHeight = 2131689812;
 			
 			// aapt resource value: 0x7F0F0155
-			public const int TextAppearance_AppCompat_Body2 = 2131689813;
+			public const int TestThemeWithLineHeightDisabled = 2131689813;
+			
+			// aapt resource value: 0x7F0F014B
+			public const int Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = 2131689803;
+			
+			// aapt resource value: 0x7F0F014C
+			public const int Test_Theme_MaterialComponents_MaterialCalendar = 2131689804;
+			
+			// aapt resource value: 0x7F0F014D
+			public const int Test_Widget_MaterialComponents_MaterialCalendar = 2131689805;
+			
+			// aapt resource value: 0x7F0F014E
+			public const int Test_Widget_MaterialComponents_MaterialCalendar_Day = 2131689806;
+			
+			// aapt resource value: 0x7F0F014F
+			public const int Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = 2131689807;
 			
 			// aapt resource value: 0x7F0F0156
-			public const int TextAppearance_AppCompat_Button = 2131689814;
+			public const int TextAppearance_AppCompat = 2131689814;
 			
 			// aapt resource value: 0x7F0F0157
-			public const int TextAppearance_AppCompat_Caption = 2131689815;
+			public const int TextAppearance_AppCompat_Body1 = 2131689815;
 			
 			// aapt resource value: 0x7F0F0158
-			public const int TextAppearance_AppCompat_Display1 = 2131689816;
+			public const int TextAppearance_AppCompat_Body2 = 2131689816;
 			
 			// aapt resource value: 0x7F0F0159
-			public const int TextAppearance_AppCompat_Display2 = 2131689817;
+			public const int TextAppearance_AppCompat_Button = 2131689817;
 			
 			// aapt resource value: 0x7F0F015A
-			public const int TextAppearance_AppCompat_Display3 = 2131689818;
+			public const int TextAppearance_AppCompat_Caption = 2131689818;
 			
 			// aapt resource value: 0x7F0F015B
-			public const int TextAppearance_AppCompat_Display4 = 2131689819;
+			public const int TextAppearance_AppCompat_Display1 = 2131689819;
 			
 			// aapt resource value: 0x7F0F015C
-			public const int TextAppearance_AppCompat_Headline = 2131689820;
+			public const int TextAppearance_AppCompat_Display2 = 2131689820;
 			
 			// aapt resource value: 0x7F0F015D
-			public const int TextAppearance_AppCompat_Inverse = 2131689821;
+			public const int TextAppearance_AppCompat_Display3 = 2131689821;
 			
 			// aapt resource value: 0x7F0F015E
-			public const int TextAppearance_AppCompat_Large = 2131689822;
+			public const int TextAppearance_AppCompat_Display4 = 2131689822;
 			
 			// aapt resource value: 0x7F0F015F
-			public const int TextAppearance_AppCompat_Large_Inverse = 2131689823;
+			public const int TextAppearance_AppCompat_Headline = 2131689823;
 			
 			// aapt resource value: 0x7F0F0160
-			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131689824;
+			public const int TextAppearance_AppCompat_Inverse = 2131689824;
 			
 			// aapt resource value: 0x7F0F0161
-			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131689825;
+			public const int TextAppearance_AppCompat_Large = 2131689825;
 			
 			// aapt resource value: 0x7F0F0162
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131689826;
+			public const int TextAppearance_AppCompat_Large_Inverse = 2131689826;
 			
 			// aapt resource value: 0x7F0F0163
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131689827;
+			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131689827;
 			
 			// aapt resource value: 0x7F0F0164
-			public const int TextAppearance_AppCompat_Medium = 2131689828;
+			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131689828;
 			
 			// aapt resource value: 0x7F0F0165
-			public const int TextAppearance_AppCompat_Medium_Inverse = 2131689829;
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131689829;
 			
 			// aapt resource value: 0x7F0F0166
-			public const int TextAppearance_AppCompat_Menu = 2131689830;
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131689830;
 			
 			// aapt resource value: 0x7F0F0167
-			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131689831;
+			public const int TextAppearance_AppCompat_Medium = 2131689831;
 			
 			// aapt resource value: 0x7F0F0168
-			public const int TextAppearance_AppCompat_SearchResult_Title = 2131689832;
+			public const int TextAppearance_AppCompat_Medium_Inverse = 2131689832;
 			
 			// aapt resource value: 0x7F0F0169
-			public const int TextAppearance_AppCompat_Small = 2131689833;
+			public const int TextAppearance_AppCompat_Menu = 2131689833;
 			
 			// aapt resource value: 0x7F0F016A
-			public const int TextAppearance_AppCompat_Small_Inverse = 2131689834;
+			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131689834;
 			
 			// aapt resource value: 0x7F0F016B
-			public const int TextAppearance_AppCompat_Subhead = 2131689835;
+			public const int TextAppearance_AppCompat_SearchResult_Title = 2131689835;
 			
 			// aapt resource value: 0x7F0F016C
-			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131689836;
+			public const int TextAppearance_AppCompat_Small = 2131689836;
 			
 			// aapt resource value: 0x7F0F016D
-			public const int TextAppearance_AppCompat_Title = 2131689837;
+			public const int TextAppearance_AppCompat_Small_Inverse = 2131689837;
 			
 			// aapt resource value: 0x7F0F016E
-			public const int TextAppearance_AppCompat_Title_Inverse = 2131689838;
+			public const int TextAppearance_AppCompat_Subhead = 2131689838;
 			
 			// aapt resource value: 0x7F0F016F
-			public const int TextAppearance_AppCompat_Tooltip = 2131689839;
+			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131689839;
 			
 			// aapt resource value: 0x7F0F0170
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131689840;
+			public const int TextAppearance_AppCompat_Title = 2131689840;
 			
 			// aapt resource value: 0x7F0F0171
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131689841;
+			public const int TextAppearance_AppCompat_Title_Inverse = 2131689841;
 			
 			// aapt resource value: 0x7F0F0172
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131689842;
+			public const int TextAppearance_AppCompat_Tooltip = 2131689842;
 			
 			// aapt resource value: 0x7F0F0173
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131689843;
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131689843;
 			
 			// aapt resource value: 0x7F0F0174
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131689844;
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131689844;
 			
 			// aapt resource value: 0x7F0F0175
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131689845;
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131689845;
 			
 			// aapt resource value: 0x7F0F0176
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131689846;
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131689846;
 			
 			// aapt resource value: 0x7F0F0177
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131689847;
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131689847;
 			
 			// aapt resource value: 0x7F0F0178
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131689848;
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131689848;
 			
 			// aapt resource value: 0x7F0F0179
-			public const int TextAppearance_AppCompat_Widget_Button = 2131689849;
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131689849;
 			
 			// aapt resource value: 0x7F0F017A
-			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131689850;
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131689850;
 			
 			// aapt resource value: 0x7F0F017B
-			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131689851;
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131689851;
 			
 			// aapt resource value: 0x7F0F017C
-			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131689852;
+			public const int TextAppearance_AppCompat_Widget_Button = 2131689852;
 			
 			// aapt resource value: 0x7F0F017D
-			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131689853;
+			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131689853;
 			
 			// aapt resource value: 0x7F0F017E
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131689854;
+			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131689854;
 			
 			// aapt resource value: 0x7F0F017F
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131689855;
+			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131689855;
 			
 			// aapt resource value: 0x7F0F0180
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131689856;
+			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131689856;
 			
 			// aapt resource value: 0x7F0F0181
-			public const int TextAppearance_AppCompat_Widget_Switch = 2131689857;
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131689857;
 			
 			// aapt resource value: 0x7F0F0182
-			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131689858;
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131689858;
 			
 			// aapt resource value: 0x7F0F0183
-			public const int TextAppearance_Compat_Notification = 2131689859;
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131689859;
 			
 			// aapt resource value: 0x7F0F0184
-			public const int TextAppearance_Compat_Notification_Info = 2131689860;
+			public const int TextAppearance_AppCompat_Widget_Switch = 2131689860;
 			
 			// aapt resource value: 0x7F0F0185
-			public const int TextAppearance_Compat_Notification_Info_Media = 2131689861;
+			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131689861;
 			
 			// aapt resource value: 0x7F0F0186
-			public const int TextAppearance_Compat_Notification_Line2 = 2131689862;
+			public const int TextAppearance_Compat_Notification = 2131689862;
 			
 			// aapt resource value: 0x7F0F0187
-			public const int TextAppearance_Compat_Notification_Line2_Media = 2131689863;
+			public const int TextAppearance_Compat_Notification_Info = 2131689863;
 			
 			// aapt resource value: 0x7F0F0188
-			public const int TextAppearance_Compat_Notification_Media = 2131689864;
+			public const int TextAppearance_Compat_Notification_Info_Media = 2131689864;
 			
 			// aapt resource value: 0x7F0F0189
-			public const int TextAppearance_Compat_Notification_Time = 2131689865;
+			public const int TextAppearance_Compat_Notification_Line2 = 2131689865;
 			
 			// aapt resource value: 0x7F0F018A
-			public const int TextAppearance_Compat_Notification_Time_Media = 2131689866;
+			public const int TextAppearance_Compat_Notification_Line2_Media = 2131689866;
 			
 			// aapt resource value: 0x7F0F018B
-			public const int TextAppearance_Compat_Notification_Title = 2131689867;
+			public const int TextAppearance_Compat_Notification_Media = 2131689867;
 			
 			// aapt resource value: 0x7F0F018C
-			public const int TextAppearance_Compat_Notification_Title_Media = 2131689868;
+			public const int TextAppearance_Compat_Notification_Time = 2131689868;
 			
 			// aapt resource value: 0x7F0F018D
-			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131689869;
+			public const int TextAppearance_Compat_Notification_Time_Media = 2131689869;
 			
 			// aapt resource value: 0x7F0F018E
-			public const int TextAppearance_Design_Counter = 2131689870;
+			public const int TextAppearance_Compat_Notification_Title = 2131689870;
 			
 			// aapt resource value: 0x7F0F018F
-			public const int TextAppearance_Design_Counter_Overflow = 2131689871;
+			public const int TextAppearance_Compat_Notification_Title_Media = 2131689871;
 			
 			// aapt resource value: 0x7F0F0190
-			public const int TextAppearance_Design_Error = 2131689872;
+			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131689872;
 			
 			// aapt resource value: 0x7F0F0191
-			public const int TextAppearance_Design_HelperText = 2131689873;
+			public const int TextAppearance_Design_Counter = 2131689873;
 			
 			// aapt resource value: 0x7F0F0192
-			public const int TextAppearance_Design_Hint = 2131689874;
+			public const int TextAppearance_Design_Counter_Overflow = 2131689874;
 			
 			// aapt resource value: 0x7F0F0193
-			public const int TextAppearance_Design_Placeholder = 2131689875;
+			public const int TextAppearance_Design_Error = 2131689875;
 			
 			// aapt resource value: 0x7F0F0194
-			public const int TextAppearance_Design_Prefix = 2131689876;
+			public const int TextAppearance_Design_HelperText = 2131689876;
 			
 			// aapt resource value: 0x7F0F0195
-			public const int TextAppearance_Design_Snackbar_Message = 2131689877;
+			public const int TextAppearance_Design_Hint = 2131689877;
 			
 			// aapt resource value: 0x7F0F0196
-			public const int TextAppearance_Design_Suffix = 2131689878;
+			public const int TextAppearance_Design_Placeholder = 2131689878;
 			
 			// aapt resource value: 0x7F0F0197
-			public const int TextAppearance_Design_Tab = 2131689879;
+			public const int TextAppearance_Design_Prefix = 2131689879;
 			
 			// aapt resource value: 0x7F0F0198
-			public const int TextAppearance_MaterialComponents_Badge = 2131689880;
+			public const int TextAppearance_Design_Snackbar_Message = 2131689880;
 			
 			// aapt resource value: 0x7F0F0199
-			public const int TextAppearance_MaterialComponents_Body1 = 2131689881;
+			public const int TextAppearance_Design_Suffix = 2131689881;
 			
 			// aapt resource value: 0x7F0F019A
-			public const int TextAppearance_MaterialComponents_Body2 = 2131689882;
+			public const int TextAppearance_Design_Tab = 2131689882;
 			
 			// aapt resource value: 0x7F0F019B
-			public const int TextAppearance_MaterialComponents_Button = 2131689883;
+			public const int TextAppearance_MaterialComponents_Badge = 2131689883;
 			
 			// aapt resource value: 0x7F0F019C
-			public const int TextAppearance_MaterialComponents_Caption = 2131689884;
+			public const int TextAppearance_MaterialComponents_Body1 = 2131689884;
 			
 			// aapt resource value: 0x7F0F019D
-			public const int TextAppearance_MaterialComponents_Chip = 2131689885;
+			public const int TextAppearance_MaterialComponents_Body2 = 2131689885;
 			
 			// aapt resource value: 0x7F0F019E
-			public const int TextAppearance_MaterialComponents_Headline1 = 2131689886;
+			public const int TextAppearance_MaterialComponents_Button = 2131689886;
 			
 			// aapt resource value: 0x7F0F019F
-			public const int TextAppearance_MaterialComponents_Headline2 = 2131689887;
+			public const int TextAppearance_MaterialComponents_Caption = 2131689887;
 			
 			// aapt resource value: 0x7F0F01A0
-			public const int TextAppearance_MaterialComponents_Headline3 = 2131689888;
+			public const int TextAppearance_MaterialComponents_Chip = 2131689888;
 			
 			// aapt resource value: 0x7F0F01A1
-			public const int TextAppearance_MaterialComponents_Headline4 = 2131689889;
+			public const int TextAppearance_MaterialComponents_Headline1 = 2131689889;
 			
 			// aapt resource value: 0x7F0F01A2
-			public const int TextAppearance_MaterialComponents_Headline5 = 2131689890;
+			public const int TextAppearance_MaterialComponents_Headline2 = 2131689890;
 			
 			// aapt resource value: 0x7F0F01A3
-			public const int TextAppearance_MaterialComponents_Headline6 = 2131689891;
+			public const int TextAppearance_MaterialComponents_Headline3 = 2131689891;
 			
 			// aapt resource value: 0x7F0F01A4
-			public const int TextAppearance_MaterialComponents_Overline = 2131689892;
+			public const int TextAppearance_MaterialComponents_Headline4 = 2131689892;
 			
 			// aapt resource value: 0x7F0F01A5
-			public const int TextAppearance_MaterialComponents_Subtitle1 = 2131689893;
+			public const int TextAppearance_MaterialComponents_Headline5 = 2131689893;
 			
 			// aapt resource value: 0x7F0F01A6
-			public const int TextAppearance_MaterialComponents_Subtitle2 = 2131689894;
+			public const int TextAppearance_MaterialComponents_Headline6 = 2131689894;
 			
 			// aapt resource value: 0x7F0F01A7
-			public const int TextAppearance_MaterialComponents_TimePicker_Title = 2131689895;
+			public const int TextAppearance_MaterialComponents_Overline = 2131689895;
 			
 			// aapt resource value: 0x7F0F01A8
-			public const int TextAppearance_MaterialComponents_Tooltip = 2131689896;
+			public const int TextAppearance_MaterialComponents_Subtitle1 = 2131689896;
 			
 			// aapt resource value: 0x7F0F01A9
-			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131689897;
+			public const int TextAppearance_MaterialComponents_Subtitle2 = 2131689897;
 			
 			// aapt resource value: 0x7F0F01AA
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131689898;
+			public const int TextAppearance_MaterialComponents_TimePicker_Title = 2131689898;
 			
 			// aapt resource value: 0x7F0F01AB
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131689899;
-			
-			// aapt resource value: 0x7F0F0229
-			public const int ThemeOverlayColorAccentRed = 2131690025;
-			
-			// aapt resource value: 0x7F0F01F9
-			public const int ThemeOverlay_AppCompat = 2131689977;
-			
-			// aapt resource value: 0x7F0F01FA
-			public const int ThemeOverlay_AppCompat_ActionBar = 2131689978;
-			
-			// aapt resource value: 0x7F0F01FB
-			public const int ThemeOverlay_AppCompat_Dark = 2131689979;
-			
-			// aapt resource value: 0x7F0F01FC
-			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131689980;
-			
-			// aapt resource value: 0x7F0F01FD
-			public const int ThemeOverlay_AppCompat_DayNight = 2131689981;
-			
-			// aapt resource value: 0x7F0F01FE
-			public const int ThemeOverlay_AppCompat_DayNight_ActionBar = 2131689982;
-			
-			// aapt resource value: 0x7F0F01FF
-			public const int ThemeOverlay_AppCompat_Dialog = 2131689983;
-			
-			// aapt resource value: 0x7F0F0200
-			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131689984;
-			
-			// aapt resource value: 0x7F0F0201
-			public const int ThemeOverlay_AppCompat_Light = 2131689985;
-			
-			// aapt resource value: 0x7F0F0202
-			public const int ThemeOverlay_Design_TextInputEditText = 2131689986;
-			
-			// aapt resource value: 0x7F0F0203
-			public const int ThemeOverlay_MaterialComponents = 2131689987;
-			
-			// aapt resource value: 0x7F0F0204
-			public const int ThemeOverlay_MaterialComponents_ActionBar = 2131689988;
-			
-			// aapt resource value: 0x7F0F0205
-			public const int ThemeOverlay_MaterialComponents_ActionBar_Primary = 2131689989;
-			
-			// aapt resource value: 0x7F0F0206
-			public const int ThemeOverlay_MaterialComponents_ActionBar_Surface = 2131689990;
-			
-			// aapt resource value: 0x7F0F0207
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView = 2131689991;
-			
-			// aapt resource value: 0x7F0F0208
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = 2131689992;
-			
-			// aapt resource value: 0x7F0F0209
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131689993;
-			
-			// aapt resource value: 0x7F0F020A
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131689994;
-			
-			// aapt resource value: 0x7F0F020B
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131689995;
-			
-			// aapt resource value: 0x7F0F020C
-			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Primary = 2131689996;
-			
-			// aapt resource value: 0x7F0F020D
-			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Surface = 2131689997;
-			
-			// aapt resource value: 0x7F0F020E
-			public const int ThemeOverlay_MaterialComponents_BottomSheetDialog = 2131689998;
-			
-			// aapt resource value: 0x7F0F020F
-			public const int ThemeOverlay_MaterialComponents_Dark = 2131689999;
-			
-			// aapt resource value: 0x7F0F0210
-			public const int ThemeOverlay_MaterialComponents_Dark_ActionBar = 2131690000;
-			
-			// aapt resource value: 0x7F0F0211
-			public const int ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = 2131690001;
-			
-			// aapt resource value: 0x7F0F0212
-			public const int ThemeOverlay_MaterialComponents_Dialog = 2131690002;
-			
-			// aapt resource value: 0x7F0F0213
-			public const int ThemeOverlay_MaterialComponents_Dialog_Alert = 2131690003;
-			
-			// aapt resource value: 0x7F0F0214
-			public const int ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = 2131690004;
-			
-			// aapt resource value: 0x7F0F0215
-			public const int ThemeOverlay_MaterialComponents_Light = 2131690005;
-			
-			// aapt resource value: 0x7F0F0216
-			public const int ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = 2131690006;
-			
-			// aapt resource value: 0x7F0F0217
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog = 2131690007;
-			
-			// aapt resource value: 0x7F0F0218
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = 2131690008;
-			
-			// aapt resource value: 0x7F0F0219
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = 2131690009;
-			
-			// aapt resource value: 0x7F0F021A
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = 2131690010;
-			
-			// aapt resource value: 0x7F0F021B
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = 2131690011;
-			
-			// aapt resource value: 0x7F0F021C
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = 2131690012;
-			
-			// aapt resource value: 0x7F0F021D
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = 2131690013;
-			
-			// aapt resource value: 0x7F0F021E
-			public const int ThemeOverlay_MaterialComponents_MaterialCalendar = 2131690014;
-			
-			// aapt resource value: 0x7F0F021F
-			public const int ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = 2131690015;
-			
-			// aapt resource value: 0x7F0F0220
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText = 2131690016;
-			
-			// aapt resource value: 0x7F0F0221
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = 2131690017;
-			
-			// aapt resource value: 0x7F0F0222
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131690018;
-			
-			// aapt resource value: 0x7F0F0223
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = 2131690019;
-			
-			// aapt resource value: 0x7F0F0224
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131690020;
-			
-			// aapt resource value: 0x7F0F0225
-			public const int ThemeOverlay_MaterialComponents_TimePicker = 2131690021;
-			
-			// aapt resource value: 0x7F0F0226
-			public const int ThemeOverlay_MaterialComponents_TimePicker_Display = 2131690022;
-			
-			// aapt resource value: 0x7F0F0227
-			public const int ThemeOverlay_MaterialComponents_Toolbar_Primary = 2131690023;
-			
-			// aapt resource value: 0x7F0F0228
-			public const int ThemeOverlay_MaterialComponents_Toolbar_Surface = 2131690024;
+			public const int TextAppearance_MaterialComponents_Tooltip = 2131689899;
 			
 			// aapt resource value: 0x7F0F01AC
-			public const int Theme_AppCompat = 2131689900;
+			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131689900;
 			
 			// aapt resource value: 0x7F0F01AD
-			public const int Theme_AppCompat_CompactMenu = 2131689901;
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131689901;
 			
 			// aapt resource value: 0x7F0F01AE
-			public const int Theme_AppCompat_DayNight = 2131689902;
-			
-			// aapt resource value: 0x7F0F01AF
-			public const int Theme_AppCompat_DayNight_DarkActionBar = 2131689903;
-			
-			// aapt resource value: 0x7F0F01B0
-			public const int Theme_AppCompat_DayNight_Dialog = 2131689904;
-			
-			// aapt resource value: 0x7F0F01B3
-			public const int Theme_AppCompat_DayNight_DialogWhenLarge = 2131689907;
-			
-			// aapt resource value: 0x7F0F01B1
-			public const int Theme_AppCompat_DayNight_Dialog_Alert = 2131689905;
-			
-			// aapt resource value: 0x7F0F01B2
-			public const int Theme_AppCompat_DayNight_Dialog_MinWidth = 2131689906;
-			
-			// aapt resource value: 0x7F0F01B4
-			public const int Theme_AppCompat_DayNight_NoActionBar = 2131689908;
-			
-			// aapt resource value: 0x7F0F01B5
-			public const int Theme_AppCompat_Dialog = 2131689909;
-			
-			// aapt resource value: 0x7F0F01B8
-			public const int Theme_AppCompat_DialogWhenLarge = 2131689912;
-			
-			// aapt resource value: 0x7F0F01B6
-			public const int Theme_AppCompat_Dialog_Alert = 2131689910;
-			
-			// aapt resource value: 0x7F0F01B7
-			public const int Theme_AppCompat_Dialog_MinWidth = 2131689911;
-			
-			// aapt resource value: 0x7F0F01B9
-			public const int Theme_AppCompat_Empty = 2131689913;
-			
-			// aapt resource value: 0x7F0F01BA
-			public const int Theme_AppCompat_Light = 2131689914;
-			
-			// aapt resource value: 0x7F0F01BB
-			public const int Theme_AppCompat_Light_DarkActionBar = 2131689915;
-			
-			// aapt resource value: 0x7F0F01BC
-			public const int Theme_AppCompat_Light_Dialog = 2131689916;
-			
-			// aapt resource value: 0x7F0F01BF
-			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131689919;
-			
-			// aapt resource value: 0x7F0F01BD
-			public const int Theme_AppCompat_Light_Dialog_Alert = 2131689917;
-			
-			// aapt resource value: 0x7F0F01BE
-			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131689918;
-			
-			// aapt resource value: 0x7F0F01C0
-			public const int Theme_AppCompat_Light_NoActionBar = 2131689920;
-			
-			// aapt resource value: 0x7F0F01C1
-			public const int Theme_AppCompat_NoActionBar = 2131689921;
-			
-			// aapt resource value: 0x7F0F01C2
-			public const int Theme_Design = 2131689922;
-			
-			// aapt resource value: 0x7F0F01C3
-			public const int Theme_Design_BottomSheetDialog = 2131689923;
-			
-			// aapt resource value: 0x7F0F01C4
-			public const int Theme_Design_Light = 2131689924;
-			
-			// aapt resource value: 0x7F0F01C5
-			public const int Theme_Design_Light_BottomSheetDialog = 2131689925;
-			
-			// aapt resource value: 0x7F0F01C6
-			public const int Theme_Design_Light_NoActionBar = 2131689926;
-			
-			// aapt resource value: 0x7F0F01C7
-			public const int Theme_Design_NoActionBar = 2131689927;
-			
-			// aapt resource value: 0x7F0F01C8
-			public const int Theme_MaterialComponents = 2131689928;
-			
-			// aapt resource value: 0x7F0F01C9
-			public const int Theme_MaterialComponents_BottomSheetDialog = 2131689929;
-			
-			// aapt resource value: 0x7F0F01CA
-			public const int Theme_MaterialComponents_Bridge = 2131689930;
-			
-			// aapt resource value: 0x7F0F01CB
-			public const int Theme_MaterialComponents_CompactMenu = 2131689931;
-			
-			// aapt resource value: 0x7F0F01CC
-			public const int Theme_MaterialComponents_DayNight = 2131689932;
-			
-			// aapt resource value: 0x7F0F01CD
-			public const int Theme_MaterialComponents_DayNight_BottomSheetDialog = 2131689933;
-			
-			// aapt resource value: 0x7F0F01CE
-			public const int Theme_MaterialComponents_DayNight_Bridge = 2131689934;
-			
-			// aapt resource value: 0x7F0F01CF
-			public const int Theme_MaterialComponents_DayNight_DarkActionBar = 2131689935;
-			
-			// aapt resource value: 0x7F0F01D0
-			public const int Theme_MaterialComponents_DayNight_DarkActionBar_Bridge = 2131689936;
-			
-			// aapt resource value: 0x7F0F01D1
-			public const int Theme_MaterialComponents_DayNight_Dialog = 2131689937;
-			
-			// aapt resource value: 0x7F0F01D9
-			public const int Theme_MaterialComponents_DayNight_DialogWhenLarge = 2131689945;
-			
-			// aapt resource value: 0x7F0F01D2
-			public const int Theme_MaterialComponents_DayNight_Dialog_Alert = 2131689938;
-			
-			// aapt resource value: 0x7F0F01D3
-			public const int Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge = 2131689939;
-			
-			// aapt resource value: 0x7F0F01D4
-			public const int Theme_MaterialComponents_DayNight_Dialog_Bridge = 2131689940;
-			
-			// aapt resource value: 0x7F0F01D5
-			public const int Theme_MaterialComponents_DayNight_Dialog_FixedSize = 2131689941;
-			
-			// aapt resource value: 0x7F0F01D6
-			public const int Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge = 2131689942;
-			
-			// aapt resource value: 0x7F0F01D7
-			public const int Theme_MaterialComponents_DayNight_Dialog_MinWidth = 2131689943;
-			
-			// aapt resource value: 0x7F0F01D8
-			public const int Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge = 2131689944;
-			
-			// aapt resource value: 0x7F0F01DA
-			public const int Theme_MaterialComponents_DayNight_NoActionBar = 2131689946;
-			
-			// aapt resource value: 0x7F0F01DB
-			public const int Theme_MaterialComponents_DayNight_NoActionBar_Bridge = 2131689947;
-			
-			// aapt resource value: 0x7F0F01DC
-			public const int Theme_MaterialComponents_Dialog = 2131689948;
-			
-			// aapt resource value: 0x7F0F01E4
-			public const int Theme_MaterialComponents_DialogWhenLarge = 2131689956;
-			
-			// aapt resource value: 0x7F0F01DD
-			public const int Theme_MaterialComponents_Dialog_Alert = 2131689949;
-			
-			// aapt resource value: 0x7F0F01DE
-			public const int Theme_MaterialComponents_Dialog_Alert_Bridge = 2131689950;
-			
-			// aapt resource value: 0x7F0F01DF
-			public const int Theme_MaterialComponents_Dialog_Bridge = 2131689951;
-			
-			// aapt resource value: 0x7F0F01E0
-			public const int Theme_MaterialComponents_Dialog_FixedSize = 2131689952;
-			
-			// aapt resource value: 0x7F0F01E1
-			public const int Theme_MaterialComponents_Dialog_FixedSize_Bridge = 2131689953;
-			
-			// aapt resource value: 0x7F0F01E2
-			public const int Theme_MaterialComponents_Dialog_MinWidth = 2131689954;
-			
-			// aapt resource value: 0x7F0F01E3
-			public const int Theme_MaterialComponents_Dialog_MinWidth_Bridge = 2131689955;
-			
-			// aapt resource value: 0x7F0F01E5
-			public const int Theme_MaterialComponents_Light = 2131689957;
-			
-			// aapt resource value: 0x7F0F01E6
-			public const int Theme_MaterialComponents_Light_BarSize = 2131689958;
-			
-			// aapt resource value: 0x7F0F01E7
-			public const int Theme_MaterialComponents_Light_BottomSheetDialog = 2131689959;
-			
-			// aapt resource value: 0x7F0F01E8
-			public const int Theme_MaterialComponents_Light_Bridge = 2131689960;
-			
-			// aapt resource value: 0x7F0F01E9
-			public const int Theme_MaterialComponents_Light_DarkActionBar = 2131689961;
-			
-			// aapt resource value: 0x7F0F01EA
-			public const int Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131689962;
-			
-			// aapt resource value: 0x7F0F01EB
-			public const int Theme_MaterialComponents_Light_Dialog = 2131689963;
-			
-			// aapt resource value: 0x7F0F01F3
-			public const int Theme_MaterialComponents_Light_DialogWhenLarge = 2131689971;
-			
-			// aapt resource value: 0x7F0F01EC
-			public const int Theme_MaterialComponents_Light_Dialog_Alert = 2131689964;
-			
-			// aapt resource value: 0x7F0F01ED
-			public const int Theme_MaterialComponents_Light_Dialog_Alert_Bridge = 2131689965;
-			
-			// aapt resource value: 0x7F0F01EE
-			public const int Theme_MaterialComponents_Light_Dialog_Bridge = 2131689966;
-			
-			// aapt resource value: 0x7F0F01EF
-			public const int Theme_MaterialComponents_Light_Dialog_FixedSize = 2131689967;
-			
-			// aapt resource value: 0x7F0F01F0
-			public const int Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = 2131689968;
-			
-			// aapt resource value: 0x7F0F01F1
-			public const int Theme_MaterialComponents_Light_Dialog_MinWidth = 2131689969;
-			
-			// aapt resource value: 0x7F0F01F2
-			public const int Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = 2131689970;
-			
-			// aapt resource value: 0x7F0F01F4
-			public const int Theme_MaterialComponents_Light_LargeTouch = 2131689972;
-			
-			// aapt resource value: 0x7F0F01F5
-			public const int Theme_MaterialComponents_Light_NoActionBar = 2131689973;
-			
-			// aapt resource value: 0x7F0F01F6
-			public const int Theme_MaterialComponents_Light_NoActionBar_Bridge = 2131689974;
-			
-			// aapt resource value: 0x7F0F01F7
-			public const int Theme_MaterialComponents_NoActionBar = 2131689975;
-			
-			// aapt resource value: 0x7F0F01F8
-			public const int Theme_MaterialComponents_NoActionBar_Bridge = 2131689976;
-			
-			// aapt resource value: 0x7F0F022A
-			public const int Widget_AppCompat_ActionBar = 2131690026;
-			
-			// aapt resource value: 0x7F0F022B
-			public const int Widget_AppCompat_ActionBar_Solid = 2131690027;
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131689902;
 			
 			// aapt resource value: 0x7F0F022C
-			public const int Widget_AppCompat_ActionBar_TabBar = 2131690028;
+			public const int ThemeOverlayColorAccentRed = 2131690028;
+			
+			// aapt resource value: 0x7F0F01FC
+			public const int ThemeOverlay_AppCompat = 2131689980;
+			
+			// aapt resource value: 0x7F0F01FD
+			public const int ThemeOverlay_AppCompat_ActionBar = 2131689981;
+			
+			// aapt resource value: 0x7F0F01FE
+			public const int ThemeOverlay_AppCompat_Dark = 2131689982;
+			
+			// aapt resource value: 0x7F0F01FF
+			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131689983;
+			
+			// aapt resource value: 0x7F0F0200
+			public const int ThemeOverlay_AppCompat_DayNight = 2131689984;
+			
+			// aapt resource value: 0x7F0F0201
+			public const int ThemeOverlay_AppCompat_DayNight_ActionBar = 2131689985;
+			
+			// aapt resource value: 0x7F0F0202
+			public const int ThemeOverlay_AppCompat_Dialog = 2131689986;
+			
+			// aapt resource value: 0x7F0F0203
+			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131689987;
+			
+			// aapt resource value: 0x7F0F0204
+			public const int ThemeOverlay_AppCompat_Light = 2131689988;
+			
+			// aapt resource value: 0x7F0F0205
+			public const int ThemeOverlay_Design_TextInputEditText = 2131689989;
+			
+			// aapt resource value: 0x7F0F0206
+			public const int ThemeOverlay_MaterialComponents = 2131689990;
+			
+			// aapt resource value: 0x7F0F0207
+			public const int ThemeOverlay_MaterialComponents_ActionBar = 2131689991;
+			
+			// aapt resource value: 0x7F0F0208
+			public const int ThemeOverlay_MaterialComponents_ActionBar_Primary = 2131689992;
+			
+			// aapt resource value: 0x7F0F0209
+			public const int ThemeOverlay_MaterialComponents_ActionBar_Surface = 2131689993;
+			
+			// aapt resource value: 0x7F0F020A
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView = 2131689994;
+			
+			// aapt resource value: 0x7F0F020B
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = 2131689995;
+			
+			// aapt resource value: 0x7F0F020C
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131689996;
+			
+			// aapt resource value: 0x7F0F020D
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131689997;
+			
+			// aapt resource value: 0x7F0F020E
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131689998;
+			
+			// aapt resource value: 0x7F0F020F
+			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Primary = 2131689999;
+			
+			// aapt resource value: 0x7F0F0210
+			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Surface = 2131690000;
+			
+			// aapt resource value: 0x7F0F0211
+			public const int ThemeOverlay_MaterialComponents_BottomSheetDialog = 2131690001;
+			
+			// aapt resource value: 0x7F0F0212
+			public const int ThemeOverlay_MaterialComponents_Dark = 2131690002;
+			
+			// aapt resource value: 0x7F0F0213
+			public const int ThemeOverlay_MaterialComponents_Dark_ActionBar = 2131690003;
+			
+			// aapt resource value: 0x7F0F0214
+			public const int ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = 2131690004;
+			
+			// aapt resource value: 0x7F0F0215
+			public const int ThemeOverlay_MaterialComponents_Dialog = 2131690005;
+			
+			// aapt resource value: 0x7F0F0216
+			public const int ThemeOverlay_MaterialComponents_Dialog_Alert = 2131690006;
+			
+			// aapt resource value: 0x7F0F0217
+			public const int ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = 2131690007;
+			
+			// aapt resource value: 0x7F0F0218
+			public const int ThemeOverlay_MaterialComponents_Light = 2131690008;
+			
+			// aapt resource value: 0x7F0F0219
+			public const int ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = 2131690009;
+			
+			// aapt resource value: 0x7F0F021A
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog = 2131690010;
+			
+			// aapt resource value: 0x7F0F021B
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = 2131690011;
+			
+			// aapt resource value: 0x7F0F021C
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = 2131690012;
+			
+			// aapt resource value: 0x7F0F021D
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = 2131690013;
+			
+			// aapt resource value: 0x7F0F021E
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = 2131690014;
+			
+			// aapt resource value: 0x7F0F021F
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = 2131690015;
+			
+			// aapt resource value: 0x7F0F0220
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = 2131690016;
+			
+			// aapt resource value: 0x7F0F0221
+			public const int ThemeOverlay_MaterialComponents_MaterialCalendar = 2131690017;
+			
+			// aapt resource value: 0x7F0F0222
+			public const int ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = 2131690018;
+			
+			// aapt resource value: 0x7F0F0223
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText = 2131690019;
+			
+			// aapt resource value: 0x7F0F0224
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = 2131690020;
+			
+			// aapt resource value: 0x7F0F0225
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131690021;
+			
+			// aapt resource value: 0x7F0F0226
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = 2131690022;
+			
+			// aapt resource value: 0x7F0F0227
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131690023;
+			
+			// aapt resource value: 0x7F0F0228
+			public const int ThemeOverlay_MaterialComponents_TimePicker = 2131690024;
+			
+			// aapt resource value: 0x7F0F0229
+			public const int ThemeOverlay_MaterialComponents_TimePicker_Display = 2131690025;
+			
+			// aapt resource value: 0x7F0F022A
+			public const int ThemeOverlay_MaterialComponents_Toolbar_Primary = 2131690026;
+			
+			// aapt resource value: 0x7F0F022B
+			public const int ThemeOverlay_MaterialComponents_Toolbar_Surface = 2131690027;
+			
+			// aapt resource value: 0x7F0F01AF
+			public const int Theme_AppCompat = 2131689903;
+			
+			// aapt resource value: 0x7F0F01B0
+			public const int Theme_AppCompat_CompactMenu = 2131689904;
+			
+			// aapt resource value: 0x7F0F01B1
+			public const int Theme_AppCompat_DayNight = 2131689905;
+			
+			// aapt resource value: 0x7F0F01B2
+			public const int Theme_AppCompat_DayNight_DarkActionBar = 2131689906;
+			
+			// aapt resource value: 0x7F0F01B3
+			public const int Theme_AppCompat_DayNight_Dialog = 2131689907;
+			
+			// aapt resource value: 0x7F0F01B6
+			public const int Theme_AppCompat_DayNight_DialogWhenLarge = 2131689910;
+			
+			// aapt resource value: 0x7F0F01B4
+			public const int Theme_AppCompat_DayNight_Dialog_Alert = 2131689908;
+			
+			// aapt resource value: 0x7F0F01B5
+			public const int Theme_AppCompat_DayNight_Dialog_MinWidth = 2131689909;
+			
+			// aapt resource value: 0x7F0F01B7
+			public const int Theme_AppCompat_DayNight_NoActionBar = 2131689911;
+			
+			// aapt resource value: 0x7F0F01B8
+			public const int Theme_AppCompat_Dialog = 2131689912;
+			
+			// aapt resource value: 0x7F0F01BB
+			public const int Theme_AppCompat_DialogWhenLarge = 2131689915;
+			
+			// aapt resource value: 0x7F0F01B9
+			public const int Theme_AppCompat_Dialog_Alert = 2131689913;
+			
+			// aapt resource value: 0x7F0F01BA
+			public const int Theme_AppCompat_Dialog_MinWidth = 2131689914;
+			
+			// aapt resource value: 0x7F0F01BC
+			public const int Theme_AppCompat_Empty = 2131689916;
+			
+			// aapt resource value: 0x7F0F01BD
+			public const int Theme_AppCompat_Light = 2131689917;
+			
+			// aapt resource value: 0x7F0F01BE
+			public const int Theme_AppCompat_Light_DarkActionBar = 2131689918;
+			
+			// aapt resource value: 0x7F0F01BF
+			public const int Theme_AppCompat_Light_Dialog = 2131689919;
+			
+			// aapt resource value: 0x7F0F01C2
+			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131689922;
+			
+			// aapt resource value: 0x7F0F01C0
+			public const int Theme_AppCompat_Light_Dialog_Alert = 2131689920;
+			
+			// aapt resource value: 0x7F0F01C1
+			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131689921;
+			
+			// aapt resource value: 0x7F0F01C3
+			public const int Theme_AppCompat_Light_NoActionBar = 2131689923;
+			
+			// aapt resource value: 0x7F0F01C4
+			public const int Theme_AppCompat_NoActionBar = 2131689924;
+			
+			// aapt resource value: 0x7F0F01C5
+			public const int Theme_Design = 2131689925;
+			
+			// aapt resource value: 0x7F0F01C6
+			public const int Theme_Design_BottomSheetDialog = 2131689926;
+			
+			// aapt resource value: 0x7F0F01C7
+			public const int Theme_Design_Light = 2131689927;
+			
+			// aapt resource value: 0x7F0F01C8
+			public const int Theme_Design_Light_BottomSheetDialog = 2131689928;
+			
+			// aapt resource value: 0x7F0F01C9
+			public const int Theme_Design_Light_NoActionBar = 2131689929;
+			
+			// aapt resource value: 0x7F0F01CA
+			public const int Theme_Design_NoActionBar = 2131689930;
+			
+			// aapt resource value: 0x7F0F01CB
+			public const int Theme_MaterialComponents = 2131689931;
+			
+			// aapt resource value: 0x7F0F01CC
+			public const int Theme_MaterialComponents_BottomSheetDialog = 2131689932;
+			
+			// aapt resource value: 0x7F0F01CD
+			public const int Theme_MaterialComponents_Bridge = 2131689933;
+			
+			// aapt resource value: 0x7F0F01CE
+			public const int Theme_MaterialComponents_CompactMenu = 2131689934;
+			
+			// aapt resource value: 0x7F0F01CF
+			public const int Theme_MaterialComponents_DayNight = 2131689935;
+			
+			// aapt resource value: 0x7F0F01D0
+			public const int Theme_MaterialComponents_DayNight_BottomSheetDialog = 2131689936;
+			
+			// aapt resource value: 0x7F0F01D1
+			public const int Theme_MaterialComponents_DayNight_Bridge = 2131689937;
+			
+			// aapt resource value: 0x7F0F01D2
+			public const int Theme_MaterialComponents_DayNight_DarkActionBar = 2131689938;
+			
+			// aapt resource value: 0x7F0F01D3
+			public const int Theme_MaterialComponents_DayNight_DarkActionBar_Bridge = 2131689939;
+			
+			// aapt resource value: 0x7F0F01D4
+			public const int Theme_MaterialComponents_DayNight_Dialog = 2131689940;
+			
+			// aapt resource value: 0x7F0F01DC
+			public const int Theme_MaterialComponents_DayNight_DialogWhenLarge = 2131689948;
+			
+			// aapt resource value: 0x7F0F01D5
+			public const int Theme_MaterialComponents_DayNight_Dialog_Alert = 2131689941;
+			
+			// aapt resource value: 0x7F0F01D6
+			public const int Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge = 2131689942;
+			
+			// aapt resource value: 0x7F0F01D7
+			public const int Theme_MaterialComponents_DayNight_Dialog_Bridge = 2131689943;
+			
+			// aapt resource value: 0x7F0F01D8
+			public const int Theme_MaterialComponents_DayNight_Dialog_FixedSize = 2131689944;
+			
+			// aapt resource value: 0x7F0F01D9
+			public const int Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge = 2131689945;
+			
+			// aapt resource value: 0x7F0F01DA
+			public const int Theme_MaterialComponents_DayNight_Dialog_MinWidth = 2131689946;
+			
+			// aapt resource value: 0x7F0F01DB
+			public const int Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge = 2131689947;
+			
+			// aapt resource value: 0x7F0F01DD
+			public const int Theme_MaterialComponents_DayNight_NoActionBar = 2131689949;
+			
+			// aapt resource value: 0x7F0F01DE
+			public const int Theme_MaterialComponents_DayNight_NoActionBar_Bridge = 2131689950;
+			
+			// aapt resource value: 0x7F0F01DF
+			public const int Theme_MaterialComponents_Dialog = 2131689951;
+			
+			// aapt resource value: 0x7F0F01E7
+			public const int Theme_MaterialComponents_DialogWhenLarge = 2131689959;
+			
+			// aapt resource value: 0x7F0F01E0
+			public const int Theme_MaterialComponents_Dialog_Alert = 2131689952;
+			
+			// aapt resource value: 0x7F0F01E1
+			public const int Theme_MaterialComponents_Dialog_Alert_Bridge = 2131689953;
+			
+			// aapt resource value: 0x7F0F01E2
+			public const int Theme_MaterialComponents_Dialog_Bridge = 2131689954;
+			
+			// aapt resource value: 0x7F0F01E3
+			public const int Theme_MaterialComponents_Dialog_FixedSize = 2131689955;
+			
+			// aapt resource value: 0x7F0F01E4
+			public const int Theme_MaterialComponents_Dialog_FixedSize_Bridge = 2131689956;
+			
+			// aapt resource value: 0x7F0F01E5
+			public const int Theme_MaterialComponents_Dialog_MinWidth = 2131689957;
+			
+			// aapt resource value: 0x7F0F01E6
+			public const int Theme_MaterialComponents_Dialog_MinWidth_Bridge = 2131689958;
+			
+			// aapt resource value: 0x7F0F01E8
+			public const int Theme_MaterialComponents_Light = 2131689960;
+			
+			// aapt resource value: 0x7F0F01E9
+			public const int Theme_MaterialComponents_Light_BarSize = 2131689961;
+			
+			// aapt resource value: 0x7F0F01EA
+			public const int Theme_MaterialComponents_Light_BottomSheetDialog = 2131689962;
+			
+			// aapt resource value: 0x7F0F01EB
+			public const int Theme_MaterialComponents_Light_Bridge = 2131689963;
+			
+			// aapt resource value: 0x7F0F01EC
+			public const int Theme_MaterialComponents_Light_DarkActionBar = 2131689964;
+			
+			// aapt resource value: 0x7F0F01ED
+			public const int Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131689965;
+			
+			// aapt resource value: 0x7F0F01EE
+			public const int Theme_MaterialComponents_Light_Dialog = 2131689966;
+			
+			// aapt resource value: 0x7F0F01F6
+			public const int Theme_MaterialComponents_Light_DialogWhenLarge = 2131689974;
+			
+			// aapt resource value: 0x7F0F01EF
+			public const int Theme_MaterialComponents_Light_Dialog_Alert = 2131689967;
+			
+			// aapt resource value: 0x7F0F01F0
+			public const int Theme_MaterialComponents_Light_Dialog_Alert_Bridge = 2131689968;
+			
+			// aapt resource value: 0x7F0F01F1
+			public const int Theme_MaterialComponents_Light_Dialog_Bridge = 2131689969;
+			
+			// aapt resource value: 0x7F0F01F2
+			public const int Theme_MaterialComponents_Light_Dialog_FixedSize = 2131689970;
+			
+			// aapt resource value: 0x7F0F01F3
+			public const int Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = 2131689971;
+			
+			// aapt resource value: 0x7F0F01F4
+			public const int Theme_MaterialComponents_Light_Dialog_MinWidth = 2131689972;
+			
+			// aapt resource value: 0x7F0F01F5
+			public const int Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = 2131689973;
+			
+			// aapt resource value: 0x7F0F01F7
+			public const int Theme_MaterialComponents_Light_LargeTouch = 2131689975;
+			
+			// aapt resource value: 0x7F0F01F8
+			public const int Theme_MaterialComponents_Light_NoActionBar = 2131689976;
+			
+			// aapt resource value: 0x7F0F01F9
+			public const int Theme_MaterialComponents_Light_NoActionBar_Bridge = 2131689977;
+			
+			// aapt resource value: 0x7F0F01FA
+			public const int Theme_MaterialComponents_NoActionBar = 2131689978;
+			
+			// aapt resource value: 0x7F0F01FB
+			public const int Theme_MaterialComponents_NoActionBar_Bridge = 2131689979;
 			
 			// aapt resource value: 0x7F0F022D
-			public const int Widget_AppCompat_ActionBar_TabText = 2131690029;
+			public const int Widget_AppCompat_ActionBar = 2131690029;
 			
 			// aapt resource value: 0x7F0F022E
-			public const int Widget_AppCompat_ActionBar_TabView = 2131690030;
+			public const int Widget_AppCompat_ActionBar_Solid = 2131690030;
 			
 			// aapt resource value: 0x7F0F022F
-			public const int Widget_AppCompat_ActionButton = 2131690031;
+			public const int Widget_AppCompat_ActionBar_TabBar = 2131690031;
 			
 			// aapt resource value: 0x7F0F0230
-			public const int Widget_AppCompat_ActionButton_CloseMode = 2131690032;
+			public const int Widget_AppCompat_ActionBar_TabText = 2131690032;
 			
 			// aapt resource value: 0x7F0F0231
-			public const int Widget_AppCompat_ActionButton_Overflow = 2131690033;
+			public const int Widget_AppCompat_ActionBar_TabView = 2131690033;
 			
 			// aapt resource value: 0x7F0F0232
-			public const int Widget_AppCompat_ActionMode = 2131690034;
+			public const int Widget_AppCompat_ActionButton = 2131690034;
 			
 			// aapt resource value: 0x7F0F0233
-			public const int Widget_AppCompat_ActivityChooserView = 2131690035;
+			public const int Widget_AppCompat_ActionButton_CloseMode = 2131690035;
 			
 			// aapt resource value: 0x7F0F0234
-			public const int Widget_AppCompat_AutoCompleteTextView = 2131690036;
+			public const int Widget_AppCompat_ActionButton_Overflow = 2131690036;
 			
 			// aapt resource value: 0x7F0F0235
-			public const int Widget_AppCompat_Button = 2131690037;
-			
-			// aapt resource value: 0x7F0F023B
-			public const int Widget_AppCompat_ButtonBar = 2131690043;
-			
-			// aapt resource value: 0x7F0F023C
-			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131690044;
+			public const int Widget_AppCompat_ActionMode = 2131690037;
 			
 			// aapt resource value: 0x7F0F0236
-			public const int Widget_AppCompat_Button_Borderless = 2131690038;
+			public const int Widget_AppCompat_ActivityChooserView = 2131690038;
 			
 			// aapt resource value: 0x7F0F0237
-			public const int Widget_AppCompat_Button_Borderless_Colored = 2131690039;
+			public const int Widget_AppCompat_AutoCompleteTextView = 2131690039;
 			
 			// aapt resource value: 0x7F0F0238
-			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131690040;
-			
-			// aapt resource value: 0x7F0F0239
-			public const int Widget_AppCompat_Button_Colored = 2131690041;
-			
-			// aapt resource value: 0x7F0F023A
-			public const int Widget_AppCompat_Button_Small = 2131690042;
-			
-			// aapt resource value: 0x7F0F023D
-			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131690045;
+			public const int Widget_AppCompat_Button = 2131690040;
 			
 			// aapt resource value: 0x7F0F023E
-			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131690046;
+			public const int Widget_AppCompat_ButtonBar = 2131690046;
 			
 			// aapt resource value: 0x7F0F023F
-			public const int Widget_AppCompat_CompoundButton_Switch = 2131690047;
+			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131690047;
+			
+			// aapt resource value: 0x7F0F0239
+			public const int Widget_AppCompat_Button_Borderless = 2131690041;
+			
+			// aapt resource value: 0x7F0F023A
+			public const int Widget_AppCompat_Button_Borderless_Colored = 2131690042;
+			
+			// aapt resource value: 0x7F0F023B
+			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131690043;
+			
+			// aapt resource value: 0x7F0F023C
+			public const int Widget_AppCompat_Button_Colored = 2131690044;
+			
+			// aapt resource value: 0x7F0F023D
+			public const int Widget_AppCompat_Button_Small = 2131690045;
 			
 			// aapt resource value: 0x7F0F0240
-			public const int Widget_AppCompat_DrawerArrowToggle = 2131690048;
+			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131690048;
 			
 			// aapt resource value: 0x7F0F0241
-			public const int Widget_AppCompat_DropDownItem_Spinner = 2131690049;
+			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131690049;
 			
 			// aapt resource value: 0x7F0F0242
-			public const int Widget_AppCompat_EditText = 2131690050;
+			public const int Widget_AppCompat_CompoundButton_Switch = 2131690050;
 			
 			// aapt resource value: 0x7F0F0243
-			public const int Widget_AppCompat_ImageButton = 2131690051;
+			public const int Widget_AppCompat_DrawerArrowToggle = 2131690051;
 			
 			// aapt resource value: 0x7F0F0244
-			public const int Widget_AppCompat_Light_ActionBar = 2131690052;
+			public const int Widget_AppCompat_DropDownItem_Spinner = 2131690052;
 			
 			// aapt resource value: 0x7F0F0245
-			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131690053;
+			public const int Widget_AppCompat_EditText = 2131690053;
 			
 			// aapt resource value: 0x7F0F0246
-			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131690054;
+			public const int Widget_AppCompat_ImageButton = 2131690054;
 			
 			// aapt resource value: 0x7F0F0247
-			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131690055;
+			public const int Widget_AppCompat_Light_ActionBar = 2131690055;
 			
 			// aapt resource value: 0x7F0F0248
-			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131690056;
+			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131690056;
 			
 			// aapt resource value: 0x7F0F0249
-			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131690057;
+			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131690057;
 			
 			// aapt resource value: 0x7F0F024A
-			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131690058;
+			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131690058;
 			
 			// aapt resource value: 0x7F0F024B
-			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131690059;
+			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131690059;
 			
 			// aapt resource value: 0x7F0F024C
-			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131690060;
+			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131690060;
 			
 			// aapt resource value: 0x7F0F024D
-			public const int Widget_AppCompat_Light_ActionButton = 2131690061;
+			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131690061;
 			
 			// aapt resource value: 0x7F0F024E
-			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131690062;
+			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131690062;
 			
 			// aapt resource value: 0x7F0F024F
-			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131690063;
+			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131690063;
 			
 			// aapt resource value: 0x7F0F0250
-			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131690064;
+			public const int Widget_AppCompat_Light_ActionButton = 2131690064;
 			
 			// aapt resource value: 0x7F0F0251
-			public const int Widget_AppCompat_Light_ActivityChooserView = 2131690065;
+			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131690065;
 			
 			// aapt resource value: 0x7F0F0252
-			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131690066;
+			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131690066;
 			
 			// aapt resource value: 0x7F0F0253
-			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131690067;
+			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131690067;
 			
 			// aapt resource value: 0x7F0F0254
-			public const int Widget_AppCompat_Light_ListPopupWindow = 2131690068;
+			public const int Widget_AppCompat_Light_ActivityChooserView = 2131690068;
 			
 			// aapt resource value: 0x7F0F0255
-			public const int Widget_AppCompat_Light_ListView_DropDown = 2131690069;
+			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131690069;
 			
 			// aapt resource value: 0x7F0F0256
-			public const int Widget_AppCompat_Light_PopupMenu = 2131690070;
+			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131690070;
 			
 			// aapt resource value: 0x7F0F0257
-			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131690071;
+			public const int Widget_AppCompat_Light_ListPopupWindow = 2131690071;
 			
 			// aapt resource value: 0x7F0F0258
-			public const int Widget_AppCompat_Light_SearchView = 2131690072;
+			public const int Widget_AppCompat_Light_ListView_DropDown = 2131690072;
 			
 			// aapt resource value: 0x7F0F0259
-			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131690073;
+			public const int Widget_AppCompat_Light_PopupMenu = 2131690073;
 			
 			// aapt resource value: 0x7F0F025A
-			public const int Widget_AppCompat_ListMenuView = 2131690074;
+			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131690074;
 			
 			// aapt resource value: 0x7F0F025B
-			public const int Widget_AppCompat_ListPopupWindow = 2131690075;
+			public const int Widget_AppCompat_Light_SearchView = 2131690075;
 			
 			// aapt resource value: 0x7F0F025C
-			public const int Widget_AppCompat_ListView = 2131690076;
+			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131690076;
 			
 			// aapt resource value: 0x7F0F025D
-			public const int Widget_AppCompat_ListView_DropDown = 2131690077;
+			public const int Widget_AppCompat_ListMenuView = 2131690077;
 			
 			// aapt resource value: 0x7F0F025E
-			public const int Widget_AppCompat_ListView_Menu = 2131690078;
+			public const int Widget_AppCompat_ListPopupWindow = 2131690078;
 			
 			// aapt resource value: 0x7F0F025F
-			public const int Widget_AppCompat_PopupMenu = 2131690079;
+			public const int Widget_AppCompat_ListView = 2131690079;
 			
 			// aapt resource value: 0x7F0F0260
-			public const int Widget_AppCompat_PopupMenu_Overflow = 2131690080;
+			public const int Widget_AppCompat_ListView_DropDown = 2131690080;
 			
 			// aapt resource value: 0x7F0F0261
-			public const int Widget_AppCompat_PopupWindow = 2131690081;
+			public const int Widget_AppCompat_ListView_Menu = 2131690081;
 			
 			// aapt resource value: 0x7F0F0262
-			public const int Widget_AppCompat_ProgressBar = 2131690082;
+			public const int Widget_AppCompat_PopupMenu = 2131690082;
 			
 			// aapt resource value: 0x7F0F0263
-			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131690083;
+			public const int Widget_AppCompat_PopupMenu_Overflow = 2131690083;
 			
 			// aapt resource value: 0x7F0F0264
-			public const int Widget_AppCompat_RatingBar = 2131690084;
+			public const int Widget_AppCompat_PopupWindow = 2131690084;
 			
 			// aapt resource value: 0x7F0F0265
-			public const int Widget_AppCompat_RatingBar_Indicator = 2131690085;
+			public const int Widget_AppCompat_ProgressBar = 2131690085;
 			
 			// aapt resource value: 0x7F0F0266
-			public const int Widget_AppCompat_RatingBar_Small = 2131690086;
+			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131690086;
 			
 			// aapt resource value: 0x7F0F0267
-			public const int Widget_AppCompat_SearchView = 2131690087;
+			public const int Widget_AppCompat_RatingBar = 2131690087;
 			
 			// aapt resource value: 0x7F0F0268
-			public const int Widget_AppCompat_SearchView_ActionBar = 2131690088;
+			public const int Widget_AppCompat_RatingBar_Indicator = 2131690088;
 			
 			// aapt resource value: 0x7F0F0269
-			public const int Widget_AppCompat_SeekBar = 2131690089;
+			public const int Widget_AppCompat_RatingBar_Small = 2131690089;
 			
 			// aapt resource value: 0x7F0F026A
-			public const int Widget_AppCompat_SeekBar_Discrete = 2131690090;
+			public const int Widget_AppCompat_SearchView = 2131690090;
 			
 			// aapt resource value: 0x7F0F026B
-			public const int Widget_AppCompat_Spinner = 2131690091;
+			public const int Widget_AppCompat_SearchView_ActionBar = 2131690091;
 			
 			// aapt resource value: 0x7F0F026C
-			public const int Widget_AppCompat_Spinner_DropDown = 2131690092;
+			public const int Widget_AppCompat_SeekBar = 2131690092;
 			
 			// aapt resource value: 0x7F0F026D
-			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131690093;
+			public const int Widget_AppCompat_SeekBar_Discrete = 2131690093;
 			
 			// aapt resource value: 0x7F0F026E
-			public const int Widget_AppCompat_Spinner_Underlined = 2131690094;
+			public const int Widget_AppCompat_Spinner = 2131690094;
 			
 			// aapt resource value: 0x7F0F026F
-			public const int Widget_AppCompat_TextView = 2131690095;
+			public const int Widget_AppCompat_Spinner_DropDown = 2131690095;
 			
 			// aapt resource value: 0x7F0F0270
-			public const int Widget_AppCompat_TextView_SpinnerItem = 2131690096;
+			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131690096;
 			
 			// aapt resource value: 0x7F0F0271
-			public const int Widget_AppCompat_Toolbar = 2131690097;
+			public const int Widget_AppCompat_Spinner_Underlined = 2131690097;
 			
 			// aapt resource value: 0x7F0F0272
-			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131690098;
+			public const int Widget_AppCompat_TextView = 2131690098;
 			
 			// aapt resource value: 0x7F0F0273
-			public const int Widget_Compat_NotificationActionContainer = 2131690099;
+			public const int Widget_AppCompat_TextView_SpinnerItem = 2131690099;
 			
 			// aapt resource value: 0x7F0F0274
-			public const int Widget_Compat_NotificationActionText = 2131690100;
+			public const int Widget_AppCompat_Toolbar = 2131690100;
 			
 			// aapt resource value: 0x7F0F0275
-			public const int Widget_Design_AppBarLayout = 2131690101;
+			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131690101;
 			
 			// aapt resource value: 0x7F0F0276
-			public const int Widget_Design_BottomNavigationView = 2131690102;
+			public const int Widget_Compat_NotificationActionContainer = 2131690102;
 			
 			// aapt resource value: 0x7F0F0277
-			public const int Widget_Design_BottomSheet_Modal = 2131690103;
+			public const int Widget_Compat_NotificationActionText = 2131690103;
 			
 			// aapt resource value: 0x7F0F0278
-			public const int Widget_Design_CollapsingToolbar = 2131690104;
+			public const int Widget_Design_AppBarLayout = 2131690104;
 			
 			// aapt resource value: 0x7F0F0279
-			public const int Widget_Design_FloatingActionButton = 2131690105;
+			public const int Widget_Design_BottomNavigationView = 2131690105;
 			
 			// aapt resource value: 0x7F0F027A
-			public const int Widget_Design_NavigationView = 2131690106;
+			public const int Widget_Design_BottomSheet_Modal = 2131690106;
 			
 			// aapt resource value: 0x7F0F027B
-			public const int Widget_Design_ScrimInsetsFrameLayout = 2131690107;
+			public const int Widget_Design_CollapsingToolbar = 2131690107;
 			
 			// aapt resource value: 0x7F0F027C
-			public const int Widget_Design_Snackbar = 2131690108;
+			public const int Widget_Design_FloatingActionButton = 2131690108;
 			
 			// aapt resource value: 0x7F0F027D
-			public const int Widget_Design_TabLayout = 2131690109;
+			public const int Widget_Design_NavigationView = 2131690109;
 			
 			// aapt resource value: 0x7F0F027E
-			public const int Widget_Design_TextInputEditText = 2131690110;
+			public const int Widget_Design_ScrimInsetsFrameLayout = 2131690110;
 			
 			// aapt resource value: 0x7F0F027F
-			public const int Widget_Design_TextInputLayout = 2131690111;
+			public const int Widget_Design_Snackbar = 2131690111;
 			
 			// aapt resource value: 0x7F0F0280
-			public const int Widget_MaterialComponents_ActionBar_Primary = 2131690112;
+			public const int Widget_Design_TabLayout = 2131690112;
 			
 			// aapt resource value: 0x7F0F0281
-			public const int Widget_MaterialComponents_ActionBar_PrimarySurface = 2131690113;
+			public const int Widget_Design_TextInputEditText = 2131690113;
 			
 			// aapt resource value: 0x7F0F0282
-			public const int Widget_MaterialComponents_ActionBar_Solid = 2131690114;
+			public const int Widget_Design_TextInputLayout = 2131690114;
 			
 			// aapt resource value: 0x7F0F0283
-			public const int Widget_MaterialComponents_ActionBar_Surface = 2131690115;
+			public const int Widget_MaterialComponents_ActionBar_Primary = 2131690115;
 			
 			// aapt resource value: 0x7F0F0284
-			public const int Widget_MaterialComponents_AppBarLayout_Primary = 2131690116;
+			public const int Widget_MaterialComponents_ActionBar_PrimarySurface = 2131690116;
 			
 			// aapt resource value: 0x7F0F0285
-			public const int Widget_MaterialComponents_AppBarLayout_PrimarySurface = 2131690117;
+			public const int Widget_MaterialComponents_ActionBar_Solid = 2131690117;
 			
 			// aapt resource value: 0x7F0F0286
-			public const int Widget_MaterialComponents_AppBarLayout_Surface = 2131690118;
+			public const int Widget_MaterialComponents_ActionBar_Surface = 2131690118;
 			
 			// aapt resource value: 0x7F0F0287
-			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox = 2131690119;
+			public const int Widget_MaterialComponents_AppBarLayout_Primary = 2131690119;
 			
 			// aapt resource value: 0x7F0F0288
-			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131690120;
+			public const int Widget_MaterialComponents_AppBarLayout_PrimarySurface = 2131690120;
 			
 			// aapt resource value: 0x7F0F0289
-			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131690121;
+			public const int Widget_MaterialComponents_AppBarLayout_Surface = 2131690121;
 			
 			// aapt resource value: 0x7F0F028A
-			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131690122;
+			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox = 2131690122;
 			
 			// aapt resource value: 0x7F0F028B
-			public const int Widget_MaterialComponents_Badge = 2131690123;
+			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131690123;
 			
 			// aapt resource value: 0x7F0F028C
-			public const int Widget_MaterialComponents_BottomAppBar = 2131690124;
+			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131690124;
 			
 			// aapt resource value: 0x7F0F028D
-			public const int Widget_MaterialComponents_BottomAppBar_Colored = 2131690125;
+			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131690125;
 			
 			// aapt resource value: 0x7F0F028E
-			public const int Widget_MaterialComponents_BottomAppBar_PrimarySurface = 2131690126;
+			public const int Widget_MaterialComponents_Badge = 2131690126;
 			
 			// aapt resource value: 0x7F0F028F
-			public const int Widget_MaterialComponents_BottomNavigationView = 2131690127;
+			public const int Widget_MaterialComponents_BottomAppBar = 2131690127;
 			
 			// aapt resource value: 0x7F0F0290
-			public const int Widget_MaterialComponents_BottomNavigationView_Colored = 2131690128;
+			public const int Widget_MaterialComponents_BottomAppBar_Colored = 2131690128;
 			
 			// aapt resource value: 0x7F0F0291
-			public const int Widget_MaterialComponents_BottomNavigationView_PrimarySurface = 2131690129;
+			public const int Widget_MaterialComponents_BottomAppBar_PrimarySurface = 2131690129;
 			
 			// aapt resource value: 0x7F0F0292
-			public const int Widget_MaterialComponents_BottomSheet = 2131690130;
+			public const int Widget_MaterialComponents_BottomNavigationView = 2131690130;
 			
 			// aapt resource value: 0x7F0F0293
-			public const int Widget_MaterialComponents_BottomSheet_Modal = 2131690131;
+			public const int Widget_MaterialComponents_BottomNavigationView_Colored = 2131690131;
 			
 			// aapt resource value: 0x7F0F0294
-			public const int Widget_MaterialComponents_Button = 2131690132;
+			public const int Widget_MaterialComponents_BottomNavigationView_PrimarySurface = 2131690132;
 			
 			// aapt resource value: 0x7F0F0295
-			public const int Widget_MaterialComponents_Button_Icon = 2131690133;
+			public const int Widget_MaterialComponents_BottomSheet = 2131690133;
 			
 			// aapt resource value: 0x7F0F0296
-			public const int Widget_MaterialComponents_Button_OutlinedButton = 2131690134;
+			public const int Widget_MaterialComponents_BottomSheet_Modal = 2131690134;
 			
 			// aapt resource value: 0x7F0F0297
-			public const int Widget_MaterialComponents_Button_OutlinedButton_Icon = 2131690135;
+			public const int Widget_MaterialComponents_Button = 2131690135;
 			
 			// aapt resource value: 0x7F0F0298
-			public const int Widget_MaterialComponents_Button_TextButton = 2131690136;
+			public const int Widget_MaterialComponents_Button_Icon = 2131690136;
 			
 			// aapt resource value: 0x7F0F0299
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog = 2131690137;
+			public const int Widget_MaterialComponents_Button_OutlinedButton = 2131690137;
 			
 			// aapt resource value: 0x7F0F029A
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Flush = 2131690138;
+			public const int Widget_MaterialComponents_Button_OutlinedButton_Icon = 2131690138;
 			
 			// aapt resource value: 0x7F0F029B
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Icon = 2131690139;
+			public const int Widget_MaterialComponents_Button_TextButton = 2131690139;
 			
 			// aapt resource value: 0x7F0F029C
-			public const int Widget_MaterialComponents_Button_TextButton_Icon = 2131690140;
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog = 2131690140;
 			
 			// aapt resource value: 0x7F0F029D
-			public const int Widget_MaterialComponents_Button_TextButton_Snackbar = 2131690141;
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Flush = 2131690141;
 			
 			// aapt resource value: 0x7F0F029E
-			public const int Widget_MaterialComponents_Button_UnelevatedButton = 2131690142;
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Icon = 2131690142;
 			
 			// aapt resource value: 0x7F0F029F
-			public const int Widget_MaterialComponents_Button_UnelevatedButton_Icon = 2131690143;
+			public const int Widget_MaterialComponents_Button_TextButton_Icon = 2131690143;
 			
 			// aapt resource value: 0x7F0F02A0
-			public const int Widget_MaterialComponents_CardView = 2131690144;
+			public const int Widget_MaterialComponents_Button_TextButton_Snackbar = 2131690144;
 			
 			// aapt resource value: 0x7F0F02A1
-			public const int Widget_MaterialComponents_CheckedTextView = 2131690145;
-			
-			// aapt resource value: 0x7F0F02A6
-			public const int Widget_MaterialComponents_ChipGroup = 2131690150;
+			public const int Widget_MaterialComponents_Button_UnelevatedButton = 2131690145;
 			
 			// aapt resource value: 0x7F0F02A2
-			public const int Widget_MaterialComponents_Chip_Action = 2131690146;
+			public const int Widget_MaterialComponents_Button_UnelevatedButton_Icon = 2131690146;
 			
 			// aapt resource value: 0x7F0F02A3
-			public const int Widget_MaterialComponents_Chip_Choice = 2131690147;
+			public const int Widget_MaterialComponents_CardView = 2131690147;
 			
 			// aapt resource value: 0x7F0F02A4
-			public const int Widget_MaterialComponents_Chip_Entry = 2131690148;
-			
-			// aapt resource value: 0x7F0F02A5
-			public const int Widget_MaterialComponents_Chip_Filter = 2131690149;
-			
-			// aapt resource value: 0x7F0F02A7
-			public const int Widget_MaterialComponents_CircularProgressIndicator = 2131690151;
-			
-			// aapt resource value: 0x7F0F02A8
-			public const int Widget_MaterialComponents_CircularProgressIndicator_ExtraSmall = 2131690152;
+			public const int Widget_MaterialComponents_CheckedTextView = 2131690148;
 			
 			// aapt resource value: 0x7F0F02A9
-			public const int Widget_MaterialComponents_CircularProgressIndicator_Medium = 2131690153;
+			public const int Widget_MaterialComponents_ChipGroup = 2131690153;
+			
+			// aapt resource value: 0x7F0F02A5
+			public const int Widget_MaterialComponents_Chip_Action = 2131690149;
+			
+			// aapt resource value: 0x7F0F02A6
+			public const int Widget_MaterialComponents_Chip_Choice = 2131690150;
+			
+			// aapt resource value: 0x7F0F02A7
+			public const int Widget_MaterialComponents_Chip_Entry = 2131690151;
+			
+			// aapt resource value: 0x7F0F02A8
+			public const int Widget_MaterialComponents_Chip_Filter = 2131690152;
 			
 			// aapt resource value: 0x7F0F02AA
-			public const int Widget_MaterialComponents_CircularProgressIndicator_Small = 2131690154;
+			public const int Widget_MaterialComponents_CircularProgressIndicator = 2131690154;
 			
 			// aapt resource value: 0x7F0F02AB
-			public const int Widget_MaterialComponents_CollapsingToolbar = 2131690155;
+			public const int Widget_MaterialComponents_CircularProgressIndicator_ExtraSmall = 2131690155;
 			
 			// aapt resource value: 0x7F0F02AC
-			public const int Widget_MaterialComponents_CompoundButton_CheckBox = 2131690156;
+			public const int Widget_MaterialComponents_CircularProgressIndicator_Medium = 2131690156;
 			
 			// aapt resource value: 0x7F0F02AD
-			public const int Widget_MaterialComponents_CompoundButton_RadioButton = 2131690157;
+			public const int Widget_MaterialComponents_CircularProgressIndicator_Small = 2131690157;
 			
 			// aapt resource value: 0x7F0F02AE
-			public const int Widget_MaterialComponents_CompoundButton_Switch = 2131690158;
+			public const int Widget_MaterialComponents_CollapsingToolbar = 2131690158;
 			
 			// aapt resource value: 0x7F0F02AF
-			public const int Widget_MaterialComponents_ExtendedFloatingActionButton = 2131690159;
+			public const int Widget_MaterialComponents_CompoundButton_CheckBox = 2131690159;
 			
 			// aapt resource value: 0x7F0F02B0
-			public const int Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = 2131690160;
+			public const int Widget_MaterialComponents_CompoundButton_RadioButton = 2131690160;
 			
 			// aapt resource value: 0x7F0F02B1
-			public const int Widget_MaterialComponents_FloatingActionButton = 2131690161;
+			public const int Widget_MaterialComponents_CompoundButton_Switch = 2131690161;
 			
 			// aapt resource value: 0x7F0F02B2
-			public const int Widget_MaterialComponents_Light_ActionBar_Solid = 2131690162;
+			public const int Widget_MaterialComponents_ExtendedFloatingActionButton = 2131690162;
 			
 			// aapt resource value: 0x7F0F02B3
-			public const int Widget_MaterialComponents_LinearProgressIndicator = 2131690163;
+			public const int Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = 2131690163;
 			
 			// aapt resource value: 0x7F0F02B4
-			public const int Widget_MaterialComponents_MaterialButtonToggleGroup = 2131690164;
+			public const int Widget_MaterialComponents_FloatingActionButton = 2131690164;
 			
 			// aapt resource value: 0x7F0F02B5
-			public const int Widget_MaterialComponents_MaterialCalendar = 2131690165;
+			public const int Widget_MaterialComponents_Light_ActionBar_Solid = 2131690165;
 			
 			// aapt resource value: 0x7F0F02B6
-			public const int Widget_MaterialComponents_MaterialCalendar_Day = 2131690166;
-			
-			// aapt resource value: 0x7F0F02BA
-			public const int Widget_MaterialComponents_MaterialCalendar_DayTextView = 2131690170;
+			public const int Widget_MaterialComponents_LinearProgressIndicator = 2131690166;
 			
 			// aapt resource value: 0x7F0F02B7
-			public const int Widget_MaterialComponents_MaterialCalendar_Day_Invalid = 2131690167;
+			public const int Widget_MaterialComponents_MaterialButtonToggleGroup = 2131690167;
 			
 			// aapt resource value: 0x7F0F02B8
-			public const int Widget_MaterialComponents_MaterialCalendar_Day_Selected = 2131690168;
+			public const int Widget_MaterialComponents_MaterialCalendar = 2131690168;
 			
 			// aapt resource value: 0x7F0F02B9
-			public const int Widget_MaterialComponents_MaterialCalendar_Day_Today = 2131690169;
-			
-			// aapt resource value: 0x7F0F02BB
-			public const int Widget_MaterialComponents_MaterialCalendar_Fullscreen = 2131690171;
-			
-			// aapt resource value: 0x7F0F02BC
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderCancelButton = 2131690172;
+			public const int Widget_MaterialComponents_MaterialCalendar_Day = 2131690169;
 			
 			// aapt resource value: 0x7F0F02BD
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = 2131690173;
+			public const int Widget_MaterialComponents_MaterialCalendar_DayTextView = 2131690173;
+			
+			// aapt resource value: 0x7F0F02BA
+			public const int Widget_MaterialComponents_MaterialCalendar_Day_Invalid = 2131690170;
+			
+			// aapt resource value: 0x7F0F02BB
+			public const int Widget_MaterialComponents_MaterialCalendar_Day_Selected = 2131690171;
+			
+			// aapt resource value: 0x7F0F02BC
+			public const int Widget_MaterialComponents_MaterialCalendar_Day_Today = 2131690172;
 			
 			// aapt resource value: 0x7F0F02BE
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderDivider = 2131690174;
+			public const int Widget_MaterialComponents_MaterialCalendar_Fullscreen = 2131690174;
 			
 			// aapt resource value: 0x7F0F02BF
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderLayout = 2131690175;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderCancelButton = 2131690175;
 			
 			// aapt resource value: 0x7F0F02C0
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection = 2131690176;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = 2131690176;
 			
 			// aapt resource value: 0x7F0F02C1
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = 2131690177;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderDivider = 2131690177;
 			
 			// aapt resource value: 0x7F0F02C2
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderTitle = 2131690178;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderLayout = 2131690178;
 			
 			// aapt resource value: 0x7F0F02C3
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = 2131690179;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection = 2131690179;
 			
 			// aapt resource value: 0x7F0F02C4
-			public const int Widget_MaterialComponents_MaterialCalendar_Item = 2131690180;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = 2131690180;
 			
 			// aapt resource value: 0x7F0F02C5
-			public const int Widget_MaterialComponents_MaterialCalendar_MonthNavigationButton = 2131690181;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderTitle = 2131690181;
 			
 			// aapt resource value: 0x7F0F02C6
-			public const int Widget_MaterialComponents_MaterialCalendar_MonthTextView = 2131690182;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = 2131690182;
 			
 			// aapt resource value: 0x7F0F02C7
-			public const int Widget_MaterialComponents_MaterialCalendar_Year = 2131690183;
-			
-			// aapt resource value: 0x7F0F02CA
-			public const int Widget_MaterialComponents_MaterialCalendar_YearNavigationButton = 2131690186;
+			public const int Widget_MaterialComponents_MaterialCalendar_Item = 2131690183;
 			
 			// aapt resource value: 0x7F0F02C8
-			public const int Widget_MaterialComponents_MaterialCalendar_Year_Selected = 2131690184;
+			public const int Widget_MaterialComponents_MaterialCalendar_MonthNavigationButton = 2131690184;
 			
 			// aapt resource value: 0x7F0F02C9
-			public const int Widget_MaterialComponents_MaterialCalendar_Year_Today = 2131690185;
+			public const int Widget_MaterialComponents_MaterialCalendar_MonthTextView = 2131690185;
 			
-			// aapt resource value: 0x7F0F02CB
-			public const int Widget_MaterialComponents_NavigationRailView = 2131690187;
-			
-			// aapt resource value: 0x7F0F02CC
-			public const int Widget_MaterialComponents_NavigationRailView_Colored = 2131690188;
+			// aapt resource value: 0x7F0F02CA
+			public const int Widget_MaterialComponents_MaterialCalendar_Year = 2131690186;
 			
 			// aapt resource value: 0x7F0F02CD
-			public const int Widget_MaterialComponents_NavigationRailView_Colored_Compact = 2131690189;
+			public const int Widget_MaterialComponents_MaterialCalendar_YearNavigationButton = 2131690189;
+			
+			// aapt resource value: 0x7F0F02CB
+			public const int Widget_MaterialComponents_MaterialCalendar_Year_Selected = 2131690187;
+			
+			// aapt resource value: 0x7F0F02CC
+			public const int Widget_MaterialComponents_MaterialCalendar_Year_Today = 2131690188;
 			
 			// aapt resource value: 0x7F0F02CE
-			public const int Widget_MaterialComponents_NavigationRailView_Compact = 2131690190;
+			public const int Widget_MaterialComponents_NavigationRailView = 2131690190;
 			
 			// aapt resource value: 0x7F0F02CF
-			public const int Widget_MaterialComponents_NavigationRailView_PrimarySurface = 2131690191;
+			public const int Widget_MaterialComponents_NavigationRailView_Colored = 2131690191;
 			
 			// aapt resource value: 0x7F0F02D0
-			public const int Widget_MaterialComponents_NavigationView = 2131690192;
+			public const int Widget_MaterialComponents_NavigationRailView_Colored_Compact = 2131690192;
 			
 			// aapt resource value: 0x7F0F02D1
-			public const int Widget_MaterialComponents_PopupMenu = 2131690193;
+			public const int Widget_MaterialComponents_NavigationRailView_Compact = 2131690193;
 			
 			// aapt resource value: 0x7F0F02D2
-			public const int Widget_MaterialComponents_PopupMenu_ContextMenu = 2131690194;
+			public const int Widget_MaterialComponents_NavigationRailView_PrimarySurface = 2131690194;
 			
 			// aapt resource value: 0x7F0F02D3
-			public const int Widget_MaterialComponents_PopupMenu_ListPopupWindow = 2131690195;
+			public const int Widget_MaterialComponents_NavigationView = 2131690195;
 			
 			// aapt resource value: 0x7F0F02D4
-			public const int Widget_MaterialComponents_PopupMenu_Overflow = 2131690196;
+			public const int Widget_MaterialComponents_PopupMenu = 2131690196;
 			
 			// aapt resource value: 0x7F0F02D5
-			public const int Widget_MaterialComponents_ProgressIndicator = 2131690197;
+			public const int Widget_MaterialComponents_PopupMenu_ContextMenu = 2131690197;
 			
 			// aapt resource value: 0x7F0F02D6
-			public const int Widget_MaterialComponents_ShapeableImageView = 2131690198;
+			public const int Widget_MaterialComponents_PopupMenu_ListPopupWindow = 2131690198;
 			
 			// aapt resource value: 0x7F0F02D7
-			public const int Widget_MaterialComponents_Slider = 2131690199;
+			public const int Widget_MaterialComponents_PopupMenu_Overflow = 2131690199;
 			
 			// aapt resource value: 0x7F0F02D8
-			public const int Widget_MaterialComponents_Snackbar = 2131690200;
+			public const int Widget_MaterialComponents_ProgressIndicator = 2131690200;
 			
 			// aapt resource value: 0x7F0F02D9
-			public const int Widget_MaterialComponents_Snackbar_FullWidth = 2131690201;
+			public const int Widget_MaterialComponents_ShapeableImageView = 2131690201;
 			
 			// aapt resource value: 0x7F0F02DA
-			public const int Widget_MaterialComponents_Snackbar_TextView = 2131690202;
+			public const int Widget_MaterialComponents_Slider = 2131690202;
 			
 			// aapt resource value: 0x7F0F02DB
-			public const int Widget_MaterialComponents_TabLayout = 2131690203;
+			public const int Widget_MaterialComponents_Snackbar = 2131690203;
 			
 			// aapt resource value: 0x7F0F02DC
-			public const int Widget_MaterialComponents_TabLayout_Colored = 2131690204;
+			public const int Widget_MaterialComponents_Snackbar_FullWidth = 2131690204;
 			
 			// aapt resource value: 0x7F0F02DD
-			public const int Widget_MaterialComponents_TabLayout_PrimarySurface = 2131690205;
+			public const int Widget_MaterialComponents_Snackbar_TextView = 2131690205;
 			
 			// aapt resource value: 0x7F0F02DE
-			public const int Widget_MaterialComponents_TextInputEditText_FilledBox = 2131690206;
+			public const int Widget_MaterialComponents_TabLayout = 2131690206;
 			
 			// aapt resource value: 0x7F0F02DF
-			public const int Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131690207;
+			public const int Widget_MaterialComponents_TabLayout_Colored = 2131690207;
 			
 			// aapt resource value: 0x7F0F02E0
-			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox = 2131690208;
+			public const int Widget_MaterialComponents_TabLayout_PrimarySurface = 2131690208;
 			
 			// aapt resource value: 0x7F0F02E1
-			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131690209;
+			public const int Widget_MaterialComponents_TextInputEditText_FilledBox = 2131690209;
 			
 			// aapt resource value: 0x7F0F02E2
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox = 2131690210;
+			public const int Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131690210;
 			
 			// aapt resource value: 0x7F0F02E3
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = 2131690211;
+			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox = 2131690211;
 			
 			// aapt resource value: 0x7F0F02E4
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = 2131690212;
+			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131690212;
 			
 			// aapt resource value: 0x7F0F02E5
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = 2131690213;
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox = 2131690213;
 			
 			// aapt resource value: 0x7F0F02E6
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox = 2131690214;
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = 2131690214;
 			
 			// aapt resource value: 0x7F0F02E7
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = 2131690215;
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = 2131690215;
 			
 			// aapt resource value: 0x7F0F02E8
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = 2131690216;
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = 2131690216;
 			
 			// aapt resource value: 0x7F0F02E9
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = 2131690217;
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox = 2131690217;
 			
 			// aapt resource value: 0x7F0F02EA
-			public const int Widget_MaterialComponents_TextView = 2131690218;
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = 2131690218;
 			
 			// aapt resource value: 0x7F0F02EB
-			public const int Widget_MaterialComponents_TimePicker = 2131690219;
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = 2131690219;
 			
 			// aapt resource value: 0x7F0F02EC
-			public const int Widget_MaterialComponents_TimePicker_Button = 2131690220;
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = 2131690220;
 			
 			// aapt resource value: 0x7F0F02ED
-			public const int Widget_MaterialComponents_TimePicker_Clock = 2131690221;
+			public const int Widget_MaterialComponents_TextView = 2131690221;
 			
 			// aapt resource value: 0x7F0F02EE
-			public const int Widget_MaterialComponents_TimePicker_Display = 2131690222;
+			public const int Widget_MaterialComponents_TimePicker = 2131690222;
 			
 			// aapt resource value: 0x7F0F02EF
-			public const int Widget_MaterialComponents_TimePicker_Display_TextInputEditText = 2131690223;
+			public const int Widget_MaterialComponents_TimePicker_Button = 2131690223;
 			
 			// aapt resource value: 0x7F0F02F0
-			public const int Widget_MaterialComponents_TimePicker_ImageButton = 2131690224;
+			public const int Widget_MaterialComponents_TimePicker_Clock = 2131690224;
 			
 			// aapt resource value: 0x7F0F02F1
-			public const int Widget_MaterialComponents_TimePicker_ImageButton_ShapeAppearance = 2131690225;
+			public const int Widget_MaterialComponents_TimePicker_Display = 2131690225;
 			
 			// aapt resource value: 0x7F0F02F2
-			public const int Widget_MaterialComponents_Toolbar = 2131690226;
+			public const int Widget_MaterialComponents_TimePicker_Display_TextInputEditText = 2131690226;
 			
 			// aapt resource value: 0x7F0F02F3
-			public const int Widget_MaterialComponents_Toolbar_Primary = 2131690227;
+			public const int Widget_MaterialComponents_TimePicker_ImageButton = 2131690227;
 			
 			// aapt resource value: 0x7F0F02F4
-			public const int Widget_MaterialComponents_Toolbar_PrimarySurface = 2131690228;
+			public const int Widget_MaterialComponents_TimePicker_ImageButton_ShapeAppearance = 2131690228;
 			
 			// aapt resource value: 0x7F0F02F5
-			public const int Widget_MaterialComponents_Toolbar_Surface = 2131690229;
+			public const int Widget_MaterialComponents_Toolbar = 2131690229;
 			
 			// aapt resource value: 0x7F0F02F6
-			public const int Widget_MaterialComponents_Tooltip = 2131690230;
+			public const int Widget_MaterialComponents_Toolbar_Primary = 2131690230;
 			
 			// aapt resource value: 0x7F0F02F7
-			public const int Widget_Support_CoordinatorLayout = 2131690231;
+			public const int Widget_MaterialComponents_Toolbar_PrimarySurface = 2131690231;
+			
+			// aapt resource value: 0x7F0F02F8
+			public const int Widget_MaterialComponents_Toolbar_Surface = 2131690232;
+			
+			// aapt resource value: 0x7F0F02F9
+			public const int Widget_MaterialComponents_Tooltip = 2131690233;
+			
+			// aapt resource value: 0x7F0F02FA
+			public const int Widget_Support_CoordinatorLayout = 2131690234;
 			
 			static Style()
 			{
