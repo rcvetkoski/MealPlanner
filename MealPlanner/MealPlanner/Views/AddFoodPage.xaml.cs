@@ -58,8 +58,9 @@ namespace MealPlanner.Views
             rsPopupBindingContext = rSPopupAlimentDetailPage.BindingContext as AlimentPopUpViewModel;
 
             rSPopup.SetCustomView(rSPopupAlimentDetailPage);
-            rSPopup.AddAction("Cancel", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive);
-            rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(async () => 
+
+            // Add
+            rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral, new Command(async () => 
             {
                 var vm = this.BindingContext as AddFoodViewModel;
 
@@ -113,6 +114,32 @@ namespace MealPlanner.Views
                     await Application.Current.MainPage.Navigation.PopAsync();
                 }
 
+            }));
+
+            // Edit
+            rSPopup.AddAction("Edit", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(() =>
+            {
+                if (existingAliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
+                {
+                    FoodPage foodPage = new FoodPage();
+                    var foodPageBindingContext = foodPage.BindingContext as FoodViewModel;
+
+                    // Fill informations
+                    foodPageBindingContext.IsNew = false;
+                    foodPageBindingContext.Id = existingAliment.Id;
+                    foodPageBindingContext.Name = existingAliment.Name;
+                    foodPageBindingContext.ServingSize = existingAliment.ServingSize;
+                    foodPageBindingContext.Unit = existingAliment.Unit;
+                    foodPageBindingContext.Proteins = existingAliment.Proteins;
+                    foodPageBindingContext.Carbs = existingAliment.Carbs;
+                    foodPageBindingContext.Fats = existingAliment.Fats;
+                    foodPageBindingContext.Calories = existingAliment.Calories;
+
+
+                    App.Current.MainPage.Navigation.PushAsync(foodPage);
+                }
+                else
+                    App.Current.MainPage.Navigation.PushAsync(new MealPage());
             }));
             rSPopup.Show();
         }

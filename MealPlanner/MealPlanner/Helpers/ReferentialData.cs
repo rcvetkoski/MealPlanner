@@ -101,13 +101,30 @@ namespace MealPlanner.Helpers
 
 
             // Add aliments to DayMeal if any
+            PopulateDayMeals();
+
+            // Add foods to Meal
+            var MealFoods = App.DataBaseRepo.GetAllMealFoodsAsync().Result;
+            foreach (MealFood mealFood in MealFoods)
+            {
+                Meal meal = Meals.Where(x=> x.Id == mealFood.MealId).FirstOrDefault();
+                Food food = Foods.Where(x => x.Id == mealFood.FoodId).FirstOrDefault();
+
+                if(meal != null)
+                    meal.Foods.Add(food);
+            }
+        }
+
+
+        private void PopulateDayMeals()
+        {
             DayMealAliments = App.DataBaseRepo.GetAllDayMealAlimentsAsync().Result.ToObservableCollection();
-            foreach(DayMealAliment dayMealAliment in DayMealAliments)
+            foreach (DayMealAliment dayMealAliment in DayMealAliments)
             {
                 DayMeal dayMeal = DayMeals.Where(x => x.Id == dayMealAliment.DayMealId).FirstOrDefault();
                 IAliment existingAliment = Aliments.Where(x => x.Id == dayMealAliment.AlimentId && x.AlimentType == dayMealAliment.AlimentType).FirstOrDefault();
 
-                if(existingAliment != null)
+                if (existingAliment != null)
                 {
                     var ratio = dayMealAliment.ServingSize / existingAliment.OriginalServingSize;
                     IAliment aliment = CreateAndCopyAlimentProperties(existingAliment, ratio);
@@ -122,18 +139,8 @@ namespace MealPlanner.Helpers
                     DaylyCalories += aliment.Calories;
                 }
             }
-
-            // Add foods to Meal
-            var MealFoods = App.DataBaseRepo.GetAllMealFoodsAsync().Result;
-            foreach (MealFood mealFood in MealFoods)
-            {
-                Meal meal = Meals.Where(x=> x.Id == mealFood.MealId).FirstOrDefault();
-                Food food = Foods.Where(x => x.Id == mealFood.FoodId).FirstOrDefault();
-
-                if(meal != null)
-                    meal.Foods.Add(food);
-            }
         }
+
 
         public IAliment CreateAndCopyAlimentProperties(IAliment existingAliment, double ratio)
         {
@@ -157,8 +164,6 @@ namespace MealPlanner.Helpers
 
             return aliment;
         }
-
-
         private void DayMeals_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             DaylyProteins += (e.NewItems[0] as DayMeal).Proteins;

@@ -107,9 +107,33 @@ namespace MealPlanner.ViewModels
                     rSPopup.Close();
                 }));
 
-                // Edit
-                rSPopup.AddAction("Edit", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive);
 
+                // Edit
+                rSPopup.AddAction("Edit", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(() => 
+                {
+                    if(aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
+                    {
+                        FoodPage foodPage = new FoodPage();
+                        var foodPageBindingContext = foodPage.BindingContext as FoodViewModel;
+
+                        // Fill informations
+                        foodPageBindingContext.IsNew = false;
+                        foodPageBindingContext.Name = aliment.Name;
+                        foodPageBindingContext.ServingSize = aliment.ServingSize;
+                        foodPageBindingContext.Unit = aliment.Unit;
+                        foodPageBindingContext.Proteins = aliment.Proteins;
+                        foodPageBindingContext.Carbs = aliment.Carbs;
+                        foodPageBindingContext.Fats = aliment.Fats;
+                        foodPageBindingContext.Calories = aliment.Calories;
+
+
+                        App.Current.MainPage.Navigation.PushAsync(foodPage);
+                    }
+                    else
+                        App.Current.MainPage.Navigation.PushAsync(new MealPage());
+                }));
+
+                // Close
                 rSPopup.Show();
             }
             else if (aliment is Food)

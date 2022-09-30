@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MealPlanner.ViewModels"
              xmlns:controls="clr-namespace:MealPlanner.Controls" 
-             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
+             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
+             xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              x:Class="MealPlanner.Views.FoodPage"
              Title="{Binding Title}">
 
@@ -14,6 +15,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Accent">#96d1ff</Color>
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -114,7 +116,9 @@
                 </Grid>
 
 
-                <Button BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Text="Save" Command="{Binding SaveCommand}"/>
+                <Button BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Text="Save" Command="{Binding SaveCommand}"/>
+                <Button BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Text="Update" Command="{Binding UpdateCommand}"/>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -187,17 +187,42 @@
                                         <BoxView HeightRequest="1" BackgroundColor="LightGray"/>
 
                                         <StackLayout Orientation="Horizontal">
-                                            <Label FontAttributes="Bold" FontSize="Caption" Text="Proteins :" VerticalOptions="Center"></Label>
-                                            <Label FontAttributes="Bold" FontSize="Caption" Text="{Binding Proteins, StringFormat='{0:N1}'}" VerticalOptions="Center"></Label>
+                                            <Label FontAttributes="Bold" FontSize="Caption" VerticalOptions="Center">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="P: "/>
+                                                        <Span Text="{Binding Proteins, StringFormat='{0:N1}'}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
 
-                                            <Label FontAttributes="Bold" FontSize="Caption" Text="Carbs :" VerticalOptions="Center"></Label>
-                                            <Label FontAttributes="Bold" FontSize="Caption" Text="{Binding Carbs, StringFormat='{0:N1}'}" VerticalOptions="Center"></Label>
+                                            <Label FontAttributes="Bold" FontSize="Caption" VerticalOptions="Center">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="C: "/>
+                                                        <Span Text="{Binding Carbs, StringFormat='{0:N1}'}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
 
-                                            <Label FontAttributes="Bold" FontSize="Caption" Text="Fats :" VerticalOptions="Center"></Label>
-                                            <Label FontAttributes="Bold" FontSize="Caption" Text="{Binding Fats, StringFormat='{0:N1}'}" VerticalOptions="Center"></Label>
+                                            <Label FontAttributes="Bold" FontSize="Caption" VerticalOptions="Center">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="F: "/>
+                                                        <Span Text="{Binding Fats, StringFormat='{0:N1}'}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
 
-                                            <Label HorizontalOptions="EndAndExpand" FontAttributes="Bold" Text="Calories :"></Label>
-                                            <Label FontAttributes="Bold" Text="{Binding Calories, StringFormat='{0:N1}'}"></Label>
+                                            <Label FontAttributes="Bold" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="Cal: "/>
+                                                        <Span Text="{Binding Calories, StringFormat='{0:N1}'}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>
