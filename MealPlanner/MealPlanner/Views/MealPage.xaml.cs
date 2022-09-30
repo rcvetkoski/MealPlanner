@@ -18,10 +18,5 @@ namespace MealPlanner.Views
         {
             InitializeComponent();
         }
-
-        private void AddFood_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new AddFoodPage((BindingContext as MealViewModel).CurrentMeal));
-        }
     }
 }

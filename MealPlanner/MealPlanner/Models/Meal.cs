@@ -13,8 +13,10 @@ namespace MealPlanner.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        private string name;
+        public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
+        private string description;
+        public string Description { get { return description; } set { description = value; OnPropertyChanged("Description"); } }
 
         private double calories;
         public double Calories { get { return calories; } set { calories = value; OnPropertyChanged("Calories"); } }
@@ -33,12 +35,14 @@ namespace MealPlanner.Models
         public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); } }
         public int DayMealAlimentID { get; set; } = 0;
 
-        public AlimentUnitEnum Unit { get; set; }
+        private AlimentUnitEnum unit;
+        public AlimentUnitEnum Unit { get { return unit; } set { unit = value; OnPropertyChanged("AlimentUnitEnum"); } }
         public AlimentTypeEnum AlimentType { get { return AlimentTypeEnum.Meal; } }
 
 
+        private ObservableCollection<Food> food;
         [Ignore]
-        public ObservableCollection<Food> Foods { get; set; }
+        public ObservableCollection<Food> Foods { get { return food; } set { food = value; OnPropertyChanged("Foods"); } }
 
         public Meal()
         {

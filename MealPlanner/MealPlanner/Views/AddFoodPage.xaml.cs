@@ -91,7 +91,6 @@ namespace MealPlanner.Views
                     dayMealAliment.AlimentType = aliment.AlimentType;
 
                     await App.DataBaseRepo.AddDayMealAlimentAsync(dayMealAliment);
-                    await Application.Current.MainPage.Navigation.PopAsync();
                 }
                 else
                 {
@@ -111,9 +110,10 @@ namespace MealPlanner.Views
                     vm.CurrentMeal.Fats += aliment.Fats;
 
                     await App.DataBaseRepo.AddMealFoodAsync(mealFood);
-                    await Application.Current.MainPage.Navigation.PopAsync();
                 }
 
+                rSPopup.Close();
+                await Application.Current.MainPage.Navigation.PopAsync();
             }));
 
             // Edit
@@ -139,7 +139,16 @@ namespace MealPlanner.Views
                     App.Current.MainPage.Navigation.PushAsync(foodPage);
                 }
                 else
-                    App.Current.MainPage.Navigation.PushAsync(new MealPage());
+                {
+                    MealPage mealPage = new MealPage();
+                    var mealPageBindingContext = mealPage.BindingContext as MealViewModel;
+
+                    // Fill informations
+                    mealPageBindingContext.IsNew = false;
+                    mealPageBindingContext.CurrentMeal = existingAliment as Meal;
+
+                    App.Current.MainPage.Navigation.PushAsync(mealPage);
+                }
             }));
             rSPopup.Show();
         }

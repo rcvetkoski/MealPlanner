@@ -47,6 +47,7 @@ namespace MealPlanner.ViewModels
             RefData.DaylyCalories -= aliment.Calories;
         }
 
+
         public ICommand UpdateAlimentCommand { get; set; }
         private void UpdateAliment(object[] objects)
         {
@@ -108,30 +109,18 @@ namespace MealPlanner.ViewModels
                 }));
 
 
-                // Edit
-                rSPopup.AddAction("Edit", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(() => 
+                // Delette
+                rSPopup.AddAction("Delette", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Destructive, new Command(() => 
                 {
                     if(aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
                     {
-                        FoodPage foodPage = new FoodPage();
-                        var foodPageBindingContext = foodPage.BindingContext as FoodViewModel;
-
-                        // Fill informations
-                        foodPageBindingContext.IsNew = false;
-                        foodPageBindingContext.Name = aliment.Name;
-                        foodPageBindingContext.ServingSize = aliment.ServingSize;
-                        foodPageBindingContext.Unit = aliment.Unit;
-                        foodPageBindingContext.Proteins = aliment.Proteins;
-                        foodPageBindingContext.Carbs = aliment.Carbs;
-                        foodPageBindingContext.Fats = aliment.Fats;
-                        foodPageBindingContext.Calories = aliment.Calories;
-
-
-                        App.Current.MainPage.Navigation.PushAsync(foodPage);
+                        DeletteAliment(objects);
+                        rSPopup.Close();
                     }
                     else
                         App.Current.MainPage.Navigation.PushAsync(new MealPage());
                 }));
+
 
                 // Close
                 rSPopup.Show();

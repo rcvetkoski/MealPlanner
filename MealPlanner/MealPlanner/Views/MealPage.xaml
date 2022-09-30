@@ -4,8 +4,15 @@
              xmlns:controls="clr-namespace:MealPlanner.Controls"
              xmlns:vm="clr-namespace:MealPlanner.ViewModels" 
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
-             xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
+             xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" 
+             xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              x:Class="MealPlanner.Views.MealPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.BindingContext>
         <vm:MealViewModel/>
@@ -15,12 +22,12 @@
         <ScrollView Orientation="Vertical">
             <StackLayout Margin="10">
                 <Label Text="Meal Page!" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
-                <rsControls:RSEntry Placeholder="Name" Text="{Binding Name}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry x:Name="ServingSize" Placeholder="Serving Size" Text="{Binding ServingSize}" CustomUnit="g"/>
-                <rsControls:RSEnumPicker x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding Unit}"/>
-                <rsControls:RSEditor Placeholder="Description" Text="{Binding Description}" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSEntry Placeholder="Name" Text="{Binding CurrentMeal.Name}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry x:Name="ServingSize" Placeholder="Serving Size" Text="{Binding CurrentMeal.ServingSize}"/>
+                <rsControls:RSEnumPicker x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding CurrentMeal.Unit}"/>
+                <rsControls:RSEditor Placeholder="Description" Text="{Binding CurrentMeal.Description}" IsPlaceholderAlwaysFloating="True"/>
 
-                <Button CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Clicked="AddFood_Clicked"/>
+                <Button CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Command="{Binding AddFoodCommand}"/>
 
                 <CollectionView ItemsSource="{Binding CurrentMeal.Foods}" HeightRequest="150">
                     <CollectionView.ItemTemplate>
@@ -135,7 +142,9 @@
                     </Frame>
                 </Grid>
 
-                <Button CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Command="{Binding SaveCommand}"/>
+                <Button CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Command="{Binding SaveCommand}"/>
+                <Button CornerRadius="10" Text="Update" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Command="{Binding UpdateCommand}"/>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
