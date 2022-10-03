@@ -16,6 +16,7 @@ namespace MealPlanner.ViewModels
             Title = "Home";
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             UpdateAlimentCommand = new Command<object[]>(UpdateAliment);
+            AddAlimentCommand = new Command<DayMeal>(AddAliment);
         }
 
         public ICommand DeletteAlimentCommand { get; set; } 
@@ -127,6 +128,15 @@ namespace MealPlanner.ViewModels
             }
             else if (aliment is Food)
                 App.Current.MainPage.Navigation.PushAsync(new FoodPage());
+        }
+
+
+        public ICommand AddAlimentCommand { get; set; }
+        private void AddAliment(DayMeal dayMeal)
+        {
+            AddAlimentPage addAlimentPage = new AddAlimentPage();
+            (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedMealFood = dayMeal;
+            App.Current.MainPage.Navigation.PushAsync(addAlimentPage);
         }
     }
 }

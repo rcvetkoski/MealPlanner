@@ -21,13 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\AddAlimentPage.xaml.cs">
+      <DependentUpon>AddAlimentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\AddFoodPage.xaml">
+    <EmbeddedResource Update="Views\AddAlimentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\FoodPage.xaml">

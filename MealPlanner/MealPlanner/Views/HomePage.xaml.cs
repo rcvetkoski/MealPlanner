@@ -16,10 +16,5 @@ namespace MealPlanner.Views
         {
             InitializeComponent();
         }
-
-        private void AddFood_Tapped(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new AddFoodPage((e as TappedEventArgs).Parameter as DayMeal));
-        }
     }
 }

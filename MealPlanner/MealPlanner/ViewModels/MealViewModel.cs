@@ -112,7 +112,9 @@ namespace MealPlanner.ViewModels
         public ICommand AddFoodCommand { get; set; }
         public void AddFood()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new AddFoodPage(CurrentMeal));
+            AddAlimentPage addAlimentPage = new AddAlimentPage();
+            (addAlimentPage.BindingContext as AddAlimentViewModel).CurrentMeal = this.CurrentMeal;
+            App.Current.MainPage.Navigation.PushAsync(addAlimentPage);
         }
     }
 }
