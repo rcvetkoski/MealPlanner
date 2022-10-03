@@ -10,9 +10,9 @@ namespace MealPlanner.ViewModels
 {
     public class AlimentPopUpViewModel : BaseViewModel
     {
-        private IAliment aliment;
+        private Aliment aliment;
 
-        public AlimentPopUpViewModel(IAliment selectedAliment)
+        public AlimentPopUpViewModel(Aliment selectedAliment)
         {
             var aliment = RefData.Aliments.Where(x=> x.Id == selectedAliment.Id && x.AlimentType == selectedAliment.AlimentType).FirstOrDefault();
 

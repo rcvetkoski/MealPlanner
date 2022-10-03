@@ -45,7 +45,7 @@ namespace MealPlanner.Views
 
         private void CollectionView_SelectionChanged(object sender, EventArgs e)
         {
-            IAliment existingAliment = (sender as Grid).BindingContext as IAliment;
+            Aliment existingAliment = (sender as Grid).BindingContext as Aliment;
             //bool answer = await Application.Current.MainPage.DisplayAlert(aliment.Name, aliment.Proteins + " p" + " " + aliment.Calories + " cal", "Add", "Close");
 
             RSPopup rSPopup = new RSPopup();
@@ -67,7 +67,7 @@ namespace MealPlanner.Views
                 if (vm.MealSwitchVisibility)
                 {
                     var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
-                    IAliment aliment = vm.RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
+                    Aliment aliment = vm.RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
 
                     var lastDayMealId = (BindingContext as AddFoodViewModel).RefData.DayMealAliments.OrderByDescending(x=> x.Id).FirstOrDefault();
                     if (lastDayMealId != null)
@@ -95,7 +95,7 @@ namespace MealPlanner.Views
                 else
                 {
                     var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
-                    IAliment aliment = vm.RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
+                    Aliment aliment = vm.RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
                     aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
 
                     MealFood mealFood = new MealFood();

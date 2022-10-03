@@ -99,7 +99,7 @@ namespace MealPlanner.ViewModels
             // Refresh food if used
             foreach(DayMeal dayMeal in RefData.DayMeals)
             {
-                foreach (IAliment aliment in dayMeal.Aliments)
+                foreach (Aliment aliment in dayMeal.Aliments)
                 {
                     dayMeal.Calories -= aliment.Calories;
 

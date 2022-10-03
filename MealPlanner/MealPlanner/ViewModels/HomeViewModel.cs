@@ -27,12 +27,12 @@ namespace MealPlanner.ViewModels
             if (objects.Count() < 2)
                 return;
 
-            if (!(objects[0] is DayMeal) || !(objects[1] is IAliment))
+            if (!(objects[0] is DayMeal) || !(objects[1] is Aliment))
                 return;
 
 
             DayMeal dayMeal = objects[0] as DayMeal;
-            IAliment aliment = objects[1] as IAliment;
+            Aliment aliment = objects[1] as Aliment;
 
             DayMealAliment dayMealAliment = App.DataBaseRepo.GetDayMealAlimentsAsync(aliment.AlimentType, dayMeal.Id, aliment.Id).Result.FirstOrDefault();
 
@@ -52,9 +52,9 @@ namespace MealPlanner.ViewModels
         private void UpdateAliment(object[] objects)
         {
             var dayMeal = objects[0] as DayMeal;
-            var aliment = objects[1] as IAliment;
+            var aliment = objects[1] as Aliment;
 
-            if (aliment is IAliment)
+            if (aliment is Aliment)
             {
                 RSPopup rSPopup = new RSPopup();
                 rSPopup.SetTitle(aliment.Name);

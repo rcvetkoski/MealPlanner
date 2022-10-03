@@ -20,7 +20,7 @@ namespace MealPlanner.Helpers
         public ObservableCollection<Meal> Meals { get; set; }
         public ObservableCollection<Food> Foods { get; set; }
         public ObservableCollection<MealFood> MealFoods { get; set; }
-        public ObservableCollection<IAliment> Aliments { get; set; }
+        public ObservableCollection<Aliment> Aliments { get; set; }
         public ObservableCollection<DayMealAliment> DayMealAliments { get; set; }
 
 
@@ -91,13 +91,13 @@ namespace MealPlanner.Helpers
 
 
             // Aliments
-            Aliments = new ObservableCollection<IAliment>();
+            Aliments = new ObservableCollection<Aliment>();
 
             foreach (Meal meal in Meals)
-                Aliments.Add(meal as IAliment);
+                Aliments.Add(meal as Aliment);
 
             foreach (Food food in Foods)
-                Aliments.Add(food as IAliment);
+                Aliments.Add(food as Aliment);
 
 
             // Add aliments to DayMeal if any
@@ -122,12 +122,12 @@ namespace MealPlanner.Helpers
             foreach (DayMealAliment dayMealAliment in DayMealAliments)
             {
                 DayMeal dayMeal = DayMeals.Where(x => x.Id == dayMealAliment.DayMealId).FirstOrDefault();
-                IAliment existingAliment = Aliments.Where(x => x.Id == dayMealAliment.AlimentId && x.AlimentType == dayMealAliment.AlimentType).FirstOrDefault();
+                Aliment existingAliment = Aliments.Where(x => x.Id == dayMealAliment.AlimentId && x.AlimentType == dayMealAliment.AlimentType).FirstOrDefault();
 
                 if (existingAliment != null)
                 {
                     var ratio = dayMealAliment.ServingSize / existingAliment.OriginalServingSize;
-                    IAliment aliment = CreateAndCopyAlimentProperties(existingAliment, ratio);
+                    Aliment aliment = CreateAndCopyAlimentProperties(existingAliment, ratio);
                     aliment.DayMealAlimentID = dayMealAliment.Id;
                     aliment.ServingSize = dayMealAliment.ServingSize;
 
@@ -142,9 +142,9 @@ namespace MealPlanner.Helpers
         }
 
 
-        public IAliment CreateAndCopyAlimentProperties(IAliment existingAliment, double ratio)
+        public Aliment CreateAndCopyAlimentProperties(Aliment existingAliment, double ratio)
         {
-            IAliment aliment;
+            Aliment aliment;
 
             if (existingAliment.AlimentType == Enums.AlimentTypeEnum.Meal)
                 aliment = new Meal();

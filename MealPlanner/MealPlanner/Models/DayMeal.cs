@@ -8,30 +8,12 @@ using System.Text;
 
 namespace MealPlanner.Models
 {
-    public class DayMeal : INotifyPropertyChanged
+    public class DayMeal : BaseModel
     {
         public DayMeal()
         {
-            Aliments = new ObservableCollection<IAliment>();
+            Aliments = new ObservableCollection<Aliment>();
             Aliments.CollectionChanged += Aliments_CollectionChanged;
-        }
-
-        private void Aliments_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            if(e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
-            {
-                Calories += (e.NewItems[0] as IAliment).Calories;
-                Proteins += (e.NewItems[0] as IAliment).Proteins;
-                Carbs += (e.NewItems[0] as IAliment).Carbs;
-                Fats += (e.NewItems[0] as IAliment).Fats;
-            }
-            else if(e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
-            {
-                Calories -= (e.OldItems[0] as IAliment).Calories;
-                Proteins -= (e.OldItems[0] as IAliment).Proteins;
-                Carbs -= (e.OldItems[0] as IAliment).Carbs;
-                Fats -= (e.OldItems[0] as IAliment).Fats;
-            }
         }
 
         [PrimaryKey, AutoIncrement]
@@ -58,20 +40,28 @@ namespace MealPlanner.Models
         public double Fats { get { return fats; } set { fats = value; OnPropertyChanged("Fats"); } }
 
         [Ignore]
-        public ObservableCollection<IAliment> Aliments { get; set; }
+        public ObservableCollection<Aliment> Aliments { get; set; }
 
-
-
-        #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        private void Aliments_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
+            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+            {
+                var newItem = e.NewItems[0] as Aliment;
 
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                Calories += newItem.Calories;
+                Proteins += newItem.Proteins;
+                Carbs += newItem.Carbs;
+                Fats += newItem.Fats;
+            }
+            else if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
+            {
+                var oldItem = e.OldItems[0] as Aliment;
+
+                Calories -= oldItem.Calories;
+                Proteins -= oldItem.Proteins;
+                Carbs -= oldItem.Carbs;
+                Fats -= oldItem.Fats;
+            }
         }
-        #endregion
     }
 }

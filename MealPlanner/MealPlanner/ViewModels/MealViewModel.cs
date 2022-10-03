@@ -82,7 +82,7 @@ namespace MealPlanner.ViewModels
                 dayMeal.Fats = 0;
                 double ratio = 1;
 
-                foreach (IAliment aliment in dayMeal.Aliments)
+                foreach (Aliment aliment in dayMeal.Aliments)
                 {
                     if (aliment.AlimentType == AlimentTypeEnum.Meal && aliment.Id == CurrentMeal.Id)
                     {

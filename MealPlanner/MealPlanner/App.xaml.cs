@@ -17,7 +17,6 @@ namespace MealPlanner
             InitializeComponent();
 
             DependencyService.Register<Database>();
-            DependencyService.Register<MockDataStore>();
             DataBaseRepo = DependencyService.Get<IDataBase>(DependencyFetchTarget.GlobalInstance);
             RefData = new ReferentialData();
             MainPage = new AppShell();

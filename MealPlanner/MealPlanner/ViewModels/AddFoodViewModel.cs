@@ -21,16 +21,16 @@ namespace MealPlanner.ViewModels
             foreach (var item in RefData.Foods)
                 searchResults.Add(item);
 
-            FilteredAliments = new ObservableCollection<IAliment>();
+            FilteredAliments = new ObservableCollection<Aliment>();
             FilteredAlimentsRefresh();
         }
 
-        public ObservableCollection<IAliment> FilteredAliments { get; set; } 
+        public ObservableCollection<Aliment> FilteredAliments { get; set; } 
         public void FilteredAlimentsRefresh()
         {
             FilteredAliments.Clear();
 
-            foreach (IAliment aliment in RefData.Aliments)
+            foreach (Aliment aliment in RefData.Aliments)
             {
                 if(IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Meal)
                     FilteredAliments.Add(aliment);

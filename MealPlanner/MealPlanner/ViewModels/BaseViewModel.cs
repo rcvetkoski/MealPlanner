@@ -14,8 +14,6 @@ namespace MealPlanner.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
-
         public ReferentialData RefData { get => App.RefData; }
 
         public AlimentUnitEnum AlimentUnitEnum { get; set; }
