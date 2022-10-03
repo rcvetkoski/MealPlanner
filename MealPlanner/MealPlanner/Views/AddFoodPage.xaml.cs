@@ -109,6 +109,7 @@ namespace MealPlanner.Views
                     vm.CurrentMeal.Carbs += aliment.Carbs;
                     vm.CurrentMeal.Fats += aliment.Fats;
 
+                    // TODO
                     await App.DataBaseRepo.AddMealFoodAsync(mealFood);
                 }
 

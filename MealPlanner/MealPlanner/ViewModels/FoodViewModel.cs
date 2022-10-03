@@ -101,17 +101,23 @@ namespace MealPlanner.ViewModels
             {
                 foreach (IAliment aliment in dayMeal.Aliments)
                 {
-                    if(aliment.AlimentType == AlimentTypeEnum.Food && aliment.Id == Id)
+                    dayMeal.Calories -= aliment.Calories;
+
+                    if (aliment.AlimentType == AlimentTypeEnum.Food && aliment.Id == Id)
                     {
+                        double ratio = aliment.ServingSize / food.ServingSize;
+
+
                         aliment.Name = food.Name;
-                        aliment.Proteins = food.Proteins;
-                        aliment.Carbs = food.Carbs;
-                        aliment.Fats = food.Fats;
-                        aliment.Calories = food.Calories;
+                        aliment.Proteins = food.Proteins * ratio;
+                        aliment.Carbs = food.Carbs * ratio;
+                        aliment.Fats = food.Fats * ratio;
+                        aliment.Calories = food.Calories * ratio;
                         aliment.OriginalServingSize = food.ServingSize;
-                        aliment.ServingSize = food.ServingSize;
                         aliment.Unit = food.Unit;
                     }
+
+                    dayMeal.Calories += aliment.Calories;
                 }
             }
 

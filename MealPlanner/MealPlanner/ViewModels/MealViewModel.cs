@@ -41,7 +41,7 @@ namespace MealPlanner.ViewModels
 
             AddFoodCommand = new Command(AddFood);
             SaveCommand = new Command(SaveFood);
-            UpdateCommand = new Command(UpdateFood);    
+            UpdateCommand = new Command(UpdateMeal);    
         }
 
         public ICommand SaveCommand { get; set; }
@@ -59,7 +59,7 @@ namespace MealPlanner.ViewModels
 
         public ICommand UpdateCommand { get; set; }
 
-        private async void UpdateFood()
+        private async void UpdateMeal()
         {
             if (CurrentMeal == null)
                 return;
@@ -68,25 +68,41 @@ namespace MealPlanner.ViewModels
 
             await App.DataBaseRepo.UpdateMealAsync(CurrentMeal);
 
-            // Refresh food if used
+
+            // TODO Add food to db if any new
+
+
+
+            // TODO Refresh meal in DayMeals
             foreach (DayMeal dayMeal in RefData.DayMeals)
             {
+                dayMeal.Calories = 0;
+                dayMeal.Proteins = 0;
+                dayMeal.Carbs = 0;
+                dayMeal.Fats = 0;
+                double ratio = 1;
+
                 foreach (IAliment aliment in dayMeal.Aliments)
                 {
                     if (aliment.AlimentType == AlimentTypeEnum.Meal && aliment.Id == CurrentMeal.Id)
                     {
+                        ratio = aliment.OriginalServingSize / CurrentMeal.OriginalServingSize;
+
                         aliment.Name = CurrentMeal.Name;
                         aliment.OriginalServingSize = CurrentMeal.ServingSize;
                         aliment.Unit = CurrentMeal.Unit;
 
 
-                        var ratio = aliment.ServingSize / aliment.OriginalServingSize;
-
-                        dayMeal.Calories = aliment.Calories * ratio;
-                        dayMeal.Proteins = aliment.Proteins * ratio;
-                        dayMeal.Carbs = aliment.Carbs * ratio;
-                        dayMeal.Fats = aliment.Fats * ratio;
+                        aliment.Calories = aliment.Calories * ratio;
+                        aliment.Proteins = aliment.Proteins * ratio;
+                        aliment.Carbs = aliment.Carbs * ratio;
+                        aliment.Fats = aliment.Fats * ratio;
                     }
+
+                    dayMeal.Calories += aliment.Calories;
+                    dayMeal.Proteins += aliment.Proteins;
+                    dayMeal.Carbs += aliment.Carbs;
+                    dayMeal.Fats += aliment.Fats;
                 }
             }
 
@@ -97,7 +113,6 @@ namespace MealPlanner.ViewModels
         public void AddFood()
         {
             Application.Current.MainPage.Navigation.PushAsync(new AddFoodPage(CurrentMeal));
-
         }
     }
 }

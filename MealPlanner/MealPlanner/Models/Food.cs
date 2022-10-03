@@ -28,7 +28,14 @@ namespace MealPlanner.Models
         public double OriginalServingSize { get; set; }
 
         private double servingSize;
-        public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); } }
+        public double ServingSize 
+        { 
+            get { return servingSize; } 
+            set 
+            { 
+                servingSize = value; OnPropertyChanged("ServingSize"); 
+            } 
+        }
         public int DayMealAlimentID { get; set; } = 0;
         public AlimentTypeEnum AlimentType { get { return AlimentTypeEnum.Food; } }
         public AlimentUnitEnum Unit { get; set; }
