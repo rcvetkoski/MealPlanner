@@ -80,8 +80,8 @@
                 </Grid>
 
                 <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto" ColumnDefinitions="2*, *" RowSpacing="0" Margin="5">
-                    <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" RSEntryStyle="FilledBorder" Text="{Binding AlimentServingSize}" Placeholder="Portion"/>
-                    <rsControls:RSEnumPicker Grid.Row="0" Grid.Column="1" x:TypeArguments="enums:AlimentUnitEnum" RSEntryStyle="FilledBorder" SelectedItem="{Binding AlimentUnit}" Placeholder="Unit" Margin="10,0,0,0"/>
+                    <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" RSEntryStyle="FilledBorder" Text="{Binding AlimentServingSize}" Placeholder="Portion" IsPlaceholderAlwaysFloating="True"/>
+                    <rsControls:RSEnumPicker Grid.Row="0" Grid.Column="1" x:TypeArguments="enums:AlimentUnitEnum" RSEntryStyle="FilledBorder" SelectedItem="{Binding AlimentUnit}" Placeholder="Unit" IsPlaceholderAlwaysFloating="True" Margin="10,0,0,0"/>
                 </Grid>
             </Grid>
         </StackLayout>

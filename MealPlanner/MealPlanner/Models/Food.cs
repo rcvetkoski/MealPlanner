@@ -10,6 +10,6 @@ namespace MealPlanner.Models
 {
     public class Food: Aliment
     {
-
+        public override AlimentTypeEnum AlimentType { get { return AlimentTypeEnum.Food; } }
     }
 }

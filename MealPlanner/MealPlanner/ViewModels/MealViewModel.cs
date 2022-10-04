@@ -72,7 +72,6 @@ namespace MealPlanner.ViewModels
             // TODO Add food to db if any new
 
 
-
             // TODO Refresh meal in DayMeals
             foreach (DayMeal dayMeal in RefData.DayMeals)
             {
@@ -114,6 +113,7 @@ namespace MealPlanner.ViewModels
         {
             AddAlimentPage addAlimentPage = new AddAlimentPage();
             (addAlimentPage.BindingContext as AddAlimentViewModel).CurrentMeal = this.CurrentMeal;
+            (addAlimentPage.BindingContext as AddAlimentViewModel).MealSwitchVisibility = false;
             App.Current.MainPage.Navigation.PushAsync(addAlimentPage);
         }
     }

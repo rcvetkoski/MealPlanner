@@ -20,5 +20,11 @@ namespace MealPlanner.Models
         {
             Foods = new ObservableCollection<Food>();
         }
+
+        private string description;
+        public string Description { get { return description; } set { description = value; OnPropertyChanged("Description"); }}      
+
+
+        public override AlimentTypeEnum AlimentType { get { return AlimentTypeEnum.Meal; } }
     }
 }

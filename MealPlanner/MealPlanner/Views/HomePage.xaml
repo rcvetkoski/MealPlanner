@@ -117,8 +117,10 @@
                                                             </SwipeItems>
                                                         </SwipeView.RightItems>
                                                         <!-- Content -->
-                                                        <Grid RowDefinitions="55, *" ColumnDefinitions="55, *">
-                                                            <ImageButton Grid.Row="0" Grid.Column="0" BackgroundColor="Gray" CornerRadius="8" WidthRequest="90" HeightRequest="90"
+                                                        <Grid RowDefinitions="55, *" ColumnDefinitions="55, *" Padding="0,0,10,0">
+                                                            <ImageButton Grid.Row="0" Grid.Column="0" BackgroundColor="Gray" CornerRadius="8" WidthRequest="100" HeightRequest="100"
+                                                                         Aspect="AspectFill"
+                                                                         Source="https://img-3.journaldesfemmes.fr/VZc5FuBsQDHA_n4h5ZleWEqiXk8=/1500x/smart/7c3781195e674ac9a892002a989a9354/ccmcms-jdf/16187568.jpg"
                                                                          Command="{Binding BindingContext.UpdateAlimentCommand, Source={x:Reference Home}}">
                                                                 <ImageButton.CommandParameter>
                                                                     <MultiBinding Converter="{StaticResource MultiBindingConverter}">

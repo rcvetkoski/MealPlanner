@@ -108,9 +108,13 @@ namespace MealPlanner.Helpers
             foreach (MealFood mealFood in MealFoods)
             {
                 Meal meal = Meals.Where(x=> x.Id == mealFood.MealId).FirstOrDefault();
-                Food food = Foods.Where(x => x.Id == mealFood.FoodId).FirstOrDefault();
+                Food existingFood = Foods.Where(x => x.Id == mealFood.FoodId).FirstOrDefault();
 
-                if(meal != null)
+                var ratio = mealFood.ServingSize / existingFood.OriginalServingSize;
+                Food food = CreateAndCopyAlimentProperties(existingFood, ratio) as Food;
+                food.ServingSize = mealFood.ServingSize;
+
+                if (meal != null)
                     meal.Foods.Add(food);
             }
         }

@@ -58,9 +58,6 @@ namespace MealPlanner.ViewModels
         private bool isMealChecked;
         public bool IsMealChecked { get { return isMealChecked; } set { isMealChecked = value; OnPropertyChanged("IsMealChecked"); FilteredAlimentsRefresh(); } }
 
-        public bool isLibraryChecked;
-        public bool IsLibraryChecked { get { return isLibraryChecked; } set { isLibraryChecked = value; OnPropertyChanged("IsLibraryChecked"); } }
-
 
 
         private List<Food> searchResults;

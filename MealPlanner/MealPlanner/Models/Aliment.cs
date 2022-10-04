@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Xamarin.Forms;
 
 namespace MealPlanner.Models
 {
-    public class Aliment : BaseModel
+    public abstract class Aliment : BaseModel
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -37,7 +38,9 @@ namespace MealPlanner.Models
             }
         }
         public int DayMealAlimentID { get; set; } = 0;
-        public AlimentTypeEnum AlimentType { get { return AlimentTypeEnum.Food; } }
+        [Ignore]
+        public ImageSource ImageSource { get; set; } = ImageSource.FromUri(new Uri("https://upload.wikimedia.org/wikipedia/en/5/58/Instagram_egg.jpg"));
+        public virtual AlimentTypeEnum AlimentType { get; }
         public AlimentUnitEnum Unit { get; set; }
     }
 }

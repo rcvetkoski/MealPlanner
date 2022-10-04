@@ -15,15 +15,12 @@
 
             <SearchBar x:Name="searchBar" Placeholder="Search for food" SearchCommand="{Binding PerformSearch}" SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
 
-            <Grid Margin="20" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
-                <RadioButton Grid.Column="0" Content="Food" IsChecked="{Binding IsFoodChecked}"/>
-                <RadioButton Grid.Column="1" Content="Meal" IsChecked="{Binding IsMealChecked}" IsVisible="{Binding MealSwitchVisibility}"/>
-                <RadioButton Grid.Column="2" Content="Library" IsChecked="{Binding IsLibraryChecked}"/>
+            <Grid Margin="10" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
+                <RadioButton Grid.Column="0" HorizontalOptions="CenterAndExpand" Content="Food" IsChecked="{Binding IsFoodChecked}"/>
+                <RadioButton Grid.Column="1" HorizontalOptions="CenterAndExpand" Content="Meal" IsChecked="{Binding IsMealChecked}" IsVisible="{Binding MealSwitchVisibility}"/>
+                <Button Grid.Column="2" HorizontalOptions="Center" CornerRadius="10" IsVisible="{Binding IsFoodChecked}"  FontSize="Micro" Text="Create Food" Command="{Binding CreateFoodCommand}"></Button>
+                <Button Grid.Column="2" HorizontalOptions="Center" CornerRadius="10" IsVisible="{Binding IsMealChecked}" FontSize="Micro" Text="Create Meal" Command="{Binding CreateMealCommand}"></Button>
             </Grid>
-
-
-            <Button HorizontalOptions="Center" CornerRadius="10" IsVisible="{Binding IsFoodChecked}"  FontSize="Micro" Text="Create Food" Command="{Binding CreateFoodCommand}"></Button>
-            <Button HorizontalOptions="Center" CornerRadius="10" IsVisible="{Binding IsMealChecked}" FontSize="Micro" Text="Create Meal" Command="{Binding CreateMealCommand}"></Button>
 
 
             <CollectionView x:Name="collectionView" ItemsSource="{Binding FilteredAliments}" Margin="10, 20, 10, 10">

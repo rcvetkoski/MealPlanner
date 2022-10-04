@@ -20,10 +20,10 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical">
-            <StackLayout Margin="10">
+        <ScrollView Orientation="Neither">
+            <Grid Margin="10" ColumnDefinitions="*, *, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
-                <rsControls:RSEntry Helper="Mandatory" Placeholder="Name" Text="{Binding Name}" FontAttributes="Bold" IsPlaceholderAlwaysFloating="True" />
+                <rsControls:RSEntry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Helper="Mandatory" Placeholder="Name" Text="{Binding Name}" FontAttributes="Bold" IsPlaceholderAlwaysFloating="True" />
 
                 <!--<Grid Margin="10" VerticalOptions="FillAndExpand">
                 <Frame Grid.Row="0" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
@@ -47,15 +47,15 @@
                 </Frame>
             </Grid>-->
 
-                <rsControls:RSNumericEntry Placeholder="Serving size" Text="{Binding ServingSize}" Helper="Mandatory" CustomUnit="g" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSEnumPicker x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Placeholder="Proteins" Text="{Binding Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Placeholder="Carbs" Text="{Binding Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Placeholder="Fats" Text="{Binding Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Placeholder="Calories" Text="{Binding Calories}" Helper="calories are calculated automatically if empty" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Serving size" Text="{Binding ServingSize}" Helper="Mandatory" CustomUnit="g" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="2" x:TypeArguments="enums:AlimentUnitEnum" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Placeholder="Proteins" Text="{Binding Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="1" Placeholder="Carbs" Text="{Binding Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="2" Placeholder="Fats" Text="{Binding Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Placeholder="Calories" Text="{Binding Calories}" Helper="calories are calculated automatically if empty" IsPlaceholderAlwaysFloating="True"/>
 
 
-                <Grid ColumnDefinitions="100, *" RowDefinitions="100, Auto" Margin="15">
+                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="100, *" RowDefinitions="100, Auto" Margin="15">
                     <controls:CircleCountdown 
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
@@ -66,14 +66,14 @@
                     StrokeWidth="10"/>
 
                     <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
-                        <Label HorizontalOptions="Center" Text="{Binding Calories}" FontAttributes="Bold"/>
+                        <Label HorizontalOptions="Center" Text="{Binding Calories, StringFormat='{0:N1}'}" FontAttributes="Bold"/>
                         <Label HorizontalOptions="Center" Text="of"/>
-                        <Label HorizontalOptions="Center" Text="{Binding RefData.User.TargetCalories}"/>
+                        <Label HorizontalOptions="Center" Text="{Binding RefData.User.TargetCalories, StringFormat='{0:N1}'}"/>
                     </StackLayout>
 
                     <Label Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Text="Calories"/>
 
-                    <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" BackgroundColor="White" Margin="4, 4, 4, 15" BorderColor="#f7f7f7" CornerRadius="12" Padding="0">
+                    <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" BackgroundColor="White" Margin="4, 4, 4, 15" HasShadow="False" BorderColor="LightGray" CornerRadius="12" Padding="0">
                         <Grid Margin="10" ColumnDefinitions="Auto, *, Auto, Auto">
 
                             <Label Grid.Row="0" Grid.Column="0" Text="Prot" VerticalOptions="Center"/>
@@ -87,39 +87,39 @@
                             <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="{Binding Proteins}"/>
+                                        <Span Text="{Binding Proteins, StringFormat='{0:N1}'}"/>
                                         <Span Text="   /"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetProteins}"/>
+                            <Label Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetProteins, StringFormat='{0:N1}'}"/>
                             <Label Grid.Row="1" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="{Binding Carbs}"/>
+                                        <Span Text="{Binding Carbs, StringFormat='{0:N1}'}"/>
                                         <Span Text="   /"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label Grid.Row="1" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetCarbs}"/>
+                            <Label Grid.Row="1" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetCarbs, StringFormat='{0:N1}'}"/>
                             <Label Grid.Row="2" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="{Binding Fats}"/>
+                                        <Span Text="{Binding Fats, StringFormat='{0:N1}'}"/>
                                         <Span Text="   /"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label Grid.Row="2" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetFats}"/>
+                            <Label Grid.Row="2" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetFats, StringFormat='{0:N1}'}"/>
                         </Grid>
                     </Frame>
                 </Grid>
 
 
-                <Button BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Text="Save" Command="{Binding SaveCommand}"/>
-                <Button BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Text="Update" Command="{Binding UpdateCommand}"/>
+                <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Text="Save" Command="{Binding SaveCommand}"/>
+                <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Text="Update" Command="{Binding UpdateCommand}"/>
 
-            </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
