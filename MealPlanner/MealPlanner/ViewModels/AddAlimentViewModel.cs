@@ -107,10 +107,9 @@ namespace MealPlanner.ViewModels
 
 
                     SelectedMealFood.Aliments.Add(aliment);
-                    RefData.DaylyProteins += rsPopupBindingContext.AlimentProteins;
-                    RefData.DaylyCarbs += rsPopupBindingContext.AlimentCarbs;
-                    RefData.DaylyFats += rsPopupBindingContext.AlimentFats;
-                    RefData.DaylyCalories += rsPopupBindingContext.AlimentCalories;
+
+                    // Update daily values
+                    RefData.UpdateDailyValues();
 
                     DayMealAliment dayMealAliment = new DayMealAliment();
                     dayMealAliment.DayMealId = SelectedMealFood.Id;
@@ -131,19 +130,11 @@ namespace MealPlanner.ViewModels
                     food.MealFoodId = lastMealFood != null ? lastMealFood.Id + 1 : 1;
 
 
-                    //MealFood mealFood = new MealFood();
-                    //mealFood.MealId = CurrentMeal.Id;
-                    //mealFood.FoodId = aliment.Id;
-                    //mealFood.ServingSize = aliment.ServingSize;
-
                     CurrentMeal.Foods.Add(food);
                     CurrentMeal.Calories += food.Calories;
                     CurrentMeal.Proteins += food.Proteins;
                     CurrentMeal.Carbs += food.Carbs;
                     CurrentMeal.Fats += food.Fats;
-
-                    // TODO
-                    //await App.DataBaseRepo.AddMealFoodAsync(mealFood);
                 }
 
                 rSPopup.Close();

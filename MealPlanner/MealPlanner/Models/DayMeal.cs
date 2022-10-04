@@ -13,7 +13,7 @@ namespace MealPlanner.Models
         public DayMeal()
         {
             Aliments = new ObservableCollection<Aliment>();
-            Aliments.CollectionChanged += Aliments_CollectionChanged;
+            //Aliments.CollectionChanged += Aliments_CollectionChanged;
         }
 
         [PrimaryKey, AutoIncrement]

@@ -42,10 +42,8 @@ namespace MealPlanner.ViewModels
 
             dayMeal.Aliments.Remove(aliment);
 
-            RefData.DaylyProteins -= aliment.Proteins;
-            RefData.DaylyCarbs -= aliment.Carbs;
-            RefData.DaylyFats -= aliment.Fats;
-            RefData.DaylyCalories -= aliment.Calories;
+            // Update daily values
+            RefData.UpdateDailyValues();
         }
 
 
@@ -70,12 +68,6 @@ namespace MealPlanner.ViewModels
                 // Update
                 rSPopup.AddAction("Update", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral, new Command(async () =>
                 {
-                    // Update daylyProgress
-                    RefData.DaylyProteins -= aliment.Proteins;
-                    RefData.DaylyCarbs -= aliment.Carbs;
-                    RefData.DaylyFats -= aliment.Fats;
-                    RefData.DaylyCalories -= aliment.ServingSize;
-
                     // Update dayMeal
                     dayMeal.Proteins -= aliment.Proteins;
                     dayMeal.Carbs -= aliment.Carbs;
@@ -89,18 +81,14 @@ namespace MealPlanner.ViewModels
                     aliment.Calories = rSPopupAlimentDetailPageBindingContext.AlimentCalories;
                     aliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
 
-                    // Update daylyProgress
-                    RefData.DaylyProteins += aliment.Proteins;
-                    RefData.DaylyCarbs += aliment.Carbs;
-                    RefData.DaylyFats += aliment.Fats;
-                    RefData.DaylyCalories += aliment.ServingSize;
-
                     // Update dayMeal
                     dayMeal.Proteins += aliment.Proteins;
                     dayMeal.Carbs += aliment.Carbs;
                     dayMeal.Fats += aliment.Fats;
                     dayMeal.Calories += aliment.Calories;
 
+                    // Update daily values
+                    RefData.UpdateDailyValues();
 
                     DayMealAliment dayMealAliment = await App.DataBaseRepo.GetDayMealAlimentAsync(aliment.DayMealAlimentId);
                     dayMealAliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;

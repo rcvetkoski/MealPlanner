@@ -138,10 +138,10 @@ namespace MealPlanner.Helpers
 
                     dayMeal?.Aliments.Add(aliment);
 
-                    DaylyProteins += aliment.Proteins;
-                    DaylyCarbs += aliment.Carbs;
-                    DaylyFats += aliment.Fats;
-                    DaylyCalories += aliment.Calories;
+                    DailyProteins += aliment.Proteins;
+                    DailyCarbs += aliment.Carbs;
+                    DailyFats += aliment.Fats;
+                    DailyCalories += aliment.Calories;
                 }
             }
         }
@@ -169,80 +169,71 @@ namespace MealPlanner.Helpers
 
             return aliment;
         }
-        private void DayMeals_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            DaylyProteins += (e.NewItems[0] as DayMeal).Proteins;
-            DaylyCarbs += (e.NewItems[0] as DayMeal).Carbs;
-            DaylyFats += (e.NewItems[0] as DayMeal).Fats;
-            DaylyCalories += (e.NewItems[0] as DayMeal).Calories;
-        }
 
-
-
-        private double daylyCalories;
-        public double DaylyCalories
+        private double dailyCalories;
+        public double DailyCalories
         {
             get
             {
-                return daylyCalories;
+                return dailyCalories;
             }
             set
             {
-                daylyCalories = value;
-                DaylyCaloriesProgress = daylyCalories / User.TargetCalories;
-                OnPropertyChanged("DaylyCalories");
-                OnPropertyChanged("DaylyCaloriesProgress");
+                dailyCalories = value;
+                DailyCaloriesProgress = dailyCalories / User.TargetCalories;
+                OnPropertyChanged("DailyCalories");
+                OnPropertyChanged("DailyCaloriesProgress");
             }
         }
-        public double DaylyCaloriesProgress { get; set; }
+        public double DailyCaloriesProgress { get; set; }
 
 
-        private double daylyProteins;
-        public double DaylyProteins
+        private double dailyProteins;
+        public double DailyProteins
         {
-            get { return daylyProteins; }
+            get { return dailyProteins; }
             set
             {
-                daylyProteins = value;
-                DaylyProteinProgress = daylyProteins / User.TargetProteins;
-                OnPropertyChanged("DaylyProteins");
-                OnPropertyChanged("DaylyProteinProgress");
+                dailyProteins = value;
+                DailyProteinProgress = dailyProteins / User.TargetProteins;
+                OnPropertyChanged("DailyProteins");
+                OnPropertyChanged("DailyProteinProgress");
             }
         }
-        public double DaylyProteinProgress { get; set; }
+        public double DailyProteinProgress { get; set; }
 
 
-        private double daylyCarbs;
-        public double DaylyCarbs
+        private double dailyCarbs;
+        public double DailyCarbs
         {
-            get { return daylyCarbs; }
+            get { return dailyCarbs; }
             set
             {
-                daylyCarbs = value;
-                DaylyCarbsProgress = daylyCarbs / User.TargetCarbs;
-                OnPropertyChanged("DaylyCarbs");
-                OnPropertyChanged("DaylyCarbsProgress");
+                dailyCarbs = value;
+                DailyCarbsProgress = dailyCarbs / User.TargetCarbs;
+                OnPropertyChanged("DailyCarbs");
+                OnPropertyChanged("DailyCarbsProgress");
             }
         }
-        public double DaylyCarbsProgress { get; set; }
+        public double DailyCarbsProgress { get; set; }
 
 
-        private double daylyFats;
-        public double DaylyFats
+        private double dailyFats;
+        public double DailyFats
         {
-            get { return daylyFats; }
+            get { return dailyFats; }
             set
             {
-                daylyFats = value;
-                DaylyFatsProgress = daylyFats / User.TargetFats;
-                OnPropertyChanged("DaylyFats");
-                OnPropertyChanged("DaylyFatsProgress");
+                dailyFats = value;
+                DailyFatsProgress = dailyFats / User.TargetFats;
+                OnPropertyChanged("DailyFats");
+                OnPropertyChanged("DailyFatsProgress");
             }
         }
-        public double DaylyFatsProgress { get; set; }
+        public double DailyFatsProgress { get; set; }
 
 
-        public void UpdateDayliValues()
+        public void UpdateDailyValues()
         {
             double proteins = 0;
             double carbs = 0;
@@ -252,15 +243,15 @@ namespace MealPlanner.Helpers
             foreach (DayMeal dayMeal in DayMeals)
             {
                 proteins += dayMeal.Proteins;
-                carbs += dayMeal.Proteins;
-                fats += dayMeal.Proteins;
-                calories += dayMeal.Proteins;
+                carbs += dayMeal.Carbs;
+                fats += dayMeal.Fats;
+                calories += dayMeal.Calories;
             }
 
-            DaylyProteins = proteins;
-            DaylyCarbs = carbs;
-            DaylyFats = fats;
-            daylyCalories = calories;
+            DailyProteins = proteins;
+            DailyCarbs = carbs;
+            DailyFats = fats;
+            DailyCalories = calories;
         }
 
         #region INotifyPropertyChanged

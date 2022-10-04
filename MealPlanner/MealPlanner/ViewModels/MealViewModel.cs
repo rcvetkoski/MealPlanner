@@ -104,29 +104,32 @@ namespace MealPlanner.ViewModels
                 dayMeal.Fats = 0;
                 double ratio = 1;
 
-                foreach (Aliment aliment in dayMeal.Aliments)
+                foreach (Meal meal in dayMeal.Aliments)
                 {
-                    if (aliment.AlimentType == AlimentTypeEnum.Meal && aliment.Id == CurrentMeal.Id)
+                    if (meal.Id == CurrentMeal.Id)
                     {
-                        ratio = aliment.OriginalServingSize / CurrentMeal.OriginalServingSize;
+                        ratio = meal.OriginalServingSize / CurrentMeal.OriginalServingSize;
 
-                        aliment.Name = CurrentMeal.Name;
-                        aliment.OriginalServingSize = CurrentMeal.ServingSize;
-                        aliment.Unit = CurrentMeal.Unit;
+                        meal.Name = CurrentMeal.Name;
+                        meal.OriginalServingSize = CurrentMeal.ServingSize;
+                        meal.Unit = CurrentMeal.Unit;
 
 
-                        aliment.Calories = aliment.Calories * ratio;
-                        aliment.Proteins = aliment.Proteins * ratio;
-                        aliment.Carbs = aliment.Carbs * ratio;
-                        aliment.Fats = aliment.Fats * ratio;
+                        meal.Calories = meal.Calories * ratio;
+                        meal.Proteins = meal.Proteins * ratio;
+                        meal.Carbs = meal.Carbs * ratio;
+                        meal.Fats = meal.Fats * ratio;
                     }
 
-                    dayMeal.Calories += aliment.Calories;
-                    dayMeal.Proteins += aliment.Proteins;
-                    dayMeal.Carbs += aliment.Carbs;
-                    dayMeal.Fats += aliment.Fats;
+                    dayMeal.Calories += meal.Calories;
+                    dayMeal.Proteins += meal.Proteins;
+                    dayMeal.Carbs += meal.Carbs;
+                    dayMeal.Fats += meal.Fats;
                 }
             }
+
+            // Update daily values
+            RefData.UpdateDailyValues();
 
             if (mealFood != null) { await App.DataBaseRepo.AddMealFoodAsync(mealFood); };
             await Application.Current.MainPage.Navigation.PopAsync();
