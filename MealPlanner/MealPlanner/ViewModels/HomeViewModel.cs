@@ -20,7 +20,7 @@ namespace MealPlanner.ViewModels
         }
 
         public ICommand DeletteAlimentCommand { get; set; } 
-        private void DeletteAliment(object[] objects)
+        private async void DeletteAliment(object[] objects)
         {
             if (objects == null)
                 return;
@@ -35,12 +35,20 @@ namespace MealPlanner.ViewModels
             DayMeal dayMeal = objects[0] as DayMeal;
             Aliment aliment = objects[1] as Aliment;
 
-            DayMealAliment dayMealAliment = App.DataBaseRepo.GetDayMealAlimentsAsync(aliment.AlimentType, dayMeal.Id, aliment.Id).Result.FirstOrDefault();
+            DayMealAliment dayMealAliment = await App.DataBaseRepo.GetDayMealAlimentAsync(aliment.DayMealAlimentId);
 
             if(dayMealAliment != null)
-                App.DataBaseRepo.DeleteDayMealAlimentAsync(dayMealAliment);
+            {
+                await App.DataBaseRepo.DeleteDayMealAlimentAsync(dayMealAliment);
+                var realDayMealAliment = RefData.DayMealAliments.Where(x => x.Id == dayMealAliment.Id).FirstOrDefault();
+                if(realDayMealAliment != null)
+                    RefData.DayMealAliments.Remove(realDayMealAliment);
+            }
 
             dayMeal.Aliments.Remove(aliment);
+
+            // Update dayMeal values
+            RefData.UpdateDayMealValues(dayMeal);
 
             // Update daily values
             RefData.UpdateDailyValues();
@@ -68,28 +76,19 @@ namespace MealPlanner.ViewModels
                 // Update
                 rSPopup.AddAction("Update", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral, new Command(async () =>
                 {
-                    // Update dayMeal
-                    dayMeal.Proteins -= aliment.Proteins;
-                    dayMeal.Carbs -= aliment.Carbs;
-                    dayMeal.Fats -= aliment.Fats;
-                    dayMeal.Calories -= aliment.Calories;
-
-
                     aliment.Proteins = rSPopupAlimentDetailPageBindingContext.AlimentProteins;
                     aliment.Carbs = rSPopupAlimentDetailPageBindingContext.AlimentCarbs;
                     aliment.Fats = rSPopupAlimentDetailPageBindingContext.AlimentFats;
                     aliment.Calories = rSPopupAlimentDetailPageBindingContext.AlimentCalories;
                     aliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
 
-                    // Update dayMeal
-                    dayMeal.Proteins += aliment.Proteins;
-                    dayMeal.Carbs += aliment.Carbs;
-                    dayMeal.Fats += aliment.Fats;
-                    dayMeal.Calories += aliment.Calories;
+                    // Update dayMeal values
+                    RefData.UpdateDayMealValues(dayMeal);
 
                     // Update daily values
                     RefData.UpdateDailyValues();
 
+                    var al = aliment;
                     DayMealAliment dayMealAliment = await App.DataBaseRepo.GetDayMealAlimentAsync(aliment.DayMealAlimentId);
                     dayMealAliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
                     await App.DataBaseRepo.UpdateDayMealAliment(dayMealAliment);
@@ -123,7 +122,7 @@ namespace MealPlanner.ViewModels
         private void AddAliment(DayMeal dayMeal)
         {
             AddAlimentPage addAlimentPage = new AddAlimentPage();
-            (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedMealFood = dayMeal;
+            (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedDayMeal = dayMeal;
             App.Current.MainPage.Navigation.PushAsync(addAlimentPage);
         }
     }

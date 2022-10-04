@@ -4,6 +4,7 @@ using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -41,7 +42,8 @@ namespace MealPlanner.ViewModels
 
             AddFoodCommand = new Command(AddFood);
             SaveCommand = new Command(SaveFood);
-            UpdateCommand = new Command(UpdateMeal);    
+            UpdateCommand = new Command(UpdateMeal);
+            DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
         }
 
         public ICommand SaveCommand { get; set; }
@@ -104,9 +106,9 @@ namespace MealPlanner.ViewModels
                 dayMeal.Fats = 0;
                 double ratio = 1;
 
-                foreach (Meal meal in dayMeal.Aliments)
+                foreach (Aliment meal in dayMeal.Aliments)
                 {
-                    if (meal.Id == CurrentMeal.Id)
+                    if (meal.AlimentType == AlimentTypeEnum.Meal && meal.Id == CurrentMeal.Id)
                     {
                         ratio = meal.OriginalServingSize / CurrentMeal.OriginalServingSize;
 
@@ -142,6 +144,24 @@ namespace MealPlanner.ViewModels
             (addAlimentPage.BindingContext as AddAlimentViewModel).CurrentMeal = this.CurrentMeal;
             (addAlimentPage.BindingContext as AddAlimentViewModel).MealSwitchVisibility = false;
             App.Current.MainPage.Navigation.PushAsync(addAlimentPage);
+        }
+
+
+        public ICommand DeletteAlimentCommand { get; set; }
+        private async void DeletteAliment(object[] objects)
+        {
+            Meal meal = objects[0] as Meal;
+            Food food = objects[1] as Food;
+
+            meal.Foods.Remove(food);
+
+            var mealFood = RefData.MealFoods.Where(x => x.Id == food.MealFoodId).FirstOrDefault();
+
+            if(mealFood != null)
+            {
+                RefData.MealFoods.Remove(mealFood);
+                await App.DataBaseRepo.DeleteMealFoodAsync(mealFood);
+            }
         }
     }
 }

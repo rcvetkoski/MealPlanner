@@ -1,5 +1,6 @@
 ﻿using MealPlanner.Models;
 using MealPlanner.Views;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -49,7 +50,7 @@ namespace MealPlanner.ViewModels
         private bool mealSwitchVisibility;
         public bool MealSwitchVisibility { get { return mealSwitchVisibility; } set { mealSwitchVisibility = value; OnPropertyChanged("MealSwitchVisibility"); } }
 
-        public DayMeal SelectedMealFood { get; set; }
+        public DayMeal SelectedDayMeal { get; set; }
         public Meal CurrentMeal { get; set; }
 
         private bool isFoodChecked;
@@ -96,28 +97,28 @@ namespace MealPlanner.ViewModels
                 {
                     var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
                     Aliment aliment = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
-
-                    var lastDayMealId = RefData.DayMealAliments.OrderByDescending(x => x.Id).FirstOrDefault();
-                    if (lastDayMealId != null)
-                        aliment.DayMealAlimentId = lastDayMealId.Id + 1;
-                    else
-                        aliment.DayMealAlimentId = 1;
-
                     aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
+                    SelectedDayMeal.Aliments.Add(aliment);
 
-
-                    SelectedMealFood.Aliments.Add(aliment);
+                    // Update dayMeal values
+                    RefData.UpdateDayMealValues(SelectedDayMeal);
 
                     // Update daily values
                     RefData.UpdateDailyValues();
 
                     DayMealAliment dayMealAliment = new DayMealAliment();
-                    dayMealAliment.DayMealId = SelectedMealFood.Id;
+                    dayMealAliment.DayMealId = SelectedDayMeal.Id;
                     dayMealAliment.AlimentId = aliment.Id;
                     dayMealAliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
                     dayMealAliment.AlimentType = aliment.AlimentType;
 
+                    // Save to db
                     await App.DataBaseRepo.AddDayMealAlimentAsync(dayMealAliment);
+
+                    // Asign DayMealAlimentId to aliment and add it to DayMealAliments
+                    var lastItem = App.DataBaseRepo.GetAllDayMealAlimentsAsync().Result.OrderByDescending(x => x.Id).FirstOrDefault();
+                    aliment.DayMealAlimentId = lastItem.Id;
+                    RefData.DayMealAliments.Add(dayMealAliment);
                 }
                 else // When adding food to meal
                 {
@@ -125,6 +126,7 @@ namespace MealPlanner.ViewModels
                     Food food = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio) as Food;
                     food.ServingSize = rsPopupBindingContext.AlimentServingSize;
 
+                    // TODO get real MealFoodId
                     // Set MealFoodId and validate it later if the meal is saved
                     var lastMealFood = RefData.MealFoods.LastOrDefault();
                     food.MealFoodId = lastMealFood != null ? lastMealFood.Id + 1 : 1;

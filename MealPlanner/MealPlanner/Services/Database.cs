@@ -2,7 +2,9 @@
 using MealPlanner.Models;
 using SQLite;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,8 +48,6 @@ namespace MealPlanner.Services
                 return Path.Combine(basePath, DatabaseFilename);
             }
         }
-
-
 
         #region User
 

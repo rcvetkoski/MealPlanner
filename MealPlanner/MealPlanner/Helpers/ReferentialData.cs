@@ -138,6 +138,10 @@ namespace MealPlanner.Helpers
 
                     dayMeal?.Aliments.Add(aliment);
 
+                    // Update dayMeal values
+                    UpdateDayMealValues(dayMeal);
+
+                    // Update daily values
                     DailyProteins += aliment.Proteins;
                     DailyCarbs += aliment.Carbs;
                     DailyFats += aliment.Fats;
@@ -252,6 +256,27 @@ namespace MealPlanner.Helpers
             DailyCarbs = carbs;
             DailyFats = fats;
             DailyCalories = calories;
+        }
+
+        public void UpdateDayMealValues(DayMeal dayMeal)
+        {
+            double proteins = 0;
+            double carbs = 0;
+            double fats = 0;
+            double calories = 0;
+
+            foreach (Aliment aliment in dayMeal.Aliments)
+            {
+                proteins += aliment.Proteins;
+                carbs += aliment.Carbs;
+                fats += aliment.Fats;
+                calories += aliment.Calories;
+            }
+
+            dayMeal.Proteins = proteins;
+            dayMeal.Carbs = carbs;
+            dayMeal.Fats = fats;
+            dayMeal.Calories = calories;
         }
 
         #region INotifyPropertyChanged

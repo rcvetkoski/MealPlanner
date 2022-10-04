@@ -101,12 +101,9 @@ namespace MealPlanner.ViewModels
             {
                 foreach (Aliment aliment in dayMeal.Aliments)
                 {
-                    dayMeal.Calories -= aliment.Calories;
-
                     if (aliment.AlimentType == AlimentTypeEnum.Food && aliment.Id == Id)
                     {
                         double ratio = aliment.ServingSize / food.ServingSize;
-
 
                         aliment.Name = food.Name;
                         aliment.Proteins = food.Proteins * ratio;
@@ -116,10 +113,14 @@ namespace MealPlanner.ViewModels
                         aliment.OriginalServingSize = food.ServingSize;
                         aliment.Unit = food.Unit;
                     }
-
-                    dayMeal.Calories += aliment.Calories;
                 }
+
+                // Update dayMeal values
+                RefData.UpdateDayMealValues(dayMeal);
             }
+
+            // Update daily values
+            RefData.UpdateDailyValues();
 
             await Application.Current.MainPage.Navigation.PopAsync();
         }

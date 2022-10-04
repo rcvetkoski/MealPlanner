@@ -6,11 +6,13 @@
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" 
              xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
+             x:Name="mealPage"
              x:Class="MealPlanner.Views.MealPage">
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converters:MultiBindingConverter x:Key="MultiBindingConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -34,52 +36,67 @@
                 <CollectionView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding CurrentMeal.Foods}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Margin="2" RowDefinitions="Auto, Auto, 1" ColumnDefinitions="*,Auto,Auto,Auto">
-                                <Label Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
-                                <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="{Binding ServingSize, StringFormat='{0:N1}'}"/>
-                                            <Span Text=" "/>
-                                            <Span Text="{Binding Unit}"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
+                            <SwipeView BackgroundColor="White">
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Delete" BackgroundColor="Red" Command="{Binding BindingContext.DeletteAlimentCommand, Source={x:Reference mealPage}}">
+                                            <SwipeItem.CommandParameter>
+                                                <MultiBinding Converter="{StaticResource MultiBindingConverter}">
+                                                    <Binding Path="BindingContext.CurrentMeal" Source="{x:Reference mealPage}"/>
+                                                    <Binding Path="."/>
+                                                </MultiBinding>
+                                            </SwipeItem.CommandParameter>
+                                        </SwipeItem>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
 
-                                <Label Grid.Row="1" Grid.Column="1" VerticalOptions="Center">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="{Binding Proteins, StringFormat='{0:N1}'}"/>
-                                            <Span Text=" p"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label Grid.Row="1" Grid.Column="2" VerticalOptions="Center">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="{Binding Carbs, StringFormat='{0:N1}'}"/>
-                                            <Span Text=" c"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label Grid.Row="1" Grid.Column="3" VerticalOptions="Center">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="{Binding Fats, StringFormat='{0:N1}'}"/>
-                                            <Span Text=" f"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="{Binding Calories, StringFormat='{0:N1}'}"/>
-                                            <Span Text=" cal"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="LightGray"/>
-                            </Grid>
+                                <Grid Margin="2" RowDefinitions="Auto, Auto, 1" ColumnDefinitions="*,Auto,Auto,Auto" Padding="5, 0, 5, 0">
+                                    <Label Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding ServingSize, StringFormat='{0:N1}'}"/>
+                                                <Span Text=" "/>
+                                                <Span Text="{Binding Unit}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label Grid.Row="1" Grid.Column="1" VerticalOptions="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding Proteins, StringFormat='{0:N1}'}"/>
+                                                <Span Text=" p"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="1" Grid.Column="2" VerticalOptions="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding Carbs, StringFormat='{0:N1}'}"/>
+                                                <Span Text=" c"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="1" Grid.Column="3" VerticalOptions="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding Fats, StringFormat='{0:N1}'}"/>
+                                                <Span Text=" f"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding Calories, StringFormat='{0:N1}'}"/>
+                                                <Span Text=" cal"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="LightGray"/>
+                                </Grid>
+                            </SwipeView>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>

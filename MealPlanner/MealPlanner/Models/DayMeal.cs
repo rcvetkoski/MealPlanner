@@ -13,7 +13,6 @@ namespace MealPlanner.Models
         public DayMeal()
         {
             Aliments = new ObservableCollection<Aliment>();
-            //Aliments.CollectionChanged += Aliments_CollectionChanged;
         }
 
         [PrimaryKey, AutoIncrement]
@@ -41,27 +40,5 @@ namespace MealPlanner.Models
 
         [Ignore]
         public ObservableCollection<Aliment> Aliments { get; set; }
-
-        private void Aliments_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
-            {
-                var newItem = e.NewItems[0] as Aliment;
-
-                Calories += newItem.Calories;
-                Proteins += newItem.Proteins;
-                Carbs += newItem.Carbs;
-                Fats += newItem.Fats;
-            }
-            else if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
-            {
-                var oldItem = e.OldItems[0] as Aliment;
-
-                Calories -= oldItem.Calories;
-                Proteins -= oldItem.Proteins;
-                Carbs -= oldItem.Carbs;
-                Fats -= oldItem.Fats;
-            }
-        }
     }
 }
