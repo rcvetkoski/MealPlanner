@@ -47,7 +47,7 @@
                 </Frame>
             </Grid>-->
 
-                <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Serving size" Text="{Binding ServingSize}" Helper="Mandatory" CustomUnit="g" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Serving size" Text="{Binding ServingSize}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
                 <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="2" x:TypeArguments="enums:AlimentUnitEnum" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
                 <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Placeholder="Proteins" Text="{Binding Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
                 <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="1" Placeholder="Carbs" Text="{Binding Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>

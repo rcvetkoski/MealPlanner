@@ -37,7 +37,8 @@ namespace MealPlanner.Models
                 servingSize = value; OnPropertyChanged("ServingSize");
             }
         }
-        public int DayMealAlimentID { get; set; } = 0;
+        public int DayMealAlimentId { get; set; } = 0;
+
         [Ignore]
         public ImageSource ImageSource { get; set; } = ImageSource.FromUri(new Uri("https://upload.wikimedia.org/wikipedia/en/5/58/Instagram_egg.jpg"));
         public virtual AlimentTypeEnum AlimentType { get; }

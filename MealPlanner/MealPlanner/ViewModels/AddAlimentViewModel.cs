@@ -99,9 +99,9 @@ namespace MealPlanner.ViewModels
 
                     var lastDayMealId = RefData.DayMealAliments.OrderByDescending(x => x.Id).FirstOrDefault();
                     if (lastDayMealId != null)
-                        aliment.DayMealAlimentID = lastDayMealId.Id + 1;
+                        aliment.DayMealAlimentId = lastDayMealId.Id + 1;
                     else
-                        aliment.DayMealAlimentID = 1;
+                        aliment.DayMealAlimentId = 1;
 
                     aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
 
@@ -120,25 +120,30 @@ namespace MealPlanner.ViewModels
 
                     await App.DataBaseRepo.AddDayMealAlimentAsync(dayMealAliment);
                 }
-                else
+                else // When adding food to meal
                 {
                     var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
-                    Aliment aliment = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
-                    aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
+                    Food food = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio) as Food;
+                    food.ServingSize = rsPopupBindingContext.AlimentServingSize;
 
-                    MealFood mealFood = new MealFood();
-                    mealFood.MealId = CurrentMeal.Id;
-                    mealFood.FoodId = aliment.Id;
-                    mealFood.ServingSize = aliment.ServingSize;
+                    // Set MealFoodId and validate it later if the meal is saved
+                    var lastMealFood = RefData.MealFoods.LastOrDefault();
+                    food.MealFoodId = lastMealFood != null ? lastMealFood.Id + 1 : 1;
 
-                    CurrentMeal.Foods.Add(aliment as Food);
-                    CurrentMeal.Calories += aliment.Calories;
-                    CurrentMeal.Proteins += aliment.Proteins;
-                    CurrentMeal.Carbs += aliment.Carbs;
-                    CurrentMeal.Fats += aliment.Fats;
+
+                    //MealFood mealFood = new MealFood();
+                    //mealFood.MealId = CurrentMeal.Id;
+                    //mealFood.FoodId = aliment.Id;
+                    //mealFood.ServingSize = aliment.ServingSize;
+
+                    CurrentMeal.Foods.Add(food);
+                    CurrentMeal.Calories += food.Calories;
+                    CurrentMeal.Proteins += food.Proteins;
+                    CurrentMeal.Carbs += food.Carbs;
+                    CurrentMeal.Fats += food.Fats;
 
                     // TODO
-                    await App.DataBaseRepo.AddMealFoodAsync(mealFood);
+                    //await App.DataBaseRepo.AddMealFoodAsync(mealFood);
                 }
 
                 rSPopup.Close();

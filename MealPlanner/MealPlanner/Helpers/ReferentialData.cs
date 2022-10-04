@@ -104,7 +104,7 @@ namespace MealPlanner.Helpers
             PopulateDayMeals();
 
             // Add foods to Meal
-            var MealFoods = App.DataBaseRepo.GetAllMealFoodsAsync().Result;
+            MealFoods = App.DataBaseRepo.GetAllMealFoodsAsync().Result.ToObservableCollection();
             foreach (MealFood mealFood in MealFoods)
             {
                 Meal meal = Meals.Where(x=> x.Id == mealFood.MealId).FirstOrDefault();
@@ -113,6 +113,7 @@ namespace MealPlanner.Helpers
                 var ratio = mealFood.ServingSize / existingFood.OriginalServingSize;
                 Food food = CreateAndCopyAlimentProperties(existingFood, ratio) as Food;
                 food.ServingSize = mealFood.ServingSize;
+                food.MealFoodId = mealFood.FoodId;  
 
                 if (meal != null)
                     meal.Foods.Add(food);
@@ -132,7 +133,7 @@ namespace MealPlanner.Helpers
                 {
                     var ratio = dayMealAliment.ServingSize / existingAliment.OriginalServingSize;
                     Aliment aliment = CreateAndCopyAlimentProperties(existingAliment, ratio);
-                    aliment.DayMealAlimentID = dayMealAliment.Id;
+                    aliment.DayMealAlimentId = dayMealAliment.Id;
                     aliment.ServingSize = dayMealAliment.ServingSize;
 
                     dayMeal?.Aliments.Add(aliment);
@@ -241,6 +242,26 @@ namespace MealPlanner.Helpers
         public double DaylyFatsProgress { get; set; }
 
 
+        public void UpdateDayliValues()
+        {
+            double proteins = 0;
+            double carbs = 0;
+            double fats = 0;
+            double calories = 0;
+
+            foreach (DayMeal dayMeal in DayMeals)
+            {
+                proteins += dayMeal.Proteins;
+                carbs += dayMeal.Proteins;
+                fats += dayMeal.Proteins;
+                calories += dayMeal.Proteins;
+            }
+
+            DaylyProteins = proteins;
+            DaylyCarbs = carbs;
+            DaylyFats = fats;
+            daylyCalories = calories;
+        }
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

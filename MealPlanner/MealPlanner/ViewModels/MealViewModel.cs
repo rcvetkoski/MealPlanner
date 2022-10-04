@@ -50,6 +50,16 @@ namespace MealPlanner.ViewModels
         {
             CurrentMeal.OriginalServingSize = CurrentMeal.ServingSize;
 
+            //Save foods in db
+            foreach(Food food in CurrentMeal.Foods)
+            {
+                MealFood mealFood = new MealFood();
+                mealFood.MealId = CurrentMeal.Id;
+                mealFood.FoodId = food.Id;
+                mealFood.ServingSize = food.ServingSize;
+                await App.DataBaseRepo.AddMealFoodAsync(mealFood);
+            }
+
             App.RefData.Meals.Add(CurrentMeal);
             App.RefData.Aliments.Add(CurrentMeal);
             await App.DataBaseRepo.AddMealAsync(CurrentMeal);
@@ -70,6 +80,19 @@ namespace MealPlanner.ViewModels
 
 
             // TODO Add food to db if any new
+            var lastFood = CurrentMeal.Foods.OrderByDescending(x=> x.MealFoodId + 1).FirstOrDefault();
+
+            var food = lastFood != null ? RefData.MealFoods.Where(f => f.Id == lastFood.MealFoodId).FirstOrDefault() : null;
+
+            MealFood mealFood = null;
+
+            if (food == null)
+            {
+                mealFood = new MealFood();
+                mealFood.MealId = CurrentMeal.Id;
+                mealFood.FoodId = lastFood.Id;
+                mealFood.ServingSize = lastFood.ServingSize;
+            }
 
 
             // TODO Refresh meal in DayMeals
@@ -105,6 +128,7 @@ namespace MealPlanner.ViewModels
                 }
             }
 
+            if (mealFood != null) { await App.DataBaseRepo.AddMealFoodAsync(mealFood); };
             await Application.Current.MainPage.Navigation.PopAsync();
         }
 

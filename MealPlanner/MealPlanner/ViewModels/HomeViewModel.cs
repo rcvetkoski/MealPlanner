@@ -102,7 +102,7 @@ namespace MealPlanner.ViewModels
                     dayMeal.Calories += aliment.Calories;
 
 
-                    DayMealAliment dayMealAliment = await App.DataBaseRepo.GetDayMealAlimentAsync(aliment.DayMealAlimentID);
+                    DayMealAliment dayMealAliment = await App.DataBaseRepo.GetDayMealAlimentAsync(aliment.DayMealAlimentId);
                     dayMealAliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
                     await App.DataBaseRepo.UpdateDayMealAliment(dayMealAliment);
 
