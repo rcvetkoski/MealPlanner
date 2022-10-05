@@ -16,5 +16,13 @@ namespace MealPlanner.Views
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            collectionView.ItemsSource = null;
+            collectionView.ItemsSource = (BindingContext as HomeViewModel).RefData.DayMeals;
+        }
     }
 }

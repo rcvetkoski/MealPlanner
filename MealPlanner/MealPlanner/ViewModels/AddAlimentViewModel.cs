@@ -59,6 +59,8 @@ namespace MealPlanner.ViewModels
         private bool isMealChecked;
         public bool IsMealChecked { get { return isMealChecked; } set { isMealChecked = value; OnPropertyChanged("IsMealChecked"); FilteredAlimentsRefresh(); } }
 
+        public ObservableCollection<Food> CurrentMealTempFoods { get; set; }
+
 
 
         private List<Food> searchResults;
@@ -129,11 +131,11 @@ namespace MealPlanner.ViewModels
                     // Set MealFoodId to 0
                     food.MealFoodId = 0;
 
-                    CurrentMeal.Foods.Add(food);
-                    CurrentMeal.Calories += food.Calories;
-                    CurrentMeal.Proteins += food.Proteins;
-                    CurrentMeal.Carbs += food.Carbs;
-                    CurrentMeal.Fats += food.Fats;
+                    CurrentMealTempFoods.Add(food);
+                    //CurrentMeal.Calories += food.Calories;
+                    //CurrentMeal.Proteins += food.Proteins;
+                    //CurrentMeal.Carbs += food.Carbs;
+                    //CurrentMeal.Fats += food.Fats;
                 }
 
                 rSPopup.Close();

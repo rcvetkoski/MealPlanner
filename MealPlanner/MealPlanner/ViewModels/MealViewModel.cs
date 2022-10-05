@@ -90,7 +90,12 @@ namespace MealPlanner.ViewModels
             if (CurrentMeal == null)
                 return;
 
+            CurrentMeal.Name = this.Name;
+            CurrentMeal.ServingSize = this.ServingSize;
+            CurrentMeal.Unit = this.Unit;
+            CurrentMeal.Description = this.Description;
             CurrentMeal.OriginalServingSize = CurrentMeal.ServingSize;
+            CurrentMeal.Foods = this.Foods;
 
             // Remove deletted MealFoods
             foreach (var mealFood in DelettedMealFoods)
@@ -162,6 +167,7 @@ namespace MealPlanner.ViewModels
             AddAlimentPage addAlimentPage = new AddAlimentPage();
             (addAlimentPage.BindingContext as AddAlimentViewModel).CurrentMeal = this.CurrentMeal;
             (addAlimentPage.BindingContext as AddAlimentViewModel).MealSwitchVisibility = false;
+            (addAlimentPage.BindingContext as AddAlimentViewModel).CurrentMealTempFoods = this.Foods;
             App.Current.MainPage.Navigation.PushAsync(addAlimentPage);
         }
 

@@ -91,7 +91,7 @@
                     </Grid>
                 </Frame>
 
-                <CollectionView ItemsSource="{Binding RefData.DayMeals}">
+                <CollectionView x:Name="collectionView" >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout x:Name="dayMeal">
