@@ -3,6 +3,7 @@ using MealPlanner.Models;
 using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -27,10 +28,13 @@ namespace MealPlanner.ViewModels
         private Meal currentMeal;
         public Meal CurrentMeal { get { return currentMeal; } set { currentMeal = value; OnPropertyChanged("CurrentMeal"); } }
 
+        public ObservableCollection<Food> Foods { get; set; }
+
 
         public MealViewModel()
         {
             CurrentMeal = new Meal();
+            Foods = new ObservableCollection<Food>();
             IsNew = true;
             AddFoodCommand = new Command(AddFood);
             SaveCommand = new Command(SaveFood);
@@ -39,11 +43,26 @@ namespace MealPlanner.ViewModels
             DelettedMealFoods = new List<MealFood>();
         }
 
+        public void FillMealProperties(Meal existingMeal)
+        {
+            Name = existingMeal.Name;
+            ServingSize = existingMeal.ServingSize;
+            Unit = existingMeal.Unit;
+            Description = existingMeal.Description;
+            foreach(Food food in existingMeal.Foods)
+                this.Foods.Add(food);   
+        }
+
         public ICommand SaveCommand { get; set; }
 
         private async void SaveFood()
         {
+            CurrentMeal.Name = this.Name;
+            CurrentMeal.ServingSize = this.ServingSize;
+            CurrentMeal.Unit = this.Unit;
+            CurrentMeal.Description = this.Description;
             CurrentMeal.OriginalServingSize = CurrentMeal.ServingSize;
+            CurrentMeal.Foods = this.Foods;
             App.RefData.Meals.Add(CurrentMeal);
             App.RefData.Aliments.Add(CurrentMeal);
             await App.DataBaseRepo.AddMealAsync(CurrentMeal);
@@ -153,7 +172,7 @@ namespace MealPlanner.ViewModels
             Meal meal = objects[0] as Meal;
             Food food = objects[1] as Food;
 
-            meal.Foods.Remove(food);
+            Foods.Remove(food);
 
             var mealFood = RefData.MealFoods.Where(x => x.Id == food.MealFoodId).FirstOrDefault();
 

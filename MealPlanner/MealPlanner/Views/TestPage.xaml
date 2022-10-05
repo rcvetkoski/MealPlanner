@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:MealPlanner.Models"
+             xmlns:vm="clr-namespace:MealPlanner.ViewModels"
              x:Class="MealPlanner.Views.TestPage">
 
     <ContentPage.BindingContext>
@@ -28,6 +28,8 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
+            <Button Text="Reset data base" Command="{Binding RefData.ResetDBCommand}" Margin="30"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

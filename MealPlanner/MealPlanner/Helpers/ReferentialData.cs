@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MealPlanner.Helpers
@@ -28,15 +29,21 @@ namespace MealPlanner.Helpers
 
         public ReferentialData()
         {
-            //var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            //var path = Path.Combine(basePath, "MealPlanner.db3");
-            //if (File.Exists(path))
-            //{
-            //    File.Delete(path);
-            //}
-
+            //ResetDB()
+            ResetDBCommand = new Command(ResetDB);
             InitDB();
         }
+
+        public void ResetDB()
+        {
+            var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            var path = Path.Combine(basePath, "MealPlanner.db3");
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+        }
+        public ICommand ResetDBCommand { get; set; }
 
         private void InitDB()
         {

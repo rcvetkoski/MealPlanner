@@ -1,9 +1,8 @@
-﻿using MealPlanner.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MealPlanner.Models
+namespace MealPlanner.ViewModels
 {
     public class TestViewModel : BaseViewModel
     {

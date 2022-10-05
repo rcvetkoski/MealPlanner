@@ -170,6 +170,7 @@ namespace MealPlanner.ViewModels
                     // Fill informations
                     mealPageBindingContext.IsNew = false;
                     mealPageBindingContext.CurrentMeal = existingAliment as Meal;
+                    mealPageBindingContext.FillMealProperties(existingAliment as Meal);
 
                     App.Current.MainPage.Navigation.PushAsync(mealPage);
                 }
