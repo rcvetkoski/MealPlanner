@@ -32,18 +32,11 @@ namespace MealPlanner.ViewModels
         {
             CurrentMeal = new Meal();
             IsNew = true;
-
-            // Add id
-            var lastMeal = RefData.Meals.OrderByDescending(x => x.Id).FirstOrDefault();
-            if (lastMeal != null)
-                CurrentMeal.Id = lastMeal.Id + 1;
-            else
-                CurrentMeal.Id = 1;
-
             AddFoodCommand = new Command(AddFood);
             SaveCommand = new Command(SaveFood);
             UpdateCommand = new Command(UpdateMeal);
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
+            DelettedMealFoods = new List<MealFood>();
         }
 
         public ICommand SaveCommand { get; set; }
@@ -51,20 +44,22 @@ namespace MealPlanner.ViewModels
         private async void SaveFood()
         {
             CurrentMeal.OriginalServingSize = CurrentMeal.ServingSize;
+            App.RefData.Meals.Add(CurrentMeal);
+            App.RefData.Aliments.Add(CurrentMeal);
+            await App.DataBaseRepo.AddMealAsync(CurrentMeal);
 
             //Save foods in db
-            foreach(Food food in CurrentMeal.Foods)
+            foreach (Food food in CurrentMeal.Foods)
             {
                 MealFood mealFood = new MealFood();
                 mealFood.MealId = CurrentMeal.Id;
                 mealFood.FoodId = food.Id;
                 mealFood.ServingSize = food.ServingSize;
                 await App.DataBaseRepo.AddMealFoodAsync(mealFood);
+                food.MealFoodId = mealFood.Id;
+                RefData.MealFoods.Add(mealFood);
             }
 
-            App.RefData.Meals.Add(CurrentMeal);
-            App.RefData.Aliments.Add(CurrentMeal);
-            await App.DataBaseRepo.AddMealAsync(CurrentMeal);
             await Application.Current.MainPage.Navigation.PopAsync();
         }
 
@@ -78,62 +73,67 @@ namespace MealPlanner.ViewModels
 
             CurrentMeal.OriginalServingSize = CurrentMeal.ServingSize;
 
+            // Remove deletted MealFoods
+            foreach (var mealFood in DelettedMealFoods)
+            {
+                if (mealFood != null)
+                {
+                    RefData.MealFoods.Remove(mealFood);
+                    await App.DataBaseRepo.DeleteMealFoodAsync(mealFood);
+                }
+            }
+            DelettedMealFoods.Clear();
+
+
+            // Update meal values
+            RefData.UpdateMealValues(CurrentMeal);
+
+            // Update meal to db
             await App.DataBaseRepo.UpdateMealAsync(CurrentMeal);
 
-
-            // TODO Add food to db if any new
-            var lastFood = CurrentMeal.Foods.OrderByDescending(x=> x.MealFoodId + 1).FirstOrDefault();
-
-            var food = lastFood != null ? RefData.MealFoods.Where(f => f.Id == lastFood.MealFoodId).FirstOrDefault() : null;
-
-            MealFood mealFood = null;
-
-            if (food == null)
+            // Add food to db if any new
+            var newFoods = CurrentMeal.Foods.Where(x=> x.MealFoodId == 0);
+            foreach(var food in newFoods)
             {
-                mealFood = new MealFood();
+                MealFood mealFood = new MealFood();
                 mealFood.MealId = CurrentMeal.Id;
-                mealFood.FoodId = lastFood.Id;
-                mealFood.ServingSize = lastFood.ServingSize;
+                mealFood.FoodId = food.Id;
+                mealFood.ServingSize = food.ServingSize;
+
+                await App.DataBaseRepo.AddMealFoodAsync(mealFood);
+                food.MealFoodId = mealFood.Id;
+                RefData.MealFoods.Add(mealFood);
             }
 
 
             // TODO Refresh meal in DayMeals
             foreach (DayMeal dayMeal in RefData.DayMeals)
             {
-                dayMeal.Calories = 0;
-                dayMeal.Proteins = 0;
-                dayMeal.Carbs = 0;
-                dayMeal.Fats = 0;
                 double ratio = 1;
 
                 foreach (Aliment meal in dayMeal.Aliments)
                 {
                     if (meal.AlimentType == AlimentTypeEnum.Meal && meal.Id == CurrentMeal.Id)
                     {
-                        ratio = meal.OriginalServingSize / CurrentMeal.OriginalServingSize;
+                        ratio = meal.ServingSize / CurrentMeal.OriginalServingSize;
 
                         meal.Name = CurrentMeal.Name;
-                        meal.OriginalServingSize = CurrentMeal.ServingSize;
+                        meal.OriginalServingSize = CurrentMeal.OriginalServingSize;
                         meal.Unit = CurrentMeal.Unit;
 
-
-                        meal.Calories = meal.Calories * ratio;
-                        meal.Proteins = meal.Proteins * ratio;
-                        meal.Carbs = meal.Carbs * ratio;
-                        meal.Fats = meal.Fats * ratio;
+                        meal.Calories = CurrentMeal.Calories * ratio;
+                        meal.Proteins = CurrentMeal.Proteins * ratio; 
+                        meal.Carbs = CurrentMeal.Carbs * ratio;
+                        meal.Fats = CurrentMeal.Fats * ratio;
                     }
-
-                    dayMeal.Calories += meal.Calories;
-                    dayMeal.Proteins += meal.Proteins;
-                    dayMeal.Carbs += meal.Carbs;
-                    dayMeal.Fats += meal.Fats;
                 }
+
+
+                RefData.UpdateDayMealValues(dayMeal);   
             }
 
             // Update daily values
             RefData.UpdateDailyValues();
-
-            if (mealFood != null) { await App.DataBaseRepo.AddMealFoodAsync(mealFood); };
             await Application.Current.MainPage.Navigation.PopAsync();
         }
 
@@ -157,11 +157,9 @@ namespace MealPlanner.ViewModels
 
             var mealFood = RefData.MealFoods.Where(x => x.Id == food.MealFoodId).FirstOrDefault();
 
-            if(mealFood != null)
-            {
-                RefData.MealFoods.Remove(mealFood);
-                await App.DataBaseRepo.DeleteMealFoodAsync(mealFood);
-            }
+            DelettedMealFoods.Add(mealFood);
         }
+
+        private List<MealFood> DelettedMealFoods { get; set; }
     }
 }

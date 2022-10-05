@@ -126,11 +126,8 @@ namespace MealPlanner.ViewModels
                     Food food = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio) as Food;
                     food.ServingSize = rsPopupBindingContext.AlimentServingSize;
 
-                    // TODO get real MealFoodId
-                    // Set MealFoodId and validate it later if the meal is saved
-                    var lastMealFood = RefData.MealFoods.LastOrDefault();
-                    food.MealFoodId = lastMealFood != null ? lastMealFood.Id + 1 : 1;
-
+                    // Set MealFoodId to 0
+                    food.MealFoodId = 0;
 
                     CurrentMeal.Foods.Add(food);
                     CurrentMeal.Calories += food.Calories;

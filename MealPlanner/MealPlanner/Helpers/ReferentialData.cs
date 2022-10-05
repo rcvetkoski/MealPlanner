@@ -100,24 +100,24 @@ namespace MealPlanner.Helpers
                 Aliments.Add(food as Aliment);
 
 
-            // Add aliments to DayMeal if any
-            PopulateDayMeals();
-
             // Add foods to Meal
             MealFoods = App.DataBaseRepo.GetAllMealFoodsAsync().Result.ToObservableCollection();
             foreach (MealFood mealFood in MealFoods)
             {
-                Meal meal = Meals.Where(x=> x.Id == mealFood.MealId).FirstOrDefault();
-                Food existingFood = Foods.Where(x => x.Id == mealFood.FoodId).FirstOrDefault();
+                Meal meal = Aliments.Where(x=> x.Id == mealFood.MealId && x.AlimentType == Enums.AlimentTypeEnum.Meal).FirstOrDefault() as Meal;
+                Food existingFood = Aliments.Where(x => x.Id == mealFood.FoodId && x.AlimentType == Enums.AlimentTypeEnum.Food).FirstOrDefault() as Food;
 
                 var ratio = mealFood.ServingSize / existingFood.OriginalServingSize;
                 Food food = CreateAndCopyAlimentProperties(existingFood, ratio) as Food;
                 food.ServingSize = mealFood.ServingSize;
-                food.MealFoodId = mealFood.FoodId;  
+                food.MealFoodId = mealFood.Id;  
 
                 if (meal != null)
                     meal.Foods.Add(food);
             }
+
+            // Add aliments to DayMeal if any
+            PopulateDayMeals();
         }
 
 
@@ -156,9 +156,15 @@ namespace MealPlanner.Helpers
             Aliment aliment;
 
             if (existingAliment.AlimentType == Enums.AlimentTypeEnum.Meal)
+            {
                 aliment = new Meal();
+                (aliment as Meal).Description = (existingAliment as Meal).Description;
+                (aliment as Meal).Foods = (existingAliment as Meal).Foods;
+            }
             else
+            {
                 aliment = new Food();
+            }
 
 
             // Fill properties
@@ -170,6 +176,7 @@ namespace MealPlanner.Helpers
             aliment.Carbs = existingAliment.Carbs * ratio;
             aliment.Fats = existingAliment.Fats * ratio;
             aliment.Calories = existingAliment.Calories * ratio;
+
 
             return aliment;
         }
@@ -258,7 +265,7 @@ namespace MealPlanner.Helpers
             DailyCalories = calories;
         }
 
-        public void UpdateDayMealValues(DayMeal dayMeal)
+        public void UpdateDayMealValues(DayMeal dayMeal, double ratio = 1)
         {
             double proteins = 0;
             double carbs = 0;
@@ -273,10 +280,31 @@ namespace MealPlanner.Helpers
                 calories += aliment.Calories;
             }
 
-            dayMeal.Proteins = proteins;
-            dayMeal.Carbs = carbs;
-            dayMeal.Fats = fats;
-            dayMeal.Calories = calories;
+            dayMeal.Proteins = proteins * ratio;
+            dayMeal.Carbs = carbs * ratio;
+            dayMeal.Fats = fats * ratio;
+            dayMeal.Calories = calories * ratio;
+        }
+
+        public void UpdateMealValues(Meal meal, double ratio = 1)
+        {
+            double proteins = 0;
+            double carbs = 0;
+            double fats = 0;
+            double calories = 0;
+
+            foreach (Food food in meal.Foods)
+            {
+                proteins += food.Proteins;
+                carbs += food.Carbs;
+                fats += food.Fats;
+                calories += food.Calories;
+            }
+
+            meal.Proteins = proteins * ratio;
+            meal.Carbs = carbs * ratio;
+            meal.Fats = fats * ratio;
+            meal.Calories = calories * ratio;
         }
 
         #region INotifyPropertyChanged
