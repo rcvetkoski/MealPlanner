@@ -152,7 +152,6 @@ namespace MealPlanner.ViewModels
                     }
                 }
 
-
                 RefData.UpdateDayMealValues(dayMeal);   
             }
 

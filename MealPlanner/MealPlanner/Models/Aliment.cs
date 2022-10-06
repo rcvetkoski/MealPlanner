@@ -29,14 +29,8 @@ namespace MealPlanner.Models
         public double OriginalServingSize { get; set; }
 
         private double servingSize;
-        public double ServingSize
-        {
-            get { return servingSize; }
-            set
-            {
-                servingSize = value; OnPropertyChanged("ServingSize");
-            }
-        }
+        public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); } }
+
         public int DayMealAlimentId { get; set; } = 0;
 
         [Ignore]

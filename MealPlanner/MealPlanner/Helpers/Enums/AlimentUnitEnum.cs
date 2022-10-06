@@ -7,6 +7,7 @@ namespace MealPlanner.Helpers.Enums
     public enum AlimentUnitEnum
     {
         g,
-        ml
+        ml,
+        portions
     }
 }

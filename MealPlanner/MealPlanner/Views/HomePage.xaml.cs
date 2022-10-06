@@ -1,4 +1,5 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers.Enums;
+using MealPlanner.Models;
 using MealPlanner.ViewModels;
 using System;
 using System.ComponentModel;
@@ -12,17 +13,19 @@ namespace MealPlanner.Views
 {
     public partial class HomePage : ContentPage
     {
+        private HomeViewModel viewModel;
         public HomePage()
         {
             InitializeComponent();
+            viewModel = BindingContext as HomeViewModel;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            collectionView.ItemsSource = null;
-            collectionView.ItemsSource = (BindingContext as HomeViewModel).RefData.DayMeals;
+            //collectionView.ItemsSource = null;
+            //collectionView.ItemsSource = (BindingContext as HomeViewModel).RefData.DayMeals;
         }
     }
 }

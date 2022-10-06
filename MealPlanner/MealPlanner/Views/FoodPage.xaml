@@ -47,8 +47,10 @@
                 </Frame>
             </Grid>-->
 
-                <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Serving size" Text="{Binding ServingSize}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="2" x:TypeArguments="enums:AlimentUnitEnum" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
+                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="*,*">
+                    <rsControls:RSNumericEntry Grid.Column="0" Placeholder="Serving size" Text="{Binding ServingSize}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                    <rsControls:RSEnumPicker Grid.Column="1" x:TypeArguments="enums:AlimentUnitEnum" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
+                </Grid>
                 <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Placeholder="Proteins" Text="{Binding Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
                 <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="1" Placeholder="Carbs" Text="{Binding Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
                 <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="2" Placeholder="Fats" Text="{Binding Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
@@ -66,9 +68,9 @@
                     StrokeWidth="10"/>
 
                     <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
-                        <Label HorizontalOptions="Center" Text="{Binding Calories, StringFormat='{0:N1}'}" FontAttributes="Bold"/>
+                        <Label HorizontalOptions="Center" Text="{Binding Calories, StringFormat='{0:0.#}'}" FontAttributes="Bold"/>
                         <Label HorizontalOptions="Center" Text="of"/>
-                        <Label HorizontalOptions="Center" Text="{Binding RefData.User.TargetCalories, StringFormat='{0:N1}'}"/>
+                        <Label HorizontalOptions="Center" Text="{Binding RefData.User.TargetCalories, StringFormat='{0:0.#}'}"/>
                     </StackLayout>
 
                     <Label Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Text="Calories"/>
@@ -87,30 +89,30 @@
                             <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="{Binding Proteins, StringFormat='{0:N1}'}"/>
+                                        <Span Text="{Binding Proteins, StringFormat='{0:0.#}'}"/>
                                         <Span Text="   /"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetProteins, StringFormat='{0:N1}'}"/>
+                            <Label Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetProteins, StringFormat='{0:0.#}'}"/>
                             <Label Grid.Row="1" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="{Binding Carbs, StringFormat='{0:N1}'}"/>
+                                        <Span Text="{Binding Carbs, StringFormat='{0:0.#}'}"/>
                                         <Span Text="   /"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label Grid.Row="1" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetCarbs, StringFormat='{0:N1}'}"/>
+                            <Label Grid.Row="1" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetCarbs, StringFormat='{0:0.#}'}"/>
                             <Label Grid.Row="2" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="{Binding Fats, StringFormat='{0:N1}'}"/>
+                                        <Span Text="{Binding Fats, StringFormat='{0:0.#}'}"/>
                                         <Span Text="   /"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label Grid.Row="2" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetFats, StringFormat='{0:N1}'}"/>
+                            <Label Grid.Row="2" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetFats, StringFormat='{0:0.#}'}"/>
                         </Grid>
                     </Frame>
                 </Grid>
