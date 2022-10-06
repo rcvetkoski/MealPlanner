@@ -27,6 +27,7 @@ namespace MealPlanner.ViewModels
             CreateFoodCommand = new Command(CreateFood);
             SelectAlimentCommand = new Command<Aliment>(SelectAliment);
             CreateMealCommand = new Command(CreateMeal);
+            ScanBarCodeCommand = new Command(ScanBarCode);  
 
             FilteredAliments = new ObservableCollection<Aliment>();
             FilteredAlimentsRefresh();
@@ -191,6 +192,14 @@ namespace MealPlanner.ViewModels
         private void CreateMeal()
         {
             App.Current.MainPage.Navigation.PushAsync(new MealPage());
+        }
+
+
+        public ICommand ScanBarCodeCommand { get; set; }
+        private async void ScanBarCode()
+        {
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            var result = await scanner.Scan();
         }
     }
 }

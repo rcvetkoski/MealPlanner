@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:MealPlanner.ViewModels" 
+             xmlns:vm="clr-namespace:MealPlanner.ViewModels"
              x:Class="MealPlanner.Views.AddAlimentPage"
              x:Name="addAlimentPage"
              Title="{Binding Title}">
@@ -14,6 +14,7 @@
         <StackLayout>
 
             <SearchBar x:Name="searchBar" Placeholder="Search for food" SearchCommand="{Binding PerformSearch}" SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
+            <Button Text="Scan code" Command="{Binding ScanBarCodeCommand}" HorizontalOptions="Center"/>
 
             <Grid Margin="10" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
                 <RadioButton Grid.Column="0" HorizontalOptions="CenterAndExpand" Content="Food" IsChecked="{Binding IsFoodChecked}"/>
