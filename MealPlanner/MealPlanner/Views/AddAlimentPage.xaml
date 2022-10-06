@@ -16,6 +16,8 @@
             <SearchBar x:Name="searchBar" Placeholder="Search for food" SearchCommand="{Binding PerformSearch}" SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
             <Button Text="Scan code" Command="{Binding ScanBarCodeCommand}" HorizontalOptions="Center"/>
 
+            <Label Text="{Binding Result}"/>
+
             <Grid Margin="10" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
                 <RadioButton Grid.Column="0" HorizontalOptions="CenterAndExpand" Content="Food" IsChecked="{Binding IsFoodChecked}"/>
                 <RadioButton Grid.Column="1" HorizontalOptions="CenterAndExpand" Content="Meal" IsChecked="{Binding IsMealChecked}" IsVisible="{Binding MealSwitchVisibility}"/>

@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.RSControls.Controls;
+using static System.Net.WebRequestMethods;
 
 namespace MealPlanner.ViewModels
 {
@@ -195,11 +197,46 @@ namespace MealPlanner.ViewModels
         }
 
 
+
+
+
+        private string result;
+        public string Result { get { return result; } set { result = value; OnPropertyChanged("Result"); } }
+
         public ICommand ScanBarCodeCommand { get; set; }
         private async void ScanBarCode()
         {
             var scanner = new ZXing.Mobile.MobileBarcodeScanner();
             var result = await scanner.Scan();
+            scanner.Cancel();
+
+            HttpClient client = new HttpClient();
+            Uri uri = new Uri(string.Format("https://world.openfoodfacts.org/api/v2/product/04963406", string.Empty));
+            HttpResponseMessage response = await client.GetAsync(uri);
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                //Items = JsonSerializer.Deserialize<List<TodoItem>>(content, serializerOptions);
+            }
+
+
+
+            //var name = https://world.openfoodfacts.org/api/v2/product/04963406;
+
+            //RSPopup rSPopup = null;
+
+            if (result != null)
+            {
+                Result = result.Text;
+                //rSPopup = new RSPopup(result.Text, "");
+            }
+            else
+            {
+                Result = "NOt found";
+                //rSPopup = new RSPopup("No data found", "");
+            }
+
+            //rSPopup.Show();
         }
     }
 }
