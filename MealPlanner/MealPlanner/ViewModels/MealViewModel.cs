@@ -79,6 +79,9 @@ namespace MealPlanner.ViewModels
                 RefData.MealFoods.Add(mealFood);
             }
 
+            // Update meal values
+            RefData.UpdateMealValues(CurrentMeal);
+
             await Application.Current.MainPage.Navigation.PopAsync();
         }
 

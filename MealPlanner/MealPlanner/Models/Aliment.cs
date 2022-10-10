@@ -33,8 +33,8 @@ namespace MealPlanner.Models
 
         public int DayMealAlimentId { get; set; } = 0;
 
-        [Ignore]
-        public ImageSource ImageSource { get; set; } = ImageSource.FromUri(new Uri("https://upload.wikimedia.org/wikipedia/en/5/58/Instagram_egg.jpg"));
+        private string imageSourcePath;
+        public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); } }
         public virtual AlimentTypeEnum AlimentType { get; }
         public AlimentUnitEnum Unit { get; set; }
     }

@@ -1,5 +1,6 @@
 ﻿using MealPlanner.Models;
 using MealPlanner.Views;
+using Newtonsoft.Json;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.RSControls.Controls;
+using static MealPlanner.Models.TestModel;
 using static System.Net.WebRequestMethods;
 
 namespace MealPlanner.ViewModels
@@ -156,6 +158,7 @@ namespace MealPlanner.ViewModels
                     // Fill informations
                     foodPageBindingContext.IsNew = false;
                     foodPageBindingContext.Id = existingAliment.Id;
+                    foodPageBindingContext.ImageSourcePath = existingAliment.ImageSourcePath;
                     foodPageBindingContext.Name = existingAliment.Name;
                     foodPageBindingContext.ServingSize = existingAliment.ServingSize;
                     foodPageBindingContext.Unit = existingAliment.Unit;
@@ -197,6 +200,15 @@ namespace MealPlanner.ViewModels
         }
 
 
+        public class Jsontest
+        {
+            public string code { get; set; }
+
+            public Product product { get; set; }
+            public string status { get; set; }
+
+            public string status_erbose { get; set; }
+        }
 
 
 
@@ -208,35 +220,54 @@ namespace MealPlanner.ViewModels
         {
             var scanner = new ZXing.Mobile.MobileBarcodeScanner();
             var result = await scanner.Scan();
-            scanner.Cancel();
+
+            string uriPath = string.Empty;
+            //uriPath = "https://world.openfoodfacts.org/api/v2/product/=4006040004974000&fields=product_name,image_front_url,proteins_100g,proteins_unit,proteins_value,carbohydrates_100g,energy-kcal_100g,carbohydrates_100g,fat_100g,fiber_100g";
+
+            if (result != null)
+            {
+                uriPath = "https://world.openfoodfacts.org/api/v2/product/code=" + result.Text + "&fields=product_name,image_front_url,proteins_100g,proteins_unit,proteins_value,carbohydrates_100g,energy-kcal_100g,carbohydrates_100g,fat_100g,fiber_100g";
+            }
+
 
             HttpClient client = new HttpClient();
-            Uri uri = new Uri(string.Format("https://world.openfoodfacts.org/api/v2/product/04963406", string.Empty));
+            Uri uri = new Uri(string.Format(uriPath, string.Empty));
             HttpResponseMessage response = await client.GetAsync(uri);
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
-                //Items = JsonSerializer.Deserialize<List<TodoItem>>(content, serializerOptions);
-            }
+                var product = JsonConvert.DeserializeObject<Jsontest>(content, new JsonSerializerSettings() { Culture = System.Globalization.CultureInfo.InvariantCulture});
+
+                FoodPage foodPage = new FoodPage();
+                FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
+                foodPageVm.Name = product.product.product_name;
+                foodPageVm.ImageSourcePath = product.product.image_front_url;
+                foodPageVm.Proteins = product.product.proteins_100g;
+                foodPageVm.Carbs = product.product.carbohydrates_100g;
+                foodPageVm.Fats = product.product.fat_100g;
+                foodPageVm.ServingSize = 100;
+
+                await Application.Current.MainPage.Navigation.PushAsync(foodPage);
 
 
-
-            //var name = https://world.openfoodfacts.org/api/v2/product/04963406;
-
-            //RSPopup rSPopup = null;
-
-            if (result != null)
-            {
-                Result = result.Text;
-                //rSPopup = new RSPopup(result.Text, "");
+                //Path = product.product.image_front_url;
+                //OnlineName = product.product.product_name;
             }
             else
             {
-                Result = "NOt found";
-                //rSPopup = new RSPopup("No data found", "");
+                RSPopup rSPopup = new RSPopup("", "Not found");
+                rSPopup.Show();
             }
-
-            //rSPopup.Show();
         }
+
+        public IObservable<Product> Products { get; set; }
+
+
+
+        private string path;
+        public string Path { get { return path; } set { path = value; OnPropertyChanged("Path"); } }
+
+        private string onlineName;
+        public string OnlineName { get { return onlineName; } set { onlineName = value; OnPropertyChanged("OnlineName"); } }
     }
 }

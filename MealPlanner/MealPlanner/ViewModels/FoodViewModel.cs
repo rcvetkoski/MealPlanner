@@ -14,6 +14,9 @@ namespace MealPlanner.ViewModels
     {
         public int Id { get; set; } 
         private string name;
+        private string imageSourcePath;
+        public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); } }
+
         public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
         private double servingSize;
         public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); } }
@@ -62,6 +65,7 @@ namespace MealPlanner.ViewModels
         {
             Food food = new Food();
             food.Name = Name;
+            food.ImageSourcePath = ImageSourcePath; 
             food.Proteins = Proteins;
             food.Carbs = Carbs;
             food.Fats = Fats;
@@ -87,6 +91,7 @@ namespace MealPlanner.ViewModels
 
             food.Name = Name;
             food.Proteins = Proteins;
+            food.ImageSourcePath = ImageSourcePath;
             food.Carbs = Carbs;
             food.Fats = Fats;
             food.Calories = Calories;

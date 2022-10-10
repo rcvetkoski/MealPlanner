@@ -177,6 +177,7 @@ namespace MealPlanner.Helpers
             // Fill properties
             aliment.Id = existingAliment.Id;
             aliment.Name = existingAliment.Name;
+            aliment.ImageSourcePath = existingAliment.ImageSourcePath;
             aliment.Unit = existingAliment.Unit;
             aliment.Proteins = existingAliment.Proteins * ratio;
             aliment.OriginalServingSize = existingAliment.OriginalServingSize;

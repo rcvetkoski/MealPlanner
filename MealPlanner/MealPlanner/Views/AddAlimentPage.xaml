@@ -18,6 +18,9 @@
 
             <Label Text="{Binding Result}"/>
 
+            <Label Text="{Binding OnlineName}"/>
+            <Image Source="{Binding Path}"/>
+
             <Grid Margin="10" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
                 <RadioButton Grid.Column="0" HorizontalOptions="CenterAndExpand" Content="Food" IsChecked="{Binding IsFoodChecked}"/>
                 <RadioButton Grid.Column="1" HorizontalOptions="CenterAndExpand" Content="Meal" IsChecked="{Binding IsMealChecked}" IsVisible="{Binding MealSwitchVisibility}"/>
