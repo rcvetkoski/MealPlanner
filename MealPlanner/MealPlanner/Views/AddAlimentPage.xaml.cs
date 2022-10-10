@@ -24,7 +24,7 @@ namespace MealPlanner.Views
         {
             base.OnAppearing();
 
-            if((BindingContext as AddAlimentViewModel).FilteredAliments != null)
+            if ((BindingContext as AddAlimentViewModel).FilteredAliments != null)
                 (BindingContext as AddAlimentViewModel).FilteredAlimentsRefresh();
         }
     }

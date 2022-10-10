@@ -11,14 +11,18 @@ namespace MealPlanner
     {
         public static IDataBase DataBaseRepo;
         public static ReferentialData RefData;
+        public static IRestService RestService;
 
         public App()
         {
             InitializeComponent();
 
             DependencyService.Register<Database>();
+            DependencyService.Register<IRestService, OpenFoodFactsRestService>();
             DataBaseRepo = DependencyService.Get<IDataBase>(DependencyFetchTarget.GlobalInstance);
             RefData = new ReferentialData();
+            HttpClientHelper.Initialisation();
+            RestService = DependencyService.Get<IRestService>(DependencyFetchTarget.GlobalInstance);
             MainPage = new AppShell();
         }
 

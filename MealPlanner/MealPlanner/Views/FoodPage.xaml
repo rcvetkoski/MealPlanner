@@ -25,7 +25,7 @@
 
                 <rsControls:RSEntry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Helper="Mandatory" Placeholder="Name" Text="{Binding Name}" FontAttributes="Bold" IsPlaceholderAlwaysFloating="True" />
 
-                <Image Grid.Row="0" Grid.Column="2" BackgroundColor="LightGray" Aspect="Fill" Source="{Binding ImageSourcePath}" HeightRequest="40"/>
+                <Image Grid.Row="0" Grid.Column="2" BackgroundColor="LightGray" Source="{Binding ImageSourcePath}" HeightRequest="40"/>
 
                 <!--<Grid Margin="10" VerticalOptions="FillAndExpand">
                 <Frame Grid.Row="0" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">

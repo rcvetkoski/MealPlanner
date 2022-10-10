@@ -157,7 +157,6 @@ namespace MealPlanner.Helpers
             }
         }
 
-
         public Aliment CreateAndCopyAlimentProperties(Aliment existingAliment, double ratio)
         {
             Aliment aliment;
@@ -188,6 +187,7 @@ namespace MealPlanner.Helpers
 
             return aliment;
         }
+
 
         private double dailyCalories;
         public double DailyCalories

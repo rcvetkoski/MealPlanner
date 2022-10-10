@@ -100,6 +100,7 @@ namespace MealPlanner.ViewModels
             CurrentMeal.OriginalServingSize = CurrentMeal.ServingSize;
             CurrentMeal.Foods = this.Foods;
 
+
             // Remove deletted MealFoods
             foreach (var mealFood in DelettedMealFoods)
             {

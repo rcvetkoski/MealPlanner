@@ -1,4 +1,6 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers;
+using MealPlanner.Models;
+using MealPlanner.Services;
 using MealPlanner.Views;
 using Newtonsoft.Json;
 using SkiaSharp;
@@ -12,6 +14,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.RSControls.Controls;
+using ZXing.QrCode.Internal;
 using static MealPlanner.Models.TestModel;
 using static System.Net.WebRequestMethods;
 
@@ -31,23 +34,24 @@ namespace MealPlanner.ViewModels
             CreateFoodCommand = new Command(CreateFood);
             SelectAlimentCommand = new Command<Aliment>(SelectAliment);
             CreateMealCommand = new Command(CreateMeal);
-            ScanBarCodeCommand = new Command(ScanBarCode);  
+            ScanBarCodeCommand = new Command(ScanBarCode);
+            SearchAlimentsCommand = new Command<string>(SearchAliments);
 
             FilteredAliments = new ObservableCollection<Aliment>();
             FilteredAlimentsRefresh();
         }
 
 
-        public ObservableCollection<Aliment> FilteredAliments { get; set; } 
+        public ObservableCollection<Aliment> FilteredAliments { get; set; }
         public void FilteredAlimentsRefresh()
         {
             FilteredAliments.Clear();
 
             foreach (Aliment aliment in RefData.Aliments)
             {
-                if(IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Meal)
+                if (IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Meal)
                     FilteredAliments.Add(aliment);
-                else if(!IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
+                else if (!IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
                     FilteredAliments.Add(aliment);
             }
         }
@@ -83,9 +87,27 @@ namespace MealPlanner.ViewModels
         }
 
 
-        public ICommand SelectAlimentCommand { get;set; }
-        private void SelectAliment(Aliment existingAliment)
+        public ICommand SelectAlimentCommand { get; set; }
+        private async void SelectAliment(Aliment existingAliment)
         {
+            var item = RefData.Aliments.Where(x => x.Id == existingAliment.Id && x.AlimentType == existingAliment.AlimentType).FirstOrDefault();
+
+            if(item == null)
+            {
+                FoodPage foodPage = new FoodPage();
+                FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
+                foodPageVm.Name = existingAliment.Name;
+                foodPageVm.ImageSourcePath = existingAliment.ImageSourcePath;
+                foodPageVm.Proteins = existingAliment.Proteins;
+                foodPageVm.Carbs = existingAliment.Carbs;
+                foodPageVm.Fats = existingAliment.Fats;
+                foodPageVm.ServingSize = 100;
+
+                await Application.Current.MainPage.Navigation.PushAsync(foodPage);
+                return;
+            }
+
+
             RSPopup rSPopup = new RSPopup();
             rSPopup.SetTitle(existingAliment.Name);
 
@@ -200,74 +222,58 @@ namespace MealPlanner.ViewModels
         }
 
 
-        public class Jsontest
-        {
-            public string code { get; set; }
-
-            public Product product { get; set; }
-            public string status { get; set; }
-
-            public string status_erbose { get; set; }
-        }
-
-
-
-        private string result;
-        public string Result { get { return result; } set { result = value; OnPropertyChanged("Result"); } }
-
         public ICommand ScanBarCodeCommand { get; set; }
         private async void ScanBarCode()
         {
-            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-            var result = await scanner.Scan();
+            //var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            //var result = await scanner.Scan();
+            //var code = result.Text;
 
-            string uriPath = string.Empty;
-            //uriPath = "https://world.openfoodfacts.org/api/v2/product/=4006040004974000&fields=product_name,image_front_url,proteins_100g,proteins_unit,proteins_value,carbohydrates_100g,energy-kcal_100g,carbohydrates_100g,fat_100g,fiber_100g";
+            var code = "04963406";
 
-            if (result != null)
+            try
             {
-                uriPath = "https://world.openfoodfacts.org/api/v2/product/code=" + result.Text + "&fields=product_name,image_front_url,proteins_100g,proteins_unit,proteins_value,carbohydrates_100g,energy-kcal_100g,carbohydrates_100g,fat_100g,fiber_100g";
-            }
-
-
-            HttpClient client = new HttpClient();
-            Uri uri = new Uri(string.Format(uriPath, string.Empty));
-            HttpResponseMessage response = await client.GetAsync(uri);
-            if (response.IsSuccessStatusCode)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-                var product = JsonConvert.DeserializeObject<Jsontest>(content, new JsonSerializerSettings() { Culture = System.Globalization.CultureInfo.InvariantCulture});
+                var aliment = await App.RestService.ScanBarCodeAsync(code);
 
                 FoodPage foodPage = new FoodPage();
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
-                foodPageVm.Name = product.product.product_name;
-                foodPageVm.ImageSourcePath = product.product.image_front_url;
-                foodPageVm.Proteins = product.product.proteins_100g;
-                foodPageVm.Carbs = product.product.carbohydrates_100g;
-                foodPageVm.Fats = product.product.fat_100g;
+                foodPageVm.Name = aliment.Name;
+                foodPageVm.ImageSourcePath = aliment.ImageSourcePath;
+                foodPageVm.Proteins = aliment.Proteins;
+                foodPageVm.Carbs = aliment.Carbs;
+                foodPageVm.Fats = aliment.Fats;
                 foodPageVm.ServingSize = 100;
 
                 await Application.Current.MainPage.Navigation.PushAsync(foodPage);
 
-
-                //Path = product.product.image_front_url;
-                //OnlineName = product.product.product_name;
             }
-            else
+            catch (Exception ex)
             {
-                RSPopup rSPopup = new RSPopup("", "Not found");
+                RSPopup rSPopup = new RSPopup("", ex.Message);
                 rSPopup.Show();
             }
         }
 
-        public IObservable<Product> Products { get; set; }
 
+        public ICommand SearchAlimentsCommand { get; set; }
+        private async void SearchAliments(string text)
+        {
+            try
+            {
+                var aliments = await App.RestService.SearchAlimentAsync(text);
 
+                FilteredAliments.Clear();
 
-        private string path;
-        public string Path { get { return path; } set { path = value; OnPropertyChanged("Path"); } }
-
-        private string onlineName;
-        public string OnlineName { get { return onlineName; } set { onlineName = value; OnPropertyChanged("OnlineName"); } }
+                foreach (Aliment aliment in aliments)
+                {
+                    FilteredAliments.Add(aliment);
+                }
+            }
+            catch (Exception ex)
+            {
+                RSPopup rSPopup = new RSPopup("", ex.Message);
+                rSPopup.Show();
+            }
+        }
     }
 }
