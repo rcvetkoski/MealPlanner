@@ -25,5 +25,6 @@
     <TabBar>
         <ShellContent Title="Home" Icon="icon_about.png" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
         <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:TestPage}" />
+        <ShellContent Title="Aliments" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:AddAlimentPage}" />
     </TabBar>
 </Shell>
