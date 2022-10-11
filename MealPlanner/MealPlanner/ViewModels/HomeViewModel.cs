@@ -80,6 +80,7 @@ namespace MealPlanner.ViewModels
                     aliment.Carbs = rSPopupAlimentDetailPageBindingContext.AlimentCarbs;
                     aliment.Fats = rSPopupAlimentDetailPageBindingContext.AlimentFats;
                     aliment.Calories = rSPopupAlimentDetailPageBindingContext.AlimentCalories;
+                    aliment.Unit = rSPopupAlimentDetailPageBindingContext.AlimentUnit;
                     aliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
 
                     // Update dayMeal values

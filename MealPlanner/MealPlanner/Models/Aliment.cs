@@ -16,26 +16,36 @@ namespace MealPlanner.Models
         private string name;
         public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
         private double calories;
-        public double Calories { get { return calories; } set { calories = value; OnPropertyChanged("Calories"); } }
+        public double Calories { get { return calories; } set { calories = value; OnPropertyChanged("Calories"); OnPropertyChanged("CaloriesString"); } }
 
         private double proteins;
-        public double Proteins { get { return proteins; } set { proteins = value; OnPropertyChanged("Proteins"); } }
+        public double Proteins { get { return proteins; } set { proteins = value; OnPropertyChanged("Proteins"); OnPropertyChanged("NutritionValuesString"); } }
 
         private double carbs;
-        public double Carbs { get { return carbs; } set { carbs = value; OnPropertyChanged("Carbs"); } }
+        public double Carbs { get { return carbs; } set { carbs = value; OnPropertyChanged("Carbs"); OnPropertyChanged("NutritionValuesString"); } }
 
         private double fats;
-        public double Fats { get { return fats; } set { fats = value; OnPropertyChanged("Fats"); } }
+        public double Fats { get { return fats; } set { fats = value; OnPropertyChanged("Fats"); OnPropertyChanged("NutritionValuesString"); } }
         public double OriginalServingSize { get; set; }
 
         private double servingSize;
-        public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); } }
+        public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); OnPropertyChanged("ServingSizeWithUnit"); } }
 
         public int DayMealAlimentId { get; set; } = 0;
 
         private string imageSourcePath;
         public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); } }
         public virtual AlimentTypeEnum AlimentType { get; }
-        public AlimentUnitEnum Unit { get; set; }
+
+        private AlimentUnitEnum unit;
+        public AlimentUnitEnum Unit { get { return unit; } set { unit = value; OnPropertyChanged("Unit"); OnPropertyChanged("ServingSizeWithUnit"); } }
+
+
+        [Ignore]
+        public string ServingSizeWithUnit { get { return $"{ServingSize} {Unit}"; } }
+        [Ignore]
+        public string NutritionValuesString { get { return $"P: {Math.Round(Proteins, 2)},  C: {Math.Round(Carbs, 2)},  F: {Math.Round(Fats, 2)}"; } }
+        [Ignore]
+        public string CaloriesString { get { return $"{Math.Round(Calories, 2)} Kcal"; } }
     }
 }

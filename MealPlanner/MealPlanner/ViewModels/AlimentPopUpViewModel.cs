@@ -24,7 +24,7 @@ namespace MealPlanner.ViewModels
             AlimentCarbs = aliment.Carbs;
             AlimentFats = aliment.Fats;
             AlimentServingSize = selectedAliment.ServingSize;
-            AlimentUnit = aliment.Unit;
+            AlimentUnit = selectedAliment.Unit;
         }
 
 

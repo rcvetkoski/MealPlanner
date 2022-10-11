@@ -23,6 +23,18 @@ namespace MealPlanner
             RefData = new ReferentialData();
             HttpClientHelper.Initialisation();
             RestService = DependencyService.Get<IRestService>(DependencyFetchTarget.GlobalInstance);
+
+            // get memory adress
+            //unsafe
+            //{
+            //    TypedReference tr = __makeref(RestService);
+            //    IntPtr ptr = **(IntPtr**)(&tr);
+
+            //    TypedReference tr2 = __makeref(sd);
+            //    IntPtr ptr2 = **(IntPtr**)(&tr2);
+
+            //}
+
             MainPage = new AppShell();
         }
 

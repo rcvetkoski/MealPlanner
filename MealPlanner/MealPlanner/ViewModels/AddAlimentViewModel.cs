@@ -225,11 +225,11 @@ namespace MealPlanner.ViewModels
         public ICommand ScanBarCodeCommand { get; set; }
         private async void ScanBarCode()
         {
-            //var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-            //var result = await scanner.Scan();
-            //var code = result.Text;
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            var result = await scanner.Scan();
+            var code = result.Text;
 
-            var code = "04963406";
+            //var code = "04963406";
 
             try
             {

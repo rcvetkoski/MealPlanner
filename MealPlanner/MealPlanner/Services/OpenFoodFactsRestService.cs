@@ -48,7 +48,18 @@ namespace MealPlanner.Services
         { 
             List<Aliment> alimentList = new List<Aliment>();
 
-            Uri uri = new Uri(string.Format("https://world.openfoodfacts.org/cgi/search.pl?search_terms=" + searchText + "&search_simple=1&action=process&fields=product_name,image_front_url,proteins_100g,proteins_unit,proteins_value,carbohydrates_100g,energy-kcal_100g,carbohydrates_100g,fat_100g,fiber_100g&json=1", string.Empty));
+            Uri uri = new Uri(string.Format($"https://world.openfoodfacts.org/cgi/search.pl?search_terms={searchText}&search_simple=1&action=process&fields=" +
+                $"product_name," +
+                $"image_front_url," +
+                $"proteins_100g," +
+                $"proteins_unit," +
+                $"proteins_value," +
+                $"carbohydrates_100g," +
+                $"energy-kcal_100g," +
+                $"carbohydrates_100g," +
+                $"fat_100g," +
+                $"fiber_100g" +
+                $"&json=1", string.Empty));
 
             HttpResponseMessage response = await HttpClientHelper.Client.GetAsync(uri);
             if (response.IsSuccessStatusCode)
