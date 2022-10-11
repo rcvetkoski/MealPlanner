@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.RSControls.Controls;
 using ZXing.QrCode.Internal;
 using static MealPlanner.Models.TestModel;
 
@@ -69,6 +70,9 @@ namespace MealPlanner.Services
 
                 foreach (var openFoodFact in openFoodFactsObjectSearch.products)
                 {
+                    if (string.IsNullOrEmpty(openFoodFact.image_front_url) || string.IsNullOrEmpty(openFoodFact.product_name))
+                        continue;
+
                     Product product = openFoodFact as Product;
 
                     var aliment = new Food();

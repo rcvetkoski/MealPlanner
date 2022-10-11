@@ -260,7 +260,14 @@ namespace MealPlanner.ViewModels
         {
             try
             {
+                RSPopup rSPopup = new RSPopup();
+                ActivityIndicator activityIndicator = new ActivityIndicator() { IsRunning = true };
+                rSPopup.SetCustomView(activityIndicator);
+                rSPopup.Show();
+
                 var aliments = await App.RestService.SearchAlimentAsync(text);
+
+                rSPopup.Close();
 
                 FilteredAliments.Clear();
 

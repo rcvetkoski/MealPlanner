@@ -11,6 +11,7 @@ namespace MealPlanner.Helpers
         public static void Initialisation()
         {
             Client = new HttpClient();
+            Client.Timeout = TimeSpan.FromSeconds(15);
         }
     }
 }
