@@ -119,7 +119,7 @@
                                                         <!-- Content -->
                                                         <Grid RowDefinitions="55, *" ColumnDefinitions="55, *" Padding="0,0,10,0">
                                                             <ImageButton Grid.Row="0" Grid.Column="0" BackgroundColor="Gray" CornerRadius="8" WidthRequest="100" HeightRequest="100"
-                                                                         Aspect="AspectFill"
+                                                                         Source="{Binding ImageSource}" Aspect="AspectFill"
                                                                          Command="{Binding BindingContext.UpdateAlimentCommand, Source={x:Reference Home}}">
                                                                 <ImageButton.CommandParameter>
                                                                     <MultiBinding Converter="{StaticResource MultiBindingConverter}">
@@ -127,9 +127,6 @@
                                                                         <Binding Path="."/>
                                                                     </MultiBinding>
                                                                 </ImageButton.CommandParameter>
-                                                                <ImageButton.Source>
-                                                                    <UriImageSource Uri="{Binding ImageSourcePath}" CachingEnabled="True" CacheValidity="1"/>
-                                                                </ImageButton.Source>
                                                             </ImageButton>
                                                             <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="*, *" ColumnDefinitions="Auto, Auto, Auto, *">
                                                                 <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="{Binding Name}" FontAttributes="Bold" FontSize="Caption"/>

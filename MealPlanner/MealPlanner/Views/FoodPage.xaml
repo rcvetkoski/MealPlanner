@@ -21,11 +21,12 @@
 
     <ContentPage.Content>
         <ScrollView Orientation="Neither">
-            <Grid Margin="10" ColumnDefinitions="*, *, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+            <Grid Margin="10" ColumnDefinitions="*, *, *" RowDefinitions="100, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
-                <rsControls:RSEntry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Helper="Mandatory" Placeholder="Name" Text="{Binding Name}" FontAttributes="Bold" IsPlaceholderAlwaysFloating="True" />
+                <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="12" Aspect="AspectFill" BackgroundColor="LightGray" Source="{Binding ImageSourcePath}" WidthRequest="100" HorizontalOptions="Center"/>
 
-                <Image Grid.Row="0" Grid.Column="2" BackgroundColor="LightGray" Source="{Binding ImageSourcePath}" HeightRequest="40"/>
+
+                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Helper="Mandatory" Placeholder="Name" Text="{Binding Name}" FontAttributes="Bold" IsPlaceholderAlwaysFloating="True" />
 
                 <!--<Grid Margin="10" VerticalOptions="FillAndExpand">
                 <Frame Grid.Row="0" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
@@ -49,17 +50,17 @@
                 </Frame>
             </Grid>-->
 
-                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="*,*">
+                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="*,*">
                     <rsControls:RSNumericEntry Grid.Column="0" Placeholder="Serving size" Text="{Binding ServingSize}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
                     <rsControls:RSEnumPicker Grid.Column="1" x:TypeArguments="enums:AlimentUnitEnum" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
                 </Grid>
-                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Placeholder="Proteins" Text="{Binding Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="1" Placeholder="Carbs" Text="{Binding Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="2" Placeholder="Fats" Text="{Binding Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Placeholder="Calories" Text="{Binding Calories}" Helper="calories are calculated automatically if empty" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Placeholder="Proteins" Text="{Binding Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="1" Placeholder="Carbs" Text="{Binding Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="2" Placeholder="Fats" Text="{Binding Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Placeholder="Calories" Text="{Binding Calories}" Helper="calories are calculated automatically if empty" IsPlaceholderAlwaysFloating="True"/>
 
 
-                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="100, *" RowDefinitions="100, Auto" Margin="15">
+                <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="100, *" RowDefinitions="100, Auto" Margin="15">
                     <controls:CircleCountdown 
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
@@ -120,8 +121,8 @@
                 </Grid>
 
 
-                <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Text="Save" Command="{Binding SaveCommand}"/>
-                <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Text="Update" Command="{Binding UpdateCommand}"/>
+                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Text="Save" Command="{Binding SaveCommand}"/>
+                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Text="Update" Command="{Binding UpdateCommand}"/>
 
             </Grid>
         </ScrollView>

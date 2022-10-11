@@ -22,18 +22,24 @@
     
     <ContentPage.Content>
         <ScrollView Orientation="Neither">
-            <Grid Margin="10" ColumnDefinitions="*, 120" RowDefinitions="Auto, Auto, Auto, Auto, *">
-                <rsControls:RSEntry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Name" Text="{Binding Name}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" x:Name="ServingSize" Placeholder="Serving Size" Text="{Binding ServingSize}" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="1" x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSEditor Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Description" Text="{Binding Description}" IsPlaceholderAlwaysFloating="True"/>
+            <Grid Margin="10" ColumnDefinitions="*, 120" RowDefinitions="100,Auto, Auto, Auto, Auto, *">
 
-                <Button Grid.Row="3" Grid.Column="0" CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Command="{Binding AddFoodCommand}"/>
+                <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                             CornerRadius="12" HorizontalOptions="Center" WidthRequest="100" BackgroundColor="LightGray"
+                             Source="{Binding ImageSourcePath}" Aspect="AspectFill"
+                             Command="{Binding AddImageCommand}"/>
+
+                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Name" Text="{Binding Name}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" x:Name="ServingSize" Placeholder="Serving Size" Text="{Binding ServingSize}" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSEnumPicker Grid.Row="2" Grid.Column="1" x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSEditor Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Description" Text="{Binding Description}" IsPlaceholderAlwaysFloating="True"/>
+
+                <Button Grid.Row="4" Grid.Column="0" CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Command="{Binding AddFoodCommand}"/>
                 
-                <Button Grid.Row="3" Grid.Column="1" CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Command="{Binding SaveCommand}"/>
-                <Button Grid.Row="3" Grid.Column="1" CornerRadius="10" Text="Update" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Command="{Binding UpdateCommand}"/>
+                <Button Grid.Row="4" Grid.Column="1" CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Command="{Binding SaveCommand}"/>
+                <Button Grid.Row="4" Grid.Column="1" CornerRadius="10" Text="Update" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Command="{Binding UpdateCommand}"/>
 
-                <CollectionView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Foods}">
+                <CollectionView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Foods}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <SwipeView BackgroundColor="White">

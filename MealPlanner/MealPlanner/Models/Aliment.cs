@@ -3,6 +3,7 @@ using SQLite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Xamarin.Forms;
@@ -34,7 +35,7 @@ namespace MealPlanner.Models
         public int DayMealAlimentId { get; set; } = 0;
 
         private string imageSourcePath;
-        public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); } }
+        public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); OnPropertyChanged("ImageSource"); } }
         public virtual AlimentTypeEnum AlimentType { get; }
 
         private AlimentUnitEnum unit;
@@ -47,5 +48,19 @@ namespace MealPlanner.Models
         public string NutritionValuesString { get { return $"P: {Math.Round(Proteins, 2)},  C: {Math.Round(Carbs, 2)},  F: {Math.Round(Fats, 2)}"; } }
         [Ignore]
         public string CaloriesString { get { return $"{Math.Round(Calories, 2)} Kcal"; } }
+        [Ignore]
+        public ImageSource ImageSource 
+        { 
+            get
+            { 
+                if(string.IsNullOrEmpty(ImageSourcePath))
+                    return null;    
+
+                if(imageSourcePath.Contains("https"))
+                    return new UriImageSource() { Uri = new Uri(ImageSourcePath), CachingEnabled = true, CacheValidity = TimeSpan.FromDays(1) };
+                else
+                    return ImageSource.FromFile(ImageSourcePath);
+            }
+        } 
     }
 }

@@ -4,10 +4,13 @@ using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MealPlanner.ViewModels
@@ -17,6 +20,8 @@ namespace MealPlanner.ViewModels
         private string name;
         public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
         private double servingSize;
+        private string imageSourcePath;
+        public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); } }
         public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); } }
         private string description;
         public string Description { get { return description; } set { description = value; OnPropertyChanged("Description"); } }
@@ -39,6 +44,7 @@ namespace MealPlanner.ViewModels
             AddFoodCommand = new Command(AddFood);
             SaveCommand = new Command(SaveFood);
             UpdateCommand = new Command(UpdateMeal);
+            AddImageCommand = new Command(AddImage);    
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             DelettedMealFoods = new List<MealFood>();
         }
@@ -49,6 +55,7 @@ namespace MealPlanner.ViewModels
             ServingSize = existingMeal.ServingSize;
             Unit = existingMeal.Unit;
             Description = existingMeal.Description;
+            ImageSourcePath = existingMeal.ImageSourcePath;
             foreach(Food food in existingMeal.Foods)
                 this.Foods.Add(food);   
         }
@@ -58,6 +65,7 @@ namespace MealPlanner.ViewModels
         private async void SaveFood()
         {
             CurrentMeal.Name = this.Name;
+            CurrentMeal.ImageSourcePath = this.ImageSourcePath;
             CurrentMeal.ServingSize = this.ServingSize;
             CurrentMeal.Unit = this.Unit;
             CurrentMeal.Description = this.Description;
@@ -94,6 +102,7 @@ namespace MealPlanner.ViewModels
                 return;
 
             CurrentMeal.Name = this.Name;
+            CurrentMeal.ImageSourcePath = this.ImageSourcePath;
             CurrentMeal.ServingSize = this.ServingSize;
             CurrentMeal.Unit = this.Unit;
             CurrentMeal.Description = this.Description;
@@ -189,5 +198,46 @@ namespace MealPlanner.ViewModels
         }
 
         private List<MealFood> DelettedMealFoods { get; set; }
+
+
+        public ICommand AddImageCommand { get; set; }
+        private async void AddImage()
+        {
+            try
+            {
+                var photo = await MediaPicker.CapturePhotoAsync();
+                await LoadPhotoAsync(photo);
+                Console.WriteLine($"CapturePhotoAsync COMPLETED: {ImageSourcePath}");
+            }
+            catch (FeatureNotSupportedException fnsEx)
+            {
+                // Feature is not supported on the device
+            }
+            catch (PermissionException pEx)
+            {
+                // Permissions not granted
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"CapturePhotoAsync THREW: {ex.Message}");
+            }
+        }
+
+        async Task LoadPhotoAsync(FileResult photo)
+        {
+            // canceled
+            if (photo == null)
+            {
+                ImageSourcePath = null;
+                return;
+            }
+            // save the file into local storage
+            var newFile = Path.Combine(FileSystem.CacheDirectory, photo.FileName);
+            using (var stream = await photo.OpenReadAsync())
+            using (var newStream = File.OpenWrite(newFile))
+                await stream.CopyToAsync(newStream);
+
+            ImageSourcePath = newFile;
+        }
     }
 }
