@@ -25,7 +25,17 @@ namespace MealPlanner.ViewModels
         public AlimentUnitEnum Unit { get { return unit; } set { unit = value; OnPropertyChanged("Unit"); } }
 
         private double proteins;
-        public double Proteins { get { return proteins; } set { proteins = value; ProteinsProgress = proteins / RefData.User.TargetProteins; OnPropertyChanged("Proteins"); OnPropertyChanged("ProteinsProgress"); CalculateCalories(); } }
+        public double Proteins
+        {
+            get { return proteins; }
+            set
+            {
+                proteins = value;
+                ProteinsProgress = proteins / RefData.User.TargetProteins;
+                OnPropertyChanged("Proteins");
+                OnPropertyChanged("ProteinsProgress"); CalculateCalories();
+            }
+        }
         public double ProteinsProgress { get; set; }
 
         private double carbs;
