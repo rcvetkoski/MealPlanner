@@ -101,6 +101,7 @@ namespace MealPlanner.ViewModels
                 foodPageVm.Proteins = existingAliment.Proteins;
                 foodPageVm.Carbs = existingAliment.Carbs;
                 foodPageVm.Fats = existingAliment.Fats;
+                foodPageVm.Calories = existingAliment.Calories;
                 foodPageVm.ServingSize = 100;
 
                 await Application.Current.MainPage.Navigation.PushAsync(foodPage);
