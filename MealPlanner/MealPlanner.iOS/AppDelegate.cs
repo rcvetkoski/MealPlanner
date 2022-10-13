@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using MealPlanner.iOS.Services;
+using MealPlanner.Services;
 using UIKit;
+using Xamarin.Forms;
 
 namespace MealPlanner.iOS
 {
@@ -24,6 +27,7 @@ namespace MealPlanner.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             Xamarin.RSControls.iOS.Controls.RSEntryRenderer.Initialize();
+            DependencyService.Register<IImageService, ImageServiceIOS>();
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             LoadApplication(new App());
 

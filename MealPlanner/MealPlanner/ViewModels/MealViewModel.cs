@@ -1,5 +1,6 @@
 ﻿using MealPlanner.Helpers.Enums;
 using MealPlanner.Models;
+using MealPlanner.Services;
 using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
@@ -206,7 +207,7 @@ namespace MealPlanner.ViewModels
             try
             {
                 var photo = await MediaPicker.CapturePhotoAsync();
-                await LoadPhotoAsync(photo);
+                await LoadPhotoAsync(photo, CurrentMeal);
                 Console.WriteLine($"CapturePhotoAsync COMPLETED: {ImageSourcePath}");
             }
             catch (FeatureNotSupportedException fnsEx)
@@ -223,7 +224,7 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        async Task LoadPhotoAsync(FileResult photo)
+        async Task LoadPhotoAsync(FileResult photo, Aliment aliment)
         {
             // canceled
             if (photo == null)
@@ -237,7 +238,11 @@ namespace MealPlanner.ViewModels
             using (var newStream = File.OpenWrite(newFile))
                 await stream.CopyToAsync(newStream);
 
-            ImageSourcePath = newFile;
+            var resizedFile = Path.Combine(FileSystem.CacheDirectory, $"{aliment.Name}{aliment.Id}");
+            App.ImageService.ResizeImage(newFile, resizedFile, 30);
+
+
+            ImageSourcePath = resizedFile;
         }
     }
 }

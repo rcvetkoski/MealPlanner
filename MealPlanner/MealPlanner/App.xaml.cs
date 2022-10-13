@@ -12,6 +12,7 @@ namespace MealPlanner
         public static IDataBase DataBaseRepo;
         public static ReferentialData RefData;
         public static IRestService RestService;
+        public static IImageService ImageService;
 
         public App()
         {
@@ -23,6 +24,7 @@ namespace MealPlanner
             RefData = new ReferentialData();
             HttpClientHelper.Initialisation();
             RestService = DependencyService.Get<IRestService>(DependencyFetchTarget.GlobalInstance);
+            ImageService = DependencyService.Get<IImageService>();
 
             // get memory adress
             //unsafe

@@ -5,6 +5,10 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using Android.Widget;
+using MealPlanner.Droid.Services;
+using Xamarin.RSControls.Droid;
+using Xamarin.Forms;
+using MealPlanner.Services;
 
 namespace MealPlanner.Droid
 {
@@ -17,6 +21,7 @@ namespace MealPlanner.Droid
 
             Xamarin.RSControls.Droid.RSAppContext.RSContext = this;
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            DependencyService.Register<IImageService, ImageServiceDroid>();
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
