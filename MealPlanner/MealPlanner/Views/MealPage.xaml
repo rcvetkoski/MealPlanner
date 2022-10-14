@@ -22,9 +22,11 @@
     
     <ContentPage.Content>
         <ScrollView Orientation="Neither">
-            <Grid Margin="10" ColumnDefinitions="*, 120" RowDefinitions="300,Auto, Auto, Auto, Auto, *">
+            <Grid Margin="10" ColumnDefinitions="*, 120" RowDefinitions="100,Auto, Auto, Auto, Auto, *">
 
                 <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                             WidthRequest="100" HorizontalOptions="Center"
+                             Aspect="AspectFill"
                              CornerRadius="12" BackgroundColor="LightGray"
                              Source="{Binding ImageSourcePath}" 
                              Command="{Binding AddImageCommand}"/>

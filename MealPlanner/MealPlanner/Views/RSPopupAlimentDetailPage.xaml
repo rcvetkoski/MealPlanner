@@ -4,13 +4,14 @@
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
              xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
              xmlns:controls="clr-namespace:MealPlanner.Controls"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Class="MealPlanner.Views.RSPopupAlimentDetailPage">
     <ContentPage.Content>
         <StackLayout Orientation="Horizontal">
             <Grid ColumnDefinitions="100, *" RowDefinitions="100, Auto">
                 <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Spacing="0">
-                    <Label HorizontalOptions="Center" Text="{Binding AlimentCalories, StringFormat='{0:0.#}'}"/>
-                    <Label HorizontalOptions="Center" Text="kcal" FontAttributes="Bold"/>
+                    <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding AlimentCalories, StringFormat='{0:0.#}'}"/>
+                    <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="kcal" FontAttributes="Bold"/>
                 </StackLayout>
                 <controls:CircleCountdown 
                             HorizontalOptions="FillAndExpand"
@@ -24,7 +25,7 @@
 
                 <Grid Grid.Row="0" Grid.Column="1" ColumnDefinitions="*, *, *" RowDefinitions="Auto, Auto, Auto" VerticalOptions="Center" Margin="5">
 
-                    <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="{Binding AlimentProteinProgress, StringFormat='{0:0.#}'}"/>
@@ -32,7 +33,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmall}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="{Binding AlimentProteins, StringFormat='{0:0.#}'}"/>
@@ -42,7 +43,7 @@
                     </Label>
                     <Label Grid.Row="2" Grid.Column="0" Text="Proteins" VerticalOptions="Center" HorizontalOptions="Center"/>
 
-                    <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="{Binding AlimentCarbsProgress, StringFormat='{0:0.#}'}"/>
@@ -50,7 +51,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Grid.Row="1" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="{Binding AlimentCarbs, StringFormat='{0:0.#}'}"/>
@@ -60,7 +61,7 @@
                     </Label>
                     <Label Grid.Row="2" Grid.Column="1" Text="Carbs" VerticalOptions="Center" HorizontalOptions="Center"/>
 
-                    <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="{Binding AlimentFatsProgress, StringFormat='{0:0.#}'}"/>
@@ -68,7 +69,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Grid.Row="1" Grid.Column="2" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource LabelSmall}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="{Binding AlimentFats, StringFormat='{0:0.#}'}"/>
@@ -80,8 +81,8 @@
                 </Grid>
 
                 <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto" ColumnDefinitions="*, *" RowSpacing="0" Margin="5">
-                    <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" RSEntryStyle="FilledBorder" Text="{Binding AlimentServingSize}" Placeholder="Portion" IsPlaceholderAlwaysFloating="True"/>
-                    <rsControls:RSEnumPicker Grid.Row="0" Grid.Column="1" x:TypeArguments="enums:AlimentUnitEnum" RSEntryStyle="FilledBorder" SelectedItem="{Binding AlimentUnit}" Placeholder="Unit" IsPlaceholderAlwaysFloating="True" Margin="10,0,0,0"/>
+                    <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" Style="{StaticResource Entry}" RSEntryStyle="FilledBorder" Text="{Binding AlimentServingSize}" Placeholder="Portion" IsPlaceholderAlwaysFloating="True"/>
+                    <rsControls:RSEnumPicker Grid.Row="0" Grid.Column="1" Style="{StaticResource Picker}" x:TypeArguments="enums:AlimentUnitEnum" RSEntryStyle="FilledBorder" SelectedItem="{Binding AlimentUnit}" Placeholder="Unit" IsPlaceholderAlwaysFloating="True" Margin="10,0,0,0"/>
                 </Grid>
             </Grid>
         </StackLayout>
