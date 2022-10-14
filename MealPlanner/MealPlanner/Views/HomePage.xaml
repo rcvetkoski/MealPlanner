@@ -128,49 +128,11 @@
                                                                     </MultiBinding>
                                                                 </ImageButton.CommandParameter>
                                                             </ImageButton>
-                                                            <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="*, *" ColumnDefinitions="Auto, Auto, Auto, *">
-                                                                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="{Binding Name}" FontAttributes="Bold" FontSize="Caption"/>
-                                                                <Label Grid.Row="0" Grid.Column="3" HorizontalTextAlignment="End" FontSize="Caption">
-                                                                    <Label.FormattedText>
-                                                                        <FormattedString>
-                                                                            <Span Text="{Binding ServingSize, StringFormat='{0:0.#}'}"/>
-                                                                            <Span Text=" "/>
-                                                                            <Span Text="{Binding Unit}"/>
-                                                                        </FormattedString>
-                                                                    </Label.FormattedText>
-                                                                </Label>
-                                                                <Label Grid.Row="1" Grid.Column="0" FontSize="Caption">
-                                                                    <Label.FormattedText>
-                                                                        <FormattedString>
-                                                                            <Span Text="P : "/>
-                                                                            <Span Text="{Binding Proteins, StringFormat='{0:0.#}'}"/>
-                                                                        </FormattedString>
-                                                                    </Label.FormattedText>
-                                                                </Label>
-                                                                <Label Grid.Row="1" Grid.Column="1" FontSize="Caption">
-                                                                    <Label.FormattedText>
-                                                                        <FormattedString>
-                                                                            <Span Text="C : "/>
-                                                                            <Span Text="{Binding Carbs, StringFormat='{0:0.#}'}"/>
-                                                                        </FormattedString>
-                                                                    </Label.FormattedText>
-                                                                </Label>
-                                                                <Label Grid.Row="1" Grid.Column="2" FontSize="Caption">
-                                                                    <Label.FormattedText>
-                                                                        <FormattedString>
-                                                                            <Span Text="F : "/>
-                                                                            <Span Text="{Binding Fats, StringFormat='{0:0.#}'}"/>
-                                                                        </FormattedString>
-                                                                    </Label.FormattedText>
-                                                                </Label>
-                                                                <Label Grid.Row="1" Grid.Column="3" FontSize="Caption" HorizontalTextAlignment="End" FontAttributes="Bold">
-                                                                    <Label.FormattedText>
-                                                                        <FormattedString>
-                                                                            <Span Text="Cal : "/>
-                                                                            <Span Text="{Binding Calories, StringFormat='{0:0.#}'}"/>
-                                                                        </FormattedString>
-                                                                    </Label.FormattedText>
-                                                                </Label>
+                                                            <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="*, *" ColumnDefinitions="Auto, *">
+                                                                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Name}" FontAttributes="Bold" FontSize="Caption"/>
+                                                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding ServingSizeWithUnit}" HorizontalTextAlignment="End" FontSize="Caption"/>
+                                                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding NutritionValuesString}" FontSize="Caption"/>
+                                                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding CaloriesString}" FontSize="Caption" HorizontalTextAlignment="End" FontAttributes="Bold"/>
                                                             </Grid>
                                                         </Grid>
                                                     </SwipeView>

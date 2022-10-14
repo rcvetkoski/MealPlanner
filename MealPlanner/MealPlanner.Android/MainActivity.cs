@@ -9,6 +9,7 @@ using MealPlanner.Droid.Services;
 using Xamarin.RSControls.Droid;
 using Xamarin.Forms;
 using MealPlanner.Services;
+using AndroidX.AppCompat.App;
 
 namespace MealPlanner.Droid
 {
