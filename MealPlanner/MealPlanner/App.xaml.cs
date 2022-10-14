@@ -25,6 +25,8 @@ namespace MealPlanner
             HttpClientHelper.Initialisation();
             RestService = DependencyService.Get<IRestService>(DependencyFetchTarget.GlobalInstance);
             ImageService = DependencyService.Get<IImageService>();
+            var statusColor = DependencyService.Get<IStatusBarColor>();
+            statusColor.SetStatusBarColor(Color.FromHex("#1C1C1E"), false);
 
             // get memory adress
             //unsafe
