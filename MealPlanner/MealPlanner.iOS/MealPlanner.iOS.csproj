@@ -56,7 +56,7 @@
     <MtouchLink>None</MtouchLink>
     <MtouchInterpreter>-all</MtouchInterpreter>
     <EnableCodeSigning>false</EnableCodeSigning>
-<CodesignProvision>iOS Team Provisioning Profile: com.companyname.MealPlanner</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: com.companyname.MealPlanner</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -70,6 +70,7 @@
     <EnableCodeSigning>false</EnableCodeSigning>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Helpers\StatusBarColor.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Services\ImageServiceIOS.cs" />
