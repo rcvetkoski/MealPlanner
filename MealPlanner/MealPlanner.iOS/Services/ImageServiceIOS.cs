@@ -50,7 +50,7 @@ namespace MealPlanner.iOS.Services
             }
         }
 
-        public void ResizeImage(string sourceFile, string targetFile, nfloat sizePercentage)
+        public void ResizeImage(string sourceFile, string targetFile, float sizePercentage)
         {
             if (File.Exists(sourceFile) && !File.Exists(targetFile))
             {
