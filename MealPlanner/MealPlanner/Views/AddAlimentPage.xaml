@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MealPlanner.ViewModels"
              x:Class="MealPlanner.Views.AddAlimentPage"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Name="addAlimentPage"
              Title="{Binding Title}">
 
@@ -21,39 +22,34 @@
             <SearchBar x:Name="searchBar"
                        Grid.Row="0" Grid.Column="0"
                        Placeholder="Search for food" 
+                       Style="{StaticResource SearchBar}"
                        SearchCommand="{Binding SearchAlimentsCommand}"
                        SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
 
-            <Button Grid.Row="0" Grid.Column="1" Text="Scan code" Command="{Binding ScanBarCodeCommand}"/>
+            <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource ButtonOutline}" Text="Scan code" Command="{Binding ScanBarCodeCommand}"/>
 
 
             <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
-                <RadioButton Grid.Column="0" HorizontalOptions="CenterAndExpand" Content="Food" IsChecked="{Binding IsFoodChecked}"/>
-                <RadioButton Grid.Column="1" HorizontalOptions="CenterAndExpand" Content="Meal" IsChecked="{Binding IsMealChecked}" IsVisible="{Binding MealSwitchVisibility}"/>
-                <Button Grid.Column="2" HorizontalOptions="Center" CornerRadius="10" IsVisible="{Binding IsFoodChecked}"  FontSize="Micro" Text="Create Food" Command="{Binding CreateFoodCommand}"></Button>
-                <Button Grid.Column="2" HorizontalOptions="Center" CornerRadius="10" IsVisible="{Binding IsMealChecked}" FontSize="Micro" Text="Create Meal" Command="{Binding CreateMealCommand}"></Button>
+                <RadioButton Grid.Column="0" Style="{StaticResource RadioButton}" HorizontalOptions="CenterAndExpand" Content="Food" IsChecked="{Binding IsFoodChecked}"/>
+                <RadioButton Grid.Column="1" Style="{StaticResource RadioButton}" HorizontalOptions="CenterAndExpand" Content="Meal" IsChecked="{Binding IsMealChecked}" IsVisible="{Binding MealSwitchVisibility}"/>
+                <Button Grid.Column="2" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" IsVisible="{Binding IsFoodChecked}" FontSize="Micro" Text="Create Food" Command="{Binding CreateFoodCommand}"></Button>
+                <Button Grid.Column="2" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" IsVisible="{Binding IsMealChecked}" FontSize="Micro" Text="Create Meal" Command="{Binding CreateMealCommand}"></Button>
             </Grid>
 
 
-            <CollectionView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="collectionView" ItemsSource="{Binding FilteredAliments}">
+            <CollectionView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" x:Name="collectionView" ItemsSource="{Binding FilteredAliments}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,Auto" Padding="7" RowSpacing="2">
-
                             <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Source="{Binding ImageSource}" Aspect="AspectFill" HeightRequest="60" BackgroundColor="LightGray">
                                 <Image.Clip>
                                     <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
                                 </Image.Clip>
                             </Image>
-
-                            <Label Grid.Column="1" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
-
-                            <Label Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Text="{Binding ServingSizeWithUnit}"/>
-
-                            <Label Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Center" Text="{Binding NutritionValuesString}"/>
-
-                            <Label Grid.Row="1" Grid.Column="2" VerticalTextAlignment="Center" Text="{Binding CaloriesString}" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-
+                            <Label Grid.Column="1" Style="{StaticResource LabelSmall}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
+                            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelSmall}" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Text="{Binding ServingSizeWithUnit}"/>
+                            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalTextAlignment="Center" Text="{Binding NutritionValuesString}"/>
+                            <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalTextAlignment="Center" Text="{Binding CaloriesString}" HorizontalTextAlignment="End" FontAttributes="Bold"/>
                             <BoxView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="#e6e6e6"/>
 
                             <Grid.GestureRecognizers>
