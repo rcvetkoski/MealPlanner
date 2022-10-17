@@ -110,6 +110,7 @@
 
             <Style x:Key="BasePicker" TargetType="Picker">
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
+                <Setter Property="TitleColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
             </Style>
 
             <Style x:Key="Picker" TargetType="Picker" BasedOn="{StaticResource BasePicker}">
@@ -133,7 +134,7 @@
             <Style x:Key="DayMealCard" TargetType="Frame">
                 <Setter Property="HasShadow" Value="{OnPlatform Android=true, iOS=false, Default=true}"/>
                 <Setter Property="Margin" Value="10"/>
-                <Setter Property="Padding" Value="8"/>
+                <Setter Property="Padding" Value="10"/>
                 <Setter Property="CornerRadius" Value="20"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
             </Style>

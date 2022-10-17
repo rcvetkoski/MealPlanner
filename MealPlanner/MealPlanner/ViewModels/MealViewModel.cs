@@ -91,7 +91,8 @@ namespace MealPlanner.ViewModels
             // Update meal values
             RefData.UpdateMealValues(CurrentMeal);
 
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await Shell.Current.GoToAsync("..");
+            //await Application.Current.MainPage.Navigation.PopAsync();
         }
 
 
@@ -171,7 +172,8 @@ namespace MealPlanner.ViewModels
 
             // Update daily values
             RefData.UpdateDailyValues();
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await Shell.Current.GoToAsync("..");
+            //await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         public ICommand AddFoodCommand { get; set; }

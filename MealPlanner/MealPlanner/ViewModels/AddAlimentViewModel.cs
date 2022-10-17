@@ -104,7 +104,8 @@ namespace MealPlanner.ViewModels
                 foodPageVm.Calories = existingAliment.Calories;
                 foodPageVm.ServingSize = 100;
 
-                await Application.Current.MainPage.Navigation.PushAsync(foodPage);
+                await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
+                //await Application.Current.MainPage.Navigation.PushAsync(foodPage);
                 return;
             }
 
@@ -167,7 +168,8 @@ namespace MealPlanner.ViewModels
                 }
 
                 rSPopup.Close();
-                await Application.Current.MainPage.Navigation.PopAsync();
+                await Shell.Current.GoToAsync("..");
+                //await Application.Current.MainPage.Navigation.PopAsync();
             }));
 
             // Edit
@@ -213,7 +215,8 @@ namespace MealPlanner.ViewModels
         public ICommand CreateFoodCommand { get; set; }
         private void CreateFood()
         {
-            App.Current.MainPage.Navigation.PushAsync(new FoodPage());
+            Shell.Current.GoToAsync($"{nameof(FoodPage)}");
+            //App.Current.MainPage.Navigation.PushAsync(new FoodPage());
         }
 
         public ICommand CreateMealCommand { get; set; }
@@ -245,7 +248,8 @@ namespace MealPlanner.ViewModels
                 foodPageVm.Fats = aliment.Fats;
                 foodPageVm.ServingSize = 100;
 
-                await Application.Current.MainPage.Navigation.PushAsync(foodPage);
+                await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
+                //await Application.Current.MainPage.Navigation.PushAsync(foodPage);
 
             }
             catch (Exception ex)

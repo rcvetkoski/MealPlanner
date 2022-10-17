@@ -120,11 +120,11 @@ namespace MealPlanner.ViewModels
 
 
         public ICommand AddAlimentCommand { get; set; }
-        private void AddAliment(DayMeal dayMeal)
+        private async void AddAliment(DayMeal dayMeal)
         {
             AddAlimentPage addAlimentPage = new AddAlimentPage();
             (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedDayMeal = dayMeal;
-            App.Current.MainPage.Navigation.PushAsync(addAlimentPage);
+            await Shell.Current.GoToAsync("AddAlimentPage");
         }
     }
 }

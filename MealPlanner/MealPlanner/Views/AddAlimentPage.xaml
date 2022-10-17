@@ -4,7 +4,8 @@
              xmlns:vm="clr-namespace:MealPlanner.ViewModels"
              x:Class="MealPlanner.Views.AddAlimentPage"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
-             x:Name="addAlimentPage"
+             x:Name="addAlimentPage" 
+             Shell.PresentationMode="Modal"
              Title="{Binding Title}">
 
     <ContentPage.BindingContext>
