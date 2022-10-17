@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -23,6 +24,8 @@ namespace MealPlanner.ViewModels
         private double servingSize;
         private string imageSourcePath;
         public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); } }
+        private ImageSource imageSource;
+        public ImageSource ImageSource { get { return imageSource; } set { imageSource = value; OnPropertyChanged("ImageSource"); } }
         public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); } }
         private string description;
         public string Description { get { return description; } set { description = value; OnPropertyChanged("Description"); } }
@@ -57,6 +60,7 @@ namespace MealPlanner.ViewModels
             Unit = existingMeal.Unit;
             Description = existingMeal.Description;
             ImageSourcePath = existingMeal.ImageSourcePath;
+            ImageSource = existingMeal.ImageSource;
             foreach(Food food in existingMeal.Foods)
                 this.Foods.Add(food);   
         }
@@ -240,11 +244,16 @@ namespace MealPlanner.ViewModels
             using (var newStream = File.OpenWrite(newFile))
                 await stream.CopyToAsync(newStream);
 
+
             var resizedFile = Path.Combine(FileSystem.CacheDirectory, $"{aliment.Name}{aliment.Id}");
             App.ImageService.ResizeImage(newFile, resizedFile, 30);
-
-
             ImageSourcePath = resizedFile;
+
+            CurrentMeal.ImageBlob = File.ReadAllBytes(resizedFile);
+            ImageSource = CurrentMeal.ImageSource;
+
+            if (File.Exists(ImageSourcePath))
+                File.Delete(ImageSourcePath);
         }
     }
 }

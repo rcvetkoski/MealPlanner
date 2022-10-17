@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -104,8 +105,11 @@ namespace MealPlanner.ViewModels
                 foodPageVm.Calories = existingAliment.Calories;
                 foodPageVm.ServingSize = 100;
 
-                await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
-                //await Application.Current.MainPage.Navigation.PushAsync(foodPage);
+                var lol = await HttpClientHelper.Client.GetByteArrayAsync(existingAliment.ImageSourcePath);
+
+
+                //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
+                await Application.Current.MainPage.Navigation.PushAsync(foodPage);
                 return;
             }
 

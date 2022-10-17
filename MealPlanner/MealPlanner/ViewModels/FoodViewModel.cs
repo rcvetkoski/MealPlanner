@@ -2,7 +2,9 @@
 using MealPlanner.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -83,6 +85,8 @@ namespace MealPlanner.ViewModels
             food.OriginalServingSize = ServingSize;
             food.ServingSize = ServingSize;
             food.Unit = Unit;
+            food.ImageBlob = await Helpers.HttpClientHelper.Client.GetByteArrayAsync(ImageSourcePath);
+
 
             await App.DataBaseRepo.AddFoodAsync(food);
             App.RefData.Foods.Add(food);
@@ -109,6 +113,10 @@ namespace MealPlanner.ViewModels
             food.OriginalServingSize = ServingSize;
             food.ServingSize = ServingSize;
             food.Unit = Unit;
+            //using (FileStream stream = new FileStream(ImageSourcePath, FileMode.Open, FileAccess.Read))
+            //{
+            //    food.ImageStream = stream;
+            //}
 
             await App.DataBaseRepo.UpdateFoodAsync(food);
 
