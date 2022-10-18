@@ -15,7 +15,6 @@ namespace MealPlanner.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public ReferentialData RefData { get => App.RefData; }
-
         public AlimentUnitEnum AlimentUnitEnum { get; set; }
 
 

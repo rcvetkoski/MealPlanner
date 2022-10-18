@@ -37,7 +37,7 @@
             </Grid>
 
 
-            <CollectionView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" x:Name="collectionView" ItemsSource="{Binding FilteredAliments}">
+            <CollectionView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.FilteredAliments}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,Auto" Padding="7" RowSpacing="2">

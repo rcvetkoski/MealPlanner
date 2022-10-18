@@ -85,12 +85,13 @@ namespace MealPlanner.ViewModels
             food.OriginalServingSize = ServingSize;
             food.ServingSize = ServingSize;
             food.Unit = Unit;
-            food.ImageBlob = await Helpers.HttpClientHelper.Client.GetByteArrayAsync(ImageSourcePath);
+            //food.ImageBlob = await Helpers.HttpClientHelper.Client.GetByteArrayAsync(ImageSourcePath);
 
 
             await App.DataBaseRepo.AddFoodAsync(food);
-            App.RefData.Foods.Add(food);
-            App.RefData.Aliments.Add(food);
+            RefData.Foods.Add(food);
+            RefData.Aliments.Add(food);
+            RefData.FilteredAliments.Add(food);
             await Shell.Current.GoToAsync("..");
             //await Application.Current.MainPage.Navigation.PopAsync();
         }
@@ -113,10 +114,8 @@ namespace MealPlanner.ViewModels
             food.OriginalServingSize = ServingSize;
             food.ServingSize = ServingSize;
             food.Unit = Unit;
-            //using (FileStream stream = new FileStream(ImageSourcePath, FileMode.Open, FileAccess.Read))
-            //{
-            //    food.ImageStream = stream;
-            //}
+            //food.ImageBlob = await Helpers.HttpClientHelper.Client.GetByteArrayAsync(ImageSourcePath);
+
 
             await App.DataBaseRepo.UpdateFoodAsync(food);
 

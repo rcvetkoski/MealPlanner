@@ -22,6 +22,7 @@ namespace MealPlanner.Helpers
         public ObservableCollection<Food> Foods { get; set; }
         public ObservableCollection<MealFood> MealFoods { get; set; }
         public ObservableCollection<Aliment> Aliments { get; set; }
+        public ObservableCollection<Aliment> FilteredAliments { get; set; }
         public ObservableCollection<DayMealAliment> DayMealAliments { get; set; }
 
 
@@ -99,6 +100,7 @@ namespace MealPlanner.Helpers
 
             // Aliments
             Aliments = new ObservableCollection<Aliment>();
+            FilteredAliments = new ObservableCollection<Aliment>();
 
             foreach (Meal meal in Meals)
                 Aliments.Add(meal as Aliment);

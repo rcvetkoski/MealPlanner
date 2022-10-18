@@ -46,7 +46,7 @@ namespace MealPlanner.ViewModels
             Foods = new ObservableCollection<Food>();
             IsNew = true;
             AddFoodCommand = new Command(AddFood);
-            SaveCommand = new Command(SaveFood);
+            SaveCommand = new Command(SaveMeal);
             UpdateCommand = new Command(UpdateMeal);
             AddImageCommand = new Command(AddImage);    
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
@@ -67,7 +67,7 @@ namespace MealPlanner.ViewModels
 
         public ICommand SaveCommand { get; set; }
 
-        private async void SaveFood()
+        private async void SaveMeal()
         {
             CurrentMeal.Name = this.Name;
             CurrentMeal.ImageSourcePath = this.ImageSourcePath;
@@ -76,8 +76,9 @@ namespace MealPlanner.ViewModels
             CurrentMeal.Description = this.Description;
             CurrentMeal.OriginalServingSize = CurrentMeal.ServingSize;
             CurrentMeal.Foods = this.Foods;
-            App.RefData.Meals.Add(CurrentMeal);
-            App.RefData.Aliments.Add(CurrentMeal);
+            RefData.Meals.Add(CurrentMeal);
+            RefData.Aliments.Add(CurrentMeal);
+            RefData.FilteredAliments.Add(CurrentMeal);
             await App.DataBaseRepo.AddMealAsync(CurrentMeal);
 
             //Save foods in db

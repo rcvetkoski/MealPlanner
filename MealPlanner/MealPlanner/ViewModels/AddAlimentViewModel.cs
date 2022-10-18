@@ -38,22 +38,20 @@ namespace MealPlanner.ViewModels
             ScanBarCodeCommand = new Command(ScanBarCode);
             SearchAlimentsCommand = new Command<string>(SearchAliments);
 
-            FilteredAliments = new ObservableCollection<Aliment>();
             FilteredAlimentsRefresh();
         }
 
 
-        public ObservableCollection<Aliment> FilteredAliments { get; set; }
         public void FilteredAlimentsRefresh()
         {
-            FilteredAliments.Clear();
+            RefData.FilteredAliments.Clear();
 
             foreach (Aliment aliment in RefData.Aliments)
             {
                 if (IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Meal)
-                    FilteredAliments.Add(aliment);
+                    RefData.FilteredAliments.Add(aliment);
                 else if (!IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
-                    FilteredAliments.Add(aliment);
+                    RefData.FilteredAliments.Add(aliment);
             }
         }
 
@@ -278,11 +276,11 @@ namespace MealPlanner.ViewModels
 
                 rSPopup.Close();
 
-                FilteredAliments.Clear();
+                RefData.FilteredAliments.Clear();
 
                 foreach (Aliment aliment in aliments)
                 {
-                    FilteredAliments.Add(aliment);
+                    RefData.FilteredAliments.Add(aliment);
                 }
             }
             catch (Exception ex)
