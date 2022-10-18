@@ -22,8 +22,7 @@ namespace MealPlanner.iOS.CustomRenderers
 
     public class CustomShellPageRendererTracker : ShellPageRendererTracker
     {
-        public CustomShellPageRendererTracker(IShellContext context)
-            : base(context)
+        public CustomShellPageRendererTracker(IShellContext context) : base(context)
         {
 
         }
