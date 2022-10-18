@@ -15,7 +15,7 @@
     </ContentPage.BindingContext>
 
     <Shell.TitleView>
-        <Grid RowDefinitions="Auto" ColumnDefinitions="*, Auto" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="44" BackgroundColor="Red">
+        <Grid RowDefinitions="Auto" ColumnDefinitions="*, Auto" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Label Grid.Row="0" Grid.Column="0" Text="{Binding Title}" Style="{StaticResource NavigationBarLabel}" VerticalOptions="Center"/>
             <ImageButton Grid.Row="0" Grid.Column="1" x:Name="imageButton" BackgroundColor="Transparent" Padding="20, 14, 20, 14" HorizontalOptions="End"  Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference imageButton}">
                 <ImageButton.Source>
