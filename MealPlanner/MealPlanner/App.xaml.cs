@@ -1,4 +1,4 @@
-﻿using MealPlanner.Helpers;
+using MealPlanner.Helpers;
 using MealPlanner.Services;
 using MealPlanner.Views;
 using System;
@@ -27,18 +27,10 @@ namespace MealPlanner
             HttpClientHelper.Initialisation();
             RestService = DependencyService.Get<IRestService>(DependencyFetchTarget.GlobalInstance);
             ImageService = DependencyService.Get<IImageService>();
-<<<<<<< HEAD
-
-=======
             StatusBarColor = DependencyService.Get<IStatusBarColor>();
->>>>>>> ba7e306b4de99e705d5240a8099ad73d1d6d7625
 
 
             MainPage = new AppShell();
-<<<<<<< HEAD
-            var statusColor = DependencyService.Get<IStatusBarColor>();
-            statusColor.SetStatusBarColor(Color.FromHex("#1C1C1E"), false);
-=======
 
             // Set theme
             SetTheme();
@@ -63,7 +55,6 @@ namespace MealPlanner
                 StatusBarColor.SetStatusBarColor(Color.White, true);
             else
                 StatusBarColor.SetStatusBarColor(Color.FromHex("#1C1C1E"), false);
->>>>>>> ba7e306b4de99e705d5240a8099ad73d1d6d7625
         }
 
         protected override void OnStart()
