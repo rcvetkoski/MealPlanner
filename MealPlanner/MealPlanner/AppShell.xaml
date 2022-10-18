@@ -2,6 +2,7 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:MealPlanner.Views"
+       xmlns:helpers="clr-namespace:MealPlanner.Helpers"
        Title="MealPlanner"
        x:Class="MealPlanner.AppShell">
     <Shell.Resources>
@@ -24,9 +25,24 @@
 
 
     <TabBar>
-        <ShellContent Title="Home" Icon="icon_about.png" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
-        <ShellContent Title="Browse" Icon="icon_feed.png" Route="Testage" ContentTemplate="{DataTemplate local:TestPage}" />
-        <ShellContent Title="Aliments" Icon="icon_feed.png" Route="AddAlimentPage" ContentTemplate="{DataTemplate local:AddAlimentPage}" />
+        <ShellContent Title="Home" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}">
+            <ShellContent.Icon>
+                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.House}" FontFamily="FA-Solid"/>
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent Title="Aliments" Route="AddAlimentPage" ContentTemplate="{DataTemplate local:AddAlimentPage}">
+            <ShellContent.Icon>
+                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.BowlFood}" FontFamily="FA-Solid"/>
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent Title="Browse" Route="Testage" ContentTemplate="{DataTemplate local:TestPage}">
+            <ShellContent.Icon>
+                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.Gear}" FontFamily="FA-Solid"/>
+            </ShellContent.Icon>
+        </ShellContent>
     </TabBar>
 
 

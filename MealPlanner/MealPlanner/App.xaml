@@ -156,6 +156,13 @@
                 <Setter Property="CancelButtonColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
             </Style>
 
+
+            <Style x:Key="NavigationBarLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
         </ResourceDictionary>        
     </Application.Resources>
 </Application>
