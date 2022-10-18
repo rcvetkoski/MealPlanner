@@ -2,7 +2,9 @@
 using MealPlanner.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -83,11 +85,15 @@ namespace MealPlanner.ViewModels
             food.OriginalServingSize = ServingSize;
             food.ServingSize = ServingSize;
             food.Unit = Unit;
+            //food.ImageBlob = await Helpers.HttpClientHelper.Client.GetByteArrayAsync(ImageSourcePath);
+
 
             await App.DataBaseRepo.AddFoodAsync(food);
-            App.RefData.Foods.Add(food);
-            App.RefData.Aliments.Add(food);
-            await Application.Current.MainPage.Navigation.PopAsync();
+            RefData.Foods.Add(food);
+            RefData.Aliments.Add(food);
+            RefData.FilteredAliments.Add(food);
+            await Shell.Current.GoToAsync("..");
+            //await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         public ICommand UpdateCommand { get; set; }
@@ -108,6 +114,8 @@ namespace MealPlanner.ViewModels
             food.OriginalServingSize = ServingSize;
             food.ServingSize = ServingSize;
             food.Unit = Unit;
+            //food.ImageBlob = await Helpers.HttpClientHelper.Client.GetByteArrayAsync(ImageSourcePath);
+
 
             await App.DataBaseRepo.UpdateFoodAsync(food);
 
@@ -137,7 +145,8 @@ namespace MealPlanner.ViewModels
             // Update daily values
             RefData.UpdateDailyValues();
 
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await Shell.Current.GoToAsync("..");
+            //await Application.Current.MainPage.Navigation.PopAsync();
         }
     }
 }

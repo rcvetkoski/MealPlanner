@@ -19,13 +19,5 @@ namespace MealPlanner.Views
         {
             InitializeComponent();
         }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            if ((BindingContext as AddAlimentViewModel).FilteredAliments != null)
-                (BindingContext as AddAlimentViewModel).FilteredAlimentsRefresh();
-        }
     }
 }

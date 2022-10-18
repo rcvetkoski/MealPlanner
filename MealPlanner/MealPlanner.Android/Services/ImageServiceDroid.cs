@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Graphics;
+using Android.Hardware.Lights;
 using Android.Media;
 using Android.OS;
 using Android.Runtime;
@@ -111,32 +112,34 @@ namespace MealPlanner.Droid.Services
                         ExifInterface exifInterface = new ExifInterface(sourceFile);
                         var exifOrientation = exifInterface.GetAttributeInt(ExifInterface.TagOrientation, 1);
 
-                        //int rotationDegrees = 0;
+                        int rotationDegrees = 0;
 
-                        //switch (exifOrientation)
-                        //{
-                        //    case (int)Android.Media.Orientation.Rotate90:
-                        //        rotationDegrees = 90;
-                        //        break;
-                        //    case (int)Android.Media.Orientation.Rotate180:
-                        //        rotationDegrees = 180;
-                        //        break;
-                        //    case (int)Android.Media.Orientation.Rotate270:
-                        //        rotationDegrees = 270;
-                        //        break;
-                        //}
+                        switch (exifOrientation)
+                        {
+                            case (int)Android.Media.Orientation.Rotate90:
+                                rotationDegrees = 90;
+                                break;
+                            case (int)Android.Media.Orientation.Rotate180:
+                                rotationDegrees = 180;
+                                break;
+                            case (int)Android.Media.Orientation.Rotate270:
+                                rotationDegrees = 270;
+                                break;
+                        }
 
-                        //Matrix matrix = new Matrix();
-                        //if (exifOrientation != 0)
-                        //{ 
-                        //    matrix.PreRotate(rotationDegrees);
-                        //}
+                        Matrix matrix = new Matrix();
+                        if (exifOrientation != 0)
+                        { 
+                            matrix.PreRotate(rotationDegrees);
+                        }
 
 
                         if (image != null)
                         {
-                            var sourceSize = new Size((int)image.GetBitmapInfo().Height, (int)image.GetBitmapInfo().Width);
-                            
+                            var sourceSize = new Size((int)image.GetBitmapInfo().Width, (int)image.GetBitmapInfo().Height);
+
+                            var normalizedBitmap = Bitmap.CreateBitmap(image, 0, 0, sourceSize.Width, sourceSize.Height, matrix, true);
+
                             float maxWidth = (sizePercentage >= 1 && sizePercentage <= 100) ? (sourceSize.Width * sizePercentage) / 100 : sourceSize.Width;
                             float maxHeight = (sizePercentage >= 1 && sizePercentage <= 100) ? (sourceSize.Height * sizePercentage) / 100 : sourceSize.Height;
 
@@ -155,7 +158,7 @@ namespace MealPlanner.Droid.Services
                                 var width = (int)(maxResizeFactor * sourceSize.Width);
                                 var height = (int)(maxResizeFactor * sourceSize.Height);
 
-                                using (var bitmapScaled = Bitmap.CreateScaledBitmap(image, height, width, true))
+                                using (var bitmapScaled = Bitmap.CreateScaledBitmap(normalizedBitmap, width, height, true))
                                 {
                                     using (System.IO.Stream outStream = File.Create(targetFile))
                                     {
@@ -164,10 +167,10 @@ namespace MealPlanner.Droid.Services
                                         else
                                             bitmapScaled.Compress(Bitmap.CompressFormat.Jpeg, 95, outStream);
 
-                                        // Save orientation from original image to compressed one
-                                        ExifInterface exif = new ExifInterface(targetFile);
-                                        exif.SetAttribute(ExifInterface.TagOrientation, exifOrientation.ToString());
-                                        exif.SaveAttributes();
+                                        //// Save orientation from original image to compressed one
+                                        //ExifInterface exif = new ExifInterface(targetFile);
+                                        //exif.SetAttribute(ExifInterface.TagOrientation, exifOrientation.ToString());
+                                        //exif.SaveAttributes();
                                     }
                                     bitmapScaled.Recycle();
                                 }

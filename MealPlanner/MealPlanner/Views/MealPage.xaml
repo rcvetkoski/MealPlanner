@@ -7,6 +7,7 @@
              xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" 
              xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              x:Name="mealPage"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Class="MealPlanner.Views.MealPage">
 
     <ContentPage.Resources>
@@ -28,23 +29,23 @@
                              WidthRequest="100" HorizontalOptions="Center"
                              Aspect="AspectFill"
                              CornerRadius="12" BackgroundColor="LightGray"
-                             Source="{Binding ImageSourcePath}" 
+                             Source="{Binding ImageSource}" 
                              Command="{Binding AddImageCommand}"/>
 
-                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Name" Text="{Binding Name}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" x:Name="ServingSize" Placeholder="Serving Size" Text="{Binding ServingSize}" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSEnumPicker Grid.Row="2" Grid.Column="1" x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Entry}" Placeholder="Name" Text="{Binding Name}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Style="{StaticResource Entry}" x:Name="ServingSize" Placeholder="Serving Size" Text="{Binding ServingSize}" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSEnumPicker Grid.Row="2" Grid.Column="1" Style="{StaticResource Picker}" x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
                 <rsControls:RSEditor Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Description" Text="{Binding Description}" IsPlaceholderAlwaysFloating="True"/>
 
-                <Button Grid.Row="4" Grid.Column="0" CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Command="{Binding AddFoodCommand}"/>
-                
-                <Button Grid.Row="4" Grid.Column="1" CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Command="{Binding SaveCommand}"/>
-                <Button Grid.Row="4" Grid.Column="1" CornerRadius="10" Text="Update" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Command="{Binding UpdateCommand}"/>
+                <Button Grid.Row="4" Grid.Column="0" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Command="{Binding AddFoodCommand}"/>
 
-                <CollectionView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Foods}">
+                <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Command="{Binding SaveCommand}"/>
+                <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="Update" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Command="{Binding UpdateCommand}"/>
+
+                <CollectionView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding Foods}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <SwipeView BackgroundColor="White">
+                            <SwipeView Style="{StaticResource SwipeView}">
                                 <SwipeView.RightItems>
                                     <SwipeItems>
                                         <SwipeItem Text="Delete" BackgroundColor="Red" Command="{Binding BindingContext.DeletteAlimentCommand, Source={x:Reference mealPage}}">
@@ -59,7 +60,7 @@
                                 </SwipeView.RightItems>
 
                                 <Grid Margin="2" RowDefinitions="Auto, Auto, 1" ColumnDefinitions="*,Auto,Auto,Auto" Padding="5, 0, 5, 0">
-                                    <Label Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Style="{StaticResource LabelSmall}" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
                                     <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center">
                                         <Label.FormattedText>
                                             <FormattedString>
@@ -70,7 +71,7 @@
                                         </Label.FormattedText>
                                     </Label>
 
-                                    <Label Grid.Row="1" Grid.Column="1" VerticalOptions="Center">
+                                    <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding Proteins, StringFormat='{0:0.#}'}"/>
@@ -78,7 +79,7 @@
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Grid.Row="1" Grid.Column="2" VerticalOptions="Center">
+                                    <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="Center">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding Carbs, StringFormat='{0:0.#}'}"/>
@@ -86,7 +87,7 @@
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Grid.Row="1" Grid.Column="3" VerticalOptions="Center">
+                                    <Label Grid.Row="1" Grid.Column="3" Style="{StaticResource LabelSmall}" VerticalOptions="Center">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding Fats, StringFormat='{0:0.#}'}"/>
@@ -94,7 +95,7 @@
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold">
+                                    <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource LabelSmall}" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding Calories, StringFormat='{0:0.#}'}"/>

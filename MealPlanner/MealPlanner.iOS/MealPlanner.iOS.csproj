@@ -29,7 +29,7 @@
     <MtouchDebug>true</MtouchDebug>
     <EnableCodeSigning>false</EnableCodeSigning>
     <CodesignProvision>iOS Team Provisioning Profile: com.companyname.MealPlanner</CodesignProvision>
-    <CodesignKey>Apple Development: rade_te_fr@hotmail.com (WQ6N3VG99D)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -36,23 +37,23 @@ namespace MealPlanner.ViewModels
             CreateMealCommand = new Command(CreateMeal);
             ScanBarCodeCommand = new Command(ScanBarCode);
             SearchAlimentsCommand = new Command<string>(SearchAliments);
+            OpenFiltersCommand = new Command<ImageButton>(openFIlters);
 
-            FilteredAliments = new ObservableCollection<Aliment>();
             FilteredAlimentsRefresh();
         }
 
+        private RSPopup rSPopupFilter;
 
-        public ObservableCollection<Aliment> FilteredAliments { get; set; }
         public void FilteredAlimentsRefresh()
         {
-            FilteredAliments.Clear();
+            RefData.FilteredAliments.Clear();
 
             foreach (Aliment aliment in RefData.Aliments)
             {
                 if (IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Meal)
-                    FilteredAliments.Add(aliment);
+                    RefData.FilteredAliments.Add(aliment);
                 else if (!IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
-                    FilteredAliments.Add(aliment);
+                    RefData.FilteredAliments.Add(aliment);
             }
         }
 
@@ -104,6 +105,10 @@ namespace MealPlanner.ViewModels
                 foodPageVm.Calories = existingAliment.Calories;
                 foodPageVm.ServingSize = 100;
 
+                var lol = await HttpClientHelper.Client.GetByteArrayAsync(existingAliment.ImageSourcePath);
+
+
+                //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
                 await Application.Current.MainPage.Navigation.PushAsync(foodPage);
                 return;
             }
@@ -167,7 +172,8 @@ namespace MealPlanner.ViewModels
                 }
 
                 rSPopup.Close();
-                await Application.Current.MainPage.Navigation.PopAsync();
+                await Shell.Current.GoToAsync("..");
+                //await Application.Current.MainPage.Navigation.PopAsync();
             }));
 
             // Edit
@@ -211,23 +217,44 @@ namespace MealPlanner.ViewModels
 
 
         public ICommand CreateFoodCommand { get; set; }
-        private void CreateFood()
+        private async void CreateFood()
         {
-            App.Current.MainPage.Navigation.PushAsync(new FoodPage());
+            rSPopupFilter.Close();
+            await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
+            //App.Current.MainPage.Navigation.PushAsync(new FoodPage());
         }
 
         public ICommand CreateMealCommand { get; set; }
-        private void CreateMeal()
+        private async void CreateMeal()
         {
-            App.Current.MainPage.Navigation.PushAsync(new MealPage());
+            rSPopupFilter.Close();
+            await Shell.Current.GoToAsync($"{nameof(MealPage)}");
+            //App.Current.MainPage.Navigation.PushAsync(new MealPage());
         }
 
+        public ICommand OpenFiltersCommand { get; set; }
+        private void openFIlters(ImageButton imageButton)
+        {
+            rSPopupFilter = new RSPopup();
+            rSPopupFilter.SetMargin(0, 10, 0, 0);
+            Views.Popups.FilterAddAlimentsPagePopUp filterAddAlimentsPopUp = new Views.Popups.FilterAddAlimentsPagePopUp() { BindingContext = this};
+            rSPopupFilter.SetCustomView(filterAddAlimentsPopUp);
+            rSPopupFilter.SetPopupPositionRelativeTo(imageButton, Xamarin.RSControls.Enums.RSPopupPositionSideEnum.Over);
+            rSPopupFilter.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.RightToLeft);
+            rSPopupFilter.SetDimAmount(0);
+            rSPopupFilter.SetPopupSize(Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent, Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent);
+            rSPopupFilter.Show();
+        }
 
         public ICommand ScanBarCodeCommand { get; set; }
         private async void ScanBarCode()
         {
             var scanner = new ZXing.Mobile.MobileBarcodeScanner();
             var result = await scanner.Scan();
+
+            if (result == null)
+                return;
+
             var code = result.Text;
 
             //var code = "04963406";
@@ -245,7 +272,8 @@ namespace MealPlanner.ViewModels
                 foodPageVm.Fats = aliment.Fats;
                 foodPageVm.ServingSize = 100;
 
-                await Application.Current.MainPage.Navigation.PushAsync(foodPage);
+                await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
+                //await Application.Current.MainPage.Navigation.PushAsync(foodPage);
 
             }
             catch (Exception ex)
@@ -270,11 +298,11 @@ namespace MealPlanner.ViewModels
 
                 rSPopup.Close();
 
-                FilteredAliments.Clear();
+                RefData.FilteredAliments.Clear();
 
                 foreach (Aliment aliment in aliments)
                 {
-                    FilteredAliments.Add(aliment);
+                    RefData.FilteredAliments.Add(aliment);
                 }
             }
             catch (Exception ex)

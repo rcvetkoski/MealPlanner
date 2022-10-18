@@ -6,5 +6,9 @@ namespace MealPlanner.ViewModels
 {
     public class TestViewModel : BaseViewModel
     {
+        public TestViewModel()
+        {
+            Title = "Test";
+        }
     }
 }

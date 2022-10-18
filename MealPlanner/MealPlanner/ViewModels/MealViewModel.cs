@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -23,6 +24,8 @@ namespace MealPlanner.ViewModels
         private double servingSize;
         private string imageSourcePath;
         public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); } }
+        private ImageSource imageSource;
+        public ImageSource ImageSource { get { return imageSource; } set { imageSource = value; OnPropertyChanged("ImageSource"); } }
         public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); } }
         private string description;
         public string Description { get { return description; } set { description = value; OnPropertyChanged("Description"); } }
@@ -43,7 +46,7 @@ namespace MealPlanner.ViewModels
             Foods = new ObservableCollection<Food>();
             IsNew = true;
             AddFoodCommand = new Command(AddFood);
-            SaveCommand = new Command(SaveFood);
+            SaveCommand = new Command(SaveMeal);
             UpdateCommand = new Command(UpdateMeal);
             AddImageCommand = new Command(AddImage);    
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
@@ -57,13 +60,14 @@ namespace MealPlanner.ViewModels
             Unit = existingMeal.Unit;
             Description = existingMeal.Description;
             ImageSourcePath = existingMeal.ImageSourcePath;
+            ImageSource = existingMeal.ImageSource;
             foreach(Food food in existingMeal.Foods)
                 this.Foods.Add(food);   
         }
 
         public ICommand SaveCommand { get; set; }
 
-        private async void SaveFood()
+        private async void SaveMeal()
         {
             CurrentMeal.Name = this.Name;
             CurrentMeal.ImageSourcePath = this.ImageSourcePath;
@@ -72,8 +76,9 @@ namespace MealPlanner.ViewModels
             CurrentMeal.Description = this.Description;
             CurrentMeal.OriginalServingSize = CurrentMeal.ServingSize;
             CurrentMeal.Foods = this.Foods;
-            App.RefData.Meals.Add(CurrentMeal);
-            App.RefData.Aliments.Add(CurrentMeal);
+            RefData.Meals.Add(CurrentMeal);
+            RefData.Aliments.Add(CurrentMeal);
+            RefData.FilteredAliments.Add(CurrentMeal);
             await App.DataBaseRepo.AddMealAsync(CurrentMeal);
 
             //Save foods in db
@@ -91,7 +96,8 @@ namespace MealPlanner.ViewModels
             // Update meal values
             RefData.UpdateMealValues(CurrentMeal);
 
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await Shell.Current.GoToAsync("..");
+            //await Application.Current.MainPage.Navigation.PopAsync();
         }
 
 
@@ -171,7 +177,8 @@ namespace MealPlanner.ViewModels
 
             // Update daily values
             RefData.UpdateDailyValues();
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await Shell.Current.GoToAsync("..");
+            //await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         public ICommand AddFoodCommand { get; set; }
@@ -238,11 +245,16 @@ namespace MealPlanner.ViewModels
             using (var newStream = File.OpenWrite(newFile))
                 await stream.CopyToAsync(newStream);
 
+
             var resizedFile = Path.Combine(FileSystem.CacheDirectory, $"{aliment.Name}{aliment.Id}");
             App.ImageService.ResizeImage(newFile, resizedFile, 30);
-
-
             ImageSourcePath = resizedFile;
+
+            CurrentMeal.ImageBlob = File.ReadAllBytes(resizedFile);
+            ImageSource = CurrentMeal.ImageSource;
+
+            if (File.Exists(ImageSourcePath))
+                File.Delete(ImageSourcePath);
         }
     }
 }

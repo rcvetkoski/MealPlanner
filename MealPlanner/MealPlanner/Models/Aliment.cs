@@ -36,6 +36,8 @@ namespace MealPlanner.Models
 
         private string imageSourcePath;
         public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); OnPropertyChanged("ImageSource"); } }
+        private byte[] imageBlob;
+        public byte[] ImageBlob { get { return imageBlob; } set { imageBlob = value; OnPropertyChanged("ImageBlob"); } }
         public virtual AlimentTypeEnum AlimentType { get; }
 
         private AlimentUnitEnum unit;
@@ -53,6 +55,9 @@ namespace MealPlanner.Models
         { 
             get
             { 
+                if(ImageBlob != null)
+                    return ImageSource.FromStream(() => new MemoryStream(ImageBlob));
+
                 if(string.IsNullOrEmpty(ImageSourcePath))
                     return null;    
 

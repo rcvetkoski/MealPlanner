@@ -13,6 +13,8 @@ namespace MealPlanner
         public static ReferentialData RefData;
         public static IRestService RestService;
         public static IImageService ImageService;
+        public static IStatusBarColor StatusBarColor;
+
 
         public App()
         {
@@ -25,21 +27,43 @@ namespace MealPlanner
             HttpClientHelper.Initialisation();
             RestService = DependencyService.Get<IRestService>(DependencyFetchTarget.GlobalInstance);
             ImageService = DependencyService.Get<IImageService>();
-            var statusColor = DependencyService.Get<IStatusBarColor>();
-            statusColor.SetStatusBarColor(Color.FromHex("#1C1C1E"), false);
+<<<<<<< HEAD
 
-            // get memory adress
-            //unsafe
-            //{
-            //    TypedReference tr = __makeref(RestService);
-            //    IntPtr ptr = **(IntPtr**)(&tr);
+=======
+            StatusBarColor = DependencyService.Get<IStatusBarColor>();
+>>>>>>> ba7e306b4de99e705d5240a8099ad73d1d6d7625
 
-            //    TypedReference tr2 = __makeref(sd);
-            //    IntPtr ptr2 = **(IntPtr**)(&tr2);
-
-            //}
 
             MainPage = new AppShell();
+<<<<<<< HEAD
+            var statusColor = DependencyService.Get<IStatusBarColor>();
+            statusColor.SetStatusBarColor(Color.FromHex("#1C1C1E"), false);
+=======
+
+            // Set theme
+            SetTheme();
+
+            // Respond to the theme change
+            Application.Current.RequestedThemeChanged += (s, a) =>
+            {
+                if (a.RequestedTheme == OSAppTheme.Light)
+                {
+                    StatusBarColor.SetStatusBarColor(Color.White, true);
+                }
+                else if (a.RequestedTheme == OSAppTheme.Dark)
+                {
+                    StatusBarColor.SetStatusBarColor(Color.FromHex("#1C1C1E"), false);
+                }
+            };
+        }
+
+        private void SetTheme()
+        {
+            if(Current.RequestedTheme == OSAppTheme.Unspecified || Current.RequestedTheme == OSAppTheme.Light)
+                StatusBarColor.SetStatusBarColor(Color.White, true);
+            else
+                StatusBarColor.SetStatusBarColor(Color.FromHex("#1C1C1E"), false);
+>>>>>>> ba7e306b4de99e705d5240a8099ad73d1d6d7625
         }
 
         protected override void OnStart()
