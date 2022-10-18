@@ -70,6 +70,7 @@
     <EnableCodeSigning>false</EnableCodeSigning>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CustomRenderers\CustomShellRenderer.cs" />
     <Compile Include="Helpers\StatusBarColor.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
