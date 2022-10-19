@@ -25,7 +25,6 @@ namespace MealPlanner.iOS.CustomRenderers
         public CustomShellPageRendererTracker(IShellContext context) : base(context)
         {
 
-
         }
 
         protected override void UpdateTitleView()

@@ -115,7 +115,8 @@ namespace MealPlanner.ViewModels
 
 
             RSPopup rSPopup = new RSPopup();
-            rSPopup.SetTitle(existingAliment.Name);
+            rSPopup.Title = existingAliment.Name;
+            rSPopup.Style = Application.Current.Resources["RSPopup"] as Style;
 
 
             AlimentPopUpViewModel rsPopupBindingContext;
@@ -238,11 +239,13 @@ namespace MealPlanner.ViewModels
             rSPopupFilter = new RSPopup();
             rSPopupFilter.SetMargin(0, 10, 0, 0);
             Views.Popups.FilterAddAlimentsPagePopUp filterAddAlimentsPopUp = new Views.Popups.FilterAddAlimentsPagePopUp() { BindingContext = this};
-            rSPopupFilter.SetCustomView(filterAddAlimentsPopUp);
+            //rSPopupFilter.SetAppThemeColor(RSPopup.BackgroundColorProperty, Color.FromHex("f2f2f7"), Color.FromHex("#1C1C1E"));
+            rSPopupFilter.Style = Application.Current.Resources["RSPopup"] as Style;
+            rSPopupFilter.SetCustomView(filterAddAlimentsPopUp); 
             rSPopupFilter.SetPopupPositionRelativeTo(imageButton, Xamarin.RSControls.Enums.RSPopupPositionSideEnum.Over);
             rSPopupFilter.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.RightToLeft);
-            rSPopupFilter.SetDimAmount(0);
-            rSPopupFilter.SetPopupSize(Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent, Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent);
+            rSPopupFilter.DimAmount = 0.2f;
+            rSPopupFilter.SetPopupSize(150, Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent);
             rSPopupFilter.Show();
         }
 

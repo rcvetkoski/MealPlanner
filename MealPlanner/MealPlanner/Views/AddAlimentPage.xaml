@@ -27,7 +27,7 @@
     </Shell.TitleView>
 
     <ContentPage.Content>
-        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*, Auto">
+        <Grid RowDefinitions="Auto,*" ColumnDefinitions="*, Auto">
 
             <rsControls:RSSearchView x:Name="searchBar"
                        Grid.Row="0" Grid.Column="0"
@@ -43,15 +43,8 @@
                 </ImageButton.Source>
             </ImageButton>
 
-            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto" ColumnDefinitions="*,*,*" IsVisible="False">
-                <RadioButton Grid.Column="0" Style="{StaticResource RadioButton}" HorizontalOptions="CenterAndExpand" Content="Food" IsChecked="{Binding IsFoodChecked}"/>
-                <RadioButton Grid.Column="1" Style="{StaticResource RadioButton}" HorizontalOptions="CenterAndExpand" Content="Meal" IsChecked="{Binding IsMealChecked}" IsVisible="{Binding MealSwitchVisibility}"/>
-                <Button Grid.Column="2" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" IsVisible="{Binding IsFoodChecked}" FontSize="Micro" Text="Create Food" Command="{Binding CreateFoodCommand}"></Button>
-                <Button Grid.Column="2" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" IsVisible="{Binding IsMealChecked}" FontSize="Micro" Text="Create Meal" Command="{Binding CreateMealCommand}"></Button>
-            </Grid>
 
-
-            <CollectionView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.FilteredAliments}">
+            <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.FilteredAliments}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,Auto" Padding="7" RowSpacing="2">

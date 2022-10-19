@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              x:Class="MealPlanner.App">
     <!--
         Define global resources and styles here, that apply to all pages in your app.
@@ -141,9 +142,6 @@
 
             <Style x:Key="RadioButton" TargetType="RadioButton">
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"/>
-                <Setter Property="BorderColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="Padding" Value="10, 10, 0, 10"/>
             </Style>
 
             <Style x:Key="SwipeView" TargetType="SwipeView">
@@ -161,6 +159,10 @@
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style x:Key="RSPopup" TargetType="rsControls:RSPopup">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource WindowBackgroundColor}}" />
             </Style>
 
         </ResourceDictionary>        

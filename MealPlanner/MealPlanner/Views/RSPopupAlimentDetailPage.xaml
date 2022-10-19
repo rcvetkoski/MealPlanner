@@ -4,7 +4,6 @@
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
              xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
              xmlns:controls="clr-namespace:MealPlanner.Controls"
-             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Class="MealPlanner.Views.RSPopupAlimentDetailPage">
     <ContentPage.Content>
         <StackLayout Orientation="Horizontal">

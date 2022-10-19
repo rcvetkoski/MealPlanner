@@ -13499,6 +13499,7 @@ namespace MealPlanner.Droid
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionMenuTextColor = global::MealPlanner.Droid.Resource.Attribute.actionMenuTextColor;
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeBackground = global::MealPlanner.Droid.Resource.Attribute.actionModeBackground;
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeCloseButtonStyle = global::MealPlanner.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeCloseContentDescription = global::MealPlanner.Droid.Resource.Attribute.actionModeCloseContentDescription;
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeCloseDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeCloseDrawable;
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeCopyDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeCopyDrawable;
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeCutDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeCutDrawable;
@@ -13509,6 +13510,7 @@ namespace MealPlanner.Droid
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeShareDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeShareDrawable;
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeSplitBackground = global::MealPlanner.Droid.Resource.Attribute.actionModeSplitBackground;
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeStyle = global::MealPlanner.Droid.Resource.Attribute.actionModeStyle;
+			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeTheme = global::MealPlanner.Droid.Resource.Attribute.actionModeTheme;
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionModeWebSearchDrawable = global::MealPlanner.Droid.Resource.Attribute.actionModeWebSearchDrawable;
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionOverflowButtonStyle = global::MealPlanner.Droid.Resource.Attribute.actionOverflowButtonStyle;
 			global::Xamarin.RSControls.Droid.Resource.Attribute.actionOverflowMenuStyle = global::MealPlanner.Droid.Resource.Attribute.actionOverflowMenuStyle;
@@ -14480,6 +14482,9 @@ namespace MealPlanner.Droid
 			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_seekbar_track_background_height_material = global::MealPlanner.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
 			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material = global::MealPlanner.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
 			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_select_dialog_padding_start_material = global::MealPlanner.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_star_big = global::MealPlanner.Droid.Resource.Dimension.abc_star_big;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_star_medium = global::MealPlanner.Droid.Resource.Dimension.abc_star_medium;
+			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_star_small = global::MealPlanner.Droid.Resource.Dimension.abc_star_small;
 			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_switch_padding = global::MealPlanner.Droid.Resource.Dimension.abc_switch_padding;
 			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_body_1_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_body_1_material;
 			global::Xamarin.RSControls.Droid.Resource.Dimension.abc_text_size_body_2_material = global::MealPlanner.Droid.Resource.Dimension.abc_text_size_body_2_material;
@@ -14838,6 +14843,8 @@ namespace MealPlanner.Droid
 			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_seekbar_track_material = global::MealPlanner.Droid.Resource.Drawable.abc_seekbar_track_material;
 			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
 			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_spinner_textfield_background_material = global::MealPlanner.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_star_black_48dp = global::MealPlanner.Droid.Resource.Drawable.abc_star_black_48dp;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_star_half_black_48dp = global::MealPlanner.Droid.Resource.Drawable.abc_star_half_black_48dp;
 			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_switch_thumb_material = global::MealPlanner.Droid.Resource.Drawable.abc_switch_thumb_material;
 			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
 			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_tab_indicator_material = global::MealPlanner.Droid.Resource.Drawable.abc_tab_indicator_material;
@@ -14848,6 +14855,9 @@ namespace MealPlanner.Droid
 			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::MealPlanner.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
 			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_textfield_search_material = global::MealPlanner.Droid.Resource.Drawable.abc_textfield_search_material;
 			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_text_cursor_material = global::MealPlanner.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl = global::MealPlanner.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl = global::MealPlanner.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl;
+			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl = global::MealPlanner.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl;
 			global::Xamarin.RSControls.Droid.Resource.Drawable.abc_vector_test = global::MealPlanner.Droid.Resource.Drawable.abc_vector_test;
 			global::Xamarin.RSControls.Droid.Resource.Drawable.avd_hide_password = global::MealPlanner.Droid.Resource.Drawable.avd_hide_password;
 			global::Xamarin.RSControls.Droid.Resource.Drawable.avd_show_password = global::MealPlanner.Droid.Resource.Drawable.avd_show_password;
@@ -16422,6 +16432,7 @@ namespace MealPlanner.Droid
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseContentDescription = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseContentDescription;
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
@@ -16432,6 +16443,7 @@ namespace MealPlanner.Droid
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeTheme = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeTheme;
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
 			global::Xamarin.RSControls.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::MealPlanner.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
