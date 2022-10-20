@@ -34,6 +34,7 @@ namespace MealPlanner.ViewModels
         public ICommand SaveCommand { get; set; }
         private async void SaveFood()
         {
+            CurrentAliment.OriginalServingSize = CurrentAliment.ServingSize;
             await App.DataBaseRepo.AddFoodAsync(CurrentAliment as Food);
             RefData.Foods.Add(CurrentAliment as Food);
             RefData.Aliments.Add(CurrentAliment as Food);
@@ -94,8 +95,8 @@ namespace MealPlanner.ViewModels
             // Update daily values
             RefData.UpdateDailyValues();
 
-            await Shell.Current.GoToAsync("..");
-            //await Application.Current.MainPage.Navigation.PopAsync();
+            //await Shell.Current.GoToAsync("..");
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
     }
 }

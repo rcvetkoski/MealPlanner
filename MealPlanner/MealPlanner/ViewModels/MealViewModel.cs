@@ -57,8 +57,8 @@ namespace MealPlanner.ViewModels
             // Update meal values
             RefData.UpdateMealValues(CurrentAliment as Meal);
 
-            await Shell.Current.GoToAsync("..");
-            //await Application.Current.MainPage.Navigation.PopAsync();
+            //await Shell.Current.GoToAsync("..");
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         /// <summary>
@@ -146,8 +146,8 @@ namespace MealPlanner.ViewModels
 
             // Update daily values
             RefData.UpdateDailyValues();
-            await Shell.Current.GoToAsync("..");
-            //await Application.Current.MainPage.Navigation.PopAsync();
+            //await Shell.Current.GoToAsync("..");
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         /// <summary>

@@ -165,8 +165,8 @@ namespace MealPlanner.ViewModels
                 }
 
                 rSPopup.Close();
-                await Shell.Current.GoToAsync("..");
-                //await Application.Current.MainPage.Navigation.PopAsync();
+                //await Shell.Current.GoToAsync("..");
+                await Application.Current.MainPage.Navigation.PopAsync();
             }));
 
             // Edit
@@ -208,8 +208,10 @@ namespace MealPlanner.ViewModels
         private async void CreateMeal()
         {
             rSPopupFilter.Close();
-            await Shell.Current.GoToAsync($"{nameof(MealPage)}");
-            //App.Current.MainPage.Navigation.PushAsync(new MealPage());
+            MealPage mealPage = new MealPage();
+            (mealPage.BindingContext as MealViewModel).CurrentAliment = new Meal();
+            //await Shell.Current.GoToAsync($"{nameof(MealPage)}");
+            await App.Current.MainPage.Navigation.PushAsync(mealPage);
         }
 
         public ICommand OpenFiltersCommand { get; set; }
@@ -251,8 +253,8 @@ namespace MealPlanner.ViewModels
                 foodPageVm.CurrentAliment.ServingSize = 100;
 
 
-                await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
-                //await Application.Current.MainPage.Navigation.PushAsync(foodPage);
+                //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
+                await Application.Current.MainPage.Navigation.PushAsync(foodPage);
 
             }
             catch (Exception ex)
