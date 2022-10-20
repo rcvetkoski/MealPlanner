@@ -64,6 +64,7 @@ namespace MealPlanner.ViewModels
             originalFood.OriginalServingSize = CurrentAliment.ServingSize;
             originalFood.ServingSize = CurrentAliment.ServingSize;
             originalFood.Unit = CurrentAliment.Unit;
+            originalFood.ImageBlob = CurrentAliment.ImageBlob;
             //food.ImageBlob = await Helpers.HttpClientHelper.Client.GetByteArrayAsync(ImageSourcePath);
 
 
