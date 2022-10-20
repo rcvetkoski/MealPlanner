@@ -23,27 +23,17 @@ namespace MealPlanner.ViewModels
             AddImageCommand = new Command<Aliment>(AddImage);
         }
 
+        string title = string.Empty;
+        public string Title
+        {
+            get { return title; }
+            set { SetProperty(ref title, value); }
+        }
 
         public ReferentialData RefData { get => App.RefData; }
-        public AlimentUnitEnum AlimentUnitEnum { get; set; }
 
         private Aliment currentAliment;
         public Aliment CurrentAliment { get { return currentAliment; } set { currentAliment = value; OnPropertyChanged("CurrentAliment"); } }
-
-        private string name;
-        public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
-
-        private string imageSourcePath;
-        public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); } }
-
-        private ImageSource imageSource;
-        public ImageSource ImageSource { get { return imageSource; } set { imageSource = value; OnPropertyChanged("ImageSource"); } }
-
-        private double servingSize;
-        public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); } }
-
-        private AlimentUnitEnum unit;
-        public AlimentUnitEnum Unit { get { return unit; } set { unit = value; OnPropertyChanged("Unit"); } }
 
         private bool isNew;
         public bool IsNew { get { return isNew; } set { isNew = value; OnPropertyChanged("IsNew"); } }
@@ -56,7 +46,7 @@ namespace MealPlanner.ViewModels
             {
                 var photo = await MediaPicker.CapturePhotoAsync();
                 await LoadPhotoAsync(photo, currentAliment);
-                Console.WriteLine($"CapturePhotoAsync COMPLETED: {ImageSourcePath}");
+                Console.WriteLine($"CapturePhotoAsync COMPLETED: {currentAliment.ImageSourcePath}");
             }
             catch (FeatureNotSupportedException fnsEx)
             {
@@ -77,7 +67,7 @@ namespace MealPlanner.ViewModels
             // canceled
             if (photo == null)
             {
-                ImageSourcePath = null;
+                currentAliment.ImageSourcePath = null;
                 return;
             }
             // save the file into local storage
@@ -89,30 +79,17 @@ namespace MealPlanner.ViewModels
 
             var resizedFile = Path.Combine(FileSystem.CacheDirectory, $"{currentAliment.Name}{currentAliment.Id}");
             App.ImageService.ResizeImage(newFile, resizedFile, 30);
-            ImageSourcePath = resizedFile;
+            currentAliment.ImageSourcePath = resizedFile;
 
             currentAliment.ImageBlob = File.ReadAllBytes(resizedFile);
-            ImageSource = currentAliment.ImageSource;
 
-            if (File.Exists(ImageSourcePath))
-                File.Delete(ImageSourcePath);
+            if (File.Exists(currentAliment.ImageSourcePath))
+                File.Delete(currentAliment.ImageSourcePath);
         }
 
 
 
-        bool isBusy = false;
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
-        }
 
-        string title = string.Empty;
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
 
         protected bool SetProperty<T>(ref T backingStore, T value, [CallerMemberName] string propertyName = "", Action onChanged = null)
         {

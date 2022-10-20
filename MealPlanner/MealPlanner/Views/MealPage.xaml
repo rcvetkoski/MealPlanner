@@ -34,7 +34,7 @@
 
                 <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Entry}" Placeholder="Name" Text="{Binding CurrentAliment.Name}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
                 <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Style="{StaticResource Entry}" x:Name="ServingSize" Placeholder="Serving Size" Text="{Binding CurrentAliment.ServingSize}" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSEnumPicker Grid.Row="2" Grid.Column="1" Style="{StaticResource Picker}" x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSEnumPicker Grid.Row="2" Grid.Column="1" Style="{StaticResource Picker}" x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding CurrentAliment.Unit}" IsPlaceholderAlwaysFloating="True"/>
                 <rsControls:RSEditor Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Description" Text="{Binding CurrentAliment.Description}" IsPlaceholderAlwaysFloating="True"/>
 
                 <Button Grid.Row="4" Grid.Column="0" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Command="{Binding AddFoodCommand}"/>
