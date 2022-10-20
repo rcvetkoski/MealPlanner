@@ -23,12 +23,12 @@
     </ContentPage.Resources>
 
     <Shell.TitleView>
-        <StackLayout Orientation="Horizontal" Margin="0, 0, 15, 0" HeightRequest="{OnPlatform iOS=44}">
+        <StackLayout Orientation="Horizontal" HeightRequest="{OnPlatform iOS=44}" BackgroundColor="Red">
             <Label Text="{Binding Title}" Style="{StaticResource NavigationBarLabel}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
-            <Label Text="Monday" Style="{StaticResource NavigationBarLabel}" Margin="0, 0, 15, 0" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+            <Label Text="Monday" Style="{StaticResource NavigationBarLabel}" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
             <ImageButton BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                         HeightRequest="24"
-                         Command="{Binding BindingContext.AddAlimentCommand, Source={x:Reference Home}}" CommandParameter="{Binding .}">
+                         Command="{Binding BindingContext.AddAlimentCommand, Source={x:Reference Home}}" CommandParameter="{Binding .}"
+                         Padding="5">
                 <ImageButton.Source>
                     <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                      Glyph="{x:Static helpers:FontAwesomeIcons.CircleUser}" FontFamily="FA-Solid"/>
