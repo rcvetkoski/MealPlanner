@@ -40,7 +40,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Grid.Row="2" Grid.Column="0" Text="Proteins" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Grid.Row="2" Grid.Column="0" Text="Proteins" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center"/>
 
                     <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center">
                         <Label.FormattedText>
@@ -58,7 +58,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Grid.Row="2" Grid.Column="1" Text="Carbs" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Grid.Row="2" Grid.Column="1" Text="Carbs" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center"/>
 
                     <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center">
                         <Label.FormattedText>
@@ -76,7 +76,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Grid.Row="2" Grid.Column="2" Text="Fats" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Grid.Row="2" Grid.Column="2" Text="Fats" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center"/>
                 </Grid>
 
                 <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto" ColumnDefinitions="*, *" RowSpacing="0" Margin="5">
