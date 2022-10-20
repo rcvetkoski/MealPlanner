@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MealPlanner.Views
+namespace MealPlanner.Views.Popups
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RSPopupAlimentDetailPage : ContentPage

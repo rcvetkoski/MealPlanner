@@ -159,7 +159,7 @@ namespace MealPlanner.Helpers
             }
         }
 
-        public Aliment CreateAndCopyAlimentProperties(Aliment existingAliment, double ratio)
+        public Aliment CreateAndCopyAlimentProperties(Aliment existingAliment, double ratio = 1)
         {
             Aliment aliment;
 
@@ -167,7 +167,8 @@ namespace MealPlanner.Helpers
             {
                 aliment = new Meal();
                 (aliment as Meal).Description = (existingAliment as Meal).Description;
-                (aliment as Meal).Foods = (existingAliment as Meal).Foods;
+                foreach(Food food in (existingAliment as Meal).Foods)
+                    (aliment as Meal).Foods.Add(food);
             }
             else
             {
@@ -182,6 +183,7 @@ namespace MealPlanner.Helpers
             aliment.ImageBlob = existingAliment.ImageBlob;
             aliment.Unit = existingAliment.Unit;
             aliment.Proteins = existingAliment.Proteins * ratio;
+            aliment.ServingSize = existingAliment.ServingSize;
             aliment.OriginalServingSize = existingAliment.OriginalServingSize;
             aliment.Carbs = existingAliment.Carbs * ratio;
             aliment.Fats = existingAliment.Fats * ratio;

@@ -4,7 +4,7 @@
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
              xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
              xmlns:controls="clr-namespace:MealPlanner.Controls"
-             x:Class="MealPlanner.Views.RSPopupAlimentDetailPage">
+             x:Class="MealPlanner.Views.Popups.RSPopupAlimentDetailPage">
     <ContentPage.Content>
         <StackLayout Orientation="Horizontal">
             <Grid ColumnDefinitions="100, *" RowDefinitions="100, Auto">

@@ -60,7 +60,7 @@
     <EmbeddedResource Update="Views\Popups\FilterAddAlimentsPagePopUp.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\RSPopupAlimentDetailPage.xaml">
+    <EmbeddedResource Update="Views\Popups\RSPopupAlimentDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TestPage.xaml">

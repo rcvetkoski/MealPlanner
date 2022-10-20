@@ -16,129 +16,74 @@ namespace MealPlanner.ViewModels
 {
     public class FoodViewModel : BaseViewModel
     {
-        public int Id { get; set; } 
-        private string name;
-        private string imageSourcePath;
-        public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); } }
-        private ImageSource imageSource;
-        public ImageSource ImageSource { get { return imageSource; } set { imageSource = value; OnPropertyChanged("ImageSource"); } }
-
-        public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
-        private double servingSize;
-        public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); } }
-
-        private AlimentUnitEnum unit;
-        public AlimentUnitEnum Unit { get { return unit; } set { unit = value; OnPropertyChanged("Unit"); } }
-
-        private double proteins;
-        public double Proteins
-        {
-            get { return proteins; }
-            set
-            {
-                proteins = value;
-                ProteinsProgress = proteins / RefData.User.TargetProteins;
-                OnPropertyChanged("Proteins");
-                OnPropertyChanged("ProteinsProgress"); CalculateCalories();
-            }
-        }
-        public double ProteinsProgress { get; set; }
-
-        private double carbs;
-        public double Carbs { get { return carbs; } set { carbs = value; CarbsProgress = carbs / RefData.User.TargetCarbs; OnPropertyChanged("Carbs"); OnPropertyChanged("CarbsProgress"); CalculateCalories(); } }
-        public double CarbsProgress { get; set; }
-
-
-        private double fats;
-        public double Fats { get { return fats; } set { fats = value; FatsProgress = fats / RefData.User.TargetFats; OnPropertyChanged("Fats"); OnPropertyChanged("FatsProgress"); CalculateCalories(); } }
-        public double FatsProgress { get; set; }
-
-
-        private double calories;
-        public double Calories { get { return calories; } set { calories = value; CaloriesProgress = calories / RefData.User.TargetCalories; OnPropertyChanged("Calories"); OnPropertyChanged("CaloriesProgress"); } }
-        public double CaloriesProgress { get; set; }
-
-        private void CalculateCalories()
-        {
-            Calories = Proteins * 4 + Carbs * 4 + Fats * 9;
-        }
-
-        private bool isNew;
-        public bool IsNew { get { return isNew; } set { isNew = value; OnPropertyChanged("IsNew"); } }
-
         public FoodViewModel()
         {
             Title = "Food";
             SaveCommand = new Command(SaveFood);
             UpdateCommand = new Command(UpdateFood);
-            IsNew = true;
         }
 
+        private void CalculateCalories()
+        {
+            //Calories = Proteins * 4 + Carbs * 4 + Fats * 9;
+        }
 
+        /// <summary>
+        /// Save Food
+        /// </summary>
         public ICommand SaveCommand { get; set; }
-
         private async void SaveFood()
         {
-            Food food = new Food();
-            food.Name = Name;
-            food.ImageSourcePath = ImageSourcePath; 
-            food.Proteins = Proteins;
-            food.Carbs = Carbs;
-            food.Fats = Fats;
-            food.Calories = Calories;
-            food.OriginalServingSize = ServingSize;
-            food.ServingSize = ServingSize;
-            food.Unit = Unit;
-            //food.ImageBlob = await Helpers.HttpClientHelper.Client.GetByteArrayAsync(ImageSourcePath);
-
-
-            await App.DataBaseRepo.AddFoodAsync(food);
-            RefData.Foods.Add(food);
-            RefData.Aliments.Add(food);
-            RefData.FilteredAliments.Add(food);
-            await Shell.Current.GoToAsync("..");
-            //await Application.Current.MainPage.Navigation.PopAsync();
+            await App.DataBaseRepo.AddFoodAsync(CurrentAliment as Food);
+            RefData.Foods.Add(CurrentAliment as Food);
+            RefData.Aliments.Add(CurrentAliment as Food);
+            RefData.FilteredAliments.Add(CurrentAliment as Food);
+            //await Shell.Current.GoToAsync("..");
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
 
+        /// <summary>
+        /// Update Food
+        /// </summary>
         public ICommand UpdateCommand { get; set; }
-
         private async void UpdateFood()
         {
-            Food food = RefData.Foods.Where(x => x.Id == Id).FirstOrDefault();
+            // Get real food to update
+            Food originalFood = RefData.Foods.Where(x => x.Id == CurrentAliment.Id).FirstOrDefault();
 
-            if (food == null)
+            if (originalFood == null)
                 return;
 
-            food.Name = Name;
-            food.Proteins = Proteins;
-            food.ImageSourcePath = ImageSourcePath;
-            food.Carbs = Carbs;
-            food.Fats = Fats;
-            food.Calories = Calories;
-            food.OriginalServingSize = ServingSize;
-            food.ServingSize = ServingSize;
-            food.Unit = Unit;
+            originalFood.Name = CurrentAliment.Name;
+            originalFood.Proteins = CurrentAliment.Proteins;
+            originalFood.ImageSourcePath = CurrentAliment.ImageSourcePath;
+            originalFood.Carbs = CurrentAliment.Carbs;
+            originalFood.Fats = CurrentAliment.Fats;
+            originalFood.Calories = CurrentAliment.Calories;
+            originalFood.OriginalServingSize = CurrentAliment.ServingSize;
+            originalFood.ServingSize = CurrentAliment.ServingSize;
+            originalFood.Unit = CurrentAliment.Unit;
             //food.ImageBlob = await Helpers.HttpClientHelper.Client.GetByteArrayAsync(ImageSourcePath);
 
 
-            await App.DataBaseRepo.UpdateFoodAsync(food);
+            await App.DataBaseRepo.UpdateFoodAsync(originalFood);
 
             // Refresh food if used
             foreach(DayMeal dayMeal in RefData.DayMeals)
             {
                 foreach (Aliment aliment in dayMeal.Aliments)
                 {
-                    if (aliment.AlimentType == AlimentTypeEnum.Food && aliment.Id == Id)
+                    if (aliment.AlimentType == AlimentTypeEnum.Food && aliment.Id == CurrentAliment.Id)
                     {
-                        double ratio = aliment.ServingSize / food.ServingSize;
+                        double ratio = aliment.ServingSize / originalFood.ServingSize;
 
-                        aliment.Name = food.Name;
-                        aliment.Proteins = food.Proteins * ratio;
-                        aliment.Carbs = food.Carbs * ratio;
-                        aliment.Fats = food.Fats * ratio;
-                        aliment.Calories = food.Calories * ratio;
-                        aliment.OriginalServingSize = food.ServingSize;
-                        aliment.Unit = food.Unit;
+                        aliment.Name = originalFood.Name;
+                        aliment.Proteins = originalFood.Proteins * ratio;
+                        aliment.Carbs = originalFood.Carbs * ratio;
+                        aliment.Fats = originalFood.Fats * ratio;
+                        aliment.Calories = originalFood.Calories * ratio;
+                        aliment.OriginalServingSize = originalFood.ServingSize;
+                        aliment.Unit = originalFood.Unit;
                     }
                 }
 
