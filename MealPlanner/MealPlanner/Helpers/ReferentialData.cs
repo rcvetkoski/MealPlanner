@@ -179,6 +179,7 @@ namespace MealPlanner.Helpers
             aliment.Id = existingAliment.Id;
             aliment.Name = existingAliment.Name;
             aliment.ImageSourcePath = existingAliment.ImageSourcePath;
+            aliment.ImageBlob = existingAliment.ImageBlob;
             aliment.Unit = existingAliment.Unit;
             aliment.Proteins = existingAliment.Proteins * ratio;
             aliment.OriginalServingSize = existingAliment.OriginalServingSize;

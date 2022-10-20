@@ -164,7 +164,8 @@ namespace MealPlanner.ViewModels
                         meal.Name = CurrentMeal.Name;
                         meal.OriginalServingSize = CurrentMeal.OriginalServingSize;
                         meal.Unit = CurrentMeal.Unit;
-
+                        meal.ImageSourcePath = CurrentMeal.ImageSourcePath;
+                        meal.ImageBlob = CurrentMeal.ImageBlob;
                         meal.Calories = CurrentMeal.Calories * ratio;
                         meal.Proteins = CurrentMeal.Proteins * ratio; 
                         meal.Carbs = CurrentMeal.Carbs * ratio;
@@ -193,7 +194,7 @@ namespace MealPlanner.ViewModels
 
 
         public ICommand DeletteAlimentCommand { get; set; }
-        private async void DeletteAliment(object[] objects)
+        private void DeletteAliment(object[] objects)
         {
             Meal meal = objects[0] as Meal;
             Food food = objects[1] as Food;

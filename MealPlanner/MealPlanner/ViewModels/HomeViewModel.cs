@@ -1,7 +1,9 @@
 ﻿using MealPlanner.Models;
 using MealPlanner.Views;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Web;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -125,7 +127,8 @@ namespace MealPlanner.ViewModels
         {
             AddAlimentPage addAlimentPage = new AddAlimentPage();
             (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedDayMeal = dayMeal;
-            await Shell.Current.GoToAsync("AddAlimentPage");
+            await App.Current.MainPage.Navigation.PushAsync(addAlimentPage);        
+            //await Shell.Current.GoToAsync($"AddAlimentPage");
         }
     }
 }

@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Web;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.RSControls.Controls;
@@ -21,6 +22,8 @@ using static System.Net.WebRequestMethods;
 
 namespace MealPlanner.ViewModels
 {
+    [QueryProperty(nameof(SelectedDayMeal), "daymeal")]
+
     public class AddAlimentViewModel : BaseViewModel
     {
         public AddAlimentViewModel()

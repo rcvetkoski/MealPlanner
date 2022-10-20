@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.RSControls.Controls;
 
@@ -18,6 +20,8 @@ namespace MealPlanner.ViewModels
         private string name;
         private string imageSourcePath;
         public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); } }
+        private ImageSource imageSource;
+        public ImageSource ImageSource { get { return imageSource; } set { imageSource = value; OnPropertyChanged("ImageSource"); } }
 
         public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
         private double servingSize;
@@ -66,7 +70,7 @@ namespace MealPlanner.ViewModels
         {
             Title = "Food";
             SaveCommand = new Command(SaveFood);
-            UpdateCommand = new Command(UpdateFood);    
+            UpdateCommand = new Command(UpdateFood);
             IsNew = true;
         }
 
