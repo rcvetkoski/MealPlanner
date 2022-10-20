@@ -2,6 +2,7 @@
 using MealPlanner.Models;
 using MealPlanner.Services;
 using MealPlanner.Views;
+using MealPlanner.Views.Popups;
 using Newtonsoft.Json;
 using SkiaSharp;
 using System;
@@ -12,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Web;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.RSControls.Controls;
@@ -21,6 +23,8 @@ using static System.Net.WebRequestMethods;
 
 namespace MealPlanner.ViewModels
 {
+    [QueryProperty(nameof(SelectedDayMeal), "daymeal")]
+
     public class AddAlimentViewModel : BaseViewModel
     {
         public AddAlimentViewModel()
@@ -69,9 +73,6 @@ namespace MealPlanner.ViewModels
         private bool isMealChecked;
         public bool IsMealChecked { get { return isMealChecked; } set { isMealChecked = value; OnPropertyChanged("IsMealChecked"); FilteredAlimentsRefresh(); } }
 
-        public ObservableCollection<Food> CurrentMealTempFoods { get; set; }
-
-
 
         private List<Food> searchResults;
         public List<Food> SearchResults
@@ -97,15 +98,8 @@ namespace MealPlanner.ViewModels
             {
                 FoodPage foodPage = new FoodPage();
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
-                foodPageVm.Name = existingAliment.Name;
-                foodPageVm.ImageSourcePath = existingAliment.ImageSourcePath;
-                foodPageVm.Proteins = existingAliment.Proteins;
-                foodPageVm.Carbs = existingAliment.Carbs;
-                foodPageVm.Fats = existingAliment.Fats;
-                foodPageVm.Calories = existingAliment.Calories;
-                foodPageVm.ServingSize = 100;
-
-                var lol = await HttpClientHelper.Client.GetByteArrayAsync(existingAliment.ImageSourcePath);
+                foodPageVm.CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
+                foodPageVm.CurrentAliment.ServingSize = 100;
 
 
                 //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
@@ -117,13 +111,10 @@ namespace MealPlanner.ViewModels
             RSPopup rSPopup = new RSPopup();
             rSPopup.Title = existingAliment.Name;
             rSPopup.Style = Application.Current.Resources["RSPopup"] as Style;
-
-
             AlimentPopUpViewModel rsPopupBindingContext;
             RSPopupAlimentDetailPage rSPopupAlimentDetailPage = new RSPopupAlimentDetailPage();
             rSPopupAlimentDetailPage.BindingContext = new AlimentPopUpViewModel(existingAliment);
             rsPopupBindingContext = rSPopupAlimentDetailPage.BindingContext as AlimentPopUpViewModel;
-
             rSPopup.SetCustomView(rSPopupAlimentDetailPage);
 
             // Add
@@ -165,7 +156,8 @@ namespace MealPlanner.ViewModels
                     // Set MealFoodId to 0
                     food.MealFoodId = 0;
 
-                    CurrentMealTempFoods.Add(food);
+
+                    CurrentMeal.Foods.Add(food);
                     //CurrentMeal.Calories += food.Calories;
                     //CurrentMeal.Proteins += food.Proteins;
                     //CurrentMeal.Carbs += food.Carbs;
@@ -173,8 +165,8 @@ namespace MealPlanner.ViewModels
                 }
 
                 rSPopup.Close();
-                await Shell.Current.GoToAsync("..");
-                //await Application.Current.MainPage.Navigation.PopAsync();
+                //await Shell.Current.GoToAsync("..");
+                await Application.Current.MainPage.Navigation.PopAsync();
             }));
 
             // Edit
@@ -183,20 +175,7 @@ namespace MealPlanner.ViewModels
                 if (existingAliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
                 {
                     FoodPage foodPage = new FoodPage();
-                    var foodPageBindingContext = foodPage.BindingContext as FoodViewModel;
-
-                    // Fill informations
-                    foodPageBindingContext.IsNew = false;
-                    foodPageBindingContext.Id = existingAliment.Id;
-                    foodPageBindingContext.ImageSourcePath = existingAliment.ImageSourcePath;
-                    foodPageBindingContext.Name = existingAliment.Name;
-                    foodPageBindingContext.ServingSize = existingAliment.ServingSize;
-                    foodPageBindingContext.Unit = existingAliment.Unit;
-                    foodPageBindingContext.Proteins = existingAliment.Proteins;
-                    foodPageBindingContext.Carbs = existingAliment.Carbs;
-                    foodPageBindingContext.Fats = existingAliment.Fats;
-                    foodPageBindingContext.Calories = existingAliment.Calories;
-
+                    (foodPage.BindingContext as FoodViewModel).CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
 
                     App.Current.MainPage.Navigation.PushAsync(foodPage);
                 }
@@ -204,11 +183,8 @@ namespace MealPlanner.ViewModels
                 {
                     MealPage mealPage = new MealPage();
                     var mealPageBindingContext = mealPage.BindingContext as MealViewModel;
-
-                    // Fill informations
+                    mealPageBindingContext.CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
                     mealPageBindingContext.IsNew = false;
-                    mealPageBindingContext.CurrentMeal = existingAliment as Meal;
-                    mealPageBindingContext.FillMealProperties(existingAliment as Meal);
 
                     App.Current.MainPage.Navigation.PushAsync(mealPage);
                 }
@@ -221,16 +197,21 @@ namespace MealPlanner.ViewModels
         private async void CreateFood()
         {
             rSPopupFilter.Close();
-            await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
-            //App.Current.MainPage.Navigation.PushAsync(new FoodPage());
+            FoodPage foodPage = new FoodPage();
+            (foodPage.BindingContext as FoodViewModel).CurrentAliment = new Food();
+            (foodPage.BindingContext as FoodViewModel).IsNew = true;
+            await App.Current.MainPage.Navigation.PushAsync(foodPage);
+            //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
         }
 
         public ICommand CreateMealCommand { get; set; }
         private async void CreateMeal()
         {
             rSPopupFilter.Close();
-            await Shell.Current.GoToAsync($"{nameof(MealPage)}");
-            //App.Current.MainPage.Navigation.PushAsync(new MealPage());
+            MealPage mealPage = new MealPage();
+            (mealPage.BindingContext as MealViewModel).CurrentAliment = new Meal();
+            //await Shell.Current.GoToAsync($"{nameof(MealPage)}");
+            await App.Current.MainPage.Navigation.PushAsync(mealPage);
         }
 
         public ICommand OpenFiltersCommand { get; set; }
@@ -268,15 +249,12 @@ namespace MealPlanner.ViewModels
 
                 FoodPage foodPage = new FoodPage();
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
-                foodPageVm.Name = aliment.Name;
-                foodPageVm.ImageSourcePath = aliment.ImageSourcePath;
-                foodPageVm.Proteins = aliment.Proteins;
-                foodPageVm.Carbs = aliment.Carbs;
-                foodPageVm.Fats = aliment.Fats;
-                foodPageVm.ServingSize = 100;
+                foodPageVm.CurrentAliment = RefData.CreateAndCopyAlimentProperties(aliment);
+                foodPageVm.CurrentAliment.ServingSize = 100;
 
-                await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
-                //await Application.Current.MainPage.Navigation.PushAsync(foodPage);
+
+                //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
+                await Application.Current.MainPage.Navigation.PushAsync(foodPage);
 
             }
             catch (Exception ex)

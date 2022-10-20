@@ -17,16 +17,16 @@ namespace MealPlanner.Models
         private string name;
         public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
         private double calories;
-        public double Calories { get { return calories; } set { calories = value; OnPropertyChanged("Calories"); OnPropertyChanged("CaloriesString"); } }
+        public double Calories { get { return calories; } set { calories = value; OnPropertyChanged("Calories"); OnPropertyChanged("CaloriesString"); OnPropertyChanged("CaloriesProgress"); } }
 
         private double proteins;
-        public double Proteins { get { return proteins; } set { proteins = value; OnPropertyChanged("Proteins"); OnPropertyChanged("NutritionValuesString"); } }
+        public double Proteins { get { return proteins; } set { proteins = value; OnPropertyChanged("Proteins"); OnPropertyChanged("NutritionValuesString"); OnPropertyChanged("ProteinsProgress"); } }
 
         private double carbs;
-        public double Carbs { get { return carbs; } set { carbs = value; OnPropertyChanged("Carbs"); OnPropertyChanged("NutritionValuesString"); } }
+        public double Carbs { get { return carbs; } set { carbs = value; OnPropertyChanged("Carbs"); OnPropertyChanged("NutritionValuesString"); OnPropertyChanged("CarbsProgress"); } }
 
         private double fats;
-        public double Fats { get { return fats; } set { fats = value; OnPropertyChanged("Fats"); OnPropertyChanged("NutritionValuesString"); } }
+        public double Fats { get { return fats; } set { fats = value; OnPropertyChanged("Fats"); OnPropertyChanged("NutritionValuesString"); OnPropertyChanged("FatsProgress"); } }
         public double OriginalServingSize { get; set; }
 
         private double servingSize;
@@ -37,11 +37,22 @@ namespace MealPlanner.Models
         private string imageSourcePath;
         public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); OnPropertyChanged("ImageSource"); } }
         private byte[] imageBlob;
-        public byte[] ImageBlob { get { return imageBlob; } set { imageBlob = value; OnPropertyChanged("ImageBlob"); } }
+        public byte[] ImageBlob { get { return imageBlob; } set { imageBlob = value; OnPropertyChanged("ImageBlob"); OnPropertyChanged("ImageSource"); } }
         public virtual AlimentTypeEnum AlimentType { get; }
 
         private AlimentUnitEnum unit;
         public AlimentUnitEnum Unit { get { return unit; } set { unit = value; OnPropertyChanged("Unit"); OnPropertyChanged("ServingSizeWithUnit"); } }
+
+
+        [Ignore]
+        public double CaloriesProgress { get { return calories / App.RefData.User.TargetCalories; } }
+        [Ignore]
+        public double FatsProgress { get { return fats / App.RefData.User.TargetFats; } }
+        [Ignore]
+        public double CarbsProgress { get { return carbs / App.RefData.User.TargetCarbs; } }
+        [Ignore]
+        public double ProteinsProgress { get { return proteins / App.RefData.User.TargetProteins; } }
+
 
 
         [Ignore]

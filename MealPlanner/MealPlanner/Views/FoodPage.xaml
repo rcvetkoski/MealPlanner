@@ -24,9 +24,13 @@
         <ScrollView Orientation="Vertical">
             <Grid Margin="10" ColumnDefinitions="*, *, *" RowDefinitions="100, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
-                <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="12" Aspect="AspectFill" BackgroundColor="LightGray" Source="{Binding ImageSourcePath}" WidthRequest="100" HorizontalOptions="Center"/>
+                <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+                             CornerRadius="12" WidthRequest="100" HorizontalOptions="Center"
+                             Aspect="AspectFill" BackgroundColor="LightGray" 
+                             Source="{Binding CurrentAliment.ImageSource}"
+                             Command="{Binding AddImageCommand}" CommandParameter="{Binding CurrentAliment}"/>
 
-                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource Entry}" Helper="Mandatory" Placeholder="Name" Text="{Binding Name}" FontAttributes="Bold" IsPlaceholderAlwaysFloating="True" />
+                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource Entry}" Helper="Mandatory" Placeholder="Name" Text="{Binding CurrentAliment.Name}" FontAttributes="Bold" IsPlaceholderAlwaysFloating="True" />
 
                 <!--<Grid Margin="10" VerticalOptions="FillAndExpand">
                 <Frame Grid.Row="0" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
@@ -51,13 +55,13 @@
             </Grid>-->
 
                 <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="*,*">
-                    <rsControls:RSNumericEntry Grid.Column="0" Placeholder="Serving size" Style="{StaticResource Entry}" Text="{Binding ServingSize}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                    <rsControls:RSEnumPicker Grid.Column="1" Style="{StaticResource Picker}" x:TypeArguments="enums:AlimentUnitEnum" SelectedItem="{Binding Unit}" IsPlaceholderAlwaysFloating="True"/>
+                    <rsControls:RSNumericEntry Grid.Column="0" Placeholder="Serving size" Style="{StaticResource Entry}" Text="{Binding CurrentAliment.ServingSize}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                    <rsControls:RSEnumPicker Grid.Column="1" Style="{StaticResource Picker}" x:TypeArguments="enums:AlimentUnitEnum" SelectedItem="{Binding CurrentAliment.Unit}" IsPlaceholderAlwaysFloating="True"/>
                 </Grid>
-                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Proteins" Text="{Binding Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="1" Style="{StaticResource Entry}" Placeholder="Carbs" Text="{Binding Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="2" Style="{StaticResource Entry}" Placeholder="Fats" Text="{Binding Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Grid.Row="4" Grid.Column="0" Style="{StaticResource Entry}" Grid.ColumnSpan="3" Placeholder="Calories" Text="{Binding Calories}" Helper="calories are calculated automatically if empty" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Proteins" Text="{Binding CurrentAliment.Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="1" Style="{StaticResource Entry}" Placeholder="Carbs" Text="{Binding CurrentAliment.Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="2" Style="{StaticResource Entry}" Placeholder="Fats" Text="{Binding CurrentAliment.Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="4" Grid.Column="0" Style="{StaticResource Entry}" Grid.ColumnSpan="3" Placeholder="Calories" Text="{Binding CurrentAliment.Calories}" Helper="calories are calculated automatically if empty" IsPlaceholderAlwaysFloating="True"/>
 
 
                 <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="100, *" RowDefinitions="100, Auto" Margin="15">
@@ -65,13 +69,13 @@
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand"
                         Grid.Row="0" Grid.Column="0"
-                        Progress="{Binding CaloriesProgress}"
+                        Progress="{Binding CurrentAliment.CaloriesProgress}"
                         ProgressStartColor="LightGreen"
                         ProgressEndColor="LightGreen"
                         StrokeWidth="10"/>
 
                     <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
-                        <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding Calories, StringFormat='{0:0.#}'}" FontAttributes="Bold"/>
+                        <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding CurrentAliment.Calories, StringFormat='{0:0.#}'}" FontAttributes="Bold"/>
                         <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="of"/>
                         <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding RefData.User.TargetCalories, StringFormat='{0:0.#}'}"/>
                     </StackLayout>
@@ -85,14 +89,14 @@
                             <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmall}" Text="Carbs" VerticalOptions="Center"/>
                             <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelSmall}" Text="Fats" VerticalOptions="Center"/>
 
-                            <ProgressBar Grid.Row="0" Grid.Column="1" Progress="{Binding ProteinsProgress}" VerticalOptions="Center"/>
-                            <ProgressBar Grid.Row="1" Grid.Column="1" Progress="{Binding CarbsProgress}" VerticalOptions="Center"/>
-                            <ProgressBar Grid.Row="2" Grid.Column="1" Progress="{Binding FatsProgress}" VerticalOptions="Center"/>
+                            <ProgressBar Grid.Row="0" Grid.Column="1" Progress="{Binding CurrentAliment.ProteinsProgress}" VerticalOptions="Center"/>
+                            <ProgressBar Grid.Row="1" Grid.Column="1" Progress="{Binding CurrentAliment.CarbsProgress}" VerticalOptions="Center"/>
+                            <ProgressBar Grid.Row="2" Grid.Column="1" Progress="{Binding CurrentAliment.FatsProgress}" VerticalOptions="Center"/>
 
                             <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="End">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="{Binding Proteins, StringFormat='{0:0.#}'}"/>
+                                        <Span Text="{Binding CurrentAliment.Proteins, StringFormat='{0:0.#}'}"/>
                                         <Span Text="   /"/>
                                     </FormattedString>
                                 </Label.FormattedText>
@@ -101,7 +105,7 @@
                             <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="End">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="{Binding Carbs, StringFormat='{0:0.#}'}"/>
+                                        <Span Text="{Binding CurrentAliment.Carbs, StringFormat='{0:0.#}'}"/>
                                         <Span Text="   /"/>
                                     </FormattedString>
                                 </Label.FormattedText>
@@ -110,7 +114,7 @@
                             <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="End">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="{Binding Fats, StringFormat='{0:0.#}'}"/>
+                                        <Span Text="{Binding CurrentAliment.Fats, StringFormat='{0:0.#}'}"/>
                                         <Span Text="   /"/>
                                     </FormattedString>
                                 </Label.FormattedText>
