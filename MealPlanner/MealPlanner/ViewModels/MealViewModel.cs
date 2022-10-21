@@ -21,6 +21,7 @@ namespace MealPlanner.ViewModels
     {
         public MealViewModel()
         {
+            Title = "Meal";
             IsNew = true;
             AddFoodCommand = new Command(AddFood);
             SaveCommand = new Command(SaveMeal);

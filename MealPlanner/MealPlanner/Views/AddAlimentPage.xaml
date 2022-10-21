@@ -21,7 +21,7 @@
                 <ImageButton x:Name="imageButton"
                              Grid.Row="0" Grid.Column="1"
                              WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
-                             Padding="17" VerticalOptions="FillAndExpand" 
+                             Padding="{OnPlatform Android=17, iOS=10}" VerticalOptions="FillAndExpand" 
                              BackgroundColor="Gray"
                              Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference imageButton}">
                     <ImageButton.Source>
