@@ -23,7 +23,7 @@
     </ContentPage.Resources>
 
     <Shell.TitleView>
-        <StackLayout Orientation="Horizontal" HeightRequest="{OnPlatform iOS=44}">
+        <StackLayout Orientation="Horizontal" HeightRequest="{OnPlatform iOS=44}" BackgroundColor="Red">
             <Label Text="{Binding Title}" Style="{StaticResource NavigationBarLabel}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
             <Label Text="Monday" Style="{StaticResource NavigationBarLabel}" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
             <ImageButton BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"

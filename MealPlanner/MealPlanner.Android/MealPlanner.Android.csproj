@@ -63,6 +63,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomRenderers\CustomShellRenderer.cs" />
     <Compile Include="Helpers\StatusBarColor.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

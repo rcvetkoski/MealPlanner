@@ -7,7 +7,7 @@
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
              xmlns:rsControlsHelpers="clr-namespace:Xamarin.RSControls.Helpers;assembly=Xamarin.RSControls"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
-             Title="{Binding Title}"
+             Title="{Binding Title}" 
              x:Name="addAlimentPage">
 
     <ContentPage.BindingContext>
@@ -16,12 +16,17 @@
 
     <Shell.TitleView>
         <ContentView>
-            <Grid RowDefinitions="Auto" ColumnDefinitions="*, Auto" HeightRequest="{OnPlatform iOS=44}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+            <Grid x:Name="gridToolbar" RowDefinitions="Auto" ColumnDefinitions="*, Auto" HeightRequest="{OnPlatform iOS=44}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Red">
                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding Title}" Style="{StaticResource NavigationBarLabel}" VerticalOptions="Center"/>
-                <ImageButton Grid.Row="0" Grid.Column="1" x:Name="imageButton" BackgroundColor="Transparent" HorizontalOptions="End"  Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference imageButton}">
+                <ImageButton x:Name="imageButton"
+                             Grid.Row="0" Grid.Column="1"
+                             WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
+                             Padding="17" VerticalOptions="FillAndExpand" 
+                             BackgroundColor="Gray"
+                             Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference imageButton}">
                     <ImageButton.Source>
                         <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                     Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
                     </ImageButton.Source>
                 </ImageButton>
             </Grid>

@@ -23,7 +23,7 @@
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
-
+    
 
     <TabBar>
         <ShellContent Title="Home" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}">
