@@ -8,6 +8,7 @@ using UIKit;
 using Xamarin.Forms.Platform.iOS;
 using Xamarin.Forms;
 using MealPlanner.iOS.CustomRenderers;
+using System.ComponentModel;
 
 [assembly: ExportRenderer(typeof(Shell), typeof(CustomShellRenderer))]
 namespace MealPlanner.iOS.CustomRenderers
@@ -17,6 +18,7 @@ namespace MealPlanner.iOS.CustomRenderers
         protected override IShellPageRendererTracker CreatePageRendererTracker()
         {
             return new CustomShellPageRendererTracker(this);
+
         }
     }
 

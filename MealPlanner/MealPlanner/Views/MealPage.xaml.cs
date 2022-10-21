@@ -18,5 +18,12 @@ namespace MealPlanner.Views
         {
             InitializeComponent();
         }
+
+        protected override void LayoutChildren(double x, double y, double width, double height)
+        {
+            base.LayoutChildren(x, y, width, height);
+
+            Console.WriteLine(this.gridToolbar.Height + "  " + this.gridToolbar.HeightRequest);
+        }
     }
 }

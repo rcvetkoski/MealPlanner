@@ -24,22 +24,42 @@
 
     <Shell.TitleView>
         <ContentView>
-            <Grid x:Name="gridToolbar" RowDefinitions="Auto" ColumnDefinitions="*, Auto, Auto" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Red">
-                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Title}" Style="{StaticResource NavigationBarLabel}" VerticalOptions="Center"/>
-                <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Command="{Binding AddFoodCommand}"/>
-                <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Command="{Binding SaveCommand}"/>
-                <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="Update" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Command="{Binding UpdateCommand}"/>
-                                <ImageButton x:Name="imageButton"
-                             Grid.Row="0" Grid.Column="2"
-                             WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
-                             Padding="{OnPlatform Android=15, iOS=5}" VerticalOptions="FillAndExpand" 
-                             BackgroundColor="Gray"
-                             Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference imageButton}">
-                    <ImageButton.Source>
+            <Grid x:Name="gridToolbar"
+                  RowDefinitions="44" ColumnDefinitions="*, Auto, Auto"
+                  HeightRequest="{OnPlatform iOS=44}"
+                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                  BackgroundColor="Red">
+                <Label Grid.Row="0" Grid.Column="0"
+                       BackgroundColor="Green"
+                       Text="{Binding Title}"
+                       Style="{StaticResource NavigationBarLabel}"
+                       VerticalOptions="CenterAndExpand"/>
+                <Button Grid.Row="0" Grid.Column="1"
+                        Text="food"
+                        BackgroundColor="Gray"
+                        VerticalOptions="FillAndExpand"
+                        Command="{Binding AddFoodCommand}">
+                    <Button.ImageSource>
                         <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                         Glyph="{x:Static helpers:FontAwesomeIcons.CircleUser}" FontFamily="FA-Solid"/>
-                    </ImageButton.Source>
-                </ImageButton>
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.CirclePlus}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+                 <Button Grid.Row="0" Grid.Column="2"
+                         Text="Save"
+                         IsVisible="{Binding IsNew}"
+                         BackgroundColor="Gray"
+                         WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
+                         VerticalOptions="FillAndExpand"
+                         Command="{Binding SaveCommand}">
+                    </Button>
+                 <Button Grid.Row="0" Grid.Column="2"
+                         Text="Update"
+                         IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}"
+                         BackgroundColor="Gray"
+                         WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
+                         VerticalOptions="FillAndExpand"
+                         Command="{Binding UpdateCommand}">
+                 </Button>
             </Grid>
         </ContentView>
     </Shell.TitleView>
