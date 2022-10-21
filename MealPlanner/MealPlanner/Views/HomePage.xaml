@@ -28,7 +28,7 @@
                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding Title}" Margin="{OnPlatform Android='15,0,0,0'}" Style="{StaticResource NavigationBarLabel}" VerticalOptions="CenterAndExpand"/>
                 <Label Grid.Row="0" Grid.Column="1" Text="Monday" Style="{StaticResource NavigationBarLabel}" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
                 <ImageButton x:Name="imageButton"
-                             Grid.Row="0" Grid.Column="1"
+                             Grid.Row="0" Grid.Column="2"
                              WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
                              Padding="{OnPlatform Android=15, iOS=5}" VerticalOptions="FillAndExpand" 
                              BackgroundColor="Gray"

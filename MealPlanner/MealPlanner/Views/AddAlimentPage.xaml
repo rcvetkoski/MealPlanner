@@ -16,12 +16,12 @@
 
     <Shell.TitleView>
         <ContentView>
-            <Grid x:Name="gridToolbar" RowDefinitions="Auto" ColumnDefinitions="*, Auto" HeightRequest="{OnPlatform iOS=44}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Red">
+            <Grid x:Name="gridToolbar" RowDefinitions="Auto" ColumnDefinitions="*, Auto" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Red">
                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding Title}" Style="{StaticResource NavigationBarLabel}" VerticalOptions="Center"/>
                 <ImageButton x:Name="imageButton"
                              Grid.Row="0" Grid.Column="1"
                              WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
-                             Padding="{OnPlatform Android=17, iOS=10}" VerticalOptions="FillAndExpand" 
+                             Padding="{OnPlatform Android=17, iOS=5}" VerticalOptions="FillAndExpand" 
                              BackgroundColor="Gray"
                              Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference imageButton}">
                     <ImageButton.Source>
