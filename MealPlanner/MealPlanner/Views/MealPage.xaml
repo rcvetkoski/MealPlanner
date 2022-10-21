@@ -25,7 +25,7 @@
     <Shell.TitleView>
         <ContentView>
             <Grid x:Name="gridToolbar"
-                  RowDefinitions="44" ColumnDefinitions="*, Auto, Auto"
+                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, Auto, Auto"
                   HeightRequest="{OnPlatform iOS=44}"
                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                   BackgroundColor="Red">
@@ -44,26 +44,32 @@
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CirclePlus}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
-                 <Button Grid.Row="0" Grid.Column="2"
+                <Button Grid.Row="0" Grid.Column="2"
                          Text="Save"
                          IsVisible="{Binding IsNew}"
                          BackgroundColor="Gray"
-                         WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
                          VerticalOptions="FillAndExpand"
                          Command="{Binding SaveCommand}">
-                    </Button>
-                 <Button Grid.Row="0" Grid.Column="2"
+                    <Button.ImageSource>
+                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="2"
                          Text="Update"
                          IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}"
                          BackgroundColor="Gray"
-                         WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
                          VerticalOptions="FillAndExpand"
                          Command="{Binding UpdateCommand}">
-                 </Button>
+                    <Button.ImageSource>
+                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.Spinner}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
             </Grid>
         </ContentView>
     </Shell.TitleView>
-    
+
 
     <ContentPage.Content>
         <ScrollView Orientation="Neither">
