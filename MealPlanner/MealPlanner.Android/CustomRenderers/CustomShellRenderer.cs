@@ -38,7 +38,7 @@ namespace MealPlanner.Droid.CustomRenderers
         {
             base.SetAppearance(toolbar, toolbarTracker, appearance);
             //toolbar.SetPadding(0, 0, 0, 0);
-            toolbar.SetContentInsetsAbsolute(toolbar.ContentInsetStart, toolbar.ContentInsetStart);
+            toolbar.SetContentInsetsAbsolute(0, 0);
             //toolbar.SetContentInsetsRelative(0, 0);
             //toolbar.NavigationIcon = null;
         }

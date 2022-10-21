@@ -23,23 +23,25 @@
     </ContentPage.Resources>
 
     <Shell.TitleView>
-        <StackLayout Orientation="Horizontal" HeightRequest="{OnPlatform iOS=44}" BackgroundColor="Red">
-            <Label Text="{Binding Title}" Style="{StaticResource NavigationBarLabel}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
-            <Label Text="Monday" Style="{StaticResource NavigationBarLabel}" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
-            <ImageButton BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                         Command="{Binding BindingContext.AddAlimentCommand, Source={x:Reference Home}}" CommandParameter="{Binding .}"
-                         Padding="5">
-                <ImageButton.Source>
-                    <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                     Glyph="{x:Static helpers:FontAwesomeIcons.CircleUser}" FontFamily="FA-Solid"/>
-                </ImageButton.Source>
-            </ImageButton>
-        </StackLayout>
+        <ContentView>
+            <Grid x:Name="gridToolbar" RowDefinitions="Auto" ColumnDefinitions="Auto, *, Auto" HeightRequest="{OnPlatform iOS=44}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Red">
+                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Title}" Margin="{OnPlatform Android='15,0,0,0'}" Style="{StaticResource NavigationBarLabel}" VerticalOptions="Center"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Monday" Style="{StaticResource NavigationBarLabel}" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+                <ImageButton x:Name="imageButton"
+                             Grid.Row="0" Grid.Column="2"
+                             WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
+                             Padding="15" VerticalOptions="FillAndExpand" 
+                             BackgroundColor="Gray"
+                             Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference imageButton}">
+                    <ImageButton.Source>
+                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.CircleUser}" FontFamily="FA-Solid"/>
+                    </ImageButton.Source>
+                </ImageButton>
+            </Grid>
+        </ContentView>
     </Shell.TitleView>
 
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Example Item" Order="Secondary"/>
-    </ContentPage.ToolbarItems>-->
 
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
