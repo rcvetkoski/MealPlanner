@@ -5,6 +5,7 @@
              xmlns:controls="clr-namespace:MealPlanner.Controls" 
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
              xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers"
              x:Class="MealPlanner.Views.FoodPage"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding Title}">
@@ -20,9 +21,55 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+        <Shell.TitleView>
+        <ContentView>
+            <Grid x:Name="gridToolbar"
+                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, Auto, Auto"
+                  HeightRequest="{OnPlatform iOS=44}"
+                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="{Binding Title}"
+                       Style="{StaticResource NavigationBarLabel}"
+                       VerticalOptions="CenterAndExpand"/>
+                <Button Grid.Row="0" Grid.Column="1"
+                        Text="food"
+                        BackgroundColor="Transparent"
+                        VerticalOptions="FillAndExpand"
+                        Command="{Binding AddFoodCommand}">
+                    <Button.ImageSource>
+                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.CirclePlus}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="2"
+                         Text="Save"
+                         IsVisible="{Binding IsNew}"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="FillAndExpand"
+                         Command="{Binding SaveCommand}">
+                    <Button.ImageSource>
+                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="2"
+                         Text="Update"
+                         IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="FillAndExpand"
+                         Command="{Binding UpdateCommand}">
+                    <Button.ImageSource>
+                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+            </Grid>
+        </ContentView>
+    </Shell.TitleView>
+
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
-            <Grid Margin="10" ColumnDefinitions="*, *, *" RowDefinitions="100, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+            <Grid Margin="10" ColumnDefinitions="*, *, *" RowDefinitions="100, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
                 <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
                              CornerRadius="12" WidthRequest="100" HorizontalOptions="Center"
@@ -125,8 +172,8 @@
                 </Grid>
 
 
-                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Text="Save" Command="{Binding SaveCommand}"/>
-                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Text="Update" Command="{Binding UpdateCommand}"/>
+                <!--<Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Text="Save" Command="{Binding SaveCommand}"/>
+                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Text="Update" Command="{Binding UpdateCommand}"/>-->
 
             </Grid>
         </ScrollView>

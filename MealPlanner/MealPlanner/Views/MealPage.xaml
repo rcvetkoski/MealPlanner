@@ -56,12 +56,12 @@
                 <Button Grid.Row="0" Grid.Column="2"
                          Text="Update"
                          IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}"
-                         BackgroundColor="Gray"
+                         BackgroundColor="Transparent"
                          VerticalOptions="FillAndExpand"
                          Command="{Binding UpdateCommand}">
                     <Button.ImageSource>
                         <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                         Glyph="{x:Static helpers:FontAwesomeIcons.Spinner}" FontFamily="FA-Solid"/>
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
             </Grid>

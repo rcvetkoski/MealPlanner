@@ -40,7 +40,7 @@
     </Shell.TitleView>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Priority="0">
+        <ToolbarItem Order="Primary" Priority="0" Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference button}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                  Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
@@ -53,7 +53,7 @@
 
             <rsControls:RSSearchView x:Name="searchBar"
                        Grid.Row="0" Grid.Column="0"
-                       Placeholder="Search for food" 
+                       Placeholder="Search for food"
                        Style="{StaticResource SearchBar}"
                        SearchCommand="{Binding SearchAlimentsCommand}"
                        SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>

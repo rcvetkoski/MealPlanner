@@ -98,6 +98,7 @@ namespace MealPlanner.ViewModels
             {
                 FoodPage foodPage = new FoodPage();
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
+                foodPageVm.IsNew = true;
                 foodPageVm.CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
                 foodPageVm.CurrentAliment.ServingSize = 100;
 
@@ -118,7 +119,7 @@ namespace MealPlanner.ViewModels
             rSPopup.SetCustomView(rSPopupAlimentDetailPage);
 
             // Add
-            rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral, new Command(async () =>
+            rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(async () =>
             {
                 if (MealSwitchVisibility)
                 {
@@ -164,13 +165,13 @@ namespace MealPlanner.ViewModels
                     //CurrentMeal.Fats += food.Fats;
                 }
 
-                rSPopup.Close();
+                //rSPopup.Close();
                 //await Shell.Current.GoToAsync("..");
                 await Application.Current.MainPage.Navigation.PopAsync();
             }));
 
             // Edit
-            rSPopup.AddAction("Edit", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(() =>
+            rSPopup.AddAction("Edit", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral, new Command(() =>
             {
                 if (existingAliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
                 {
@@ -188,6 +189,7 @@ namespace MealPlanner.ViewModels
 
                     App.Current.MainPage.Navigation.PushAsync(mealPage);
                 }
+                rSPopup.Close();
             }));
             rSPopup.Show();
         }
@@ -215,7 +217,7 @@ namespace MealPlanner.ViewModels
         }
 
         public ICommand OpenFiltersCommand { get; set; }
-        private void openFIlters(Button button)
+        private void openFIlters(ToolbarItem button)
         {
             rSPopupFilter = new RSPopup();
             rSPopupFilter.SetMargin(0, 10, 0, 0);
@@ -223,9 +225,9 @@ namespace MealPlanner.ViewModels
             //rSPopupFilter.SetAppThemeColor(RSPopup.BackgroundColorProperty, Color.FromHex("f2f2f7"), Color.FromHex("#1C1C1E"));
             rSPopupFilter.Style = Application.Current.Resources["RSPopup"] as Style;
             rSPopupFilter.SetCustomView(filterAddAlimentsPopUp); 
-            rSPopupFilter.SetPopupPositionRelativeTo(button, Xamarin.RSControls.Enums.RSPopupPositionSideEnum.Over);
+            rSPopupFilter.SetPopupPositionRelativeTo(button as Element, Xamarin.RSControls.Enums.RSPopupPositionSideEnum.Over);
             rSPopupFilter.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.RightToLeft);
-            rSPopupFilter.DimAmount = 0.2f;
+            rSPopupFilter.DimAmount = 0.5f;
             rSPopupFilter.SetPopupSize(150, Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent);
             rSPopupFilter.Show();
         }
