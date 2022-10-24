@@ -27,6 +27,7 @@
             <Grid x:Name="gridToolbar"
                   RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, Auto, Auto"
                   HeightRequest="{OnPlatform iOS=44}"
+                  Margin="{OnPlatform Android='0,0,10,0'}"
                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Label Grid.Row="0" Grid.Column="0"
                        Text="{Binding Title}"
@@ -34,6 +35,7 @@
                        VerticalOptions="CenterAndExpand"/>
                 <Button Grid.Row="0" Grid.Column="1"
                         Text="food"
+                        TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                         BackgroundColor="Transparent"
                         VerticalOptions="FillAndExpand"
                         Command="{Binding AddFoodCommand}">
@@ -44,6 +46,7 @@
                 </Button>
                 <Button Grid.Row="0" Grid.Column="2"
                          Text="Save"
+                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                          IsVisible="{Binding IsNew}"
                          BackgroundColor="Transparent"
                          VerticalOptions="FillAndExpand"
@@ -55,6 +58,7 @@
                 </Button>
                 <Button Grid.Row="0" Grid.Column="2"
                          Text="Update"
+                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                          IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}"
                          BackgroundColor="Transparent"
                          VerticalOptions="FillAndExpand"

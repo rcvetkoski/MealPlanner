@@ -41,7 +41,7 @@ namespace MealPlanner.ViewModels
             CreateMealCommand = new Command(CreateMeal);
             ScanBarCodeCommand = new Command(ScanBarCode);
             SearchAlimentsCommand = new Command<string>(SearchAliments);
-            OpenFiltersCommand = new Command<Button>(openFIlters);
+            OpenFiltersCommand = new Command(openFIlters);
 
             FilteredAlimentsRefresh();
         }
@@ -177,6 +177,7 @@ namespace MealPlanner.ViewModels
                 {
                     FoodPage foodPage = new FoodPage();
                     (foodPage.BindingContext as FoodViewModel).CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
+                    (foodPage.BindingContext as FoodViewModel).IsNew = false;
 
                     App.Current.MainPage.Navigation.PushAsync(foodPage);
                 }
@@ -217,7 +218,7 @@ namespace MealPlanner.ViewModels
         }
 
         public ICommand OpenFiltersCommand { get; set; }
-        private void openFIlters(ToolbarItem button)
+        private void openFIlters()
         {
             rSPopupFilter = new RSPopup();
             rSPopupFilter.SetMargin(0, 10, 0, 0);
@@ -225,9 +226,8 @@ namespace MealPlanner.ViewModels
             //rSPopupFilter.SetAppThemeColor(RSPopup.BackgroundColorProperty, Color.FromHex("f2f2f7"), Color.FromHex("#1C1C1E"));
             rSPopupFilter.Style = Application.Current.Resources["RSPopup"] as Style;
             rSPopupFilter.SetCustomView(filterAddAlimentsPopUp); 
-            rSPopupFilter.SetPopupPositionRelativeTo(button as Element, Xamarin.RSControls.Enums.RSPopupPositionSideEnum.Over);
-            rSPopupFilter.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.RightToLeft);
-            rSPopupFilter.DimAmount = 0.5f;
+            //rSPopupFilter.SetPopupPositionRelativeTo(button, Xamarin.RSControls.Enums.RSPopupPositionSideEnum.Over);
+            //rSPopupFilter.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.RightToLeft);
             rSPopupFilter.SetPopupSize(150, Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent);
             rSPopupFilter.Show();
         }

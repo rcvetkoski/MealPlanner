@@ -26,23 +26,15 @@
             <Grid x:Name="gridToolbar"
                   RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, Auto, Auto"
                   HeightRequest="{OnPlatform iOS=44}"
+                  Margin="{OnPlatform Android='0,0,10,0'}"
                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Label Grid.Row="0" Grid.Column="0"
                        Text="{Binding Title}"
                        Style="{StaticResource NavigationBarLabel}"
                        VerticalOptions="CenterAndExpand"/>
                 <Button Grid.Row="0" Grid.Column="1"
-                        Text="food"
-                        BackgroundColor="Transparent"
-                        VerticalOptions="FillAndExpand"
-                        Command="{Binding AddFoodCommand}">
-                    <Button.ImageSource>
-                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                         Glyph="{x:Static helpers:FontAwesomeIcons.CirclePlus}" FontFamily="FA-Solid"/>
-                    </Button.ImageSource>
-                </Button>
-                <Button Grid.Row="0" Grid.Column="2"
                          Text="Save"
+                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                          IsVisible="{Binding IsNew}"
                          BackgroundColor="Transparent"
                          VerticalOptions="FillAndExpand"
@@ -54,6 +46,7 @@
                 </Button>
                 <Button Grid.Row="0" Grid.Column="2"
                          Text="Update"
+                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                          IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}"
                          BackgroundColor="Transparent"
                          VerticalOptions="FillAndExpand"
@@ -66,6 +59,23 @@
             </Grid>
         </ContentView>
     </Shell.TitleView>
+
+    <!--<ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="troll" Order="Default" Priority="0" Command="{Binding OpenUserPageCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.CirclePlus}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+
+        <ToolbarItem Text="troll" Order="Default" Priority="1" Command="{Binding OpenUserPageCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>-->
 
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">

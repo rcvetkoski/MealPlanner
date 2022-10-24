@@ -25,19 +25,19 @@
     <Shell.TitleView>
         <ContentView>
             <Grid x:Name="gridToolbar"
-                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="Auto, *, Auto"
+                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="Auto, *"
                   HeightRequest="{OnPlatform iOS=44}"
                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Label Grid.Row="0" Grid.Column="0"
                        Text="{Binding Title}"
-                       Margin="{OnPlatform Android='15,0,0,0'}"
+                       Margin="{OnPlatform Android='10,0,0,0'}"
                        Style="{StaticResource NavigationBarLabel}"
                        VerticalOptions="CenterAndExpand"/>
                 <Label Grid.Row="0" Grid.Column="1"
                        Text="Monday"
                        Style="{StaticResource NavigationBarLabel}"
                        HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
-                <Button x:Name="imageButton"
+                <!--<Button x:Name="imageButton"
                              Grid.Row="0" Grid.Column="2"
                              WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
                              VerticalOptions="FillAndExpand" 
@@ -47,10 +47,19 @@
                         <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CircleUser}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
-                </Button>
+                </Button>-->
             </Grid>
         </ContentView>
     </Shell.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Priority="0" Command="{Binding OpenUserPageCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.CircleUser}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+            </ToolbarItem>
+    </ContentPage.ToolbarItems>
 
 
     <ContentPage.Content>
