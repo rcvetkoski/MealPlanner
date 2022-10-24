@@ -41,7 +41,7 @@ namespace MealPlanner.ViewModels
             CreateMealCommand = new Command(CreateMeal);
             ScanBarCodeCommand = new Command(ScanBarCode);
             SearchAlimentsCommand = new Command<string>(SearchAliments);
-            OpenFiltersCommand = new Command<ImageButton>(openFIlters);
+            OpenFiltersCommand = new Command<Button>(openFIlters);
 
             FilteredAlimentsRefresh();
         }
@@ -215,7 +215,7 @@ namespace MealPlanner.ViewModels
         }
 
         public ICommand OpenFiltersCommand { get; set; }
-        private void openFIlters(ImageButton imageButton)
+        private void openFIlters(Button button)
         {
             rSPopupFilter = new RSPopup();
             rSPopupFilter.SetMargin(0, 10, 0, 0);
@@ -223,7 +223,7 @@ namespace MealPlanner.ViewModels
             //rSPopupFilter.SetAppThemeColor(RSPopup.BackgroundColorProperty, Color.FromHex("f2f2f7"), Color.FromHex("#1C1C1E"));
             rSPopupFilter.Style = Application.Current.Resources["RSPopup"] as Style;
             rSPopupFilter.SetCustomView(filterAddAlimentsPopUp); 
-            rSPopupFilter.SetPopupPositionRelativeTo(imageButton, Xamarin.RSControls.Enums.RSPopupPositionSideEnum.Over);
+            rSPopupFilter.SetPopupPositionRelativeTo(button, Xamarin.RSControls.Enums.RSPopupPositionSideEnum.Over);
             rSPopupFilter.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.RightToLeft);
             rSPopupFilter.DimAmount = 0.2f;
             rSPopupFilter.SetPopupSize(150, Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent);

@@ -27,16 +27,14 @@
             <Grid x:Name="gridToolbar"
                   RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, Auto, Auto"
                   HeightRequest="{OnPlatform iOS=44}"
-                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                  BackgroundColor="Red">
+                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Label Grid.Row="0" Grid.Column="0"
-                       BackgroundColor="Green"
                        Text="{Binding Title}"
                        Style="{StaticResource NavigationBarLabel}"
                        VerticalOptions="CenterAndExpand"/>
                 <Button Grid.Row="0" Grid.Column="1"
                         Text="food"
-                        BackgroundColor="Gray"
+                        BackgroundColor="Transparent"
                         VerticalOptions="FillAndExpand"
                         Command="{Binding AddFoodCommand}">
                     <Button.ImageSource>
@@ -47,7 +45,7 @@
                 <Button Grid.Row="0" Grid.Column="2"
                          Text="Save"
                          IsVisible="{Binding IsNew}"
-                         BackgroundColor="Gray"
+                         BackgroundColor="Transparent"
                          VerticalOptions="FillAndExpand"
                          Command="{Binding SaveCommand}">
                     <Button.ImageSource>

@@ -16,22 +16,37 @@
 
     <Shell.TitleView>
         <ContentView>
-            <Grid x:Name="gridToolbar" RowDefinitions="Auto" ColumnDefinitions="*, Auto" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Red">
-                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Title}" Style="{StaticResource NavigationBarLabel}" VerticalOptions="Center"/>
-                <ImageButton x:Name="imageButton"
+            <Grid x:Name="gridToolbar"
+                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, Auto"
+                  HeightRequest="{OnPlatform iOS=44}" BackgroundColor="Red"
+                  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="{Binding Title}"
+                       Style="{StaticResource NavigationBarLabel}"
+                       VerticalOptions="Center"/>
+                <Button x:Name="button"
                              Grid.Row="0" Grid.Column="1"
                              WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
-                             Padding="{OnPlatform Android=17, iOS=5}" VerticalOptions="FillAndExpand" 
-                             BackgroundColor="Gray"
-                             Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference imageButton}">
-                    <ImageButton.Source>
+                             VerticalOptions="FillAndExpand" 
+                             BackgroundColor="Transparent"
+                             Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference button}">
+                    <Button.ImageSource>
                         <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
-                    </ImageButton.Source>
-                </ImageButton>
+                    </Button.ImageSource>
+                </Button>
             </Grid>
         </ContentView>
     </Shell.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Priority="0">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+            </ToolbarItem>
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <Grid RowDefinitions="Auto,*" ColumnDefinitions="*, Auto">

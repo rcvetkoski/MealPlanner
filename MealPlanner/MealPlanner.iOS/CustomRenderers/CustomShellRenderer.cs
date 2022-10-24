@@ -18,7 +18,6 @@ namespace MealPlanner.iOS.CustomRenderers
         protected override IShellPageRendererTracker CreatePageRendererTracker()
         {
             return new CustomShellPageRendererTracker(this);
-
         }
     }
 
