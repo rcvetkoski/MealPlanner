@@ -19,12 +19,12 @@ namespace MealPlanner.Models
         public int Id { get; set; }
 
         private string name;
-        public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); OnPropertyChanged("CaloriesString"); } }
+        public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
         public int Order { get; set; }
 
         private double calories;
         [Ignore]
-        public double Calories { get { return calories; } set { calories = value; OnPropertyChanged("Calories"); } }
+        public double Calories { get { return calories; } set { calories = value; OnPropertyChanged("Calories"); OnPropertyChanged("CaloriesString"); } }
 
         private double proteins;
         [Ignore]
