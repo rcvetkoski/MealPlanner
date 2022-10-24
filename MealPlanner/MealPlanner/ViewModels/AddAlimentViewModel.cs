@@ -253,6 +253,7 @@ namespace MealPlanner.ViewModels
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
                 foodPageVm.CurrentAliment = RefData.CreateAndCopyAlimentProperties(aliment);
                 foodPageVm.CurrentAliment.ServingSize = 100;
+                foodPageVm.IsNew = true;
 
 
                 //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
