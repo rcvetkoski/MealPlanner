@@ -29,9 +29,6 @@ namespace MealPlanner
             ImageService = DependencyService.Get<IImageService>();
             StatusBarColor = DependencyService.Get<IStatusBarColor>();
 
-
-            MainPage = new AppShell();
-
             // Set theme
             SetTheme();
 
@@ -47,6 +44,13 @@ namespace MealPlanner
                     StatusBarColor.SetStatusBarColor(Color.FromHex("#1C1C1E"), false);
                 }
             };
+
+
+            MainPage = new AppShell();
+
+            // If User is set than go to HomePage else load to UserPage
+            if (!String.IsNullOrEmpty(App.RefData.User.Name))
+                Shell.Current.GoToAsync($"//{nameof(HomePage)}");
         }
 
         private void SetTheme()

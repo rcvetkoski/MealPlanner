@@ -18,12 +18,16 @@
                 <Setter Property="Shell.TabBarUnselectedColor" Value="Gray"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"/>
                 <Setter Property="Shell.NavBarHasShadow" Value="False" />
+
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
-    
+
+    <ShellItem Route="UserPage" Style="{StaticResource BaseStyle}" Title="User" Shell.TabBarIsVisible="False" Shell.FlyoutBehavior="Disabled">
+        <ShellContent ContentTemplate="{DataTemplate local:UserPage}" />
+    </ShellItem>
 
     <TabBar>
         <ShellContent Title="Home" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}">

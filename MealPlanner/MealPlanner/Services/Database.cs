@@ -52,13 +52,13 @@ namespace MealPlanner.Services
         #region User
 
         /// <summary>
-        /// Returns a User object default id is 1
+        /// Returns a User object
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         public Task<User> GetUserAsync()
         {
-            return dbConnection.GetAsync<User>(1);
+            return dbConnection.Table<User>().FirstOrDefaultAsync();
         }
 
         /// <summary>

@@ -109,6 +109,7 @@ namespace MealPlanner.ViewModels
             }
 
 
+
             RSPopup rSPopup = new RSPopup();
             rSPopup.Title = existingAliment.Name;
             rSPopup.Style = Application.Current.Resources["RSPopup"] as Style;

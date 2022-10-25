@@ -140,6 +140,13 @@
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
             </Style>
 
+            <Style x:Key="UserCard" TargetType="Frame">
+                <Setter Property="HasShadow" Value="{OnPlatform Android=false, iOS=false, Default=true}"/>
+                <Setter Property="Padding" Value="15, 10, 15, 10"/>
+                <Setter Property="CornerRadius" Value="12"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
+            </Style>
+
             <Style x:Key="RadioButton" TargetType="RadioButton">
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>

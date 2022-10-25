@@ -49,15 +49,12 @@ namespace MealPlanner.Helpers
         private void InitDB()
         {
             // User
-            try
+            User =  App.DataBaseRepo.GetUserAsync().Result;
+            if(User == null)
             {
-                User =  App.DataBaseRepo.GetUserAsync().Result;
+                User = new User();
+                //User = new User() {Name = "Rade", Age = 32, Height = 180, Weight = 69, BodyFat = 14.5, Gender = Enums.GenderEnum.Male, TargetCalories = 2986, TargetProteins = 300, TargetCarbs = 323, TargetFats = 89 };
             }
-            catch(Exception ex)
-            {
-                User = new User() { Age = 32, Height = 180, Weight = 69, TargetCalories = 2986, TargetProteins = 300, TargetCarbs = 323, TargetFats = 89 };
-            }
-
 
             // Foods
             Foods = App.DataBaseRepo.GetAllFoodsAsync().Result.ToObservableCollection();

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
+             xmlns:vm="clr-namespace:MealPlanner.ViewModels"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers" 
+             xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
+             x:Name="User"
+             Title="{Binding Title}"
+             x:Class="MealPlanner.Views.UserPage">
+
+    <ContentPage.BindingContext>
+        <vm:UserViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Default" Priority="1" Command="{Binding SaveUserDataCommand}" CommandParameter="{x:Reference User}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Padding="15">
+                <Label Style="{StaticResource LabelMedium}" Text="Daily caloric intake"/>
+                <Frame Style="{StaticResource UserCard}">
+                    <Label HorizontalOptions="CenterAndExpand" Style="{StaticResource LabelLarge}" Text="3000 Kcal" Margin="0, 5, 0, 5"/>
+                </Frame>
+
+                <Label Style="{StaticResource LabelMedium}" Text="Profil" Margin="0, 20, 0, 0"/>
+                <Frame Style="{StaticResource UserCard}">
+                    <StackLayout>
+                        <rsControls:RSEntry x:Name="nameEntry" Style="{StaticResource Entry}" Helper="Mandatory" Placeholder="Name" Text="{Binding RefData.User.Name}" IsPlaceholderAlwaysFloating="True">
+                            <rsControls:RSEntry.Behaviors>
+                                <validators:ValidationBehaviour PropertyName="Text">
+                                    <validators:ValidationBehaviour.Validators>
+                                        <validators:RequiredValidation/>
+                                    </validators:ValidationBehaviour.Validators>
+                                </validators:ValidationBehaviour>
+                            </rsControls:RSEntry.Behaviors>
+                        </rsControls:RSEntry>
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" Placeholder="Height" Value="{Binding RefData.User.Height}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
+                            <rsControls:RSNumericEntry.Behaviors>
+                                <validators:ValidationBehaviour PropertyName="Text">
+                                    <validators:ValidationBehaviour.Validators>
+                                        <validators:RequiredValidation/>
+                                    </validators:ValidationBehaviour.Validators>
+                                </validators:ValidationBehaviour>
+                            </rsControls:RSNumericEntry.Behaviors>
+                        </rsControls:RSNumericEntry>
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" Placeholder="Weight" Value="{Binding RefData.User.Weight}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
+                            <rsControls:RSNumericEntry.Behaviors>
+                                <validators:ValidationBehaviour PropertyName="Text">
+                                    <validators:ValidationBehaviour.Validators>
+                                        <validators:RequiredValidation/>
+                                    </validators:ValidationBehaviour.Validators>
+                                </validators:ValidationBehaviour>
+                            </rsControls:RSNumericEntry.Behaviors>
+                        </rsControls:RSNumericEntry>
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" Placeholder="Age" Value="{Binding RefData.User.Age}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
+                            <rsControls:RSNumericEntry.Behaviors>
+                                <validators:ValidationBehaviour PropertyName="Text">
+                                    <validators:ValidationBehaviour.Validators>
+                                        <validators:RequiredValidation/>
+                                    </validators:ValidationBehaviour.Validators>
+                                </validators:ValidationBehaviour>
+                            </rsControls:RSNumericEntry.Behaviors>
+                        </rsControls:RSNumericEntry>
+                        <rsControls:RSEnumPicker Style="{StaticResource Picker}" x:TypeArguments="enums:GenderEnum" Placeholder="Gender" SelectedItem="{Binding RefData.User.Gender}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" HideTrailingZeros="False" Placeholder="Body fat" Value="{Binding RefData.User.BodyFat}" IsPlaceholderAlwaysFloating="True">
+                            <rsControls:RSNumericEntry.Behaviors>
+                                <validators:ValidationBehaviour PropertyName="Text">
+                                    <validators:ValidationBehaviour.Validators>
+                                        <validators:RequiredValidation/>
+                                    </validators:ValidationBehaviour.Validators>
+                                </validators:ValidationBehaviour>
+                            </rsControls:RSNumericEntry.Behaviors>
+                        </rsControls:RSNumericEntry>
+                    </StackLayout>
+                </Frame>
+
+                <Label Style="{StaticResource LabelMedium}" Text="Results" Margin="0, 20, 0, 0"/>
+                <Frame Style="{StaticResource UserCard}">
+                    <StackLayout>
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" Placeholder="BMR" Value="{Binding RefData.User.Height}" IsPlaceholderAlwaysFloating="True"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

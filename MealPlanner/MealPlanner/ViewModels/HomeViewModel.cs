@@ -20,6 +20,7 @@ namespace MealPlanner.ViewModels
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             UpdateAlimentCommand = new Command<object[]>(UpdateAliment);
             AddAlimentCommand = new Command<DayMeal>(AddAliment);
+            OpenUserPageCommand = new Command(OpenUserPage);    
         }
 
         public ICommand DeletteAlimentCommand { get; set; } 
@@ -130,6 +131,13 @@ namespace MealPlanner.ViewModels
             (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedDayMeal = dayMeal;
             await App.Current.MainPage.Navigation.PushAsync(addAlimentPage);        
             //await Shell.Current.GoToAsync($"AddAlimentPage");
+        }
+
+
+        public ICommand OpenUserPageCommand { get; set; }
+        private async void OpenUserPage()
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new UserPage());        
         }
     }
 }
