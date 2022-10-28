@@ -11,6 +11,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using static MealPlanner.Models.User;
 
 namespace MealPlanner.Helpers
 {
@@ -24,7 +25,7 @@ namespace MealPlanner.Helpers
         public ObservableCollection<Aliment> Aliments { get; set; }
         public ObservableCollection<Aliment> FilteredAliments { get; set; }
         public ObservableCollection<DayMealAliment> DayMealAliments { get; set; }
-
+        public List<TypeOfRegimeItem> TypesOfRegime { get; set; }
 
 
 
@@ -46,15 +47,70 @@ namespace MealPlanner.Helpers
         }
         public ICommand ResetDBCommand { get; set; }
 
-        private void InitDB()
+        private void InitUser()
         {
-            // User
-            User =  App.DataBaseRepo.GetUserAsync().Result;
-            if(User == null)
+            // Type of regimes
+            TypesOfRegime = new List<TypeOfRegimeItem>();
+            TypesOfRegime.Add(new TypeOfRegimeItem() 
+            { 
+                TypeOfRegime = TypesOfRegimeEnum.Standard,
+                Name = "Standard",
+                Description = "Carbs 50%, Proteins 20%, Fats 30%",
+                CarbsPercentage = 0.5,
+                ProteinPercentage = 0.2, 
+                FatsPercentage = 0.3
+            });
+            TypesOfRegime.Add(new TypeOfRegimeItem()
+            { 
+                TypeOfRegime = TypesOfRegimeEnum.Balanced,
+                Name = "Balanced",
+                Description = "Carbs 50%, Proteins 25%, Fats 25%",
+                CarbsPercentage = 0.5,
+                ProteinPercentage = 0.25,
+                FatsPercentage = 0.35
+            });
+            TypesOfRegime.Add(new TypeOfRegimeItem() 
+            { 
+                TypeOfRegime = TypesOfRegimeEnum.LowInFats,
+                Name = "Low in fats",
+                Description = "Carbs 60%, Proteins 25%, Fats 15%",
+                CarbsPercentage = 0.6,
+                ProteinPercentage = 0.25,
+                FatsPercentage = 0.15
+            });
+            TypesOfRegime.Add(new TypeOfRegimeItem()
+            {
+                TypeOfRegime = TypesOfRegimeEnum.RichInProteins, 
+                Name = "Rich in proteins",
+                Description = "Carbs 25%, Proteins 40%, Fats 35%",
+                CarbsPercentage = 0.25,
+                ProteinPercentage = 0.4,
+                FatsPercentage = 0.35
+            });
+            TypesOfRegime.Add(new TypeOfRegimeItem()
+            { 
+                TypeOfRegime = TypesOfRegimeEnum.Keto, 
+                Name = "Keto", 
+                Description = "Carbs 5%, Proteins 30%, Fats 65%",
+                CarbsPercentage = 0.05,
+                ProteinPercentage = 0.3,
+                FatsPercentage = 0.65
+            });
+
+
+            User = App.DataBaseRepo.GetUserAsync().Result;
+            User.SelectedTypeOfRegime = TypesOfRegime.Where(x => x.TypeOfRegime == User.SelectedTypeOfRegimeDB).FirstOrDefault();
+            if (User == null)
             {
                 User = new User();
                 //User = new User() {Name = "Rade", Age = 32, Height = 180, Weight = 69, BodyFat = 14.5, Gender = Enums.GenderEnum.Male, TargetCalories = 2986, TargetProteins = 300, TargetCarbs = 323, TargetFats = 89 };
             }
+        }
+
+        private void InitDB()
+        {
+            // User
+            InitUser();
 
             // Foods
             Foods = App.DataBaseRepo.GetAllFoodsAsync().Result.ToObservableCollection();
@@ -148,10 +204,10 @@ namespace MealPlanner.Helpers
                     UpdateDayMealValues(dayMeal);
 
                     // Update daily values
-                    DailyProteins += aliment.Proteins;
-                    DailyCarbs += aliment.Carbs;
-                    DailyFats += aliment.Fats;
-                    DailyCalories += aliment.Calories;
+                    User.DailyProteins += aliment.Proteins;
+                    User.DailyCarbs += aliment.Carbs;
+                    User.DailyFats += aliment.Fats;
+                    User.DailyCalories += aliment.Calories;
                 }
             }
         }
@@ -190,70 +246,6 @@ namespace MealPlanner.Helpers
             return aliment;
         }
 
-
-        private double dailyCalories;
-        public double DailyCalories
-        {
-            get
-            {
-                return dailyCalories;
-            }
-            set
-            {
-                dailyCalories = value;
-                DailyCaloriesProgress = dailyCalories / User.TargetCalories;
-                OnPropertyChanged("DailyCalories");
-                OnPropertyChanged("DailyCaloriesProgress");
-            }
-        }
-        public double DailyCaloriesProgress { get; set; }
-
-
-        private double dailyProteins;
-        public double DailyProteins
-        {
-            get { return dailyProteins; }
-            set
-            {
-                dailyProteins = value;
-                DailyProteinProgress = dailyProteins / User.TargetProteins;
-                OnPropertyChanged("DailyProteins");
-                OnPropertyChanged("DailyProteinProgress");
-            }
-        }
-        public double DailyProteinProgress { get; set; }
-
-
-        private double dailyCarbs;
-        public double DailyCarbs
-        {
-            get { return dailyCarbs; }
-            set
-            {
-                dailyCarbs = value;
-                DailyCarbsProgress = dailyCarbs / User.TargetCarbs;
-                OnPropertyChanged("DailyCarbs");
-                OnPropertyChanged("DailyCarbsProgress");
-            }
-        }
-        public double DailyCarbsProgress { get; set; }
-
-
-        private double dailyFats;
-        public double DailyFats
-        {
-            get { return dailyFats; }
-            set
-            {
-                dailyFats = value;
-                DailyFatsProgress = dailyFats / User.TargetFats;
-                OnPropertyChanged("DailyFats");
-                OnPropertyChanged("DailyFatsProgress");
-            }
-        }
-        public double DailyFatsProgress { get; set; }
-
-
         public void UpdateDailyValues()
         {
             double proteins = 0;
@@ -269,10 +261,12 @@ namespace MealPlanner.Helpers
                 calories += dayMeal.Calories;
             }
 
-            DailyProteins = proteins;
-            DailyCarbs = carbs;
-            DailyFats = fats;
-            DailyCalories = calories;
+            User.DailyProteins = proteins;
+            User.DailyCarbs = carbs;
+            User.DailyFats = fats;
+            User.DailyCalories = calories;
+
+            User.NotifyProgressBars();
         }
 
         public void UpdateDayMealValues(DayMeal dayMeal, double ratio = 1)

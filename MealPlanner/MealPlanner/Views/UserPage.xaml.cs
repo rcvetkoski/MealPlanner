@@ -20,13 +20,7 @@ namespace MealPlanner.Views
 
         public bool CheckFields()
         {
-            bool validation = false;
-            var lol = ((nameEntry.Behaviors[0] as ValidationBehaviour).Validators[0] as IValidation).Validate("");
-            //if (!string.IsNullOrEmpty(nameEntry.Text) && )
-
-            //this.nameEntry.Focus(); 
-
-            return validation;
+            return ((nameEntry.CheckIsValid() || heightEntry.CheckIsValid() || weightEntry.CheckIsValid() || ageEntry.CheckIsValid()) == false) ? false : true;
         }
     }
 }

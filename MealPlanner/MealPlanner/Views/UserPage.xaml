@@ -4,7 +4,9 @@
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              xmlns:vm="clr-namespace:MealPlanner.ViewModels"
              xmlns:helpers="clr-namespace:MealPlanner.Helpers" 
-             xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls"
+             xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
+             xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls"
+             xmlns:rsHelpers="clr-namespace:Xamarin.RSControls.Helpers;assembly=Xamarin.RSControls"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Name="User"
              Title="{Binding Title}"
@@ -24,11 +26,30 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical">
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
             <StackLayout Padding="15">
-                <Label Style="{StaticResource LabelMedium}" Text="Daily caloric intake"/>
+                <Label Style="{StaticResource LabelMedium}" Text="Daily caloric intake (Kcal)"/>
                 <Frame Style="{StaticResource UserCard}">
-                    <Label HorizontalOptions="CenterAndExpand" Style="{StaticResource LabelLarge}" Text="3000 Kcal" Margin="0, 5, 0, 5"/>
+                    <StackLayout>
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}"
+                                                   FontSize="Large"
+                                                   RSEntryStyle="Underline"
+                                                   Placeholder="BMR (Basal metabolic rate)" 
+                                                   HorizontalTextAlignment="Center"
+                                                   BorderFillColor="Transparent"
+                                                   CustomUnit="kcal"
+                                                   Value="{Binding RefData.User.BMR}" 
+                                                   IsPlaceholderAlwaysFloating="True"/>
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}"
+                                                   FontSize="Large"
+                                                   HorizontalTextAlignment="Center"
+                                                   BorderFillColor="Transparent"
+                                                   RSEntryStyle="Underline" 
+                                                   Placeholder="TDEE (Total daily energy expenditure)" 
+                                                   CustomUnit="kcal"
+                                                   Value="{Binding RefData.User.TDEE}"
+                                                   IsPlaceholderAlwaysFloating="True"/>
+                    </StackLayout>
                 </Frame>
 
                 <Label Style="{StaticResource LabelMedium}" Text="Profil" Margin="0, 20, 0, 0"/>
@@ -43,50 +64,71 @@
                                 </validators:ValidationBehaviour>
                             </rsControls:RSEntry.Behaviors>
                         </rsControls:RSEntry>
-                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" Placeholder="Height" Value="{Binding RefData.User.Height}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
+                        <rsControls:RSNumericEntry x:Name="heightEntry" Style="{StaticResource Entry}" CustomUnit="cm" Placeholder="Height" Value="{Binding RefData.User.Height}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSNumericEntry.Behaviors>
-                                <validators:ValidationBehaviour PropertyName="Text">
+                                <validators:ValidationBehaviour PropertyName="Value">
                                     <validators:ValidationBehaviour.Validators>
                                         <validators:RequiredValidation/>
+                                        <validators:DifferentThanValidation x:TypeArguments="x:String" Value="0"/>
                                     </validators:ValidationBehaviour.Validators>
                                 </validators:ValidationBehaviour>
                             </rsControls:RSNumericEntry.Behaviors>
                         </rsControls:RSNumericEntry>
-                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" Placeholder="Weight" Value="{Binding RefData.User.Weight}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
+                        <rsControls:RSNumericEntry x:Name="weightEntry" Style="{StaticResource Entry}" Placeholder="Weight" CustomUnit="kg" Value="{Binding RefData.User.Weight}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSNumericEntry.Behaviors>
-                                <validators:ValidationBehaviour PropertyName="Text">
+                                <validators:ValidationBehaviour PropertyName="Value">
                                     <validators:ValidationBehaviour.Validators>
                                         <validators:RequiredValidation/>
+                                        <validators:DifferentThanValidation x:TypeArguments="x:String" Value="0"/>
                                     </validators:ValidationBehaviour.Validators>
                                 </validators:ValidationBehaviour>
                             </rsControls:RSNumericEntry.Behaviors>
                         </rsControls:RSNumericEntry>
-                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" Placeholder="Age" Value="{Binding RefData.User.Age}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
+                        <rsControls:RSNumericEntry x:Name="ageEntry" Style="{StaticResource Entry}" Placeholder="Age" Value="{Binding RefData.User.Age}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSNumericEntry.Behaviors>
-                                <validators:ValidationBehaviour PropertyName="Text">
+                                <validators:ValidationBehaviour PropertyName="Value">
                                     <validators:ValidationBehaviour.Validators>
                                         <validators:RequiredValidation/>
+                                        <validators:DifferentThanValidation x:TypeArguments="x:String" Value="0"/>
                                     </validators:ValidationBehaviour.Validators>
                                 </validators:ValidationBehaviour>
                             </rsControls:RSNumericEntry.Behaviors>
                         </rsControls:RSNumericEntry>
                         <rsControls:RSEnumPicker Style="{StaticResource Picker}" x:TypeArguments="enums:GenderEnum" Placeholder="Gender" SelectedItem="{Binding RefData.User.Gender}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" HideTrailingZeros="False" Placeholder="Body fat" Value="{Binding RefData.User.BodyFat}" IsPlaceholderAlwaysFloating="True">
-                            <rsControls:RSNumericEntry.Behaviors>
-                                <validators:ValidationBehaviour PropertyName="Text">
-                                    <validators:ValidationBehaviour.Validators>
-                                        <validators:RequiredValidation/>
-                                    </validators:ValidationBehaviour.Validators>
-                                </validators:ValidationBehaviour>
-                            </rsControls:RSNumericEntry.Behaviors>
-                        </rsControls:RSNumericEntry>
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" HideTrailingZeros="False" CustomUnit="%" Placeholder="Body fat" Value="{Binding RefData.User.BodyFat}" IsPlaceholderAlwaysFloating="True"/>
                     </StackLayout>
                 </Frame>
 
-                <Label Style="{StaticResource LabelMedium}" Text="Results" Margin="0, 20, 0, 0"/>
+                <Label Style="{StaticResource LabelMedium}" Text="Parameters" Margin="0, 20, 0, 0"/>
                 <Frame Style="{StaticResource UserCard}">
                     <StackLayout>
-                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" Placeholder="BMR" Value="{Binding RefData.User.Height}" IsPlaceholderAlwaysFloating="True"/>
+                        <rsControls:RSPicker Placeholder="BMR Formula" 
+                                             Style="{StaticResource Picker}"
+                                             ItemsSource="{Binding RefData.User.BMRFormulas}" 
+                                             SelectedItem="{Binding RefData.User.SelectedBMRFormula}"/>
+                        <rsControls:RSPicker Placeholder="Physical Activity Level" 
+                                             Style="{StaticResource Picker}"
+                                             ItemsSource="{Binding RefData.User.PhysicalActivityLevels}"
+                                             SelectedItem="{Binding RefData.User.SelectedPhysicalActivityLevel}"/>
+                        <rsControls:RSPicker Placeholder="Objectif" 
+                                             Style="{StaticResource Picker}"
+                                             ItemsSource="{Binding RefData.User.Objectifs}"
+                                             SelectedItem="{Binding RefData.User.SelectedObjectif}"/>
+                        <rsControls:RSPicker Placeholder="Type of regime" 
+                                             Style="{StaticResource Picker}"
+                                             DisplayMemberPath="Name"
+                                             RsPopupSeparatorsEnabled="True"
+                                             ItemsSource="{Binding RefData.TypesOfRegime}"
+                                             SelectedItem="{Binding RefData.User.SelectedTypeOfRegime}">
+                            <rsControls:RSPicker.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid RowDefinitions="*,*" ColumnDefinitions="*">
+                                        <Label Grid.Row="0" Text="{Binding Name}" Style="{StaticResource LabelCaptionBold}"/>
+                                        <Label Grid.Row="1" Text="{Binding Description}" Style="{StaticResource LabelMicro}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </rsControls:RSPicker.ItemTemplate>
+                        </rsControls:RSPicker>
                     </StackLayout>
                 </Frame>
             </StackLayout>

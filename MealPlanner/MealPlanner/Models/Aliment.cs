@@ -45,7 +45,7 @@ namespace MealPlanner.Models
 
 
         [Ignore]
-        public double CaloriesProgress { get { return calories / App.RefData.User.TargetCalories; } }
+        public double CaloriesProgress { get { return calories / App.RefData.User.TDEE; } }
         [Ignore]
         public double FatsProgress { get { return fats / App.RefData.User.TargetFats; } }
         [Ignore]

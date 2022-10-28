@@ -1,4 +1,5 @@
-﻿using MealPlanner.Views;
+﻿using MealPlanner.Models;
+using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,11 +16,27 @@ namespace MealPlanner.ViewModels
             SaveUserDataCommand = new Command<UserPage>(SaveUserData);
         }
 
+
+
+
         public ICommand SaveUserDataCommand { get; set; }
         private async void SaveUserData(UserPage contentPage)
         {
             if(contentPage.CheckFields())
-                await App.DataBaseRepo.UpdateUserAsync(RefData.User);
+            {
+                User currentUser = await App.DataBaseRepo.GetUserAsync();
+
+                if (currentUser == null)
+                {
+                    await App.DataBaseRepo.AddUserAsync(RefData.User);
+                    await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+                }
+                else
+                {
+                    await App.DataBaseRepo.UpdateUserAsync(RefData.User);
+                    await Shell.Current.Navigation.PopAsync();
+                }
+            }
         }
     }
 }

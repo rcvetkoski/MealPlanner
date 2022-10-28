@@ -78,6 +78,8 @@ namespace MealPlanner.Services
         /// <returns></returns>
         public Task<int> UpdateUserAsync(User user)
         {
+            user.SelectedTypeOfRegimeDB = user.SelectedTypeOfRegime.TypeOfRegime;
+
             if (GetFoodAsync(user.Id) != null)
                 return dbConnection.UpdateAsync(user);
             else

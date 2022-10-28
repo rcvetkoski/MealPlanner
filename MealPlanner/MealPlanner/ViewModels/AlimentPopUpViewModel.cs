@@ -38,7 +38,7 @@ namespace MealPlanner.ViewModels
             set
             {
                 alimentCalories = value;
-                AlimentCaloriesProgress = alimentCalories / RefData.User.TargetCalories;
+                AlimentCaloriesProgress = alimentCalories / RefData.User.TDEE;
                 OnPropertyChanged("AlimentCalories");
                 OnPropertyChanged("AlimentCaloriesProgress");
             }
