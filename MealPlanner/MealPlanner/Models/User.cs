@@ -115,7 +115,8 @@ namespace MealPlanner.Models
             { 
                 if(bmr != value)
                 {
-                    bmr = value; OnPropertyChanged("BMR");
+                    bmr = value;
+                    OnPropertyChanged(nameof(BMR));
                 }
             } 
         }
@@ -132,19 +133,15 @@ namespace MealPlanner.Models
                 if(tdee != value)
                 {
                     tdee = value;
-                    OnPropertyChanged("TDEE");
+                    OnPropertyChanged(nameof(TDEE));
 
-                    OnPropertyChanged("TargetFats");
-                    OnPropertyChanged("TargetCarbs");
-                    OnPropertyChanged("TargetFats");
-
-                    OnPropertyChanged("DailyCaloriesProgress");
-                    OnPropertyChanged("DailyCarbsProgress");
-                    OnPropertyChanged("DailyFatsProgress");
-
-                    OnPropertyChanged("DailyProteinsRatio");
-                    OnPropertyChanged("DailyCarbsRatio");
-                    OnPropertyChanged("DailyFatsRatio");
+                    OnPropertyChanged(nameof(TargetProteins));
+                    OnPropertyChanged(nameof(TargetFats));
+                    OnPropertyChanged(nameof(TargetCarbs));
+                    NotifyProgressBars();
+                    OnPropertyChanged(nameof(DailyProteinsRatio));
+                    OnPropertyChanged(nameof(DailyCarbsRatio));
+                    OnPropertyChanged(nameof(DailyFatsRatio));
                 }
             }
         }
@@ -163,7 +160,7 @@ namespace MealPlanner.Models
                 if(dailyCalories != value)
                 {
                     dailyCalories = value;
-                    OnPropertyChanged("DailyCalories");
+                    OnPropertyChanged(nameof(DailyCalories));
                 }
             }
         }
@@ -358,6 +355,10 @@ namespace MealPlanner.Models
                     OnPropertyChanged("TargetFats");
                     OnPropertyChanged("TargetCarbs");
                     OnPropertyChanged("TargetFats");
+                    OnPropertyChanged("DailyProteinsRatio");
+                    OnPropertyChanged("DailyCarbsRatio");
+                    OnPropertyChanged("DailyFatsRatio");
+                    NotifyProgressBars();
                 }
             }
         }
@@ -371,9 +372,7 @@ namespace MealPlanner.Models
 
         private void Calcul()
         {
-            BMR = 0;
-
-            if (SelectedBMRFormula == null || string.IsNullOrEmpty(Name) || SelectedObjectif == null)
+            if (SelectedBMRFormula == null || string.IsNullOrEmpty(Name) || SelectedObjectif == null || SelectedPhysicalActivityLevel == null)
                 return;
 
             if (SelectedBMRFormula == "Mifflin - St Jeor")
@@ -418,8 +417,7 @@ namespace MealPlanner.Models
                 }
             }
 
-            if(SelectedPhysicalActivityLevel != null && SelectedObjectif != null)
-                TDEE = BMR * SelectedPhysicalActivityLevel.Ratio * SelectedObjectif.Ratio;
+            TDEE = Math.Round((BMR * SelectedPhysicalActivityLevel.Ratio * SelectedObjectif.Ratio), 0);
         }
 
         /// <summary>
@@ -427,10 +425,10 @@ namespace MealPlanner.Models
         /// </summary>
         public void NotifyProgressBars()
         {
-            OnPropertyChanged("DailyCaloriesProgress");
-            OnPropertyChanged("DailyProteinProgress");
-            OnPropertyChanged("DailyCarbsProgress");
-            OnPropertyChanged("DailyFatsProgress");
+            OnPropertyChanged(nameof(DailyCaloriesProgress));
+            OnPropertyChanged(nameof(DailyProteinProgress));
+            OnPropertyChanged(nameof(DailyCarbsProgress));
+            OnPropertyChanged(nameof(DailyFatsProgress));
         }
 
 
