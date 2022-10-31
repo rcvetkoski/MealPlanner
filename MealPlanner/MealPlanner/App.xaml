@@ -84,8 +84,14 @@
             <Style x:Key="LabelMicro" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
                 <Setter Property="FontSize" Value="Micro"/>
             </Style>
+            
             <Style x:Key="LabelSmall" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
                 <Setter Property="FontSize" Value="Small"/>
+            </Style>
+
+            <Style x:Key="LabelSmallBold" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
             <Style x:Key="LabelCaptionBold" TargetType="Label" BasedOn="{StaticResource BaseLabel}">

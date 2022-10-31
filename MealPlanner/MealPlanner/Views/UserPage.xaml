@@ -28,31 +28,8 @@
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
             <StackLayout Padding="15">
-                <Label Style="{StaticResource LabelMedium}" Text="Daily caloric intake (Kcal)"/>
-                <Frame Style="{StaticResource UserCard}">
-                    <StackLayout>
-                        <rsControls:RSNumericEntry Style="{StaticResource Entry}"
-                                                   FontSize="Large"
-                                                   RSEntryStyle="Underline"
-                                                   Placeholder="BMR (Basal metabolic rate)" 
-                                                   HorizontalTextAlignment="Center"
-                                                   BorderFillColor="Transparent"
-                                                   CustomUnit="kcal"
-                                                   Value="{Binding RefData.User.BMR}" 
-                                                   IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSNumericEntry Style="{StaticResource Entry}"
-                                                   FontSize="Large"
-                                                   HorizontalTextAlignment="Center"
-                                                   BorderFillColor="Transparent"
-                                                   RSEntryStyle="Underline" 
-                                                   Placeholder="TDEE (Total daily energy expenditure)" 
-                                                   CustomUnit="kcal"
-                                                   Value="{Binding RefData.User.TDEE}"
-                                                   IsPlaceholderAlwaysFloating="True"/>
-                    </StackLayout>
-                </Frame>
 
-                <Label Style="{StaticResource LabelMedium}" Text="Profil" Margin="0, 20, 0, 0"/>
+                <Label Style="{StaticResource LabelMedium}" Text="Profil"/>
                 <Frame Style="{StaticResource UserCard}">
                     <StackLayout>
                         <rsControls:RSEntry x:Name="nameEntry" Style="{StaticResource Entry}" Helper="Mandatory" Placeholder="Name" Text="{Binding RefData.User.Name}" IsPlaceholderAlwaysFloating="True">
@@ -63,7 +40,20 @@
                                     </validators:ValidationBehaviour.Validators>
                                 </validators:ValidationBehaviour>
                             </rsControls:RSEntry.Behaviors>
+                            <rsControls:RSEntry.LeadingIcon>
+                                <rsHelpers:RSEntryIcon>
+                                    <rsHelpers:RSEntryIcon.View>
+                                        <Image WidthRequest="15" HeightRequest="15">
+                                            <Image.Source>
+                                                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Person}" FontFamily="FA-Solid"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </rsHelpers:RSEntryIcon.View>
+                                </rsHelpers:RSEntryIcon>
+                            </rsControls:RSEntry.LeadingIcon>
                         </rsControls:RSEntry>
+                        
                         <rsControls:RSNumericEntry x:Name="heightEntry" Style="{StaticResource Entry}" CustomUnit="cm" Placeholder="Height" Value="{Binding RefData.User.Height}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSNumericEntry.Behaviors>
                                 <validators:ValidationBehaviour PropertyName="Value">
@@ -73,7 +63,20 @@
                                     </validators:ValidationBehaviour.Validators>
                                 </validators:ValidationBehaviour>
                             </rsControls:RSNumericEntry.Behaviors>
+                            <rsControls:RSNumericEntry.LeadingIcon>
+                                <rsHelpers:RSEntryIcon>
+                                    <rsHelpers:RSEntryIcon.View>
+                                        <Image WidthRequest="15" HeightRequest="15">
+                                            <Image.Source>
+                                                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Ruler}" FontFamily="FA-Solid"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </rsHelpers:RSEntryIcon.View>
+                                </rsHelpers:RSEntryIcon>
+                            </rsControls:RSNumericEntry.LeadingIcon>
                         </rsControls:RSNumericEntry>
+                        
                         <rsControls:RSNumericEntry x:Name="weightEntry" Style="{StaticResource Entry}" Placeholder="Weight" CustomUnit="kg" Value="{Binding RefData.User.Weight}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSNumericEntry.Behaviors>
                                 <validators:ValidationBehaviour PropertyName="Value">
@@ -83,7 +86,20 @@
                                     </validators:ValidationBehaviour.Validators>
                                 </validators:ValidationBehaviour>
                             </rsControls:RSNumericEntry.Behaviors>
+                            <rsControls:RSNumericEntry.LeadingIcon>
+                                <rsHelpers:RSEntryIcon>
+                                    <rsHelpers:RSEntryIcon.View>
+                                        <Image WidthRequest="15" HeightRequest="15">
+                                            <Image.Source>
+                                                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.WeightScale}" FontFamily="FA-Solid"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </rsHelpers:RSEntryIcon.View>
+                                </rsHelpers:RSEntryIcon>
+                            </rsControls:RSNumericEntry.LeadingIcon>
                         </rsControls:RSNumericEntry>
+                        
                         <rsControls:RSNumericEntry x:Name="ageEntry" Style="{StaticResource Entry}" Placeholder="Age" Value="{Binding RefData.User.Age}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSNumericEntry.Behaviors>
                                 <validators:ValidationBehaviour PropertyName="Value">
@@ -93,9 +109,73 @@
                                     </validators:ValidationBehaviour.Validators>
                                 </validators:ValidationBehaviour>
                             </rsControls:RSNumericEntry.Behaviors>
+                            <rsControls:RSNumericEntry.LeadingIcon>
+                                <rsHelpers:RSEntryIcon>
+                                    <rsHelpers:RSEntryIcon.View>
+                                        <Image WidthRequest="15" HeightRequest="15">
+                                            <Image.Source>
+                                                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.CakeCandles}" FontFamily="FA-Solid"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </rsHelpers:RSEntryIcon.View>
+                                </rsHelpers:RSEntryIcon>
+                            </rsControls:RSNumericEntry.LeadingIcon>
                         </rsControls:RSNumericEntry>
-                        <rsControls:RSEnumPicker Style="{StaticResource Picker}" x:TypeArguments="enums:GenderEnum" Placeholder="Gender" SelectedItem="{Binding RefData.User.Gender}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" HideTrailingZeros="False" CustomUnit="%" Placeholder="Body fat" Value="{Binding RefData.User.BodyFat}" IsPlaceholderAlwaysFloating="True"/>
+
+                        <rsControls:RSEnumPicker Style="{StaticResource Picker}" x:TypeArguments="enums:GenderEnum" Placeholder="Gender" SelectedItem="{Binding RefData.User.Gender}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
+                            <rsControls:RSEnumPicker.LeadingIcon>
+                                <rsHelpers:RSEntryIcon>
+                                    <rsHelpers:RSEntryIcon.View>
+                                        <Image WidthRequest="15" HeightRequest="15">
+                                            <Image.Source>
+                                                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Genderless}" FontFamily="FA-Solid"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </rsHelpers:RSEntryIcon.View>
+                                </rsHelpers:RSEntryIcon>
+                            </rsControls:RSEnumPicker.LeadingIcon>
+                        </rsControls:RSEnumPicker>
+
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" CustomUnit="%" Placeholder="Body fat" Value="{Binding RefData.User.BodyFat}" IsPlaceholderAlwaysFloating="True">
+                            <rsControls:RSNumericEntry.LeadingIcon>
+                                <rsHelpers:RSEntryIcon>
+                                    <rsHelpers:RSEntryIcon.View>
+                                        <Image WidthRequest="15" HeightRequest="15">
+                                            <Image.Source>
+                                                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Bacon}" FontFamily="FA-Solid"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </rsHelpers:RSEntryIcon.View>
+                                </rsHelpers:RSEntryIcon>
+                            </rsControls:RSNumericEntry.LeadingIcon>
+                        </rsControls:RSNumericEntry>
+                    </StackLayout>
+                </Frame>
+
+                <Label Style="{StaticResource LabelMedium}" Text="Daily caloric intake (Kcal)" Margin="0, 20, 0, 0"/>
+                <Frame Style="{StaticResource UserCard}">
+                    <StackLayout>
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}"
+                                                   FontSize="Large"
+                                                   RSEntryStyle="Underline"
+                                                   Placeholder="BMR (Basal metabolic rate)" 
+                                                   HorizontalTextAlignment="Start"
+                                                   BorderFillColor="Transparent"
+                                                   CustomUnit="kcal"
+                                                   Value="{Binding RefData.User.BMR}" 
+                                                   IsPlaceholderAlwaysFloating="True"/>
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}"
+                                                   FontSize="Large"
+                                                   HorizontalTextAlignment="Start"
+                                                   BorderFillColor="Transparent"
+                                                   RSEntryStyle="Underline" 
+                                                   Placeholder="TDEE (Total daily energy expenditure)" 
+                                                   CustomUnit="kcal"
+                                                   Value="{Binding RefData.User.TDEE}"
+                                                   IsPlaceholderAlwaysFloating="True"/>
                     </StackLayout>
                 </Frame>
 
@@ -104,12 +184,14 @@
                     <StackLayout>
                         <rsControls:RSPicker Placeholder="BMR Formula" 
                                              Style="{StaticResource Picker}"
+                                             RSEntryStyle="Underline"
                                              ItemsSource="{Binding RefData.BMRFormulas}" 
                                              SelectedItem="{Binding RefData.User.SelectedBMRFormula}"/>
                         <rsControls:RSPicker Placeholder="Physical Activity Level" 
                                              Style="{StaticResource Picker}"
                                              DisplayMemberPath="Name"
                                              RsPopupSeparatorsEnabled="True"
+                                             RSEntryStyle="Underline"
                                              ItemsSource="{Binding RefData.PhysicalActivityLevels}"
                                              SelectedItem="{Binding RefData.User.SelectedPhysicalActivityLevel}">
                             <rsControls:RSPicker.ItemTemplate>
@@ -124,12 +206,14 @@
                         <rsControls:RSPicker Placeholder="Objectif" 
                                              Style="{StaticResource Picker}"
                                              DisplayMemberPath="Name"
+                                             RSEntryStyle="Underline"
                                              ItemsSource="{Binding RefData.Objectifs}"
                                              SelectedItem="{Binding RefData.User.SelectedObjectif}"/>
                         <rsControls:RSPicker Placeholder="Type of regime" 
                                              Style="{StaticResource Picker}"
                                              DisplayMemberPath="Name"
                                              RsPopupSeparatorsEnabled="True"
+                                             RSEntryStyle="Underline"
                                              ItemsSource="{Binding RefData.TypesOfRegime}"
                                              SelectedItem="{Binding RefData.User.SelectedTypeOfRegime}">
                             <rsControls:RSPicker.ItemTemplate>

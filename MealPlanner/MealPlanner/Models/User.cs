@@ -298,7 +298,6 @@ namespace MealPlanner.Models
         }
         public PALItemTypeEnum SelectedPhysicalActivityLevelDB { get; set; }
 
-
         private string selectedBMRFormula;
         public string SelectedBMRFormula 
         { 
@@ -315,7 +314,6 @@ namespace MealPlanner.Models
                 }
             }
         }
-
 
         private ObjectifItem selectedObjectif;
         [Ignore]
@@ -335,8 +333,6 @@ namespace MealPlanner.Models
             }
         }
         public ObjectifTypeEnum SelectedObjectiflDB { get; set; }
-
-
 
         private TypeOfRegimeItem selectedTypeOfRegime;
         [Ignore]
@@ -363,6 +359,7 @@ namespace MealPlanner.Models
             }
         }
         public TypesOfRegimeEnum SelectedTypeOfRegimeDB { get; set; }
+
 
 
         public User()
@@ -465,7 +462,6 @@ namespace MealPlanner.Models
             PhysicalJob_hard_exercise,
             Professional_athelete
         }
-
 
         public class TypeOfRegimeItem
         {

@@ -71,7 +71,6 @@ namespace MealPlanner.ViewModels
                 rSPopup.Title = aliment.Name;
                 rSPopup.Style = Application.Current.Resources["RSPopup"] as Style;
 
-
                 RSPopupAlimentDetailPage rSPopupAlimentDetailPage = new RSPopupAlimentDetailPage();
                 rSPopupAlimentDetailPage.BindingContext = new AlimentPopUpViewModel(aliment);
                 var rSPopupAlimentDetailPageBindingContext = rSPopupAlimentDetailPage.BindingContext as AlimentPopUpViewModel;

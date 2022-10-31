@@ -156,7 +156,8 @@ namespace MealPlanner.ViewModels
 
 
 
-            RSPopup rSPopup = new RSPopup();
+            RSPopup rSPopup = new RSPopup("", "", Xamarin.RSControls.Enums.RSPopupPositionEnum.Bottom);
+            rSPopup.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.BottomToTop);
             rSPopup.Title = existingAliment.Name;
             rSPopup.Style = Application.Current.Resources["RSPopup"] as Style;
             AlimentPopUpViewModel rsPopupBindingContext;

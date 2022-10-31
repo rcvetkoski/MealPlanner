@@ -12,7 +12,7 @@ namespace MealPlanner.ViewModels
     {
         public UserViewModel()
         {
-            Title = "User";
+            Title = RefData.User != null ? RefData.User.Name : "User";
             SaveUserDataCommand = new Command<UserPage>(SaveUserData);
         }
 
