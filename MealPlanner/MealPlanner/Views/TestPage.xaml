@@ -11,27 +11,30 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Meal aliments" />
-            <CollectionView ItemsSource="{Binding RefData.DayMealAliments}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Label Text="{Binding Id}"/>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+        <ScrollView Orientation="Vertical">
+            <StackLayout x:Name="stack">
+                <Label Text="Meal aliments" />
+                <CollectionView ItemsSource="{Binding RefData.DayMealAliments}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Id}"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
 
-            <Label Text="Meal foods" />
-            <CollectionView ItemsSource="{Binding RefData.MealFoods}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Label Text="{Binding Id}"/>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                <Label Text="Meal foods" />
+                <CollectionView ItemsSource="{Binding RefData.MealFoods}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Id}"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-            <Button Text="Reset data base" Command="{Binding RefData.ResetDBCommand}" Margin="30"/>
-        </StackLayout>
+                <Button Text="Reset data base" Command="{Binding RefData.ResetDBCommand}" Margin="30"/>
+            </StackLayout>
+        </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>

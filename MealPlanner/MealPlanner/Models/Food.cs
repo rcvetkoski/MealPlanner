@@ -11,6 +11,12 @@ namespace MealPlanner.Models
     public class Food: Aliment
     {
         public int MealFoodId { get; set; } = 0;
-        public override AlimentTypeEnum AlimentType { get { return AlimentTypeEnum.Food; } }
+        public override AlimentTypeEnum AlimentType 
+        { 
+            get
+            {
+                return AlimentTypeEnum.Food;
+            } 
+        }
     }
 }

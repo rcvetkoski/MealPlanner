@@ -15,6 +15,14 @@ namespace MealPlanner.Views
         public TestPage()
         {
             InitializeComponent();
+
+
+            //for (int i = 0; i < 1000; i++)
+            //{
+            //    Entry entry = new Entry();
+            //    entry.SetBinding(Entry.TextProperty, "TestPropertie");
+            //    this.stack.Children.Add(entry);
+            //}
         }
     }
 }

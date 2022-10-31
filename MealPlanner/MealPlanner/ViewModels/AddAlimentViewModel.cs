@@ -62,16 +62,59 @@ namespace MealPlanner.ViewModels
         }
 
         private bool mealSwitchVisibility;
-        public bool MealSwitchVisibility { get { return mealSwitchVisibility; } set { mealSwitchVisibility = value; OnPropertyChanged("MealSwitchVisibility"); } }
+        public bool MealSwitchVisibility 
+        {
+            get
+            { 
+                return mealSwitchVisibility;
+            }
+            set
+            { 
+                if(mealSwitchVisibility != value)
+                {
+                    mealSwitchVisibility = value;
+                    OnPropertyChanged("MealSwitchVisibility");
+                }
+            }
+        }
 
         public DayMeal SelectedDayMeal { get; set; }
         public Meal CurrentMeal { get; set; }
 
         private bool isFoodChecked;
-        public bool IsFoodChecked { get { return isFoodChecked; } set { isFoodChecked = value; OnPropertyChanged("IsFoodChecked"); } }
+        public bool IsFoodChecked
+        { 
+            get
+            {
+                return isFoodChecked; 
+            } 
+            set
+            { 
+                if(isFoodChecked != value)
+                {
+                    isFoodChecked = value;
+                    OnPropertyChanged("IsFoodChecked");
+                }
+            }
+        }
 
         private bool isMealChecked;
-        public bool IsMealChecked { get { return isMealChecked; } set { isMealChecked = value; OnPropertyChanged("IsMealChecked"); FilteredAlimentsRefresh(); } }
+        public bool IsMealChecked 
+        { 
+            get
+            { 
+                return isMealChecked;
+            } 
+            set 
+            {
+                if(isMealChecked != value)
+                {
+                    isMealChecked = value;
+                    OnPropertyChanged("IsMealChecked");
+                    FilteredAlimentsRefresh();
+                }
+            }
+        }
 
 
         private List<Food> searchResults;
@@ -83,8 +126,11 @@ namespace MealPlanner.ViewModels
             }
             set
             {
-                searchResults = value;
-                OnPropertyChanged("SearchResults");
+                if(searchResults != value)
+                {
+                    searchResults = value;
+                    OnPropertyChanged("SearchResults");
+                }
             }
         }
 

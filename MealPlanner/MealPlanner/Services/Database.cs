@@ -79,6 +79,8 @@ namespace MealPlanner.Services
         public Task<int> UpdateUserAsync(User user)
         {
             user.SelectedTypeOfRegimeDB = user.SelectedTypeOfRegime.TypeOfRegime;
+            user.SelectedPhysicalActivityLevelDB = user.SelectedPhysicalActivityLevel.PALItemType;
+            user.SelectedObjectiflDB = user.SelectedObjectif.ObjectifType;
 
             if (GetFoodAsync(user.Id) != null)
                 return dbConnection.UpdateAsync(user);

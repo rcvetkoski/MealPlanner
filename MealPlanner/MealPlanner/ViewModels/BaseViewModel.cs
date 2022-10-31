@@ -30,13 +30,44 @@ namespace MealPlanner.ViewModels
             set { SetProperty(ref title, value); }
         }
 
-        public ReferentialData RefData { get => App.RefData; }
+        public ReferentialData RefData
+        {
+            get => App.RefData;
+        }
 
         private Aliment currentAliment;
-        public Aliment CurrentAliment { get { return currentAliment; } set { currentAliment = value; OnPropertyChanged("CurrentAliment"); } }
+        public Aliment CurrentAliment
+        { 
+            get
+            { 
+                return currentAliment;
+            }
+            set
+            { 
+                if(currentAliment != value)
+                {
+                    currentAliment = value;
+                    OnPropertyChanged("CurrentAliment");
+                }
+            } 
+        }
 
         private bool isNew;
-        public bool IsNew { get { return isNew; } set { isNew = value; OnPropertyChanged("IsNew"); } }
+        public bool IsNew 
+        { 
+            get 
+            {
+                return isNew; 
+            } 
+            set 
+            { 
+                if(isNew != value)
+                {
+                    isNew = value;
+                    OnPropertyChanged("IsNew");
+                }
+            }
+        }
 
         public ICommand AddImageCommand { get; set; }
 

@@ -104,15 +104,27 @@
                     <StackLayout>
                         <rsControls:RSPicker Placeholder="BMR Formula" 
                                              Style="{StaticResource Picker}"
-                                             ItemsSource="{Binding RefData.User.BMRFormulas}" 
+                                             ItemsSource="{Binding RefData.BMRFormulas}" 
                                              SelectedItem="{Binding RefData.User.SelectedBMRFormula}"/>
                         <rsControls:RSPicker Placeholder="Physical Activity Level" 
                                              Style="{StaticResource Picker}"
-                                             ItemsSource="{Binding RefData.User.PhysicalActivityLevels}"
-                                             SelectedItem="{Binding RefData.User.SelectedPhysicalActivityLevel}"/>
+                                             DisplayMemberPath="Name"
+                                             RsPopupSeparatorsEnabled="True"
+                                             ItemsSource="{Binding RefData.PhysicalActivityLevels}"
+                                             SelectedItem="{Binding RefData.User.SelectedPhysicalActivityLevel}">
+                            <rsControls:RSPicker.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid RowDefinitions="*,*" ColumnDefinitions="*">
+                                        <Label Grid.Row="0" Text="{Binding Name}" Style="{StaticResource LabelCaptionBold}"/>
+                                        <Label Grid.Row="1" Text="{Binding Description}" Style="{StaticResource LabelMicro}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </rsControls:RSPicker.ItemTemplate>
+                        </rsControls:RSPicker>
                         <rsControls:RSPicker Placeholder="Objectif" 
                                              Style="{StaticResource Picker}"
-                                             ItemsSource="{Binding RefData.User.Objectifs}"
+                                             DisplayMemberPath="Name"
+                                             ItemsSource="{Binding RefData.Objectifs}"
                                              SelectedItem="{Binding RefData.User.SelectedObjectif}"/>
                         <rsControls:RSPicker Placeholder="Type of regime" 
                                              Style="{StaticResource Picker}"

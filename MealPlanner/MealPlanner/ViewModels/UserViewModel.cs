@@ -16,9 +16,6 @@ namespace MealPlanner.ViewModels
             SaveUserDataCommand = new Command<UserPage>(SaveUserData);
         }
 
-
-
-
         public ICommand SaveUserDataCommand { get; set; }
         private async void SaveUserData(UserPage contentPage)
         {

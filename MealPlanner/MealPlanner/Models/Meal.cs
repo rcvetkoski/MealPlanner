@@ -13,7 +13,21 @@ namespace MealPlanner.Models
     {
         private ObservableCollection<Food> food;
         [Ignore]
-        public ObservableCollection<Food> Foods { get { return food; } set { food = value; OnPropertyChanged("Foods"); } }
+        public ObservableCollection<Food> Foods
+        { 
+            get 
+            { 
+                return food;
+            } 
+            set 
+            { 
+                if(food != value)
+                {
+                    food = value;
+                    OnPropertyChanged("Foods");
+                }
+            }
+        }
 
 
         public Meal()
@@ -22,9 +36,28 @@ namespace MealPlanner.Models
         }
 
         private string description;
-        public string Description { get { return description; } set { description = value; OnPropertyChanged("Description"); }}      
+        public string Description 
+        { 
+            get
+            {
+                return description;
+            } 
+            set 
+            { 
+                if(description != value)
+                {
+                    description = value;
+                    OnPropertyChanged("Description");
+                }
+            }
+        }      
 
-
-        public override AlimentTypeEnum AlimentType { get { return AlimentTypeEnum.Meal; } }
+        public override AlimentTypeEnum AlimentType 
+        { 
+            get
+            {
+                return AlimentTypeEnum.Meal; 
+            }
+        }
     }
 }

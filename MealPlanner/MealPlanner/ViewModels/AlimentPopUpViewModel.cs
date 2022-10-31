@@ -37,10 +37,13 @@ namespace MealPlanner.ViewModels
             }
             set
             {
-                alimentCalories = value;
-                AlimentCaloriesProgress = alimentCalories / RefData.User.TDEE;
-                OnPropertyChanged("AlimentCalories");
-                OnPropertyChanged("AlimentCaloriesProgress");
+                if(alimentCalories != value)
+                {
+                    alimentCalories = value;
+                    AlimentCaloriesProgress = alimentCalories / RefData.User.TDEE;
+                    OnPropertyChanged("AlimentCalories");
+                    OnPropertyChanged("AlimentCaloriesProgress");
+                }
             }
         }
         public double AlimentCaloriesProgress { get; set; }
@@ -49,13 +52,19 @@ namespace MealPlanner.ViewModels
         private double alimentProteins;
         public double AlimentProteins
         {
-            get { return alimentProteins; }
+            get 
+            {
+                return alimentProteins;
+            }
             set
             {
-                alimentProteins = value;
-                AlimentProteinProgress = ((alimentProteins * 4) / AlimentCalories) * 100;
-                OnPropertyChanged("AlimentProteins");
-                OnPropertyChanged("AlimentProteinProgress");
+                if( alimentProteins != value)
+                {
+                    alimentProteins = value;
+                    AlimentProteinProgress = ((alimentProteins * 4) / AlimentCalories) * 100;
+                    OnPropertyChanged("AlimentProteins");
+                    OnPropertyChanged("AlimentProteinProgress");
+                }
             }
         }
         public double AlimentProteinProgress { get; set; }
@@ -64,13 +73,19 @@ namespace MealPlanner.ViewModels
         private double alimentCarbs;
         public double AlimentCarbs
         {
-            get { return alimentCarbs; }
+            get
+            {
+                return alimentCarbs; 
+            }
             set
             {
-                alimentCarbs = value;
-                AlimentCarbsProgress = ((alimentCarbs * 4) / AlimentCalories) * 100;
-                OnPropertyChanged("AlimentCarbs");
-                OnPropertyChanged("AlimentCarbsProgress");
+                if(alimentCarbs != value)
+                {
+                    alimentCarbs = value;
+                    AlimentCarbsProgress = ((alimentCarbs * 4) / AlimentCalories) * 100;
+                    OnPropertyChanged("AlimentCarbs");
+                    OnPropertyChanged("AlimentCarbsProgress");
+                }
             }
         }
         public double AlimentCarbsProgress { get; set; }
@@ -79,19 +94,40 @@ namespace MealPlanner.ViewModels
         private double alimentFats;
         public double AlimentFats
         {
-            get { return alimentFats; }
+            get
+            { 
+                return alimentFats;
+            }
             set
             {
-                alimentFats = value;
-                AlimentFatsProgress = ((alimentFats * 9) / AlimentCalories) * 100;
-                OnPropertyChanged("AlimentFats");
-                OnPropertyChanged("AlimentFatsProgress");
+                if(alimentFats != value)
+                {
+                    alimentFats = value;
+                    AlimentFatsProgress = ((alimentFats * 9) / AlimentCalories) * 100;
+                    OnPropertyChanged("AlimentFats");
+                    OnPropertyChanged("AlimentFatsProgress");
+                }
             }
         }
         public double AlimentFatsProgress { get; set; }
 
         private double alimentServingSize;
-        public double AlimentServingSize { get { return alimentServingSize; } set { alimentServingSize = value; UpdateNutrimentValues(); OnPropertyChanged("AlimentServingSize"); } }
+        public double AlimentServingSize 
+        { 
+            get
+            { 
+                return alimentServingSize;
+            }
+            set 
+            { 
+                if(alimentServingSize != value)
+                {
+                    alimentServingSize = value;
+                    UpdateNutrimentValues();
+                    OnPropertyChanged("AlimentServingSize");
+                }
+            }
+        }
 
         public AlimentUnitEnum AlimentUnit { get; set; }
 

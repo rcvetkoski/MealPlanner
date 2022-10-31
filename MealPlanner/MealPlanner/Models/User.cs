@@ -16,50 +16,142 @@ namespace MealPlanner.Models
         public string Name { get; set; }
 
         private double height;
-        public double Height { get => height; set { height = value; Calcul(); } }
+        public double Height 
+        {
+            get => height;
+            set 
+            { 
+                if(height != value)
+                {
+                    height = value;
+                    Calcul();
+                }
+            }
+        }
 
         private double weight;
-        public double Weight { get => weight; set { weight = value; Calcul(); } }
+        public double Weight { get => weight; 
+            set 
+            {
+                if(weight != value)
+                {
+                    weight = value; 
+                    Calcul();
+                }
+            } 
+        }
         private double bodyFat;
-        public double BodyFat { get => bodyFat; set { bodyFat = value; Calcul(); } }
+        public double BodyFat 
+        {
+            get => bodyFat;
+            set 
+            {
+                if(bodyFat != value)
+                {
+                    bodyFat = value; 
+                    Calcul();
+                }
+            } 
+        }
 
         private int age;
-        public int Age { get => age; set { age = value; Calcul(); } }
+        public int Age 
+        {
+            get => age;
+            set 
+            { 
+                if(age != value)
+                {
+                    age = value;
+                    Calcul();
+                }
+            } 
+        }
 
         private GenderEnum gender;
-        public GenderEnum Gender { get => gender; set { gender = value; Calcul(); } }
+        public GenderEnum Gender 
+        {
+            get => gender; 
+            set 
+            { 
+                if(gender != value)
+                {
+                    gender = value;
+                    Calcul();
+                }
+            }
+        }
 
-        public double TargetProteins { get { return Math.Round((TDEE * SelectedTypeOfRegime.ProteinPercentage) / 4, 0); } } 
-        public double TargetCarbs { get { return Math.Round((TDEE * SelectedTypeOfRegime.CarbsPercentage) / 4, 0); } }
-        public double TargetFats { get { return Math.Round((TDEE * SelectedTypeOfRegime.FatsPercentage) / 9, 0); } }
+        public double TargetProteins 
+        { 
+            get 
+            { 
+                return Math.Round((TDEE * SelectedTypeOfRegime.ProteinPercentage) / 4, 0);
+            } 
+        } 
+        public double TargetCarbs 
+        {
+            get 
+            { 
+                return Math.Round((TDEE * SelectedTypeOfRegime.CarbsPercentage) / 4, 0);
+            }
+        }
+        public double TargetFats
+        { 
+            get 
+            { 
+                return Math.Round((TDEE * SelectedTypeOfRegime.FatsPercentage) / 9, 0); 
+            } 
+        }
 
         private double bmr;
-        public double BMR { get { return Math.Round(bmr, 0); } set { bmr = value; OnPropertyChanged("BMR"); } }
+        public double BMR
+        { 
+            get 
+            { 
+                return Math.Round(bmr, 0);
+            } 
+            set 
+            { 
+                if(bmr != value)
+                {
+                    bmr = value; OnPropertyChanged("BMR");
+                }
+            } 
+        }
 
         private double tdee;
         public double TDEE
         {
-            get { return Math.Round(tdee, 0); }
+            get 
+            { 
+                return Math.Round(tdee, 0);
+            }
             set 
             { 
-                tdee = value; OnPropertyChanged("TDEE");
+                if(tdee != value)
+                {
+                    tdee = value;
+                    OnPropertyChanged("TDEE");
 
-                OnPropertyChanged("TargetFats");
-                OnPropertyChanged("TargetCarbs");
-                OnPropertyChanged("TargetFats");
+                    OnPropertyChanged("TargetFats");
+                    OnPropertyChanged("TargetCarbs");
+                    OnPropertyChanged("TargetFats");
 
-                OnPropertyChanged("DailyCaloriesProgress");
-                OnPropertyChanged("DailyCarbsProgress");
-                OnPropertyChanged("DailyFatsProgress");
+                    OnPropertyChanged("DailyCaloriesProgress");
+                    OnPropertyChanged("DailyCarbsProgress");
+                    OnPropertyChanged("DailyFatsProgress");
 
-                OnPropertyChanged("DailyProteinsRatio");
-                OnPropertyChanged("DailyCarbsRatio");
-                OnPropertyChanged("DailyFatsRatio");
+                    OnPropertyChanged("DailyProteinsRatio");
+                    OnPropertyChanged("DailyCarbsRatio");
+                    OnPropertyChanged("DailyFatsRatio");
+                }
             }
         }
 
         // Daily Calories
         private double dailyCalories;
+        [Ignore]
         public double DailyCalories
         {
             get
@@ -68,96 +160,205 @@ namespace MealPlanner.Models
             }
             set
             {
-                dailyCalories = value;
-                OnPropertyChanged("DailyCalories");
+                if(dailyCalories != value)
+                {
+                    dailyCalories = value;
+                    OnPropertyChanged("DailyCalories");
+                }
             }
         }
-        public double DailyCaloriesProgress { get { return DailyCalories / TDEE; } }
+        [Ignore]
+        public double DailyCaloriesProgress
+        {
+            get
+            {
+                return DailyCalories / TDEE;
+            } 
+        }
 
         // Daily Proteins
         private double dailyProteins;
+        [Ignore]
         public double DailyProteins
         {
-            get { return dailyProteins; }
+            get 
+            { 
+                return dailyProteins;
+            }
             set
             {
-                dailyProteins = value;
-                OnPropertyChanged("DailyProteins");
+                if(dailyProteins != value)
+                {
+                    dailyProteins = value;
+                    OnPropertyChanged("DailyProteins");
+                }
             }
         }
-        public double DailyProteinProgress { get { return DailyProteins / TargetProteins; } }
+        [Ignore]
+        public double DailyProteinProgress
+        {
+            get
+            { 
+                return DailyProteins / TargetProteins; 
+            }
+        }
 
         // Daily Carbs
         private double dailyCarbs;
+        [Ignore]
         public double DailyCarbs
         {
-            get { return dailyCarbs; }
+            get 
+            {
+                return dailyCarbs;
+            }
             set
             {
-                dailyCarbs = value;
-                OnPropertyChanged("DailyCarbs");
+                if(dailyCarbs != value)
+                {
+                    dailyCarbs = value;
+                    OnPropertyChanged("DailyCarbs");
+                }
             }
         }
-        public double DailyCarbsProgress { get { return DailyCarbs / TargetCarbs; } }
+        [Ignore]
+        public double DailyCarbsProgress 
+        {
+            get
+            { 
+                return DailyCarbs / TargetCarbs; 
+            } 
+        }
 
         // Daily Fats
         private double dailyFats;
+        [Ignore]
         public double DailyFats
         {
-            get { return dailyFats; }
+            get 
+            { 
+                return dailyFats;
+            }
             set
             {
-                dailyFats = value;
-                OnPropertyChanged("DailyFats");
+                if(dailyFats != value)
+                {
+                    dailyFats = value;
+                    OnPropertyChanged("DailyFats");
+                }
             }
         }
-        public double DailyFatsProgress { get { return DailyFats / TargetFats; } }
-
-        public string DailyProteinsRatio { get { return $"{Math.Round(DailyProteins, 0)}  /  {Math.Round(TargetProteins, 0)}"; } }
-        public string DailyCarbsRatio { get { return $"{Math.Round(DailyCarbs, 0)}  /  {Math.Round(TargetCarbs, 0)}"; } }
-        public string DailyFatsRatio { get { return $"{Math.Round(DailyFats, 0)}  /  {Math.Round(TargetFats, 0 )}"; } }
-
-
-        /// <summary>
-        /// OnPropertyChanged : DailyCaloriesProgress, DailyProteinProgress, DailyCarbsProgress, DailyFatsProgress
-        /// </summary>
-        public void NotifyProgressBars()
-        {
-            OnPropertyChanged("DailyCaloriesProgress");
-            OnPropertyChanged("DailyProteinProgress");
-            OnPropertyChanged("DailyCarbsProgress");
-            OnPropertyChanged("DailyFatsProgress");
+        [Ignore]
+        public double DailyFatsProgress
+        { 
+            get 
+            { 
+                return DailyFats / TargetFats; 
+            } 
         }
 
         [Ignore]
-        public List<string> PhysicalActivityLevels { get; set; }
-
-        private string selectedPhysicalActivityLevel;
-        public string SelectedPhysicalActivityLevel { get { return selectedPhysicalActivityLevel; } set { selectedPhysicalActivityLevel = value; Calcul(); } }
-
+        public string DailyProteinsRatio
+        {
+            get 
+            { 
+                return $"{Math.Round(DailyProteins, 0)}  /  {Math.Round(TargetProteins, 0)}";
+            } 
+        }
         [Ignore]
-        public List<string> BMRFormulas { get; set; }
+        public string DailyCarbsRatio 
+        {
+            get
+            { 
+                return $"{Math.Round(DailyCarbs, 0)}  /  {Math.Round(TargetCarbs, 0)}";
+            } 
+        }
+        [Ignore]
+        public string DailyFatsRatio 
+        { 
+            get
+            { 
+                return $"{Math.Round(DailyFats, 0)}  /  {Math.Round(TargetFats, 0 )}";
+            } 
+        }
+
+        private PALItem selectedPhysicalActivityLevel;
+        [Ignore]
+        public PALItem SelectedPhysicalActivityLevel 
+        {
+            get
+            { 
+                return selectedPhysicalActivityLevel;
+            }
+            set 
+            { 
+                if( selectedPhysicalActivityLevel != value )
+                {
+                    selectedPhysicalActivityLevel = value;
+                    Calcul();
+                }
+            } 
+        }
+        public PALItemTypeEnum SelectedPhysicalActivityLevelDB { get; set; }
+
+
         private string selectedBMRFormula;
-        public string SelectedBMRFormula { get { return selectedBMRFormula; } set { selectedBMRFormula = value; Calcul(); } }
-        private Dictionary<string, double> palValue;
+        public string SelectedBMRFormula 
+        { 
+            get 
+            { 
+                return selectedBMRFormula; 
+            } 
+            set 
+            { 
+                if(selectedBMRFormula != value)
+                {
+                    selectedBMRFormula = value;
+                    Calcul();
+                }
+            }
+        }
 
+
+        private ObjectifItem selectedObjectif;
         [Ignore]
-        public List<string> Objectifs { get; set; }
-        private string selectedObjectif;
-        public string SelectedObjectif { get { return selectedObjectif; } set { selectedObjectif = value; Calcul(); } }
-        private Dictionary<string, double> objectifValue;
+        public ObjectifItem SelectedObjectif 
+        {
+            get 
+            { 
+                return selectedObjectif;
+            } 
+            set
+            { 
+                if(selectedObjectif != value)
+                {
+                    selectedObjectif = value;
+                    Calcul();
+                }
+            }
+        }
+        public ObjectifTypeEnum SelectedObjectiflDB { get; set; }
+
+
 
         private TypeOfRegimeItem selectedTypeOfRegime;
         [Ignore]
         public TypeOfRegimeItem SelectedTypeOfRegime 
         {
-            get { return selectedTypeOfRegime; }
+            get 
+            { 
+                return selectedTypeOfRegime;
+            }
             set
             {
-                selectedTypeOfRegime = value; OnPropertyChanged("SelectedTypeOfRegime");
-                OnPropertyChanged("TargetFats");
-                OnPropertyChanged("TargetCarbs");
-                OnPropertyChanged("TargetFats");
+                if(selectedTypeOfRegime != value)
+                {
+                    selectedTypeOfRegime = value;
+                    OnPropertyChanged("SelectedTypeOfRegime");
+                    OnPropertyChanged("TargetFats");
+                    OnPropertyChanged("TargetCarbs");
+                    OnPropertyChanged("TargetFats");
+                }
             }
         }
         public TypesOfRegimeEnum SelectedTypeOfRegimeDB { get; set; }
@@ -165,56 +366,7 @@ namespace MealPlanner.Models
 
         public User()
         {
-            PhysicalActivityLevels = new List<string>();
-            BMRFormulas = new List<string>();
-            palValue = new Dictionary<string, double>();
-            Objectifs = new List<string>();
-            objectifValue = new Dictionary<string, double>();
 
-
-            // PAL
-            PhysicalActivityLevels.Add("little / no exercise(sedentary lifestyle)");
-            palValue.Add("little / no exercise(sedentary lifestyle)", 1.2);
-
-            PhysicalActivityLevels.Add("light exercise 1 - 2 times / week)");
-            palValue.Add("light exercise 1 - 2 times / week)", 1.375);
-
-            PhysicalActivityLevels.Add("moderate exercise 2 - 3 times / week)");
-            palValue.Add("moderate exercise 2 - 3 times / week)", 1.55);
-
-            PhysicalActivityLevels.Add("hard exercise 4 - 5 times / week)");
-            palValue.Add("hard exercise 4 - 5 times / week)", 1.725);
-
-            PhysicalActivityLevels.Add("physical job or hard exercise 6 - 7 times / week)");
-            palValue.Add("physical job or hard exercise 6 - 7 times / week)", 1.9);
-
-            PhysicalActivityLevels.Add("professional athlete)");
-            palValue.Add("professional athlete)", 2.4);
-
-
-            // BMR FOrmulas
-            BMRFormulas.Add("Mifflin - St Jeor");
-            BMRFormulas.Add("Harris-Benedict");
-            BMRFormulas.Add("Revised Harris-Benedict");
-            BMRFormulas.Add("Katch-McArdle");
-            BMRFormulas.Add("Schofield");
-
-
-            // Objectifs
-            Objectifs.Add("Lose Weight 20%");
-            objectifValue.Add("Lose Weight 20%", 0.8);
-
-            Objectifs.Add("Lose Weight slowly 10%");
-            objectifValue.Add("Lose Weight slowly 10%", 0.9);
-
-            Objectifs.Add("Maintain Weight");
-            objectifValue.Add("Maintain Weight", 1);
-
-            Objectifs.Add("Gain Weight slowly 10%");
-            objectifValue.Add("Gain Weight slowly 10%", 1.1);
-
-            Objectifs.Add("Gain Weight 20%");
-            objectifValue.Add("Gain Weight 20%", 1.2);
         }
 
         private void Calcul()
@@ -266,11 +418,55 @@ namespace MealPlanner.Models
                 }
             }
 
-            TDEE = BMR * palValue[SelectedPhysicalActivityLevel] * objectifValue[SelectedObjectif];
+            if(SelectedPhysicalActivityLevel != null && SelectedObjectif != null)
+                TDEE = BMR * SelectedPhysicalActivityLevel.Ratio * SelectedObjectif.Ratio;
+        }
+
+        /// <summary>
+        /// OnPropertyChanged : DailyCaloriesProgress, DailyProteinProgress, DailyCarbsProgress, DailyFatsProgress
+        /// </summary>
+        public void NotifyProgressBars()
+        {
+            OnPropertyChanged("DailyCaloriesProgress");
+            OnPropertyChanged("DailyProteinProgress");
+            OnPropertyChanged("DailyCarbsProgress");
+            OnPropertyChanged("DailyFatsProgress");
         }
 
 
 
+
+        public class ObjectifItem
+        {
+            public string Name { get; set; }
+            public ObjectifTypeEnum ObjectifType { get; set; }
+            public double Ratio { get; set; }
+        }
+        public enum ObjectifTypeEnum
+        {
+            Lose_Weight_20,
+            Lose_Weight_slowly_10,
+            Maintain_Weight,
+            Gain_Weight_slowly_10,
+            Gain_Weight_20
+        }
+
+        public class PALItem
+        {
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public PALItemTypeEnum PALItemType { get; set; }
+            public double Ratio { get; set; }
+        }
+        public enum PALItemTypeEnum
+        {
+            Little_none_exercise,
+            Light_exercise,
+            Moderate_exercise,
+            Hard_exercise,
+            PhysicalJob_hard_exercise,
+            Professional_athelete
+        }
 
 
         public class TypeOfRegimeItem
@@ -284,7 +480,6 @@ namespace MealPlanner.Models
         }
         public enum TypesOfRegimeEnum
         {
-            None,
             Standard,
             Balanced,
             LowInFats,

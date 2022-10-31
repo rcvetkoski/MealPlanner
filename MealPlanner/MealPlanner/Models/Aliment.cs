@@ -15,52 +15,232 @@ namespace MealPlanner.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         private string name;
-        public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
+        public string Name
+        { 
+            get
+            { 
+                return name;
+            }
+            set
+            {
+                if(name != value)
+                {
+                    name = value;
+                    OnPropertyChanged("Name");
+                }
+            } 
+        }
         private double calories;
-        public double Calories { get { return calories; } set { calories = value; OnPropertyChanged("Calories"); OnPropertyChanged("CaloriesString"); OnPropertyChanged("CaloriesProgress"); } }
+        public double Calories 
+        {
+            get
+            { 
+                return calories;
+            } 
+            set
+            { 
+                if(calories != value)
+                {
+                    calories = value;
+                    OnPropertyChanged("Calories");
+                    OnPropertyChanged("CaloriesString");
+                    OnPropertyChanged("CaloriesProgress");
+                }
+            }
+        }
 
         private double proteins;
-        public double Proteins { get { return proteins; } set { proteins = value; OnPropertyChanged("Proteins"); OnPropertyChanged("NutritionValuesString"); OnPropertyChanged("ProteinsProgress"); } }
+        public double Proteins 
+        { 
+            get
+            { 
+                return proteins;
+            }
+            set 
+            {
+                if(proteins != value)
+                {
+                    proteins = value;
+                    OnPropertyChanged("Proteins");
+                    OnPropertyChanged("NutritionValuesString");
+                    OnPropertyChanged("ProteinsProgress");
+                }
+            } 
+        }
 
         private double carbs;
-        public double Carbs { get { return carbs; } set { carbs = value; OnPropertyChanged("Carbs"); OnPropertyChanged("NutritionValuesString"); OnPropertyChanged("CarbsProgress"); } }
+        public double Carbs 
+        {
+            get
+            { 
+                return carbs; 
+            } 
+            set 
+            { 
+                if(carbs != value)
+                {
+                    carbs = value;
+                    OnPropertyChanged("Carbs");
+                    OnPropertyChanged("NutritionValuesString");
+                    OnPropertyChanged("CarbsProgress");
+                }
+            }
+        }
 
         private double fats;
-        public double Fats { get { return fats; } set { fats = value; OnPropertyChanged("Fats"); OnPropertyChanged("NutritionValuesString"); OnPropertyChanged("FatsProgress"); } }
+        public double Fats 
+        { 
+            get
+            {
+                return fats; 
+            }
+            set 
+            { 
+                if(fats != value)
+                {
+                    fats = value;
+                    OnPropertyChanged("Fats");
+                    OnPropertyChanged("NutritionValuesString");
+                    OnPropertyChanged("FatsProgress");
+                }
+            } 
+        }
         public double OriginalServingSize { get; set; }
 
         private double servingSize;
-        public double ServingSize { get { return servingSize; } set { servingSize = value; OnPropertyChanged("ServingSize"); OnPropertyChanged("ServingSizeWithUnit"); } }
+        public double ServingSize
+        { 
+            get
+            {
+                return servingSize; 
+            }
+            set 
+            { 
+                if(servingSize != value)
+                {
+                    servingSize = value;
+                    OnPropertyChanged("ServingSize");
+                    OnPropertyChanged("ServingSizeWithUnit");
+                }
+            } 
+        }
 
         public int DayMealAlimentId { get; set; } = 0;
 
         private string imageSourcePath;
-        public string ImageSourcePath { get { return imageSourcePath; } set { imageSourcePath = value; OnPropertyChanged("ImageSourcePath"); OnPropertyChanged("ImageSource"); } }
+        public string ImageSourcePath 
+        {
+            get
+            { 
+                return imageSourcePath;
+            }
+            set
+            { 
+                if(imageSourcePath != value)
+                {
+                    imageSourcePath = value;
+                    OnPropertyChanged("ImageSourcePath");
+                    OnPropertyChanged("ImageSource");
+                }
+            }
+        }
         private byte[] imageBlob;
-        public byte[] ImageBlob { get { return imageBlob; } set { imageBlob = value; OnPropertyChanged("ImageBlob"); OnPropertyChanged("ImageSource"); } }
+        public byte[] ImageBlob
+        { 
+            get
+            {
+                return imageBlob;
+            } 
+            set 
+            { 
+                if(imageBlob != value)
+                {
+                    imageBlob = value;
+                    OnPropertyChanged("ImageBlob");
+                    OnPropertyChanged("ImageSource");
+                }
+            } 
+        }
         public virtual AlimentTypeEnum AlimentType { get; }
 
         private AlimentUnitEnum unit;
-        public AlimentUnitEnum Unit { get { return unit; } set { unit = value; OnPropertyChanged("Unit"); OnPropertyChanged("ServingSizeWithUnit"); } }
+        public AlimentUnitEnum Unit 
+        { 
+            get 
+            {
+                return unit;
+            } 
+            set 
+            { 
+                if(unit != value)
+                {
+                    unit = value;
+                    OnPropertyChanged("Unit");
+                    OnPropertyChanged("ServingSizeWithUnit");
+                }
+            } 
+        }
 
 
         [Ignore]
-        public double CaloriesProgress { get { return calories / App.RefData.User.TDEE; } }
+        public double CaloriesProgress
+        {
+            get
+            { 
+                return calories / App.RefData.User.TDEE; 
+            }
+        }
         [Ignore]
-        public double FatsProgress { get { return fats / App.RefData.User.TargetFats; } }
+        public double FatsProgress
+        {
+            get
+            { 
+                return fats / App.RefData.User.TargetFats; 
+            }
+        }
         [Ignore]
-        public double CarbsProgress { get { return carbs / App.RefData.User.TargetCarbs; } }
+        public double CarbsProgress
+        {
+            get 
+            { 
+                return carbs / App.RefData.User.TargetCarbs; 
+            } 
+        }
         [Ignore]
-        public double ProteinsProgress { get { return proteins / App.RefData.User.TargetProteins; } }
+        public double ProteinsProgress
+        { 
+            get 
+            { 
+                return proteins / App.RefData.User.TargetProteins;
+            }
+        }
 
 
 
         [Ignore]
-        public string ServingSizeWithUnit { get { return $"{ServingSize} {Unit}"; } }
+        public string ServingSizeWithUnit 
+        { 
+            get
+            {
+                return $"{ServingSize} {Unit}";
+            } 
+        }
         [Ignore]
-        public string NutritionValuesString { get { return $"P: {Math.Round(Proteins, 2)},  C: {Math.Round(Carbs, 2)},  F: {Math.Round(Fats, 2)}"; } }
+        public string NutritionValuesString 
+        { 
+            get
+            { 
+                return $"P: {Math.Round(Proteins, 2)},  C: {Math.Round(Carbs, 2)},  F: {Math.Round(Fats, 2)}"; 
+            } 
+        }
         [Ignore]
-        public string CaloriesString { get { return $"{Math.Round(Calories, 2)} Kcal"; } }
+        public string CaloriesString 
+        { 
+            get
+            {
+                return $"{Math.Round(Calories, 2)} Kcal";
+            } 
+        }
         [Ignore]
         public ImageSource ImageSource 
         { 
