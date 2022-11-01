@@ -1,6 +1,7 @@
 ﻿using MealPlanner.Models;
 using MealPlanner.Views;
 using MealPlanner.Views.Popups;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -16,7 +17,8 @@ namespace MealPlanner.ViewModels
     {
         public HomeViewModel()
         {
-            Title = "Home";
+            Title = RefData.CurrentDay.Day == DateTime.Now.Day ? "Today" : RefData.CurrentDay.ToString(("d MMMM"));
+
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             UpdateAlimentCommand = new Command<object[]>(UpdateAliment);
             AddAlimentCommand = new Command<Meal>(AddAliment);

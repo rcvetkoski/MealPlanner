@@ -9,7 +9,22 @@ namespace MealPlanner.Services
 {
     public interface IDataBase
     {
-        //User
+        // Log
+        Task<Log> GetLogAsync(int id);
+        Task<List<Log>> GetAllLogsAsync();
+        Task<int> AddLogAsync(Log log);
+        Task<int> UpdateLogAsync(Log log);
+        Task<int> DropTableLog();
+
+        // LogMeals
+        Task<LogMeal> GetLogMealAsync(int id);
+        Task<List<LogMeal>> GetAllLogMealsAsync();
+        Task<int> AddLogMealAsync(LogMeal logMeal);
+        Task<int> UpdateLogMealAsync(LogMeal logMeal);
+        Task<int> DropTableLogMeal();
+
+
+        // User
         Task<User> GetUserAsync();
         Task<int> AddUserAsync(User user);
         Task<int> UpdateUserAsync(User user);

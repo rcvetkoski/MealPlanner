@@ -32,10 +32,13 @@ namespace MealPlanner.Helpers
         public List<ObjectifItem> Objectifs { get; set; }
         public List<string> BMRFormulas { get; set; }
 
+        public DateTime CurrentDay { get; set; }
+
 
         public ReferentialData()
         {
             //ResetDB()
+            CurrentDay = DateTime.Now;  
             ResetDBCommand = new Command(ResetDB);
             InitDB();
         }

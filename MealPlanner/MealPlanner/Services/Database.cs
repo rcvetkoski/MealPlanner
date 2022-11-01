@@ -31,6 +31,8 @@ namespace MealPlanner.Services
 
         private Task CreateTables()
         {
+            dbConnection.CreateTableAsync<Log>();
+            dbConnection.CreateTableAsync<LogMeal>();
             dbConnection.CreateTableAsync<User>();
             dbConnection.CreateTableAsync<Recipe>();
             dbConnection.CreateTableAsync<Food>();
@@ -49,12 +51,121 @@ namespace MealPlanner.Services
             }
         }
 
+        #region Log
+
+        /// <summary>
+        /// Returns a Log object
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<Log> GetLogAsync(int id)
+        {
+            return dbConnection.GetAsync<Log>(id);
+        }
+
+        /// <summary>
+        /// Returns a list of Logs
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<Log>> GetAllLogsAsync()
+        {
+            return dbConnection.Table<Log>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts new Log in database
+        /// </summary>
+        /// <param name="log"></param>
+        /// <returns></returns>
+        public Task<int> AddLogAsync(Log log)
+        {
+            return dbConnection.InsertAsync(log);
+        }
+
+        /// <summary>
+        /// Updates a Log in database if it exists
+        /// </summary>
+        /// <param name="log"></param>
+        /// <returns></returns>
+        public Task<int> UpdateLogAsync(Log log)
+        {
+            if (GetLogAsync(log.Id) != null)
+                return dbConnection.UpdateAsync(log);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableLog()
+        {
+            return dbConnection.DropTableAsync<Log>();
+        }
+
+        #endregion
+
+        #region LogMeals
+
+        /// <summary>
+        /// Returns a LogMeal object
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<LogMeal> GetLogMealAsync(int id)
+        {
+            return dbConnection.GetAsync<LogMeal>(id);
+        }
+
+        /// <summary>
+        /// Returns a list of LogMeals
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<LogMeal>> GetAllLogMealsAsync()
+        {
+            return dbConnection.Table<LogMeal>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts new LogMeal in database
+        /// </summary>
+        /// <param name="logMeal"></param>
+        /// <returns></returns>
+        public Task<int> AddLogMealAsync(LogMeal logMeal)
+        {
+            return dbConnection.InsertAsync(logMeal);
+        }
+
+        /// <summary>
+        /// Updates a LogMeal in database if it exists
+        /// </summary>
+        /// <param name="logMeal"></param>
+        /// <returns></returns>
+        public Task<int> UpdateLogMealAsync(LogMeal logMeal)
+        {
+            if (GetLogMealAsync(logMeal.Id) != null)
+                return dbConnection.UpdateAsync(logMeal);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableLogMeal()
+        {
+            return dbConnection.DropTableAsync<LogMeal>();
+        }
+
+        #endregion
+
         #region User
 
         /// <summary>
         /// Returns a User object
         /// </summary>
-        /// <param name="id"></param>
         /// <returns></returns>
         public Task<User> GetUserAsync()
         {
