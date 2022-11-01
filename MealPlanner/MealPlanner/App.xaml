@@ -138,7 +138,7 @@
                 <Setter Property="BackgroundColor" Value="Transparent"/>
             </Style>
 
-            <Style x:Key="DayMealCard" TargetType="Frame">
+            <Style x:Key="MealCard" TargetType="Frame">
                 <Setter Property="HasShadow" Value="{OnPlatform Android=true, iOS=false, Default=true}"/>
                 <Setter Property="Margin" Value="10"/>
                 <Setter Property="Padding" Value="10"/>

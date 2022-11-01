@@ -7,9 +7,9 @@
     <ContentPage.Content>
         <StackLayout Margin="10">
             <RadioButton Style="{StaticResource RadioButton}" Content="Food" IsChecked="{Binding IsFoodChecked}"/>
-            <RadioButton Style="{StaticResource RadioButton}" Content="Meal" IsChecked="{Binding IsMealChecked}" IsVisible="{Binding MealSwitchVisibility}" Margin="0, 0, 0, 10"/>
+            <RadioButton Style="{StaticResource RadioButton}" Content="Recipe" IsChecked="{Binding IsMealChecked}" IsVisible="{Binding MealSwitchVisibility}" Margin="0, 0, 0, 10"/>
             <Button Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" IsVisible="{Binding IsFoodChecked}" FontSize="Micro" Text="Create Food" Command="{Binding CreateFoodCommand}"></Button>
-            <Button Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" IsVisible="{Binding IsMealChecked}" FontSize="Micro" Text="Create Meal" Command="{Binding CreateMealCommand}"></Button>
+            <Button Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" IsVisible="{Binding IsMealChecked}" FontSize="Micro" Text="Create Recipe" Command="{Binding CreateMealCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

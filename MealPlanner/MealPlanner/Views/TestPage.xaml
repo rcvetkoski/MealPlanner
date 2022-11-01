@@ -13,8 +13,8 @@
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
             <StackLayout x:Name="stack">
-                <Label Text="Meal aliments" />
-                <CollectionView ItemsSource="{Binding RefData.DayMealAliments}">
+                <Label Text="Recipe aliments" />
+                <CollectionView ItemsSource="{Binding RefData.MealAliments}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Label Text="{Binding Id}"/>
@@ -23,8 +23,8 @@
                 </CollectionView>
 
 
-                <Label Text="Meal foods" />
-                <CollectionView ItemsSource="{Binding RefData.MealFoods}">
+                <Label Text="Recipe foods" />
+                <CollectionView ItemsSource="{Binding RefData.RecipeFoods}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Label Text="{Binding Id}"/>

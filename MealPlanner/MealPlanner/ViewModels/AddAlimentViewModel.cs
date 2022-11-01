@@ -23,14 +23,12 @@ using static System.Net.WebRequestMethods;
 
 namespace MealPlanner.ViewModels
 {
-    [QueryProperty(nameof(SelectedDayMeal), "daymeal")]
-
     public class AddAlimentViewModel : BaseViewModel
     {
         public AddAlimentViewModel()
         {
             Title = "AddFood";
-            MealSwitchVisibility = true;
+            RecipeSwitchVisibility = true;
             IsFoodChecked = true;
             searchResults = new List<Food>();
             foreach (var item in RefData.Foods)
@@ -54,7 +52,7 @@ namespace MealPlanner.ViewModels
 
             foreach (Aliment aliment in RefData.Aliments)
             {
-                if (IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Meal)
+                if (IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Recipe)
                     RefData.FilteredAliments.Add(aliment);
                 else if (!IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
                     RefData.FilteredAliments.Add(aliment);
@@ -62,7 +60,7 @@ namespace MealPlanner.ViewModels
         }
 
         private bool mealSwitchVisibility;
-        public bool MealSwitchVisibility 
+        public bool RecipeSwitchVisibility 
         {
             get
             { 
@@ -78,8 +76,8 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        public DayMeal SelectedDayMeal { get; set; }
-        public Meal CurrentMeal { get; set; }
+        public Meal SelectedMeal { get; set; }
+        public Recipe CurrentRecipe { get; set; }
 
         private bool isFoodChecked;
         public bool IsFoodChecked
@@ -169,48 +167,44 @@ namespace MealPlanner.ViewModels
             // Add
             rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(async () =>
             {
-                if (MealSwitchVisibility)
+                if (RecipeSwitchVisibility)
                 {
                     var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
                     Aliment aliment = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
                     aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
-                    SelectedDayMeal.Aliments.Add(aliment);
+                    SelectedMeal.Aliments.Add(aliment);
 
-                    // Update dayMeal values
-                    RefData.UpdateDayMealValues(SelectedDayMeal);
+                    // Update meal values
+                    RefData.UpdateMealValues(SelectedMeal);
 
                     // Update daily values
                     RefData.UpdateDailyValues();
 
-                    DayMealAliment dayMealAliment = new DayMealAliment();
-                    dayMealAliment.DayMealId = SelectedDayMeal.Id;
-                    dayMealAliment.AlimentId = aliment.Id;
-                    dayMealAliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
-                    dayMealAliment.AlimentType = aliment.AlimentType;
+                    MealAliment mealAliment = new MealAliment();
+                    mealAliment.MealId = SelectedMeal.Id;
+                    mealAliment.AlimentId = aliment.Id;
+                    mealAliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
+                    mealAliment.AlimentType = aliment.AlimentType;
 
                     // Save to db
-                    await App.DataBaseRepo.AddDayMealAlimentAsync(dayMealAliment);
+                    await App.DataBaseRepo.AddMealAlimentAsync(mealAliment);
 
-                    // Asign DayMealAlimentId to aliment and add it to DayMealAliments
-                    var lastItem = App.DataBaseRepo.GetAllDayMealAlimentsAsync().Result.OrderByDescending(x => x.Id).FirstOrDefault();
-                    aliment.DayMealAlimentId = lastItem.Id;
-                    RefData.DayMealAliments.Add(dayMealAliment);
+                    // Asign MealAlimentId to aliment and add it to MealAliments
+                    var lastItem = App.DataBaseRepo.GetAllMealAlimentsAsync().Result.OrderByDescending(x => x.Id).FirstOrDefault();
+                    aliment.MealAlimentId = lastItem.Id;
+                    RefData.MealAliments.Add(mealAliment);
                 }
-                else // When adding food to meal
+                else // When adding food to recipe
                 {
                     var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
                     Food food = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio) as Food;
                     food.ServingSize = rsPopupBindingContext.AlimentServingSize;
 
-                    // Set MealFoodId to 0
-                    food.MealFoodId = 0;
+                    // Set RecipeFoodId to 0
+                    food.RecipeFoodId = 0;
 
 
-                    CurrentMeal.Foods.Add(food);
-                    //CurrentMeal.Calories += food.Calories;
-                    //CurrentMeal.Proteins += food.Proteins;
-                    //CurrentMeal.Carbs += food.Carbs;
-                    //CurrentMeal.Fats += food.Fats;
+                    CurrentRecipe.Foods.Add(food);
                 }
 
                 //rSPopup.Close();
@@ -231,8 +225,8 @@ namespace MealPlanner.ViewModels
                 }
                 else
                 {
-                    MealPage mealPage = new MealPage();
-                    var mealPageBindingContext = mealPage.BindingContext as MealViewModel;
+                    RecipePage mealPage = new RecipePage();
+                    var mealPageBindingContext = mealPage.BindingContext as RecipeViewModel;
                     mealPageBindingContext.CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
                     mealPageBindingContext.IsNew = false;
 
@@ -259,9 +253,9 @@ namespace MealPlanner.ViewModels
         private async void CreateMeal()
         {
             rSPopupFilter.Close();
-            MealPage mealPage = new MealPage();
-            (mealPage.BindingContext as MealViewModel).CurrentAliment = new Meal();
-            //await Shell.Current.GoToAsync($"{nameof(MealPage)}");
+            RecipePage mealPage = new RecipePage();
+            (mealPage.BindingContext as RecipeViewModel).CurrentAliment = new Recipe();
+            //await Shell.Current.GoToAsync($"{nameof(RecipePage)}");
             await App.Current.MainPage.Navigation.PushAsync(mealPage);
         }
 

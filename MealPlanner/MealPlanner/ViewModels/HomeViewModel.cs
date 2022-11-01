@@ -19,7 +19,7 @@ namespace MealPlanner.ViewModels
             Title = "Home";
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             UpdateAlimentCommand = new Command<object[]>(UpdateAliment);
-            AddAlimentCommand = new Command<DayMeal>(AddAliment);
+            AddAlimentCommand = new Command<Meal>(AddAliment);
             OpenUserPageCommand = new Command(OpenUserPage);    
         }
 
@@ -32,27 +32,27 @@ namespace MealPlanner.ViewModels
             if (objects.Count() < 2)
                 return;
 
-            if (!(objects[0] is DayMeal) || !(objects[1] is Aliment))
+            if (!(objects[0] is Meal) || !(objects[1] is Aliment))
                 return;
 
 
-            DayMeal dayMeal = objects[0] as DayMeal;
+            Meal meal = objects[0] as Meal;
             Aliment aliment = objects[1] as Aliment;
 
-            DayMealAliment dayMealAliment = await App.DataBaseRepo.GetDayMealAlimentAsync(aliment.DayMealAlimentId);
+            MealAliment mealAliment = await App.DataBaseRepo.GetMealAlimentAsync(aliment.MealAlimentId);
 
-            if(dayMealAliment != null)
+            if(mealAliment != null)
             {
-                await App.DataBaseRepo.DeleteDayMealAlimentAsync(dayMealAliment);
-                var realDayMealAliment = RefData.DayMealAliments.Where(x => x.Id == dayMealAliment.Id).FirstOrDefault();
-                if(realDayMealAliment != null)
-                    RefData.DayMealAliments.Remove(realDayMealAliment);
+                await App.DataBaseRepo.DeleteMealAlimentAsync(mealAliment);
+                var realMealAliment = RefData.MealAliments.Where(x => x.Id == mealAliment.Id).FirstOrDefault();
+                if(realMealAliment != null)
+                    RefData.MealAliments.Remove(realMealAliment);
             }
 
-            dayMeal.Aliments.Remove(aliment);
+            meal.Aliments.Remove(aliment);
 
-            // Update dayMeal values
-            RefData.UpdateDayMealValues(dayMeal);
+            // Update meal values
+            RefData.UpdateMealValues(meal);
 
             // Update daily values
             RefData.UpdateDailyValues();
@@ -62,7 +62,7 @@ namespace MealPlanner.ViewModels
         public ICommand UpdateAlimentCommand { get; set; }
         private void UpdateAliment(object[] objects)
         {
-            var dayMeal = objects[0] as DayMeal;
+            var meal = objects[0] as Meal;
             var aliment = objects[1] as Aliment;
 
             if (aliment is Aliment)
@@ -87,16 +87,16 @@ namespace MealPlanner.ViewModels
                     aliment.Unit = rSPopupAlimentDetailPageBindingContext.AlimentUnit;
                     aliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
 
-                    // Update dayMeal values
-                    RefData.UpdateDayMealValues(dayMeal);
+                    // Update meal values
+                    RefData.UpdateMealValues(meal);
 
                     // Update daily values
                     RefData.UpdateDailyValues();
 
                     var al = aliment;
-                    DayMealAliment dayMealAliment = await App.DataBaseRepo.GetDayMealAlimentAsync(aliment.DayMealAlimentId);
-                    dayMealAliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
-                    await App.DataBaseRepo.UpdateDayMealAliment(dayMealAliment);
+                    MealAliment mealAliment = await App.DataBaseRepo.GetMealAlimentAsync(aliment.MealAlimentId);
+                    mealAliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
+                    await App.DataBaseRepo.UpdateMealAliment(mealAliment);
 
                     rSPopup.Close();
                 }));
@@ -111,7 +111,7 @@ namespace MealPlanner.ViewModels
                         rSPopup.Close();
                     }
                     else
-                        App.Current.MainPage.Navigation.PushAsync(new MealPage());
+                        App.Current.MainPage.Navigation.PushAsync(new RecipePage());
                 }));
 
 
@@ -124,10 +124,10 @@ namespace MealPlanner.ViewModels
 
 
         public ICommand AddAlimentCommand { get; set; }
-        private async void AddAliment(DayMeal dayMeal)
+        private async void AddAliment(Meal meal)
         {
             AddAlimentPage addAlimentPage = new AddAlimentPage();
-            (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedDayMeal = dayMeal;
+            (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedMeal = meal;
             await App.Current.MainPage.Navigation.PushAsync(addAlimentPage);        
             //await Shell.Current.GoToAsync($"AddAlimentPage");
         }

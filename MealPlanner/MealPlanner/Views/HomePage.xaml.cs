@@ -25,7 +25,7 @@ namespace MealPlanner.Views
             base.OnAppearing();
 
             //collectionView.ItemsSource = null;
-            //collectionView.ItemsSource = (BindingContext as HomeViewModel).RefData.DayMeals;
+            //collectionView.ItemsSource = (BindingContext as HomeViewModel).RefData.Meals;
         }
     }
 }

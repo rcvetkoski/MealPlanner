@@ -16,12 +16,12 @@ namespace MealPlanner.Services
         Task<int> DropTableUser();
 
 
-        // Meal
-        Task<Meal> GetMealAsync(int id);
-        Task<List<Meal>> GetAllMealsAsync();
-        Task<int> AddMealAsync(Meal meal);
-        Task<int> UpdateMealAsync(Meal meal);
-        Task<int> DropTableMeal();
+        // Recipe
+        Task<Recipe> GetRecipeAsync(int id);
+        Task<List<Recipe>> GetAllRecipesAsync();
+        Task<int> AddRecipeAsync(Recipe recipe);
+        Task<int> UpdateRecipeAsync(Recipe recipe);
+        Task<int> DropTableRecipe();
 
 
         // Food
@@ -32,35 +32,35 @@ namespace MealPlanner.Services
         Task<int> DropTableFood();
 
 
-        // MealFood
-        Task<MealFood> GetMealFoodAsync(int id);
-        Task<List<MealFood>> GetMealFoodsAsync(int meal_id, int food_id);
-        Task<List<MealFood>> GetAllMealFoodsAsync();
-        Task<int> AddMealFoodAsync(MealFood mealFood);
-        Task<int> UpdateMealFood(MealFood mealFood);
-        Task<int> DeleteMealFoodAsync(MealFood mealFood);
-        Task<int> DeleteAllMealFoodsAsync();
-        Task<int> DropTableMealFood();
+        // RecipeFood
+        Task<RecipeFood> GetRecipeFoodAsync(int id);
+        Task<List<RecipeFood>> GetRecipeFoodsAsync(int recipe_id, int food_id);
+        Task<List<RecipeFood>> GetAllRecipeFoodsAsync();
+        Task<int> AddRecipeFoodAsync(RecipeFood recipeFood);
+        Task<int> UpdateRecipeFood(RecipeFood recipeFood);
+        Task<int> DeleteRecipeFoodAsync(RecipeFood recipeFood);
+        Task<int> DeleteAllRecipeFoodsAsync();
+        Task<int> DropTableRecipeFood();
 
-        //DayMeal
-        Task<DayMeal> GetDayMealAsync(int id);
-        Task<List<DayMeal>> GetAllDayMealsAsync();
-        Task<int> AddDayMealAsync(DayMeal dayMeal);
-        Task<int> UpdateDayMeal(DayMeal dayMeal);
-        Task<int> DeleteDayMealAsync(DayMeal dayMeal);
-        Task<int> DeleteAllDayMealsAsync();
-        Task<int> DropTableDayMeal();
+        //Meal
+        Task<Meal> GetMealAsync(int id);
+        Task<List<Meal>> GetAllMealsAsync();
+        Task<int> AddMealAsync(Meal meal);
+        Task<int> UpdateMeal(Meal meal);
+        Task<int> DeleteMealAsync(Meal meal);
+        Task<int> DeleteAllMealsAsync();
+        Task<int> DropTableMeal();
 
 
-        //DayMealAliment
-        Task<DayMealAliment> GetDayMealAlimentAsync(int id);
-        Task<List<DayMealAliment>> GetAllDayMealAlimentsAsync();
-        Task<DayMealAliment> GetDayMealAlimentAsync(AlimentTypeEnum alimentType, int dayMeal_id, int aliment_id);
-        Task<List<DayMealAliment>> GetDayMealAlimentsAsync(AlimentTypeEnum alimentType,int dayMeal_id, int aliment_id);
-        Task<int> UpdateDayMealAliment(DayMealAliment dayMealAliment);
-        Task<int> AddDayMealAlimentAsync(DayMealAliment dayMealAliment);
-        Task<int> DeleteDayMealAlimentAsync(DayMealAliment dayMealAliment);
-        Task<int> DeleteAllDayMealAlimentsAsync();
-        Task<int> DropTableDayMealAliment();
+        //MealAliment
+        Task<MealAliment> GetMealAlimentAsync(int id);
+        Task<List<MealAliment>> GetAllMealAlimentsAsync();
+        Task<MealAliment> GetMealAlimentAsync(AlimentTypeEnum alimentType, int meal_id, int aliment_id);
+        Task<List<MealAliment>> GetMealAlimentsAsync(AlimentTypeEnum alimentType,int meal_id, int aliment_id);
+        Task<int> UpdateMealAliment(MealAliment mealAliment);
+        Task<int> AddMealAlimentAsync(MealAliment mealAliment);
+        Task<int> DeleteMealAlimentAsync(MealAliment mealAliment);
+        Task<int> DeleteAllMealAlimentsAsync();
+        Task<int> DropTableMealAliment();
     }
 }

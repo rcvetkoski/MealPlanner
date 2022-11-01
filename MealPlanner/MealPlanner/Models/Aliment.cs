@@ -125,7 +125,7 @@ namespace MealPlanner.Models
             } 
         }
 
-        public int DayMealAlimentId { get; set; } = 0;
+        public int MealAlimentId { get; set; } = 0;
 
         private string imageSourcePath;
         public string ImageSourcePath 

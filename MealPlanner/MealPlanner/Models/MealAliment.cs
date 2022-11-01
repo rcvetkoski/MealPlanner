@@ -6,12 +6,13 @@ using System.Text;
 
 namespace MealPlanner.Models
 {
-    public  class MealFood
+    public class MealAliment
     {
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public int Id { get; set; } 
         public int MealId { get; set; }
-        public int FoodId { get; set; }
+        public int AlimentId { get; set; }
+        public AlimentTypeEnum AlimentType { get; set; }
         public double ServingSize { get; set; }
     }
 }

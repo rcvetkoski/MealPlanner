@@ -134,12 +134,12 @@
                     <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
                         <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding CurrentAliment.Calories, StringFormat='{0:0.#}'}" FontAttributes="Bold"/>
                         <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="of"/>
-                        <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding RefData.User.TargetCalories, StringFormat='{0:0.#}'}"/>
+                        <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding RefData.User.TDEE, StringFormat='{0:0.#}'}"/>
                     </StackLayout>
 
                     <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmall}" HorizontalOptions="Center" Text="Calories"/>
 
-                    <Frame Style="{StaticResource DayMealCard}" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"  Margin="4, 4, 4, 15">
+                    <Frame Style="{StaticResource MealCard}" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"  Margin="4, 4, 4, 15">
                         <Grid Margin="10" BackgroundColor="Transparent" ColumnDefinitions="Auto, *, Auto, Auto">
 
                             <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" Text="Prot" VerticalOptions="Center"/>

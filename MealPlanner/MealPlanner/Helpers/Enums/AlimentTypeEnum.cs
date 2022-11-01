@@ -7,6 +7,6 @@ namespace MealPlanner.Helpers.Enums
     public enum AlimentTypeEnum
     {
         Food,
-        Meal
+        Recipe
     }
 }

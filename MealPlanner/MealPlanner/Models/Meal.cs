@@ -1,5 +1,4 @@
-﻿using MealPlanner.Helpers.Enums;
-using SQLite;
+﻿using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,55 +8,127 @@ using System.Text;
 
 namespace MealPlanner.Models
 {
-    public class Meal : Aliment
+    public class Meal : BaseModel
     {
-        private ObservableCollection<Food> food;
+        public Meal()
+        {
+            Aliments = new ObservableCollection<Aliment>();
+        }
+
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
+        private string name;
+        public string Name
+        { 
+            get
+            {
+                return name;
+            } 
+            set 
+            { 
+                if(name != value)
+                {
+                    name = value;
+                    OnPropertyChanged("Name");
+                }
+            }
+        }
+        public int Order { get; set; }
+
+        private double calories;
         [Ignore]
-        public ObservableCollection<Food> Foods
+        public double Calories
+        {
+            get 
+            { 
+                return calories;
+            }
+            set 
+            {
+                if(calories != value)
+                {
+                    calories = value;
+                    OnPropertyChanged("Calories");
+                    OnPropertyChanged("CaloriesString");
+                }
+            } 
+        }
+
+        private double proteins;
+        [Ignore]
+        public double Proteins 
+        { 
+            get 
+            {
+                return proteins; 
+            }
+            set
+            {
+                if(proteins != value)
+                {
+                    proteins = value;
+                    OnPropertyChanged("Proteins");
+                    OnPropertyChanged("NutritionValuesString");
+                }
+            } 
+        }
+
+        private double carbs;
+        [Ignore]
+        public double Carbs 
         { 
             get 
             { 
-                return food;
+                return carbs;
             } 
-            set 
-            { 
-                if(food != value)
+            set
+            {
+                if(carbs != value)
                 {
-                    food = value;
-                    OnPropertyChanged("Foods");
+                    carbs = value;
+                    OnPropertyChanged("Carbs");
+                    OnPropertyChanged("NutritionValuesString");
                 }
-            }
+            } 
         }
 
-
-        public Meal()
+        private double fats;
+        [Ignore]
+        public double Fats 
         {
-            Foods = new ObservableCollection<Food>();
-        }
-
-        private string description;
-        public string Description 
-        { 
             get
             {
-                return description;
+                return fats; 
             } 
             set 
             { 
-                if(description != value)
+                if(fats != value)
                 {
-                    description = value;
-                    OnPropertyChanged("Description");
+                    fats = value;
+                    OnPropertyChanged("Fats");
+                    OnPropertyChanged("NutritionValuesString");
                 }
             }
-        }      
+        }
 
-        public override AlimentTypeEnum AlimentType 
+        [Ignore]
+        public ObservableCollection<Aliment> Aliments { get; set; }
+
+        public string NutritionValuesString
         { 
             get
             {
-                return AlimentTypeEnum.Meal; 
-            }
+                return $"P: {Math.Round(Proteins, 2)},  C: {Math.Round(Carbs, 2)},  F: {Math.Round(Fats, 2)}";
+            } 
+        }
+        [Ignore]
+        public string CaloriesString 
+        {
+            get
+            { 
+                return $"{Math.Round(Calories, 2)} Kcal"; 
+            } 
         }
     }
 }

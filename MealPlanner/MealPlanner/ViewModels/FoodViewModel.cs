@@ -71,9 +71,9 @@ namespace MealPlanner.ViewModels
             await App.DataBaseRepo.UpdateFoodAsync(originalFood);
 
             // Refresh food if used
-            foreach(DayMeal dayMeal in RefData.DayMeals)
+            foreach(Meal meal in RefData.Meals)
             {
-                foreach (Aliment aliment in dayMeal.Aliments)
+                foreach (Aliment aliment in meal.Aliments)
                 {
                     if (aliment.AlimentType == AlimentTypeEnum.Food && aliment.Id == CurrentAliment.Id)
                     {
@@ -89,8 +89,8 @@ namespace MealPlanner.ViewModels
                     }
                 }
 
-                // Update dayMeal values
-                RefData.UpdateDayMealValues(dayMeal);
+                // Update meal values
+                RefData.UpdateMealValues(meal);
             }
 
             // Update daily values

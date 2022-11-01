@@ -9,7 +9,7 @@
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
              x:Name="mealPage"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
-             x:Class="MealPlanner.Views.MealPage">
+             x:Class="MealPlanner.Views.RecipePage">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -19,7 +19,7 @@
     </ContentPage.Resources>
 
     <ContentPage.BindingContext>
-        <vm:MealViewModel/>
+        <vm:RecipeViewModel/>
     </ContentPage.BindingContext>
 
     <Shell.TitleView>

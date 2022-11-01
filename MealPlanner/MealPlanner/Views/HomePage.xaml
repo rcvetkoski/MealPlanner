@@ -65,7 +65,7 @@
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
             <StackLayout>
-                <Frame Style="{StaticResource DayMealCard}" Margin="0, -25, 0, 0" Padding="2, 25, 2, 0">
+                <Frame Style="{StaticResource MealCard}" Margin="0, -25, 0, 0" Padding="2, 25, 2, 0">
                     <Grid ColumnDefinitions="Auto,*,140" RowDefinitions="Auto, 15, Auto, 15, Auto, 15" Margin="10" RowSpacing="4">
 
                         <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Protein"/>
@@ -98,11 +98,11 @@
                     </Grid>
                 </Frame>
 
-                <CollectionView x:Name="collectionView" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.DayMeals}">
+                <CollectionView x:Name="collectionView" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.Meals}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout x:Name="dayMeal">
-                                <Frame Style="{StaticResource DayMealCard}">
+                            <StackLayout x:Name="meal">
+                                <Frame Style="{StaticResource MealCard}">
                                     <StackLayout>
                                         <Label Text="{Binding Name}" Style="{StaticResource LabelTitle}"/>
 
@@ -115,7 +115,7 @@
                                                                 <SwipeItem Text="Delete" BackgroundColor="Red" Command="{Binding BindingContext.DeletteAlimentCommand, Source={x:Reference Home}}">
                                                                     <SwipeItem.CommandParameter>
                                                                         <MultiBinding Converter="{StaticResource MultiBindingConverter}">
-                                                                            <Binding Path="BindingContext" Source="{x:Reference dayMeal}"/>
+                                                                            <Binding Path="BindingContext" Source="{x:Reference meal}"/>
                                                                             <Binding Path="."/>
                                                                         </MultiBinding>
                                                                     </SwipeItem.CommandParameter>
@@ -138,7 +138,7 @@
                                                                 <TapGestureRecognizer Command="{Binding BindingContext.UpdateAlimentCommand, Source={x:Reference Home}}">
                                                                     <TapGestureRecognizer.CommandParameter>
                                                                         <MultiBinding Converter="{StaticResource MultiBindingConverter}">
-                                                                            <Binding Path="BindingContext" Source="{x:Reference dayMeal}"/>
+                                                                            <Binding Path="BindingContext" Source="{x:Reference meal}"/>
                                                                             <Binding Path="."/>
                                                                         </MultiBinding>
                                                                     </TapGestureRecognizer.CommandParameter>

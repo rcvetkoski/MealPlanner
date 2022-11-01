@@ -139,9 +139,6 @@ namespace MealPlanner.Models
                     OnPropertyChanged(nameof(TargetFats));
                     OnPropertyChanged(nameof(TargetCarbs));
                     NotifyProgressBars();
-                    OnPropertyChanged(nameof(DailyProteinsRatio));
-                    OnPropertyChanged(nameof(DailyCarbsRatio));
-                    OnPropertyChanged(nameof(DailyFatsRatio));
                 }
             }
         }
@@ -426,6 +423,10 @@ namespace MealPlanner.Models
             OnPropertyChanged(nameof(DailyProteinProgress));
             OnPropertyChanged(nameof(DailyCarbsProgress));
             OnPropertyChanged(nameof(DailyFatsProgress));
+
+            OnPropertyChanged(nameof(DailyProteinsRatio));
+            OnPropertyChanged(nameof(DailyCarbsRatio));
+            OnPropertyChanged(nameof(DailyFatsRatio));
         }
 
 

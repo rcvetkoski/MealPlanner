@@ -12,18 +12,11 @@ using Xamarin.Forms.Xaml;
 namespace MealPlanner.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MealPage : ContentPage
+    public partial class RecipePage : ContentPage
     {
-        public MealPage()
+        public RecipePage()
         {
             InitializeComponent();
-        }
-
-        protected override void LayoutChildren(double x, double y, double width, double height)
-        {
-            base.LayoutChildren(x, y, width, height);
-
-            Console.WriteLine(this.gridToolbar.Height + "  " + this.gridToolbar.HeightRequest);
         }
     }
 }
