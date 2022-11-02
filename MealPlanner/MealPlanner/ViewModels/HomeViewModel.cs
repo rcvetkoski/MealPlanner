@@ -17,12 +17,20 @@ namespace MealPlanner.ViewModels
     {
         public HomeViewModel()
         {
-            Title = RefData.CurrentDay.Day == DateTime.Now.Day ? "Today" : RefData.CurrentDay.ToString(("d MMMM"));
-
+            SetTitle();
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             UpdateAlimentCommand = new Command<object[]>(UpdateAliment);
             AddAlimentCommand = new Command<Meal>(AddAliment);
-            OpenUserPageCommand = new Command(OpenUserPage);    
+            OpenUserPageCommand = new Command(OpenUserPage);
+            OpenCalendarCommand = new Command<DatePicker>(OpenCalendar);
+            PreviousDayCommand = new Command(PreviousDay);
+            NextDayCommand = new Command(NextDay);
+            ResetCurrentDayCommand = new Command(ResetCurrentDay);
+        }
+
+        public void SetTitle()
+        {
+            Title = RefData.CurrentDay.Day == DateTime.Now.Day ? "Today" : RefData.CurrentDay.ToString(("d MMMM"));
         }
 
         public ICommand DeletteAlimentCommand { get; set; } 
@@ -140,6 +148,33 @@ namespace MealPlanner.ViewModels
         {
             //await Shell.Current.GoToAsync($"{nameof(UserPage)}");
             await App.Current.MainPage.Navigation.PushAsync(new UserPage());        
+        }
+
+        public ICommand OpenCalendarCommand { get; set; }
+        private void OpenCalendar(DatePicker datePicker)
+        {
+            datePicker.Focus();
+        }
+
+        public ICommand PreviousDayCommand { get; set; }
+        private void PreviousDay()
+        {
+            RefData.CurrentDay =  RefData.CurrentDay.Subtract(TimeSpan.FromDays(1));
+            SetTitle();
+        }
+
+        public ICommand NextDayCommand { get; set; }
+        private void NextDay()
+        {
+            RefData.CurrentDay = RefData.CurrentDay.AddDays(1);
+            SetTitle();
+        }
+
+        public ICommand ResetCurrentDayCommand { get; set; }
+        private void ResetCurrentDay()
+        {
+            RefData.CurrentDay = DateTime.Now;
+            SetTitle();
         }
     }
 }

@@ -27,5 +27,10 @@ namespace MealPlanner.Views
             //collectionView.ItemsSource = null;
             //collectionView.ItemsSource = (BindingContext as HomeViewModel).RefData.Meals;
         }
+
+        private void DateSelected(object sender, DateChangedEventArgs e)
+        {
+            viewModel.SetTitle();
+        }
     }
 }

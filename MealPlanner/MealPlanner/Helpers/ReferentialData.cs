@@ -32,7 +32,22 @@ namespace MealPlanner.Helpers
         public List<ObjectifItem> Objectifs { get; set; }
         public List<string> BMRFormulas { get; set; }
 
-        public DateTime CurrentDay { get; set; }
+        private DateTime currentDay;
+        public DateTime CurrentDay 
+        {
+            get
+            { 
+                return currentDay; 
+            }
+            set
+            {
+                if(currentDay != value)
+                {
+                    currentDay = value;
+                    OnPropertyChanged(nameof(CurrentDay));
+                }
+            }
+        }
 
 
         public ReferentialData()

@@ -31,6 +31,7 @@
                 <Button Grid.Row="0" Grid.Column="0" 
                         HorizontalOptions="End"
                         Margin="{OnPlatform Android='10,0,0,0'}"
+                        Command="{Binding PreviousDayCommand}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                     <Button.ImageSource>
                         <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
@@ -40,9 +41,14 @@
                 <Label Grid.Row="0" Grid.Column="1"
                        Text="{Binding Title}"
                        Style="{StaticResource NavigationBarLabel}"
-                       HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+                       HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ResetCurrentDayCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
                 <Button Grid.Row="0" Grid.Column="2"
                         HorizontalOptions="Start"
+                        Command="{Binding NextDayCommand}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                     <Button.ImageSource>
                         <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
@@ -54,12 +60,13 @@
                              WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
                              VerticalOptions="FillAndExpand" 
                              BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                             Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference imageButton}">
+                             Command="{Binding OpenCalendarCommand}" CommandParameter="{x:Reference datePicker}">
                     <Button.ImageSource>
                         <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CalendarDays}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
+                <DatePicker x:Name="datePicker" IsVisible="false" Date="{Binding RefData.CurrentDay}" DateSelected="DateSelected"/>
             </Grid>
         </ContentView>
     </Shell.TitleView>
