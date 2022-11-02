@@ -28,8 +28,9 @@
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <EnableCodeSigning>True</EnableCodeSigning>
-    <CodesignProvision>iOS Team Provisioning Profile: com.companyname.MealPlanner</CodesignProvision>
+    <CodesignProvision>Automatic</CodesignProvision>
     <CodesignKey>Apple Development: rade_te_fr@hotmail.com (WQ6N3VG99D)</CodesignKey>
+    <CodesignEntitlements></CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
