@@ -31,6 +31,7 @@ namespace MealPlanner.Views
         private void DateSelected(object sender, DateChangedEventArgs e)
         {
             viewModel.SetTitle();
+            viewModel.RefData.GetMealsAtDate(e.NewDate);
         }
     }
 }

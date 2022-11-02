@@ -49,6 +49,7 @@
                 <Button Grid.Row="0" Grid.Column="2"
                         HorizontalOptions="Start"
                         Command="{Binding NextDayCommand}"
+                        IsVisible="{Binding NextDayCommandVisible}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                     <Button.ImageSource>
                         <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
@@ -66,7 +67,7 @@
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CalendarDays}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
-                <DatePicker x:Name="datePicker" IsVisible="false" Date="{Binding RefData.CurrentDay}" DateSelected="DateSelected"/>
+                <DatePicker x:Name="datePicker" IsVisible="false" Date="{Binding RefData.CurrentDay}" MaximumDate="{Binding MaximumDate}" DateSelected="DateSelected"/>
             </Grid>
         </ContentView>
     </Shell.TitleView>
@@ -149,7 +150,7 @@
                                                                     <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
                                                                 </Image.Clip>
                                                             </Image>
-                                                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource LabelMicro}" VerticalTextAlignment="Center" Text="{Binding Name}" FontAttributes="Bold" FontSize="Caption"/>
+                                                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Style="{StaticResource LabelMicro}" VerticalTextAlignment="Center" Text="{Binding Name}" LineBreakMode="TailTruncation" FontAttributes="Bold" FontSize="Caption"/>
                                                             <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelMicro}" VerticalTextAlignment="Center" Text="{Binding ServingSizeWithUnit}" HorizontalTextAlignment="End" FontSize="Caption"/>
                                                             <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelMicro}" VerticalTextAlignment="Center" Text="{Binding NutritionValuesString}" FontSize="Caption"/>
                                                             <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource LabelMicro}" VerticalTextAlignment="Center" Text="{Binding CaloriesString}" FontSize="Caption" HorizontalTextAlignment="End" FontAttributes="Bold"/>

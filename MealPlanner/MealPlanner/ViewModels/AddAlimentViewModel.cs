@@ -165,52 +165,56 @@ namespace MealPlanner.ViewModels
             rSPopup.SetCustomView(rSPopupAlimentDetailPage);
 
             // Add
-            rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(async () =>
+            if(SelectedMeal != null)
             {
-                if (RecipeSwitchVisibility)
+                rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(async () =>
                 {
-                    var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
-                    Aliment aliment = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
-                    aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
-                    SelectedMeal.Aliments.Add(aliment);
+                    if (RecipeSwitchVisibility)
+                    {
+                        var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
+                        Aliment aliment = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
+                        aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
+                        SelectedMeal.Aliments.Add(aliment);
 
-                    // Update meal values
-                    RefData.UpdateMealValues(SelectedMeal);
+                        // Update meal values
+                        RefData.UpdateMealValues(SelectedMeal);
 
-                    // Update daily values
-                    RefData.UpdateDailyValues();
+                        // Update daily values
+                        RefData.UpdateDailyValues();
 
-                    MealAliment mealAliment = new MealAliment();
-                    mealAliment.MealId = SelectedMeal.Id;
-                    mealAliment.AlimentId = aliment.Id;
-                    mealAliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
-                    mealAliment.AlimentType = aliment.AlimentType;
+                        MealAliment mealAliment = new MealAliment();
+                        mealAliment.MealId = SelectedMeal.Id;
+                        mealAliment.AlimentId = aliment.Id;
+                        mealAliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
+                        mealAliment.AlimentType = aliment.AlimentType;
 
-                    // Save to db
-                    await App.DataBaseRepo.AddMealAlimentAsync(mealAliment);
+                        // Save to db
+                        await App.DataBaseRepo.AddMealAlimentAsync(mealAliment);
 
-                    // Asign MealAlimentId to aliment and add it to MealAliments
-                    var lastItem = App.DataBaseRepo.GetAllMealAlimentsAsync().Result.OrderByDescending(x => x.Id).FirstOrDefault();
-                    aliment.MealAlimentId = lastItem.Id;
-                    RefData.MealAliments.Add(mealAliment);
-                }
-                else // When adding food to recipe
-                {
-                    var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
-                    Food food = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio) as Food;
-                    food.ServingSize = rsPopupBindingContext.AlimentServingSize;
+                        // Asign MealAlimentId to aliment and add it to MealAliments
+                        var lastItem = App.DataBaseRepo.GetAllMealAlimentsAsync().Result.OrderByDescending(x => x.Id).FirstOrDefault();
+                        aliment.MealAlimentId = lastItem.Id;
+                        RefData.MealAliments.Add(mealAliment);
+                    }
+                    else // When adding food to recipe
+                    {
+                        var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
+                        Food food = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio) as Food;
+                        food.ServingSize = rsPopupBindingContext.AlimentServingSize;
 
-                    // Set RecipeFoodId to 0
-                    food.RecipeFoodId = 0;
+                        // Set RecipeFoodId to 0
+                        food.RecipeFoodId = 0;
 
 
-                    CurrentRecipe.Foods.Add(food);
-                }
+                        CurrentRecipe.Foods.Add(food);
+                    }
 
-                //rSPopup.Close();
-                //await Shell.Current.GoToAsync("..");
-                await Application.Current.MainPage.Navigation.PopAsync();
-            }));
+                    //rSPopup.Close();
+                    //await Shell.Current.GoToAsync("..");
+                    await Application.Current.MainPage.Navigation.PopAsync();
+                }));
+
+            }
 
             // Edit
             rSPopup.AddAction("Edit", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral, new Command(() =>

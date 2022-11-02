@@ -18,6 +18,7 @@ namespace MealPlanner.ViewModels
         public HomeViewModel()
         {
             SetTitle();
+            MaximumDate = RefData.CurrentDay.AddDays(7);
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             UpdateAlimentCommand = new Command<object[]>(UpdateAliment);
             AddAlimentCommand = new Command<Meal>(AddAliment);
@@ -28,9 +29,18 @@ namespace MealPlanner.ViewModels
             ResetCurrentDayCommand = new Command(ResetCurrentDay);
         }
 
+        public DateTime MaximumDate { get; set; }
+        public bool NextDayCommandVisible
+        {
+            get
+            {
+                return MaximumDate > RefData.CurrentDay.AddDays(1);
+            }
+        }
+
         public void SetTitle()
         {
-            Title = RefData.CurrentDay.Day == DateTime.Now.Day ? "Today" : RefData.CurrentDay.ToString(("d MMMM"));
+            Title = RefData.CurrentDay.Day == DateTime.Now.Day ? "Today" : RefData.CurrentDay.ToString(("d MMM"));
         }
 
         public ICommand DeletteAlimentCommand { get; set; } 
@@ -161,6 +171,9 @@ namespace MealPlanner.ViewModels
         {
             RefData.CurrentDay =  RefData.CurrentDay.Subtract(TimeSpan.FromDays(1));
             SetTitle();
+            RefData.GetMealsAtDate(RefData.CurrentDay);
+            RefData.UpdateDailyValues();
+            OnPropertyChanged(nameof(NextDayCommandVisible));
         }
 
         public ICommand NextDayCommand { get; set; }
@@ -168,6 +181,9 @@ namespace MealPlanner.ViewModels
         {
             RefData.CurrentDay = RefData.CurrentDay.AddDays(1);
             SetTitle();
+            RefData.GetMealsAtDate(RefData.CurrentDay);
+            RefData.UpdateDailyValues();
+            OnPropertyChanged(nameof(NextDayCommandVisible));
         }
 
         public ICommand ResetCurrentDayCommand { get; set; }
@@ -175,6 +191,9 @@ namespace MealPlanner.ViewModels
         {
             RefData.CurrentDay = DateTime.Now;
             SetTitle();
+            RefData.GetMealsAtDate(RefData.CurrentDay);
+            RefData.UpdateDailyValues();
+            OnPropertyChanged(nameof(NextDayCommandVisible));
         }
     }
 }

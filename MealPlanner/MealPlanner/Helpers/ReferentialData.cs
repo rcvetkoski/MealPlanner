@@ -12,6 +12,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using static MealPlanner.Models.User;
+using static Xamarin.Essentials.Permissions;
 
 namespace MealPlanner.Helpers
 {
@@ -19,6 +20,7 @@ namespace MealPlanner.Helpers
     {
         public User User { get; set; }
         public ObservableCollection<Meal> Meals { get; set; }
+        public ObservableCollection<Meal> AllMeals { get; set; }
         public ObservableCollection<Recipe> Recipes { get; set; }
         public ObservableCollection<Food> Foods { get; set; }
         public ObservableCollection<RecipeFood> RecipeFoods { get; set; }
@@ -52,8 +54,8 @@ namespace MealPlanner.Helpers
 
         public ReferentialData()
         {
-            //ResetDB()
-            CurrentDay = DateTime.Now;  
+            //ResetDB();
+            CurrentDay = DateTime.Now;
             ResetDBCommand = new Command(ResetDB);
             InitDB();
         }
@@ -69,158 +71,6 @@ namespace MealPlanner.Helpers
         }
         public ICommand ResetDBCommand { get; set; }
 
-        private void InitUser()
-        {
-            // Bmr formulas
-            BMRFormulas = new List<string>();
-            BMRFormulas.Add("Mifflin - St Jeor");
-            BMRFormulas.Add("Harris-Benedict");
-            BMRFormulas.Add("Revised Harris-Benedict");
-            BMRFormulas.Add("Katch-McArdle");
-            BMRFormulas.Add("Schofield");
-
-            // Type of regimes
-            TypesOfRegime = new List<TypeOfRegimeItem>();
-            TypesOfRegime.Add(new TypeOfRegimeItem() 
-            { 
-                TypeOfRegime = TypesOfRegimeEnum.Standard,
-                Name = "Standard",
-                Description = "Carbs 50%, Proteins 20%, Fats 30%",
-                CarbsPercentage = 0.5,
-                ProteinPercentage = 0.2, 
-                FatsPercentage = 0.3
-            });
-            TypesOfRegime.Add(new TypeOfRegimeItem()
-            { 
-                TypeOfRegime = TypesOfRegimeEnum.Balanced,
-                Name = "Balanced",
-                Description = "Carbs 50%, Proteins 25%, Fats 25%",
-                CarbsPercentage = 0.5,
-                ProteinPercentage = 0.25,
-                FatsPercentage = 0.35
-            });
-            TypesOfRegime.Add(new TypeOfRegimeItem() 
-            { 
-                TypeOfRegime = TypesOfRegimeEnum.LowInFats,
-                Name = "Low in fats",
-                Description = "Carbs 60%, Proteins 25%, Fats 15%",
-                CarbsPercentage = 0.6,
-                ProteinPercentage = 0.25,
-                FatsPercentage = 0.15
-            });
-            TypesOfRegime.Add(new TypeOfRegimeItem()
-            {
-                TypeOfRegime = TypesOfRegimeEnum.RichInProteins, 
-                Name = "Rich in proteins",
-                Description = "Carbs 25%, Proteins 40%, Fats 35%",
-                CarbsPercentage = 0.25,
-                ProteinPercentage = 0.4,
-                FatsPercentage = 0.35
-            });
-            TypesOfRegime.Add(new TypeOfRegimeItem()
-            { 
-                TypeOfRegime = TypesOfRegimeEnum.Keto, 
-                Name = "Keto", 
-                Description = "Carbs 5%, Proteins 30%, Fats 65%",
-                CarbsPercentage = 0.05,
-                ProteinPercentage = 0.3,
-                FatsPercentage = 0.65
-            });
-
-            // PAL
-            PhysicalActivityLevels = new List<PALItem>();
-            PhysicalActivityLevels.Add(new PALItem()
-            {
-                Name = "little / no exercise",
-                Description = "sedentary lifestyle",
-                PALItemType = PALItemTypeEnum.Little_none_exercise,
-                Ratio = 1.2
-            });
-            PhysicalActivityLevels.Add(new PALItem()
-            {
-                Name = "light exercise",
-                Description = "1 - 2 times / week",
-                PALItemType = PALItemTypeEnum.Light_exercise,
-                Ratio = 1.375
-            });
-            PhysicalActivityLevels.Add(new PALItem()
-            {
-                Name = "moderate exercise",
-                Description = "4 - 5 times / week",
-                PALItemType = PALItemTypeEnum.Moderate_exercise,
-                Ratio = 1.55
-            });
-            PhysicalActivityLevels.Add(new PALItem()
-            {
-                Name = "hard exercise",
-                Description = "4 - 5 times / week",
-                PALItemType = PALItemTypeEnum.Hard_exercise,
-                Ratio = 1.725
-            });
-            PhysicalActivityLevels.Add(new PALItem()
-            {
-                Name = "physical job or hard exercise",
-                Description = "6 - 7 times / week",
-                PALItemType = PALItemTypeEnum.PhysicalJob_hard_exercise,
-                Ratio = 1.9
-            });
-            PhysicalActivityLevels.Add(new PALItem()
-            {
-                Name = "professional athlete",
-                Description = "",
-                PALItemType = PALItemTypeEnum.Professional_athelete,
-                Ratio = 2.4
-            });
-
-            // Objectifs
-            Objectifs = new List<ObjectifItem>();
-            Objectifs.Add(new ObjectifItem()
-            {
-                Name = "Lose Weight 20%",
-                ObjectifType = ObjectifTypeEnum.Lose_Weight_20,
-                Ratio = 0.8
-            });
-            Objectifs.Add(new ObjectifItem()
-            {
-                Name = "Lose Weight slowly 10%",
-                ObjectifType = ObjectifTypeEnum.Lose_Weight_slowly_10,
-                Ratio = 0.9
-            });
-            Objectifs.Add(new ObjectifItem()
-            {
-                Name = "Maintain Weight",
-                ObjectifType = ObjectifTypeEnum.Maintain_Weight,
-                Ratio = 1
-            });
-            Objectifs.Add(new ObjectifItem()
-            {
-                Name = "Gain Weight slowly 10%",
-                ObjectifType = ObjectifTypeEnum.Gain_Weight_slowly_10,
-                Ratio = 1.1
-            });
-            Objectifs.Add(new ObjectifItem()
-            {
-                Name = "Gain Weight 20%",
-                ObjectifType = ObjectifTypeEnum.Gain_Weight_20,
-                Ratio = 1.2
-            });
-
-
-            User = App.DataBaseRepo.GetUserAsync().Result;
-
-            if (User == null)
-            {
-                User = new User();
-                //User = new User() {Name = "Rade", Age = 32, Height = 180, Weight = 69, BodyFat = 14.5, Gender = Enums.GenderEnum.Male, TDEE = 2986, TargetProteins = 300, TargetCarbs = 323, TargetFats = 89 };
-            }
-            else
-            {
-                User.SelectedTypeOfRegime = TypesOfRegime.Where(x => x.TypeOfRegime == User.SelectedTypeOfRegimeDB).FirstOrDefault();
-                User.SelectedPhysicalActivityLevel = PhysicalActivityLevels.Where(x => x.PALItemType == User.SelectedPhysicalActivityLevelDB).FirstOrDefault();
-                User.SelectedObjectif = Objectifs.Where(x => x.ObjectifType == User.SelectedObjectiflDB).FirstOrDefault();
-            }
-        }
-
         private void InitDB()
         {
             // User
@@ -231,39 +81,6 @@ namespace MealPlanner.Helpers
 
             // Recipes
             Recipes = App.DataBaseRepo.GetAllRecipesAsync().Result.ToObservableCollection();
-
-            // Meals
-            var meals = App.DataBaseRepo.GetAllMealsAsync().Result;
-            if (meals.Any())
-            {
-                Meals = meals.OrderBy(x=> x.Order).ToList().ToObservableCollection();
-            }
-            else
-            {
-                Meals = new ObservableCollection<Meal>();
-
-                // Breakfast
-                var breakfast = new Meal() { Name = "Breakfast", Order = 1 };
-                Meals.Add(breakfast);
-
-                // Lunch
-                var lunch = new Meal() { Name = "Lunch", Order = 2 };
-                Meals.Add(lunch);
-
-                // Dinner
-                var dinner = new Meal() { Name = "Dinner", Order = 3 };
-                Meals.Add(dinner);
-
-                // Snacks
-                var snack = new Meal() { Name = "Snack", Order = 4 };
-                Meals.Add(snack);
-
-                App.DataBaseRepo.AddMealAsync(breakfast);
-                App.DataBaseRepo.AddMealAsync(lunch);
-                App.DataBaseRepo.AddMealAsync(dinner);
-                App.DataBaseRepo.AddMealAsync(snack);
-            }
-
 
             // Aliments
             Aliments = new ObservableCollection<Aliment>();
@@ -280,28 +97,121 @@ namespace MealPlanner.Helpers
             RecipeFoods = App.DataBaseRepo.GetAllRecipeFoodsAsync().Result.ToObservableCollection();
             foreach (RecipeFood recipeFood in RecipeFoods)
             {
-                Recipe recipe = Aliments.Where(x=> x.Id == recipeFood.RecipeId && x.AlimentType == Enums.AlimentTypeEnum.Recipe).FirstOrDefault() as Recipe;
+                Recipe recipe = Aliments.Where(x => x.Id == recipeFood.RecipeId && x.AlimentType == Enums.AlimentTypeEnum.Recipe).FirstOrDefault() as Recipe;
                 Food existingFood = Aliments.Where(x => x.Id == recipeFood.FoodId && x.AlimentType == Enums.AlimentTypeEnum.Food).FirstOrDefault() as Food;
 
                 var ratio = recipeFood.ServingSize / existingFood.OriginalServingSize;
                 Food food = CreateAndCopyAlimentProperties(existingFood, ratio) as Food;
                 food.ServingSize = recipeFood.ServingSize;
-                food.RecipeFoodId = recipeFood.Id;  
+                food.RecipeFoodId = recipeFood.Id;
 
                 if (recipe != null)
                     recipe.Foods.Add(food);
+            }
+
+            // Meal Aliments
+            MealAliments = App.DataBaseRepo.GetAllMealAlimentsAsync().Result.ToObservableCollection();
+
+            // Meals
+            Meals = new ObservableCollection<Meal>();
+            GetMealsAtDate(DateTime.Now);
+        }
+
+        public void GetMealsAtDate(DateTime date, bool CopyDay = false)
+        {
+            AllMeals = App.DataBaseRepo.GetAllMealsAsync().Result.ToObservableCollection();
+            Meals.Clear();
+
+            var logs = App.DataBaseRepo.GetAllLogsAsync().Result.ToObservableCollection();
+            Log currentLog = logs.Where(X => X.Date.Day == date.Day).FirstOrDefault();
+            var logMeals = App.DataBaseRepo.GetAllLogMealsAsync().Result.ToObservableCollection();
+
+            if (currentLog != null)
+            {
+
+                var todayLogMeals = logMeals.Where(x => x.LogId == currentLog.Id);
+
+                foreach (LogMeal logMeal in todayLogMeals)
+                {
+                    if (AllMeals.Where(x => x.Id == logMeal.MealId).FirstOrDefault() != null)
+                    {
+                        Meals.Add(AllMeals.Where(x => x.Id == logMeal.MealId).FirstOrDefault());
+                    }
+                }
+            }
+            else if(CopyDay)
+            {
+                // TODO
+            }
+            else
+            {
+                GenerateDefaultMeals(date);
             }
 
             // Add aliments to Meal if any
             PopulateMeals();
         }
 
+        private void GenerateDefaultMeals(DateTime date)
+        {
+            // Breakfast
+            var breakfast = new Meal() { Name = "Breakfast", Order = 1 };
+
+            // Lunch
+            var lunch = new Meal() { Name = "Lunch", Order = 2 };
+
+            // Dinner
+            var dinner = new Meal() { Name = "Dinner", Order = 3 };
+
+            // Snacks
+            var snack = new Meal() { Name = "Snack", Order = 4 };
+
+            App.DataBaseRepo.AddMealAsync(breakfast).Wait();
+            App.DataBaseRepo.AddMealAsync(lunch).Wait();
+            App.DataBaseRepo.AddMealAsync(dinner).Wait();
+            App.DataBaseRepo.AddMealAsync(snack).Wait();
+            Meals.Add(breakfast);
+            Meals.Add(lunch);
+            Meals.Add(dinner);
+            Meals.Add(snack);
+            AllMeals.Add(breakfast);
+            AllMeals.Add(lunch);
+            AllMeals.Add(dinner);
+            AllMeals.Add(snack);
+
+            // Add log
+            Log currentLog = new Log() { Date = date, UserWeight = User.Weight, UserBodyFat = User.BodyFat };
+            currentLog.Meals = new List<Meal>();
+            currentLog.Meals.Add(breakfast);
+            currentLog.Meals.Add(lunch);
+            currentLog.Meals.Add(dinner);
+            currentLog.Meals.Add(snack);
+            App.DataBaseRepo.AddLogAsync(currentLog).Wait();   
+
+            // Add logmeals
+            var breakfastLogMeal = new LogMeal() { LogId = currentLog.Id, MealId = breakfast.Id };
+            var lunchLogMeal = new LogMeal() { LogId = currentLog.Id, MealId = lunch.Id };
+            var dinnerLogMeal = new LogMeal() { LogId = currentLog.Id, MealId = dinner.Id };
+            var snackLogMeal = new LogMeal() { LogId = currentLog.Id, MealId = snack.Id };
+            App.DataBaseRepo.AddLogMealAsync(breakfastLogMeal).Wait();
+            App.DataBaseRepo.AddLogMealAsync(lunchLogMeal).Wait();
+            App.DataBaseRepo.AddLogMealAsync(dinnerLogMeal).Wait();
+            App.DataBaseRepo.AddLogMealAsync(snackLogMeal).Wait();
+        }
+
         private void PopulateMeals()
         {
-            MealAliments = App.DataBaseRepo.GetAllMealAlimentsAsync().Result.ToObservableCollection();
+            User.DailyProteins = 0;
+            User.DailyCarbs = 0;
+            User.DailyFats = 0;
+            User.DailyCalories = 0;
+
             foreach (MealAliment mealAliment in MealAliments)
             {
                 Meal meal = Meals.Where(x => x.Id == mealAliment.MealId).FirstOrDefault();
+                if (meal == null)
+                    continue;
+
                 Aliment existingAliment = Aliments.Where(x => x.Id == mealAliment.AlimentId && x.AlimentType == mealAliment.AlimentType).FirstOrDefault();
 
                 if (existingAliment != null)
@@ -423,6 +333,159 @@ namespace MealPlanner.Helpers
             recipe.Fats = fats * ratio;
             recipe.Calories = calories * ratio;
         }
+
+        private void InitUser()
+        {
+            // Bmr formulas
+            BMRFormulas = new List<string>();
+            BMRFormulas.Add("Mifflin - St Jeor");
+            BMRFormulas.Add("Harris-Benedict");
+            BMRFormulas.Add("Revised Harris-Benedict");
+            BMRFormulas.Add("Katch-McArdle");
+            BMRFormulas.Add("Schofield");
+
+            // Type of regimes
+            TypesOfRegime = new List<TypeOfRegimeItem>();
+            TypesOfRegime.Add(new TypeOfRegimeItem()
+            {
+                TypeOfRegime = TypesOfRegimeEnum.Standard,
+                Name = "Standard",
+                Description = "Carbs 50%, Proteins 20%, Fats 30%",
+                CarbsPercentage = 0.5,
+                ProteinPercentage = 0.2,
+                FatsPercentage = 0.3
+            });
+            TypesOfRegime.Add(new TypeOfRegimeItem()
+            {
+                TypeOfRegime = TypesOfRegimeEnum.Balanced,
+                Name = "Balanced",
+                Description = "Carbs 50%, Proteins 25%, Fats 25%",
+                CarbsPercentage = 0.5,
+                ProteinPercentage = 0.25,
+                FatsPercentage = 0.35
+            });
+            TypesOfRegime.Add(new TypeOfRegimeItem()
+            {
+                TypeOfRegime = TypesOfRegimeEnum.LowInFats,
+                Name = "Low in fats",
+                Description = "Carbs 60%, Proteins 25%, Fats 15%",
+                CarbsPercentage = 0.6,
+                ProteinPercentage = 0.25,
+                FatsPercentage = 0.15
+            });
+            TypesOfRegime.Add(new TypeOfRegimeItem()
+            {
+                TypeOfRegime = TypesOfRegimeEnum.RichInProteins,
+                Name = "Rich in proteins",
+                Description = "Carbs 25%, Proteins 40%, Fats 35%",
+                CarbsPercentage = 0.25,
+                ProteinPercentage = 0.4,
+                FatsPercentage = 0.35
+            });
+            TypesOfRegime.Add(new TypeOfRegimeItem()
+            {
+                TypeOfRegime = TypesOfRegimeEnum.Keto,
+                Name = "Keto",
+                Description = "Carbs 5%, Proteins 30%, Fats 65%",
+                CarbsPercentage = 0.05,
+                ProteinPercentage = 0.3,
+                FatsPercentage = 0.65
+            });
+
+            // PAL
+            PhysicalActivityLevels = new List<PALItem>();
+            PhysicalActivityLevels.Add(new PALItem()
+            {
+                Name = "little / no exercise",
+                Description = "sedentary lifestyle",
+                PALItemType = PALItemTypeEnum.Little_none_exercise,
+                Ratio = 1.2
+            });
+            PhysicalActivityLevels.Add(new PALItem()
+            {
+                Name = "light exercise",
+                Description = "1 - 2 times / week",
+                PALItemType = PALItemTypeEnum.Light_exercise,
+                Ratio = 1.375
+            });
+            PhysicalActivityLevels.Add(new PALItem()
+            {
+                Name = "moderate exercise",
+                Description = "4 - 5 times / week",
+                PALItemType = PALItemTypeEnum.Moderate_exercise,
+                Ratio = 1.55
+            });
+            PhysicalActivityLevels.Add(new PALItem()
+            {
+                Name = "hard exercise",
+                Description = "4 - 5 times / week",
+                PALItemType = PALItemTypeEnum.Hard_exercise,
+                Ratio = 1.725
+            });
+            PhysicalActivityLevels.Add(new PALItem()
+            {
+                Name = "physical job or hard exercise",
+                Description = "6 - 7 times / week",
+                PALItemType = PALItemTypeEnum.PhysicalJob_hard_exercise,
+                Ratio = 1.9
+            });
+            PhysicalActivityLevels.Add(new PALItem()
+            {
+                Name = "professional athlete",
+                Description = "",
+                PALItemType = PALItemTypeEnum.Professional_athelete,
+                Ratio = 2.4
+            });
+
+            // Objectifs
+            Objectifs = new List<ObjectifItem>();
+            Objectifs.Add(new ObjectifItem()
+            {
+                Name = "Lose Weight 20%",
+                ObjectifType = ObjectifTypeEnum.Lose_Weight_20,
+                Ratio = 0.8
+            });
+            Objectifs.Add(new ObjectifItem()
+            {
+                Name = "Lose Weight slowly 10%",
+                ObjectifType = ObjectifTypeEnum.Lose_Weight_slowly_10,
+                Ratio = 0.9
+            });
+            Objectifs.Add(new ObjectifItem()
+            {
+                Name = "Maintain Weight",
+                ObjectifType = ObjectifTypeEnum.Maintain_Weight,
+                Ratio = 1
+            });
+            Objectifs.Add(new ObjectifItem()
+            {
+                Name = "Gain Weight slowly 10%",
+                ObjectifType = ObjectifTypeEnum.Gain_Weight_slowly_10,
+                Ratio = 1.1
+            });
+            Objectifs.Add(new ObjectifItem()
+            {
+                Name = "Gain Weight 20%",
+                ObjectifType = ObjectifTypeEnum.Gain_Weight_20,
+                Ratio = 1.2
+            });
+
+
+            User = App.DataBaseRepo.GetUserAsync().Result;
+
+            if (User == null)
+            {
+                User = new User();
+                //User = new User() {Name = "Rade", Age = 32, Height = 180, Weight = 69, BodyFat = 14.5, Gender = Enums.GenderEnum.Male, TDEE = 2986, TargetProteins = 300, TargetCarbs = 323, TargetFats = 89 };
+            }
+            else
+            {
+                User.SelectedTypeOfRegime = TypesOfRegime.Where(x => x.TypeOfRegime == User.SelectedTypeOfRegimeDB).FirstOrDefault();
+                User.SelectedPhysicalActivityLevel = PhysicalActivityLevels.Where(x => x.PALItemType == User.SelectedPhysicalActivityLevelDB).FirstOrDefault();
+                User.SelectedObjectif = Objectifs.Where(x => x.ObjectifType == User.SelectedObjectiflDB).FirstOrDefault();
+            }
+        }
+
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
