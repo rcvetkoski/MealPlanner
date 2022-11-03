@@ -128,6 +128,7 @@
                                         <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" Style="{StaticResource LabelTitle}" VerticalOptions="Center"/>
 
                                         <Button Grid.Row="0" Grid.Column="1" 
+                                                HorizontalOptions="End"
                                                 Command="{Binding BindingContext.MealOptionsCommand, Source={x:Reference Home}}" CommandParameter="{Binding .}"
                                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                                             <Button.ImageSource>
@@ -155,16 +156,37 @@
                                                             </SwipeItems>
                                                         </SwipeView.RightItems>
                                                         <!-- Content -->
-                                                        <Grid RowDefinitions="30, 30" ColumnDefinitions="60, *, Auto" Padding="0,0,10,0" RowSpacing="0">
+                                                        <Grid RowDefinitions="30, 30" ColumnDefinitions="60, 2.5*, *" Padding="0,0,10,0" RowSpacing="0">
                                                             <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" BackgroundColor="Gray" Source="{Binding ImageSource}" Aspect="AspectFill">
                                                                 <Image.Clip>
                                                                     <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
                                                                 </Image.Clip>
                                                             </Image>
-                                                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Style="{StaticResource LabelMicro}" VerticalTextAlignment="Center" Text="{Binding Name}" LineBreakMode="TailTruncation" FontAttributes="Bold" FontSize="Caption"/>
-                                                            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelMicro}" VerticalTextAlignment="Center" Text="{Binding ServingSizeWithUnit}" HorizontalTextAlignment="End" FontSize="Caption"/>
-                                                            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelMicro}" VerticalTextAlignment="Center" Text="{Binding NutritionValuesString}" FontSize="Caption"/>
-                                                            <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource LabelMicro}" VerticalTextAlignment="Center" Text="{Binding CaloriesString}" FontSize="Caption" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                                                                   Style="{StaticResource LabelMicro}" 
+                                                                   VerticalTextAlignment="Center" 
+                                                                   Text="{Binding Name}"
+                                                                   LineBreakMode="TailTruncation"
+                                                                   FontAttributes="Bold"
+                                                                   FontSize="Caption"/>
+                                                            <Label Grid.Row="0" Grid.Column="2"
+                                                                   Style="{StaticResource LabelMicro}" 
+                                                                   VerticalTextAlignment="Center" 
+                                                                   Text="{Binding ServingSizeWithUnit}"
+                                                                   HorizontalTextAlignment="End" 
+                                                                   FontSize="Caption"/>
+                                                            <Label Grid.Row="1" Grid.Column="1" 
+                                                                   Style="{StaticResource LabelMicro}" 
+                                                                   VerticalTextAlignment="Center" 
+                                                                   Text="{Binding NutritionValuesString}" 
+                                                                   FontSize="Caption"/>
+                                                            <Label Grid.Row="1" Grid.Column="2"
+                                                                   Style="{StaticResource LabelMicro}" 
+                                                                   VerticalTextAlignment="Center" 
+                                                                   Text="{Binding CaloriesString}" 
+                                                                   FontSize="Caption" 
+                                                                   HorizontalTextAlignment="End" 
+                                                                   FontAttributes="Bold"/>
                                                             <Grid.GestureRecognizers>
                                                                 <TapGestureRecognizer Command="{Binding BindingContext.UpdateAlimentCommand, Source={x:Reference Home}}">
                                                                     <TapGestureRecognizer.CommandParameter>

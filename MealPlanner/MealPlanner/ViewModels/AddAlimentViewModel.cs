@@ -52,9 +52,9 @@ namespace MealPlanner.ViewModels
 
             foreach (Aliment aliment in RefData.Aliments)
             {
-                if (IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Recipe)
+                if (IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Recipe)
                     RefData.FilteredAliments.Add(aliment);
-                else if (!IsMealChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
+                else if (!IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
                     RefData.FilteredAliments.Add(aliment);
             }
         }
@@ -76,7 +76,6 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        public Meal SelectedMeal { get; set; }
         public Recipe CurrentRecipe { get; set; }
 
         private bool isFoodChecked;
@@ -96,19 +95,19 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        private bool isMealChecked;
-        public bool IsMealChecked 
+        private bool isRecipeChecked;
+        public bool IsRecipeChecked 
         { 
             get
             { 
-                return isMealChecked;
+                return isRecipeChecked;
             } 
             set 
             {
-                if(isMealChecked != value)
+                if(isRecipeChecked != value)
                 {
-                    isMealChecked = value;
-                    OnPropertyChanged("IsMealChecked");
+                    isRecipeChecked = value;
+                    OnPropertyChanged("IsRecipeChecked");
                     FilteredAlimentsRefresh();
                 }
             }
@@ -199,7 +198,7 @@ namespace MealPlanner.ViewModels
             }
 
             // Edit
-            rSPopup.AddAction("Edit", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral, new Command(() =>
+            rSPopup.AddAction("Edit", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral, new Command(async () =>
             {
                 if (existingAliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
                 {
@@ -207,16 +206,17 @@ namespace MealPlanner.ViewModels
                     (foodPage.BindingContext as FoodViewModel).CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
                     (foodPage.BindingContext as FoodViewModel).IsNew = false;
 
-                    App.Current.MainPage.Navigation.PushAsync(foodPage);
+                    await App.Current.MainPage.Navigation.PushAsync(foodPage);
                 }
                 else
                 {
                     RecipePage mealPage = new RecipePage();
                     var mealPageBindingContext = mealPage.BindingContext as RecipeViewModel;
+                    mealPageBindingContext.SelectedMeal = SelectedMeal;
                     mealPageBindingContext.CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
                     mealPageBindingContext.IsNew = false;
 
-                    App.Current.MainPage.Navigation.PushAsync(mealPage);
+                    await App.Current.MainPage.Navigation.PushAsync(mealPage);
                 }
                 rSPopup.Close();
             }));

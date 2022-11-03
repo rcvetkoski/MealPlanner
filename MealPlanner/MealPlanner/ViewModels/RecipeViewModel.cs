@@ -161,6 +161,7 @@ namespace MealPlanner.ViewModels
         public void AddFood()
         {
             AddAlimentPage addAlimentPage = new AddAlimentPage();
+            (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedMeal = SelectedMeal;
             (addAlimentPage.BindingContext as AddAlimentViewModel).CurrentRecipe = this.CurrentAliment as Recipe;
             (addAlimentPage.BindingContext as AddAlimentViewModel).RecipeSwitchVisibility = false;
             App.Current.MainPage.Navigation.PushAsync(addAlimentPage);

@@ -42,6 +42,12 @@
                                  Glyph="{x:Static helpers:FontAwesomeIcons.BowlFood}" FontFamily="FA-Solid"/>
             </ShellContent.Icon>
         </ShellContent>
+        <ShellContent Title="Statistics" Route="StatisticsPage" ContentTemplate="{DataTemplate local:StatisticsPage}">
+            <ShellContent.Icon>
+                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChartPie}" FontFamily="FA-Solid"/>
+            </ShellContent.Icon>
+        </ShellContent>
         <ShellContent Title="Browse" Route="Testage" ContentTemplate="{DataTemplate local:TestPage}">
             <ShellContent.Icon>
                 <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"

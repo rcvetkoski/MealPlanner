@@ -35,6 +35,8 @@ namespace MealPlanner.ViewModels
             get => App.RefData;
         }
 
+        public Meal SelectedMeal { get; set; }
+
         private Aliment currentAliment;
         public Aliment CurrentAliment
         { 

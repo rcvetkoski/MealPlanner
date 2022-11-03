@@ -146,6 +146,7 @@ namespace MealPlanner.ViewModels
             if (aliment is Aliment)
             {
                 RSPopup rSPopup = new RSPopup();
+                rSPopup.SetMargin(20, 20, 20, 20);
                 rSPopup.Title = aliment.Name;
                 rSPopup.Style = Application.Current.Resources["RSPopup"] as Style;
 
