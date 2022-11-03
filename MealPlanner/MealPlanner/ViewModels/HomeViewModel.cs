@@ -53,8 +53,9 @@ namespace MealPlanner.ViewModels
             rSPopup.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.BottomToTop);
 
             StackLayout stackLayout = new StackLayout() { Margin = 20, Spacing = 20};
-            Label label = new Label() { Text = meal.Name };
-            Label label1 = new Label() { Text = "Copy alimnets" };
+            var labelStyle = Application.Current.Resources["LabelSmall"] as Style;
+            Label label = new Label() { Text = meal.Name, Style = labelStyle, FontAttributes = FontAttributes.Bold };
+            Label label1 = new Label() { Text = "Copy aliments", Style = labelStyle };
             label1.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(() => 
@@ -67,7 +68,7 @@ namespace MealPlanner.ViewModels
                 })
             });
 
-            Label label2 = new Label() { Text = "Paste alimnets", IsVisible = RefData.CopiedAliments.Any() };
+            Label label2 = new Label() { Text = "Paste aliments", IsVisible = RefData.CopiedAliments.Any(), Style = labelStyle };
             label2.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(() =>
@@ -79,8 +80,17 @@ namespace MealPlanner.ViewModels
                 })
             });
 
-            Label label3 = new Label() { Text = "Set Hour" };
+            Label label3 = new Label() { Text = "Set Hour", Style = labelStyle };
             Label label4 = new Label() { Text = "Cancel", TextColor = Color.Red };
+
+            label4.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(() =>
+                {
+                    rSPopup.Close();
+                })
+            });
+
             stackLayout.Children.Add(label);
             stackLayout.Children.Add(label1);
             stackLayout.Children.Add(label2);

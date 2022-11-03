@@ -174,30 +174,9 @@ namespace MealPlanner.ViewModels
                         var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
                         Aliment aliment = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
                         aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
-                        //SelectedMeal.Aliments.Add(aliment);
-
 
                         // Add aliment
                         RefData.AddAliment(aliment, SelectedMeal);
-
-                        //// Update meal values
-                        //RefData.UpdateMealValues(SelectedMeal);
-
-                        //// Update daily values
-                        //RefData.UpdateDailyValues();
-
-                        //MealAliment mealAliment = new MealAliment();
-                        //mealAliment.MealId = SelectedMeal.Id;
-                        //mealAliment.AlimentId = aliment.Id;
-                        //mealAliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
-                        //mealAliment.AlimentType = aliment.AlimentType;
-
-                        //// Save to db
-                        //await App.DataBaseRepo.AddMealAlimentAsync(mealAliment);
-
-                        //// Asign MealAlimentId to aliment and add it to MealAliments
-                        //aliment.MealAlimentId = mealAliment.Id;
-                        //RefData.MealAliments.Add(mealAliment);
                     }
                     else // When adding food to recipe
                     {
