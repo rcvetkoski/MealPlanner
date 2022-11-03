@@ -42,7 +42,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Priority="0" Command="{Binding OpenFiltersCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                  Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
             </ToolbarItem>
@@ -60,7 +60,7 @@
 
             <ImageButton Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" Command="{Binding ScanBarCodeCommand}" Margin="5,0,10,0">
                 <ImageButton.Source>
-                    <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                    <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                      Glyph="{x:Static helpers:FontAwesomeIcons.Barcode}" FontFamily="FA-Solid"/>
                 </ImageButton.Source>
             </ImageButton>

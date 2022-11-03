@@ -40,7 +40,7 @@
                          VerticalOptions="FillAndExpand"
                          Command="{Binding SaveCommand}">
                     <Button.ImageSource>
-                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                        <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
@@ -52,7 +52,7 @@
                          VerticalOptions="FillAndExpand"
                          Command="{Binding UpdateCommand}">
                     <Button.ImageSource>
-                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                        <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>

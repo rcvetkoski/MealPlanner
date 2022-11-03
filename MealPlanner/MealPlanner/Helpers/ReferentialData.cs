@@ -28,6 +28,8 @@ namespace MealPlanner.Helpers
         public ObservableCollection<Aliment> FilteredAliments { get; set; }
         public ObservableCollection<MealAliment> MealAliments { get; set; }
 
+        public List<Aliment> CopiedAliments { get; set; }
+
         // User
         public List<TypeOfRegimeItem> TypesOfRegime { get; set; }
         public List<PALItem> PhysicalActivityLevels { get; set; }
@@ -58,6 +60,7 @@ namespace MealPlanner.Helpers
             CurrentDay = DateTime.Now;
             ResetDBCommand = new Command(ResetDB);
             InitDB();
+            CopiedAliments = new List<Aliment>();
         }
 
         public void ResetDB()
@@ -123,12 +126,11 @@ namespace MealPlanner.Helpers
             Meals.Clear();
 
             var logs = App.DataBaseRepo.GetAllLogsAsync().Result.ToObservableCollection();
-            Log currentLog = logs.Where(X => X.Date.Day == date.Day).FirstOrDefault();
+            Log currentLog = logs.Where(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day).FirstOrDefault();
             var logMeals = App.DataBaseRepo.GetAllLogMealsAsync().Result.ToObservableCollection();
 
             if (currentLog != null)
             {
-
                 var todayLogMeals = logMeals.Where(x => x.LogId == currentLog.Id);
 
                 foreach (LogMeal logMeal in todayLogMeals)
@@ -233,6 +235,31 @@ namespace MealPlanner.Helpers
                     User.DailyCalories += aliment.Calories;
                 }
             }
+        }
+
+        public async void AddAliment(Aliment aliment, Meal meal)
+        {
+            // Add aliment to meal
+            meal.Aliments.Add(aliment);
+
+            // Update meal values
+            UpdateMealValues(meal);
+
+            // Update daily values
+            UpdateDailyValues();
+
+            MealAliment mealAliment = new MealAliment();
+            mealAliment.MealId = meal.Id;
+            mealAliment.AlimentId = aliment.Id;
+            mealAliment.ServingSize = aliment.ServingSize;
+            mealAliment.AlimentType = aliment.AlimentType;
+
+            // Save to db
+            await App.DataBaseRepo.AddMealAlimentAsync(mealAliment);
+
+            // Asign MealAlimentId to aliment and add it to MealAliments
+            aliment.MealAlimentId = mealAliment.Id;
+            MealAliments.Add(mealAliment);
         }
 
         public Aliment CreateAndCopyAlimentProperties(Aliment existingAliment, double ratio = 1)

@@ -19,7 +19,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Default" Priority="1" Command="{Binding SaveUserDataCommand}" CommandParameter="{x:Reference User}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                  Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>

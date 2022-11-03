@@ -174,27 +174,30 @@ namespace MealPlanner.ViewModels
                         var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
                         Aliment aliment = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
                         aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
-                        SelectedMeal.Aliments.Add(aliment);
+                        //SelectedMeal.Aliments.Add(aliment);
 
-                        // Update meal values
-                        RefData.UpdateMealValues(SelectedMeal);
 
-                        // Update daily values
-                        RefData.UpdateDailyValues();
+                        // Add aliment
+                        RefData.AddAliment(aliment, SelectedMeal);
 
-                        MealAliment mealAliment = new MealAliment();
-                        mealAliment.MealId = SelectedMeal.Id;
-                        mealAliment.AlimentId = aliment.Id;
-                        mealAliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
-                        mealAliment.AlimentType = aliment.AlimentType;
+                        //// Update meal values
+                        //RefData.UpdateMealValues(SelectedMeal);
 
-                        // Save to db
-                        await App.DataBaseRepo.AddMealAlimentAsync(mealAliment);
+                        //// Update daily values
+                        //RefData.UpdateDailyValues();
 
-                        // Asign MealAlimentId to aliment and add it to MealAliments
-                        var lastItem = App.DataBaseRepo.GetAllMealAlimentsAsync().Result.OrderByDescending(x => x.Id).FirstOrDefault();
-                        aliment.MealAlimentId = lastItem.Id;
-                        RefData.MealAliments.Add(mealAliment);
+                        //MealAliment mealAliment = new MealAliment();
+                        //mealAliment.MealId = SelectedMeal.Id;
+                        //mealAliment.AlimentId = aliment.Id;
+                        //mealAliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
+                        //mealAliment.AlimentType = aliment.AlimentType;
+
+                        //// Save to db
+                        //await App.DataBaseRepo.AddMealAlimentAsync(mealAliment);
+
+                        //// Asign MealAlimentId to aliment and add it to MealAliments
+                        //aliment.MealAlimentId = mealAliment.Id;
+                        //RefData.MealAliments.Add(mealAliment);
                     }
                     else // When adding food to recipe
                     {

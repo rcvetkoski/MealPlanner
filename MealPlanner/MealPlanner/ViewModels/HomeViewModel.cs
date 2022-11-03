@@ -19,6 +19,7 @@ namespace MealPlanner.ViewModels
         {
             SetTitle();
             MaximumDate = RefData.CurrentDay.AddDays(7);
+            MealOptionsCommand = new Command<Meal>(MealOptions);
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             UpdateAlimentCommand = new Command<object[]>(UpdateAliment);
             AddAlimentCommand = new Command<Meal>(AddAliment);
@@ -41,6 +42,53 @@ namespace MealPlanner.ViewModels
         public void SetTitle()
         {
             Title = RefData.CurrentDay.Day == DateTime.Now.Day ? "Today" : RefData.CurrentDay.ToString(("d MMM"));
+        }
+
+        public ICommand MealOptionsCommand { get; set; }
+        private void MealOptions(Meal meal)
+        {
+            RSPopup rSPopup = new RSPopup("", "", Xamarin.RSControls.Enums.RSPopupPositionEnum.Bottom);
+            rSPopup.Style = Application.Current.Resources["RSPopup"] as Style;
+            rSPopup.SetPopupSize(Xamarin.RSControls.Enums.RSPopupSizeEnum.MatchParent, Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent);
+            rSPopup.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.BottomToTop);
+
+            StackLayout stackLayout = new StackLayout() { Margin = 20, Spacing = 20};
+            Label label = new Label() { Text = meal.Name };
+            Label label1 = new Label() { Text = "Copy alimnets" };
+            label1.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(() => 
+                {
+                    RefData.CopiedAliments.Clear();
+                    foreach(Aliment aliment in meal.Aliments)
+                        RefData.CopiedAliments.Add(aliment);
+
+                    rSPopup.Close();
+                })
+            });
+
+            Label label2 = new Label() { Text = "Paste alimnets", IsVisible = RefData.CopiedAliments.Any() };
+            label2.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(() =>
+                {
+                    foreach (Aliment aliment in RefData.CopiedAliments)
+                        RefData.AddAliment(aliment, meal);
+
+                    rSPopup.Close();
+                })
+            });
+
+            Label label3 = new Label() { Text = "Set Hour" };
+            Label label4 = new Label() { Text = "Cancel", TextColor = Color.Red };
+            stackLayout.Children.Add(label);
+            stackLayout.Children.Add(label1);
+            stackLayout.Children.Add(label2);
+            stackLayout.Children.Add(label3);
+            stackLayout.Children.Add(label4);
+            rSPopup.SetCustomView(stackLayout);
+
+            rSPopup.Show(); 
         }
 
         public ICommand DeletteAlimentCommand { get; set; } 

@@ -34,7 +34,7 @@
                         Command="{Binding PreviousDayCommand}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                     <Button.ImageSource>
-                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                        <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CaretLeft}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
@@ -52,7 +52,7 @@
                         IsVisible="{Binding NextDayCommandVisible}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                     <Button.ImageSource>
-                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                        <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CaretRight}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
@@ -63,7 +63,7 @@
                              BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                              Command="{Binding OpenCalendarCommand}" CommandParameter="{x:Reference datePicker}">
                     <Button.ImageSource>
-                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                        <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CalendarDays}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
@@ -75,7 +75,8 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Priority="0" Command="{Binding OpenUserPageCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                <FontImageSource Size="Title" 
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                  Glyph="{x:Static helpers:FontAwesomeIcons.CircleUser}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
             </ToolbarItem>
@@ -123,10 +124,20 @@
                         <DataTemplate>
                             <StackLayout x:Name="meal">
                                 <Frame Style="{StaticResource MealCard}">
-                                    <StackLayout>
-                                        <Label Text="{Binding Name}" Style="{StaticResource LabelTitle}"/>
+                                    <Grid RowDefinitions="30, Auto, Auto, 1, Auto" ColumnDefinitions="*, 30">
+                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" Style="{StaticResource LabelTitle}" VerticalOptions="Center"/>
 
-                                        <StackLayout BindableLayout.ItemsSource="{Binding Aliments}">
+                                        <Button Grid.Row="0" Grid.Column="1" 
+                                                Command="{Binding BindingContext.MealOptionsCommand, Source={x:Reference Home}}" CommandParameter="{Binding .}"
+                                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                                            <Button.ImageSource>
+                                                <FontImageSource Size="Medium" 
+                                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
+                                            </Button.ImageSource>
+                                        </Button>
+
+                                        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BindableLayout.ItemsSource="{Binding Aliments}">
                                             <BindableLayout.ItemTemplate>
                                                 <DataTemplate>
                                                     <SwipeView Style="{StaticResource SwipeView}">
@@ -170,11 +181,7 @@
                                             </BindableLayout.ItemTemplate>
                                         </StackLayout>
 
-                                        <!--<Button Grid.Row="2" Grid.Column="0" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" Text="+ Add Aliment" Margin="0, 10, 0, 10"
-                                                Command="{Binding BindingContext.AddAlimentCommand, Source={x:Reference Home}}" CommandParameter="{Binding .}">
-                                        </Button>-->
-
-                                        <Button Grid.Row="2" Grid.Column="0" HorizontalOptions="Center"
+                                        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center"
                                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                                                 Text="Add item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                 Command="{Binding BindingContext.AddAlimentCommand, Source={x:Reference Home}}" CommandParameter="{Binding .}">
@@ -184,13 +191,13 @@
                                             </Button.ImageSource>
                                         </Button>
 
-                                        <BoxView HeightRequest="1" BackgroundColor="LightGray"/>
+                                        <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="LightGray"/>
 
-                                        <StackLayout Orientation="Horizontal">
+                                        <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
                                             <Label Style="{StaticResource LabelSmallBold}" Text="{Binding NutritionValuesString}" VerticalOptions="Center"/>
                                             <Label Style="{StaticResource LabelSmallBold}" Text="{Binding CaloriesString}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
                                         </StackLayout>
-                                    </StackLayout>
+                                    </Grid>
                                 </Frame>
                             </StackLayout>
                         </DataTemplate>
