@@ -30,7 +30,9 @@ namespace MealPlanner.Models
         }
 
         private double weight;
-        public double Weight { get => weight; 
+        public double Weight 
+        { 
+            get => weight; 
             set 
             {
                 if(weight != value)

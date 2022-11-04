@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using static MealPlanner.Models.User;
@@ -28,6 +29,7 @@ namespace MealPlanner.Helpers
         public ObservableCollection<Aliment> FilteredAliments { get; set; }
         public ObservableCollection<MealAliment> MealAliments { get; set; }
 
+        public List<Meal> DefaultMeals { get; set; }
         public List<Aliment> CopiedAliments { get; set; }
 
         // User
@@ -57,10 +59,11 @@ namespace MealPlanner.Helpers
         public ReferentialData()
         {
             //ResetDB();
+            InitDefaultMeals();
+            CopiedAliments = new List<Aliment>();
             CurrentDay = DateTime.Now;
             ResetDBCommand = new Command(ResetDB);
             InitDB();
-            CopiedAliments = new List<Aliment>();
         }
 
         public void ResetDB()
@@ -154,51 +157,47 @@ namespace MealPlanner.Helpers
             PopulateMeals();
         }
 
-        private void GenerateDefaultMeals(DateTime date)
+        private void InitDefaultMeals()
         {
+            DefaultMeals = new List<Meal>();
             // Breakfast
             var breakfast = new Meal() { Name = "Breakfast", Order = 1 };
-
             // Lunch
             var lunch = new Meal() { Name = "Lunch", Order = 2 };
-
             // Dinner
             var dinner = new Meal() { Name = "Dinner", Order = 3 };
-
             // Snacks
             var snack = new Meal() { Name = "Snack", Order = 4 };
+            DefaultMeals.Add(breakfast);
+            DefaultMeals.Add(lunch);
+            DefaultMeals.Add(dinner);
+            DefaultMeals.Add(snack);
+        }
 
-            App.DataBaseRepo.AddMealAsync(breakfast).Wait();
-            App.DataBaseRepo.AddMealAsync(lunch).Wait();
-            App.DataBaseRepo.AddMealAsync(dinner).Wait();
-            App.DataBaseRepo.AddMealAsync(snack).Wait();
-            Meals.Add(breakfast);
-            Meals.Add(lunch);
-            Meals.Add(dinner);
-            Meals.Add(snack);
-            AllMeals.Add(breakfast);
-            AllMeals.Add(lunch);
-            AllMeals.Add(dinner);
-            AllMeals.Add(snack);
+        private async void GenerateDefaultMeals(DateTime date)
+        {
+            //await Task.Delay(5000);
 
             // Add log
             Log currentLog = new Log() { Date = date, UserWeight = User.Weight, UserBodyFat = User.BodyFat };
             currentLog.Meals = new List<Meal>();
-            currentLog.Meals.Add(breakfast);
-            currentLog.Meals.Add(lunch);
-            currentLog.Meals.Add(dinner);
-            currentLog.Meals.Add(snack);
-            App.DataBaseRepo.AddLogAsync(currentLog).Wait();   
 
-            // Add logmeals
-            var breakfastLogMeal = new LogMeal() { LogId = currentLog.Id, MealId = breakfast.Id };
-            var lunchLogMeal = new LogMeal() { LogId = currentLog.Id, MealId = lunch.Id };
-            var dinnerLogMeal = new LogMeal() { LogId = currentLog.Id, MealId = dinner.Id };
-            var snackLogMeal = new LogMeal() { LogId = currentLog.Id, MealId = snack.Id };
-            App.DataBaseRepo.AddLogMealAsync(breakfastLogMeal).Wait();
-            App.DataBaseRepo.AddLogMealAsync(lunchLogMeal).Wait();
-            App.DataBaseRepo.AddLogMealAsync(dinnerLogMeal).Wait();
-            App.DataBaseRepo.AddLogMealAsync(snackLogMeal).Wait();
+            // Add log to db
+            await App.DataBaseRepo.AddLogAsync(currentLog);
+
+            // Add meals
+            foreach (Meal meal in DefaultMeals)
+            {
+                await App.DataBaseRepo.AddMealAsync(meal);
+                Meals.Add(meal);
+                AllMeals.Add(meal);
+                currentLog.Meals.Add(meal);
+                var logMeal = new LogMeal() { LogId = currentLog.Id, MealId = meal.Id };
+                await App.DataBaseRepo.AddLogMealAsync(logMeal);
+            }
+
+            // Update log
+            await App.DataBaseRepo.UpdateLogAsync(currentLog);
         }
 
         private void PopulateMeals()

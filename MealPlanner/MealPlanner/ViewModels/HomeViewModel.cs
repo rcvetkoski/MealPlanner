@@ -230,8 +230,8 @@ namespace MealPlanner.ViewModels
         {
             RefData.CurrentDay =  RefData.CurrentDay.Subtract(TimeSpan.FromDays(1));
             SetTitle();
-            RefData.GetMealsAtDate(RefData.CurrentDay);
-            RefData.UpdateDailyValues();
+            //RefData.GetMealsAtDate(RefData.CurrentDay);
+            //RefData.UpdateDailyValues();
             OnPropertyChanged(nameof(NextDayCommandVisible));
         }
 
@@ -240,8 +240,8 @@ namespace MealPlanner.ViewModels
         {
             RefData.CurrentDay = RefData.CurrentDay.AddDays(1);
             SetTitle();
-            RefData.GetMealsAtDate(RefData.CurrentDay);
-            RefData.UpdateDailyValues();
+            //RefData.GetMealsAtDate(RefData.CurrentDay);
+            //RefData.UpdateDailyValues();
             OnPropertyChanged(nameof(NextDayCommandVisible));
         }
 
@@ -250,8 +250,8 @@ namespace MealPlanner.ViewModels
         {
             RefData.CurrentDay = DateTime.Now;
             SetTitle();
-            RefData.GetMealsAtDate(RefData.CurrentDay);
-            RefData.UpdateDailyValues();
+            //RefData.GetMealsAtDate(RefData.CurrentDay);
+            //RefData.UpdateDailyValues();
             OnPropertyChanged(nameof(NextDayCommandVisible));
         }
     }

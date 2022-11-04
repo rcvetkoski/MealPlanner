@@ -165,6 +165,7 @@
                                                    HorizontalTextAlignment="Start"
                                                    BorderFillColor="Transparent"
                                                    CustomUnit="kcal"
+                                                   IsEnabled="False"
                                                    Value="{Binding RefData.User.BMR}" 
                                                    IsPlaceholderAlwaysFloating="True"/>
                         <rsControls:RSNumericEntry Style="{StaticResource Entry}"
@@ -174,6 +175,7 @@
                                                    RSEntryStyle="Underline" 
                                                    Placeholder="TDEE (Total daily energy expenditure)" 
                                                    CustomUnit="kcal"
+                                                   IsEnabled="False"
                                                    Value="{Binding RefData.User.TDEE}"
                                                    IsPlaceholderAlwaysFloating="True"/>
                     </StackLayout>

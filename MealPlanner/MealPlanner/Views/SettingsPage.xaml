@@ -1,12 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
+             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
+             Title="{Binding Title}"
              x:Class="MealPlanner.Views.SettingsPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:SettingsViewModel/>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView Orientation="Vertical">
+
+            <StackLayout Padding="15">
+                <Label Style="{StaticResource LabelMedium}" Text="Units"/>
+                <Frame Style="{StaticResource UserCard}">
+                    <StackLayout>
+                        <rsControls:RSEntry Placeholder="Weight unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
+                        <rsControls:RSEntry Placeholder="Height unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
+                        <rsControls:RSEntry Placeholder="Energie unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
+                    </StackLayout>
+                </Frame>
+
+                <Label Style="{StaticResource LabelMedium}" Text="Meals"/>
+                <Frame Style="{StaticResource UserCard}">
+                    <StackLayout>
+                        <rsControls:RSNumericUpDown Placeholder="Number of meals" Text="{Binding RefData.Meals.Count}" IsPlaceholderAlwaysFloating="True"/>
+                        <StackLayout BindableLayout.ItemsSource="{Binding RefData.Meals}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <rsControls:RSEntry Placeholder="{Binding Order, StringFormat='Meal {0}'}" Text="{Binding Name}" IsPlaceholderAlwaysFloating="True"/>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Button Text="Reset data base" Command="{Binding RefData.ResetDBCommand}" VerticalOptions="EndAndExpand" Margin="30, 20, 30, 20"/>
+                
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
