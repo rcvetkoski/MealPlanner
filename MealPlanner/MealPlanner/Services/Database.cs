@@ -36,6 +36,7 @@ namespace MealPlanner.Services
             dbConnection.CreateTableAsync<User>();
             dbConnection.CreateTableAsync<Recipe>();
             dbConnection.CreateTableAsync<Food>();
+            dbConnection.CreateTableAsync<TemplateMeal>();
             dbConnection.CreateTableAsync<Meal>();
             dbConnection.CreateTableAsync<MealAliment>();
             dbConnection.CreateTableAsync<RecipeFood>().Wait();
@@ -416,6 +417,62 @@ namespace MealPlanner.Services
 
         #endregion
 
+        #region TemplateMeal
+
+        /// <summary>
+        /// Returns a TemplateMeal from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<TemplateMeal> GetTemplateMealAsync(int id)
+        {
+            return dbConnection.GetAsync<TemplateMeal>(id);
+        }
+
+        /// <summary>
+        /// Returns all TemplateMeal from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<TemplateMeal>> GetAllTemplateMealsAsync()
+        {
+            return dbConnection.Table<TemplateMeal>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts a TemplateMeal in database
+        /// </summary>
+        /// <param name="templateMeal"></param>
+        /// <returns></returns>
+        public Task<int> AddTemplateMealAsync(TemplateMeal templateMeal)
+        {
+            return dbConnection.InsertAsync(templateMeal);
+        }
+
+        /// <summary>
+        /// Updates a TemplateMeal from database
+        /// </summary>
+        /// <param name="templateMeal"></param>
+        /// <returns></returns>
+        public Task<int> UpdateTemplateMealAsync(TemplateMeal templateMeal)
+        {
+            if (GetTemplateMealAsync(templateMeal.Id) != null)
+                return dbConnection.UpdateAsync(templateMeal);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Deletes a TemplateMeal from database
+        /// </summary>
+        /// <param name="templateMeal"></param>
+        /// <returns></returns>
+        public Task<int> DeleteTemplateMealAsync(TemplateMeal templateMeal)
+        {
+            return dbConnection.DeleteAsync(templateMeal);
+        }
+
+        #endregion
+
         #region Meal
 
         /// <summary>
@@ -452,7 +509,7 @@ namespace MealPlanner.Services
         /// </summary>
         /// <param name="meal"></param>
         /// <returns></returns>
-        public Task<int> UpdateMeal(Meal meal)
+        public Task<int> UpdateMealAsync(Meal meal)
         {
             if (GetRecipeFoodAsync(meal.Id) != null)
                 return dbConnection.UpdateAsync(meal);

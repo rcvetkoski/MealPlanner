@@ -62,7 +62,7 @@ namespace MealPlanner.ViewModels
                 {
                     RefData.CopiedAliments.Clear();
                     foreach(Aliment aliment in meal.Aliments)
-                        RefData.CopiedAliments.Add(aliment);
+                        RefData.CopiedAliments.Add(RefData.CreateAndCopyAlimentProperties(aliment));
 
                     rSPopup.Close();
                 })
@@ -122,7 +122,7 @@ namespace MealPlanner.ViewModels
             if(mealAliment != null)
             {
                 await App.DataBaseRepo.DeleteMealAlimentAsync(mealAliment);
-                var realMealAliment = RefData.MealAliments.Where(x => x.Id == mealAliment.Id).FirstOrDefault();
+                var realMealAliment = RefData.MealAliments.FirstOrDefault(x => x.Id == mealAliment.Id);
                 if(realMealAliment != null)
                     RefData.MealAliments.Remove(realMealAliment);
             }
@@ -172,10 +172,17 @@ namespace MealPlanner.ViewModels
                     // Update daily values
                     RefData.UpdateDailyValues();
 
-                    var al = aliment;
+
                     MealAliment mealAliment = await App.DataBaseRepo.GetMealAlimentAsync(aliment.MealAlimentId);
                     mealAliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
                     await App.DataBaseRepo.UpdateMealAliment(mealAliment);
+
+                    var mealAlimentToUpdate = RefData.MealAliments.FirstOrDefault(x => x.Id == mealAliment.Id);
+                    if(mealAlimentToUpdate != null)
+                    {
+                        mealAlimentToUpdate.AlimentType = mealAliment.AlimentType;
+                        mealAlimentToUpdate.ServingSize = mealAliment.ServingSize;
+                    }
 
                     rSPopup.Close();
                 }));

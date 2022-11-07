@@ -57,11 +57,20 @@ namespace MealPlanner.Services
         Task<int> DeleteAllRecipeFoodsAsync();
         Task<int> DropTableRecipeFood();
 
+
+        //TemplateMeal
+        Task<TemplateMeal> GetTemplateMealAsync(int id);
+        Task<List<TemplateMeal>> GetAllTemplateMealsAsync();
+        Task<int> AddTemplateMealAsync(TemplateMeal templateMeal);
+        Task<int> UpdateTemplateMealAsync(TemplateMeal templateMeal);
+        Task<int> DeleteTemplateMealAsync(TemplateMeal templateMeal);
+
+
         //Meal
         Task<Meal> GetMealAsync(int id);
         Task<List<Meal>> GetAllMealsAsync();
         Task<int> AddMealAsync(Meal meal);
-        Task<int> UpdateMeal(Meal meal);
+        Task<int> UpdateMealAsync(Meal meal);
         Task<int> DeleteMealAsync(Meal meal);
         Task<int> DeleteAllMealsAsync();
         Task<int> DropTableMeal();

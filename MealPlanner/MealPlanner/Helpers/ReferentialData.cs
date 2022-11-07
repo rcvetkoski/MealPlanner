@@ -30,6 +30,7 @@ namespace MealPlanner.Helpers
         public ObservableCollection<MealAliment> MealAliments { get; set; }
 
         public List<Meal> DefaultMeals { get; set; }
+        public List<TemplateMeal> TemplateMeals { get; set; }
         public List<Aliment> CopiedAliments { get; set; }
 
         // User
@@ -103,8 +104,8 @@ namespace MealPlanner.Helpers
             RecipeFoods = App.DataBaseRepo.GetAllRecipeFoodsAsync().Result.ToObservableCollection();
             foreach (RecipeFood recipeFood in RecipeFoods)
             {
-                Recipe recipe = Aliments.Where(x => x.Id == recipeFood.RecipeId && x.AlimentType == Enums.AlimentTypeEnum.Recipe).FirstOrDefault() as Recipe;
-                Food existingFood = Aliments.Where(x => x.Id == recipeFood.FoodId && x.AlimentType == Enums.AlimentTypeEnum.Food).FirstOrDefault() as Food;
+                Recipe recipe = Aliments.FirstOrDefault(x => x.Id == recipeFood.RecipeId && x.AlimentType == Enums.AlimentTypeEnum.Recipe) as Recipe;
+                Food existingFood = Aliments.FirstOrDefault(x => x.Id == recipeFood.FoodId && x.AlimentType == Enums.AlimentTypeEnum.Food) as Food;
 
                 var ratio = recipeFood.ServingSize / existingFood.OriginalServingSize;
                 Food food = CreateAndCopyAlimentProperties(existingFood, ratio) as Food;
@@ -123,28 +124,55 @@ namespace MealPlanner.Helpers
             GetMealsAtDate(DateTime.Now);
         }
 
-        public void GetMealsAtDate(DateTime date, bool CopyDay = false)
+        public void GetMealsAtDate(DateTime date, bool copyDay = false)
         {
-            AllMeals = App.DataBaseRepo.GetAllMealsAsync().Result.ToObservableCollection();
+            User.DailyProteins = 0;
+            User.DailyCarbs = 0;
+            User.DailyFats = 0;
+            User.DailyCalories = 0;
+
+            AllMeals = new ObservableCollection<Meal>();
             Meals.Clear();
 
             var logs = App.DataBaseRepo.GetAllLogsAsync().Result.ToObservableCollection();
-            Log currentLog = logs.Where(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day).FirstOrDefault();
+            Log currentLog = logs.FirstOrDefault(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day);
             var logMeals = App.DataBaseRepo.GetAllLogMealsAsync().Result.ToObservableCollection();
 
             if (currentLog != null)
             {
                 var todayLogMeals = logMeals.Where(x => x.LogId == currentLog.Id);
 
+                // Check if new meal templates added if yes add them
+                if(todayLogMeals.Count() < TemplateMeals.Count)
+                {
+                    for(int i = todayLogMeals.Count(); i < TemplateMeals.Count; i++)
+                    {
+                        Meal meal = new Meal() { Name = TemplateMeals[i].Name, Order = TemplateMeals[i].Order };
+                        App.DataBaseRepo.AddMealAsync(meal).Wait();
+                        LogMeal logMeal = new LogMeal() { LogId = currentLog.Id, MealId = meal.Id };
+                        App.DataBaseRepo.AddLogMealAsync(logMeal).Wait();
+                    }
+                }
+
+                // Refresh todayLogMeals
+                logMeals = App.DataBaseRepo.GetAllLogMealsAsync().Result.ToObservableCollection();
+                todayLogMeals = logMeals.Where(x => x.LogId == currentLog.Id);
+
+                AllMeals = App.DataBaseRepo.GetAllMealsAsync().Result.ToObservableCollection();
+
                 foreach (LogMeal logMeal in todayLogMeals)
                 {
-                    if (AllMeals.Where(x => x.Id == logMeal.MealId).FirstOrDefault() != null)
+                    var meal = AllMeals.FirstOrDefault(x => x.Id == logMeal.MealId);
+
+                    if (meal != null && meal.Order <= TemplateMeals.Count)
                     {
-                        Meals.Add(AllMeals.Where(x => x.Id == logMeal.MealId).FirstOrDefault());
+                        // Add aliments to Meal if any
+                        PopulateMeals(meal);
+                        Meals.Add(AllMeals.FirstOrDefault(x => x.Id == logMeal.MealId));
                     }
                 }
             }
-            else if(CopyDay)
+            else if(copyDay)
             {
                 // TODO
             }
@@ -152,13 +180,11 @@ namespace MealPlanner.Helpers
             {
                 GenerateDefaultMeals(date);
             }
-
-            // Add aliments to Meal if any
-            PopulateMeals();
         }
 
         private void InitDefaultMeals()
         {
+            // Populate default meals
             DefaultMeals = new List<Meal>();
             // Breakfast
             var breakfast = new Meal() { Name = "Breakfast", Order = 1 };
@@ -172,12 +198,24 @@ namespace MealPlanner.Helpers
             DefaultMeals.Add(lunch);
             DefaultMeals.Add(dinner);
             DefaultMeals.Add(snack);
+
+
+            // get all TemplateMeals
+            TemplateMeals = App.DataBaseRepo.GetAllTemplateMealsAsync().Result;
+
+            if(!TemplateMeals.Any())
+            {
+                foreach(Meal meal in DefaultMeals)
+                {
+                    TemplateMeal templateMeal = new TemplateMeal() { Name = meal.Name, Order = meal.Order };
+                    TemplateMeals.Add(templateMeal);
+                    App.DataBaseRepo.AddTemplateMealAsync(templateMeal).Wait();
+                }
+            }
         }
 
         private async void GenerateDefaultMeals(DateTime date)
         {
-            //await Task.Delay(5000);
-
             // Add log
             Log currentLog = new Log() { Date = date, UserWeight = User.Weight, UserBodyFat = User.BodyFat };
             currentLog.Meals = new List<Meal>();
@@ -186,8 +224,9 @@ namespace MealPlanner.Helpers
             await App.DataBaseRepo.AddLogAsync(currentLog);
 
             // Add meals
-            foreach (Meal meal in DefaultMeals)
+            foreach (TemplateMeal templateMeal in TemplateMeals)
             {
+                Meal meal = new Meal() { Name = templateMeal.Name, Order = templateMeal.Order };    
                 await App.DataBaseRepo.AddMealAsync(meal);
                 Meals.Add(meal);
                 AllMeals.Add(meal);
@@ -200,20 +239,15 @@ namespace MealPlanner.Helpers
             await App.DataBaseRepo.UpdateLogAsync(currentLog);
         }
 
-        private void PopulateMeals()
+        private void PopulateMeals(Meal meal)
         {
-            User.DailyProteins = 0;
-            User.DailyCarbs = 0;
-            User.DailyFats = 0;
-            User.DailyCalories = 0;
-
-            foreach (MealAliment mealAliment in MealAliments)
+            foreach (MealAliment mealAliment in MealAliments.Where(x=> x.MealId == meal.Id))
             {
-                Meal meal = Meals.Where(x => x.Id == mealAliment.MealId).FirstOrDefault();
-                if (meal == null)
-                    continue;
+                //Meal meal = Meals.Where(x => x.Id == mealAliment.MealId).FirstOrDefault();
+                //if (meal == null)
+                //    continue;
 
-                Aliment existingAliment = Aliments.Where(x => x.Id == mealAliment.AlimentId && x.AlimentType == mealAliment.AlimentType).FirstOrDefault();
+                Aliment existingAliment = Aliments.FirstOrDefault(x => x.Id == mealAliment.AlimentId && x.AlimentType == mealAliment.AlimentType);
 
                 if (existingAliment != null)
                 {
@@ -506,9 +540,9 @@ namespace MealPlanner.Helpers
             }
             else
             {
-                User.SelectedTypeOfRegime = TypesOfRegime.Where(x => x.TypeOfRegime == User.SelectedTypeOfRegimeDB).FirstOrDefault();
-                User.SelectedPhysicalActivityLevel = PhysicalActivityLevels.Where(x => x.PALItemType == User.SelectedPhysicalActivityLevelDB).FirstOrDefault();
-                User.SelectedObjectif = Objectifs.Where(x => x.ObjectifType == User.SelectedObjectiflDB).FirstOrDefault();
+                User.SelectedTypeOfRegime = TypesOfRegime.FirstOrDefault(x => x.TypeOfRegime == User.SelectedTypeOfRegimeDB);
+                User.SelectedPhysicalActivityLevel = PhysicalActivityLevels.FirstOrDefault(x => x.PALItemType == User.SelectedPhysicalActivityLevelDB);
+                User.SelectedObjectif = Objectifs.FirstOrDefault(x => x.ObjectifType == User.SelectedObjectiflDB);
             }
         }
 
