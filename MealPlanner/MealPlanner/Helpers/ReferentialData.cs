@@ -21,17 +21,18 @@ namespace MealPlanner.Helpers
     {
         public User User { get; set; }
         public ObservableCollection<Meal> Meals { get; set; }
-        public ObservableCollection<Meal> AllMeals { get; set; }
+        public List<Meal> AllMeals { get; set; }
         public ObservableCollection<Recipe> Recipes { get; set; }
         public ObservableCollection<Food> Foods { get; set; }
         public ObservableCollection<RecipeFood> RecipeFoods { get; set; }
         public ObservableCollection<Aliment> Aliments { get; set; }
         public ObservableCollection<Aliment> FilteredAliments { get; set; }
         public ObservableCollection<MealAliment> MealAliments { get; set; }
+        public ObservableCollection<JournalTemplate> JournalTemplates { get; set; }
+
 
         public List<Meal> DefaultMeals { get; set; }
         public List<TemplateMeal> TemplateMeals { get; set; }
-        public List<Aliment> CopiedAliments { get; set; }
 
         // User
         public List<TypeOfRegimeItem> TypesOfRegime { get; set; }
@@ -56,13 +57,18 @@ namespace MealPlanner.Helpers
             }
         }
 
+        public List<Log> Logs { get; set; }
+
+        public List<LogMeal> LogMeals { get; set; } 
+
+
 
         public ReferentialData()
         {
             //ResetDB();
-            InitDefaultMeals();
-            CopiedAliments = new List<Aliment>();
             CurrentDay = DateTime.Now;
+            InitDefaultMeals();
+            InitJournalTemplates();
             ResetDBCommand = new Command(ResetDB);
             InitDB();
         }
@@ -121,45 +127,87 @@ namespace MealPlanner.Helpers
 
             // Meals
             Meals = new ObservableCollection<Meal>();
-            GetMealsAtDate(DateTime.Now);
+
+            // Logs
+            Logs = App.DataBaseRepo.GetAllLogsAsync().Result;
+            LogMeals = App.DataBaseRepo.GetAllLogMealsAsync().Result;
+
+            foreach (Log log in Logs)
+            {
+                log.Meals = new List<Meal>();
+
+                foreach (LogMeal logMeal in LogMeals.Where(x => x.LogId == log.Id))
+                {
+                    foreach (Meal meal in AllMeals)
+                    {
+                        if (meal.Id == logMeal.MealId)
+                            log.Meals.Add(meal);
+                    }
+                }
+            }
+
+
+            GetMealsAtDate(DateTime.Now, DateTime.Now.DayOfWeek);
         }
 
-        public void GetMealsAtDate(DateTime date, bool copyDay = false)
+        /// <summary>
+        /// Called when editing Journal template
+        /// </summary>
+        /// <param name="dayOfWeek"></param>
+        public void CreateJournalTemplates(DayOfWeek dayOfWeek)
+        {
+            var currentJournalTemplates = JournalTemplates.Where(x => x.DayOfWeek == dayOfWeek);
+            Meals.Clear();
+
+            foreach (JournalTemplate journalTemplate in currentJournalTemplates)
+            {
+                var journalMeal = AllMeals.FirstOrDefault(x => x.Id == journalTemplate.MealId);
+
+                if (journalMeal != null && journalMeal.Order <= TemplateMeals.Count)
+                {
+                    PopulateMeal(journalMeal);
+                    Meals.Add(journalMeal);
+                }
+            }
+        }
+
+        public void GetMealsAtDate(DateTime date, DayOfWeek dayOfWeek)
         {
             User.DailyProteins = 0;
             User.DailyCarbs = 0;
             User.DailyFats = 0;
             User.DailyCalories = 0;
 
-            AllMeals = new ObservableCollection<Meal>();
             Meals.Clear();
 
-            var logs = App.DataBaseRepo.GetAllLogsAsync().Result.ToObservableCollection();
-            Log currentLog = logs.FirstOrDefault(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day);
-            var logMeals = App.DataBaseRepo.GetAllLogMealsAsync().Result.ToObservableCollection();
+            Log currentLog = Logs.FirstOrDefault(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day);
+
 
             if (currentLog != null)
             {
-                var todayLogMeals = logMeals.Where(x => x.LogId == currentLog.Id);
+                var todayLogMeals = LogMeals.Where(x => x.LogId == currentLog.Id);
 
                 // Check if new meal templates added if yes add them
-                if(todayLogMeals.Count() < TemplateMeals.Count)
+                if (todayLogMeals.Count() < TemplateMeals.Count)
                 {
-                    for(int i = todayLogMeals.Count(); i < TemplateMeals.Count; i++)
+                    for (int i = todayLogMeals.Count(); i < TemplateMeals.Count; i++)
                     {
                         Meal meal = new Meal() { Name = TemplateMeals[i].Name, Order = TemplateMeals[i].Order };
                         App.DataBaseRepo.AddMealAsync(meal).Wait();
+                        AllMeals.Add(meal);
                         LogMeal logMeal = new LogMeal() { LogId = currentLog.Id, MealId = meal.Id };
                         App.DataBaseRepo.AddLogMealAsync(logMeal).Wait();
+                        LogMeals.Add(logMeal);
                     }
                 }
 
                 // Refresh todayLogMeals
-                logMeals = App.DataBaseRepo.GetAllLogMealsAsync().Result.ToObservableCollection();
-                todayLogMeals = logMeals.Where(x => x.LogId == currentLog.Id);
+                todayLogMeals = LogMeals.Where(x => x.LogId == currentLog.Id);
 
-                AllMeals = App.DataBaseRepo.GetAllMealsAsync().Result.ToObservableCollection();
+                // Update log
+                App.DataBaseRepo.UpdateLogAsync(currentLog).Wait();
 
+                // Fill Meals
                 foreach (LogMeal logMeal in todayLogMeals)
                 {
                     var meal = AllMeals.FirstOrDefault(x => x.Id == logMeal.MealId);
@@ -167,18 +215,15 @@ namespace MealPlanner.Helpers
                     if (meal != null && meal.Order <= TemplateMeals.Count)
                     {
                         // Add aliments to Meal if any
-                        PopulateMeals(meal);
+                        meal.Aliments.Clear();
+                        PopulateMeal(meal);
                         Meals.Add(AllMeals.FirstOrDefault(x => x.Id == logMeal.MealId));
                     }
                 }
             }
-            else if(copyDay)
-            {
-                // TODO
-            }
             else
             {
-                GenerateDefaultMeals(date);
+                GenerateDefaultMeals(date, dayOfWeek);
             }
         }
 
@@ -214,39 +259,62 @@ namespace MealPlanner.Helpers
             }
         }
 
-        private async void GenerateDefaultMeals(DateTime date)
+        private void InitJournalTemplates()
+        {
+            AllMeals = App.DataBaseRepo.GetAllMealsAsync().Result;
+            JournalTemplates = App.DataBaseRepo.GetAllJournalTemplateAsync().Result.ToObservableCollection();
+
+            if (JournalTemplates.Any())
+                return;
+
+            // Add default empty plans
+            foreach (DayOfWeek dayOfWeek in (DayOfWeek[])Enum.GetValues(typeof(DayOfWeek)))
+            {
+                foreach(TemplateMeal templateMeal in TemplateMeals)
+                {
+                    Meal meal = new Meal() { Name = templateMeal.Name, Order = templateMeal.Order };
+                    App.DataBaseRepo.AddMealAsync(meal).Wait();
+                    AllMeals.Add(meal);
+                    JournalTemplate journalTemplate = new JournalTemplate() { MealId = meal.Id, DayOfWeek = dayOfWeek };
+                    App.DataBaseRepo.AddJournalTemplateAsync(journalTemplate).Wait();
+                    JournalTemplates.Add(journalTemplate);
+                }
+            }
+        }
+
+        private async void GenerateDefaultMeals(DateTime date, DayOfWeek dayOfWeek)
         {
             // Add log
-            Log currentLog = new Log() { Date = date, UserWeight = User.Weight, UserBodyFat = User.BodyFat };
-            currentLog.Meals = new List<Meal>();
+            Log log = new Log() { Date = date, UserWeight = User.Weight, UserBodyFat = User.BodyFat };
+            log.Meals = new List<Meal>();
 
             // Add log to db
-            await App.DataBaseRepo.AddLogAsync(currentLog);
+            await App.DataBaseRepo.AddLogAsync(log);
+            Logs.Add(log);
 
             // Add meals
             foreach (TemplateMeal templateMeal in TemplateMeals)
             {
-                Meal meal = new Meal() { Name = templateMeal.Name, Order = templateMeal.Order };    
+                Meal meal = new Meal() { Name = templateMeal.Name, Order = templateMeal.Order };
                 await App.DataBaseRepo.AddMealAsync(meal);
                 Meals.Add(meal);
                 AllMeals.Add(meal);
-                currentLog.Meals.Add(meal);
-                var logMeal = new LogMeal() { LogId = currentLog.Id, MealId = meal.Id };
+                log.Meals.Add(meal);
+                var logMeal = new LogMeal() { LogId = log.Id, MealId = meal.Id };
                 await App.DataBaseRepo.AddLogMealAsync(logMeal);
+                LogMeals.Add(logMeal);
             }
 
             // Update log
-            await App.DataBaseRepo.UpdateLogAsync(currentLog);
+            await App.DataBaseRepo.UpdateLogAsync(log);
         }
 
-        private void PopulateMeals(Meal meal)
+        public void PopulateMeal(Meal meal, Meal copyFromMeal = null)
         {
-            foreach (MealAliment mealAliment in MealAliments.Where(x=> x.MealId == meal.Id))
-            {
-                //Meal meal = Meals.Where(x => x.Id == mealAliment.MealId).FirstOrDefault();
-                //if (meal == null)
-                //    continue;
+            int mealId = copyFromMeal != null ? copyFromMeal.Id : meal.Id;
 
+            foreach (MealAliment mealAliment in MealAliments.Where(x => x.MealId == mealId).ToList())
+            {
                 Aliment existingAliment = Aliments.FirstOrDefault(x => x.Id == mealAliment.AlimentId && x.AlimentType == mealAliment.AlimentType);
 
                 if (existingAliment != null)
@@ -257,6 +325,13 @@ namespace MealPlanner.Helpers
                     aliment.ServingSize = mealAliment.ServingSize;
 
                     meal?.Aliments.Add(aliment);
+
+                    if(copyFromMeal != null)
+                    {
+                        MealAliment newMealAliment = new MealAliment() { AlimentId = aliment.Id, MealId = meal.Id, ServingSize = aliment.ServingSize };
+                        App.DataBaseRepo.AddMealAlimentAsync(newMealAliment).Wait();
+                        MealAliments.Add(newMealAliment);
+                    }
 
                     // Update meal values
                     UpdateMealValues(meal);
@@ -544,6 +619,19 @@ namespace MealPlanner.Helpers
                 User.SelectedPhysicalActivityLevel = PhysicalActivityLevels.FirstOrDefault(x => x.PALItemType == User.SelectedPhysicalActivityLevelDB);
                 User.SelectedObjectif = Objectifs.FirstOrDefault(x => x.ObjectifType == User.SelectedObjectiflDB);
             }
+        }
+
+        /// <summary>
+        /// Returns Log for the given date
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public Log GetLog(DateTime date)
+        {
+            if (!Logs.Any())
+                return null;
+
+            return Logs.FirstOrDefault(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day);
         }
 
 

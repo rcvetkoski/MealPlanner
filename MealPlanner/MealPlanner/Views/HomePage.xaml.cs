@@ -13,25 +13,32 @@ namespace MealPlanner.Views
 {
     public partial class HomePage : ContentPage
     {
-        private HomeViewModel viewModel;
         public HomePage()
         {
             InitializeComponent();
-            viewModel = BindingContext as HomeViewModel;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
+            datePicker.DateSelected += DateSelected;
+
             //collectionView.ItemsSource = null;
             //collectionView.ItemsSource = (BindingContext as HomeViewModel).RefData.Meals;
         }
 
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            datePicker.DateSelected -= DateSelected;
+        }
+
+
         private void DateSelected(object sender, DateChangedEventArgs e)
         {
-            viewModel.SetTitle();
-            viewModel.RefData.GetMealsAtDate(e.NewDate);
+            (BindingContext as HomeViewModel).SetTitle();
+            (BindingContext as HomeViewModel).RefData.GetMealsAtDate(e.NewDate, e.NewDate.DayOfWeek);
         }
     }
 }

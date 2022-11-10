@@ -9,8 +9,16 @@ namespace MealPlanner.Services
 {
     public interface IDataBase
     {
+        // JournalTemplate
+        Task<JournalTemplate> GetJournalTemplateAsync(int id);
+        Task<List<JournalTemplate>> GetAllJournalTemplateAsync();
+        Task<int> AddJournalTemplateAsync(JournalTemplate journalTemplate);
+        Task<int> UpdateJournalTemplateAsync(JournalTemplate journalTemplate);
+        Task<int> DropTableJournalTemplate();
+
         // Log
         Task<Log> GetLogAsync(int id);
+        Task<Log> GetLogAsync(DateTime date);
         Task<List<Log>> GetAllLogsAsync();
         Task<int> AddLogAsync(Log log);
         Task<int> UpdateLogAsync(Log log);
@@ -21,6 +29,7 @@ namespace MealPlanner.Services
         Task<List<LogMeal>> GetAllLogMealsAsync();
         Task<int> AddLogMealAsync(LogMeal logMeal);
         Task<int> UpdateLogMealAsync(LogMeal logMeal);
+        Task<int> DeleteLogMealAsync(LogMeal logMeal);
         Task<int> DropTableLogMeal();
 
 

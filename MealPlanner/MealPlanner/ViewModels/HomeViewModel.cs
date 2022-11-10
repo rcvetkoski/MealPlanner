@@ -1,10 +1,12 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers.Extensions;
+using MealPlanner.Models;
 using MealPlanner.Views;
 using MealPlanner.Views.Popups;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Web;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -23,12 +25,16 @@ namespace MealPlanner.ViewModels
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             UpdateAlimentCommand = new Command<object[]>(UpdateAliment);
             AddAlimentCommand = new Command<Meal>(AddAliment);
-            OpenUserPageCommand = new Command(OpenUserPage);
+            DayOptionsCommand = new Command(DayOptions);
             OpenCalendarCommand = new Command<DatePicker>(OpenCalendar);
             PreviousDayCommand = new Command(PreviousDay);
             NextDayCommand = new Command(NextDay);
             ResetCurrentDayCommand = new Command(ResetCurrentDay);
+            CopiedAliments = new List<Aliment>();
         }
+
+        public List<Aliment> CopiedAliments { get; set; }
+        public Log CopiedLog { get; set; }
 
         public DateTime MaximumDate { get; set; }
         public bool NextDayCommandVisible
@@ -41,7 +47,7 @@ namespace MealPlanner.ViewModels
 
         public void SetTitle()
         {
-            Title = RefData.CurrentDay.Day == DateTime.Now.Day ? "Today" : RefData.CurrentDay.ToString(("d MMM"));
+            Title = RefData.CurrentDay.Day == DateTime.Now.Day ? "Today" : RefData.CurrentDay.ToString(("dd MMM"));
         }
 
         public ICommand MealOptionsCommand { get; set; }
@@ -60,20 +66,20 @@ namespace MealPlanner.ViewModels
             {
                 Command = new Command(() => 
                 {
-                    RefData.CopiedAliments.Clear();
+                    CopiedAliments.Clear();
                     foreach(Aliment aliment in meal.Aliments)
-                        RefData.CopiedAliments.Add(RefData.CreateAndCopyAlimentProperties(aliment));
+                        CopiedAliments.Add(RefData.CreateAndCopyAlimentProperties(aliment));
 
                     rSPopup.Close();
                 })
             });
 
-            Label label2 = new Label() { Text = "Paste aliments", IsVisible = RefData.CopiedAliments.Any(), Style = labelStyle };
+            Label label2 = new Label() { Text = "Paste aliments", IsVisible = CopiedAliments.Any(), Style = labelStyle };
             label2.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(() =>
                 {
-                    foreach (Aliment aliment in RefData.CopiedAliments)
+                    foreach (Aliment aliment in CopiedAliments)
                         RefData.AddAliment(aliment, meal);
 
                     rSPopup.Close();
@@ -219,11 +225,99 @@ namespace MealPlanner.ViewModels
         }
 
 
-        public ICommand OpenUserPageCommand { get; set; }
-        private async void OpenUserPage()
+        public ICommand DayOptionsCommand { get; set; }
+        private void DayOptions()
         {
-            //await Shell.Current.GoToAsync($"{nameof(UserPage)}");
-            await App.Current.MainPage.Navigation.PushAsync(new UserPage());        
+            RSPopup rSPopup = new RSPopup("", "", Xamarin.RSControls.Enums.RSPopupPositionEnum.Bottom);
+            rSPopup.Style = Application.Current.Resources["RSPopup"] as Style;
+            rSPopup.SetPopupSize(Xamarin.RSControls.Enums.RSPopupSizeEnum.MatchParent, Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent);
+            rSPopup.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.BottomToTop);
+
+            StackLayout stackLayout = new StackLayout() { Margin = 20, Spacing = 20 };
+            var labelStyle = Application.Current.Resources["LabelSmall"] as Style;
+            Label label = new Label() { Text = RefData.CurrentDay.ToString("dddd, dd, mmmm"), Style = labelStyle, FontAttributes = FontAttributes.Bold };
+            Label label1 = new Label() { Text = "Copy day", Style = labelStyle };
+            label1.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(() =>
+                {
+                    CopiedLog = RefData.GetLog(RefData.CurrentDay);
+                    rSPopup.Close();
+                })
+            });
+
+            bool canCopy = CopiedLog != null ? CopiedLog.Date.Day != RefData.CurrentDay.Day || CopiedLog.Date.Month != RefData.CurrentDay.Month || CopiedLog.Date.Year != RefData.CurrentDay.Year : false;
+            Label label2 = new Label() { Text = "Paste day", IsVisible = CopiedLog != null && canCopy, Style = labelStyle };
+            label2.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    RefData.Meals.Clear();
+
+                    Log currentLog = RefData.GetLog(RefData.CurrentDay);
+
+                    // delette existing meals
+                    foreach (Meal currentMeal in currentLog.Meals)
+                    {
+                        // meals
+                        var currentLogMeal = RefData.LogMeals.FirstOrDefault(x => x.MealId == currentMeal.Id && x.LogId == currentLog.Id);
+                        if (currentLogMeal == null)
+                            continue;
+
+                        await App.DataBaseRepo.DeleteLogMealAsync(currentLogMeal);
+                        RefData.LogMeals.Remove(currentLogMeal);
+
+                        // aliments
+                        foreach (Aliment aliment in currentMeal.Aliments)
+                        {
+                            MealAliment mealAliment = RefData.MealAliments.FirstOrDefault(x => x.MealId == currentMeal.Id && x.AlimentId == aliment.Id);
+                            if (aliment == null)
+                                continue;
+
+                            await App.DataBaseRepo.DeleteMealAlimentAsync(mealAliment);
+                            RefData.MealAliments.Remove(mealAliment);
+                        }
+                    }
+                    currentLog.Meals.Clear();
+
+
+                    foreach (Meal copiedMeal in CopiedLog.Meals)
+                    {
+                        Meal meal = new Meal() { Name = copiedMeal.Name, Order = copiedMeal.Order };
+                        await App.DataBaseRepo.AddMealAsync(meal);
+                        RefData.AllMeals.Add(meal);
+                        RefData.PopulateMeal(meal, copiedMeal);
+                        RefData.Meals.Add(meal);
+
+                        LogMeal logMeal = new LogMeal() { LogId = currentLog.Id, MealId = meal.Id };
+                        await App.DataBaseRepo.AddLogMealAsync(logMeal);
+                        RefData.LogMeals.Add(logMeal);
+                    }
+
+                    CopiedLog = null;
+                    rSPopup.Close();
+                })
+            });
+
+            Label label3 = new Label() { Text = "Import from saved days", Style = labelStyle };
+            Label label4 = new Label() { Text = "Cancel", TextColor = Color.Red };
+
+            label4.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(() =>
+                {
+                    rSPopup.Close();
+                })
+            });
+
+            stackLayout.Children.Add(label);
+            stackLayout.Children.Add(label1);
+            stackLayout.Children.Add(label2);
+            stackLayout.Children.Add(label3);
+            stackLayout.Children.Add(label4);
+            rSPopup.SetCustomView(stackLayout);
+
+            rSPopup.Show();
         }
 
         public ICommand OpenCalendarCommand { get; set; }
@@ -260,6 +354,10 @@ namespace MealPlanner.ViewModels
             //RefData.GetMealsAtDate(RefData.CurrentDay);
             //RefData.UpdateDailyValues();
             OnPropertyChanged(nameof(NextDayCommandVisible));
+        }
+
+        ~HomeViewModel()
+        {
         }
     }
 }

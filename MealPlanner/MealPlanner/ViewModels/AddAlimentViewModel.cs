@@ -59,19 +59,19 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        private bool mealSwitchVisibility;
-        public bool RecipeSwitchVisibility 
+        private bool recipeSwitchVisibility;
+        public bool RecipeSwitchVisibility
         {
             get
-            { 
-                return mealSwitchVisibility;
+            {
+                return recipeSwitchVisibility;
             }
             set
-            { 
-                if(mealSwitchVisibility != value)
+            {
+                if (recipeSwitchVisibility != value)
                 {
-                    mealSwitchVisibility = value;
-                    OnPropertyChanged("MealSwitchVisibility");
+                    recipeSwitchVisibility = value;
+                    OnPropertyChanged("RecipeSwitchVisibility");
                 }
             }
         }
@@ -80,14 +80,14 @@ namespace MealPlanner.ViewModels
 
         private bool isFoodChecked;
         public bool IsFoodChecked
-        { 
+        {
             get
             {
-                return isFoodChecked; 
-            } 
+                return isFoodChecked;
+            }
             set
-            { 
-                if(isFoodChecked != value)
+            {
+                if (isFoodChecked != value)
                 {
                     isFoodChecked = value;
                     OnPropertyChanged("IsFoodChecked");
@@ -96,15 +96,15 @@ namespace MealPlanner.ViewModels
         }
 
         private bool isRecipeChecked;
-        public bool IsRecipeChecked 
-        { 
+        public bool IsRecipeChecked
+        {
             get
-            { 
-                return isRecipeChecked;
-            } 
-            set 
             {
-                if(isRecipeChecked != value)
+                return isRecipeChecked;
+            }
+            set
+            {
+                if (isRecipeChecked != value)
                 {
                     isRecipeChecked = value;
                     OnPropertyChanged("IsRecipeChecked");
@@ -162,9 +162,10 @@ namespace MealPlanner.ViewModels
             rSPopupAlimentDetailPage.BindingContext = new AlimentPopUpViewModel(existingAliment);
             rsPopupBindingContext = rSPopupAlimentDetailPage.BindingContext as AlimentPopUpViewModel;
             rSPopup.SetCustomView(rSPopupAlimentDetailPage);
+            rSPopup.SetMargin(20, 20, 20, 20);
 
             // Add
-            if(SelectedMeal != null)
+            if (SelectedMeal != null)
             {
                 rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(async () =>
                 {

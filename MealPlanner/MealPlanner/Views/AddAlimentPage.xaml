@@ -52,11 +52,12 @@
         <Grid RowDefinitions="Auto,*" ColumnDefinitions="*, Auto">
 
             <rsControls:RSSearchView x:Name="searchBar"
-                       Grid.Row="0" Grid.Column="0"
-                       Placeholder="Search for food"
-                       Style="{StaticResource SearchBar}"
-                       SearchCommand="{Binding SearchAlimentsCommand}"
-                       SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
+                                     Grid.Row="0" Grid.Column="0"
+                                     Placeholder="Search for food"
+                                     TextChanged="searchBar_TextChanged"
+                                     Style="{StaticResource SearchBar}"
+                                     SearchCommand="{Binding SearchAlimentsCommand}"
+                                     SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
 
             <ImageButton Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" Command="{Binding ScanBarCodeCommand}" Margin="5,0,10,0">
                 <ImageButton.Source>

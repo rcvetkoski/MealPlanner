@@ -1,4 +1,5 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers.Enums;
+using MealPlanner.Models;
 using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace MealPlanner.ViewModels
 {
     public class SettingsViewModel : BaseViewModel
     {
+        public List<DayOfWeek> DayOfWeeks { get; set; } 
         public ObservableCollection<TemplateMeal> TempTemplateMeals { get; set; }
         private List<TemplateMeal> NewTemplateMeals;
         private List<TemplateMeal> RemovedTemplateMeals;
@@ -92,18 +94,45 @@ namespace MealPlanner.ViewModels
 
             RemovedTemplateMeals.Clear();
             NewTemplateMeals.Clear();
-            RefData.GetMealsAtDate(DateTime.Now);
+            RefData.GetMealsAtDate(DateTime.Now, DateTime.Now.DayOfWeek);
             RefData.UpdateDailyValues();
             Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+        }
+
+
+        public ICommand DistributionCommand { get; set; }
+        private void Distribution(DayOfWeek dayOfWeek)
+        {
+            RefData.CreateJournalTemplates(dayOfWeek);
+            HomePage homePage = new HomePage();
+            (homePage.BindingContext as HomeViewModel).Title = dayOfWeek.ToString();
+            //Shell.SetNavBarIsVisible(homePage, true);
+            Shell.Current.Navigation.PushModalAsync(homePage);
+            //App.Current.MainPage.Navigation.PushModalAsync(homePage);
+        }
+
+
+        public ICommand OpenUserPageCommand { get; set; }
+        private async void OpenUserPage()
+        {
+            //await Shell.Current.GoToAsync($"{nameof(UserPage)}");
+            await App.Current.MainPage.Navigation.PushAsync(new UserPage());
         }
 
         public SettingsViewModel()
         {
             Title = "Settings";
             SaveCommand = new Command(Save);
+            DayOfWeeks = new List<DayOfWeek>();
             TempTemplateMeals = new ObservableCollection<TemplateMeal>();
             NewTemplateMeals = new List<TemplateMeal>();
             RemovedTemplateMeals = new List<TemplateMeal>();
+            DistributionCommand = new Command<DayOfWeek>(Distribution);
+            OpenUserPageCommand = new Command(OpenUserPage);
+
+
+            foreach (DayOfWeek dayOfWeek in (DayOfWeek[])Enum.GetValues(typeof(DayOfWeek)))
+                DayOfWeeks.Add(dayOfWeek);  
 
             foreach (TemplateMeal templateMeal in RefData.TemplateMeals)
                 TempTemplateMeals.Add(new TemplateMeal() { Name = templateMeal.Name, Order = templateMeal.Order});

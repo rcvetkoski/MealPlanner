@@ -19,5 +19,13 @@ namespace MealPlanner.Views
         {
             InitializeComponent();
         }
+
+        private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(e.NewTextValue))
+            {
+                (BindingContext as AddAlimentViewModel).FilteredAlimentsRefresh();
+            }
+        }
     }
 }

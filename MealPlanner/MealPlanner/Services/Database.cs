@@ -6,6 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.IO;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -31,6 +33,7 @@ namespace MealPlanner.Services
 
         private Task CreateTables()
         {
+            dbConnection.CreateTableAsync<JournalTemplate>();
             dbConnection.CreateTableAsync<Log>();
             dbConnection.CreateTableAsync<LogMeal>();
             dbConnection.CreateTableAsync<User>();
@@ -52,6 +55,61 @@ namespace MealPlanner.Services
             }
         }
 
+        #region JournalTemplate
+
+        /// <summary>
+        /// Returns a JournalTemplate object
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<JournalTemplate> GetJournalTemplateAsync(int id)
+        {
+            return dbConnection.GetAsync<JournalTemplate>(id);
+        }
+
+        /// <summary>
+        /// Returns a list of JournalTemplates
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<JournalTemplate>> GetAllJournalTemplateAsync()
+        {
+            return dbConnection.Table<JournalTemplate>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts new JournalTemplate in database
+        /// </summary>
+        /// <param name="journalTemplate"></param>
+        /// <returns></returns>
+        public Task<int> AddJournalTemplateAsync(JournalTemplate journalTemplate)
+        {
+            return dbConnection.InsertAsync(journalTemplate);
+        }
+
+        /// <summary>
+        /// Updates a JournalTemplate in database if it exists
+        /// </summary>
+        /// <param name="journalTemplate"></param>
+        /// <returns></returns>
+        public Task<int> UpdateJournalTemplateAsync(JournalTemplate journalTemplate)
+        {
+            if (GetJournalTemplateAsync(journalTemplate.Id) != null)
+                return dbConnection.UpdateAsync(journalTemplate);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableJournalTemplate()
+        {
+            return dbConnection.DropTableAsync<JournalTemplate>();
+        }
+
+        #endregion
+
         #region Log
 
         /// <summary>
@@ -62,6 +120,17 @@ namespace MealPlanner.Services
         public Task<Log> GetLogAsync(int id)
         {
             return dbConnection.GetAsync<Log>(id);
+        }
+
+        /// <summary>
+        /// Returns a Log object
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public async Task<Log> GetLogAsync(DateTime date)
+        {
+            var list = await dbConnection.Table<Log>().ToListAsync();
+            return list.FirstOrDefault(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day);
         }
 
         /// <summary>
@@ -149,6 +218,16 @@ namespace MealPlanner.Services
                 return dbConnection.UpdateAsync(logMeal);
             else
                 return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Deletes a LogMeal from database
+        /// </summary>
+        /// <param name="logMeal"></param>
+        /// <returns></returns>
+        public Task<int> DeleteLogMealAsync(LogMeal logMeal)
+        {
+            return dbConnection.DeleteAsync(logMeal);
         }
 
         /// <summary>

@@ -5,6 +5,7 @@
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding Title}"
+             x:Name="settingsPage"
              x:Class="MealPlanner.Views.SettingsPage">
 
     <ContentPage.BindingContext>
@@ -25,6 +26,24 @@
         <ScrollView Orientation="Vertical">
 
             <StackLayout Padding="15">
+
+                <Label Style="{StaticResource LabelMedium}" Text="User settings"/>
+                <Frame Style="{StaticResource UserCard}">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="User settings"/>
+                        <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Source>
+                                <FontImageSource Size="Title" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUserPageCommand}" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </Frame>
+
                 <Label Style="{StaticResource LabelMedium}" Text="Units"/>
                 <Frame Style="{StaticResource UserCard}">
                     <StackLayout>
@@ -51,14 +70,14 @@
                 <Label Style="{StaticResource LabelMedium}" Text="Distribution"/>
                 <Frame Style="{StaticResource UserCard}">
                     <StackLayout>
-                        <rsControls:RSPicker Placeholder="Modele"/>
-                        <Button Text="Monday"/>
-                        <Button Text="Tuesday"/>
-                        <Button Text="Wendsday"/>
-                        <Button Text="Thursday"/>
-                        <Button Text="Friday"/>
-                        <Button Text="Suturday"/>
-                        <Button Text="Sunday"/>
+                        <rsControls:RSPicker Placeholder="Modele" IsVisible="{Binding RefData.UsePredifinedPlan}"/>
+                        <StackLayout BindableLayout.ItemsSource="{Binding DayOfWeeks}" IsVisible="{Binding RefData.UsePredifinedPlan}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Button Text="{Binding .}" Command="{Binding BindingContext.DistributionCommand, Source={x:Reference settingsPage}}" CommandParameter="{Binding .}"/>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
                     </StackLayout>
                 </Frame>
 
