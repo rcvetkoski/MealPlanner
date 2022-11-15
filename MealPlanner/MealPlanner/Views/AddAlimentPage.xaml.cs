@@ -19,9 +19,30 @@ namespace MealPlanner.Views
         public AddAlimentPage()
         {
             InitializeComponent();
+
+            Shell.SetBackButtonBehavior(this, new BackButtonBehavior()
+            {
+                Command = new Command(BackButtonCommand)
+            });
+
             TempToolbarItems = new List<ToolbarItem>();
             foreach (ToolbarItem item in ToolbarItems)
                 TempToolbarItems.Add(item);
+        }
+
+        private async void BackButtonCommand()
+        {
+            if(entry.IsVisible)
+            {
+                foreach (ToolbarItem item in TempToolbarItems)
+                    ToolbarItems.Add(item);
+
+                title.IsVisible = true;
+                entry.IsVisible = false;
+                entry.TranslationX = entry.Width;
+            }
+            else
+                await Shell.Current.GoToAsync("..", true);
         }
 
         private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
@@ -37,6 +58,7 @@ namespace MealPlanner.Views
 
                     title.IsVisible = true;
                     entry.IsVisible = false;
+                    entry.TranslationX = entry.Width;
                 }
             }
         }
@@ -46,6 +68,9 @@ namespace MealPlanner.Views
             this.ToolbarItems.Clear();
             title.IsVisible = false;
             entry.IsVisible = true;
+
+            entry.TranslateTo(0, 0);
+            entry.Focus();
         }
     }
 }

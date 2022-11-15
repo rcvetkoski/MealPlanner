@@ -40,13 +40,6 @@ namespace MealPlanner.ViewModels
             ScanBarCodeCommand = new Command(ScanBarCode);
             SearchAlimentsCommand = new Command<string>(SearchAliments);
             OpenFiltersCommand = new Command(openFIlters);
-            BackButtonBehavior = new BackButtonBehavior();
-            BackButtonBehavior.Command = new Command(async () =>
-            {
-                
-
-                await Shell.Current.GoToAsync("..", true);
-            });
 
             FilteredAlimentsRefresh();
         }
@@ -331,7 +324,5 @@ namespace MealPlanner.ViewModels
                 rSPopup.Show();
             }
         }
-
-        public BackButtonBehavior BackButtonBehavior { get; set; }  
     }
 }

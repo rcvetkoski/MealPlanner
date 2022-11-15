@@ -7,7 +7,7 @@
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
              xmlns:rsControlsHelpers="clr-namespace:Xamarin.RSControls.Helpers;assembly=Xamarin.RSControls"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
-             Title="{Binding Title}" Shell.BackButtonBehavior="{Binding BackButtonBehavior}"
+             Title="{Binding Title}"
              x:Name="addAlimentPage">
 
     <ContentPage.BindingContext>
@@ -29,7 +29,7 @@
                        Grid.Row="0" Grid.Column="0" 
                        Placeholder="Search for food"
                        Keyboard="Chat"
-                       IsVisible="False"
+                       IsVisible="False" TranslationX="{Binding Path=Width, Source={x:Reference entry}}"
                        ReturnCommand="{Binding SearchAlimentsCommand}"
                        ReturnCommandParameter="{Binding Text, Source={x:Reference entry}}"
                        />
@@ -48,21 +48,21 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Priority="0" Command="{Binding ScanBarCodeCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Size="Medium" 
+                <FontImageSource Size="20" 
                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                  Glyph="{x:Static helpers:FontAwesomeIcons.Barcode}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
         <ToolbarItem Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Size="Medium" 
+                <FontImageSource Size="20" 
                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                  Glyph="{x:Static helpers:FontAwesomeIcons.MagnifyingGlass}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
         <ToolbarItem Order="Primary" Priority="2" Command="{Binding OpenFiltersCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Size="Title"
+                <FontImageSource Size="22"
                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                  Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
