@@ -3,6 +3,7 @@ using MealPlanner.Models;
 using MealPlanner.ViewModels;
 using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;

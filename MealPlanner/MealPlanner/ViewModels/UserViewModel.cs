@@ -35,5 +35,11 @@ namespace MealPlanner.ViewModels
                 }
             }
         }
+
+
+        ~UserViewModel()
+        {
+
+        }
     }
 }

@@ -10,5 +10,10 @@ namespace MealPlanner.ViewModels
         {
             Title = "Statistics";
         }
+
+        ~StatisticsViewModel()
+        {
+
+        }
     }
 }

@@ -220,8 +220,9 @@ namespace MealPlanner.ViewModels
         {
             AddAlimentPage addAlimentPage = new AddAlimentPage();
             (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedMeal = meal;
-            await App.Current.MainPage.Navigation.PushAsync(addAlimentPage);        
-            //await Shell.Current.GoToAsync($"AddAlimentPage");
+            await App.Current.MainPage.Navigation.PushAsync(addAlimentPage);
+
+            //await Shell.Current.Navigation.PushAsync(new StatisticsPage());
         }
 
 
@@ -358,6 +359,7 @@ namespace MealPlanner.ViewModels
 
         ~HomeViewModel()
         {
+            Console.WriteLine(Title);
         }
     }
 }

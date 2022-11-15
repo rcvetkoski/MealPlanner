@@ -36,7 +36,7 @@ namespace MealPlanner.ViewModels
 
             CreateFoodCommand = new Command(CreateFood);
             SelectAlimentCommand = new Command<Aliment>(SelectAliment);
-            CreateMealCommand = new Command(CreateMeal);
+            CreateRecipeCommand = new Command(CreateRecipe);
             ScanBarCodeCommand = new Command(ScanBarCode);
             SearchAlimentsCommand = new Command<string>(SearchAliments);
             OpenFiltersCommand = new Command(openFIlters);
@@ -187,7 +187,6 @@ namespace MealPlanner.ViewModels
                         // Set RecipeFoodId to 0
                         food.RecipeFoodId = 0;
 
-
                         CurrentRecipe.Foods.Add(food);
                     }
 
@@ -195,7 +194,25 @@ namespace MealPlanner.ViewModels
                     //await Shell.Current.GoToAsync("..");
                     await Application.Current.MainPage.Navigation.PopAsync();
                 }));
+            }
+            else
+            {
+                rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(async () =>
+                {
+                    var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
+                    Food food = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio) as Food;
+                    food.ServingSize = rsPopupBindingContext.AlimentServingSize;
 
+                    // Set RecipeFoodId to 0
+                    food.RecipeFoodId = 0;
+
+
+                    CurrentRecipe.Foods.Add(food);
+
+                    //rSPopup.Close();
+                    //await Shell.Current.GoToAsync("..");
+                    await Application.Current.MainPage.Navigation.PopAsync();
+                }));
             }
 
             // Edit
@@ -228,7 +245,7 @@ namespace MealPlanner.ViewModels
         public ICommand CreateFoodCommand { get; set; }
         private async void CreateFood()
         {
-            rSPopupFilter.Close();
+            rSPopupFilter?.Close();
             FoodPage foodPage = new FoodPage();
             (foodPage.BindingContext as FoodViewModel).CurrentAliment = new Food();
             (foodPage.BindingContext as FoodViewModel).IsNew = true;
@@ -236,10 +253,10 @@ namespace MealPlanner.ViewModels
             //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
         }
 
-        public ICommand CreateMealCommand { get; set; }
-        private async void CreateMeal()
+        public ICommand CreateRecipeCommand { get; set; }
+        private async void CreateRecipe()
         {
-            rSPopupFilter.Close();
+            rSPopupFilter?.Close();
             RecipePage mealPage = new RecipePage();
             (mealPage.BindingContext as RecipeViewModel).CurrentAliment = new Recipe();
             //await Shell.Current.GoToAsync($"{nameof(RecipePage)}");
@@ -323,6 +340,11 @@ namespace MealPlanner.ViewModels
                 RSPopup rSPopup = new RSPopup("", ex.Message);
                 rSPopup.Show();
             }
+        }
+
+        ~AddAlimentViewModel()
+        {
+
         }
     }
 }

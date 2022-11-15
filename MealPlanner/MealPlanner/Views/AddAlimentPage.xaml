@@ -60,17 +60,17 @@
                                  Glyph="{x:Static helpers:FontAwesomeIcons.MagnifyingGlass}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-        <ToolbarItem Order="Primary" Priority="2" Command="{Binding OpenFiltersCommand}">
+        <!--<ToolbarItem Order="Primary" Priority="2" Command="{Binding OpenFiltersCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Size="22"
                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                  Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
-            </ToolbarItem>
+            </ToolbarItem>-->
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <Grid RowDefinitions="*" ColumnDefinitions="*, Auto">
+        <Grid RowDefinitions="Auto,*" ColumnDefinitions="*, *">
 
             <!--<rsControls:RSSearchView x:Name="searchBar"
                                      Grid.Row="0" Grid.Column="0"
@@ -87,8 +87,42 @@
                 </ImageButton.Source>
             </ImageButton>-->
 
+            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ColumnSpacing="0" RowSpacing="0"
+                  Padding="0, 10, 0, 0"
+                  RowDefinitions="Auto, 2"
+                  BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                <Button x:Name="foodButton"
+                        Grid.Row="0" Grid.Column="0" 
+                        Text="Food" 
+                        TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                        FontSize="Small" FontAttributes="Bold" 
+                        Clicked="FilterSwitch"/>
+                <Button x:Name="recipeButton"
+                        Grid.Row="0" Grid.Column="1" 
+                        IsVisible="{Binding RecipeSwitchVisibility}" 
+                        TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                        Text="Recipes" 
+                        FontSize="Small" Clicked="FilterSwitch"/>
+                <Button Grid.Row="0" Grid.Column="2"
+                        Text="+ New" 
+                        TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                        FontSize="Small"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="CreateNew"/>
+                <BoxView x:Name="slider" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                         HorizontalOptions="Start"
+                         VerticalOptions="End"
+                         WidthRequest="{Binding Path=Width, Source={x:Reference foodButton}}" 
+                         HeightRequest="2"
+                         BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"/>
+            </Grid>
 
-            <CollectionView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.FilteredAliments}">
+
+
+            <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.FilteredAliments}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,Auto" Padding="7" RowSpacing="2">

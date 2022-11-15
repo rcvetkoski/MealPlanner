@@ -34,6 +34,10 @@ namespace MealPlanner.Views
         {
             if(entry.IsVisible)
             {
+                (BindingContext as AddAlimentViewModel).FilteredAlimentsRefresh();
+
+                await slider.TranslateTo(foodButton.Width, 0);
+
                 foreach (ToolbarItem item in TempToolbarItems)
                     ToolbarItems.Add(item);
 
@@ -71,6 +75,38 @@ namespace MealPlanner.Views
 
             entry.TranslateTo(0, 0);
             entry.Focus();
+        }
+
+        private async void FilterSwitch(object sender, EventArgs e)
+        {
+            double x = 0;
+
+            if(sender == foodButton)
+            {
+                x = 0;
+                foodButton.FontAttributes = FontAttributes.Bold;
+                recipeButton.FontAttributes = FontAttributes.None;
+                (BindingContext as AddAlimentViewModel).IsRecipeChecked = false;
+                (BindingContext as AddAlimentViewModel).IsFoodChecked = true;
+            }
+            else
+            {
+                x = (sender as View).Width;
+                foodButton.FontAttributes = FontAttributes.None;
+                recipeButton.FontAttributes = FontAttributes.Bold;
+                (BindingContext as AddAlimentViewModel).IsFoodChecked = false;
+                (BindingContext as AddAlimentViewModel).IsRecipeChecked = true;
+            }
+
+            await slider.TranslateTo(x, 0);
+        }
+
+        private void CreateNew(object sender, EventArgs e)
+        {
+            if ((BindingContext as AddAlimentViewModel).IsFoodChecked)
+                (BindingContext as AddAlimentViewModel).CreateFoodCommand.Execute(null);
+            else
+                (BindingContext as AddAlimentViewModel).CreateRecipeCommand.Execute(null);
         }
     }
 }
