@@ -7,51 +7,72 @@
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
              xmlns:rsControlsHelpers="clr-namespace:Xamarin.RSControls.Helpers;assembly=Xamarin.RSControls"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
-             Title="{Binding Title}" 
+             Title="{Binding Title}" Shell.BackButtonBehavior="{Binding BackButtonBehavior}"
              x:Name="addAlimentPage">
 
     <ContentPage.BindingContext>
         <vm:AddAlimentViewModel/>
     </ContentPage.BindingContext>
 
-    <!--<Shell.TitleView>
+    <Shell.TitleView>
         <ContentView>
             <Grid x:Name="gridToolbar"
-                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, Auto"
-                  HeightRequest="{OnPlatform iOS=44}" BackgroundColor="Red"
+                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*"
+                  HeightRequest="{OnPlatform iOS=44}"
                   HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                 <Label Grid.Row="0" Grid.Column="0"
+                       x:Name="title"
                        Text="{Binding Title}"
                        Style="{StaticResource NavigationBarLabel}"
                        VerticalOptions="Center"/>
-                <Button x:Name="button"
-                             Grid.Row="0" Grid.Column="1"
-                             WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
-                             VerticalOptions="FillAndExpand" 
-                             BackgroundColor="Transparent"
-                             Command="{Binding OpenFiltersCommand}" CommandParameter="{x:Reference button}">
-                    <Button.ImageSource>
-                        <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                         Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
-                    </Button.ImageSource>
-                </Button>
+                <Entry x:Name="entry"
+                       Grid.Row="0" Grid.Column="0" 
+                       Placeholder="Search for food"
+                       Keyboard="Chat"
+                       IsVisible="False"
+                       ReturnCommand="{Binding SearchAlimentsCommand}"
+                       ReturnCommandParameter="{Binding Text, Source={x:Reference entry}}"
+                       />
+
+                <!--<rsControls:RSSearchView x:Name="bar" IsVisible="False"
+                                     Grid.Row="0" Grid.Column="0"
+                                     Placeholder="Search for food" BackgroundColor="Red"
+                                     TextChanged="searchBar_TextChanged"
+                                     Style="{StaticResource SearchBar}"
+                                     SearchCommand="{Binding SearchAlimentsCommand}"
+                                     SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>-->
             </Grid>
         </ContentView>
-    </Shell.TitleView>-->
+    </Shell.TitleView>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Priority="0" Command="{Binding OpenFiltersCommand}">
+        <ToolbarItem Order="Primary" Priority="0" Command="{Binding ScanBarCodeCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                <FontImageSource Size="Medium" 
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.Barcode}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        <ToolbarItem Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Size="Medium" 
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.MagnifyingGlass}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        <ToolbarItem Order="Primary" Priority="2" Command="{Binding OpenFiltersCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Size="Title"
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                  Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
             </ToolbarItem>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <Grid RowDefinitions="Auto,*" ColumnDefinitions="*, Auto">
+        <Grid RowDefinitions="*" ColumnDefinitions="*, Auto">
 
-            <rsControls:RSSearchView x:Name="searchBar"
+            <!--<rsControls:RSSearchView x:Name="searchBar"
                                      Grid.Row="0" Grid.Column="0"
                                      Placeholder="Search for food"
                                      TextChanged="searchBar_TextChanged"
@@ -64,10 +85,10 @@
                     <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                      Glyph="{x:Static helpers:FontAwesomeIcons.Barcode}" FontFamily="FA-Solid"/>
                 </ImageButton.Source>
-            </ImageButton>
+            </ImageButton>-->
 
 
-            <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.FilteredAliments}">
+            <CollectionView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.FilteredAliments}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,Auto" Padding="7" RowSpacing="2">

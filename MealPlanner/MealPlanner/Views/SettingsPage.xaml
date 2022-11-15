@@ -70,8 +70,8 @@
                 <Label Style="{StaticResource LabelMedium}" Text="Distribution"/>
                 <Frame Style="{StaticResource UserCard}">
                     <StackLayout>
-                        <rsControls:RSPicker Placeholder="Modele" IsVisible="{Binding RefData.UsePredifinedPlan}"/>
-                        <StackLayout BindableLayout.ItemsSource="{Binding DayOfWeeks}" IsVisible="{Binding RefData.UsePredifinedPlan}">
+                        <rsControls:RSPicker Placeholder="Modele"/>
+                        <StackLayout BindableLayout.ItemsSource="{Binding DayOfWeeks}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <Button Text="{Binding .}" Command="{Binding BindingContext.DistributionCommand, Source={x:Reference settingsPage}}" CommandParameter="{Binding .}"/>
