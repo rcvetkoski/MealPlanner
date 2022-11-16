@@ -25,6 +25,7 @@ namespace MealPlanner.Droid
             DependencyService.Register<IImageService, ImageServiceDroid>();
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Android.Glide.Forms.Init(this);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

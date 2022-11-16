@@ -26,7 +26,6 @@ namespace MealPlanner.Helpers
         public ObservableCollection<Food> Foods { get; set; }
         public ObservableCollection<RecipeFood> RecipeFoods { get; set; }
         public ObservableCollection<Aliment> Aliments { get; set; }
-        public ObservableCollection<Aliment> FilteredAliments { get; set; }
         public ObservableCollection<MealAliment> MealAliments { get; set; }
         public ObservableCollection<JournalTemplate> JournalTemplates { get; set; }
 
@@ -97,7 +96,6 @@ namespace MealPlanner.Helpers
 
             // Aliments
             Aliments = new ObservableCollection<Aliment>();
-            FilteredAliments = new ObservableCollection<Aliment>();
 
             foreach (Recipe recipe in Recipes)
                 Aliments.Add(recipe);

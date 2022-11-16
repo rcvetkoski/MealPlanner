@@ -2,6 +2,7 @@
 using MealPlanner.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -23,6 +24,9 @@ namespace MealPlanner.ViewModels
             UpdateCommand = new Command(UpdateFood);
         }
 
+        public ObservableCollection<Aliment> CopyOfFilteredAliments { get; set; }
+
+
         private void CalculateCalories()
         {
             //Calories = Proteins * 4 + Carbs * 4 + Fats * 9;
@@ -38,7 +42,7 @@ namespace MealPlanner.ViewModels
             await App.DataBaseRepo.AddFoodAsync(CurrentAliment as Food);
             RefData.Foods.Add(CurrentAliment as Food);
             RefData.Aliments.Add(CurrentAliment as Food);
-            RefData.FilteredAliments.Add(CurrentAliment as Food);
+            CopyOfFilteredAliments.Add(CurrentAliment as Food);
             //await Shell.Current.GoToAsync("..");
             await Application.Current.MainPage.Navigation.PopAsync();
         }

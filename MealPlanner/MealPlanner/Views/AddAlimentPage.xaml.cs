@@ -34,9 +34,14 @@ namespace MealPlanner.Views
         {
             if(entry.IsVisible)
             {
-                (BindingContext as AddAlimentViewModel).FilteredAlimentsRefresh();
+                if(!string.IsNullOrEmpty(entry.Text))
+                {
+                    entry.Text = string.Empty;
+                    (BindingContext as AddAlimentViewModel).FilteredAlimentsRefresh();
+                }
 
-                await slider.TranslateTo(foodButton.Width, 0);
+                entry.FadeTo(0);
+                await entry.TranslateTo(entry.Width, 0);
 
                 foreach (ToolbarItem item in TempToolbarItems)
                     ToolbarItems.Add(item);
@@ -50,21 +55,8 @@ namespace MealPlanner.Views
         }
 
         private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(e.NewTextValue))
-            {
-                (BindingContext as AddAlimentViewModel).FilteredAlimentsRefresh();
-
-                if(!this.ToolbarItems.Any())
-                {
-                    foreach (ToolbarItem item in TempToolbarItems)
-                        ToolbarItems.Add(item);
-
-                    title.IsVisible = true;
-                    entry.IsVisible = false;
-                    entry.TranslationX = entry.Width;
-                }
-            }
+        {  
+            (BindingContext as AddAlimentViewModel).Search(); 
         }
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
@@ -73,6 +65,7 @@ namespace MealPlanner.Views
             title.IsVisible = false;
             entry.IsVisible = true;
 
+            entry.FadeTo(1);
             entry.TranslateTo(0, 0);
             entry.Focus();
         }

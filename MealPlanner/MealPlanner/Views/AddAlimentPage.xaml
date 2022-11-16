@@ -29,6 +29,9 @@
                        Grid.Row="0" Grid.Column="0" 
                        Placeholder="Search for food"
                        Keyboard="Chat"
+                       Opacity="0"
+                       Text="{Binding Query}"
+                       TextChanged="searchBar_TextChanged"
                        IsVisible="False" TranslationX="{Binding Path=Width, Source={x:Reference entry}}"
                        ReturnCommand="{Binding SearchAlimentsCommand}"
                        ReturnCommandParameter="{Binding Text, Source={x:Reference entry}}"
@@ -96,7 +99,8 @@
                         Text="Food" 
                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                        FontSize="Small" FontAttributes="Bold" 
+                        FontAttributes="Bold" 
+                        FontSize="Small" 
                         Clicked="FilterSwitch"/>
                 <Button x:Name="recipeButton"
                         Grid.Row="0" Grid.Column="1" 
@@ -109,7 +113,7 @@
                         Text="+ New" 
                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                        FontSize="Small"
+                        FontSize="Small" 
                         HorizontalOptions="CenterAndExpand"
                         Clicked="CreateNew"/>
                 <BoxView x:Name="slider" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
@@ -122,7 +126,7 @@
 
 
 
-            <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.FilteredAliments}">
+            <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding FilteredAliments}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,Auto" Padding="7" RowSpacing="2">
