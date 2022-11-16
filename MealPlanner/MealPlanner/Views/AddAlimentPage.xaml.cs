@@ -48,6 +48,7 @@ namespace MealPlanner.Views
 
                 title.IsVisible = true;
                 entry.IsVisible = false;
+                cancelButton.IsVisible = false;
                 entry.TranslationX = entry.Width;
             }
             else
@@ -64,6 +65,7 @@ namespace MealPlanner.Views
             this.ToolbarItems.Clear();
             title.IsVisible = false;
             entry.IsVisible = true;
+            cancelButton.IsVisible = true;
 
             entry.FadeTo(1);
             entry.TranslateTo(0, 0);

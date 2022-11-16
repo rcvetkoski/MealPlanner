@@ -42,8 +42,8 @@ namespace MealPlanner.ViewModels
             ScanBarCodeCommand = new Command(ScanBarCode);
             SearchAlimentsCommand = new Command<string>(SearchAliments);
             OpenFiltersCommand = new Command(openFIlters);
+            ClearSearchCommand = new Command(ClearSearch);
 
-            
             //FilteredAlimentsRefresh();
         }
 
@@ -51,7 +51,23 @@ namespace MealPlanner.ViewModels
         public ObservableCollection<Aliment> FilteredAliments { get; set; }
 
         private RSPopup rSPopupFilter;
-        public string Query { get; set; }
+
+        private string query;
+        public string Query
+        {
+            get
+            {
+                return query;
+            }
+            set
+            {
+                if(value != query)
+                {
+                    query = value;
+                    OnPropertyChanged(nameof(Query));
+                }
+            }
+        }
 
         private bool recipeSwitchVisibility;
         public bool RecipeSwitchVisibility
@@ -374,6 +390,16 @@ namespace MealPlanner.ViewModels
 
             foreach (var item in searchedList)
                 FilteredAliments.Add(item);
+        }
+
+        public ICommand ClearSearchCommand { get; set; }
+        private void ClearSearch()
+        {
+            if (string.IsNullOrEmpty(Query))
+                return;
+
+            Query = string.Empty;
+            FilteredAlimentsRefresh();
         }
 
         ~AddAlimentViewModel()

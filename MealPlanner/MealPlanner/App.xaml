@@ -115,6 +115,11 @@
                 <Setter Property="PlaceholderColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
             </Style>
 
+            <Style x:Key="EntrySearch" TargetType="Entry" BasedOn="{StaticResource BaseEntry}">
+                <Setter Property="FontSize" Value="Body"/>
+                <Setter Property="PlaceholderColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
+            </Style>
+
             <Style x:Key="BasePicker" TargetType="Picker">
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
                 <Setter Property="TitleColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
