@@ -89,8 +89,8 @@
     <ContentPage.Content>
         <Grid RowDefinitions="Auto,*" ColumnDefinitions="*, *">
 
-            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ColumnSpacing="0" RowSpacing="0"
-                  RowDefinitions="Auto, 2"
+            <Grid x:Name="gridBar" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ColumnSpacing="0" RowSpacing="0"
+                  RowDefinitions="Auto, 2" ColumnDefinitions="*, *, *, Auto"
                   BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                 <Button x:Name="foodButton"
                         Grid.Row="0" Grid.Column="0" 
@@ -111,16 +111,21 @@
                         Text="+ New" 
                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                        FontSize="Small" 
                         HorizontalOptions="CenterAndExpand"
+                        FontSize="Small" 
                         Clicked="CreateNew"/>
                 <Button Grid.Row="0" Grid.Column="3"
-                        Text="+ New" 
                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                         FontSize="Small" 
-                        HorizontalOptions="CenterAndExpand"
-                        Clicked="CreateNew"/>
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                        HorizontalOptions="End"
+                        WidthRequest="{Binding Path=Height, Source={x:Reference gridBar}}">
+                    <Button.ImageSource>
+                        <FontImageSource Size="14" 
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.Filter}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
                 <BoxView x:Name="slider" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                          HorizontalOptions="Start"
                          VerticalOptions="End"
