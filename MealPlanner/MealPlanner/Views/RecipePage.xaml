@@ -7,7 +7,8 @@
              xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" 
              xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
-             x:Name="mealPage"
+             xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls"
+             x:Name="recipePage"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Class="MealPlanner.Views.RecipePage">
 
@@ -50,7 +51,7 @@
                          IsVisible="{Binding IsNew}"
                          BackgroundColor="Transparent"
                          VerticalOptions="FillAndExpand"
-                         Command="{Binding SaveCommand}">
+                         Command="{Binding SaveCommand}" CommandParameter="{x:Reference recipePage}">
                     <Button.ImageSource>
                         <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
@@ -62,7 +63,7 @@
                          IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}"
                          BackgroundColor="Transparent"
                          VerticalOptions="FillAndExpand"
-                         Command="{Binding UpdateCommand}">
+                         Command="{Binding UpdateCommand}" CommandParameter="{x:Reference recipePage}">
                     <Button.ImageSource>
                         <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
@@ -84,9 +85,43 @@
                              Source="{Binding CurrentAliment.ImageSource}" 
                              Command="{Binding AddImageCommand}" CommandParameter="{Binding CurrentAliment}"/>
 
-                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Entry}" Placeholder="Name" Text="{Binding CurrentAliment.Name}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Style="{StaticResource Entry}" x:Name="ServingSize" Placeholder="Serving Size" Value="{Binding CurrentAliment.ServingSize}" IsPlaceholderAlwaysFloating="True"/>
-                <rsControls:RSEnumPicker Grid.Row="2" Grid.Column="1" Style="{StaticResource Picker}" x:TypeArguments="enums:AlimentUnitEnum" Placeholder="Unit" SelectedItem="{Binding CurrentAliment.Unit}" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                                    x:Name="nameEntry"
+                                    Style="{StaticResource Entry}" 
+                                    Placeholder="Name" 
+                                    Text="{Binding CurrentAliment.Name}"
+                                    Helper="Mandatory" 
+                                    IsPlaceholderAlwaysFloating="True">
+                    <rsControls:RSEntry.Behaviors>
+                        <validators:ValidationBehaviour PropertyName="Text">
+                            <validators:ValidationBehaviour.Validators>
+                                <validators:RequiredValidation/>
+                            </validators:ValidationBehaviour.Validators>
+                        </validators:ValidationBehaviour>
+                    </rsControls:RSEntry.Behaviors>
+                </rsControls:RSEntry>
+                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" 
+                                           Style="{StaticResource Entry}"
+                                           x:Name="servingSizeEntry"
+                                           Placeholder="Serving Size" 
+                                           Value="{Binding CurrentAliment.ServingSize}" 
+                                           IsPlaceholderAlwaysFloating="True">
+                    <rsControls:RSNumericEntry.Behaviors>
+                        <validators:ValidationBehaviour PropertyName="Value">
+                            <validators:ValidationBehaviour.Validators>
+                                <validators:RequiredValidation/>
+                                <validators:DifferentThanValidation x:TypeArguments="x:Double" Value="0"/>
+                            </validators:ValidationBehaviour.Validators>
+                        </validators:ValidationBehaviour>
+                    </rsControls:RSNumericEntry.Behaviors>
+                </rsControls:RSNumericEntry>
+                <rsControls:RSEnumPicker Grid.Row="2" Grid.Column="1"
+                                         Style="{StaticResource Picker}"
+                                         x:TypeArguments="enums:AlimentUnitEnum"
+                                         Placeholder="Unit" 
+                                         SelectedItem="{Binding CurrentAliment.Unit}"
+                                         IsPlaceholderAlwaysFloating="True"/>
+
                 <rsControls:RSEditor Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Description" Text="{Binding CurrentAliment.Description}" IsPlaceholderAlwaysFloating="True"/>
 
                 <!--<Button Grid.Row="4" Grid.Column="0" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Command="{Binding AddFoodCommand}"/>
@@ -99,10 +134,10 @@
                             <SwipeView Style="{StaticResource SwipeView}">
                                 <SwipeView.RightItems>
                                     <SwipeItems>
-                                        <SwipeItem Text="Delete" BackgroundColor="Red" Command="{Binding BindingContext.DeletteAlimentCommand, Source={x:Reference mealPage}}">
+                                        <SwipeItem Text="Delete" BackgroundColor="Red" Command="{Binding BindingContext.DeletteAlimentCommand, Source={x:Reference recipePage}}">
                                             <SwipeItem.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource MultiBindingConverter}">
-                                                    <Binding Path="BindingContext.CurrentAliment" Source="{x:Reference mealPage}"/>
+                                                    <Binding Path="BindingContext.CurrentAliment" Source="{x:Reference recipePage}"/>
                                                     <Binding Path="."/>
                                                 </MultiBinding>
                                             </SwipeItem.CommandParameter>

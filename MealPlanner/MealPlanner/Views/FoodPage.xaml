@@ -6,7 +6,9 @@
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
              xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
+             xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls"
              x:Class="MealPlanner.Views.FoodPage"
+             x:Name="foodPage"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding Title}">
 
@@ -38,7 +40,7 @@
                          IsVisible="{Binding IsNew}"
                          BackgroundColor="Transparent"
                          VerticalOptions="FillAndExpand"
-                         Command="{Binding SaveCommand}">
+                         Command="{Binding SaveCommand}" CommandParameter="{x:Reference foodPage}">
                     <Button.ImageSource>
                         <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
@@ -50,7 +52,7 @@
                          IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}"
                          BackgroundColor="Transparent"
                          VerticalOptions="FillAndExpand"
-                         Command="{Binding UpdateCommand}">
+                         Command="{Binding UpdateCommand}" CommandParameter="{x:Reference foodPage}">
                     <Button.ImageSource>
                         <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
@@ -87,7 +89,22 @@
                              Source="{Binding CurrentAliment.ImageSource}"
                              Command="{Binding AddImageCommand}" CommandParameter="{Binding CurrentAliment}"/>
 
-                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource Entry}" Helper="Mandatory" Placeholder="Name" Text="{Binding CurrentAliment.Name}" FontAttributes="Bold" IsPlaceholderAlwaysFloating="True" />
+                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+                                    x:Name="nameEntry"
+                                    Style="{StaticResource Entry}" 
+                                    Helper="Mandatory" 
+                                    Placeholder="Name" 
+                                    Text="{Binding CurrentAliment.Name}" 
+                                    FontAttributes="Bold" 
+                                    IsPlaceholderAlwaysFloating="True">
+                    <rsControls:RSEntry.Behaviors>
+                        <validators:ValidationBehaviour PropertyName="Text">
+                            <validators:ValidationBehaviour.Validators>
+                                <validators:RequiredValidation/>
+                            </validators:ValidationBehaviour.Validators>
+                        </validators:ValidationBehaviour>
+                    </rsControls:RSEntry.Behaviors>
+                </rsControls:RSEntry>
 
                 <!--<Grid Margin="10" VerticalOptions="FillAndExpand">
                 <Frame Grid.Row="0" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
@@ -112,7 +129,22 @@
             </Grid>-->
 
                 <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="*,*">
-                    <rsControls:RSNumericEntry Grid.Column="0" Placeholder="Serving size" Style="{StaticResource Entry}" Value="{Binding CurrentAliment.ServingSize}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                    <rsControls:RSNumericEntry Grid.Column="0"
+                                               x:Name="servingSizeEntry"
+                                               Placeholder="Serving size" 
+                                               Style="{StaticResource Entry}"
+                                               Value="{Binding CurrentAliment.ServingSize}"
+                                               Helper="Mandatory"
+                                               IsPlaceholderAlwaysFloating="True">
+                        <rsControls:RSNumericEntry.Behaviors>
+                            <validators:ValidationBehaviour PropertyName="Value">
+                                <validators:ValidationBehaviour.Validators>
+                                    <validators:RequiredValidation/>
+                                    <validators:DifferentThanValidation x:TypeArguments="x:String" Value="0"/>
+                                </validators:ValidationBehaviour.Validators>
+                            </validators:ValidationBehaviour>
+                        </rsControls:RSNumericEntry.Behaviors>
+                    </rsControls:RSNumericEntry>
                     <rsControls:RSEnumPicker Grid.Column="1" Style="{StaticResource Picker}" x:TypeArguments="enums:AlimentUnitEnum" SelectedItem="{Binding CurrentAliment.Unit}" IsPlaceholderAlwaysFloating="True"/>
                 </Grid>
                 <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Proteins" Value="{Binding CurrentAliment.Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>

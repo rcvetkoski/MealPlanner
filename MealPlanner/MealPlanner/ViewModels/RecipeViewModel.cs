@@ -24,8 +24,8 @@ namespace MealPlanner.ViewModels
             Title = "Recipe";
             IsNew = true;
             AddFoodCommand = new Command(AddFood);
-            SaveCommand = new Command(SaveRecipe);
-            UpdateCommand = new Command(UpdateRecipe);
+            SaveCommand = new Command<RecipePage>(SaveRecipe);
+            UpdateCommand = new Command<RecipePage>(UpdateRecipe);
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             DelettedRecipeFoods = new List<RecipeFood>();
         }
@@ -37,8 +37,11 @@ namespace MealPlanner.ViewModels
         /// Save Recipe
         /// </summary>
         public ICommand SaveCommand { get; set; }
-        private async void SaveRecipe()
+        private async void SaveRecipe(RecipePage recipePage)
         {
+            if (!recipePage.CheckFields())
+                return;
+
             CurrentAliment.OriginalServingSize = CurrentAliment.ServingSize;
             RefData.Recipes.Add(CurrentAliment as Recipe);
             RefData.Aliments.Add(CurrentAliment as Recipe);
@@ -64,15 +67,20 @@ namespace MealPlanner.ViewModels
             await App.DataBaseRepo.UpdateRecipeAsync(CurrentAliment as Recipe);
 
             //await Shell.Current.GoToAsync("..");
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await Shell.Current.Navigation.PopAsync();
+            //await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         /// <summary>
         /// Update Recipe
         /// </summary>
         public ICommand UpdateCommand { get; set; }
-        private async void UpdateRecipe()
+        private async void UpdateRecipe(RecipePage recipePage)
         {
+            if (!recipePage.CheckFields())
+                return;
+
+
             // Get real recipe to update
             Recipe originalRecipe = RefData.Recipes.Where(x => x.Id == CurrentAliment.Id).FirstOrDefault();
 
@@ -153,7 +161,8 @@ namespace MealPlanner.ViewModels
             // Update daily values
             RefData.UpdateDailyValues();
             //await Shell.Current.GoToAsync("..");
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await Shell.Current.Navigation.PopAsync();
+            //await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         /// <summary>

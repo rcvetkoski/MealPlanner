@@ -18,5 +18,10 @@ namespace MealPlanner.Views
         {
             InitializeComponent();
         }
+
+        public bool CheckFields()
+        { 
+            return (nameEntry.CheckIsValid() || servingSizeEntry.CheckIsValid()) == false ? false : true;
+        }
     }
 }

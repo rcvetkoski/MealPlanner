@@ -47,41 +47,11 @@ namespace MealPlanner.ViewModels
             //FilteredAlimentsRefresh();
         }
 
+
         public ObservableCollection<Aliment> FilteredAliments { get; set; }
 
-
         private RSPopup rSPopupFilter;
-
         public string Query { get; set; }
-
-        public void FilteredAlimentsRefresh()
-        {
-            Helpers.Enums.AlimentTypeEnum type = IsFoodChecked ? Helpers.Enums.AlimentTypeEnum.Food : Helpers.Enums.AlimentTypeEnum.Recipe;
-
-            var searchedList = RefData.Aliments.Where(x => x.AlimentType == type && x.Name.ToLower().Contains(Query.ToLower())).ToList();
-
-            FilteredAliments.Clear();
-
-            foreach (Aliment aliment in searchedList)
-            {
-                if (IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Recipe)
-                    FilteredAliments.Add(aliment);
-                else if (!IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
-                    FilteredAliments.Add(aliment);
-            }
-        }
-
-        public void Search()
-        {
-            Helpers.Enums.AlimentTypeEnum type = IsFoodChecked ? Helpers.Enums.AlimentTypeEnum.Food : Helpers.Enums.AlimentTypeEnum.Recipe;
-
-            var searchedList = RefData.Aliments.Where(x => x.AlimentType == type && x.Name.ToLower().Contains(Query.ToLower())).ToList();
-
-            FilteredAliments.Clear();
-
-            foreach (var item in searchedList)
-                FilteredAliments.Add(item);
-        }
 
         private bool recipeSwitchVisibility;
         public bool RecipeSwitchVisibility
@@ -142,7 +112,6 @@ namespace MealPlanner.ViewModels
             }
         }
 
-
         private List<Food> searchResults;
         public List<Food> SearchResults
         {
@@ -159,7 +128,6 @@ namespace MealPlanner.ViewModels
                 }
             }
         }
-
 
         public ICommand SelectAlimentCommand { get; set; }
         private async void SelectAliment(Aliment existingAliment)
@@ -221,7 +189,8 @@ namespace MealPlanner.ViewModels
 
                     //rSPopup.Close();
                     //await Shell.Current.GoToAsync("..");
-                    await Application.Current.MainPage.Navigation.PopAsync();
+                    await Shell.Current.Navigation.PopAsync();
+                    //await Application.Current.MainPage.Navigation.PopAsync();
                 }));
             }
             else if(CurrentRecipe != null)
@@ -240,7 +209,8 @@ namespace MealPlanner.ViewModels
 
                     //rSPopup.Close();
                     //await Shell.Current.GoToAsync("..");
-                    await Application.Current.MainPage.Navigation.PopAsync();
+                    await Shell.Current.Navigation.PopAsync();
+                    //await Application.Current.MainPage.Navigation.PopAsync();
                 }));
             }
 
@@ -254,7 +224,8 @@ namespace MealPlanner.ViewModels
                     (foodPage.BindingContext as FoodViewModel).IsNew = false;
                     (foodPage.BindingContext as FoodViewModel).CopyOfFilteredAliments = FilteredAliments;
 
-                    await App.Current.MainPage.Navigation.PushAsync(foodPage);
+                    await Shell.Current.Navigation.PushAsync(foodPage);
+                    //await App.Current.MainPage.Navigation.PushAsync(foodPage);
                 }
                 else
                 {
@@ -265,13 +236,13 @@ namespace MealPlanner.ViewModels
                     recipePageBindingContext.IsNew = false;
                     recipePageBindingContext.CopyOfFilteredAliments = FilteredAliments;
 
-                    await App.Current.MainPage.Navigation.PushAsync(recipePage);
+                    await Shell.Current.Navigation.PushAsync(recipePage);
+                    //await App.Current.MainPage.Navigation.PushAsync(recipePage);
                 }
                 rSPopup.Close();
             }));
             rSPopup.Show();
         }
-
 
         public ICommand CreateFoodCommand { get; set; }
         private async void CreateFood()
@@ -281,7 +252,8 @@ namespace MealPlanner.ViewModels
             (foodPage.BindingContext as FoodViewModel).CurrentAliment = new Food();
             (foodPage.BindingContext as FoodViewModel).IsNew = true;
             (foodPage.BindingContext as FoodViewModel).CopyOfFilteredAliments = FilteredAliments;
-            await App.Current.MainPage.Navigation.PushAsync(foodPage);
+            await Shell.Current.Navigation.PushAsync(foodPage);
+            //await App.Current.MainPage.Navigation.PushAsync(foodPage);
             //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
         }
 
@@ -292,8 +264,9 @@ namespace MealPlanner.ViewModels
             RecipePage recipePage = new RecipePage();
             (recipePage.BindingContext as RecipeViewModel).CurrentAliment = new Recipe();
             (recipePage.BindingContext as RecipeViewModel).CopyOfFilteredAliments = FilteredAliments;
+            await Shell.Current.Navigation.PushAsync(recipePage);
             //await Shell.Current.GoToAsync($"{nameof(RecipePage)}");
-            await App.Current.MainPage.Navigation.PushAsync(recipePage);
+            //await App.Current.MainPage.Navigation.PushAsync(recipePage);
         }
 
         public ICommand OpenFiltersCommand { get; set; }
@@ -346,7 +319,6 @@ namespace MealPlanner.ViewModels
             }
         }
 
-
         public ICommand SearchAlimentsCommand { get; set; }
         private async void SearchAliments(string text)
         {
@@ -373,6 +345,35 @@ namespace MealPlanner.ViewModels
                 RSPopup rSPopup = new RSPopup("", ex.Message);
                 rSPopup.Show();
             }
+        }
+
+        public void FilteredAlimentsRefresh()
+        {
+            Helpers.Enums.AlimentTypeEnum type = IsFoodChecked ? Helpers.Enums.AlimentTypeEnum.Food : Helpers.Enums.AlimentTypeEnum.Recipe;
+
+            var searchedList = RefData.Aliments.Where(x => x.AlimentType == type && x.Name.ToLower().Contains(Query.ToLower())).ToList();
+
+            FilteredAliments.Clear();
+
+            foreach (Aliment aliment in searchedList)
+            {
+                if (IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Recipe)
+                    FilteredAliments.Add(aliment);
+                else if (!IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
+                    FilteredAliments.Add(aliment);
+            }
+        }
+
+        public void Search()
+        {
+            Helpers.Enums.AlimentTypeEnum type = IsFoodChecked ? Helpers.Enums.AlimentTypeEnum.Food : Helpers.Enums.AlimentTypeEnum.Recipe;
+
+            var searchedList = RefData.Aliments.Where(x => x.AlimentType == type && x.Name.ToLower().Contains(Query.ToLower())).ToList();
+
+            FilteredAliments.Clear();
+
+            foreach (var item in searchedList)
+                FilteredAliments.Add(item);
         }
 
         ~AddAlimentViewModel()

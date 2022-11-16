@@ -1,5 +1,6 @@
 ﻿using MealPlanner.Helpers.Enums;
 using MealPlanner.Models;
+using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,8 +21,8 @@ namespace MealPlanner.ViewModels
         public FoodViewModel()
         {
             Title = "Food";
-            SaveCommand = new Command(SaveFood);
-            UpdateCommand = new Command(UpdateFood);
+            SaveCommand = new Command<FoodPage>(SaveFood);
+            UpdateCommand = new Command<FoodPage>(UpdateFood);
         }
 
         public ObservableCollection<Aliment> CopyOfFilteredAliments { get; set; }
@@ -36,23 +37,31 @@ namespace MealPlanner.ViewModels
         /// Save Food
         /// </summary>
         public ICommand SaveCommand { get; set; }
-        private async void SaveFood()
+        private async void SaveFood(FoodPage foodPage)
         {
+            if (!foodPage.CheckFields())
+                return;
+
             CurrentAliment.OriginalServingSize = CurrentAliment.ServingSize;
             await App.DataBaseRepo.AddFoodAsync(CurrentAliment as Food);
             RefData.Foods.Add(CurrentAliment as Food);
             RefData.Aliments.Add(CurrentAliment as Food);
             CopyOfFilteredAliments.Add(CurrentAliment as Food);
             //await Shell.Current.GoToAsync("..");
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await Shell.Current.Navigation.PopAsync();
+            //await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         /// <summary>
         /// Update Food
         /// </summary>
         public ICommand UpdateCommand { get; set; }
-        private async void UpdateFood()
+        private async void UpdateFood(FoodPage foodPage)
         {
+            if (!foodPage.CheckFields())
+                return;
+            
+            
             // Get real food to update
             Food originalFood = RefData.Foods.Where(x => x.Id == CurrentAliment.Id).FirstOrDefault();
 
@@ -101,7 +110,8 @@ namespace MealPlanner.ViewModels
             RefData.UpdateDailyValues();
 
             //await Shell.Current.GoToAsync("..");
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await Shell.Current.Navigation.PopAsync();
+            //await Application.Current.MainPage.Navigation.PopAsync();
         }
     }
 }
