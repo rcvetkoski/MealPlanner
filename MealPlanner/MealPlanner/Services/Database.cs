@@ -34,6 +34,7 @@ namespace MealPlanner.Services
         private Task CreateTables()
         {
             dbConnection.CreateTableAsync<JournalTemplate>();
+            dbConnection.CreateTableAsync<JournalTemplateMeal>();
             dbConnection.CreateTableAsync<Log>();
             dbConnection.CreateTableAsync<LogMeal>();
             dbConnection.CreateTableAsync<User>();
@@ -71,7 +72,7 @@ namespace MealPlanner.Services
         /// Returns a list of JournalTemplates
         /// </summary>
         /// <returns></returns>
-        public Task<List<JournalTemplate>> GetAllJournalTemplateAsync()
+        public Task<List<JournalTemplate>> GetAllJournalTemplatesAsync()
         {
             return dbConnection.Table<JournalTemplate>().ToListAsync();
         }
@@ -106,6 +107,61 @@ namespace MealPlanner.Services
         public Task<int> DropTableJournalTemplate()
         {
             return dbConnection.DropTableAsync<JournalTemplate>();
+        }
+
+        #endregion
+
+        #region JournalTemplateMeal
+
+        /// <summary>
+        /// Returns a JournalTemplateMeal object
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<JournalTemplateMeal> GetJournalTemplateMealAsync(int id)
+        {
+            return dbConnection.GetAsync<JournalTemplateMeal>(id);
+        }
+
+        /// <summary>
+        /// Returns a list of JournalTemplateMeals
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<JournalTemplateMeal>> GetAllJournalTemplateMealsAsync()
+        {
+            return dbConnection.Table<JournalTemplateMeal>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts new JournalTemplateMeal in database
+        /// </summary>
+        /// <param name="journalTemplateMeal"></param>
+        /// <returns></returns>
+        public Task<int> AddJournalTemplateMealAsync(JournalTemplateMeal journalTemplateMeal)
+        {
+            return dbConnection.InsertAsync(journalTemplateMeal);
+        }
+
+        /// <summary>
+        /// Updates a JournalTemplateMeal in database if it exists
+        /// </summary>
+        /// <param name="journalTemplateMeal"></param>
+        /// <returns></returns>
+        public Task<int> UpdateJournalTemplateMealAsync(JournalTemplateMeal journalTemplateMeal)
+        {
+            if (GetJournalTemplateMealAsync(journalTemplateMeal.Id) != null)
+                return dbConnection.UpdateAsync(journalTemplateMeal);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableJournalTemplateMeal()
+        {
+            return dbConnection.DropTableAsync<JournalTemplateMeal>();
         }
 
         #endregion

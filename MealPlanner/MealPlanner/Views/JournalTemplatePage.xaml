@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
+             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
+             Title="{Binding Title}"
+             x:Name="journalTemplatePage"
+             x:Class="MealPlanner.Views.JournalTemplatePage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:JournalTemplateViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <Frame Style="{StaticResource UserCard}">
+                <StackLayout>
+                    <rsControls:RSPicker Placeholder="Modele" ItemsSource="{Binding RefData.JournalTemplates}" SelectedItem="{Binding RefData.CurrentJournalTemplate}" DisplayMemberPath="Name"/>
+                    <CollectionView ItemsSource="{Binding DayOfWeeks}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Button Text="{Binding .}"
+                                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                        Command="{Binding BindingContext.DistributionCommand, Source={x:Reference journalTemplatePage}}"
+                                        CommandParameter="{Binding .}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <Button BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                            Command="{Binding AddNewJournalTemplateCommand}"
+                            Text="+ Add new Journal Template"/>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

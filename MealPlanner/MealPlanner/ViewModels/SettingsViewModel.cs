@@ -13,11 +13,9 @@ namespace MealPlanner.ViewModels
 {
     public class SettingsViewModel : BaseViewModel
     {
-        public List<DayOfWeek> DayOfWeeks { get; set; } 
         public ObservableCollection<TemplateMeal> TempTemplateMeals { get; set; }
         private List<TemplateMeal> NewTemplateMeals;
         private List<TemplateMeal> RemovedTemplateMeals;
-
 
         public int TempTemplateCount 
         {
@@ -100,16 +98,7 @@ namespace MealPlanner.ViewModels
         }
 
 
-        public ICommand DistributionCommand { get; set; }
-        private void Distribution(DayOfWeek dayOfWeek)
-        {
-            RefData.CreateJournalTemplates(dayOfWeek);
-            HomePage homePage = new HomePage();
-            (homePage.BindingContext as HomeViewModel).Title = dayOfWeek.ToString();
-            //Shell.SetNavBarIsVisible(homePage, true);
-            Shell.Current.Navigation.PushModalAsync(homePage);
-            //App.Current.MainPage.Navigation.PushModalAsync(homePage);
-        }
+
 
 
         public ICommand OpenUserPageCommand { get; set; }
@@ -119,20 +108,22 @@ namespace MealPlanner.ViewModels
             await App.Current.MainPage.Navigation.PushAsync(new UserPage());
         }
 
+
+        public ICommand OpenJournalTemplatePageCommand { get; set; }
+        private async void OpenJournalTemplatePage()
+        {
+            await Shell.Current.GoToAsync($"{nameof(JournalTemplatePage)}");
+        }
+
         public SettingsViewModel()
         {
             Title = "Settings";
             SaveCommand = new Command(Save);
-            DayOfWeeks = new List<DayOfWeek>();
             TempTemplateMeals = new ObservableCollection<TemplateMeal>();
             NewTemplateMeals = new List<TemplateMeal>();
             RemovedTemplateMeals = new List<TemplateMeal>();
-            DistributionCommand = new Command<DayOfWeek>(Distribution);
             OpenUserPageCommand = new Command(OpenUserPage);
-
-
-            foreach (DayOfWeek dayOfWeek in (DayOfWeek[])Enum.GetValues(typeof(DayOfWeek)))
-                DayOfWeeks.Add(dayOfWeek);  
+            OpenJournalTemplatePageCommand = new Command(OpenJournalTemplatePage);
 
             foreach (TemplateMeal templateMeal in RefData.TemplateMeals)
                 TempTemplateMeals.Add(new TemplateMeal() { Name = templateMeal.Name, Order = templateMeal.Order});

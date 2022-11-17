@@ -1,18 +1,16 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Text;
 
 namespace MealPlanner.Models
 {
-    public class JournalTemplate
+    public class JournalTemplateMeal
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string Name { get; set; }
-
-        [Ignore]
-        public ObservableCollection<Meal> Meals { get; set; }
+        public int JournalTemplateId { get; set; }
+        public int MealId { get; set; }
+        public DayOfWeek DayOfWeek { get; set; }
     }
 }

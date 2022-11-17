@@ -11,10 +11,17 @@ namespace MealPlanner.Services
     {
         // JournalTemplate
         Task<JournalTemplate> GetJournalTemplateAsync(int id);
-        Task<List<JournalTemplate>> GetAllJournalTemplateAsync();
+        Task<List<JournalTemplate>> GetAllJournalTemplatesAsync();
         Task<int> AddJournalTemplateAsync(JournalTemplate journalTemplate);
         Task<int> UpdateJournalTemplateAsync(JournalTemplate journalTemplate);
         Task<int> DropTableJournalTemplate();
+
+        // JournalTemplateMeal
+        Task<JournalTemplateMeal> GetJournalTemplateMealAsync(int id);
+        Task<List<JournalTemplateMeal>> GetAllJournalTemplateMealsAsync();
+        Task<int> AddJournalTemplateMealAsync(JournalTemplateMeal journalTemplateMeal);
+        Task<int> UpdateJournalTemplateMealAsync(JournalTemplateMeal journalTemplateMeal);
+        Task<int> DropTableJournalTemplateMeal();
 
         // Log
         Task<Log> GetLogAsync(int id);

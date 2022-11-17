@@ -236,7 +236,7 @@ namespace MealPlanner.ViewModels
 
             StackLayout stackLayout = new StackLayout() { Margin = 20, Spacing = 20 };
             var labelStyle = Application.Current.Resources["LabelSmall"] as Style;
-            Label label = new Label() { Text = RefData.CurrentDay.ToString("dddd, dd, mmmm"), Style = labelStyle, FontAttributes = FontAttributes.Bold };
+            Label label = new Label() { Text = RefData.CurrentDay.ToString("dddd, dd, yyyy"), Style = labelStyle, FontAttributes = FontAttributes.Bold };
             Label label1 = new Label() { Text = "Copy day", Style = labelStyle };
             label1.GestureRecognizers.Add(new TapGestureRecognizer()
             {

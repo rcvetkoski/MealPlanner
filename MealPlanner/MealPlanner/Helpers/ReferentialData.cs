@@ -28,6 +28,7 @@ namespace MealPlanner.Helpers
         public ObservableCollection<Aliment> Aliments { get; set; }
         public ObservableCollection<MealAliment> MealAliments { get; set; }
         public ObservableCollection<JournalTemplate> JournalTemplates { get; set; }
+        public ObservableCollection<JournalTemplateMeal> JournalTemplateMeals { get; set; }
 
 
         public List<Meal> DefaultMeals { get; set; }
@@ -38,6 +39,7 @@ namespace MealPlanner.Helpers
         public List<PALItem> PhysicalActivityLevels { get; set; }
         public List<ObjectifItem> Objectifs { get; set; }
         public List<string> BMRFormulas { get; set; }
+
 
         private DateTime currentDay;
         public DateTime CurrentDay 
@@ -56,8 +58,24 @@ namespace MealPlanner.Helpers
             }
         }
 
-        public List<Log> Logs { get; set; }
+        private JournalTemplate currentJournalTemplate;
+        public JournalTemplate CurrentJournalTemplate 
+        {
+            get
+            {
+                return currentJournalTemplate;
+            }
+            set
+            {
+                if(currentJournalTemplate != value)
+                {
+                    currentJournalTemplate = value;
+                    OnPropertyChanged(nameof(CurrentJournalTemplate));
+                }
+            }
+        }  
 
+        public List<Log> Logs { get; set; }
         public List<LogMeal> LogMeals { get; set; } 
 
 
@@ -67,7 +85,6 @@ namespace MealPlanner.Helpers
             //ResetDB();
             CurrentDay = DateTime.Now;
             InitDefaultMeals();
-            InitJournalTemplates();
             ResetDBCommand = new Command(ResetDB);
             InitDB();
         }
@@ -125,6 +142,30 @@ namespace MealPlanner.Helpers
 
             // Meals
             Meals = new ObservableCollection<Meal>();
+            AllMeals = App.DataBaseRepo.GetAllMealsAsync().Result;
+
+            // Journal Templates
+            JournalTemplates = App.DataBaseRepo.GetAllJournalTemplatesAsync().Result.ToObservableCollection();
+            JournalTemplateMeals = App.DataBaseRepo.GetAllJournalTemplateMealsAsync().Result.ToObservableCollection();
+
+            foreach (JournalTemplate journalTemplate in JournalTemplates)
+            {
+                journalTemplate.Meals = new ObservableCollection<Meal>();
+
+                foreach (JournalTemplateMeal journalTemplateMeal in JournalTemplateMeals.Where(x=> x.JournalTemplateId == journalTemplate.Id))
+                {
+                    var meal = AllMeals.FirstOrDefault(y => y.Id == journalTemplateMeal.MealId);
+
+                    if (meal == null)
+                        continue;
+
+                    journalTemplate.Meals.Add(meal);    
+                }
+            }
+
+            if (JournalTemplates.Any())
+                CurrentJournalTemplate = JournalTemplates.FirstOrDefault(x => x.Id == User.CurrentJournalTemplateId);
+
 
             // Logs
             Logs = App.DataBaseRepo.GetAllLogsAsync().Result;
@@ -154,15 +195,15 @@ namespace MealPlanner.Helpers
         /// <param name="dayOfWeek"></param>
         public void CreateJournalTemplates(DayOfWeek dayOfWeek)
         {
-            var currentJournalTemplates = JournalTemplates.Where(x => x.DayOfWeek == dayOfWeek);
             Meals.Clear();
 
-            foreach (JournalTemplate journalTemplate in currentJournalTemplates)
+            foreach (JournalTemplateMeal journalTemplateMeal in JournalTemplateMeals.Where(x=> x.JournalTemplateId == CurrentJournalTemplate.Id && x.DayOfWeek == dayOfWeek))
             {
-                var journalMeal = AllMeals.FirstOrDefault(x => x.Id == journalTemplate.MealId);
+                var journalMeal = AllMeals.FirstOrDefault(x => x.Id == journalTemplateMeal.MealId);
 
                 if (journalMeal != null && journalMeal.Order <= TemplateMeals.Count)
                 {
+                    journalMeal.Aliments.Clear();
                     PopulateMeal(journalMeal);
                     Meals.Add(journalMeal);
                 }
@@ -253,29 +294,6 @@ namespace MealPlanner.Helpers
                     TemplateMeal templateMeal = new TemplateMeal() { Name = meal.Name, Order = meal.Order };
                     TemplateMeals.Add(templateMeal);
                     App.DataBaseRepo.AddTemplateMealAsync(templateMeal).Wait();
-                }
-            }
-        }
-
-        private void InitJournalTemplates()
-        {
-            AllMeals = App.DataBaseRepo.GetAllMealsAsync().Result;
-            JournalTemplates = App.DataBaseRepo.GetAllJournalTemplateAsync().Result.ToObservableCollection();
-
-            if (JournalTemplates.Any())
-                return;
-
-            // Add default empty plans
-            foreach (DayOfWeek dayOfWeek in (DayOfWeek[])Enum.GetValues(typeof(DayOfWeek)))
-            {
-                foreach(TemplateMeal templateMeal in TemplateMeals)
-                {
-                    Meal meal = new Meal() { Name = templateMeal.Name, Order = templateMeal.Order };
-                    App.DataBaseRepo.AddMealAsync(meal).Wait();
-                    AllMeals.Add(meal);
-                    JournalTemplate journalTemplate = new JournalTemplate() { MealId = meal.Id, DayOfWeek = dayOfWeek };
-                    App.DataBaseRepo.AddJournalTemplateAsync(journalTemplate).Wait();
-                    JournalTemplates.Add(journalTemplate);
                 }
             }
         }

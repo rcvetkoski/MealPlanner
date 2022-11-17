@@ -123,6 +123,21 @@
                             </rsControls:RSNumericEntry.LeadingIcon>
                         </rsControls:RSNumericEntry>
 
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" ReturnType="Next" CustomUnit="%" Placeholder="Body fat" Value="{Binding RefData.User.BodyFat}" IsPlaceholderAlwaysFloating="True">
+                            <rsControls:RSNumericEntry.LeadingIcon>
+                                <rsHelpers:RSEntryIcon>
+                                    <rsHelpers:RSEntryIcon.View>
+                                        <Image WidthRequest="15" HeightRequest="15">
+                                            <Image.Source>
+                                                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Bacon}" FontFamily="FA-Solid"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </rsHelpers:RSEntryIcon.View>
+                                </rsHelpers:RSEntryIcon>
+                            </rsControls:RSNumericEntry.LeadingIcon>
+                        </rsControls:RSNumericEntry>
+
                         <rsControls:RSEnumPicker Style="{StaticResource Picker}" x:TypeArguments="enums:GenderEnum" Placeholder="Gender" SelectedItem="{Binding RefData.User.Gender}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSEnumPicker.LeadingIcon>
                                 <rsHelpers:RSEntryIcon>
@@ -138,20 +153,6 @@
                             </rsControls:RSEnumPicker.LeadingIcon>
                         </rsControls:RSEnumPicker>
 
-                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" ReturnType="Next" CustomUnit="%" Placeholder="Body fat" Value="{Binding RefData.User.BodyFat}" IsPlaceholderAlwaysFloating="True">
-                            <rsControls:RSNumericEntry.LeadingIcon>
-                                <rsHelpers:RSEntryIcon>
-                                    <rsHelpers:RSEntryIcon.View>
-                                        <Image WidthRequest="15" HeightRequest="15">
-                                            <Image.Source>
-                                                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Bacon}" FontFamily="FA-Solid"/>
-                                            </Image.Source>
-                                        </Image>
-                                    </rsHelpers:RSEntryIcon.View>
-                                </rsHelpers:RSEntryIcon>
-                            </rsControls:RSNumericEntry.LeadingIcon>
-                        </rsControls:RSNumericEntry>
                     </StackLayout>
                 </Frame>
 

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
@@ -24,7 +25,6 @@
 
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
-
             <StackLayout Padding="15">
 
                 <Label Style="{StaticResource LabelMedium}" Text="User settings"/>
@@ -69,16 +69,9 @@
 
                 <Label Style="{StaticResource LabelMedium}" Text="Distribution"/>
                 <Frame Style="{StaticResource UserCard}">
-                    <StackLayout>
-                        <rsControls:RSPicker Placeholder="Modele"/>
-                        <StackLayout BindableLayout.ItemsSource="{Binding DayOfWeeks}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <Button Text="{Binding .}" Command="{Binding BindingContext.DistributionCommand, Source={x:Reference settingsPage}}" CommandParameter="{Binding .}"/>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </StackLayout>
-                    </StackLayout>
+                    <Button Text="{Binding RefData.CurrentJournalTemplate.Name}"
+                            BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                            Command="{Binding OpenJournalTemplatePageCommand}"/>
                 </Frame>
 
                 <Button Text="Reset data base" Command="{Binding RefData.ResetDBCommand}" VerticalOptions="EndAndExpand" Margin="30, 20, 30, 20"/>
