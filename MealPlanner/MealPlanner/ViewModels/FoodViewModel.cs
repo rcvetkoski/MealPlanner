@@ -27,12 +27,6 @@ namespace MealPlanner.ViewModels
 
         public ObservableCollection<Aliment> CopyOfFilteredAliments { get; set; }
 
-
-        private void CalculateCalories()
-        {
-            //Calories = Proteins * 4 + Carbs * 4 + Fats * 9;
-        }
-
         /// <summary>
         /// Save Food
         /// </summary>

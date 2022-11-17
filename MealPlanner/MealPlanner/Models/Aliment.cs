@@ -64,6 +64,7 @@ namespace MealPlanner.Models
                     OnPropertyChanged("Proteins");
                     OnPropertyChanged("NutritionValuesString");
                     OnPropertyChanged("ProteinsProgress");
+                    //CalculateCalories();
                 }
             } 
         }
@@ -83,6 +84,7 @@ namespace MealPlanner.Models
                     OnPropertyChanged("Carbs");
                     OnPropertyChanged("NutritionValuesString");
                     OnPropertyChanged("CarbsProgress");
+                    //CalculateCalories();
                 }
             }
         }
@@ -102,6 +104,7 @@ namespace MealPlanner.Models
                     OnPropertyChanged("Fats");
                     OnPropertyChanged("NutritionValuesString");
                     OnPropertyChanged("FatsProgress");
+                    //CalculateCalories();
                 }
             } 
         }
@@ -181,6 +184,10 @@ namespace MealPlanner.Models
             } 
         }
 
+        private void CalculateCalories()
+        {
+            Calories = Proteins * 4 + Carbs * 4 + Fats * 9;
+        }
 
         [Ignore]
         public double CaloriesProgress
