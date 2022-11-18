@@ -47,12 +47,12 @@
                                         <VisualStateGroup Name="CommonStates">
                                             <VisualState Name="Normal">
                                                 <VisualState.Setters>
-                                                    <Setter Property="BackgroundColor" Value="{StaticResource CardBackgroundDark}" />
+                                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" />
                                                 </VisualState.Setters>
                                             </VisualState>
                                             <VisualState Name="Selected">
                                                 <VisualState.Setters>
-                                                    <Setter Property="BackgroundColor" Value="{StaticResource CardBackgroundDark}" />
+                                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" />
                                                 </VisualState.Setters>
                                             </VisualState>
                                         </VisualStateGroup>
