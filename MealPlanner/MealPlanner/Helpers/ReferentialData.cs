@@ -150,8 +150,6 @@ namespace MealPlanner.Helpers
 
             foreach (JournalTemplate journalTemplate in JournalTemplates)
             {
-                journalTemplate.Meals = new ObservableCollection<Meal>();
-
                 foreach (JournalTemplateMeal journalTemplateMeal in JournalTemplateMeals.Where(x=> x.JournalTemplateId == journalTemplate.Id))
                 {
                     var meal = AllMeals.FirstOrDefault(y => y.Id == journalTemplateMeal.MealId);
@@ -159,7 +157,9 @@ namespace MealPlanner.Helpers
                     if (meal == null)
                         continue;
 
-                    journalTemplate.Meals.Add(meal);    
+                    meal.Aliments.Clear();
+                    PopulateMeal(meal);
+                    journalTemplate.DaysOfWeek.FirstOrDefault(x=> x.DayOfWeek == journalTemplateMeal.DayOfWeek).Meals.Add(meal);    
                 }
             }
 
@@ -195,6 +195,11 @@ namespace MealPlanner.Helpers
         /// <param name="dayOfWeek"></param>
         public void CreateJournalTemplates(DayOfWeek dayOfWeek)
         {
+            User.DailyProteins = 0;
+            User.DailyCarbs = 0;
+            User.DailyFats = 0;
+            User.DailyCalories = 0;
+
             Meals.Clear();
 
             foreach (JournalTemplateMeal journalTemplateMeal in JournalTemplateMeals.Where(x=> x.JournalTemplateId == CurrentJournalTemplate.Id && x.DayOfWeek == dayOfWeek))

@@ -67,14 +67,19 @@
                     </StackLayout>
                 </Frame>
 
-                <Label Style="{StaticResource LabelMedium}" Text="Distribution"/>
+                <Label Style="{StaticResource LabelMedium}" Text="Jounal Templates"/>
                 <Frame Style="{StaticResource UserCard}">
                     <Button Text="{Binding RefData.CurrentJournalTemplate.Name}"
+                            TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                             BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                             Command="{Binding OpenJournalTemplatePageCommand}"/>
                 </Frame>
 
-                <Button Text="Reset data base" Command="{Binding RefData.ResetDBCommand}" VerticalOptions="EndAndExpand" Margin="30, 20, 30, 20"/>
+                <Button Text="Reset data base"
+                        Command="{Binding RefData.ResetDBCommand}"
+                        TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                        VerticalOptions="EndAndExpand" 
+                        Margin="30, 20, 30, 20"/>
                 
             </StackLayout>
         </ScrollView>

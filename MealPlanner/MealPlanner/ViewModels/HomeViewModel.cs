@@ -301,8 +301,17 @@ namespace MealPlanner.ViewModels
             });
 
             Label label3 = new Label() { Text = "Import from saved days", Style = labelStyle };
-            Label label4 = new Label() { Text = "Cancel", TextColor = Color.Red };
+            label3.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    await Shell.Current.GoToAsync($"{nameof(JournalTemplatePage)}");
+                    rSPopup.Close();
+                })
+            });
 
+
+            Label label4 = new Label() { Text = "Cancel", TextColor = Color.Red };
             label4.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(() =>

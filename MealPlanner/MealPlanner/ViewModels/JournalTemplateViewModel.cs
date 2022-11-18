@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.RSControls.Controls;
 
 namespace MealPlanner.ViewModels
 {
@@ -19,7 +20,8 @@ namespace MealPlanner.ViewModels
             foreach (DayOfWeek dayOfWeek in (DayOfWeek[])Enum.GetValues(typeof(DayOfWeek)))
                 DayOfWeeks.Add(dayOfWeek);
 
-            DistributionCommand = new Command<DayOfWeek>(Distribution);
+            DistributionCommand = new Command<DayOfWeekHelper>(Distribution);
+            DayOptionsCommand = new Command<DayOfWeekHelper>(DayOptions);
         }
 
         public List<DayOfWeek> DayOfWeeks { get; set; }
@@ -43,7 +45,7 @@ namespace MealPlanner.ViewModels
 
 
             // Create new JournalTemplate
-            JournalTemplate journalTemplate = new JournalTemplate() { Name = result, Meals = new System.Collections.ObjectModel.ObservableCollection<Meal>() };  
+            JournalTemplate journalTemplate = new JournalTemplate() { Name = result};  
             await App.DataBaseRepo.AddJournalTemplateAsync(journalTemplate);
             RefData.JournalTemplates.Add(journalTemplate);
 
@@ -55,7 +57,7 @@ namespace MealPlanner.ViewModels
                     Meal meal = new Meal() { Name = templateMeal.Name, Order = templateMeal.Order };
                     await App.DataBaseRepo.AddMealAsync(meal);
                     RefData.AllMeals.Add(meal);
-                    journalTemplate.Meals.Add(meal);
+                    journalTemplate.DaysOfWeek.FirstOrDefault(x=> x.DayOfWeek == dayOfWeek).Meals.Add(meal);
 
                     JournalTemplateMeal journalTemplateMeal = new JournalTemplateMeal() { JournalTemplateId = journalTemplate.Id, MealId = meal.Id, DayOfWeek = dayOfWeek };
                     await App.DataBaseRepo.AddJournalTemplateMealAsync(journalTemplateMeal);
@@ -66,13 +68,96 @@ namespace MealPlanner.ViewModels
 
 
         public ICommand DistributionCommand { get; set; }
-        private void Distribution(DayOfWeek dayOfWeek)
+        private async void Distribution(DayOfWeekHelper dayOfWeekHelper)
         {
-            RefData.CreateJournalTemplates(dayOfWeek);
+            RefData.CreateJournalTemplates(dayOfWeekHelper.DayOfWeek);
             HomePage homePage = new HomePage();
             Shell.SetTitleView(homePage, null);
-            (homePage.BindingContext as HomeViewModel).Title = dayOfWeek.ToString();
-            Shell.Current.Navigation.PushAsync(homePage);
+            (homePage.BindingContext as HomeViewModel).Title = dayOfWeekHelper.DayOfWeek.ToString();
+            await Shell.Current.Navigation.PushAsync(homePage);
+        }
+
+
+        public ICommand DayOptionsCommand { get; set; }
+        private void DayOptions(DayOfWeekHelper dayOfWeek)
+        {
+            Log currentLog = RefData.GetLog(RefData.CurrentDay);
+
+            RSPopup rSPopup = new RSPopup("", "", Xamarin.RSControls.Enums.RSPopupPositionEnum.Bottom);
+            rSPopup.Style = Application.Current.Resources["RSPopup"] as Style;
+            rSPopup.SetPopupSize(Xamarin.RSControls.Enums.RSPopupSizeEnum.MatchParent, Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent);
+            rSPopup.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.BottomToTop);
+
+            StackLayout stackLayout = new StackLayout() { Margin = 20, Spacing = 20 };
+            var labelStyle = Application.Current.Resources["LabelSmall"] as Style;
+            Label label = new Label() { Text = "Monday", Style = labelStyle, FontAttributes = FontAttributes.Bold };
+
+            Label label1 = new Label() { Text = $"Import day to {currentLog.Date.ToString("dd MMM yyyy")}", Style = labelStyle };
+            label1.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    RefData.Meals.Clear();
+
+
+                    // delette existing meals
+                    foreach (Meal currentMeal in currentLog.Meals)
+                    {
+                        // meals
+                        var currentLogMeal = RefData.LogMeals.FirstOrDefault(x => x.MealId == currentMeal.Id && x.LogId == currentLog.Id);
+                        if (currentLogMeal == null)
+                            continue;
+
+                        await App.DataBaseRepo.DeleteLogMealAsync(currentLogMeal);
+                        RefData.LogMeals.Remove(currentLogMeal);
+
+                        // aliments
+                        foreach (Aliment aliment in currentMeal.Aliments)
+                        {
+                            MealAliment mealAliment = RefData.MealAliments.FirstOrDefault(x => x.MealId == currentMeal.Id && x.AlimentId == aliment.Id);
+                            if (aliment == null)
+                                continue;
+
+                            await App.DataBaseRepo.DeleteMealAlimentAsync(mealAliment);
+                            RefData.MealAliments.Remove(mealAliment);
+                        }
+                    }
+                    currentLog.Meals.Clear();
+
+
+                    foreach (Meal copiedMeal in dayOfWeek.Meals)
+                    {
+                        Meal meal = new Meal() { Name = copiedMeal.Name, Order = copiedMeal.Order };
+                        await App.DataBaseRepo.AddMealAsync(meal);
+                        RefData.AllMeals.Add(meal);
+                        RefData.PopulateMeal(meal, copiedMeal);
+                        RefData.Meals.Add(meal);
+
+                        LogMeal logMeal = new LogMeal() { LogId = currentLog.Id, MealId = meal.Id };
+                        await App.DataBaseRepo.AddLogMealAsync(logMeal);
+                        RefData.LogMeals.Add(logMeal);
+                    }
+
+                    rSPopup.Close();
+                })
+            });
+
+            Label label3 = new Label() { Text = "Cancel", TextColor = Color.Red };
+
+            label3.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(() =>
+                {
+                    rSPopup.Close();
+                })
+            });
+
+            stackLayout.Children.Add(label);
+            stackLayout.Children.Add(label1);
+            stackLayout.Children.Add(label3);
+            rSPopup.SetCustomView(stackLayout);
+
+            rSPopup.Show();
         }
     }
 }
