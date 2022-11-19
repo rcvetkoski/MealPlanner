@@ -1,4 +1,5 @@
-﻿using MealPlanner.Helpers.Extensions;
+﻿using MealPlanner.Helpers.Enums;
+using MealPlanner.Helpers.Extensions;
 using MealPlanner.Models;
 using SkiaSharp;
 using System;
@@ -78,7 +79,7 @@ namespace MealPlanner.Helpers
         public List<Log> Logs { get; set; }
         public List<LogMeal> LogMeals { get; set; } 
 
-
+        public HomePageTypeEnum HomePageType { get; set; }
 
         public ReferentialData()
         {
@@ -366,7 +367,7 @@ namespace MealPlanner.Helpers
             }
         }
 
-        public async void AddAliment(Aliment aliment, Meal meal)
+        public void AddAliment(Aliment aliment, Meal meal)
         {
             // Add aliment to meal
             meal.Aliments.Add(aliment);
@@ -384,7 +385,7 @@ namespace MealPlanner.Helpers
             mealAliment.AlimentType = aliment.AlimentType;
 
             // Save to db
-            await App.DataBaseRepo.AddMealAlimentAsync(mealAliment);
+            App.DataBaseRepo.AddMealAlimentAsync(mealAliment).Wait();
 
             // Asign MealAlimentId to aliment and add it to MealAliments
             aliment.MealAlimentId = mealAliment.Id;

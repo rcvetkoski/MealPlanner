@@ -106,7 +106,7 @@
                         <ProgressBar Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyFatsProgress}" VerticalOptions="Center"/>
 
                         <StackLayout Grid.Row="1" Grid.RowSpan="5" Grid.Column="2" VerticalOptions="Center" Spacing="0">
-                            <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding RefData.User.DailyCalories, StringFormat='{0:0.#}'}"/>
+                            <Label HorizontalOptions="Center" BackgroundColor="Red" Style="{StaticResource LabelSmall}" Text="{Binding RefData.User.DailyCalories, StringFormat='{0:0.#}'}"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="of"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" FontAttributes="Bold" Text="{Binding RefData.User.TDEE, StringFormat='{0:0.#}'}"/>
                         </StackLayout>

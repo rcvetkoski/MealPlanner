@@ -20,6 +20,7 @@ namespace MealPlanner.ViewModels
         public HomeViewModel()
         {
             SetTitle();
+            ImportFromSavedDaysVisible = true;
             MaximumDate = RefData.CurrentDay.AddDays(7);
             MealOptionsCommand = new Command<Meal>(MealOptions);
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
@@ -44,6 +45,8 @@ namespace MealPlanner.ViewModels
                 return MaximumDate > RefData.CurrentDay.AddDays(1);
             }
         }
+
+        public bool ImportFromSavedDaysVisible { get; set; }
 
         public void SetTitle()
         {
@@ -242,7 +245,14 @@ namespace MealPlanner.ViewModels
             {
                 Command = new Command(() =>
                 {
-                    CopiedLog = RefData.GetLog(RefData.CurrentDay);
+                    if(RefData.HomePageType == Helpers.Enums.HomePageTypeEnum.JournalTemplate)
+                    {
+                        CopiedLog = new Log() { Date = DateTime.MinValue };
+                        CopiedLog.Meals = RefData.Meals.ToList();
+                    }
+                    else
+                        CopiedLog = RefData.GetLog(RefData.CurrentDay);
+
                     rSPopup.Close();
                 })
             });
@@ -300,7 +310,7 @@ namespace MealPlanner.ViewModels
                 })
             });
 
-            Label label3 = new Label() { Text = "Import from saved days", Style = labelStyle };
+            Label label3 = new Label() { Text = "Import from saved days", Style = labelStyle, IsVisible = ImportFromSavedDaysVisible };
             label3.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(async () =>

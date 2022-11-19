@@ -70,11 +70,11 @@ namespace MealPlanner.ViewModels
         public ICommand DistributionCommand { get; set; }
         private async void Distribution(DayOfWeekHelper dayOfWeekHelper)
         {
-            RefData.CreateJournalTemplates(dayOfWeekHelper.DayOfWeek);
-            HomePage homePage = new HomePage();
+            HomePage homePage = new HomePage(Helpers.Enums.HomePageTypeEnum.JournalTemplate, dayOfWeekHelper.DayOfWeek);
             Shell.SetTitleView(homePage, null);
             (homePage.BindingContext as HomeViewModel).Title = dayOfWeekHelper.DayOfWeek.ToString();
             await Shell.Current.Navigation.PushAsync(homePage);
+            Shell.SetTabBarIsVisible(homePage, false);
         }
 
 

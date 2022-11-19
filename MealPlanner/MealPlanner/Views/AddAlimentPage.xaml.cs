@@ -76,7 +76,7 @@ namespace MealPlanner.Views
         {
             double x = 0;
 
-            if(sender == foodButton)
+            if (sender == foodButton)
             {
                 x = 0;
                 foodButton.FontAttributes = FontAttributes.Bold;
