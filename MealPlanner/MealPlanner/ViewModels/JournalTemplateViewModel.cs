@@ -75,6 +75,7 @@ namespace MealPlanner.ViewModels
             (homePage.BindingContext as HomeViewModel).Title = dayOfWeekHelper.DayOfWeek.ToString();
             await Shell.Current.Navigation.PushAsync(homePage);
             Shell.SetTabBarIsVisible(homePage, false);
+            (homePage.BindingContext as HomeViewModel).RefData.UpdateDailyValues();
         }
 
 

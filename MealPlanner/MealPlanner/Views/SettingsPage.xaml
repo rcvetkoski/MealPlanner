@@ -69,7 +69,7 @@
 
                 <Label Style="{StaticResource LabelMedium}" Text="Jounal Templates"/>
                 <Frame Style="{StaticResource UserCard}">
-                    <Button Text="{Binding RefData.CurrentJournalTemplate.Name}"
+                    <Button Text="Journal Templates"
                             TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                             BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                             Command="{Binding OpenJournalTemplatePageCommand}"/>

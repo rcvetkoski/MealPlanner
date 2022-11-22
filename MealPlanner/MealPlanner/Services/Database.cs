@@ -156,6 +156,16 @@ namespace MealPlanner.Services
         }
 
         /// <summary>
+        /// Deletes a JournalTemplateMeal from database
+        /// </summary>
+        /// <param name="journalTemplateMeal"></param>
+        /// <returns></returns>
+        public Task<int> DeleteJournalTemplateMealAsync(JournalTemplateMeal journalTemplateMeal)
+        {
+            return dbConnection.DeleteAsync(journalTemplateMeal);
+        }
+
+        /// <summary>
         /// Drops the table
         /// </summary>
         /// <returns></returns>

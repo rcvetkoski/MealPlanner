@@ -1,4 +1,6 @@
-﻿using MealPlanner.Helpers.Extensions;
+﻿using MealPlanner.Helpers;
+using MealPlanner.Helpers.Enums;
+using MealPlanner.Helpers.Extensions;
 using MealPlanner.Models;
 using MealPlanner.Views;
 using MealPlanner.Views.Popups;
@@ -34,8 +36,10 @@ namespace MealPlanner.ViewModels
             CopiedAliments = new List<Aliment>();
         }
 
+        public HomePageTypeEnum HomePageType { get; set; }
+        public int SelectedJournalTemplateDayOfWeek { get; set; }
+
         public List<Aliment> CopiedAliments { get; set; }
-        public Log CopiedLog { get; set; }
 
         public DateTime MaximumDate { get; set; }
         public bool NextDayCommandVisible
@@ -245,67 +249,59 @@ namespace MealPlanner.ViewModels
             {
                 Command = new Command(() =>
                 {
-                    if(RefData.HomePageType == Helpers.Enums.HomePageTypeEnum.JournalTemplate)
+                    if(HomePageType == HomePageTypeEnum.JournalTemplate)
                     {
-                        CopiedLog = new Log() { Date = DateTime.MinValue };
-                        CopiedLog.Meals = RefData.Meals.ToList();
+                        RefData.CopiedDay = new CopiedDayHelper() 
+                        { 
+                            Date = DateTime.MinValue, 
+                            HomePageType = HomePageTypeEnum.JournalTemplate,
+                            DayOfWeek = SelectedJournalTemplateDayOfWeek,
+                            Meals = RefData.Meals.ToList()
+                        };
                     }
                     else
-                        CopiedLog = RefData.GetLog(RefData.CurrentDay);
+                    {
+                        var log = RefData.GetLog(RefData.CurrentDay);
+                        RefData.CopiedDay = new CopiedDayHelper()
+                        {
+                            Date = log.Date,
+                            HomePageType = HomePageTypeEnum.Normal,
+                            DayOfWeek = -1,
+                            Meals = log.Meals
+                        };
+                    }
 
                     rSPopup.Close();
                 })
             });
 
-            bool canCopy = CopiedLog != null ? CopiedLog.Date.Day != RefData.CurrentDay.Day || CopiedLog.Date.Month != RefData.CurrentDay.Month || CopiedLog.Date.Year != RefData.CurrentDay.Year : false;
-            Label label2 = new Label() { Text = "Paste day", IsVisible = CopiedLog != null && canCopy, Style = labelStyle };
+            bool canCopy = false;
+
+            if(RefData.CopiedDay != null)
+            {
+                if(HomePageType == HomePageTypeEnum.Normal)
+                {
+                    canCopy = RefData.CopiedDay.Date.Day != RefData.CurrentDay.Day || 
+                        RefData.CopiedDay.Date.Month != RefData.CurrentDay.Month || 
+                        RefData.CopiedDay.Date.Year != RefData.CurrentDay.Year;
+
+                }
+                else
+                {
+                    canCopy = RefData.CopiedDay.DayOfWeek != SelectedJournalTemplateDayOfWeek;
+                }
+            }
+                
+            Label label2 = new Label() { Text = "Paste day", IsVisible = canCopy, Style = labelStyle };
             label2.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command(async () =>
+                Command = new Command(() =>
                 {
-                    RefData.Meals.Clear();
+                    if (HomePageType == HomePageTypeEnum.Normal)
+                        CopyToLogDay();
+                    else
+                        CopyToJournalTemplateDay();
 
-                    Log currentLog = RefData.GetLog(RefData.CurrentDay);
-
-                    // delette existing meals
-                    foreach (Meal currentMeal in currentLog.Meals)
-                    {
-                        // meals
-                        var currentLogMeal = RefData.LogMeals.FirstOrDefault(x => x.MealId == currentMeal.Id && x.LogId == currentLog.Id);
-                        if (currentLogMeal == null)
-                            continue;
-
-                        await App.DataBaseRepo.DeleteLogMealAsync(currentLogMeal);
-                        RefData.LogMeals.Remove(currentLogMeal);
-
-                        // aliments
-                        foreach (Aliment aliment in currentMeal.Aliments)
-                        {
-                            MealAliment mealAliment = RefData.MealAliments.FirstOrDefault(x => x.MealId == currentMeal.Id && x.AlimentId == aliment.Id);
-                            if (aliment == null)
-                                continue;
-
-                            await App.DataBaseRepo.DeleteMealAlimentAsync(mealAliment);
-                            RefData.MealAliments.Remove(mealAliment);
-                        }
-                    }
-                    currentLog.Meals.Clear();
-
-
-                    foreach (Meal copiedMeal in CopiedLog.Meals)
-                    {
-                        Meal meal = new Meal() { Name = copiedMeal.Name, Order = copiedMeal.Order };
-                        await App.DataBaseRepo.AddMealAsync(meal);
-                        RefData.AllMeals.Add(meal);
-                        RefData.PopulateMeal(meal, copiedMeal);
-                        RefData.Meals.Add(meal);
-
-                        LogMeal logMeal = new LogMeal() { LogId = currentLog.Id, MealId = meal.Id };
-                        await App.DataBaseRepo.AddLogMealAsync(logMeal);
-                        RefData.LogMeals.Add(logMeal);
-                    }
-
-                    CopiedLog = null;
                     rSPopup.Close();
                 })
             });
@@ -338,6 +334,148 @@ namespace MealPlanner.ViewModels
             rSPopup.SetCustomView(stackLayout);
 
             rSPopup.Show();
+        }
+
+        /// <summary>
+        /// Used when day is copied to log day and not journal template
+        /// </summary>
+        private async void CopyToLogDay()
+        {
+            RefData.Meals.Clear();
+
+            Log currentLog = RefData.GetLog(RefData.CurrentDay);
+
+            // delette existing meals and aliments
+            foreach (Meal meal in currentLog.Meals)
+            {
+                // meals
+                var logMeal = RefData.LogMeals.FirstOrDefault(x => x.MealId == meal.Id && x.LogId == currentLog.Id);
+                if (logMeal == null)
+                    continue;
+
+                // Delete LogMeal from db
+                await App.DataBaseRepo.DeleteLogMealAsync(logMeal);
+                RefData.LogMeals.Remove(logMeal);
+
+                // Delete Meal from db
+                await App.DataBaseRepo.DeleteMealAsync(meal);
+                RefData.AllMeals.Remove(meal);
+
+                // aliments
+                foreach (Aliment aliment in meal.Aliments)
+                {
+                    MealAliment mealAliment = RefData.MealAliments.FirstOrDefault(x => x.MealId == meal.Id && x.AlimentId == aliment.Id);
+                    if (aliment == null)
+                        continue;
+
+                    // Delete MealAliment from db
+                    await App.DataBaseRepo.DeleteMealAlimentAsync(mealAliment);
+                    RefData.MealAliments.Remove(mealAliment);
+
+                    // Delete Aliment from collection
+                    RefData.Aliments.Remove(aliment);
+                }
+            }
+            currentLog.Meals.Clear();
+
+            // Copy and create new meals and aliments
+            foreach (Meal copiedMeal in RefData.CopiedDay.Meals)
+            {
+                Meal meal = new Meal()
+                {
+                    Name = copiedMeal.Name,
+                    Order = copiedMeal.Order
+                };
+                await App.DataBaseRepo.AddMealAsync(meal);
+                RefData.AllMeals.Add(meal);
+                RefData.PopulateMeal(meal, copiedMeal);
+                RefData.Meals.Add(meal);
+
+                LogMeal logMeal = new LogMeal() 
+                {
+                    LogId = currentLog.Id,
+                    MealId = meal.Id 
+                };
+                await App.DataBaseRepo.AddLogMealAsync(logMeal);
+                RefData.LogMeals.Add(logMeal);
+                currentLog.Meals.Add(meal);
+            }
+
+            RefData.CopiedDay = null;
+            RefData.UpdateDailyValues();
+        }
+
+        /// <summary>
+        /// Used when day is copied to journal template day
+        /// </summary>
+        private async void CopyToJournalTemplateDay()
+        {
+            RefData.Meals.Clear();
+
+            DayOfWeekHelper dayOfWeekHelper = RefData.CurrentJournalTemplate.DaysOfWeek.FirstOrDefault(x => (int)x.DayOfWeek == SelectedJournalTemplateDayOfWeek);
+            if(dayOfWeekHelper == null)
+                return; 
+
+
+            // delette existing meals and aliments
+            foreach (Meal meal in dayOfWeekHelper.Meals)
+            {
+                // meals
+                var journalTemplateMeal = RefData.JournalTemplateMeals.FirstOrDefault(x => x.JournalTemplateId == RefData.CurrentJournalTemplate.Id && (int)x.DayOfWeek == SelectedJournalTemplateDayOfWeek);
+                if (journalTemplateMeal == null)
+                    continue;
+
+                // Delete JournalTemplateMeal from db
+                await App.DataBaseRepo.DeleteJournalTemplateMealAsync(journalTemplateMeal);
+                RefData.JournalTemplateMeals.Remove(journalTemplateMeal);
+
+                // Delete Meal from db
+                await App.DataBaseRepo.DeleteMealAsync(meal);
+                RefData.AllMeals.Remove(meal);
+
+                // aliments
+                foreach (Aliment aliment in meal.Aliments)
+                {
+                    MealAliment mealAliment = RefData.MealAliments.FirstOrDefault(x => x.MealId == meal.Id && x.AlimentId == aliment.Id);
+                    if (aliment == null)
+                        continue;
+
+                    // Delete MealAliment from db
+                    await App.DataBaseRepo.DeleteMealAlimentAsync(mealAliment);
+                    RefData.MealAliments.Remove(mealAliment);
+
+                    // Delete Aliment from collection
+                    RefData.Aliments.Remove(aliment);
+                }
+            }
+            dayOfWeekHelper.Meals.Clear();
+
+            // Copy and create new meals and aliments
+            foreach (Meal copiedMeal in RefData.CopiedDay.Meals)
+            {
+                Meal meal = new Meal()
+                {
+                    Name = copiedMeal.Name,
+                    Order = copiedMeal.Order
+                };
+                await App.DataBaseRepo.AddMealAsync(meal);
+                RefData.AllMeals.Add(meal);
+                RefData.PopulateMeal(meal, copiedMeal);
+                RefData.Meals.Add(meal);
+
+                JournalTemplateMeal journalTemplateMeal = new JournalTemplateMeal()
+                {
+                    JournalTemplateId = RefData.CurrentJournalTemplate.Id,
+                    DayOfWeek = dayOfWeekHelper.DayOfWeek,
+                    MealId = meal.Id
+                };
+                await App.DataBaseRepo.AddJournalTemplateMealAsync(journalTemplateMeal);
+                RefData.JournalTemplateMeals.Add(journalTemplateMeal);
+                dayOfWeekHelper.Meals.Add(meal);
+            }
+
+            RefData.CopiedDay = null;
+            RefData.UpdateDailyValues();
         }
 
         public ICommand OpenCalendarCommand { get; set; }

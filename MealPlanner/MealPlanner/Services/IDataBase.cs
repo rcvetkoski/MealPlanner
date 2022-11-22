@@ -21,6 +21,7 @@ namespace MealPlanner.Services
         Task<List<JournalTemplateMeal>> GetAllJournalTemplateMealsAsync();
         Task<int> AddJournalTemplateMealAsync(JournalTemplateMeal journalTemplateMeal);
         Task<int> UpdateJournalTemplateMealAsync(JournalTemplateMeal journalTemplateMeal);
+        Task<int> DeleteJournalTemplateMealAsync(JournalTemplateMeal journalTemplateMeal);
         Task<int> DropTableJournalTemplateMeal();
 
         // Log

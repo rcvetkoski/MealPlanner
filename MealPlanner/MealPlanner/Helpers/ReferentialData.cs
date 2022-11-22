@@ -76,10 +76,12 @@ namespace MealPlanner.Helpers
             }
         }  
 
+        public CopiedDayHelper CopiedDay { get; set; }
+
         public List<Log> Logs { get; set; }
         public List<LogMeal> LogMeals { get; set; } 
 
-        public HomePageTypeEnum HomePageType { get; set; }
+        public HomePageTypeEnum LastUsedHomePageType { get; set; }
 
         public ReferentialData()
         {
@@ -352,6 +354,7 @@ namespace MealPlanner.Helpers
                     {
                         MealAliment newMealAliment = new MealAliment() { AlimentId = aliment.Id, MealId = meal.Id, ServingSize = aliment.ServingSize };
                         App.DataBaseRepo.AddMealAlimentAsync(newMealAliment).Wait();
+                        aliment.MealAlimentId = newMealAliment.Id;
                         MealAliments.Add(newMealAliment);
                     }
 

@@ -14,25 +14,30 @@ namespace MealPlanner.Views
 {
     public partial class HomePage : ContentPage
     {
-        private HomePageTypeEnum homePageTypeEnum;
+        private HomePageTypeEnum homePageType;
         private DayOfWeek dayOfWeek;
 
         public HomePage()
         {
             InitializeComponent();
-            this.homePageTypeEnum = HomePageTypeEnum.Normal;
-            (BindingContext as HomeViewModel).RefData.HomePageType = HomePageTypeEnum.Normal;
+            var vm = (BindingContext as HomeViewModel);
+            vm.HomePageType = HomePageTypeEnum.Normal;
+            this.homePageType = HomePageTypeEnum.Normal;
+            vm.SelectedJournalTemplateDayOfWeek = -1;
+            vm.RefData.LastUsedHomePageType = HomePageTypeEnum.Normal;
         }
 
         public HomePage(HomePageTypeEnum homePageTypeEnum, DayOfWeek dayOfWeek)
         {
             InitializeComponent();
-            this.homePageTypeEnum = homePageTypeEnum;
+            this.homePageType = homePageTypeEnum;
             this.dayOfWeek = dayOfWeek;
 
             var vm = (BindingContext as HomeViewModel);
 
-            vm.RefData.HomePageType = homePageTypeEnum;
+            vm.SelectedJournalTemplateDayOfWeek = (int)dayOfWeek;
+            vm.HomePageType = homePageTypeEnum;
+            vm.RefData.LastUsedHomePageType = homePageTypeEnum;
             vm.ImportFromSavedDaysVisible = false;
         }
 
@@ -44,10 +49,10 @@ namespace MealPlanner.Views
 
             var vm = (BindingContext as HomeViewModel);
 
-            if (homePageTypeEnum == HomePageTypeEnum.JournalTemplate)
+            if (homePageType == HomePageTypeEnum.JournalTemplate)
                 vm.RefData.CreateJournalTemplates(dayOfWeek);
 
-            if(homePageTypeEnum == HomePageTypeEnum.Normal && vm.RefData.HomePageType == HomePageTypeEnum.JournalTemplate)
+            if(homePageType == HomePageTypeEnum.Normal && vm.RefData.LastUsedHomePageType == HomePageTypeEnum.JournalTemplate)
                 vm.RefData.GetMealsAtDate(vm.RefData.CurrentDay, vm.RefData.CurrentDay.DayOfWeek);
 
             //collectionView.ItemsSource = null;
@@ -65,6 +70,7 @@ namespace MealPlanner.Views
         {
             (BindingContext as HomeViewModel).SetTitle();
             (BindingContext as HomeViewModel).RefData.GetMealsAtDate(e.NewDate, e.NewDate.DayOfWeek);
+            (BindingContext as HomeViewModel).RefData.UpdateDailyValues();  
         }
     }
 }
