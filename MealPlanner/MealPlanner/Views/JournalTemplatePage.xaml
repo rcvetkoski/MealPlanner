@@ -14,70 +14,66 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout Padding="15">
-            <Frame Style="{StaticResource UserCard}">
-                <StackLayout>
-                    <rsControls:RSPicker Placeholder="Modele"
+        <StackLayout Margin="10">
+            <rsControls:RSPicker Placeholder="Modele"
                                          Style="{StaticResource Picker}"
                                          ItemsSource="{Binding RefData.JournalTemplates}" 
                                          SelectedItem="{Binding RefData.CurrentJournalTemplate}"
                                          DisplayMemberPath="Name"
                                          IsPlaceholderAlwaysFloating="True"/>
-                    <CollectionView x:Name="collectionView" ItemsSource="{Binding RefData.CurrentJournalTemplate.DaysOfWeek}"
+            <CollectionView x:Name="collectionView" ItemsSource="{Binding RefData.CurrentJournalTemplate.DaysOfWeek}"
                                     SelectionChangedCommand="{Binding DistributionCommand}"
                                     SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={x:Reference collectionView}}"
                                     SelectionMode="Single">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Grid RowDefinitions="Auto, Auto, 1" ColumnDefinitions="*, Auto">
-                                    <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Style="{StaticResource LabelSmallBold}" Text="{Binding DayOfWeek}"/>
-                                    <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding Description}"/>
-                                    <Label Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End" Style="{StaticResource LabelSmall}" Text="{Binding CaloriesString}"/>
-                                    <Button Grid.Row="0" Grid.Column="1"
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions="Auto, Auto, 1" ColumnDefinitions="*, Auto">
+                            <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Style="{StaticResource LabelSmallBold}" Text="{Binding DayOfWeek}"/>
+                            <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding Description}"/>
+                            <Label Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End" Style="{StaticResource LabelSmall}" Text="{Binding CaloriesString}"/>
+                            <Button Grid.Row="0" Grid.Column="1"
                                             HorizontalOptions="End"
                                             WidthRequest="50"
                                             TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                             BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                                             Command="{Binding BindingContext.DayOptionsCommand, Source={x:Reference journalTemplatePage}}"
                                             CommandParameter="{Binding .}">
-                                        <Button.ImageSource>
-                                            <FontImageSource Size="Medium" 
+                                <Button.ImageSource>
+                                    <FontImageSource Size="Medium" 
                                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                                  Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
-                                        </Button.ImageSource>
-                                    </Button>
-                                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="LightGray"/>
+                                </Button.ImageSource>
+                            </Button>
+                            <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="LightGray"/>
 
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup Name="CommonStates">
-                                            <VisualState Name="Normal">
-                                                <VisualState.Setters>
-                                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" />
-                                                </VisualState.Setters>
-                                            </VisualState>
-                                            <VisualState Name="Selected">
-                                                <VisualState.Setters>
-                                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" />
-                                                </VisualState.Setters>
-                                            </VisualState>
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                </Grid>
-                                
-                                <!--<Button Text="{Binding Description}"
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+
+                        <!--<Button Text="{Binding Description}"
                                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                                         Command="{Binding BindingContext.DistributionCommand, Source={x:Reference journalTemplatePage}}"
                                         CommandParameter="{Binding DayOfWeek}"/>-->
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                    <Button BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                             TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                             Command="{Binding AddNewJournalTemplateCommand}"
                             Text="+ Add new Journal Template"/>
-                </StackLayout>
-            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
