@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
+             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
+             Title="{Binding Title}"
+             x:Class="MealPlanner.Views.UnitsPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:UnitsViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Label Style="{StaticResource LabelMedium}" Text="Units"/>
+            <rsControls:RSEntry Placeholder="Weight unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
+            <rsControls:RSEntry Placeholder="Height unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
+            <rsControls:RSEntry Placeholder="Energie unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

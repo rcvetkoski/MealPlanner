@@ -13,23 +13,12 @@
         <viewmodels:SettingsViewModel/>
     </ContentPage.BindingContext>
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Priority="0" Command="{Binding SaveCommand}">
-            <ToolbarItem.IconImageSource>
-                <FontImageSource Size="Title" 
-                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.Check}" FontFamily="FA-Solid"/>
-            </ToolbarItem.IconImageSource>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
-
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
             <StackLayout Padding="15">
 
-                <Label Style="{StaticResource LabelMedium}" Text="User settings"/>
                 <Frame Style="{StaticResource UserCard}">
-                    <StackLayout Orientation="Horizontal" Padding="10">
+                    <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="User settings"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                             <Image.Source>
@@ -44,43 +33,89 @@
                     </StackLayout>
                 </Frame>
 
-                <Label Style="{StaticResource LabelMedium}" Text="Units"/>
                 <Frame Style="{StaticResource UserCard}">
-                    <StackLayout>
-                        <rsControls:RSEntry Placeholder="Weight unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSEntry Placeholder="Height unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSEntry Placeholder="Energie unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Units"/>
+                        <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Source>
+                                <FontImageSource Size="Title" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUnitsPageCommand}" />
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </Frame>
 
-                <Label Style="{StaticResource LabelMedium}" Text="Meals"/>
                 <Frame Style="{StaticResource UserCard}">
-                    <StackLayout>
-                        <rsControls:RSNumericUpDown Placeholder="Number of meals" Text="{Binding TempTemplateCount}" IsPlaceholderAlwaysFloating="True"/>
-                        <StackLayout BindableLayout.ItemsSource="{Binding TempTemplateMeals}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <rsControls:RSEntry Placeholder="{Binding Order, StringFormat='Meal {0}'}" Text="{Binding Name}" IsPlaceholderAlwaysFloating="True"/>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Customize Meals"/>
+                        <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Source>
+                                <FontImageSource Size="Title" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenCustomizeMealsPageCommand}" />
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </Frame>
 
-                <Label Style="{StaticResource LabelMedium}" Text="Jounal Templates"/>
                 <Frame Style="{StaticResource UserCard}">
-                    <Button Text="Journal Templates"
-                            TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                            BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                            Command="{Binding OpenJournalTemplatePageCommand}"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Theme"/>
+                        <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Source>
+                                <FontImageSource Size="Title" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                    </StackLayout>
                 </Frame>
 
+                <Frame Style="{StaticResource UserCard}">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Journal Templates"/>
+                        <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Source>
+                                <FontImageSource Size="Title" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenJournalTemplatePageCommand}" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Style="{StaticResource UserCard}">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Objectifs"/>
+                        <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Source>
+                                <FontImageSource Size="Title" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                    </StackLayout>
+                </Frame>
+                                
+                
+                
                 <Button Text="Reset data base"
                         Command="{Binding RefData.ResetDBCommand}"
+                        BackgroundColor="Red"
                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                         VerticalOptions="EndAndExpand" 
                         Margin="30, 20, 30, 20"/>
-                
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
