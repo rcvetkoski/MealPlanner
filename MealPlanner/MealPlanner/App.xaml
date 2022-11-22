@@ -107,6 +107,10 @@
                 <Setter Property="FontSize" Value="Large"/>
             </Style>
 
+            <Style x:Key="LabelPopup" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+
             <Style x:Key="BaseEntry" TargetType="Entry">
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
             </Style>

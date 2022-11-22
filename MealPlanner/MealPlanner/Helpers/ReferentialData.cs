@@ -77,6 +77,7 @@ namespace MealPlanner.Helpers
         }  
 
         public CopiedDayHelper CopiedDay { get; set; }
+        public List<Aliment> CopiedAliments { get; set; }
 
         public List<Log> Logs { get; set; }
         public List<LogMeal> LogMeals { get; set; } 
@@ -87,6 +88,7 @@ namespace MealPlanner.Helpers
         {
             //ResetDB();
             CurrentDay = DateTime.Now;
+            CopiedAliments = new List<Aliment>();
             InitDefaultMeals();
             ResetDBCommand = new Command(ResetDB);
             InitDB();

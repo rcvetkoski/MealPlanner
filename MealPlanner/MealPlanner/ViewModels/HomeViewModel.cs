@@ -33,13 +33,10 @@ namespace MealPlanner.ViewModels
             PreviousDayCommand = new Command(PreviousDay);
             NextDayCommand = new Command(NextDay);
             ResetCurrentDayCommand = new Command(ResetCurrentDay);
-            CopiedAliments = new List<Aliment>();
         }
 
         public HomePageTypeEnum HomePageType { get; set; }
         public int SelectedJournalTemplateDayOfWeek { get; set; }
-
-        public List<Aliment> CopiedAliments { get; set; }
 
         public DateTime MaximumDate { get; set; }
         public bool NextDayCommandVisible
@@ -66,37 +63,95 @@ namespace MealPlanner.ViewModels
             rSPopup.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.BottomToTop);
 
             StackLayout stackLayout = new StackLayout() { Margin = 20, Spacing = 20};
-            var labelStyle = Application.Current.Resources["LabelSmall"] as Style;
-            Label label = new Label() { Text = meal.Name, Style = labelStyle, FontAttributes = FontAttributes.Bold };
-            Label label1 = new Label() { Text = "Copy aliments", Style = labelStyle };
+            var labelStyle = Application.Current.Resources["LabelPopup"] as Style;
+
+            Label label = new Label()
+            { 
+                Text = meal.Name,
+                Style = labelStyle, 
+                FontAttributes = FontAttributes.Bold
+            };
+
+            Label label1 = new Label()
+            { 
+                Text = "Copy aliments",
+                IsVisible = meal.Aliments.Any(),
+                Style = labelStyle 
+            };
             label1.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(() => 
                 {
-                    CopiedAliments.Clear();
+                    RefData.CopiedAliments.Clear();
                     foreach(Aliment aliment in meal.Aliments)
-                        CopiedAliments.Add(RefData.CreateAndCopyAlimentProperties(aliment));
+                        RefData.CopiedAliments.Add(RefData.CreateAndCopyAlimentProperties(aliment));
 
                     rSPopup.Close();
                 })
             });
 
-            Label label2 = new Label() { Text = "Paste aliments", IsVisible = CopiedAliments.Any(), Style = labelStyle };
+            Label label2 = new Label()
+            { 
+                Text = "Paste aliments",
+                IsVisible = RefData.CopiedAliments.Any(),
+                Style = labelStyle 
+            };
             label2.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(() =>
                 {
-                    foreach (Aliment aliment in CopiedAliments)
+                    foreach (Aliment aliment in RefData.CopiedAliments)
                         RefData.AddAliment(aliment, meal);
 
                     rSPopup.Close();
                 })
             });
 
-            Label label3 = new Label() { Text = "Set Hour", Style = labelStyle };
-            Label label4 = new Label() { Text = "Cancel", TextColor = Color.Red };
+            Label label3 = new Label() 
+            { 
+                Text = "Set Hour",
+                Style = labelStyle 
+            };
 
+            Label label4 = new Label()
+            { 
+                Text = "Save as recipe",
+                IsVisible = meal.Aliments.Where(x=> x.AlimentType == AlimentTypeEnum.Food).Count() > 1,
+                Style = labelStyle
+            };
             label4.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    // Avoid double action invoke
+                    label4.IsEnabled = false;
+
+                    // Recipe page
+                    RecipePage recipePage = new RecipePage();
+                    var vm = (recipePage.BindingContext as RecipeViewModel);
+                    Recipe recipe = new Recipe();
+
+                    foreach(Aliment aliment in meal.Aliments)
+                    {
+                        if (aliment.AlimentType == AlimentTypeEnum.Recipe)
+                            continue;
+
+                        recipe.Foods.Add(aliment as Food);
+
+                        // Delete 
+                    }
+                    vm.CurrentAliment = recipe;
+                    await Shell.Current.Navigation.PushAsync(recipePage);
+                    rSPopup.Close();
+                })
+            });
+
+            Label label5 = new Label() 
+            { 
+                Text = "Cancel",
+                TextColor = Color.Red 
+            };
+            label5.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(() =>
                 {
@@ -109,6 +164,7 @@ namespace MealPlanner.ViewModels
             stackLayout.Children.Add(label2);
             stackLayout.Children.Add(label3);
             stackLayout.Children.Add(label4);
+            stackLayout.Children.Add(label5);
             rSPopup.SetCustomView(stackLayout);
 
             rSPopup.Show(); 
@@ -242,9 +298,20 @@ namespace MealPlanner.ViewModels
             rSPopup.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.BottomToTop);
 
             StackLayout stackLayout = new StackLayout() { Margin = 20, Spacing = 20 };
-            var labelStyle = Application.Current.Resources["LabelSmall"] as Style;
-            Label label = new Label() { Text = RefData.CurrentDay.ToString("dddd, dd, yyyy"), Style = labelStyle, FontAttributes = FontAttributes.Bold };
-            Label label1 = new Label() { Text = "Copy day", Style = labelStyle };
+
+            var labelStyle = Application.Current.Resources["LabelPopup"] as Style;
+            var dayOfWeekString = (DayOfWeek)SelectedJournalTemplateDayOfWeek;
+            Label label = new Label() 
+            { 
+                Text = HomePageType == HomePageTypeEnum.Normal ? RefData.CurrentDay.ToString("dddd, dd, yyyy") : dayOfWeekString.ToString(),
+                Style = labelStyle, FontAttributes = FontAttributes.Bold
+            };
+
+            Label label1 = new Label()
+            { 
+                Text = "Copy day", 
+                Style = labelStyle
+            };
             label1.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(() =>
@@ -311,6 +378,7 @@ namespace MealPlanner.ViewModels
             {
                 Command = new Command(async () =>
                 {
+                    label3.IsEnabled = false;
                     await Shell.Current.GoToAsync($"{nameof(JournalTemplatePage)}");
                     rSPopup.Close();
                 })

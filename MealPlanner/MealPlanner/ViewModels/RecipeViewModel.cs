@@ -45,7 +45,7 @@ namespace MealPlanner.ViewModels
             CurrentAliment.OriginalServingSize = CurrentAliment.ServingSize;
             RefData.Recipes.Add(CurrentAliment as Recipe);
             RefData.Aliments.Add(CurrentAliment as Recipe);
-            CopyOfFilteredAliments.Add(CurrentAliment as Recipe);
+            CopyOfFilteredAliments?.Add(CurrentAliment as Recipe);
             await App.DataBaseRepo.AddRecipeAsync(CurrentAliment as Recipe);
 
             //Save foods in db

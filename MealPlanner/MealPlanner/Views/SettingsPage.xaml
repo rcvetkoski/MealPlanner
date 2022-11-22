@@ -29,7 +29,7 @@
 
                 <Label Style="{StaticResource LabelMedium}" Text="User settings"/>
                 <Frame Style="{StaticResource UserCard}">
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" Padding="10">
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="User settings"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                             <Image.Source>

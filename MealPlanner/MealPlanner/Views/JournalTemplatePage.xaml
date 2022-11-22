@@ -17,7 +17,12 @@
         <StackLayout Padding="15">
             <Frame Style="{StaticResource UserCard}">
                 <StackLayout>
-                    <rsControls:RSPicker Placeholder="Modele" Style="{StaticResource Picker}" ItemsSource="{Binding RefData.JournalTemplates}" SelectedItem="{Binding RefData.CurrentJournalTemplate}" DisplayMemberPath="Name"/>
+                    <rsControls:RSPicker Placeholder="Modele"
+                                         Style="{StaticResource Picker}"
+                                         ItemsSource="{Binding RefData.JournalTemplates}" 
+                                         SelectedItem="{Binding RefData.CurrentJournalTemplate}"
+                                         DisplayMemberPath="Name"
+                                         IsPlaceholderAlwaysFloating="True"/>
                     <CollectionView x:Name="collectionView" ItemsSource="{Binding RefData.CurrentJournalTemplate.DaysOfWeek}"
                                     SelectionChangedCommand="{Binding DistributionCommand}"
                                     SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={x:Reference collectionView}}"
