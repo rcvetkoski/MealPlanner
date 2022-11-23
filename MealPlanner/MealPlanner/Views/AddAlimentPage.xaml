@@ -21,73 +21,18 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Shell.TitleView>
-        <ContentView>
-            <Grid x:Name="gridToolbar"
-                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, Auto"
-                  HeightRequest="{OnPlatform iOS=44}"
-                  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                <Label Grid.Row="0" Grid.Column="0"
-                       x:Name="title"
-                       Text="{Binding Title}"
-                       Style="{StaticResource NavigationBarLabel}"
-                       VerticalOptions="Center"/>
-                <Entry x:Name="entry"
-                       Grid.Row="0" Grid.Column="0"
-                       Placeholder="Search for aliments..."
-                       Keyboard="Chat" 
-                       Opacity="0"
-                       Style="{StaticResource EntrySearch}"
-                       Text="{Binding Query}"
-                       TextChanged="searchBar_TextChanged"
-                       IsVisible="False"
-                       TranslationX="{Binding Path=Width, Source={x:Reference entry}}"
-                       ReturnCommand="{Binding SearchAlimentsCommand}"
-                       ReturnCommandParameter="{Binding Text, Source={x:Reference entry}}"/>
-
-                <Button x:Name="cancelButton"
-                        Grid.Row="0" Grid.Column="1"
-                        IsVisible="False"
-                        Command="{Binding ClearSearchCommand}"
-                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                        WidthRequest="{Binding Path=Height, Source={x:Reference gridToolbar}}"
-                        VerticalOptions="Center">
-                    <Button.ImageSource>
-                        <FontImageSource Size="14" 
-                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.X}" FontFamily="FA-Solid"/>
-                    </Button.ImageSource>
-                </Button>
-            </Grid>
-        </ContentView>
-    </Shell.TitleView>
-
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Priority="0" Command="{Binding ScanBarCodeCommand}">
+        <ToolbarItem Order="Primary" Priority="0" Command="{Binding CreateNewAlimentCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Size="20" 
                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.Barcode}" FontFamily="FA-Solid"/>
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-        <ToolbarItem Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked">
-            <ToolbarItem.IconImageSource>
-                <FontImageSource Size="20" 
-                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.MagnifyingGlass}" FontFamily="FA-Solid"/>
-            </ToolbarItem.IconImageSource>
-        </ToolbarItem>
-        <!--<ToolbarItem Order="Primary" Priority="2" Command="{Binding OpenFiltersCommand}">
-            <ToolbarItem.IconImageSource>
-                <FontImageSource Size="22"
-                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
-            </ToolbarItem.IconImageSource>
-            </ToolbarItem>-->
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <Grid RowDefinitions="Auto, Auto,*" ColumnDefinitions="*, *" RowSpacing="0">
+        <Grid RowDefinitions="Auto,*" ColumnDefinitions="*, *" RowSpacing="0">
 
             <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                          BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
@@ -100,62 +45,87 @@
                                  Glyph="{x:Static helpers:FontAwesomeIcons.MagnifyingGlass}" FontFamily="FA-Solid"/>
                     </Image.Source>
                 </Image>
-                <rsControls:RSEntry RSEntryStyle="Underline" Placeholder="Search" Style="{StaticResource Entry}" HorizontalOptions="FillAndExpand"/>
-                <Image>
-                    <Image.Source>
-                        <FontImageSource Size="18" 
+                <rsControls:RSEntry x:Name="entry"
+                                    RSEntryStyle="Underline"
+                                    Placeholder="Search" 
+                                    Style="{StaticResource Entry}" 
+                                    HorizontalOptions="FillAndExpand"
+                                    BorderFillColor="Transparent"
+                                    Keyboard="Chat"
+                                    TextChanged="searchBar_TextChanged"
+                                    Text="{Binding Query}"
+                                    ReturnCommand="{Binding SearchAlimentsCommand}"
+                                    ReturnCommandParameter="{Binding Text, Source={x:Reference entry}}">
+                </rsControls:RSEntry>
+                <Button x:Name="scanBarCodeButton"
+                        WidthRequest="40" HeightRequest="40" 
+                        Command="{Binding ScanBarCodeCommand}"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                        VerticalOptions="Center">
+                    <Button.ImageSource>
+                        <FontImageSource Size="18"
                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                  Glyph="{x:Static helpers:FontAwesomeIcons.Barcode}" FontFamily="FA-Solid"/>
-                    </Image.Source>
-                </Image>
-            </StackLayout>
-
-            <Grid x:Name="gridBar" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ColumnSpacing="0" RowSpacing="0"
-                  RowDefinitions="Auto, 2" ColumnDefinitions="*, *, *, Auto"
-                  BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
-                <Button x:Name="foodButton"
-                        Grid.Row="0" Grid.Column="0" 
-                        Text="Food" 
-                        TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                    </Button.ImageSource>
+                </Button>
+                <Button x:Name="cancelButton"
+                        IsVisible="False"
+                        Command="{Binding ClearSearchCommand}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                        FontAttributes="Bold" 
-                        FontSize="Small" 
-                        Clicked="FilterSwitch"/>
-                <Button x:Name="recipeButton"
-                        Grid.Row="0" Grid.Column="1" 
-                        IsVisible="{Binding RecipeSwitchVisibility}" 
-                        TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                        Text="Recipes" 
-                        FontSize="Small" Clicked="FilterSwitch"/>
-                <Button Grid.Row="0" Grid.Column="2"
-                        Text="+ New" 
-                        TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                        HorizontalOptions="CenterAndExpand"
-                        FontSize="Small" 
-                        Clicked="CreateNew"/>
-                <Button Grid.Row="0" Grid.Column="3"
-                        TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                        FontSize="Small" 
-                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                        HorizontalOptions="End"
-                        WidthRequest="{Binding Path=Height, Source={x:Reference gridBar}}">
+                        WidthRequest="40" HeightRequest="40"
+                        VerticalOptions="Center">
                     <Button.ImageSource>
                         <FontImageSource Size="14" 
                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.Filter}" FontFamily="FA-Solid"/>
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.X}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
-                <BoxView x:Name="slider" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                         HorizontalOptions="Start"
-                         VerticalOptions="End"
-                         WidthRequest="{Binding Path=Width, Source={x:Reference foodButton}}" 
-                         HeightRequest="2"
-                         BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"/>
-            </Grid>
+            </StackLayout>
 
-            <CollectionView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding FilteredAliments}">
+
+            <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding FilteredAliments}">
+                <CollectionView.Header>
+                    <Grid x:Name="gridBar" 
+                          RowSpacing="0"
+                          RowDefinitions="Auto, 2"
+                          ColumnDefinitions="*, *, Auto"
+                          BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                        <Button x:Name="foodButton"
+                                Grid.Row="0" Grid.Column="0" 
+                                Text="Foods" 
+                                TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                FontAttributes="Bold" 
+                                FontSize="Small" 
+                                Clicked="FilterSwitch"/>
+                        <Button x:Name="recipeButton"
+                                Grid.Row="0" Grid.Column="1" 
+                                IsVisible="{Binding RecipeSwitchVisibility}" 
+                                TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                Text="Recipes" 
+                                FontSize="Small" Clicked="FilterSwitch"/>
+                        <Button Grid.Row="0" Grid.Column="2"
+                                TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                FontSize="Small" 
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                HorizontalOptions="End"
+                                WidthRequest="{Binding Path=Height, Source={x:Reference gridBar}}">
+                            <Button.ImageSource>
+                                    <FontImageSource Size="14" 
+                                     Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                     Glyph="{x:Static helpers:FontAwesomeIcons.Filter}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+                        </Button>
+                        <BoxView x:Name="slider" 
+                                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="End"
+                                 WidthRequest="{Binding Path=Width, Source={x:Reference foodButton}}" 
+                                 HeightRequest="2"
+                                 BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"/>
+                    </Grid>
+                </CollectionView.Header>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,Auto" Padding="7" RowSpacing="2">
@@ -195,7 +165,7 @@
                     </ContentView>
                 </CollectionView.EmptyView>
             </CollectionView>
-           
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -61,6 +61,10 @@ namespace MealPlanner.Models
         {
             get
             {
+                calories = 0;
+                foreach (Meal meal in Meals)
+                    calories += meal.Calories;
+
                 return $"{calories} Kcal";
             }
         }

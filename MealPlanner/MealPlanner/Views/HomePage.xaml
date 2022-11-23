@@ -84,33 +84,32 @@
 
 
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
-            <StackLayout>
-               
-                <Frame Style="{StaticResource MealCard}" Margin="0, -25, 0, 0" Padding="2, 25, 2, 0">
-                    <Grid ColumnDefinitions="Auto,*,140" RowDefinitions="Auto, Auto, 15, Auto, 15, Auto, 15" Margin="10" RowSpacing="4">
+        <CollectionView x:Name="collectionView" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.Meals}" Margin="0, -25, 0, 0">
+                <CollectionView.Header>
+                    <Frame Style="{StaticResource MealCard}" Padding="2, 15, 2, -15">
+                        <Grid ColumnDefinitions="Auto,*,140" RowDefinitions="Auto, Auto, 15, Auto, 15, Auto, 15" Margin="10" RowSpacing="4">
 
-                        <Label Grid.Row="0" Grid.Column="0" IsVisible="False" Text="{Binding Title}" Style="{StaticResource NavigationBarLabel}"/>
+                            <Label Grid.Row="0" Grid.Column="0" IsVisible="False" Text="{Binding Title}" Style="{StaticResource NavigationBarLabel}"/>
 
 
-                        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Protein"/>
-                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding RefData.User.DailyProteinsRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
-                        <ProgressBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyProteinProgress}" VerticalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Protein"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding RefData.User.DailyProteinsRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
+                            <ProgressBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyProteinProgress}" VerticalOptions="Center"/>
 
-                        <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Carbs"/>
-                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding RefData.User.DailyCarbsRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                        <ProgressBar Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyCarbsProgress}" VerticalOptions="Center"/>
+                            <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Carbs"/>
+                            <Label Grid.Row="3" Grid.Column="1" Text="{Binding RefData.User.DailyCarbsRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                            <ProgressBar Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyCarbsProgress}" VerticalOptions="Center"/>
 
-                        <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Fats"/>
-                        <Label Grid.Row="5" Grid.Column="1" Text="{Binding RefData.User.DailyFatsRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
-                        <ProgressBar Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyFatsProgress}" VerticalOptions="Center"/>
+                            <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Fats"/>
+                            <Label Grid.Row="5" Grid.Column="1" Text="{Binding RefData.User.DailyFatsRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
+                            <ProgressBar Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyFatsProgress}" VerticalOptions="Center"/>
 
-                        <StackLayout Grid.Row="1" Grid.RowSpan="5" Grid.Column="2" VerticalOptions="Center" Spacing="0">
-                            <Label HorizontalOptions="Center" BackgroundColor="Red" Style="{StaticResource LabelSmall}" Text="{Binding RefData.User.DailyCalories, StringFormat='{0:0.#}'}"/>
-                            <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="of"/>
-                            <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" FontAttributes="Bold" Text="{Binding RefData.User.TDEE, StringFormat='{0:0.#}'}"/>
-                        </StackLayout>
-                        <controls:CircleCountdown 
+                            <StackLayout Grid.Row="1" Grid.RowSpan="5" Grid.Column="2" VerticalOptions="Center" Spacing="0">
+                                <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding RefData.User.DailyCalories, StringFormat='{0:0.#}'}"/>
+                                <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="of"/>
+                                <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" FontAttributes="Bold" Text="{Binding RefData.User.TDEE, StringFormat='{0:0.#}'}"/>
+                            </StackLayout>
+                            <controls:CircleCountdown 
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="FillAndExpand"
                             Grid.Row="1" Grid.RowSpan="5" Grid.Column="2"
@@ -118,12 +117,11 @@
                             ProgressStartColor="HotPink"
                             ProgressEndColor="HotPink"
                             StrokeWidth="12">
-                        </controls:CircleCountdown>
-                        <Label Grid.Row="5" Grid.RowSpan="2" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalOptions="Center" FontAttributes="Bold" Text="Calories"/>
-                    </Grid>
-                </Frame>
-
-                <CollectionView x:Name="collectionView" Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.Meals}">
+                            </controls:CircleCountdown>
+                            <Label Grid.Row="5" Grid.RowSpan="2" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalOptions="Center" FontAttributes="Bold" Text="Calories"/>
+                        </Grid>
+                    </Frame>
+                </CollectionView.Header>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout x:Name="meal">
@@ -229,8 +227,6 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-            </StackLayout>
-        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>

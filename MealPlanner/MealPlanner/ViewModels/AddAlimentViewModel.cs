@@ -27,7 +27,7 @@ namespace MealPlanner.ViewModels
     {
         public AddAlimentViewModel()
         {
-            Title = "AddFood";
+            SetTitle();
             FilteredAliments = new ObservableCollection<Aliment>();
             Query = string.Empty;
             RecipeSwitchVisibility = true;
@@ -36,6 +36,7 @@ namespace MealPlanner.ViewModels
             foreach (var item in RefData.Foods)
                 searchResults.Add(item);
 
+            CreateNewAlimentCommand = new Command(CreateNewAliment);
             CreateFoodCommand = new Command(CreateFood);
             SelectAlimentCommand = new Command<Aliment>(SelectAliment);
             CreateRecipeCommand = new Command(CreateRecipe);
@@ -143,6 +144,14 @@ namespace MealPlanner.ViewModels
                     OnPropertyChanged("SearchResults");
                 }
             }
+        }
+
+        public void SetTitle()
+        {
+            if (IsFoodChecked)
+                Title = $"Foods";
+            else
+                Title = $"Recipes";
         }
 
         public ICommand SelectAlimentCommand { get; set; }
@@ -258,6 +267,15 @@ namespace MealPlanner.ViewModels
                 rSPopup.Close();
             }));
             rSPopup.Show();
+        }
+
+        public ICommand CreateNewAlimentCommand { get; set; }
+        private void CreateNewAliment()
+        {
+            if (IsFoodChecked)
+                CreateFoodCommand.Execute(null);
+            else
+                CreateRecipeCommand.Execute(null);
         }
 
         public ICommand CreateFoodCommand { get; set; }

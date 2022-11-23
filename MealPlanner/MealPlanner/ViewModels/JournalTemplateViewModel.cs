@@ -20,7 +20,6 @@ namespace MealPlanner.ViewModels
             foreach (DayOfWeek dayOfWeek in (DayOfWeek[])Enum.GetValues(typeof(DayOfWeek)))
                 DayOfWeeks.Add(dayOfWeek);
 
-            DistributionCommand = new Command<DayOfWeekHelper>(Distribution);
             DayOptionsCommand = new Command<DayOfWeekHelper>(DayOptions);
         }
 
@@ -67,15 +66,15 @@ namespace MealPlanner.ViewModels
         }
 
 
-        public ICommand DistributionCommand { get; set; }
-        private async void Distribution(DayOfWeekHelper dayOfWeekHelper)
+        private async void Distribution(DayOfWeekHelper dayOfWeekHelper, RSPopup rSPopup)
         {
             HomePage homePage = new HomePage(Helpers.Enums.HomePageTypeEnum.JournalTemplate, dayOfWeekHelper.DayOfWeek);
-            Shell.SetTitleView(homePage, null);
             (homePage.BindingContext as HomeViewModel).Title = dayOfWeekHelper.DayOfWeek.ToString();
-            await Shell.Current.Navigation.PushAsync(homePage);
+            Shell.SetTitleView(homePage, null);
             Shell.SetTabBarIsVisible(homePage, false);
+            await Shell.Current.Navigation.PushAsync(homePage);
             (homePage.BindingContext as HomeViewModel).RefData.UpdateDailyValues();
+            rSPopup.Close();
         }
 
 
@@ -89,11 +88,26 @@ namespace MealPlanner.ViewModels
             rSPopup.SetPopupSize(Xamarin.RSControls.Enums.RSPopupSizeEnum.MatchParent, Xamarin.RSControls.Enums.RSPopupSizeEnum.WrapContent);
             rSPopup.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.BottomToTop);
 
-            StackLayout stackLayout = new StackLayout() { Margin = 20, Spacing = 20 };
-            var labelStyle = Application.Current.Resources["LabelSmall"] as Style;
-            Label label = new Label() { Text = "Monday", Style = labelStyle, FontAttributes = FontAttributes.Bold };
+            StackLayout stackLayout = new StackLayout()
+            {
+                Margin = 20,
+                Spacing = 20
+            };
 
-            Label label1 = new Label() { Text = $"Import day to {currentLog.Date.ToString("dd MMM yyyy")}", Style = labelStyle };
+            var labelStyle = Application.Current.Resources["LabelPopup"] as Style;
+
+            Label label = new Label()
+            {
+                Text = $"{RefData.CurrentJournalTemplate.Name} / {dayOfWeek.DayOfWeek.ToString()}",
+                Style = labelStyle,
+                FontAttributes = FontAttributes.Bold 
+            };
+
+            Label label1 = new Label() 
+            { 
+                Text = $"Import day to {currentLog.Date.ToString("dd MMM yyyy")}",
+                Style = labelStyle
+            };
             label1.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(async () =>
@@ -143,8 +157,24 @@ namespace MealPlanner.ViewModels
                 })
             });
 
-            Label label3 = new Label() { Text = "Cancel", TextColor = Color.Red };
+            Label label2 = new Label()
+            {
+                Style = labelStyle,
+                Text = "Edit"
+            };
+            label2.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(() =>
+                {
+                    Distribution(dayOfWeek, rSPopup);
+                })
+            });
 
+            Label label3 = new Label()
+            {
+                Text = "Cancel",
+                TextColor = Color.Red 
+            };
             label3.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(() =>
@@ -155,6 +185,7 @@ namespace MealPlanner.ViewModels
 
             stackLayout.Children.Add(label);
             stackLayout.Children.Add(label1);
+            stackLayout.Children.Add(label2);
             stackLayout.Children.Add(label3);
             rSPopup.SetCustomView(stackLayout);
 
