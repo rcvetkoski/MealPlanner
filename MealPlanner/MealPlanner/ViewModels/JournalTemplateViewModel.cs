@@ -191,5 +191,10 @@ namespace MealPlanner.ViewModels
 
             rSPopup.Show();
         }
+
+        ~JournalTemplateViewModel()
+        {
+
+        }
     }
 }

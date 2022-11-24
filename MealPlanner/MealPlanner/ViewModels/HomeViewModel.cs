@@ -277,17 +277,21 @@ namespace MealPlanner.ViewModels
                 App.Current.MainPage.Navigation.PushAsync(new FoodPage());
         }
 
-        //private AddAlimentPage addAlimentPage;
+        private AddAlimentPage addAlimentPage;
         public ICommand AddAlimentCommand { get; set; }
         private async void AddAliment(Meal meal)
         {
-            //if(addAlimentPage == null)
-              var  addAlimentPage = new AddAlimentPage();
+            if(addAlimentPage == null)
+                addAlimentPage = new AddAlimentPage();
 
             (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedMeal = meal;
             await App.Current.MainPage.Navigation.PushAsync(addAlimentPage);
 
             //await Shell.Current.Navigation.PushAsync(new StatisticsPage());
+
+            //GC.Collect();
+            //GC.WaitForPendingFinalizers();
+            //GC.Collect();
         }
 
 
@@ -569,8 +573,6 @@ namespace MealPlanner.ViewModels
         {
             RefData.CurrentDay = RefData.CurrentDay.AddDays(1);
             SetTitle();
-            //RefData.GetMealsAtDate(RefData.CurrentDay);
-            //RefData.UpdateDailyValues();
             OnPropertyChanged(nameof(NextDayCommandVisible));
         }
 
@@ -579,8 +581,6 @@ namespace MealPlanner.ViewModels
         {
             RefData.CurrentDay = DateTime.Now;
             SetTitle();
-            //RefData.GetMealsAtDate(RefData.CurrentDay);
-            //RefData.UpdateDailyValues();
             OnPropertyChanged(nameof(NextDayCommandVisible));
         }
 

@@ -41,25 +41,25 @@ namespace MealPlanner.Views
         private async void FilterSwitch(object sender, EventArgs e)
         {
             double x = 0;
+            var vm = (BindingContext as AddAlimentViewModel);
+            var parent = (sender as VisualElement).Parent as Grid;
+            var foodButton = parent.FindByName("foodButton");
+            var slider = parent.FindByName("slider") as BoxView;
 
             if (sender == foodButton)
             {
                 x = 0;
-                foodButton.FontAttributes = FontAttributes.Bold;
-                recipeButton.FontAttributes = FontAttributes.None;
-                (BindingContext as AddAlimentViewModel).IsRecipeChecked = false;
-                (BindingContext as AddAlimentViewModel).IsFoodChecked = true;
+                vm.IsRecipeChecked = false;
+                vm.IsFoodChecked = true;
             }
             else
             {
                 x = (sender as View).Width;
-                foodButton.FontAttributes = FontAttributes.None;
-                recipeButton.FontAttributes = FontAttributes.Bold;
-                (BindingContext as AddAlimentViewModel).IsFoodChecked = false;
-                (BindingContext as AddAlimentViewModel).IsRecipeChecked = true;
+                vm.IsFoodChecked = false;
+                vm.IsRecipeChecked = true;
             }
 
-            (BindingContext as AddAlimentViewModel).SetTitle();
+            vm.SetTitle();
             await slider.TranslateTo(x, 0);
         }
     }

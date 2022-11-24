@@ -14,14 +14,19 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout>
-            <rsControls:RSPicker Placeholder="Modele"
+        <Grid RowDefinitions="Auto, Auto, *" ColumnDefinitions="*, Auto">
+            <rsControls:RSPicker Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                 Placeholder="Meal plan"
                                  Style="{StaticResource Picker}"
                                  ItemsSource="{Binding RefData.JournalTemplates}" 
                                  SelectedItem="{Binding RefData.CurrentJournalTemplate}"
                                  DisplayMemberPath="Name"
                                  RSEntryStyle="Underline"/>
-            <CollectionView x:Name="collectionView" ItemsSource="{Binding RefData.CurrentJournalTemplate.DaysOfWeek}">
+
+            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelMedium}" Margin="10,0,0,0" Text="Auto Generate meal plan for every day"/>
+            <Switch Grid.Row="1" Grid.Column="1"/>
+
+            <CollectionView x:Name="collectionView" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding RefData.CurrentJournalTemplate.DaysOfWeek}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="55" ColumnDefinitions="Auto, *" Padding="10, 0, 10, 0">
@@ -48,6 +53,6 @@
                     </Button>
                 </CollectionView.Footer>
             </CollectionView>
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

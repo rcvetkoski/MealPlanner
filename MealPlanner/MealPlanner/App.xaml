@@ -147,6 +147,10 @@
                 <Setter Property="BackgroundColor" Value="Transparent"/>
             </Style>
 
+            <Style x:Key="Grid" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
+            </Style>
+
             <Style x:Key="MealCard" TargetType="Frame">
                 <Setter Property="HasShadow" Value="{OnPlatform Android=true, iOS=false, Default=true}"/>
                 <Setter Property="Margin" Value="10"/>

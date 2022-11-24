@@ -12,6 +12,7 @@ using Xamarin.RSControls.Controls;
 
 namespace MealPlanner.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
         private HomePageTypeEnum homePageType;

@@ -6,7 +6,7 @@
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
              xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
-             xmlns:rsControlsHelpers="clr-namespace:Xamarin.RSControls.Helpers;assembly=Xamarin.RSControls"
+             xmlns:rsControlsHelpers="clr-namespace:Xamarin.RSControls.Helpers;assembly=Xamarin.RSControls" xmlns:models="clr-namespace:MealPlanner.Models"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding Title}"
              x:Name="addAlimentPage">
@@ -83,52 +83,56 @@
             </StackLayout>
 
 
-            <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding FilteredAliments}">
-                <CollectionView.Header>
-                    <Grid x:Name="gridBar" 
-                          RowSpacing="0"
-                          RowDefinitions="Auto, 2"
-                          ColumnDefinitions="*, *, Auto"
-                          BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
-                        <Button x:Name="foodButton"
-                                Grid.Row="0" Grid.Column="0" 
-                                Text="Foods" 
-                                TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                                FontAttributes="Bold" 
-                                FontSize="Small" 
-                                Clicked="FilterSwitch"/>
-                        <Button x:Name="recipeButton"
-                                Grid.Row="0" Grid.Column="1" 
-                                IsVisible="{Binding RecipeSwitchVisibility}" 
-                                TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                                Text="Recipes" 
-                                FontSize="Small" Clicked="FilterSwitch"/>
-                        <Button Grid.Row="0" Grid.Column="2"
-                                TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                FontSize="Small" 
-                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                                HorizontalOptions="End"
-                                WidthRequest="{Binding Path=Height, Source={x:Reference gridBar}}">
-                            <Button.ImageSource>
+            <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemSizingStrategy="MeasureFirstItem" Header="{Binding .}" Style="{StaticResource CollectionView}" ItemsSource="{Binding FilteredAliments}">
+                <CollectionView.HeaderTemplate>
+                    <DataTemplate x:DataType="{x:Null}">
+                        <Grid x:Name="gridBar" 
+                              RowSpacing="0"
+                              HeightRequest="70"
+                              RowDefinitions="Auto, 2"
+                              ColumnDefinitions="*, *, Auto"
+                              BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Button x:Name="foodButton"
+                                    Grid.Row="0" Grid.Column="0" 
+                                    Text="Foods"
+                                    TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                    BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                    FontAttributes="Bold" 
+                                    FontSize="Small" 
+                                    Clicked="FilterSwitch"/>
+                            <Button x:Name="recipeButton"
+                                    Grid.Row="0" Grid.Column="1" 
+                                    IsVisible="{Binding RecipeSwitchVisibility}" 
+                                    TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                    BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                    Text="Recipes" 
+                                    FontSize="Small" 
+                                    Clicked="FilterSwitch"/>
+                            <Button Grid.Row="0" Grid.Column="2"
+                                    TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                    FontSize="Small" 
+                                    BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                    HorizontalOptions="End"
+                                    WidthRequest="{Binding Path=Height, Source={x:Reference gridBar}}">
+                                <Button.ImageSource>
                                     <FontImageSource Size="14" 
-                                     Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                     Glyph="{x:Static helpers:FontAwesomeIcons.Filter}" FontFamily="FA-Solid"/>
-                            </Button.ImageSource>
-                        </Button>
-                        <BoxView x:Name="slider" 
-                                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                                 HorizontalOptions="Start"
-                                 VerticalOptions="End"
-                                 WidthRequest="{Binding Path=Width, Source={x:Reference foodButton}}" 
-                                 HeightRequest="2"
-                                 BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"/>
-                    </Grid>
-                </CollectionView.Header>
+                                                     Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                     Glyph="{x:Static helpers:FontAwesomeIcons.Filter}" FontFamily="FA-Solid"/>
+                                </Button.ImageSource>
+                            </Button>
+                            <BoxView x:Name="slider" 
+                                     Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                     HorizontalOptions="Start"
+                                     VerticalOptions="End"
+                                     WidthRequest="{Binding Path=Width, Source={x:Reference foodButton}}" 
+                                     HeightRequest="2"
+                                     BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.HeaderTemplate>
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,Auto" Padding="7" RowSpacing="2">
+                    <DataTemplate x:DataType="models:Aliment">
+                        <Grid HeightRequest="70" RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,Auto" Padding="7" RowSpacing="2">
                             <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Source="{Binding ImageSource}" Aspect="AspectFill" HeightRequest="60" BackgroundColor="LightGray">
                                 <Image.Clip>
                                     <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
@@ -147,7 +151,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
                 <CollectionView.EmptyView>
-                    <ContentView IsVisible="{Binding Query, Converter={StaticResource InverseStringIsNullOrEmptyConverter}}">
+                    <ContentView x:DataType="{x:Null}" IsVisible="{Binding Query, Converter={StaticResource InverseStringIsNullOrEmptyConverter}}">
                         <Button Text="{Binding Query, StringFormat='Search aliments for &lt;&lt; {0} >>'}"
                                 CornerRadius="10"
                                 Command="{Binding SearchAlimentsCommand}"
