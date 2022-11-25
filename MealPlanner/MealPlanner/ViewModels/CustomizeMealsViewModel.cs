@@ -98,7 +98,7 @@ namespace MealPlanner.ViewModels
 
             RemovedTemplateMeals.Clear();
             NewTemplateMeals.Clear();
-            RefData.GetMealsAtDate(DateTime.Now, DateTime.Now.DayOfWeek);
+            RefData.GetMealsAtDate(DateTime.Now);
             RefData.UpdateDailyValues();
             Shell.Current.Navigation.PopAsync();
             //Shell.Current.GoToAsync($"//{nameof(HomePage)}");

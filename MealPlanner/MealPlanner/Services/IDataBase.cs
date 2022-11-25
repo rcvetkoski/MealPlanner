@@ -30,6 +30,7 @@ namespace MealPlanner.Services
         Task<List<Log>> GetAllLogsAsync();
         Task<int> AddLogAsync(Log log);
         Task<int> UpdateLogAsync(Log log);
+        Task<int> DeleteLogAsync(Log log);
         Task<int> DropTableLog();
 
         // LogMeals

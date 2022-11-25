@@ -1,4 +1,5 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers.Enums;
+using MealPlanner.Models;
 using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,6 @@ namespace MealPlanner.ViewModels
         }
 
         public List<DayOfWeek> DayOfWeeks { get; set; }
-
         public ICommand AddNewJournalTemplateCommand { get; set; }
         private async void AddNewJournalTemplate()
         {
@@ -65,8 +65,12 @@ namespace MealPlanner.ViewModels
             }
         }
 
-
-        private async void Distribution(DayOfWeekHelper dayOfWeekHelper, RSPopup rSPopup)
+        /// <summary>
+        /// Opens new Journal day template for edit
+        /// </summary>
+        /// <param name="dayOfWeekHelper"></param>
+        /// <param name="rSPopup"></param>
+        private async void EditJournalTemplate(DayOfWeekHelper dayOfWeekHelper, RSPopup rSPopup)
         {
             HomePage homePage = new HomePage(Helpers.Enums.HomePageTypeEnum.JournalTemplate, dayOfWeekHelper.DayOfWeek);
             (homePage.BindingContext as HomeViewModel).Title = dayOfWeekHelper.DayOfWeek.ToString();
@@ -76,8 +80,6 @@ namespace MealPlanner.ViewModels
             (homePage.BindingContext as HomeViewModel).RefData.UpdateDailyValues();
             rSPopup.Close();
         }
-
-
         public ICommand DayOptionsCommand { get; set; }
         private void DayOptions(DayOfWeekHelper dayOfWeek)
         {
@@ -166,7 +168,7 @@ namespace MealPlanner.ViewModels
             {
                 Command = new Command(() =>
                 {
-                    Distribution(dayOfWeek, rSPopup);
+                    EditJournalTemplate(dayOfWeek, rSPopup);
                 })
             });
 
@@ -190,6 +192,56 @@ namespace MealPlanner.ViewModels
             rSPopup.SetCustomView(stackLayout);
 
             rSPopup.Show();
+        }
+
+        /// <summary>
+        /// Sets flag to autogenerate journal based on template
+        /// Deletes all journal logs from today and up to 7 days in the future
+        /// </summary>
+        public async void AutoGenerateJournal()
+        {
+            // Delete all logs from today up to 7 days ahead
+            DateTime dateTime = DateTime.Now;
+            for(int i = 0; i < 7; i++)
+            {
+                // get log for specified date
+                Log log = RefData.GetLog(dateTime);
+
+                if (log == null)
+                    continue;
+
+                // Delete log form db
+                await App.DataBaseRepo.DeleteLogAsync(log);
+                RefData.Logs.Remove(log);
+
+                // Delete meal form logs as well as the linked aliments
+                foreach(Meal meal in log.Meals)
+                {
+                    LogMeal logMeal = RefData.LogMeals.FirstOrDefault(x => x.LogId == log.Id && x.MealId == meal.Id);
+                    await App.DataBaseRepo.DeleteLogMealAsync(logMeal);
+                    RefData.LogMeals.Remove(logMeal);
+                    await App.DataBaseRepo.DeleteMealAsync(meal);
+                    RefData.AllMeals.Remove(meal);
+
+                    // Delete aliments
+                    foreach(Aliment aliment in meal.Aliments)
+                    {
+                        MealAliment mealAliment = RefData.MealAliments.FirstOrDefault(x => x.AlimentId == aliment.Id && x.MealId == meal.Id);
+                        await App.DataBaseRepo.DeleteMealAlimentAsync(mealAliment);
+                        RefData.MealAliments.Remove(mealAliment);
+                    }
+                }
+
+                // go to next day
+                dateTime = dateTime.AddDays(1);
+            }
+
+
+            // Set AutoGenerate flag to true and currentJournalId in User table
+            RefData.User.AutoGenerateJournalEnabled = true; 
+            RefData.User.CurrentJournalTemplateId = RefData.CurrentJournalTemplate.Id;
+            await App.DataBaseRepo.UpdateUserAsync(RefData.User);
+            RefData.LastUsedHomePageType = HomePageTypeEnum.JournalTemplate;
         }
 
         ~JournalTemplateViewModel()

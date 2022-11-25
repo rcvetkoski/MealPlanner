@@ -54,7 +54,7 @@ namespace MealPlanner.Views
                 vm.RefData.CreateJournalTemplates(dayOfWeek);
 
             if(homePageType == HomePageTypeEnum.Normal && vm.RefData.LastUsedHomePageType == HomePageTypeEnum.JournalTemplate)
-                vm.RefData.GetMealsAtDate(vm.RefData.CurrentDay, vm.RefData.CurrentDay.DayOfWeek);
+                vm.RefData.GetMealsAtDate(vm.RefData.CurrentDay);
 
             //collectionView.ItemsSource = null;
             //collectionView.ItemsSource = (BindingContext as HomeViewModel).RefData.Meals;
@@ -70,7 +70,7 @@ namespace MealPlanner.Views
         private void DateSelected(object sender, DateChangedEventArgs e)
         {
             (BindingContext as HomeViewModel).SetTitle();
-            (BindingContext as HomeViewModel).RefData.GetMealsAtDate(e.NewDate, e.NewDate.DayOfWeek);
+            (BindingContext as HomeViewModel).RefData.GetMealsAtDate(e.NewDate);
             (BindingContext as HomeViewModel).RefData.UpdateDailyValues();  
         }
     }

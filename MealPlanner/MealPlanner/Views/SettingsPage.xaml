@@ -17,7 +17,7 @@
         <ScrollView Orientation="Vertical">
             <StackLayout Padding="15">
 
-                <Frame Style="{StaticResource UserCard}">
+                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="User settings"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
@@ -27,13 +27,13 @@
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
                             </Image.Source>
                         </Image>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenUserPageCommand}" />
-                        </StackLayout.GestureRecognizers>
                     </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenUserPageCommand}" />
+                    </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource UserCard}">
+                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Units"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
@@ -43,13 +43,13 @@
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
                             </Image.Source>
                         </Image>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenUnitsPageCommand}" />
-                        </StackLayout.GestureRecognizers>
                     </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenUnitsPageCommand}" />
+                    </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource UserCard}">
+                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Customize Meals"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
@@ -59,13 +59,13 @@
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
                             </Image.Source>
                         </Image>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenCustomizeMealsPageCommand}" />
-                        </StackLayout.GestureRecognizers>
                     </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenCustomizeMealsPageCommand}" />
+                    </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource UserCard}">
+                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Theme"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
@@ -78,7 +78,7 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame Style="{StaticResource UserCard}">
+                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Journal Templates"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
@@ -88,13 +88,13 @@
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
                             </Image.Source>
                         </Image>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenJournalTemplatePageCommand}" />
-                        </StackLayout.GestureRecognizers>
                     </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenJournalTemplatePageCommand}" />
+                    </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource UserCard}">
+                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Objectifs"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">

@@ -147,6 +147,8 @@ namespace MealPlanner.Models
 
         public int CurrentJournalTemplateId { get; set; }
 
+        public bool AutoGenerateJournalEnabled { get; set; }    
+
         // Daily Calories
         private double dailyCalories;
         [Ignore]

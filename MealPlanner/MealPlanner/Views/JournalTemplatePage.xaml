@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
-             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
+             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
+             xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding Title}"
              x:Name="journalTemplatePage"
@@ -13,6 +14,12 @@
         <viewmodels:JournalTemplateViewModel/>
     </ContentPage.BindingContext>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseIsNullConverter x:Key="InverseIsNullConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <Grid RowDefinitions="Auto, Auto, *" ColumnDefinitions="*, Auto">
             <rsControls:RSPicker Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
@@ -20,11 +27,20 @@
                                  Style="{StaticResource Picker}"
                                  ItemsSource="{Binding RefData.JournalTemplates}" 
                                  SelectedItem="{Binding RefData.CurrentJournalTemplate}"
+                                 SelectedIndexChanged="RSPicker_SelectedIndexChanged"
                                  DisplayMemberPath="Name"
                                  RSEntryStyle="Underline"/>
 
-            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelMedium}" Margin="10,0,0,0" Text="Auto Generate meal plan for every day"/>
-            <Switch Grid.Row="1" Grid.Column="1"/>
+            <Label Grid.Row="1" Grid.Column="0" 
+                   Style="{StaticResource LabelMedium}"
+                   Margin="10,0,0,0"
+                   IsVisible="{Binding RefData.CurrentJournalTemplate, Converter={StaticResource InverseIsNullConverter}}"
+                   Text="Auto Generate meal plan for every day"/>
+            <Switch Grid.Row="1" Grid.Column="1" 
+                    x:Name="autoGenerateJournalSwitch"
+                    Toggled="Switch_Toggled"
+                    IsVisible="{Binding RefData.CurrentJournalTemplate, Converter={StaticResource InverseIsNullConverter}}"
+                    IsToggled="{Binding RefData.User.AutoGenerateJournalEnabled, Mode=OneWay}"/>
 
             <CollectionView x:Name="collectionView" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding RefData.CurrentJournalTemplate.DaysOfWeek}">
                 <CollectionView.ItemTemplate>

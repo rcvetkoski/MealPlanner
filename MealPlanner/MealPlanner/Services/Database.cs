@@ -232,6 +232,16 @@ namespace MealPlanner.Services
         }
 
         /// <summary>
+        /// Deletes a Log from database
+        /// </summary>
+        /// <param name="log"></param>
+        /// <returns></returns>
+        public Task<int> DeleteLogAsync(Log log)
+        {
+            return dbConnection.DeleteAsync(log);
+        }
+
+        /// <summary>
         /// Drops the table
         /// </summary>
         /// <returns></returns>
