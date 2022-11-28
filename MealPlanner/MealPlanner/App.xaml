@@ -147,6 +147,10 @@
                 <Setter Property="BackgroundColor" Value="Transparent"/>
             </Style>
 
+            <Style x:Key="BindableView" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+
             <Style x:Key="Grid" TargetType="Grid">
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
             </Style>
@@ -155,6 +159,14 @@
                 <Setter Property="HasShadow" Value="{OnPlatform Android=true, iOS=false, Default=true}"/>
                 <Setter Property="Margin" Value="10"/>
                 <Setter Property="Padding" Value="10"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
+            </Style>
+
+            <Style x:Key="MealStatsHeader" TargetType="Frame">
+                <Setter Property="HasShadow" Value="{OnPlatform Android=true, iOS=false, Default=true}"/>
+                <Setter Property="Margin" Value="0, -25, 0, 0"/>
+                <Setter Property="Padding" Value="2, 20, 2, 0"/>
                 <Setter Property="CornerRadius" Value="20"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
             </Style>
