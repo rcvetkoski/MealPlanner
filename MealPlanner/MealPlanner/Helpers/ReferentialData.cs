@@ -230,40 +230,49 @@ namespace MealPlanner.Helpers
             Meals.Clear();
 
             Log currentLog = Logs.FirstOrDefault(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day);
-
+            var isCurrentOrFutureDay = date.Year >= DateTime.Now.Year && date.Month >= DateTime.Now.Month && date.Day >= DateTime.Now.Day;
 
             if (currentLog != null)
             {
                 var todayLogMeals = LogMeals.Where(x => x.LogId == currentLog.Id);
 
                 // Check if new meal templates added if yes add them
-                if (todayLogMeals.Count() < TemplateMeals.Count)
+                // Only applies to days >= Today
+                if(isCurrentOrFutureDay)
                 {
-                    for (int i = todayLogMeals.Count(); i < TemplateMeals.Count; i++)
+                    if (todayLogMeals.Count() < TemplateMeals.Count)
                     {
-                        Meal meal = new Meal() { Name = TemplateMeals[i].Name, Order = TemplateMeals[i].Order };
-                        App.DataBaseRepo.AddMealAsync(meal).Wait();
-                        AllMeals.Add(meal);
-                        LogMeal logMeal = new LogMeal() { LogId = currentLog.Id, MealId = meal.Id };
-                        App.DataBaseRepo.AddLogMealAsync(logMeal).Wait();
-                        LogMeals.Add(logMeal);
+                        for (int i = todayLogMeals.Count(); i < TemplateMeals.Count; i++)
+                        {
+                            Meal meal = new Meal() { Name = TemplateMeals[i].Name, Order = TemplateMeals[i].Order };
+                            App.DataBaseRepo.AddMealAsync(meal).Wait();
+                            AllMeals.Add(meal);
+                            LogMeal logMeal = new LogMeal() { LogId = currentLog.Id, MealId = meal.Id };
+                            App.DataBaseRepo.AddLogMealAsync(logMeal).Wait();
+                            LogMeals.Add(logMeal);
+                        }
                     }
+
+                    // Refresh todayLogMeals
+                    todayLogMeals = LogMeals.Where(x => x.LogId == currentLog.Id);
+
+                    // Update log
+                    App.DataBaseRepo.UpdateLogAsync(currentLog).Wait();
                 }
 
-                // Refresh todayLogMeals
-                todayLogMeals = LogMeals.Where(x => x.LogId == currentLog.Id);
-
-                // Update log
-                App.DataBaseRepo.UpdateLogAsync(currentLog).Wait();
 
                 // Fill Meals
                 foreach (LogMeal logMeal in todayLogMeals)
                 {
                     var meal = AllMeals.FirstOrDefault(x => x.Id == logMeal.MealId);
 
-                    // meal.Order <= TemplateMeals.Count in order to not include TemplateMeals that were disabled
-                    if (meal != null && meal.Order <= TemplateMeals.Count)
+                    if (meal != null)
                     {
+                        // meal.Order <= TemplateMeals.Count in order to not include TemplateMeals that were disabled
+                        // Allow only for pass days
+                        if (isCurrentOrFutureDay && meal.Order > TemplateMeals.Count)
+                            continue;
+
                         // Add aliments to Meal if any
                         meal.Aliments.Clear();
                         PopulateMeal(meal);
@@ -273,7 +282,7 @@ namespace MealPlanner.Helpers
             }
             else
             {
-                if (User.AutoGenerateJournalEnabled && date.Year >= DateTime.Now.Year && date.Month >= DateTime.Now.Month && date.Day >= DateTime.Now.Day)
+                if (User.AutoGenerateJournalEnabled && isCurrentOrFutureDay)
                     AutoGenerateMeals(date);
                 else
                     GenerateDefaultMeals(date);

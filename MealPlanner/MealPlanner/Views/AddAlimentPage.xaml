@@ -83,12 +83,11 @@
             </StackLayout>
 
 
-            <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemSizingStrategy="MeasureFirstItem" Header="{Binding .}" Style="{StaticResource CollectionView}" ItemsSource="{Binding FilteredAliments}">
+            <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Header="{Binding .}" Style="{StaticResource CollectionView}" ItemsSource="{Binding FilteredAliments}">
                 <CollectionView.HeaderTemplate>
                     <DataTemplate x:DataType="{x:Null}">
                         <Grid x:Name="gridBar" 
                               RowSpacing="0"
-                              HeightRequest="70"
                               RowDefinitions="Auto, 2"
                               ColumnDefinitions="*, *, Auto"
                               BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
@@ -132,7 +131,7 @@
                 </CollectionView.HeaderTemplate>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Aliment">
-                        <Grid HeightRequest="70" RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,Auto" Padding="7" RowSpacing="2">
+                        <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,Auto" Padding="7" RowSpacing="2">
                             <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Source="{Binding ImageSource}" Aspect="AspectFill" HeightRequest="60" BackgroundColor="LightGray">
                                 <Image.Clip>
                                     <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
