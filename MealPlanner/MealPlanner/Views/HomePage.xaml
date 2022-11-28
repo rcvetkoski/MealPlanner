@@ -29,7 +29,8 @@
                   RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="Auto, Auto, *, Auto"
                   HeightRequest="{OnPlatform iOS=44}"
                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <Button Grid.Row="0" Grid.Column="0" 
+                <Button Grid.Row="0" Grid.Column="0"
+                        WidthRequest="44"
                         HorizontalOptions="End"
                         Margin="{OnPlatform Android='10,0,0,0'}"
                         Command="{Binding PreviousDayCommand}"
@@ -51,7 +52,8 @@
                         HorizontalOptions="Start"
                         Command="{Binding NextDayCommand}"
                         IsVisible="{Binding NextDayCommandVisible}"
-                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                        WidthRequest="44"
+                        BackgroundColor="Red">
                     <Button.ImageSource>
                         <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CaretRight}" FontFamily="FA-Solid"/>
