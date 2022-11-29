@@ -230,7 +230,7 @@ namespace MealPlanner.Helpers
             Meals.Clear();
 
             Log currentLog = Logs.FirstOrDefault(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day);
-            var isCurrentOrFutureDay = date.Year >= DateTime.Now.Year && date.Month >= DateTime.Now.Month && date.Day >= DateTime.Now.Day;
+            var isCurrentOrFutureDay = date.Date >= DateTime.Now.Date;
 
             if (currentLog != null)
             {
@@ -721,7 +721,7 @@ namespace MealPlanner.Helpers
             if (!Logs.Any())
                 return null;
 
-            return Logs.FirstOrDefault(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day);
+            return Logs.FirstOrDefault(x => x.Date.Date == date.Date);
         }
 
 

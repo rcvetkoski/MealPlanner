@@ -208,7 +208,11 @@ namespace MealPlanner.ViewModels
                 Log log = RefData.GetLog(dateTime);
 
                 if (log == null)
+                {
+                    // go to next day
+                    dateTime = dateTime.AddDays(1);
                     continue;
+                }
 
                 // Delete log form db
                 await App.DataBaseRepo.DeleteLogAsync(log);

@@ -54,7 +54,10 @@ namespace MealPlanner.Views
                 vm.RefData.CreateJournalTemplates(dayOfWeek);
 
             if(homePageType == HomePageTypeEnum.Normal && vm.RefData.LastUsedHomePageType == HomePageTypeEnum.JournalTemplate)
+            {
                 vm.RefData.GetMealsAtDate(vm.RefData.CurrentDay);
+                vm.RefData.LastUsedHomePageType = HomePageTypeEnum.Normal;
+            }
 
 
             //collectionView.ItemsSource = null;
