@@ -76,11 +76,6 @@
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
             </Style>
 
-            <Style x:Key="LabelTitle" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
-                <Setter Property="FontSize" Value="Small"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-            </Style>
-
             <Style x:Key="LabelMicro" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
                 <Setter Property="FontSize" Value="Micro"/>
             </Style>
@@ -94,6 +89,10 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
+            <Style x:Key="LabelCaption" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+                <Setter Property="FontSize" Value="Caption"/>
+            </Style>
+
             <Style x:Key="LabelCaptionBold" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
                 <Setter Property="FontSize" Value="Caption"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -101,6 +100,11 @@
 
             <Style x:Key="LabelMedium" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
                 <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+
+            <Style x:Key="LabelMediumBold" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
             <Style x:Key="LabelLarge" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
@@ -159,7 +163,15 @@
                 <Setter Property="HasShadow" Value="{OnPlatform Android=true, iOS=false, Default=true}"/>
                 <Setter Property="Margin" Value="10"/>
                 <Setter Property="Padding" Value="10"/>
-                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="CornerRadius" Value="16"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
+            </Style>
+
+            <Style x:Key="JournalTemplateCard" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="Margin" Value="10,5,10,5"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="CornerRadius" Value="8"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
             </Style>
 

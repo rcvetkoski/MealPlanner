@@ -15,31 +15,11 @@ namespace MealPlanner.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
-        private HomePageTypeEnum homePageType;
-        private DayOfWeek dayOfWeek;
-
         public HomePage()
         {
             InitializeComponent();
             var vm = (BindingContext as HomeViewModel);
-            vm.HomePageType = HomePageTypeEnum.Normal;
-            this.homePageType = HomePageTypeEnum.Normal;
             vm.SelectedJournalTemplateDayOfWeek = -1;
-            vm.RefData.LastUsedHomePageType = HomePageTypeEnum.Normal;
-        }
-
-        public HomePage(HomePageTypeEnum homePageTypeEnum, DayOfWeek dayOfWeek)
-        {
-            InitializeComponent();
-            this.homePageType = homePageTypeEnum;
-            this.dayOfWeek = dayOfWeek;
-
-            var vm = (BindingContext as HomeViewModel);
-
-            vm.SelectedJournalTemplateDayOfWeek = (int)dayOfWeek;
-            vm.HomePageType = homePageTypeEnum;
-            vm.RefData.LastUsedHomePageType = homePageTypeEnum;
-            vm.ImportFromSavedDaysVisible = false;
         }
 
         protected override void OnAppearing()
@@ -47,21 +27,6 @@ namespace MealPlanner.Views
             base.OnAppearing();
 
             datePicker.DateSelected += DateSelected;
-
-            var vm = (BindingContext as HomeViewModel);
-
-            if (homePageType == HomePageTypeEnum.JournalTemplate)
-                vm.RefData.CreateJournalTemplates(dayOfWeek);
-
-            if(homePageType == HomePageTypeEnum.Normal && vm.RefData.LastUsedHomePageType == HomePageTypeEnum.JournalTemplate)
-            {
-                vm.RefData.GetMealsAtDate(vm.RefData.CurrentDay);
-                vm.RefData.LastUsedHomePageType = HomePageTypeEnum.Normal;
-            }
-
-
-            //collectionView.ItemsSource = null;
-            //collectionView.ItemsSource = (BindingContext as HomeViewModel).RefData.Meals;
         }
 
         protected override void OnDisappearing()

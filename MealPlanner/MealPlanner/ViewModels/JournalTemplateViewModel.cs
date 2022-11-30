@@ -16,6 +16,7 @@ namespace MealPlanner.ViewModels
         public JournalTemplateViewModel()
         {
             Title = "Journal Template";
+            EditJournalTemplateCommand = new Command<DayOfWeekHelper>(EditJournalTemplate);
             AddNewJournalTemplateCommand = new Command(AddNewJournalTemplate);
             DayOfWeeks = new List<DayOfWeek>();
             foreach (DayOfWeek dayOfWeek in (DayOfWeek[])Enum.GetValues(typeof(DayOfWeek)))
@@ -25,6 +26,19 @@ namespace MealPlanner.ViewModels
         }
 
         public List<DayOfWeek> DayOfWeeks { get; set; }
+
+        public ICommand EditJournalTemplateCommand { get; set; }
+        private async void EditJournalTemplate(DayOfWeekHelper dayOfWeek)
+        {
+            EditJournalTemplatePage editJournalTemplatePage = new EditJournalTemplatePage();
+            var vm = (editJournalTemplatePage.BindingContext as EditJournalTemplateViewModel);
+            vm.Title = dayOfWeek.DayOfWeek.ToString();
+            foreach (var item in dayOfWeek.Meals)
+                vm.Meals.Add(item);
+
+            await Shell.Current.Navigation.PushAsync(editJournalTemplatePage);
+        }
+
         public ICommand AddNewJournalTemplateCommand { get; set; }
         private async void AddNewJournalTemplate()
         {
@@ -65,21 +79,6 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        /// <summary>
-        /// Opens new Journal day template for edit
-        /// </summary>
-        /// <param name="dayOfWeekHelper"></param>
-        /// <param name="rSPopup"></param>
-        private async void EditJournalTemplate(DayOfWeekHelper dayOfWeekHelper, RSPopup rSPopup)
-        {
-            HomePage homePage = new HomePage(Helpers.Enums.HomePageTypeEnum.JournalTemplate, dayOfWeekHelper.DayOfWeek);
-            (homePage.BindingContext as HomeViewModel).Title = dayOfWeekHelper.DayOfWeek.ToString();
-            Shell.SetTitleView(homePage, null);
-            Shell.SetTabBarIsVisible(homePage, false);
-            await Shell.Current.Navigation.PushAsync(homePage);
-            (homePage.BindingContext as HomeViewModel).RefData.UpdateDailyValues();
-            rSPopup.Close();
-        }
         public ICommand DayOptionsCommand { get; set; }
         private void DayOptions(DayOfWeekHelper dayOfWeek)
         {
@@ -100,14 +99,15 @@ namespace MealPlanner.ViewModels
 
             Label label = new Label()
             {
-                Text = $"{RefData.CurrentJournalTemplate.Name} / {dayOfWeek.DayOfWeek.ToString()}",
+                Text = $"{RefData.CurrentJournalTemplate.Name.ToUpper()}  /  {dayOfWeek.DayOfWeek.ToString()}",
                 Style = labelStyle,
                 FontAttributes = FontAttributes.Bold 
             };
 
             Label label1 = new Label() 
             { 
-                Text = $"Import day to {currentLog.Date.ToString("dd MMM yyyy")}",
+                Text = $"Import day to {currentLog?.Date.ToString("dd MMM yyyy")}",
+                IsVisible = currentLog != null,
                 Style = labelStyle
             };
             label1.GestureRecognizers.Add(new TapGestureRecognizer()
@@ -153,24 +153,34 @@ namespace MealPlanner.ViewModels
                         LogMeal logMeal = new LogMeal() { LogId = currentLog.Id, MealId = meal.Id };
                         await App.DataBaseRepo.AddLogMealAsync(logMeal);
                         RefData.LogMeals.Add(logMeal);
+                        currentLog.Meals.Add(meal);
                     }
 
+                    RefData.UpdateDailyValues();
                     rSPopup.Close();
                 })
             });
 
             Label label2 = new Label()
             {
-                Style = labelStyle,
-                Text = "Edit"
+                Text = $"Edit",
+                Style = labelStyle
             };
             label2.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command(() =>
+                Command = new Command(async () =>
                 {
-                    EditJournalTemplate(dayOfWeek, rSPopup);
+                    EditJournalTemplatePage editJournalTemplatePage = new EditJournalTemplatePage();
+                    var vm = (editJournalTemplatePage.BindingContext as EditJournalTemplateViewModel);
+                    vm.Title = dayOfWeek.DayOfWeek.ToString();
+                    foreach (var item in dayOfWeek.Meals)
+                        vm.Meals.Add(item);
+
+                    await Shell.Current.Navigation.PushAsync(editJournalTemplatePage);
+                    rSPopup.Close();
                 })
             });
+
 
             Label label3 = new Label()
             {
@@ -187,7 +197,7 @@ namespace MealPlanner.ViewModels
 
             stackLayout.Children.Add(label);
             stackLayout.Children.Add(label1);
-            stackLayout.Children.Add(label2);
+            //stackLayout.Children.Add(label2);
             stackLayout.Children.Add(label3);
             rSPopup.SetCustomView(stackLayout);
 
@@ -244,8 +254,8 @@ namespace MealPlanner.ViewModels
             // Set AutoGenerate flag to true and currentJournalId in User table
             RefData.User.AutoGenerateJournalEnabled = true; 
             RefData.User.CurrentJournalTemplateId = RefData.CurrentJournalTemplate.Id;
+            RefData.GetMealsAtDate(DateTime.Now);
             await App.DataBaseRepo.UpdateUserAsync(RefData.User);
-            RefData.LastUsedHomePageType = HomePageTypeEnum.JournalTemplate;
         }
 
         ~JournalTemplateViewModel()

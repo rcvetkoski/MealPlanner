@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MealPlanner.ViewModels"
+             xmlns:models="clr-namespace:MealPlanner.Models"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers"
+             xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters" xmlns:controls="clr-namespace:MealPlanner.Controls"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
+             Title="{Binding Title}"
+             x:Name="EditJournal"
+             x:Class="MealPlanner.Views.EditJournalTemplatePage">
+
+    <ContentPage.BindingContext>
+        <vm:EditJournalTemplateViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:MultiBindingConverter x:Key="MultiBindingConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Priority="0">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Size="20"
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+            <StackLayout>
+                <Frame Style="{StaticResource MealStatsHeader}">
+                    <Grid ColumnDefinitions="Auto,*,140" RowDefinitions="Auto, Auto, 15, Auto, 15, Auto, 15" Margin="10" RowSpacing="4">
+
+                        <Label Grid.Row="0" Grid.Column="0" IsVisible="False" Text="{Binding Title}" Style="{StaticResource NavigationBarLabel}"/>
+
+
+                        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Protein"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding RefData.User.DailyProteinsRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
+                        <ProgressBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyProteinProgress}" VerticalOptions="Center"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Carbs"/>
+                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding RefData.User.DailyCarbsRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                        <ProgressBar Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyCarbsProgress}" VerticalOptions="Center"/>
+
+                        <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Fats"/>
+                        <Label Grid.Row="5" Grid.Column="1" Text="{Binding RefData.User.DailyFatsRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
+                        <ProgressBar Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyFatsProgress}" VerticalOptions="Center"/>
+
+                        <StackLayout Grid.Row="1" Grid.RowSpan="5" Grid.Column="2" VerticalOptions="Center" Spacing="0">
+                            <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding RefData.User.DailyCalories, StringFormat='{0:0.#}'}"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="of"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" FontAttributes="Bold" Text="{Binding RefData.User.TDEE, StringFormat='{0:0.#}'}"/>
+                        </StackLayout>
+                        <controls:CircleCountdown HorizontalOptions="FillAndExpand"
+                                                  VerticalOptions="FillAndExpand"
+                                                  Grid.Row="1" Grid.RowSpan="5" Grid.Column="2"
+                                                  Progress="{Binding RefData.User.DailyCaloriesProgress}"
+                                                  ProgressStartColor="SteelBlue"
+                                                  ProgressEndColor="SteelBlue"
+                                                  CircleColor="Gray"
+                                                  StrokeWidth="12">
+                        </controls:CircleCountdown>
+                        <Label Grid.Row="5" Grid.RowSpan="2" Grid.Column="2" 
+                               Style="{StaticResource LabelSmall}"
+                               VerticalOptions="End" HorizontalOptions="Center"
+                               FontAttributes="Bold" 
+                               Text="Calories"/>
+                    </Grid>
+                </Frame>
+                <StackLayout BindableLayout.ItemsSource="{Binding Meals}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="models:Meal">
+                            <Frame Style="{StaticResource MealCard}">
+                                <Grid x:Name="meal" RowDefinitions="35, Auto, Auto, 1, Auto" ColumnDefinitions="*, Auto">
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" Style="{StaticResource LabelMediumBold}"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding CaloriesString}" Style="{StaticResource LabelSmallBold}"/>
+                                    <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="15" BindableLayout.ItemsSource="{Binding Aliments}">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate x:DataType="models:Aliment">
+                                                <SwipeView Style="{StaticResource SwipeView}">
+                                                    <SwipeView.RightItems>
+                                                        <SwipeItems>
+                                                            <SwipeItem Text="Delete" BackgroundColor="Red" Command="{Binding BindingContext.DeletteAlimentCommand, Source={x:Reference EditJournal}}">
+                                                                <SwipeItem.CommandParameter>
+                                                                    <MultiBinding Converter="{StaticResource MultiBindingConverter}">
+                                                                        <Binding Path="BindingContext" Source="{x:Reference meal}"/>
+                                                                        <Binding Path="."/>
+                                                                    </MultiBinding>
+                                                                </SwipeItem.CommandParameter>
+                                                            </SwipeItem>
+                                                        </SwipeItems>
+                                                    </SwipeView.RightItems>
+                                                    <!-- Content -->
+                                                    <Grid RowDefinitions="20, 20" ColumnDefinitions="1, 2.5*, *">
+
+                                                        <Label Grid.Row="0" Grid.Column="1" 
+                                                                   Style="{StaticResource LabelCaptionBold}" 
+                                                                   VerticalTextAlignment="Center" 
+                                                                   Text="{Binding Name}"
+                                                                   LineBreakMode="TailTruncation"/>
+                                                        <Label Grid.Row="0" Grid.Column="2"
+                                                                   Style="{StaticResource LabelCaptionBold}" 
+                                                                   VerticalTextAlignment="Center" 
+                                                                   Text="{Binding ServingSizeWithUnit}"
+                                                                   HorizontalTextAlignment="End"/>
+                                                        <Label Grid.Row="1" Grid.Column="1" 
+                                                                   Style="{StaticResource LabelCaption}" 
+                                                                   VerticalTextAlignment="Center" 
+                                                                   Text="{Binding NutritionValuesString}"/>
+                                                        <Label Grid.Row="1" Grid.Column="2"
+                                                                   Style="{StaticResource LabelCaption}" 
+                                                                   VerticalTextAlignment="Center" 
+                                                                   Text="{Binding CaloriesString}" 
+                                                                   HorizontalTextAlignment="End"/>
+
+
+                                                    </Grid>
+                                                </SwipeView>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </StackLayout>
+                                    <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                                            HorizontalOptions="Center"
+                                            BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                            Text="Add item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                            Command="{Binding BindingContext.AddAlimentCommand, Source={x:Reference EditJournal}}" CommandParameter="{Binding .}">
+                                        <Button.ImageSource>
+                                            <FontImageSource Color="SteelBlue"
+                                                             Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                    <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="LightGray"/>
+                                    <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                                        <Label Style="{StaticResource LabelSmallBold}" Text="{Binding NutritionValuesString}" VerticalOptions="Center"/>
+                                        <Label Style="{StaticResource LabelSmallBold}" Text="{Binding CaloriesString}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -7,7 +7,8 @@
              xmlns:controls="clr-namespace:MealPlanner.Controls" 
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
-             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:models="clr-namespace:MealPlanner.Models"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers"
+             xmlns:models="clr-namespace:MealPlanner.Models"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:DataType="vm:HomeViewModel"
              x:Name="Home"
@@ -30,7 +31,7 @@
                   HeightRequest="{OnPlatform iOS=44}"
                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Button Grid.Row="0" Grid.Column="0"
-                        WidthRequest="44"
+                        WidthRequest="50"
                         HorizontalOptions="End"
                         Margin="{OnPlatform Android='10,0,0,0'}"
                         Command="{Binding PreviousDayCommand}"
@@ -52,8 +53,8 @@
                         HorizontalOptions="Start"
                         Command="{Binding NextDayCommand}"
                         IsVisible="{Binding NextDayCommandVisible}"
-                        WidthRequest="44"
-                        BackgroundColor="Red">
+                        WidthRequest="50"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                     <Button.ImageSource>
                         <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CaretRight}" FontFamily="FA-Solid"/>
@@ -66,7 +67,8 @@
                              BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                              Command="{Binding OpenCalendarCommand}" CommandParameter="{x:Reference datePicker}">
                     <Button.ImageSource>
-                        <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                        <FontImageSource Size="22"
+                                         Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CalendarDays}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
@@ -117,8 +119,9 @@
                             VerticalOptions="FillAndExpand"
                             Grid.Row="1" Grid.RowSpan="5" Grid.Column="2"
                             Progress="{Binding RefData.User.DailyCaloriesProgress}"
-                            ProgressStartColor="HotPink"
-                            ProgressEndColor="HotPink"
+                            ProgressStartColor="SteelBlue"
+                            ProgressEndColor="SteelBlue"
+                            CircleColor="Gray"
                             StrokeWidth="12">
                         </controls:CircleCountdown>
                         <Label Grid.Row="5" Grid.RowSpan="2" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalOptions="Center" FontAttributes="Bold" Text="Calories"/>
@@ -131,14 +134,14 @@
                             <StackLayout x:Name="meal">
                                 <Frame Style="{StaticResource MealCard}">
                                     <Grid RowDefinitions="30, Auto, Auto, 1, Auto" ColumnDefinitions="*, 30">
-                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" Style="{StaticResource LabelTitle}" VerticalOptions="Center"/>
+                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" Style="{StaticResource LabelMediumBold}" VerticalOptions="Center"/>
 
                                         <Button Grid.Row="0" Grid.Column="1" 
                                                 HorizontalOptions="End"
                                                 Command="{Binding BindingContext.MealOptionsCommand, Source={x:Reference Home}}" CommandParameter="{Binding .}"
                                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                                             <Button.ImageSource>
-                                                <FontImageSource Size="Medium" 
+                                                <FontImageSource Size="20" 
                                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                                  Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
                                             </Button.ImageSource>
@@ -169,30 +172,24 @@
                                                                 </Image.Clip>
                                                             </Image>
                                                             <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
-                                                                   Style="{StaticResource LabelMicro}" 
+                                                                   Style="{StaticResource LabelCaptionBold}" 
                                                                    VerticalTextAlignment="Center" 
                                                                    Text="{Binding Name}"
-                                                                   LineBreakMode="TailTruncation"
-                                                                   FontAttributes="Bold"
-                                                                   FontSize="Caption"/>
+                                                                   LineBreakMode="TailTruncation"/>
                                                             <Label Grid.Row="0" Grid.Column="2"
-                                                                   Style="{StaticResource LabelMicro}" 
+                                                                   Style="{StaticResource LabelCaptionBold}" 
                                                                    VerticalTextAlignment="Center" 
                                                                    Text="{Binding ServingSizeWithUnit}"
-                                                                   HorizontalTextAlignment="End" 
-                                                                   FontSize="Caption"/>
+                                                                   HorizontalTextAlignment="End"/>
                                                             <Label Grid.Row="1" Grid.Column="1" 
-                                                                   Style="{StaticResource LabelMicro}" 
+                                                                   Style="{StaticResource LabelCaption}" 
                                                                    VerticalTextAlignment="Center" 
-                                                                   Text="{Binding NutritionValuesString}" 
-                                                                   FontSize="Caption"/>
+                                                                   Text="{Binding NutritionValuesString}"/>
                                                             <Label Grid.Row="1" Grid.Column="2"
-                                                                   Style="{StaticResource LabelMicro}" 
+                                                                   Style="{StaticResource LabelCaptionBold}" 
                                                                    VerticalTextAlignment="Center" 
                                                                    Text="{Binding CaloriesString}" 
-                                                                   FontSize="Caption" 
-                                                                   HorizontalTextAlignment="End" 
-                                                                   FontAttributes="Bold"/>
+                                                                   HorizontalTextAlignment="End"/>
                                                             <Grid.GestureRecognizers>
                                                                 <TapGestureRecognizer Command="{Binding BindingContext.UpdateAlimentCommand, Source={x:Reference Home}}">
                                                                     <TapGestureRecognizer.CommandParameter>
@@ -214,7 +211,7 @@
                                                 Text="Add item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                 Command="{Binding BindingContext.AddAlimentCommand, Source={x:Reference Home}}" CommandParameter="{Binding .}">
                                             <Button.ImageSource>
-                                                <FontImageSource Color="Green"
+                                                <FontImageSource Color="SteelBlue"
                                                                  Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
                                             </Button.ImageSource>
                                         </Button>

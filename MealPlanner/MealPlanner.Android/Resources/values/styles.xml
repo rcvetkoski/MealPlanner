@@ -14,10 +14,11 @@
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
     <!--<item name="colorAccent">#FF4081</item>-->
+    <item name="colorAccent">#29aae3</item>
 
 
   </style>
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.DayNight">
-    <!--<item name="colorAccent">#29aae3</item>-->
+    <item name="colorAccent">#29aae3</item>
   </style>
 </resources>

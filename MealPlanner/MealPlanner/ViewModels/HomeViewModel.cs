@@ -22,7 +22,6 @@ namespace MealPlanner.ViewModels
         public HomeViewModel()
         {
             SetTitle();
-            ImportFromSavedDaysVisible = true;
             MaximumDate = RefData.CurrentDay.AddDays(7);
             MealOptionsCommand = new Command<Meal>(MealOptions);
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
@@ -35,7 +34,6 @@ namespace MealPlanner.ViewModels
             ResetCurrentDayCommand = new Command(ResetCurrentDay);
         }
 
-        public HomePageTypeEnum HomePageType { get; set; }
         public int SelectedJournalTemplateDayOfWeek { get; set; }
 
         public DateTime MaximumDate { get; set; }
@@ -46,8 +44,6 @@ namespace MealPlanner.ViewModels
                 return MaximumDate > RefData.CurrentDay.AddDays(1);
             }
         }
-
-        public bool ImportFromSavedDaysVisible { get; set; }
 
         public void SetTitle()
         {
@@ -309,7 +305,7 @@ namespace MealPlanner.ViewModels
             var dayOfWeekString = (DayOfWeek)SelectedJournalTemplateDayOfWeek;
             Label label = new Label() 
             { 
-                Text = HomePageType == HomePageTypeEnum.Normal ? RefData.CurrentDay.ToString("dddd, dd, yyyy") : dayOfWeekString.ToString(),
+                Text = RefData.CurrentDay.ToString("dddd, dd, yyyy"),
                 Style = labelStyle, FontAttributes = FontAttributes.Bold
             };
 
@@ -322,27 +318,14 @@ namespace MealPlanner.ViewModels
             {
                 Command = new Command(() =>
                 {
-                    if(HomePageType == HomePageTypeEnum.JournalTemplate)
+                    var log = RefData.GetLog(RefData.CurrentDay);
+                    RefData.CopiedDay = new CopiedDayHelper()
                     {
-                        RefData.CopiedDay = new CopiedDayHelper() 
-                        { 
-                            Date = DateTime.MinValue, 
-                            HomePageType = HomePageTypeEnum.JournalTemplate,
-                            DayOfWeek = SelectedJournalTemplateDayOfWeek,
-                            Meals = RefData.Meals.ToList()
-                        };
-                    }
-                    else
-                    {
-                        var log = RefData.GetLog(RefData.CurrentDay);
-                        RefData.CopiedDay = new CopiedDayHelper()
-                        {
-                            Date = log.Date,
-                            HomePageType = HomePageTypeEnum.Normal,
-                            DayOfWeek = -1,
-                            Meals = log.Meals
-                        };
-                    }
+                        Date = log.Date,
+                        HomePageType = HomePageTypeEnum.Normal,
+                        DayOfWeek = -1,
+                        Meals = log.Meals
+                    };
 
                     rSPopup.Close();
                 })
@@ -352,17 +335,7 @@ namespace MealPlanner.ViewModels
 
             if(RefData.CopiedDay != null)
             {
-                if(HomePageType == HomePageTypeEnum.Normal)
-                {
-                    canCopy = RefData.CopiedDay.Date.Day != RefData.CurrentDay.Day || 
-                        RefData.CopiedDay.Date.Month != RefData.CurrentDay.Month || 
-                        RefData.CopiedDay.Date.Year != RefData.CurrentDay.Year;
-
-                }
-                else
-                {
-                    canCopy = RefData.CopiedDay.DayOfWeek != SelectedJournalTemplateDayOfWeek;
-                }
+                canCopy = RefData.CopiedDay.DayOfWeek != SelectedJournalTemplateDayOfWeek;
             }
                 
             Label label2 = new Label() { Text = "Paste day", IsVisible = canCopy, Style = labelStyle };
@@ -370,16 +343,12 @@ namespace MealPlanner.ViewModels
             {
                 Command = new Command(() =>
                 {
-                    if (HomePageType == HomePageTypeEnum.Normal)
-                        CopyToLogDay();
-                    else
-                        CopyToJournalTemplateDay();
-
+                    CopyToLogDay();
                     rSPopup.Close();
                 })
             });
 
-            Label label3 = new Label() { Text = "Import from saved days", Style = labelStyle, IsVisible = ImportFromSavedDaysVisible };
+            Label label3 = new Label() { Text = "Import from saved days", Style = labelStyle};
             label3.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(async () =>

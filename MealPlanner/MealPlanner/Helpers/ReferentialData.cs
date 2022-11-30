@@ -82,8 +82,6 @@ namespace MealPlanner.Helpers
         public List<Log> Logs { get; set; }
         public List<LogMeal> LogMeals { get; set; } 
 
-        public HomePageTypeEnum LastUsedHomePageType { get; set; }
-
         public ReferentialData()
         {
             //ResetDB();
@@ -366,6 +364,7 @@ namespace MealPlanner.Helpers
                 };
                 await App.DataBaseRepo.AddLogMealAsync(logMeal);
                 LogMeals.Add(logMeal);
+                log.Meals.Add(meal);
             }
 
             UpdateDailyValues();

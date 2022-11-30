@@ -65,7 +65,7 @@ namespace MealPlanner.Models
                 foreach (Meal meal in Meals)
                     calories += meal.Calories;
 
-                return $"{calories} Kcal";
+                return $"{DayOfWeek} - ({calories} Kcal)";
             }
         }
 

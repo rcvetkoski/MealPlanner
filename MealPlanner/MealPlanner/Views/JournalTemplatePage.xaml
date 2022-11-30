@@ -4,7 +4,7 @@
              xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
-             xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
+             xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters" xmlns:models="clr-namespace:MealPlanner.Models"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding Title}"
              x:Name="journalTemplatePage"
@@ -19,56 +19,82 @@
             <converters:InverseIsNullConverter x:Key="InverseIsNullConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Priority="0" Command="{Binding AddNewJournalTemplateCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Size="20"
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+
     <ContentPage.Content>
-        <Grid RowDefinitions="Auto, Auto, *" ColumnDefinitions="*, Auto">
-            <rsControls:RSPicker Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                                 Placeholder="Meal plan"
-                                 Style="{StaticResource Picker}"
-                                 ItemsSource="{Binding RefData.JournalTemplates}" 
-                                 SelectedItem="{Binding RefData.CurrentJournalTemplate}"
-                                 SelectedIndexChanged="RSPicker_SelectedIndexChanged"
-                                 DisplayMemberPath="Name"
-                                 RSEntryStyle="Underline"/>
+        <StackLayout>
 
-            <Label Grid.Row="1" Grid.Column="0" 
-                   Style="{StaticResource LabelMedium}"
-                   Margin="10,0,0,0"
-                   IsVisible="{Binding RefData.CurrentJournalTemplate, Converter={StaticResource InverseIsNullConverter}}"
-                   Text="Auto Generate meal plan for every day"/>
-            <Switch Grid.Row="1" Grid.Column="1" 
-                    x:Name="autoGenerateJournalSwitch"
-                    Toggled="Switch_Toggled"
-                    IsVisible="{Binding RefData.CurrentJournalTemplate, Converter={StaticResource InverseIsNullConverter}}"
-                    IsToggled="{Binding RefData.User.AutoGenerateJournalEnabled, Mode=OneWay}"/>
+            <Frame Style="{StaticResource JournalTemplateCard}" Padding="8, 25, 8, 15" Margin="0, -15, 0, 5">
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, Auto">
+                    <rsControls:RSPicker Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                         Placeholder="Meal plan"
+                                         Style="{StaticResource Picker}"
+                                         ItemsSource="{Binding RefData.JournalTemplates}" 
+                                         SelectedItem="{Binding RefData.CurrentJournalTemplate}"
+                                         SelectedIndexChanged="RSPicker_SelectedIndexChanged"
+                                         DisplayMemberPath="Name"
+                                         RSEntryStyle="Underline"/>
 
-            <CollectionView x:Name="collectionView" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding RefData.CurrentJournalTemplate.DaysOfWeek}">
+                    <Label Grid.Row="1" Grid.Column="0" 
+                           Style="{StaticResource LabelSmall}"
+                           Margin="10,0,0,0"
+                           IsVisible="{Binding RefData.CurrentJournalTemplate, Converter={StaticResource InverseIsNullConverter}}"
+                           Text="Auto Generate meal plan for every day"/>
+                    <Switch Grid.Row="1" Grid.Column="1" 
+                            x:Name="autoGenerateJournalSwitch"
+                            Toggled="Switch_Toggled"
+                            ThumbColor="SteelBlue"
+                            OnColor="LightGray"
+                            IsVisible="{Binding RefData.CurrentJournalTemplate, Converter={StaticResource InverseIsNullConverter}}"
+                            IsToggled="{Binding RefData.User.AutoGenerateJournalEnabled, Mode=OneWay}"/>
+                </Grid>
+
+            </Frame>
+
+            <CollectionView x:Name="collectionView" 
+                            ItemSizingStrategy="MeasureFirstItem"
+                            ItemsSource="{Binding RefData.CurrentJournalTemplate.DaysOfWeek}">
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid RowDefinitions="55" ColumnDefinitions="Auto, *" Padding="10, 0, 10, 0">
-                            <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Style="{StaticResource LabelSmallBold}" Text="{Binding DayOfWeek}"/>
-                            <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End" Style="{StaticResource LabelSmall}" Text="{Binding CaloriesString}"/>
-                            <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="-10, 0, -10, 0" HeightRequest="1" VerticalOptions="End" BackgroundColor="LightGray"/>
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding BindingContext.DayOptionsCommand, Source={x:Reference journalTemplatePage}}"
-                                                      CommandParameter="{Binding .}">
-                                </TapGestureRecognizer>
-                            </Grid.GestureRecognizers>
-                        </Grid>
+                    <DataTemplate x:DataType="models:DayOfWeekHelper">
+                        <StackLayout>
+                            <Frame Style="{StaticResource JournalTemplateCard}">
+                                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, Auto">
+                                    <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Style="{StaticResource LabelSmallBold}" Text="{Binding CaloriesString}"/>
+                                    <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding Description}"/>
+                                    <ImageButton Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"
+                                                 VerticalOptions="Center"
+                                                 CornerRadius="20"
+                                                 Command="{Binding BindingContext.DayOptionsCommand, Source={x:Reference journalTemplatePage}}"
+                                                 CommandParameter="{Binding .}"
+                                                 BackgroundColor="SteelBlue">
+                                        <ImageButton.Source>
+                                            <FontImageSource Color="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
+                                                             Size="38"
+                                                             Glyph="{x:Static helpers:FontAwesomeIcons.CirclePlus}" FontFamily="FA-Solid"/>
+                                        </ImageButton.Source>
+                                    </ImageButton>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.EditJournalTemplateCommand, Source={x:Reference journalTemplatePage}}"
+                                                              CommandParameter="{Binding .}">
+                                        </TapGestureRecognizer>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-                <CollectionView.Footer>
-                    <Button BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                            TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                            Command="{Binding AddNewJournalTemplateCommand}"
-                            Text="Add new Journal Template">
-                        <Button.ImageSource>
-                            <FontImageSource Color="Green"
-                                             Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
-                        </Button.ImageSource>
-                    </Button>
-                </CollectionView.Footer>
             </CollectionView>
-        </Grid>
+            
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

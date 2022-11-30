@@ -7,7 +7,8 @@
              xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" 
              xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
-             xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls"
+             xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls" 
+             xmlns:models="clr-namespace:MealPlanner.Models"
              x:Name="recipePage"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Class="MealPlanner.Views.RecipePage">
@@ -130,7 +131,7 @@
 
                 <CollectionView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding CurrentAliment.Foods}">
                     <CollectionView.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="models:Food">
                             <SwipeView Style="{StaticResource SwipeView}">
                                 <SwipeView.RightItems>
                                     <SwipeItems>
@@ -146,7 +147,7 @@
                                 </SwipeView.RightItems>
 
                                 <Grid Margin="2" RowDefinitions="Auto, Auto, 1" ColumnDefinitions="*,Auto,Auto,Auto" Padding="5, 0, 5, 0">
-                                    <Label Grid.Column="0" Style="{StaticResource LabelSmall}" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Style="{StaticResource LabelSmall}" LineBreakMode="TailTruncation" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
                                     <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center">
                                         <Label.FormattedText>
                                             <FormattedString>
@@ -161,7 +162,7 @@
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding Proteins, StringFormat='{0:0.#}'}"/>
-                                                <Span Text=" p"/>
+                                                <Span Text=" p"/> 
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
