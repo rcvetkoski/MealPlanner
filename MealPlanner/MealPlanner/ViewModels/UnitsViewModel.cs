@@ -6,5 +6,9 @@ namespace MealPlanner.ViewModels
 {
     public class UnitsViewModel : BaseViewModel
     {
+        public UnitsViewModel()
+        {
+            Title = "Units";
+        }
     }
 }

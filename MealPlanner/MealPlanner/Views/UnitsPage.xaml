@@ -13,12 +13,41 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout Margin="10">
-            <Label Style="{StaticResource LabelMedium}" Text="Units"/>
-            <rsControls:RSEntry Placeholder="Weight unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
-            <rsControls:RSEntry Placeholder="Height unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
-            <rsControls:RSEntry Placeholder="Energie unit" Text="TODO" IsPlaceholderAlwaysFloating="True"/>
-        </StackLayout>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+            <StackLayout Margin="0,10,0,0">
+                <Frame Style="{StaticResource MealCard}" VerticalOptions="Start">
+                    <StackLayout>
+                        <Label Style="{StaticResource LabelMedium}" Text="Weight in units"/>
+                        <RadioButton Content="kg" Style="{StaticResource RadioButton}"/>
+                        <RadioButton Content="lbs" Style="{StaticResource RadioButton}"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Style="{StaticResource MealCard}" VerticalOptions="Start">
+                    <StackLayout>
+                        <Label Style="{StaticResource LabelMedium}" Text="Height units"/>
+                        <RadioButton Content="cm"/>
+                        <RadioButton Content="ft"/>
+                        <RadioButton Content="in"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Style="{StaticResource MealCard}" VerticalOptions="Start">
+                    <StackLayout>
+                        <Label Style="{StaticResource LabelMedium}" Text="Energy units"/>
+                        <RadioButton Content="cal"/>
+                        <RadioButton Content="kJ"/>
+                    </StackLayout>
+                </Frame>
+                
+                <Frame Style="{StaticResource MealCard}" VerticalOptions="Start">
+                    <StackLayout>
+                        <Label Style="{StaticResource LabelMedium}" Text="Servings units"/>
+                        <RadioButton Content="g, ml"/>
+                        <RadioButton Content="oz, fl"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
-    
 </ContentPage>

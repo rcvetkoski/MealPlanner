@@ -161,7 +161,7 @@
 
             <Style x:Key="MealCard" TargetType="Frame">
                 <Setter Property="HasShadow" Value="{OnPlatform Android=true, iOS=false, Default=true}"/>
-                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Margin" Value="10, 5, 10, 5"/>
                 <Setter Property="Padding" Value="10"/>
                 <Setter Property="CornerRadius" Value="16"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
