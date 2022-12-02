@@ -1,4 +1,5 @@
-﻿using MealPlanner.Helpers.Enums;
+﻿using MealPlanner.Helpers;
+using MealPlanner.Helpers.Enums;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -245,7 +246,7 @@ namespace MealPlanner.Models
         { 
             get
             {
-                return $"{Math.Round(Calories, 2)} Kcal";
+                return $"{Math.Round(App.RefData.User.CaloriesToKcal(Calories), 0)} {App.RefData.User.EnergyUnit}";
             } 
         }
         [Ignore]

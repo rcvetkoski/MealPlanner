@@ -18,33 +18,32 @@
                 <Frame Style="{StaticResource MealCard}" VerticalOptions="Start">
                     <StackLayout>
                         <Label Style="{StaticResource LabelMedium}" Text="Weight in units"/>
-                        <RadioButton Content="kg" Style="{StaticResource RadioButton}"/>
-                        <RadioButton Content="lbs" Style="{StaticResource RadioButton}"/>
+                        <RadioButton Content="kg" IsChecked="{Binding IsWeightUnitKg}" Style="{StaticResource RadioButton}"/>
+                        <RadioButton Content="lbs" IsChecked="{Binding IsWeightUnitLbs}" Style="{StaticResource RadioButton}"/>
                     </StackLayout>
                 </Frame>
 
                 <Frame Style="{StaticResource MealCard}" VerticalOptions="Start">
                     <StackLayout>
                         <Label Style="{StaticResource LabelMedium}" Text="Height units"/>
-                        <RadioButton Content="cm"/>
-                        <RadioButton Content="ft"/>
-                        <RadioButton Content="in"/>
+                        <RadioButton Content="cm" Style="{StaticResource RadioButton}" IsChecked="{Binding IsHeightUnitCm}"/>
+                        <RadioButton Content="ft, in" Style="{StaticResource RadioButton}" IsChecked="{Binding IsHeightUnitft_in}"/>
                     </StackLayout>
                 </Frame>
 
                 <Frame Style="{StaticResource MealCard}" VerticalOptions="Start">
                     <StackLayout>
                         <Label Style="{StaticResource LabelMedium}" Text="Energy units"/>
-                        <RadioButton Content="cal"/>
-                        <RadioButton Content="kJ"/>
+                        <RadioButton Content="cal" Style="{StaticResource RadioButton}" IsChecked="{Binding IsEnergyUnitCal}"/>
+                        <RadioButton Content="kJ" Style="{StaticResource RadioButton}" IsChecked="{Binding IsEnergyUnitKj}"/>
                     </StackLayout>
                 </Frame>
                 
                 <Frame Style="{StaticResource MealCard}" VerticalOptions="Start">
                     <StackLayout>
                         <Label Style="{StaticResource LabelMedium}" Text="Servings units"/>
-                        <RadioButton Content="g, ml"/>
-                        <RadioButton Content="oz, fl"/>
+                        <RadioButton Content="g, ml" Style="{StaticResource RadioButton}"/>
+                        <RadioButton Content="oz, fl" Style="{StaticResource RadioButton}"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>

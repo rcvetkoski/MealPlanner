@@ -1,4 +1,5 @@
 ﻿using MealPlanner.Helpers.Enums;
+using SkiaSharp;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,38 @@ namespace MealPlanner.Models
                 }
             } 
         }
+        private HeightUnitEnum heightUnit;
+        public HeightUnitEnum HeightUnit
+        {
+            get
+            {
+                return heightUnit;
+            }
+            set
+            {
+                if (heightUnit != value)
+                {
+                    heightUnit = value;
+                    Calcul();
+                }
+            }
+        }
+        private WeightUnitEnum weightUnit;
+        public WeightUnitEnum WeightUnit
+        {
+            get
+            {
+                return weightUnit;  
+            }
+            set
+            {
+                if(weightUnit != value)
+                {
+                    weightUnit = value;
+                    Calcul();
+                }
+            }
+        }      
         private double bodyFat;
         public double BodyFat 
         {
@@ -147,7 +180,17 @@ namespace MealPlanner.Models
 
         public int CurrentJournalTemplateId { get; set; }
 
-        public bool AutoGenerateJournalEnabled { get; set; }    
+        public bool AutoGenerateJournalEnabled { get; set; }
+
+        private EnergyUnitEnum energyUnit;
+        public EnergyUnitEnum EnergyUnit { get; set; }
+        public double CaloriesToKcal(double calories)
+        {
+            if (EnergyUnit == EnergyUnitEnum.kj)
+                return calories * 4.184;
+
+            return calories;
+        }
 
         // Daily Calories
         private double dailyCalories;
@@ -370,33 +413,53 @@ namespace MealPlanner.Models
 
         }
 
+        private double WeightToKg(double weight)
+        {
+            if (weightUnit == WeightUnitEnum.lbs)
+                return Weight / 2.22;
+
+            return weight;
+        }
+
+        private double HeightToCm(double height)
+        {
+            if (heightUnit == HeightUnitEnum.ft_in)
+                return Height * 30.48;
+
+            return height;
+        }
+
         private void Calcul()
         {
             if (SelectedBMRFormula == null || string.IsNullOrEmpty(Name) || SelectedObjectif == null || SelectedPhysicalActivityLevel == null)
                 return;
 
+            var weightInKg = WeightToKg(Weight);
+            var heightInCm = HeightToCm(Height);
+
+
             if (SelectedBMRFormula == "Mifflin - St Jeor")
             {
                 var s = Gender == GenderEnum.Female ? -165 : 5;
-                BMR = (10 * Weight) + (6.25 * Height) - (5 * Age) + s;
+                BMR = (10 * weightInKg) + (6.25 * heightInCm) - (5 * Age) + s;
             }
             else if (SelectedBMRFormula == "Harris-Benedict")
             {
-                BMR = Gender == GenderEnum.Female ? 655.1 + (9.563 * Weight) + (1.850 * Height) - (4.676 * age)
-                                                  : 66.5 + (13.75 * Weight) + (5.003 * Height) - (6.75 * Age);
+                BMR = Gender == GenderEnum.Female ? 655.1 + (9.563 * weightInKg) + (1.850 * heightInCm) - (4.676 * age)
+                                                  : 66.5 + (13.75 * weightInKg) + (5.003 * heightInCm) - (6.75 * Age);
             }
             else if (SelectedBMRFormula == "Revised Harris-Benedict")
             {
-                BMR = Gender == GenderEnum.Female ? 447.593 + (9.247 * Weight) + (3.098 * Height) - (4.33 * age)
-                                                  : 88.362 + (13.397 * Weight) + (4.799 * Height) - (5.667 * Age);
+                BMR = Gender == GenderEnum.Female ? 447.593 + (9.247 * weightInKg) + (3.098 * heightInCm) - (4.33 * age)
+                                                  : 88.362 + (13.397 * weightInKg) + (4.799 * heightInCm) - (5.667 * Age);
             }
             else if (SelectedBMRFormula == "Katch-McArdle")
             {
                 double LeanBodyMass = BodyFat != 0
-                                    ? (Weight * (100 - BodyFat) / 100)
+                                    ? (weightInKg * (100 - BodyFat) / 100)
                                     : Gender == GenderEnum.Female
-                                        ? (0.252 * Weight) + (0.473 * Height) - 48.3
-                                        : (0.407 * Weight) + (0.267 * Height) - 19.2;
+                                        ? (0.252 * weightInKg) + (0.473 * heightInCm) - 48.3
+                                        : (0.407 * weightInKg) + (0.267 * heightInCm) - 19.2;
 
                 BMR = 370 + (21.6 * LeanBodyMass);
             }
@@ -405,14 +468,14 @@ namespace MealPlanner.Models
                 switch (Age)
                 {
                     case int n when (n >= 18 && n < 30):
-                        BMR = Gender == GenderEnum.Male ? 15.057 * Weight + 692.2 : 14.818 * Weight + 486.6;
+                        BMR = Gender == GenderEnum.Male ? 15.057 * weightInKg + 692.2 : 14.818 * weightInKg + 486.6;
                         break;
 
                     case int n when (n >= 30 && n <= 60):
-                        BMR = Gender == GenderEnum.Male ? 11.472 * Weight + 873.1 : 8.126 * Weight + 845.6;
+                        BMR = Gender == GenderEnum.Male ? 11.472 * weightInKg + 873.1 : 8.126 * weightInKg + 845.6;
                         break;
                     case int n when (n > 60):
-                        BMR = Gender == GenderEnum.Male ? 11.711 * Weight + 587.7 : 9.082 * Weight + 658.5;
+                        BMR = Gender == GenderEnum.Male ? 11.711 * weightInKg + 587.7 : 9.082 * weightInKg + 658.5;
                         break;
                 }
             }

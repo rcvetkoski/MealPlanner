@@ -60,7 +60,9 @@ namespace MealPlanner.Services
                 $"energy-kcal_100g," +
                 $"carbohydrates_100g," +
                 $"fat_100g," +
-                $"fiber_100g" +
+                $"fiber_100g," +
+                $"serving_quantity," +
+                $"serving_size" +
                 $"&json=1", string.Empty));
 
             HttpResponseMessage response = await HttpClientHelper.Client.GetAsync(uri);

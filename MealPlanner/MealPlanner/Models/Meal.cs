@@ -126,8 +126,9 @@ namespace MealPlanner.Models
         public string CaloriesString 
         {
             get
-            { 
-                return $"{Math.Round(Calories, 2)} Kcal"; 
+            {
+
+                return $"{Math.Round(App.RefData.User.CaloriesToKcal(Calories), 0)} {App.RefData.User.EnergyUnit}";
             } 
         }
     }

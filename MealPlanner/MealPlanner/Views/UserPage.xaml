@@ -31,8 +31,15 @@
 
                 <Label Style="{StaticResource LabelMedium}" Text="Profil"/>
                 <Frame Style="{StaticResource UserCard}">
-                    <StackLayout>
-                        <rsControls:RSEntry x:Name="nameEntry" ReturnType="Next" Style="{StaticResource Entry}" Helper="Mandatory" Placeholder="Name" Text="{Binding RefData.User.Name}" IsPlaceholderAlwaysFloating="True">
+                    <Grid ColumnDefinitions="*, Auto">
+                        <rsControls:RSEntry x:Name="nameEntry" 
+                                            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                            ReturnType="Next" 
+                                            Style="{StaticResource Entry}"
+                                            Helper="Mandatory"
+                                            Placeholder="Name" 
+                                            Text="{Binding RefData.User.Name}"
+                                            IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSEntry.Behaviors>
                                 <validators:ValidationBehaviour PropertyName="Text">
                                     <validators:ValidationBehaviour.Validators>
@@ -54,7 +61,16 @@
                             </rsControls:RSEntry.LeadingIcon>
                         </rsControls:RSEntry>
 
-                        <rsControls:RSNumericEntry x:Name="heightEntry" ReturnType="Next" Style="{StaticResource Entry}" CustomUnit="cm" Placeholder="Height" Value="{Binding RefData.User.Height}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
+                        <rsControls:RSNumericEntry x:Name="heightEntry"
+                                                   Grid.Row="1" Grid.Column="0" 
+                                                   ReturnType="Next" 
+                                                   Style="{StaticResource Entry}"
+                                                   Placeholder="Height"
+                                                   NumberDecimalDigits="2"
+                                                   HideTrailingZeros="True"
+                                                   Value="{Binding RefData.User.Height}"
+                                                   Helper="Mandatory"
+                                                   IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSNumericEntry.Behaviors>
                                 <validators:ValidationBehaviour PropertyName="Value">
                                     <validators:ValidationBehaviour.Validators>
@@ -77,7 +93,25 @@
                             </rsControls:RSNumericEntry.LeadingIcon>
                         </rsControls:RSNumericEntry>
 
-                        <rsControls:RSNumericEntry x:Name="weightEntry" ReturnType="Next" Style="{StaticResource Entry}" Placeholder="Weight" CustomUnit="kg" Value="{Binding RefData.User.Weight}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
+                        <rsControls:RSEnumPicker Style="{StaticResource Picker}"
+                                                 Grid.Row="1" Grid.Column="1" 
+                                                 x:TypeArguments="enums:HeightUnitEnum" 
+                                                 Placeholder="Height unit"
+                                                 SelectedItem="{Binding RefData.User.HeightUnit}" 
+                                                 Helper="Mandatory" 
+                                                 IsPlaceholderAlwaysFloating="True">
+                        </rsControls:RSEnumPicker>
+
+                        <rsControls:RSNumericEntry x:Name="weightEntry"
+                                                   Grid.Row="2" Grid.Column="0" 
+                                                   ReturnType="Next"
+                                                   Style="{StaticResource Entry}"
+                                                   Placeholder="Weight"
+                                                   NumberDecimalDigits="2"
+                                                   HideTrailingZeros="True"
+                                                   Value="{Binding RefData.User.Weight}"
+                                                   Helper="Mandatory"
+                                                   IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSNumericEntry.Behaviors>
                                 <validators:ValidationBehaviour PropertyName="Value">
                                     <validators:ValidationBehaviour.Validators>
@@ -100,7 +134,23 @@
                             </rsControls:RSNumericEntry.LeadingIcon>
                         </rsControls:RSNumericEntry>
 
-                        <rsControls:RSNumericEntry x:Name="ageEntry" ReturnType="Next" Style="{StaticResource Entry}" Placeholder="Age" Value="{Binding RefData.User.Age}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
+                        <rsControls:RSEnumPicker Style="{StaticResource Picker}"
+                                                 Grid.Row="2" Grid.Column="1" 
+                                                 x:TypeArguments="enums:WeightUnitEnum" 
+                                                 Placeholder="Weight unit"
+                                                 SelectedItem="{Binding RefData.User.WeightUnit}" 
+                                                 Helper="Mandatory" 
+                                                 IsPlaceholderAlwaysFloating="True">
+                        </rsControls:RSEnumPicker>
+
+                        <rsControls:RSNumericEntry x:Name="ageEntry"
+                                                   Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                                   ReturnType="Next"
+                                                   Style="{StaticResource Entry}" 
+                                                   Placeholder="Age" 
+                                                   Value="{Binding RefData.User.Age}"
+                                                   Helper="Mandatory" 
+                                                   IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSNumericEntry.Behaviors>
                                 <validators:ValidationBehaviour PropertyName="Value">
                                     <validators:ValidationBehaviour.Validators>
@@ -123,7 +173,13 @@
                             </rsControls:RSNumericEntry.LeadingIcon>
                         </rsControls:RSNumericEntry>
 
-                        <rsControls:RSNumericEntry Style="{StaticResource Entry}" ReturnType="Next" CustomUnit="%" Placeholder="Body fat" Value="{Binding RefData.User.BodyFat}" IsPlaceholderAlwaysFloating="True">
+                        <rsControls:RSNumericEntry Style="{StaticResource Entry}"
+                                                   Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                                                   ReturnType="Next"
+                                                   CustomUnit="%" 
+                                                   Placeholder="Body fat"
+                                                   Value="{Binding RefData.User.BodyFat}"
+                                                   IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSNumericEntry.LeadingIcon>
                                 <rsHelpers:RSEntryIcon>
                                     <rsHelpers:RSEntryIcon.View>
@@ -138,7 +194,13 @@
                             </rsControls:RSNumericEntry.LeadingIcon>
                         </rsControls:RSNumericEntry>
 
-                        <rsControls:RSEnumPicker Style="{StaticResource Picker}" x:TypeArguments="enums:GenderEnum" Placeholder="Gender" SelectedItem="{Binding RefData.User.Gender}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True">
+                        <rsControls:RSEnumPicker Style="{StaticResource Picker}" 
+                                                 Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+                                                 x:TypeArguments="enums:GenderEnum"
+                                                 Placeholder="Gender"
+                                                 SelectedItem="{Binding RefData.User.Gender}"
+                                                 Helper="Mandatory"
+                                                 IsPlaceholderAlwaysFloating="True">
                             <rsControls:RSEnumPicker.LeadingIcon>
                                 <rsHelpers:RSEntryIcon>
                                     <rsHelpers:RSEntryIcon.View>
@@ -152,8 +214,7 @@
                                 </rsHelpers:RSEntryIcon>
                             </rsControls:RSEnumPicker.LeadingIcon>
                         </rsControls:RSEnumPicker>
-
-                    </StackLayout>
+                    </Grid>
                 </Frame>
 
                 <Label Style="{StaticResource LabelMedium}" Text="Daily caloric intake (Kcal)" Margin="0, 20, 0, 0"/>
@@ -230,6 +291,7 @@
                         </rsControls:RSPicker>
                     </StackLayout>
                 </Frame>
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
