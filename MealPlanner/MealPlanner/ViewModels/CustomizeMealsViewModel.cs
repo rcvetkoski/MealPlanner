@@ -53,7 +53,7 @@ namespace MealPlanner.ViewModels
         }
 
         public ICommand SaveCommand { get; set; }
-        private void Save()
+        private async void Save()
         {
             foreach (TemplateMeal removed in RemovedTemplateMeals)
             {
@@ -63,6 +63,16 @@ namespace MealPlanner.ViewModels
                 {
                     RefData.TemplateMeals.Remove(itemToRemove);
                     App.DataBaseRepo.DeleteTemplateMealAsync(itemToRemove).Wait();
+
+                    // Update Journal template if one is selected
+                    if (RefData.CurrentJournalTemplate != null)
+                    {
+                        foreach (DayOfWeekHelper dayOfWeekHelper in RefData.CurrentJournalTemplate.DaysOfWeek)
+                        {
+                            if(dayOfWeekHelper.Meals.Count >= itemToRemove.Order - 1)
+                                dayOfWeekHelper.Meals.RemoveAt(itemToRemove.Order - 1);
+                        }
+                    }
                 }
             }
 
@@ -70,8 +80,31 @@ namespace MealPlanner.ViewModels
             {
                 TemplateMeal templateMeal = new TemplateMeal() { Name = added.Name, Order = added.Order };
 
-                App.DataBaseRepo.AddTemplateMealAsync(templateMeal).Wait();
+                await App.DataBaseRepo.AddTemplateMealAsync(templateMeal);
                 RefData.TemplateMeals.Add(templateMeal);
+
+                // Update Journal template if one is selected
+                if (RefData.CurrentJournalTemplate != null)
+                {
+                    foreach (DayOfWeekHelper dayOfWeekHelper in RefData.CurrentJournalTemplate.DaysOfWeek)
+                    {
+                        // Create new meal
+                        Meal meal = new Meal() { Name = templateMeal.Name, Order = templateMeal.Order };
+                        App.DataBaseRepo.AddMealAsync(meal).Wait();
+                        RefData.AllMeals.Add(meal);
+                        dayOfWeekHelper.Meals.Add(meal);
+
+                        // Create new JournalTemplateMeal
+                        JournalTemplateMeal journalTemplateMeal = new JournalTemplateMeal()
+                        { 
+                            JournalTemplateId = RefData.CurrentJournalTemplate.Id,
+                            MealId = meal.Id,
+                            DayOfWeek = dayOfWeekHelper.DayOfWeek
+                        };
+                        await App.DataBaseRepo.AddJournalTemplateMealAsync(journalTemplateMeal);
+                        RefData.JournalTemplateMeals.Add(journalTemplateMeal);
+                    }
+                }
             }
 
 
