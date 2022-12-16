@@ -54,15 +54,28 @@ namespace MealPlanner.Services
                 $"product_name," +
                 $"image_front_url," +
                 $"proteins_100g," +
-                $"proteins_unit," +
-                $"proteins_value," +
                 $"carbohydrates_100g," +
                 $"energy-kcal_100g," +
                 $"carbohydrates_100g," +
                 $"fat_100g," +
                 $"fiber_100g," +
+                $"salt_100g," +
+                $"sodium_100g," +
+                $"sugars_100g," +
+                $"saturated-fat_100g," +
+                $"vitamins_prev_tags," +
+                $"vitamins_tags," +
                 $"serving_quantity," +
-                $"serving_size" +
+                $"serving_size," +
+                $"energy-kcal_serving," +
+                $"carbohydrates_serving," +
+                $"fat_serving," +
+                $"saturated-fat_serving," +
+                $"fiber_serving," +
+                $"sodium_serving," +
+                $"proteins_serving," +
+                $"salt_serving," +
+                $"sugars_serving" +
                 $"&json=1", string.Empty));
 
             HttpResponseMessage response = await HttpClientHelper.Client.GetAsync(uri);
@@ -82,10 +95,32 @@ namespace MealPlanner.Services
 
                     aliment.Name = product.product_name;
                     aliment.ImageSourcePath = product.image_front_url;
+
+                    aliment.Calories = product.EnergyKcal100g;
                     aliment.Proteins = product.proteins_100g;
                     aliment.Carbs = product.carbohydrates_100g;
+                    aliment.Fibers = product.fiber_100g;
+                    aliment.Sugars = product.sugars_100g;
                     aliment.Fats = product.fat_100g;
-                    aliment.Calories = product.EnergyKcal100g;
+                    aliment.SaturatedFat = product.SaturatedFat100g;
+                    aliment.Salt = product.salt_100g;
+                    aliment.Sodium = product.sodium_100g;
+
+
+                    aliment.ServingQuantity = product.serving_quantity;
+                    aliment.ServingQuantityUnit = product.serving_size;
+
+                    aliment.CaloriesServing = product.EnergyKcalServing;
+                    aliment.ProteinsServing = product.proteins_serving;
+                    aliment.CarbsServing = product.carbohydrates_serving;
+                    aliment.FibersServing = product.fiber_serving;
+                    aliment.SugarsServing = product.sugars_serving;
+                    aliment.SaturatedFatServing = product.SaturatedFatServing;
+                    aliment.FatsServing = product.fat_serving;
+                    aliment.SaltServing = product.salt_serving;
+                    aliment.SodiumServing = product.sodium_serving;
+
+
                     aliment.OriginalServingSize = 100;
                     aliment.ServingSize = 100;
 

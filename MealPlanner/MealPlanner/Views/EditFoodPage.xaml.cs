@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MealPlanner.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,11 +11,16 @@ using Xamarin.Forms.Xaml;
 namespace MealPlanner.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FoodPage : ContentPage
+    public partial class EditFoodPage : ContentPage
     {
-        public FoodPage()
+        public EditFoodPage()
         {
             InitializeComponent();
+        }
+
+        public bool CheckFields()
+        {
+            return (servingSizeEntry.CheckIsValid() || nameEntry.CheckIsValid()) == false ? false : true;
         }
     }
 }

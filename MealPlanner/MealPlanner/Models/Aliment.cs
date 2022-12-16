@@ -109,6 +109,28 @@ namespace MealPlanner.Models
                 }
             } 
         }
+        public double Fibers { get; set; }
+        public double SaturatedFat { get; set; }
+        public double Sugars { get; set; }
+        public double Salt { get; set; }
+        public double Sodium { get; set; }
+
+
+        public double ServingQuantity { get; set; }
+        public string ServingQuantityUnit { get; set; }
+        public double EnergyKcalServing { get; set; }
+        public double CaloriesServing { get; set; }
+        public double CarbsServing { get; set; }
+        public double FatsServing { get; set; }
+        public double SaturatedFatServing { get; set; }
+        public double FibersServing { get; set; }
+        public double ProteinsServing { get; set; }
+        public double SugarsServing { get; set; }
+        public double SaltServing { get; set; }
+        public double SodiumServing { get; set; }
+
+
+
         public double OriginalServingSize { get; set; }
 
         private double servingSize;

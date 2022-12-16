@@ -17,8 +17,8 @@
                             VerticalOptions="FillAndExpand"
                             Grid.Row="0" Grid.Column="0"
                             Progress="{Binding AlimentCaloriesProgress}"
-                            ProgressStartColor="HotPink"
-                            ProgressEndColor="HotPink"
+                            ProgressStartColor="SteelBlue"
+                            ProgressEndColor="SteelBlue"
                             StrokeWidth="12">
                 </controls:CircleCountdown>
 

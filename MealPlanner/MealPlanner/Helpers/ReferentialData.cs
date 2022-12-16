@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using static MealPlanner.Models.TestModel;
 using static MealPlanner.Models.User;
 using static Xamarin.Essentials.Permissions;
 
@@ -482,12 +483,32 @@ namespace MealPlanner.Helpers
             aliment.ImageSourcePath = existingAliment.ImageSourcePath;
             aliment.ImageBlob = existingAliment.ImageBlob;
             aliment.Unit = existingAliment.Unit;
+
+            aliment.Calories = existingAliment.Calories * ratio;
             aliment.Proteins = existingAliment.Proteins * ratio;
+            aliment.Carbs = existingAliment.Carbs * ratio;
+            aliment.Fibers = existingAliment.Fibers * ratio;
+            aliment.Sugars = existingAliment.Sugars * ratio;
+            aliment.Fats = existingAliment.Fats * ratio;
+            aliment.SaturatedFat = existingAliment.SaturatedFat - ratio;
+            aliment.Salt = existingAliment.Salt * ratio;
+            aliment.Sodium = existingAliment.Sodium * ratio;
+
+            aliment.ServingQuantity = existingAliment.ServingQuantity;
+            aliment.ServingQuantityUnit = existingAliment.ServingQuantityUnit;
+
+            aliment.CaloriesServing = existingAliment.CaloriesServing;
+            aliment.ProteinsServing = existingAliment.ProteinsServing;
+            aliment.CarbsServing = existingAliment.CarbsServing;
+            aliment.FibersServing = existingAliment.FibersServing;
+            aliment.SugarsServing = existingAliment.SugarsServing;
+            aliment.FatsServing = existingAliment.FatsServing;
+            aliment.SaturatedFatServing = existingAliment.SaturatedFatServing;
+            aliment.SaltServing = existingAliment.SaltServing;
+            aliment.SodiumServing = existingAliment.SodiumServing;
+
             aliment.ServingSize = existingAliment.ServingSize;
             aliment.OriginalServingSize = existingAliment.OriginalServingSize;
-            aliment.Carbs = existingAliment.Carbs * ratio;
-            aliment.Fats = existingAliment.Fats * ratio;
-            aliment.Calories = existingAliment.Calories * ratio;
 
 
             return aliment;

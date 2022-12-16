@@ -164,14 +164,30 @@ namespace MealPlanner.ViewModels
                 FoodPage foodPage = new FoodPage();
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
                 foodPageVm.IsNew = true;
-                foodPageVm.CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
-                foodPageVm.CurrentAliment.ServingSize = 100;
+                foodPageVm.CurrentAliment = existingAliment;
+                foodPageVm.InitProperties();
+                foodPageVm.Title = $"{existingAliment.Name}";
+                foodPageVm.SelectedMeal = SelectedMeal; foodPageVm.CurrentAliment.ServingSize = 100;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
 
-                //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
+                //await Shell.Current.GoToAsync($"{nameof(EditFoodPage)}");
                 await Application.Current.MainPage.Navigation.PushAsync(foodPage);
                 return;
             }
+            else
+            {
+                FoodPage foodPage = new FoodPage();
+                FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
+                foodPageVm.CurrentAliment = existingAliment;
+                foodPageVm.InitProperties();
+                foodPageVm.Title = $"{existingAliment.Name}";
+                foodPageVm.SelectedMeal = SelectedMeal;
+                foodPageVm.CopyOfFilteredAliments = FilteredAliments;
+                await Application.Current.MainPage.Navigation.PushAsync(foodPage);
+                return;
+            }
+
+
 
 
 
@@ -244,10 +260,10 @@ namespace MealPlanner.ViewModels
             {
                 if (existingAliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
                 {
-                    FoodPage foodPage = new FoodPage();
-                    (foodPage.BindingContext as FoodViewModel).CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
-                    (foodPage.BindingContext as FoodViewModel).IsNew = false;
-                    (foodPage.BindingContext as FoodViewModel).CopyOfFilteredAliments = FilteredAliments;
+                    EditFoodPage foodPage = new EditFoodPage();
+                    (foodPage.BindingContext as EditFoodViewModel).CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
+                    (foodPage.BindingContext as EditFoodViewModel).IsNew = false;
+                    (foodPage.BindingContext as EditFoodViewModel).CopyOfFilteredAliments = FilteredAliments;
 
                     await Shell.Current.Navigation.PushAsync(foodPage);
                     //await App.Current.MainPage.Navigation.PushAsync(foodPage);
@@ -282,13 +298,13 @@ namespace MealPlanner.ViewModels
         private async void CreateFood()
         {
             rSPopupFilter?.Close();
-            FoodPage foodPage = new FoodPage();
-            (foodPage.BindingContext as FoodViewModel).CurrentAliment = new Food();
-            (foodPage.BindingContext as FoodViewModel).IsNew = true;
-            (foodPage.BindingContext as FoodViewModel).CopyOfFilteredAliments = FilteredAliments;
+            EditFoodPage foodPage = new EditFoodPage();
+            (foodPage.BindingContext as EditFoodViewModel).CurrentAliment = new Food();
+            (foodPage.BindingContext as EditFoodViewModel).IsNew = true;
+            (foodPage.BindingContext as EditFoodViewModel).CopyOfFilteredAliments = FilteredAliments;
             await Shell.Current.Navigation.PushAsync(foodPage);
             //await App.Current.MainPage.Navigation.PushAsync(foodPage);
-            //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
+            //await Shell.Current.GoToAsync($"{nameof(EditFoodPage)}");
         }
 
         public ICommand CreateRecipeCommand { get; set; }
@@ -335,14 +351,14 @@ namespace MealPlanner.ViewModels
             {
                 var aliment = await App.RestService.ScanBarCodeAsync(code);
 
-                FoodPage foodPage = new FoodPage();
-                FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
+                EditFoodPage foodPage = new EditFoodPage();
+                EditFoodViewModel foodPageVm = foodPage.BindingContext as EditFoodViewModel;
                 foodPageVm.CurrentAliment = RefData.CreateAndCopyAlimentProperties(aliment);
                 foodPageVm.CurrentAliment.ServingSize = 100;
                 foodPageVm.IsNew = true;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
 
-                //await Shell.Current.GoToAsync($"{nameof(FoodPage)}");
+                //await Shell.Current.GoToAsync($"{nameof(EditFoodPage)}");
                 await Application.Current.MainPage.Navigation.PushAsync(foodPage);
 
             }

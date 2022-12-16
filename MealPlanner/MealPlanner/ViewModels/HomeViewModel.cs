@@ -270,7 +270,7 @@ namespace MealPlanner.ViewModels
                 rSPopup.Show();
             }
             else if (aliment is Food)
-                App.Current.MainPage.Navigation.PushAsync(new FoodPage());
+                App.Current.MainPage.Navigation.PushAsync(new EditFoodPage());
         }
 
         private AddAlimentPage addAlimentPage;

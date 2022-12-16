@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MealPlanner.ViewModels"
+             xmlns:controls="clr-namespace:MealPlanner.Controls" 
+             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
+             xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers"
+             xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls"
+             x:Class="MealPlanner.Views.EditFoodPage"
+             x:Name="editFoodPage"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:EditFoodViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+        <Shell.TitleView>
+        <ContentView>
+            <Grid x:Name="gridToolbar"
+                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, Auto, Auto"
+                  HeightRequest="{OnPlatform iOS=44}"
+                  Margin="{OnPlatform Android='0,0,10,0'}"
+                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="{Binding Title}"
+                       Style="{StaticResource NavigationBarLabel}"
+                       VerticalOptions="CenterAndExpand"/>
+                <Button Grid.Row="0" Grid.Column="1"
+                         Text="Save"
+                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                         IsVisible="{Binding IsNew}"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="FillAndExpand"
+                         Command="{Binding SaveCommand}" CommandParameter="{x:Reference editFoodPage}">
+                    <Button.ImageSource>
+                        <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="2"
+                         Text="Update"
+                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                         IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="FillAndExpand"
+                         Command="{Binding UpdateCommand}" CommandParameter="{x:Reference editFoodPage}">
+                    <Button.ImageSource>
+                        <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+            </Grid>
+        </ContentView>
+    </Shell.TitleView>
+
+    <!--<ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="troll" Order="Default" Priority="0" Command="{Binding OpenUserPageCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.CirclePlus}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+
+        <ToolbarItem Text="troll" Order="Default" Priority="1" Command="{Binding OpenUserPageCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.FloppyDisk}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <Grid Margin="10" ColumnDefinitions="*, *, *" RowDefinitions="100, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+
+                <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+                             CornerRadius="12" WidthRequest="100" HorizontalOptions="Center"
+                             Aspect="AspectFill" BackgroundColor="LightGray" 
+                             Source="{Binding CurrentAliment.ImageSource}"
+                             Command="{Binding AddImageCommand}" CommandParameter="{Binding CurrentAliment}"/>
+
+                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+                                    x:Name="nameEntry"
+                                    Style="{StaticResource Entry}" 
+                                    Helper="Mandatory" 
+                                    Placeholder="Name" 
+                                    Text="{Binding CurrentAliment.Name}" 
+                                    FontAttributes="Bold" 
+                                    IsPlaceholderAlwaysFloating="True">
+                    <rsControls:RSEntry.Behaviors>
+                        <validators:ValidationBehaviour PropertyName="Text">
+                            <validators:ValidationBehaviour.Validators>
+                                <validators:RequiredValidation/>
+                            </validators:ValidationBehaviour.Validators>
+                        </validators:ValidationBehaviour>
+                    </rsControls:RSEntry.Behaviors>
+                </rsControls:RSEntry>
+
+                <!--<Grid Margin="10" VerticalOptions="FillAndExpand">
+                <Frame Grid.Row="0" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
+                    <Label Text="200 g"/>
+                </Frame>
+
+                <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Margin="5,0,10,5" CornerRadius="8">
+                    <Label Text="356 Cal"/>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
+                    <Label Text="Prot 40 g"/>
+                </Frame>
+
+                <Frame Grid.Row="2" Grid.Column="1" Margin="5,0,10,5" CornerRadius="8">
+                    <Label Text="Carbs 154 g"/>
+                </Frame>
+
+                <Frame Grid.Row="2" Grid.Column="0" Margin="10,0,5,5" CornerRadius="8">
+                    <Label Text="Fats 23 g"/>
+                </Frame>
+            </Grid>-->
+
+                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="*,*">
+                    <rsControls:RSNumericEntry Grid.Column="0"
+                                               x:Name="servingSizeEntry"
+                                               Placeholder="Serving size" 
+                                               Style="{StaticResource Entry}"
+                                               Value="{Binding CurrentAliment.ServingSize}"
+                                               Helper="Mandatory"
+                                               IsPlaceholderAlwaysFloating="True">
+                        <rsControls:RSNumericEntry.Behaviors>
+                            <validators:ValidationBehaviour PropertyName="Value">
+                                <validators:ValidationBehaviour.Validators>
+                                    <validators:RequiredValidation/>
+                                    <validators:DifferentThanValidation x:TypeArguments="x:String" Value="0"/>
+                                </validators:ValidationBehaviour.Validators>
+                            </validators:ValidationBehaviour>
+                        </rsControls:RSNumericEntry.Behaviors>
+                    </rsControls:RSNumericEntry>
+                    <rsControls:RSEnumPicker Grid.Column="1" Style="{StaticResource Picker}" x:TypeArguments="enums:AlimentUnitEnum" SelectedItem="{Binding CurrentAliment.Unit}" IsPlaceholderAlwaysFloating="True"/>
+                </Grid>
+                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Proteins" Value="{Binding CurrentAliment.Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="1" Style="{StaticResource Entry}" Placeholder="Carbs" Value="{Binding CurrentAliment.Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="2" Style="{StaticResource Entry}" Placeholder="Fats" Value="{Binding CurrentAliment.Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                <rsControls:RSNumericEntry Grid.Row="4" Grid.Column="0" Style="{StaticResource Entry}" Grid.ColumnSpan="3" Placeholder="Calories" Value="{Binding CurrentAliment.Calories}" Helper="calories are calculated automatically if empty" IsPlaceholderAlwaysFloating="True"/>
+
+
+                <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="100, *" RowDefinitions="100, Auto" Margin="15">
+                    <controls:CircleCountdown 
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Grid.Row="0" Grid.Column="0"
+                        Progress="{Binding CurrentAliment.CaloriesProgress}"
+                        ProgressStartColor="LightGreen"
+                        ProgressEndColor="LightGreen"
+                        StrokeWidth="10"/>
+
+                    <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
+                        <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding CurrentAliment.Calories, StringFormat='{0:0.#}'}" FontAttributes="Bold"/>
+                        <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="of"/>
+                        <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding RefData.User.TDEE, StringFormat='{0:0.#}'}"/>
+                    </StackLayout>
+
+                    <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmall}" HorizontalOptions="Center" Text="Calories"/>
+
+                    <Frame Style="{StaticResource MealCard}" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"  Margin="4, 4, 4, 15">
+                        <Grid Margin="10" BackgroundColor="Transparent" ColumnDefinitions="Auto, *, Auto, Auto">
+
+                            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" Text="Prot" VerticalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmall}" Text="Carbs" VerticalOptions="Center"/>
+                            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelSmall}" Text="Fats" VerticalOptions="Center"/>
+
+                            <ProgressBar Grid.Row="0" Grid.Column="1" Progress="{Binding CurrentAliment.ProteinsProgress}" VerticalOptions="Center"/>
+                            <ProgressBar Grid.Row="1" Grid.Column="1" Progress="{Binding CurrentAliment.CarbsProgress}" VerticalOptions="Center"/>
+                            <ProgressBar Grid.Row="2" Grid.Column="1" Progress="{Binding CurrentAliment.FatsProgress}" VerticalOptions="Center"/>
+
+                            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding CurrentAliment.Proteins, StringFormat='{0:0.#}'}"/>
+                                        <Span Text="   /"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Row="0" Grid.Column="3" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetProteins, StringFormat='{0:0.#}'}"/>
+                            <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding CurrentAliment.Carbs, StringFormat='{0:0.#}'}"/>
+                                        <Span Text="   /"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Row="1" Grid.Column="3" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetCarbs, StringFormat='{0:0.#}'}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding CurrentAliment.Fats, StringFormat='{0:0.#}'}"/>
+                                        <Span Text="   /"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Row="2" Grid.Column="3" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="End" Text="{Binding RefData.User.TargetFats, StringFormat='{0:0.#}'}"/>
+                        </Grid>
+                    </Frame>
+                </Grid>
+
+
+                <!--<Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Text="Save" Command="{Binding SaveCommand}"/>
+                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Text="Update" Command="{Binding UpdateCommand}"/>-->
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
