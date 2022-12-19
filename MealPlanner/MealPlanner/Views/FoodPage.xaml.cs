@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MealPlanner.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,17 @@ namespace MealPlanner.Views
         public FoodPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var vm = BindingContext as FoodViewModel;
+            if (vm.AlimentToUpdate != null)
+                vm.InitProperties(vm.AlimentToUpdate);
+            else
+                vm.InitProperties(vm.CurrentAliment);
         }
     }
 }

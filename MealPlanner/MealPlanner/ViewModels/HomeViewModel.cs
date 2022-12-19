@@ -210,22 +210,16 @@ namespace MealPlanner.ViewModels
 
             if (aliment is Aliment)
             {
-                if (aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
-                {
-                    FoodPage foodPage = new FoodPage();
-                    FoodViewModel foodViewModel = foodPage.BindingContext as FoodViewModel;
+                FoodPage foodPage = new FoodPage();
+                FoodViewModel foodViewModel = foodPage.BindingContext as FoodViewModel;
 
-                    foodViewModel.CurrentAliment = RefData.Aliments.FirstOrDefault(x => x.Id == aliment.Id && x.AlimentType == aliment.AlimentType);
-                    foodViewModel.AlimentToUpdate = aliment;
-                    foodViewModel.IsInUpdateMode = true;
-                    foodViewModel.SelectedMeal = meal;
-                    foodViewModel.InitProperties(aliment);
-                    await Shell.Current.Navigation.PushAsync(foodPage);
-                }
-                else
-                {
-
-                }
+                foodViewModel.CurrentAliment = RefData.Aliments.FirstOrDefault(x => x.Id == aliment.Id && x.AlimentType == aliment.AlimentType);
+                foodViewModel.AlimentToUpdate = aliment;
+                foodViewModel.IsInUpdateMode = true;
+                foodViewModel.CanAddItem = false;
+                foodViewModel.SelectedMeal = meal;
+                //foodViewModel.InitProperties(aliment);
+                await Shell.Current.Navigation.PushAsync(foodPage);
             }
         }
 

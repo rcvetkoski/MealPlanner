@@ -165,9 +165,10 @@ namespace MealPlanner.ViewModels
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
                 foodPageVm.IsNew = true;
                 foodPageVm.CurrentAliment = existingAliment;
-                foodPageVm.InitProperties(existingAliment);
+                //foodPageVm.InitProperties(existingAliment);
                 foodPageVm.Title = $"{existingAliment.Name}";
-                foodPageVm.SelectedMeal = SelectedMeal; foodPageVm.CurrentAliment.ServingSize = 100;
+                foodPageVm.SelectedMeal = SelectedMeal;
+                foodPageVm.CurrentAliment.ServingSize = 100;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
 
                 //await Shell.Current.GoToAsync($"{nameof(EditFoodPage)}");
@@ -179,10 +180,12 @@ namespace MealPlanner.ViewModels
                 FoodPage foodPage = new FoodPage();
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
                 foodPageVm.CurrentAliment = existingAliment;
-                foodPageVm.InitProperties(existingAliment);
+                //foodPageVm.InitProperties(existingAliment);
                 foodPageVm.Title = $"{existingAliment.Name}";
                 foodPageVm.SelectedMeal = SelectedMeal;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
+                foodPageVm.SelectedRecipe = CurrentRecipe;
+                foodPageVm.CanAddItem = !RecipeSwitchVisibility || SelectedMeal != null ? true : false; 
                 await Application.Current.MainPage.Navigation.PushAsync(foodPage);
                 return;
             }

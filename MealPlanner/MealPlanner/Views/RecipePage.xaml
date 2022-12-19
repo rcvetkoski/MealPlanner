@@ -76,7 +76,7 @@
 
 
     <ContentPage.Content>
-        <ScrollView Orientation="Neither">
+        <ScrollView Orientation="Vertical">
             <Grid Margin="10" ColumnDefinitions="*, 120" RowDefinitions="100,Auto, Auto, Auto, *">
 
                 <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
@@ -129,8 +129,8 @@
                 <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Command="{Binding SaveCommand}"/>
                 <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="Update" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Command="{Binding UpdateCommand}"/>-->
 
-                <CollectionView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CollectionView}" ItemsSource="{Binding CurrentAliment.Foods}">
-                    <CollectionView.ItemTemplate>
+                <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" BindableLayout.ItemsSource="{Binding CurrentAliment.Foods}">
+                    <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:Food">
                             <SwipeView Style="{StaticResource SwipeView}">
                                 <SwipeView.RightItems>
@@ -146,56 +146,22 @@
                                     </SwipeItems>
                                 </SwipeView.RightItems>
 
-                                <Grid Margin="2" RowDefinitions="Auto, Auto, 1" ColumnDefinitions="*,Auto,Auto,Auto" Padding="5, 0, 5, 0">
-                                    <Label Grid.Column="0" Style="{StaticResource LabelSmall}" LineBreakMode="TailTruncation" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
-                                    <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding ServingSize, StringFormat='{0:0.#}'}"/>
-                                                <Span Text=" "/>
-                                                <Span Text="{Binding Unit}"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-
-                                    <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding Proteins, StringFormat='{0:0.#}'}"/>
-                                                <Span Text=" p"/> 
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                    <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="Center">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding Carbs, StringFormat='{0:0.#}'}"/>
-                                                <Span Text=" c"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                    <Label Grid.Row="1" Grid.Column="3" Style="{StaticResource LabelSmall}" VerticalOptions="Center">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding Fats, StringFormat='{0:0.#}'}"/>
-                                                <Span Text=" f"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                    <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource LabelSmall}" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding Calories, StringFormat='{0:0.#}'}"/>
-                                                <Span Text=" cal"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="LightGray"/>
+                                <Grid Margin="2" RowDefinitions="25, 25, 1" ColumnDefinitions="50,3*,*" Padding="5,0,5,0">
+                                    <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" BackgroundColor="Gray" Source="{Binding ImageSource}" Aspect="AspectFill">
+                                        <Image.Clip>
+                                            <RoundRectangleGeometry Rect="0,0,50,50" CornerRadius="12"/>
+                                        </Image.Clip>
+                                    </Image>
+                                    <Label Grid.Column="1" Style="{StaticResource LabelSmall}" LineBreakMode="TailTruncation" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding ServingSizeWithUnit}" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding NutritionValuesString}" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalTextAlignment="End"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding CaloriesString}" Style="{StaticResource LabelSmall}" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold"/>
+                                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="LightGray"/>
                                 </Grid>
                             </SwipeView>
                         </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

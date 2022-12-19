@@ -2,7 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MealPlanner.ViewModels"
-             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:controls="clr-namespace:MealPlanner.Controls" xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
+             xmlns:models="clr-namespace:MealPlanner.Models"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:controls="clr-namespace:MealPlanner.Controls" 
+             xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
+             xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
+             xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding Title}"
              x:Class="MealPlanner.Views.FoodPage">
@@ -81,7 +85,7 @@
                                                  Margin="10,0,0,0"/>
                         <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                                 CornerRadius="8"
-                                IsVisible="{Binding IsInUpdateMode, Converter={StaticResource InverseBoolConverter}}"
+                                IsVisible="{Binding CanAddItem}"
                                 Command="{Binding AddFoodCommand}"
                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                                 Text="Add item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}">
@@ -115,6 +119,27 @@
                     </Grid>
                 </Grid>
 
+                <Label Text="Ingredients" Style="{StaticResource LabelMediumBold}" IsVisible="{Binding IsAlimentsVisible}" Margin="10,0,0,0"/>
+                <Frame Style="{StaticResource JournalTemplateCard}" IsVisible="{Binding IsAlimentsVisible}">
+                    <StackLayout BindableLayout.ItemsSource="{Binding CurrentAliment.Foods}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="models:Food">
+                                <Grid Margin="2" RowDefinitions="25, 25, 1" ColumnDefinitions="50,3*,*">
+                                    <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" BackgroundColor="Gray" Source="{Binding ImageSource}" Aspect="AspectFill">
+                                        <Image.Clip>
+                                            <RoundRectangleGeometry Rect="0,0,50,50" CornerRadius="12"/>
+                                        </Image.Clip>
+                                    </Image>
+                                    <Label Grid.Column="1" Style="{StaticResource LabelSmall}" LineBreakMode="TailTruncation" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding ServingSizeWithUnit}" VerticalOptions="Center"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding NutritionValuesString}" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalTextAlignment="End"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding CaloriesString}" Style="{StaticResource LabelSmall}" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold"/>
+                                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="LightGray"/>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </Frame>
 
                 <!--<Label Text="Nutritional values" Style="{StaticResource LabelMediumBold}" Margin="20,0,0,0"/>-->
                 <Frame Style="{StaticResource JournalTemplateCard}">
@@ -135,8 +160,7 @@
                             </Label.FormattedText>
                         </Label>
                         <Label Grid.Row="1" Grid.Column="1" Text="{Binding CurrentAliment.Calories}" Style="{StaticResource LabelMediumBold}"/>
-                        <Label Grid.Row="1" Grid.Column="2" Text="{Binding CurrentAliment.
-                            Serving}" IsVisible="{Binding IsServingQuantityVisible}" Style="{StaticResource LabelMediumBold}"/>
+                        <Label Grid.Row="1" Grid.Column="2" Text="{Binding CurrentAliment.CaloriesServing}" IsVisible="{Binding IsServingQuantityVisible}" Style="{StaticResource LabelMediumBold}"/>
 
 
                         <Label Grid.Row="2" Grid.Column="0" Text="Proteins" Style="{StaticResource LabelMediumBold}"/>

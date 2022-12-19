@@ -26,15 +26,29 @@ namespace MealPlanner.ViewModels
 
         public Aliment AlimentToUpdate { get; set; }
 
+        public Recipe SelectedRecipe { get; set; }
+
         public ICommand EditFoodCommand { get; set; }
         private async void EditFood()
         {
-            EditFoodPage foodPage = new EditFoodPage();
-            (foodPage.BindingContext as EditFoodViewModel).CurrentAliment = RefData.CreateAndCopyAlimentProperties(CurrentAliment);
-            (foodPage.BindingContext as EditFoodViewModel).IsNew = IsNew;
-            (foodPage.BindingContext as EditFoodViewModel).CopyOfFilteredAliments = CopyOfFilteredAliments;
+            if(CurrentAliment.AlimentType == AlimentTypeEnum.Food)
+            {
+                EditFoodPage foodPage = new EditFoodPage();
+                (foodPage.BindingContext as EditFoodViewModel).CurrentAliment = RefData.CreateAndCopyAlimentProperties(CurrentAliment);
+                (foodPage.BindingContext as EditFoodViewModel).IsNew = IsNew;
+                (foodPage.BindingContext as EditFoodViewModel).CopyOfFilteredAliments = CopyOfFilteredAliments;
 
-            await Shell.Current.Navigation.PushAsync(foodPage);
+                await Shell.Current.Navigation.PushAsync(foodPage);
+            }
+            else
+            {
+                RecipePage recipePage = new RecipePage();
+                (recipePage.BindingContext as RecipeViewModel).CurrentAliment = RefData.CreateAndCopyAlimentProperties(CurrentAliment);
+                (recipePage.BindingContext as RecipeViewModel).IsNew = IsNew;
+                (recipePage.BindingContext as RecipeViewModel).CopyOfFilteredAliments = CopyOfFilteredAliments;
+
+                await Shell.Current.Navigation.PushAsync(recipePage);
+            }
         }
 
         public ICommand AddFoodCommand { get; set; }
@@ -47,16 +61,41 @@ namespace MealPlanner.ViewModels
             var existingAliment = RefData.Aliments.Where(x => x.Id == aliment.Id && x.AlimentType == aliment.AlimentType).FirstOrDefault();
 
             // Save to db
-            if(existingAliment == null)
+            if (existingAliment == null && SelectedMeal != null)
             {
-                await App.DataBaseRepo.AddFoodAsync(aliment as Food);
-                RefData.Foods.Add(aliment as Food);
-                RefData.Aliments.Add(aliment as Food);
-                CopyOfFilteredAliments.Add(aliment as Food);
-            }
+                if (aliment.AlimentType == AlimentTypeEnum.Food)
+                {
+                    await App.DataBaseRepo.AddFoodAsync(aliment as Food);
+                    RefData.Foods.Add(aliment as Food);
+                    RefData.Aliments.Add(aliment as Food);
+                    CopyOfFilteredAliments.Add(aliment as Food);
+                }
+                else
+                {
+                    await App.DataBaseRepo.AddRecipeAsync(aliment as Recipe);
+                    RefData.Recipes.Add(aliment as Recipe);
+                    RefData.Aliments.Add(aliment as Recipe);
+                    CopyOfFilteredAliments.Add(aliment as Recipe);
+                }
 
-            // Add aliment
-            RefData.AddAliment(aliment, SelectedMeal);
+                // Add aliment
+                RefData.AddAliment(aliment, SelectedMeal);
+            }
+            else if(SelectedMeal != null)
+            {
+                // Add aliment
+                RefData.AddAliment(aliment, SelectedMeal);
+            }
+            else
+            {
+                if (aliment.AlimentType == AlimentTypeEnum.Recipe)
+                    return;
+
+
+                // Set RecipeFoodId to 0
+                (aliment as Food).RecipeFoodId = 0;
+                SelectedRecipe.Foods.Add((aliment as Food));
+            }
 
             await Shell.Current.Navigation.PopAsync();
         }
@@ -132,7 +171,26 @@ namespace MealPlanner.ViewModels
                 }
             }
         }
+
+        private bool canAddItem;
+        public bool CanAddItem 
+        { 
+            get
+            {
+                return canAddItem;
+            }
+            set
+            {
+                if(canAddItem != value)
+                {
+                    canAddItem = value;
+                    OnPropertyChanged(nameof(CanAddItem));
+                }
+            }
+        }    
+
         public bool IsServingQuantityVisible { get; set; }
+        public bool IsAlimentsVisible { get; set; }
 
         // Calories
         private double alimentCalories;
@@ -315,6 +373,8 @@ namespace MealPlanner.ViewModels
             AlimentUnit = aliment.Unit;
 
             IsServingQuantityVisible = aliment.ServingQuantity <= 0 ? false : true;
+            IsAlimentsVisible = (aliment.AlimentType == AlimentTypeEnum.Recipe && (aliment as Recipe).Foods.Any()) ? true : false;
+            OnPropertyChanged("IsAlimentsVisible");
             OnPropertyChanged("IsServingQuantityVisible");
         }
     }

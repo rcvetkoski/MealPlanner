@@ -562,20 +562,35 @@ namespace MealPlanner.Helpers
         {
             double proteins = 0;
             double carbs = 0;
+            double fibers = 0;
+            double sugars = 0;
             double fats = 0;
+            double saturatedFat = 0;
+            double sodium = 0;
+            double salt = 0;
             double calories = 0;
 
             foreach (Food food in recipe.Foods)
             {
                 proteins += food.Proteins;
                 carbs += food.Carbs;
+                fibers += food.Fibers;
+                sugars += food.Sugars;
                 fats += food.Fats;
+                saturatedFat += food.SaturatedFat;
+                sodium += food.Sodium;
+                salt += food.Salt;
                 calories += food.Calories;
             }
 
             recipe.Proteins = proteins * ratio;
             recipe.Carbs = carbs * ratio;
+            recipe.Fibers = fibers * ratio;
+            recipe.Sugars = sugars * ratio;
             recipe.Fats = fats * ratio;
+            recipe.SaturatedFat = saturatedFat * ratio;
+            recipe.Sodium = sodium * ratio;
+            recipe.Salt = salt * ratio;
             recipe.Calories = calories * ratio;
         }
 
