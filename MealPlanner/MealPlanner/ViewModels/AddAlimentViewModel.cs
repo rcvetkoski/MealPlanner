@@ -165,7 +165,7 @@ namespace MealPlanner.ViewModels
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
                 foodPageVm.IsNew = true;
                 foodPageVm.CurrentAliment = existingAliment;
-                foodPageVm.InitProperties();
+                foodPageVm.InitProperties(existingAliment);
                 foodPageVm.Title = $"{existingAliment.Name}";
                 foodPageVm.SelectedMeal = SelectedMeal; foodPageVm.CurrentAliment.ServingSize = 100;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
@@ -179,7 +179,7 @@ namespace MealPlanner.ViewModels
                 FoodPage foodPage = new FoodPage();
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
                 foodPageVm.CurrentAliment = existingAliment;
-                foodPageVm.InitProperties();
+                foodPageVm.InitProperties(existingAliment);
                 foodPageVm.Title = $"{existingAliment.Name}";
                 foodPageVm.SelectedMeal = SelectedMeal;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;

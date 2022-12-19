@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MealPlanner.ViewModels"
-             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:controls="clr-namespace:MealPlanner.Controls" xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:controls="clr-namespace:MealPlanner.Controls" xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding Title}"
              x:Class="MealPlanner.Views.FoodPage">
@@ -10,6 +10,12 @@
     <ContentPage.BindingContext>
         <vm:FoodViewModel />
     </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="troll" Order="Default" Priority="0" Command="{Binding EditFoodCommand}">
@@ -75,12 +81,35 @@
                                                  Margin="10,0,0,0"/>
                         <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                                 CornerRadius="8"
+                                IsVisible="{Binding IsInUpdateMode, Converter={StaticResource InverseBoolConverter}}"
                                 Command="{Binding AddFoodCommand}"
                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                                 Text="Add item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}">
                             <Button.ImageSource>
                                 <FontImageSource Color="SteelBlue"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+                        </Button>
+                        <Button Grid.Row="1" Grid.Column="0" 
+                                IsVisible="{Binding IsInUpdateMode}"
+                                CornerRadius="8"
+                                Command="{Binding RemoveAlimentCommand}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                Text="Remove item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}">
+                            <Button.ImageSource>
+                                <FontImageSource Color="Red" Size="22"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Trash}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+                        </Button>
+                        <Button Grid.Row="1" Grid.Column="1" 
+                                IsVisible="{Binding IsInUpdateMode}"
+                                CornerRadius="8"
+                                Command="{Binding UpdateAlimentCommand}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                Text="Update item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}">
+                            <Button.ImageSource>
+                                <FontImageSource Color="SteelBlue" Size="22"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Pencil}" FontFamily="FA-Solid"/>
                             </Button.ImageSource>
                         </Button>
                     </Grid>
@@ -106,7 +135,8 @@
                             </Label.FormattedText>
                         </Label>
                         <Label Grid.Row="1" Grid.Column="1" Text="{Binding CurrentAliment.Calories}" Style="{StaticResource LabelMediumBold}"/>
-                        <Label Grid.Row="1" Grid.Column="2" Text="{Binding CurrentAliment.CaloriesServing}" IsVisible="{Binding IsServingQuantityVisible}" Style="{StaticResource LabelMediumBold}"/>
+                        <Label Grid.Row="1" Grid.Column="2" Text="{Binding CurrentAliment.
+                            Serving}" IsVisible="{Binding IsServingQuantityVisible}" Style="{StaticResource LabelMediumBold}"/>
 
 
                         <Label Grid.Row="2" Grid.Column="0" Text="Proteins" Style="{StaticResource LabelMediumBold}"/>

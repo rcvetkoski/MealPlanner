@@ -203,74 +203,30 @@ namespace MealPlanner.ViewModels
 
 
         public ICommand UpdateAlimentCommand { get; set; }
-        private void UpdateAliment(object[] objects)
+        private async void UpdateAliment(object[] objects)
         {
             var meal = objects[0] as Meal;
             var aliment = objects[1] as Aliment;
 
             if (aliment is Aliment)
             {
-                RSPopup rSPopup = new RSPopup();
-                rSPopup.SetMargin(20, 20, 20, 20);
-                rSPopup.Title = aliment.Name;
-                rSPopup.Style = Application.Current.Resources["RSPopup"] as Style;
-
-                RSPopupAlimentDetailPage rSPopupAlimentDetailPage = new RSPopupAlimentDetailPage();
-                rSPopupAlimentDetailPage.BindingContext = new AlimentPopUpViewModel(aliment);
-                var rSPopupAlimentDetailPageBindingContext = rSPopupAlimentDetailPage.BindingContext as AlimentPopUpViewModel;
-                rSPopup.SetCustomView(rSPopupAlimentDetailPage);
-
-
-                // Update
-                rSPopup.AddAction("Update", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral, new Command(async () =>
+                if (aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
                 {
-                    aliment.Proteins = rSPopupAlimentDetailPageBindingContext.AlimentProteins;
-                    aliment.Carbs = rSPopupAlimentDetailPageBindingContext.AlimentCarbs;
-                    aliment.Fats = rSPopupAlimentDetailPageBindingContext.AlimentFats;
-                    aliment.Calories = rSPopupAlimentDetailPageBindingContext.AlimentCalories;
-                    aliment.Unit = rSPopupAlimentDetailPageBindingContext.AlimentUnit;
-                    aliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
+                    FoodPage foodPage = new FoodPage();
+                    FoodViewModel foodViewModel = foodPage.BindingContext as FoodViewModel;
 
-                    // Update meal values
-                    RefData.UpdateMealValues(meal);
-
-                    // Update daily values
-                    RefData.UpdateDailyValues();
-
-
-                    MealAliment mealAliment = await App.DataBaseRepo.GetMealAlimentAsync(aliment.MealAlimentId);
-                    mealAliment.ServingSize = rSPopupAlimentDetailPageBindingContext.AlimentServingSize;
-                    await App.DataBaseRepo.UpdateMealAliment(mealAliment);
-
-                    var mealAlimentToUpdate = RefData.MealAliments.FirstOrDefault(x => x.Id == mealAliment.Id);
-                    if(mealAlimentToUpdate != null)
-                    {
-                        mealAlimentToUpdate.AlimentType = mealAliment.AlimentType;
-                        mealAlimentToUpdate.ServingSize = mealAliment.ServingSize;
-                    }
-
-                    rSPopup.Close();
-                }));
-
-
-                // Delette
-                rSPopup.AddAction("Delette", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Destructive, new Command(() => 
+                    foodViewModel.CurrentAliment = RefData.Aliments.FirstOrDefault(x => x.Id == aliment.Id && x.AlimentType == aliment.AlimentType);
+                    foodViewModel.AlimentToUpdate = aliment;
+                    foodViewModel.IsInUpdateMode = true;
+                    foodViewModel.SelectedMeal = meal;
+                    foodViewModel.InitProperties(aliment);
+                    await Shell.Current.Navigation.PushAsync(foodPage);
+                }
+                else
                 {
-                    if(aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
-                    {
-                        DeletteAliment(objects);
-                        rSPopup.Close();
-                    }
-                    else
-                        App.Current.MainPage.Navigation.PushAsync(new RecipePage());
-                }));
 
-
-                // Close
-                rSPopup.Show();
+                }
             }
-            else if (aliment is Food)
-                App.Current.MainPage.Navigation.PushAsync(new EditFoodPage());
         }
 
         private AddAlimentPage addAlimentPage;

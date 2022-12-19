@@ -18,9 +18,13 @@ namespace MealPlanner.ViewModels
             IsServingQuantityVisible = true;
             EditFoodCommand = new Command(EditFood);
             AddFoodCommand = new Command(AddFood);
+            UpdateAlimentCommand = new Command(UpdateAliment);
+            RemoveAlimentCommand = new Command(RemoveAliment);
         }
 
         public ObservableCollection<Aliment> CopyOfFilteredAliments { get; set; }
+
+        public Aliment AlimentToUpdate { get; set; }
 
         public ICommand EditFoodCommand { get; set; }
         private async void EditFood()
@@ -57,6 +61,77 @@ namespace MealPlanner.ViewModels
             await Shell.Current.Navigation.PopAsync();
         }
 
+        public ICommand UpdateAlimentCommand { get; set; }
+        private async void UpdateAliment()
+        {
+            AlimentToUpdate.Proteins = AlimentProteins;
+            AlimentToUpdate.Carbs = AlimentCarbs;
+            AlimentToUpdate.Fats = AlimentFats;
+            AlimentToUpdate.Calories = AlimentCalories;
+            AlimentToUpdate.Unit = AlimentUnit;
+            AlimentToUpdate.ServingSize = AlimentServingSize;
+
+            // Update meal values
+            RefData.UpdateMealValues(SelectedMeal);
+
+            // Update daily values
+            RefData.UpdateDailyValues();
+
+
+            MealAliment mealAliment = await App.DataBaseRepo.GetMealAlimentAsync(AlimentToUpdate.MealAlimentId);
+            mealAliment.ServingSize = AlimentServingSize;
+            await App.DataBaseRepo.UpdateMealAliment(mealAliment);
+
+            var mealAlimentToUpdate = RefData.MealAliments.FirstOrDefault(x => x.Id == mealAliment.Id);
+            if (mealAlimentToUpdate != null)
+            {
+                mealAlimentToUpdate.AlimentType = mealAliment.AlimentType;
+                mealAlimentToUpdate.ServingSize = mealAliment.ServingSize;
+            }
+
+            //await Shell.Current.Navigation.PopAsync();
+        }
+
+        public ICommand RemoveAlimentCommand { get; set; }
+        private async void RemoveAliment()
+        {
+            MealAliment mealAliment = await App.DataBaseRepo.GetMealAlimentAsync(AlimentToUpdate.MealAlimentId);
+
+            if (mealAliment != null)
+            {
+                await App.DataBaseRepo.DeleteMealAlimentAsync(mealAliment);
+                var realMealAliment = RefData.MealAliments.FirstOrDefault(x => x.Id == mealAliment.Id);
+                if (realMealAliment != null)
+                    RefData.MealAliments.Remove(realMealAliment);
+            }
+
+            SelectedMeal.Aliments.Remove(AlimentToUpdate);
+
+            // Update meal values
+            RefData.UpdateMealValues(SelectedMeal);
+
+            // Update daily values
+            RefData.UpdateDailyValues();
+
+            await Shell.Current.Navigation.PopAsync();
+        }
+
+        private bool isInUpdateMode;
+        public bool IsInUpdateMode 
+        {
+            get
+            {
+                return isInUpdateMode;
+            }
+            set
+            {
+                if(isInUpdateMode != value)
+                {
+                    isInUpdateMode = value;
+                    OnPropertyChanged(nameof(IsInUpdateMode));
+                }
+            }
+        }
         public bool IsServingQuantityVisible { get; set; }
 
         // Calories
@@ -230,16 +305,16 @@ namespace MealPlanner.ViewModels
             AlimentFats = CurrentAliment.Fats * ratio;
         }
 
-        public void InitProperties()
+        public void InitProperties(Aliment aliment)
         {
-            AlimentCalories = CurrentAliment.Calories;
-            AlimentProteins = CurrentAliment.Proteins;
-            AlimentCarbs = CurrentAliment.Carbs;
-            AlimentFats = CurrentAliment.Fats;
-            AlimentServingSize = CurrentAliment.ServingSize;
-            AlimentUnit = CurrentAliment.Unit;
+            AlimentCalories = aliment.Calories;
+            AlimentProteins = aliment.Proteins;
+            AlimentCarbs = aliment.Carbs;
+            AlimentFats = aliment.Fats;
+            AlimentServingSize = aliment.ServingSize;
+            AlimentUnit = aliment.Unit;
 
-            IsServingQuantityVisible = CurrentAliment.ServingQuantity <= 0 ? false : true;
+            IsServingQuantityVisible = aliment.ServingQuantity <= 0 ? false : true;
             OnPropertyChanged("IsServingQuantityVisible");
         }
     }
