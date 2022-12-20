@@ -28,6 +28,9 @@ namespace MealPlanner.ViewModels
         public AddAlimentViewModel()
         {
             SetTitle();
+            SliderX = 0;
+            FoodButtonAtributtes = FontAttributes.Bold;
+            RecipeButtonAtributtes = FontAttributes.None;
             FilteredAliments = new ObservableCollection<Aliment>();
             Query = string.Empty;
             RecipeSwitchVisibility = true;
@@ -47,6 +50,10 @@ namespace MealPlanner.ViewModels
 
             //FilteredAlimentsRefresh();
         }
+
+        public double SliderX { get; set; }
+        public FontAttributes FoodButtonAtributtes { get; set; }
+        public FontAttributes RecipeButtonAtributtes { get; set; }
 
 
         public ObservableCollection<Aliment> FilteredAliments { get; set; }
@@ -157,19 +164,24 @@ namespace MealPlanner.ViewModels
         public ICommand SelectAlimentCommand { get; set; }
         private async void SelectAliment(Aliment existingAliment)
         {
-            var item = RefData.Aliments.Where(x => x.Id == existingAliment.Id && x.AlimentType == existingAliment.AlimentType).FirstOrDefault();
+            //var item = RefData.Aliments.Where(x => x.Id == existingAliment.Id && x.AlimentType == existingAliment.AlimentType).FirstOrDefault();
+            var getitemByName = RefData.Aliments.FirstOrDefault(x => x.Name == existingAliment.Name && !x.Archived);
+            bool exists = getitemByName != null ? RefData.IsAlimentEqual(getitemByName, existingAliment) : false;
 
-            if(item == null)
+            if (!exists)
             {
                 FoodPage foodPage = new FoodPage();
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
                 foodPageVm.IsNew = true;
                 foodPageVm.CurrentAliment = existingAliment;
+                foodPageVm.SelectedRecipe = CurrentRecipe;
                 //foodPageVm.InitProperties(existingAliment);
-                foodPageVm.Title = $"{existingAliment.Name}";
+                //foodPageVm.Title = $"{existingAliment.Name}";
                 foodPageVm.SelectedMeal = SelectedMeal;
                 foodPageVm.CurrentAliment.ServingSize = 100;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
+                foodPageVm.CanAddItem = !RecipeSwitchVisibility || SelectedMeal != null ? true : false;
+                foodPageVm.CanSaveItem = !foodPageVm.CanAddItem && SelectedMeal == null ? true : false;
 
                 //await Shell.Current.GoToAsync($"{nameof(EditFoodPage)}");
                 await Application.Current.MainPage.Navigation.PushAsync(foodPage);
@@ -181,7 +193,7 @@ namespace MealPlanner.ViewModels
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
                 foodPageVm.CurrentAliment = existingAliment;
                 //foodPageVm.InitProperties(existingAliment);
-                foodPageVm.Title = $"{existingAliment.Name}";
+                //foodPageVm.Title = $"{existingAliment.Name}";
                 foodPageVm.SelectedMeal = SelectedMeal;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
                 foodPageVm.SelectedRecipe = CurrentRecipe;
@@ -404,7 +416,7 @@ namespace MealPlanner.ViewModels
         {
             Helpers.Enums.AlimentTypeEnum type = IsFoodChecked ? Helpers.Enums.AlimentTypeEnum.Food : Helpers.Enums.AlimentTypeEnum.Recipe;
 
-            var searchedList = RefData.Aliments.Where(x => x.AlimentType == type && x.Name.ToLower().Contains(Query.ToLower())).ToList();
+            var searchedList = RefData.Aliments.Where(x => x.AlimentType == type && !x.Archived && x.Name.ToLower().Contains(Query.ToLower())).ToList();
 
             FilteredAliments.Clear();
 

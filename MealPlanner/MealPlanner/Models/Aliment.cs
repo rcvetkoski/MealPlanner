@@ -207,6 +207,8 @@ namespace MealPlanner.Models
             } 
         }
 
+        public bool Archived { get; set; }
+
         private void CalculateCalories()
         {
             Calories = Proteins * 4 + Carbs * 4 + Fats * 9;

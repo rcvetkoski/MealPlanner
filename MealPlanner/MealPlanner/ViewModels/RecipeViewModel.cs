@@ -66,9 +66,7 @@ namespace MealPlanner.ViewModels
             // Update values
             await App.DataBaseRepo.UpdateRecipeAsync(CurrentAliment as Recipe);
 
-            //await Shell.Current.GoToAsync("..");
             await Shell.Current.Navigation.PopAsync();
-            //await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         /// <summary>
@@ -87,82 +85,150 @@ namespace MealPlanner.ViewModels
             if (originalRecipe == null)
                 return;
 
-            originalRecipe.Name = CurrentAliment.Name;
-            originalRecipe.Proteins = CurrentAliment.Proteins;
-            originalRecipe.ImageSourcePath = CurrentAliment.ImageSourcePath;
-            originalRecipe.ImageBlob = CurrentAliment.ImageBlob;
-            originalRecipe.Carbs = CurrentAliment.Carbs;
-            originalRecipe.Fats = CurrentAliment.Fats;
-            originalRecipe.Calories = CurrentAliment.Calories;
-            originalRecipe.OriginalServingSize = CurrentAliment.ServingSize;
-            originalRecipe.ServingSize = CurrentAliment.ServingSize;
-            originalRecipe.Unit = CurrentAliment.Unit;
-            originalRecipe.Foods = (CurrentAliment as Recipe).Foods;
+            // Check if it is used in meal
+            var mealAliments = RefData.MealAliments.Where(x => x.AlimentId == originalRecipe.Id);
 
-            // Remove deletted RecipeFoods
-            foreach (var recipeFood in DelettedRecipeFoods)
+
+            // If it si not used than just update otherwise we need to set archived flag on the used ones and create new recipe
+            if(!mealAliments.Any())
             {
-                if (recipeFood != null)
+                originalRecipe.Name = CurrentAliment.Name;
+                originalRecipe.Proteins = CurrentAliment.Proteins;
+                originalRecipe.ImageSourcePath = CurrentAliment.ImageSourcePath;
+                originalRecipe.ImageBlob = CurrentAliment.ImageBlob;
+                originalRecipe.Carbs = CurrentAliment.Carbs;
+                originalRecipe.Fats = CurrentAliment.Fats;
+                originalRecipe.Calories = CurrentAliment.Calories;
+                originalRecipe.OriginalServingSize = CurrentAliment.ServingSize;
+                originalRecipe.ServingSize = CurrentAliment.ServingSize;
+                originalRecipe.Unit = CurrentAliment.Unit;
+                originalRecipe.Foods = (CurrentAliment as Recipe).Foods;
+
+                // Remove deletted RecipeFoods
+                foreach (var recipeFood in DelettedRecipeFoods)
                 {
-                    RefData.RecipeFoods.Remove(recipeFood);
-                    await App.DataBaseRepo.DeleteRecipeFoodAsync(recipeFood);
-                }
-            }
-            DelettedRecipeFoods.Clear();
-
-
-            // Update recipe values
-            RefData.UpdateRecipeValues(originalRecipe);
-
-            // Update recipe to db
-            await App.DataBaseRepo.UpdateRecipeAsync(originalRecipe);
-
-            // Add food to db if any new
-            var newFoods = originalRecipe.Foods.Where(x=> x.RecipeFoodId == 0);
-            foreach(var food in newFoods)
-            {
-                RecipeFood recipeFood = new RecipeFood();
-                recipeFood.RecipeId = originalRecipe.Id;
-                recipeFood.FoodId = food.Id;
-                recipeFood.ServingSize = food.ServingSize;
-
-                await App.DataBaseRepo.AddRecipeFoodAsync(recipeFood);
-                food.RecipeFoodId = recipeFood.Id;
-                RefData.RecipeFoods.Add(recipeFood);
-            }
-
-
-            // TODO Refresh recipe in Meals
-            foreach (Meal meal in RefData.Meals)
-            {
-                double ratio = 1;
-
-                foreach (Aliment recipe in meal.Aliments)
-                {
-                    if (recipe.AlimentType == AlimentTypeEnum.Recipe && recipe.Id == originalRecipe.Id)
+                    if (recipeFood != null)
                     {
-                        ratio = recipe.ServingSize / originalRecipe.OriginalServingSize;
+                        RefData.RecipeFoods.Remove(recipeFood);
+                        await App.DataBaseRepo.DeleteRecipeFoodAsync(recipeFood);
+                    }
+                }
+                DelettedRecipeFoods.Clear();
 
-                        recipe.Name = originalRecipe.Name;
-                        recipe.OriginalServingSize = originalRecipe.OriginalServingSize;
-                        recipe.Unit = originalRecipe.Unit;
-                        recipe.ImageSourcePath = originalRecipe.ImageSourcePath;
-                        recipe.ImageBlob = originalRecipe.ImageBlob;
-                        recipe.Calories = originalRecipe.Calories * ratio;
-                        recipe.Proteins = originalRecipe.Proteins * ratio; 
-                        recipe.Carbs = originalRecipe.Carbs * ratio;
-                        recipe.Fats = originalRecipe.Fats * ratio;
+
+                // Update recipe values
+                RefData.UpdateRecipeValues(originalRecipe);
+
+                // Update recipe to db
+                await App.DataBaseRepo.UpdateRecipeAsync(originalRecipe);
+
+                // Add food to db if any new
+                var newFoods = originalRecipe.Foods.Where(x => x.RecipeFoodId == 0);
+                foreach (var food in newFoods)
+                {
+                    RecipeFood recipeFood = new RecipeFood();
+                    recipeFood.RecipeId = originalRecipe.Id;
+                    recipeFood.FoodId = food.Id;
+                    recipeFood.ServingSize = food.ServingSize;
+
+                    await App.DataBaseRepo.AddRecipeFoodAsync(recipeFood);
+                    food.RecipeFoodId = recipeFood.Id;
+                    RefData.RecipeFoods.Add(recipeFood);
+                }
+
+
+                // TODO Refresh recipe in Meals
+                foreach (Meal meal in RefData.Meals)
+                {
+                    double ratio = 1;
+
+                    foreach (Aliment recipe in meal.Aliments)
+                    {
+                        if (recipe.AlimentType == AlimentTypeEnum.Recipe && recipe.Id == originalRecipe.Id)
+                        {
+                            ratio = recipe.ServingSize / originalRecipe.OriginalServingSize;
+
+                            recipe.Name = originalRecipe.Name;
+                            recipe.OriginalServingSize = originalRecipe.OriginalServingSize;
+                            recipe.Unit = originalRecipe.Unit;
+                            recipe.ImageSourcePath = originalRecipe.ImageSourcePath;
+                            recipe.ImageBlob = originalRecipe.ImageBlob;
+                            recipe.Calories = originalRecipe.Calories * ratio;
+                            recipe.Proteins = originalRecipe.Proteins * ratio;
+                            recipe.Carbs = originalRecipe.Carbs * ratio;
+                            recipe.Fats = originalRecipe.Fats * ratio;
+                        }
+                    }
+
+                    RefData.UpdateMealValues(meal);
+                }
+
+                // Update daily values
+                RefData.UpdateDailyValues();
+                await Shell.Current.Navigation.PopAsync();
+            }
+            else
+            {
+                // set originalRecipe to archived
+                originalRecipe.Archived = true;
+                await App.DataBaseRepo.UpdateRecipeAsync(originalRecipe);
+                CopyOfFilteredAliments.Remove(originalRecipe);  
+
+                // Create new recipe
+                Recipe recipe = RefData.CreateAndCopyAlimentProperties(CurrentAliment) as Recipe;
+                await App.DataBaseRepo.AddRecipeAsync(recipe);
+                RefData.Recipes.Add(recipe);
+                RefData.Aliments.Add(recipe);
+                CopyOfFilteredAliments?.Add(recipe);
+
+                //Save foods in db
+                foreach (Food food in recipe.Foods)
+                {
+                    RecipeFood recipeFood = new RecipeFood();
+                    recipeFood.RecipeId = recipe.Id;
+                    recipeFood.FoodId = food.Id;
+                    recipeFood.ServingSize = food.ServingSize;
+                    await App.DataBaseRepo.AddRecipeFoodAsync(recipeFood);
+                    food.RecipeFoodId = recipeFood.Id;
+                    RefData.RecipeFoods.Add(recipeFood);
+                }
+
+                // Update recipe values
+                RefData.UpdateRecipeValues(recipe);
+
+                // Update values
+                await App.DataBaseRepo.UpdateRecipeAsync(recipe);
+
+
+                // Swap all already used recipes starting from today with the new one
+                // Old ones are archived and cannot be changed
+                foreach(Log log in RefData.Logs.Where(x=> x.Date.Date >= DateTime.Now.Date))
+                {
+                    foreach(Meal meal in log.Meals)
+                    {
+                        for(int i = 0; i < meal.Aliments.Count; i++)
+                        {
+                            // swap if present
+                            if (meal.Aliments[i].Id == originalRecipe.Id)
+                            {
+                                Recipe newRecipe = RefData.CreateAndCopyAlimentProperties(recipe, 1) as Recipe;
+
+                                // Remove old 
+                                MealAliment mealAliment = RefData.MealAliments.FirstOrDefault(x=> x.AlimentId == originalRecipe.Id && x.MealId == meal.Id);
+                                await App.DataBaseRepo.DeleteMealAlimentAsync(mealAliment);
+                                RefData.MealAliments.Remove(mealAliment);
+
+                                meal.Aliments[i] = newRecipe;
+                                RefData.CreateMealAliment(newRecipe, meal);
+                                RefData.UpdateMealValues(meal);
+                            }
+                        }
                     }
                 }
 
-                RefData.UpdateMealValues(meal);   
-            }
 
-            // Update daily values
-            RefData.UpdateDailyValues();
-            //await Shell.Current.GoToAsync("..");
-            await Shell.Current.Navigation.PopAsync();
-            //await Application.Current.MainPage.Navigation.PopAsync();
+                await Shell.Current.Navigation.PopAsync();
+            }
         }
 
         /// <summary>

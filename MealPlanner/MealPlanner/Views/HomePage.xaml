@@ -102,7 +102,7 @@
                         <ProgressBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyProteinProgress}" VerticalOptions="Center"/>
 
                         <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Carbs"/>
-                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding RefData.User.DailyCarbsRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding RefData.User.DailyCarbsRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
                         <ProgressBar Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyCarbsProgress}" VerticalOptions="Center"/>
 
                         <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Fats"/>
@@ -110,18 +110,18 @@
                         <ProgressBar Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding RefData.User.DailyFatsProgress}" VerticalOptions="Center"/>
 
                         <StackLayout Grid.Row="1" Grid.RowSpan="5" Grid.Column="2" VerticalOptions="Center" Spacing="0">
-                            <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="{Binding RefData.User.DailyCalories, StringFormat='{0:0.#}'}"/>
+                            <Label HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Style="{StaticResource LabelSmall}" Text="{Binding RefData.User.DailyCalories, StringFormat='{0:0.#}'}"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" Text="of"/>
-                            <Label HorizontalOptions="Center" Style="{StaticResource LabelSmall}" FontAttributes="Bold" Text="{Binding RefData.User.TDEE, StringFormat='{0:0.#}'}"/>
+                            <Label HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Style="{StaticResource LabelSmall}" FontAttributes="Bold" Text="{Binding RefData.User.TDEE, StringFormat='{0:0.#}'}"/>
                         </StackLayout>
                         <controls:CircleCountdown 
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="FillAndExpand"
                             Grid.Row="1" Grid.RowSpan="5" Grid.Column="2"
                             Progress="{Binding RefData.User.DailyCaloriesProgress}"
-                            ProgressStartColor="SteelBlue"
-                            ProgressEndColor="SteelBlue"
-                            CircleColor="Gray"
+                            ProgressStartColor="{StaticResource Primary}"
+                            ProgressEndColor="{StaticResource Primary}"
+                            CircleColor="{AppThemeBinding Dark={StaticResource SystemGray5Dark}, Light={StaticResource SystemGray5}}"
                             StrokeWidth="12">
                         </controls:CircleCountdown>
                         <Label Grid.Row="5" Grid.RowSpan="2" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalOptions="Center" FontAttributes="Bold" Text="Calories"/>
@@ -217,10 +217,10 @@
 
                                         <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="LightGray"/>
 
-                                        <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
-                                            <Label Style="{StaticResource LabelSmallBold}" Text="{Binding NutritionValuesString}" VerticalOptions="Center"/>
-                                            <Label Style="{StaticResource LabelSmallBold}" Text="{Binding CaloriesString}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
-                                        </StackLayout>
+                                        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" ColumnDefinitions="2*,*">
+                                            <Label Grid.Column="0" Style="{StaticResource LabelSmallBold}" Text="{Binding NutritionValuesString}" VerticalOptions="Center"/>
+                                            <Label Grid.Column="1" Style="{StaticResource LabelSmallBold}" Text="{Binding CaloriesString}" HorizontalTextAlignment="End" VerticalOptions="Center"/>
+                                        </Grid>
                                     </Grid>
                                 </Frame>
                             </StackLayout>

@@ -212,7 +212,7 @@ namespace MealPlanner.ViewModels
             {
                 FoodPage foodPage = new FoodPage();
                 FoodViewModel foodViewModel = foodPage.BindingContext as FoodViewModel;
-
+                foodViewModel.CanEditItem = false;
                 foodViewModel.CurrentAliment = RefData.Aliments.FirstOrDefault(x => x.Id == aliment.Id && x.AlimentType == aliment.AlimentType);
                 foodViewModel.AlimentToUpdate = aliment;
                 foodViewModel.IsInUpdateMode = true;

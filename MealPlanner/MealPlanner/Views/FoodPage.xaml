@@ -94,6 +94,17 @@
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
                             </Button.ImageSource>
                         </Button>
+                        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                CornerRadius="8"
+                                IsVisible="{Binding CanSaveItem}"
+                                Command="{Binding SaveFoodCommand}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                Text="Save item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}">
+                            <Button.ImageSource>
+                                <FontImageSource Color="SteelBlue"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+                        </Button>
                         <Button Grid.Row="1" Grid.Column="0" 
                                 IsVisible="{Binding IsInUpdateMode}"
                                 CornerRadius="8"

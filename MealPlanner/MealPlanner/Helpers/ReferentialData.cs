@@ -446,6 +446,11 @@ namespace MealPlanner.Helpers
             // Update daily values
             UpdateDailyValues();
 
+            CreateMealAliment(aliment, meal);
+        }
+
+        public void CreateMealAliment(Aliment aliment, Meal meal)
+        {
             MealAliment mealAliment = new MealAliment();
             mealAliment.MealId = meal.Id;
             mealAliment.AlimentId = aliment.Id;
@@ -757,6 +762,17 @@ namespace MealPlanner.Helpers
                 return null;
 
             return Logs.FirstOrDefault(x => x.Date.Date == date.Date);
+        }
+
+        public bool IsAlimentEqual(Aliment aliment, Aliment existingAliment)
+        {
+            if (aliment.Calories == existingAliment.Calories &&
+               aliment.Proteins == existingAliment.Proteins &&
+               aliment.Carbs == existingAliment.Carbs &&
+               aliment.Fats == existingAliment.Fats)
+                return true;
+            else
+                return false;
         }
 
 

@@ -15,11 +15,14 @@ namespace MealPlanner.ViewModels
     {
         public FoodViewModel()
         {
+            CanAddItem = true;
+            CanEditItem = true;
             IsServingQuantityVisible = true;
             EditFoodCommand = new Command(EditFood);
             AddFoodCommand = new Command(AddFood);
             UpdateAlimentCommand = new Command(UpdateAliment);
             RemoveAlimentCommand = new Command(RemoveAliment);
+            SaveFoodCommand = new Command(SaveFood);
         }
 
         public ObservableCollection<Aliment> CopyOfFilteredAliments { get; set; }
@@ -31,7 +34,14 @@ namespace MealPlanner.ViewModels
         public ICommand EditFoodCommand { get; set; }
         private async void EditFood()
         {
-            if(CurrentAliment.AlimentType == AlimentTypeEnum.Food)
+            if(!CanEditItem)
+            {
+                await Application.Current.MainPage.DisplayAlert("Warning", $"Cannot modify already used aliment.\nEditing aliment template is possible but it will not have any effect on this current aliment.", "OK");
+                return;
+            }
+
+
+            if (CurrentAliment.AlimentType == AlimentTypeEnum.Food)
             {
                 EditFoodPage foodPage = new EditFoodPage();
                 (foodPage.BindingContext as EditFoodViewModel).CurrentAliment = RefData.CreateAndCopyAlimentProperties(CurrentAliment);
@@ -61,7 +71,7 @@ namespace MealPlanner.ViewModels
             var existingAliment = RefData.Aliments.Where(x => x.Id == aliment.Id && x.AlimentType == aliment.AlimentType).FirstOrDefault();
 
             // Save to db
-            if (existingAliment == null && SelectedMeal != null)
+            if (existingAliment == null)
             {
                 if (aliment.AlimentType == AlimentTypeEnum.Food)
                 {
@@ -77,11 +87,9 @@ namespace MealPlanner.ViewModels
                     RefData.Aliments.Add(aliment as Recipe);
                     CopyOfFilteredAliments.Add(aliment as Recipe);
                 }
-
-                // Add aliment
-                RefData.AddAliment(aliment, SelectedMeal);
             }
-            else if(SelectedMeal != null)
+
+            if(SelectedMeal != null)
             {
                 // Add aliment
                 RefData.AddAliment(aliment, SelectedMeal);
@@ -96,6 +104,14 @@ namespace MealPlanner.ViewModels
                 (aliment as Food).RecipeFoodId = 0;
                 SelectedRecipe.Foods.Add((aliment as Food));
             }
+
+            await Shell.Current.Navigation.PopAsync();
+        }
+
+        public ICommand SaveFoodCommand { get; set; }
+        private async void SaveFood()
+        {
+            
 
             await Shell.Current.Navigation.PopAsync();
         }
@@ -187,7 +203,41 @@ namespace MealPlanner.ViewModels
                     OnPropertyChanged(nameof(CanAddItem));
                 }
             }
-        }    
+        }
+
+        private bool canSaveItem;
+        public bool CanSaveItem
+        {
+            get
+            {
+                return canSaveItem;
+            }
+            set
+            {
+                if (canSaveItem != value)
+                {
+                    canSaveItem = value;
+                    OnPropertyChanged(nameof(CanSaveItem));
+                }
+            }
+        }
+
+        private bool canEditItem;
+        public bool CanEditItem
+        {
+            get
+            {
+                return canEditItem;
+            }
+            set
+            {
+                if (canEditItem != value)
+                {
+                    canEditItem = value;
+                    OnPropertyChanged(nameof(CanEditItem));
+                }
+            }
+        }
 
         public bool IsServingQuantityVisible { get; set; }
         public bool IsAlimentsVisible { get; set; }
@@ -372,6 +422,7 @@ namespace MealPlanner.ViewModels
             AlimentServingSize = aliment.ServingSize;
             AlimentUnit = aliment.Unit;
 
+            Title = $"{aliment.Name}";
             IsServingQuantityVisible = aliment.ServingQuantity <= 0 ? false : true;
             IsAlimentsVisible = (aliment.AlimentType == AlimentTypeEnum.Recipe && (aliment as Recipe).Foods.Any()) ? true : false;
             OnPropertyChanged("IsAlimentsVisible");
