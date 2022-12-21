@@ -64,32 +64,32 @@ namespace MealPlanner.ViewModels
         public ICommand AddFoodCommand { get; set; }
         private async void AddFood()
         {
-            var ratio = AlimentServingSize / CurrentAliment.OriginalServingSize;
-            Aliment aliment = RefData.CreateAndCopyAlimentProperties(CurrentAliment, ratio);
-            aliment.ServingSize = AlimentServingSize;
-
-            var existingAliment = RefData.Aliments.Where(x => x.Id == aliment.Id && x.AlimentType == aliment.AlimentType).FirstOrDefault();
+            var existingAliment = RefData.Aliments.Where(x => x.Id == CurrentAliment.Id && x.AlimentType == CurrentAliment.AlimentType).FirstOrDefault();
 
             // Save to db
             if (existingAliment == null)
             {
-                if (aliment.AlimentType == AlimentTypeEnum.Food)
+                if (CurrentAliment.AlimentType == AlimentTypeEnum.Food)
                 {
-                    await App.DataBaseRepo.AddFoodAsync(aliment as Food);
-                    RefData.Foods.Add(aliment as Food);
-                    RefData.Aliments.Add(aliment as Food);
-                    CopyOfFilteredAliments.Add(aliment as Food);
+                    await App.DataBaseRepo.AddFoodAsync(CurrentAliment as Food);
+                    RefData.Foods.Add(CurrentAliment as Food);
+                    RefData.Aliments.Add(CurrentAliment as Food);
+                    //CopyOfFilteredAliments.Add(CurrentAliment as Food);
                 }
                 else
                 {
-                    await App.DataBaseRepo.AddRecipeAsync(aliment as Recipe);
-                    RefData.Recipes.Add(aliment as Recipe);
-                    RefData.Aliments.Add(aliment as Recipe);
-                    CopyOfFilteredAliments.Add(aliment as Recipe);
+                    await App.DataBaseRepo.AddRecipeAsync(CurrentAliment as Recipe);
+                    RefData.Recipes.Add(CurrentAliment as Recipe);
+                    RefData.Aliments.Add(CurrentAliment as Recipe);
+                    //CopyOfFilteredAliments.Add(CurrentAliment as Recipe);
                 }
             }
 
-            if(SelectedMeal != null)
+            var ratio = AlimentServingSize / CurrentAliment.OriginalServingSize;
+            Aliment aliment = RefData.CreateAndCopyAlimentProperties(CurrentAliment, ratio);
+            aliment.ServingSize = AlimentServingSize;
+
+            if (SelectedMeal != null)
             {
                 // Add aliment
                 RefData.AddAliment(aliment, SelectedMeal);
@@ -111,7 +111,9 @@ namespace MealPlanner.ViewModels
         public ICommand SaveFoodCommand { get; set; }
         private async void SaveFood()
         {
-            
+            await App.DataBaseRepo.AddFoodAsync(CurrentAliment as Food);
+            RefData.Foods.Add(CurrentAliment as Food);
+            RefData.Aliments.Add(CurrentAliment as Food);
 
             await Shell.Current.Navigation.PopAsync();
         }
