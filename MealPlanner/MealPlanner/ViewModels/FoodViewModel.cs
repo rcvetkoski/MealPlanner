@@ -23,6 +23,7 @@ namespace MealPlanner.ViewModels
             UpdateAlimentCommand = new Command(UpdateAliment);
             RemoveAlimentCommand = new Command(RemoveAliment);
             SaveFoodCommand = new Command(SaveFood);
+            DeleteAlimentCommand = new Command(DeleteAliment);
         }
 
         public ObservableCollection<Aliment> CopyOfFilteredAliments { get; set; }
@@ -74,14 +75,12 @@ namespace MealPlanner.ViewModels
                     await App.DataBaseRepo.AddFoodAsync(CurrentAliment as Food);
                     RefData.Foods.Add(CurrentAliment as Food);
                     RefData.Aliments.Add(CurrentAliment as Food);
-                    //CopyOfFilteredAliments.Add(CurrentAliment as Food);
                 }
                 else
                 {
                     await App.DataBaseRepo.AddRecipeAsync(CurrentAliment as Recipe);
                     RefData.Recipes.Add(CurrentAliment as Recipe);
                     RefData.Aliments.Add(CurrentAliment as Recipe);
-                    //CopyOfFilteredAliments.Add(CurrentAliment as Recipe);
                 }
             }
 
@@ -173,6 +172,24 @@ namespace MealPlanner.ViewModels
             await Shell.Current.Navigation.PopAsync();
         }
 
+        public ICommand DeleteAlimentCommand { get; set; }
+        private async void DeleteAliment()
+        {
+            var response = await Shell.Current.CurrentPage.DisplayAlert("Warning !", "The selected aliment will be archived and will no longer be visible in your alimnets list !!!", "Ok", "Cancel");
+            if (!response)
+                return;
+
+            CurrentAliment.Archived = true;
+            CopyOfFilteredAliments.Remove(CurrentAliment);
+
+            if(CurrentAliment.AlimentType == AlimentTypeEnum.Food)
+                await App.DataBaseRepo.UpdateFoodAsync(CurrentAliment as Food);
+            else
+                await App.DataBaseRepo.UpdateRecipeAsync(CurrentAliment as Recipe);
+
+            await Shell.Current.Navigation.PopAsync();
+        }
+
         private bool isInUpdateMode;
         public bool IsInUpdateMode 
         {
@@ -240,6 +257,24 @@ namespace MealPlanner.ViewModels
                 }
             }
         }
+
+        private bool canDeleteItem;
+        public bool CanDeleteItem
+        {
+            get
+            {
+                return canDeleteItem;
+            }
+            set
+            {
+                if (canDeleteItem != value)
+                {
+                    canDeleteItem = value;
+                    OnPropertyChanged(nameof(CanDeleteItem));
+                }
+            }
+        }
+
 
         public bool IsServingQuantityVisible { get; set; }
         public bool IsAlimentsVisible { get; set; }

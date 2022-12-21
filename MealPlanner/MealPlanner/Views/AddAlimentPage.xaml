@@ -111,6 +111,7 @@
                             <Button Grid.Row="0" Grid.Column="2"
                                     TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                     FontSize="Small" 
+                                    Command="{Binding FilterAlimentsCommand}"
                                     BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                                     HorizontalOptions="End"
                                     WidthRequest="{Binding Path=Height, Source={x:Reference gridBar}}">

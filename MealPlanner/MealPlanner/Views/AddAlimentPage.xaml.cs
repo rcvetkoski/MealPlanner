@@ -23,6 +23,9 @@ namespace MealPlanner.Views
 
         private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (e.OldTextValue == null)
+                return;
+
             (BindingContext as AddAlimentViewModel).Search(); 
 
             if(!string.IsNullOrEmpty(e.NewTextValue))

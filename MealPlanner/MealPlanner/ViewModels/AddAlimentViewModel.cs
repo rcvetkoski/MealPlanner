@@ -47,6 +47,7 @@ namespace MealPlanner.ViewModels
             SearchAlimentsCommand = new Command<string>(SearchAliments);
             OpenFiltersCommand = new Command(openFIlters);
             ClearSearchCommand = new Command(ClearSearch);
+            FilterAlimentsCommand = new Command(FilterAliments);
 
             //FilteredAlimentsRefresh();
         }
@@ -180,6 +181,7 @@ namespace MealPlanner.ViewModels
                 foodPageVm.SelectedMeal = SelectedMeal;
                 foodPageVm.CurrentAliment.ServingSize = 100;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
+                foodPageVm.CanDeleteItem = false;
                 foodPageVm.CanAddItem = !RecipeSwitchVisibility || SelectedMeal != null ? true : false;
                 foodPageVm.CanSaveItem = !foodPageVm.CanAddItem && SelectedMeal == null ? true : false;
 
@@ -197,6 +199,7 @@ namespace MealPlanner.ViewModels
                 foodPageVm.SelectedMeal = SelectedMeal;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
                 foodPageVm.SelectedRecipe = CurrentRecipe;
+                foodPageVm.CanDeleteItem = true;
                 foodPageVm.CanAddItem = !RecipeSwitchVisibility || SelectedMeal != null ? true : false; 
                 await Application.Current.MainPage.Navigation.PushAsync(foodPage);
                 return;
@@ -415,30 +418,25 @@ namespace MealPlanner.ViewModels
         public void FilteredAlimentsRefresh()
         {
             Helpers.Enums.AlimentTypeEnum type = IsFoodChecked ? Helpers.Enums.AlimentTypeEnum.Food : Helpers.Enums.AlimentTypeEnum.Recipe;
+            var searchedList = RefData.Aliments.Where(x => x.AlimentType == type && !x.Archived && x.Name.ToLower().Contains(Query.ToLower())).OrderBy(x=> x.Name).ToList();
+            FillFilteredAliments(searchedList);
 
-            var searchedList = RefData.Aliments.Where(x => x.AlimentType == type && !x.Archived && x.Name.ToLower().Contains(Query.ToLower())).ToList();
+            //FilteredAliments.Clear();
 
-            FilteredAliments.Clear();
-
-            foreach (Aliment aliment in searchedList)
-            {
-                if (IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Recipe)
-                    FilteredAliments.Add(aliment);
-                else if (!IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
-                    FilteredAliments.Add(aliment);
-            }
+            //foreach (Aliment aliment in searchedList)
+            //{
+            //    if (IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Recipe)
+            //        FilteredAliments.Add(aliment);
+            //    else if (!IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
+            //        FilteredAliments.Add(aliment);
+            //}
         }
 
         public void Search()
         {
             Helpers.Enums.AlimentTypeEnum type = IsFoodChecked ? Helpers.Enums.AlimentTypeEnum.Food : Helpers.Enums.AlimentTypeEnum.Recipe;
-
-            var searchedList = RefData.Aliments.Where(x => x.AlimentType == type && x.Name.ToLower().Contains(Query.ToLower())).ToList();
-
-            FilteredAliments.Clear();
-
-            foreach (var item in searchedList)
-                FilteredAliments.Add(item);
+            var searchedList = RefData.Aliments.Where(x => x.AlimentType == type && !x.Archived && x.Name.ToLower().Contains(Query.ToLower())).ToList();
+            FillFilteredAliments(searchedList);
         }
 
         public ICommand ClearSearchCommand { get; set; }
@@ -449,6 +447,39 @@ namespace MealPlanner.ViewModels
 
             Query = string.Empty;
             FilteredAlimentsRefresh();
+        }
+
+        public ICommand FilterAlimentsCommand { get; set; }
+        private async void FilterAliments()
+        {
+            var actionSheet = await Shell.Current.CurrentPage.DisplayActionSheet("", "Cancel", "", "Sort by Name", "Sort by Calories", "Sort by Proteins", "Sort by Carbs", "Sort by Fats");
+
+            switch (actionSheet)
+            {
+                case "Sort by Name":
+                    FillFilteredAliments(FilteredAliments.OrderBy(x => x.Name).ToList());
+                    break;
+                case "Sort by Calories":
+                    FillFilteredAliments(FilteredAliments.OrderByDescending(x => x.Calories).ToList());
+                    break;
+                case "Sort by Proteins":
+                    FillFilteredAliments(FilteredAliments.OrderByDescending(x => x.Proteins).ToList());
+                    break;
+                case "Sort by Carbs":
+                    FillFilteredAliments(FilteredAliments.OrderByDescending(x => x.Carbs).ToList());
+                    break;
+                case "Sort by Fats":
+                    FillFilteredAliments(FilteredAliments.OrderByDescending(x => x.Fats).ToList());
+                    break;
+            }
+        }
+
+        private void FillFilteredAliments(List<Aliment> sortedList)
+        {
+            FilteredAliments.Clear();
+
+            foreach (Aliment aliment in sortedList)
+                FilteredAliments.Add(aliment);
         }
 
         ~AddAlimentViewModel()
