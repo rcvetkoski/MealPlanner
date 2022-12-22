@@ -495,7 +495,7 @@ namespace MealPlanner.Helpers
             aliment.Fibers = existingAliment.Fibers * ratio;
             aliment.Sugars = existingAliment.Sugars * ratio;
             aliment.Fats = existingAliment.Fats * ratio;
-            aliment.SaturatedFat = existingAliment.SaturatedFat - ratio;
+            aliment.SaturatedFat = existingAliment.SaturatedFat * ratio;
             aliment.Salt = existingAliment.Salt * ratio;
             aliment.Sodium = existingAliment.Sodium * ratio;
 

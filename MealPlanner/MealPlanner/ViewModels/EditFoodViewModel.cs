@@ -23,9 +23,19 @@ namespace MealPlanner.ViewModels
             Title = "Food";
             SaveCommand = new Command<EditFoodPage>(SaveFood);
             UpdateCommand = new Command<EditFoodPage>(UpdateFood);
+            ShowAdditionalNutrimentsCommand = new Command(ShowAdditionalNutriments);
         }
 
         public ObservableCollection<Aliment> CopyOfFilteredAliments { get; set; }
+
+        public bool AdditionalNutrimentsVisible { get; set; }  
+
+        public ICommand ShowAdditionalNutrimentsCommand { get; set; }
+        public void ShowAdditionalNutriments()
+        {
+            AdditionalNutrimentsVisible = AdditionalNutrimentsVisible ? false : true;
+            OnPropertyChanged(nameof(AdditionalNutrimentsVisible));
+        }
 
         /// <summary>
         /// Save Food
@@ -73,7 +83,11 @@ namespace MealPlanner.ViewModels
             originalFood.Unit = CurrentAliment.Unit;
             originalFood.ImageBlob = CurrentAliment.ImageBlob;
             //food.ImageBlob = await Helpers.HttpClientHelper.Client.GetByteArrayAsync(ImageSourcePath);
-
+            originalFood.Fibers = CurrentAliment.Fibers;
+            originalFood.SaturatedFat = CurrentAliment.SaturatedFat;
+            originalFood.Sugars = CurrentAliment.Sugars;
+            originalFood.Salt = CurrentAliment.Salt;
+            originalFood.Sodium = CurrentAliment.Sodium;
 
             await App.DataBaseRepo.UpdateFoodAsync(originalFood);
 

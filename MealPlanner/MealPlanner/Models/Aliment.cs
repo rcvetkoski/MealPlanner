@@ -109,11 +109,91 @@ namespace MealPlanner.Models
                 }
             } 
         }
-        public double Fibers { get; set; }
-        public double SaturatedFat { get; set; }
-        public double Sugars { get; set; }
-        public double Salt { get; set; }
-        public double Sodium { get; set; }
+
+        private double fibers;
+        public double Fibers 
+        {
+            get
+            {
+                return fibers;
+            }
+            set
+            {
+                if(fibers != value)
+                {
+                    fibers = value;
+                    OnPropertyChanged(nameof(Fibers));
+                }
+            }
+        }
+
+        private double saturatedFat;
+        public double SaturatedFat
+        { 
+            get
+            {
+                return saturatedFat;
+            }
+            set
+            {
+                if(saturatedFat != value)
+                {
+                    saturatedFat = value;
+                    OnPropertyChanged(nameof(SaturatedFat));
+                }
+            }
+        }
+
+        private double sugars;
+        public double Sugars 
+        { 
+            get
+            {
+                return sugars;
+            }
+            set
+            {
+                if(sugars != value)
+                {
+                    sugars = value;
+                    OnPropertyChanged(nameof(Sugars));
+                }
+            }
+        }
+
+        private double salt;
+        public double Salt
+        { 
+            get
+            {
+                return salt;
+            }
+            set
+            {
+                if(salt != value)
+                {
+                    salt = value;
+                    OnPropertyChanged(nameof(Salt));
+                }
+            }
+        }
+
+        private double sodium;
+        public double Sodium
+        { 
+            get
+            {
+                return sodium;
+            }
+            set
+            {
+                if(sodium != value)
+                {
+                    sodium = value;
+                    OnPropertyChanged(nameof(Sodium));
+                }
+            }
+        }
 
 
         public double ServingQuantity { get; set; }
