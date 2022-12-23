@@ -13,12 +13,14 @@
     <None Remove="Resources\Fonts\Font Awesome 6 Brands-Regular-400.otf" />
     <None Remove="Resources\Fonts\Font Awesome 6 Free-Regular-400.otf" />
     <None Remove="Resources\Fonts\Font Awesome 6 Free-Solid-900.otf" />
+    <None Remove="Resources\Images\image.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\FA6Brands-Regular-400.otf" />
     <EmbeddedResource Include="Resources\Fonts\FA6Free-Regular-400.otf" />
     <EmbeddedResource Include="Resources\Fonts\FA6Free-Solid-900.otf" />
+    <EmbeddedResource Include="Resources\Images\image.png" />
   </ItemGroup>
 
   <ItemGroup>
