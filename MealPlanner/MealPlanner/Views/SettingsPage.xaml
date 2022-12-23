@@ -15,14 +15,21 @@
 
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
-            <StackLayout Padding="15">
+            <StackLayout Margin="0,10,0,10">
 
-                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
-                    <StackLayout Orientation="Horizontal">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <Image>
+                            <Image.Source>
+                                <FontImageSource Size="22" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Person}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="User settings"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                             <Image.Source>
-                                <FontImageSource Size="Title" 
+                                <FontImageSource Size="22" 
                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
                             </Image.Source>
@@ -33,12 +40,62 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
-                    <StackLayout Orientation="Horizontal">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <Image>
+                            <Image.Source>
+                                <FontImageSource Size="22"  
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Crosshairs}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Objectif"/>
+                        <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Source>
+                                <FontImageSource Size="22"  
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                    </StackLayout>
+
+                </Frame>
+
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <Image>
+                            <Image.Source>
+                                <FontImageSource Size="22"  
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Crosshairs}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Macro intake goal"/>
+                        <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Source>
+                                <FontImageSource Size="22"  
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                    </StackLayout>
+
+                </Frame>
+
+
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <Image>
+                            <Image.Source>
+                                <FontImageSource Size="22" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Ruler}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Units"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                             <Image.Source>
-                                <FontImageSource Size="Title" 
+                                <FontImageSource Size="22" 
                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
                             </Image.Source>
@@ -49,12 +106,19 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
-                    <StackLayout Orientation="Horizontal">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <Image>
+                            <Image.Source>
+                                <FontImageSource Size="22" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.BowlFood}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Customize Meals"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                             <Image.Source>
-                                <FontImageSource Size="Title" 
+                                <FontImageSource Size="22"  
                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
                             </Image.Source>
@@ -65,12 +129,19 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
-                    <StackLayout Orientation="Horizontal">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <Image>
+                            <Image.Source>
+                                <FontImageSource Size="22" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Moon}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Theme"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                             <Image.Source>
-                                <FontImageSource Size="Title" 
+                                <FontImageSource Size="22"  
                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
                             </Image.Source>
@@ -78,12 +149,19 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
-                    <StackLayout Orientation="Horizontal">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <Image>
+                            <Image.Source>
+                                <FontImageSource Size="22" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.BookJournalWhills}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Journal Templates"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                             <Image.Source>
-                                <FontImageSource Size="Title" 
+                                <FontImageSource Size="22" 
                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
                             </Image.Source>
@@ -94,20 +172,7 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource UserCard}" HeightRequest="40">
-                    <StackLayout Orientation="Horizontal">
-                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Objectifs"/>
-                        <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
-                            <Image.Source>
-                                <FontImageSource Size="Title" 
-                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
-                            </Image.Source>
-                        </Image>
-                    </StackLayout>
-                </Frame>
                                 
-                
                 
                 <Button Text="Reset data base"
                         Command="{Binding RefData.ResetDBCommand}"
