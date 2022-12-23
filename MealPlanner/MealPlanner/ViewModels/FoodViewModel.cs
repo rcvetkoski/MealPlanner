@@ -35,7 +35,7 @@ namespace MealPlanner.ViewModels
         public ICommand EditFoodCommand { get; set; }
         private async void EditFood()
         {
-            if(!CanEditItem)
+            if (!CanEditItem)
             {
                 await Application.Current.MainPage.DisplayAlert("Warning", $"Cannot modify already used aliment.\nEditing aliment template is possible but it will not have any effect on this current aliment.", "OK");
                 return;
@@ -182,7 +182,7 @@ namespace MealPlanner.ViewModels
             CurrentAliment.Archived = true;
             CopyOfFilteredAliments.Remove(CurrentAliment);
 
-            if(CurrentAliment.AlimentType == AlimentTypeEnum.Food)
+            if (CurrentAliment.AlimentType == AlimentTypeEnum.Food)
                 await App.DataBaseRepo.UpdateFoodAsync(CurrentAliment as Food);
             else
                 await App.DataBaseRepo.UpdateRecipeAsync(CurrentAliment as Recipe);
@@ -191,7 +191,7 @@ namespace MealPlanner.ViewModels
         }
 
         private bool isInUpdateMode;
-        public bool IsInUpdateMode 
+        public bool IsInUpdateMode
         {
             get
             {
@@ -199,27 +199,29 @@ namespace MealPlanner.ViewModels
             }
             set
             {
-                if(isInUpdateMode != value)
+                if (isInUpdateMode != value)
                 {
                     isInUpdateMode = value;
                     OnPropertyChanged(nameof(IsInUpdateMode));
+                    OnPropertyChanged(nameof(IsServingSizeVisible));
                 }
             }
         }
 
         private bool canAddItem;
-        public bool CanAddItem 
-        { 
+        public bool CanAddItem
+        {
             get
             {
                 return canAddItem;
             }
             set
             {
-                if(canAddItem != value)
+                if (canAddItem != value)
                 {
                     canAddItem = value;
                     OnPropertyChanged(nameof(CanAddItem));
+                    OnPropertyChanged(nameof(IsServingSizeVisible));
                 }
             }
         }
@@ -275,6 +277,13 @@ namespace MealPlanner.ViewModels
             }
         }
 
+        public bool IsServingSizeVisible
+        {
+            get
+            {
+                return CanAddItem || IsInUpdateMode;
+            }
+        }
 
         public bool IsServingQuantityVisible { get; set; }
         public bool IsAlimentsVisible { get; set; }

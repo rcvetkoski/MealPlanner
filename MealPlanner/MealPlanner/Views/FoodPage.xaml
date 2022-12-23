@@ -66,10 +66,11 @@
                     </Grid>
 
 
-                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto" ColumnDefinitions="*, *" RowSpacing="0" Margin="10">
+                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto,Auto" ColumnDefinitions="*, *" RowSpacing="0" Margin="10">
                         <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0"
                                                    Style="{StaticResource Entry}"
                                                    RSEntryStyle="FilledBorder"
+                                                   IsVisible="{Binding IsServingSizeVisible}"
                                                    Text="{Binding AlimentServingSize}"
                                                    BorderFillColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                                                    Placeholder="Portion" 
@@ -78,6 +79,7 @@
                                                  Style="{StaticResource Picker}" 
                                                  x:TypeArguments="enums:AlimentUnitEnum" 
                                                  RSEntryStyle="FilledBorder" 
+                                                 IsVisible="{Binding IsServingSizeVisible}"
                                                  SelectedItem="{Binding AlimentUnit}"
                                                  Placeholder="Unit"
                                                  BorderFillColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"

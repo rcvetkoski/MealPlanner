@@ -52,7 +52,22 @@ namespace MealPlanner.ViewModels
             //FilteredAlimentsRefresh();
         }
 
-        public double SliderX { get; set; }
+        private double sliderX;
+        public double SliderX
+        {
+            get 
+            {
+                return sliderX;
+            }
+            set
+            {
+                if(sliderX != value)
+                {
+                    sliderX = value;
+                    OnPropertyChanged(nameof(SliderX));
+                }
+            }
+        }
         public FontAttributes FoodButtonAtributtes { get; set; }
         public FontAttributes RecipeButtonAtributtes { get; set; }
 

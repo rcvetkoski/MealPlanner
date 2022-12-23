@@ -35,7 +35,7 @@
                        Text="{Binding Title}"
                        Style="{StaticResource NavigationBarLabel}"
                        VerticalOptions="CenterAndExpand"/>
-                <Button Grid.Row="0" Grid.Column="1"
+                <!--<Button Grid.Row="0" Grid.Column="1"
                         Text="food"
                         TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                         BackgroundColor="Transparent"
@@ -45,7 +45,7 @@
                         <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CirclePlus}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
-                </Button>
+                </Button>-->
                 <Button Grid.Row="0" Grid.Column="2"
                          Text="Save"
                          TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
@@ -77,91 +77,124 @@
 
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
-            <Grid Margin="10" ColumnDefinitions="*, 120" RowDefinitions="100,Auto, Auto, Auto, *">
+            <Grid Margin="0,10,0,10" ColumnDefinitions="*" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto">
 
-                <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                             WidthRequest="100" HorizontalOptions="Center"
-                             Aspect="AspectFill"
-                             CornerRadius="12" BackgroundColor="LightGray"
-                             Source="{Binding CurrentAliment.ImageSource}" 
-                             Command="{Binding AddImageCommand}" CommandParameter="{Binding CurrentAliment}"/>
+                <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
+                    <rsControls:RSEntry x:Name="nameEntry"
+                                        Style="{StaticResource Entry}" 
+                                        Helper="Mandatory" 
+                                        Placeholder="Name" 
+                                        Text="{Binding CurrentAliment.Name}" 
+                                        FontAttributes="Bold" 
+                                        IsPlaceholderAlwaysFloating="True">
+                        <rsControls:RSEntry.Behaviors>
+                            <validators:ValidationBehaviour PropertyName="Text">
+                                <validators:ValidationBehaviour.Validators>
+                                    <validators:RequiredValidation/>
+                                </validators:ValidationBehaviour.Validators>
+                            </validators:ValidationBehaviour>
+                        </rsControls:RSEntry.Behaviors>
+                    </rsControls:RSEntry>
+                </Frame>
 
-                <rsControls:RSEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
-                                    x:Name="nameEntry"
-                                    Style="{StaticResource Entry}" 
-                                    Placeholder="Name" 
-                                    Text="{Binding CurrentAliment.Name}"
-                                    Helper="Mandatory" 
-                                    IsPlaceholderAlwaysFloating="True">
-                    <rsControls:RSEntry.Behaviors>
-                        <validators:ValidationBehaviour PropertyName="Text">
-                            <validators:ValidationBehaviour.Validators>
-                                <validators:RequiredValidation/>
-                            </validators:ValidationBehaviour.Validators>
-                        </validators:ValidationBehaviour>
-                    </rsControls:RSEntry.Behaviors>
-                </rsControls:RSEntry>
-                <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" 
+                <Frame Grid.Row="1" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
+                    <Grid RowDefinitions="30,30" RowSpacing="0" Margin="2,0,2,0">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Image" Style="{StaticResource LabelMediumBold}" HorizontalOptions="FillAndExpand" VerticalOptions="End" />
+                        <Label Grid.Row="1" Grid.Column="0" Text="Tap to take a photo" Style="{StaticResource LabelSmall}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                        <ImageButton Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"
+                                     CornerRadius="12"
+                                     WidthRequest="60"
+                                     HorizontalOptions="End"
+                                     Aspect="AspectFill"
+                                     BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                     Source="{Binding CurrentAliment.ImageSource}"/>
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddImageCommand}" CommandParameter="{Binding CurrentAliment}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+
+                <Frame Grid.Row="2" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
+                    <Grid RowDefinitions="Auto" ColumnDefinitions="*,120" RowSpacing="0">
+                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" 
                                            Style="{StaticResource Entry}"
                                            x:Name="servingSizeEntry"
                                            Placeholder="Serving Size" 
                                            Value="{Binding CurrentAliment.ServingSize}" 
                                            IsPlaceholderAlwaysFloating="True">
-                    <rsControls:RSNumericEntry.Behaviors>
-                        <validators:ValidationBehaviour PropertyName="Value">
-                            <validators:ValidationBehaviour.Validators>
-                                <validators:RequiredValidation/>
-                                <validators:DifferentThanValidation x:TypeArguments="x:Double" Value="0"/>
-                            </validators:ValidationBehaviour.Validators>
-                        </validators:ValidationBehaviour>
-                    </rsControls:RSNumericEntry.Behaviors>
-                </rsControls:RSNumericEntry>
-                <rsControls:RSEnumPicker Grid.Row="2" Grid.Column="1"
+                            <rsControls:RSNumericEntry.Behaviors>
+                                <validators:ValidationBehaviour PropertyName="Value">
+                                    <validators:ValidationBehaviour.Validators>
+                                        <validators:RequiredValidation/>
+                                        <validators:DifferentThanValidation x:TypeArguments="x:Double" Value="0"/>
+                                    </validators:ValidationBehaviour.Validators>
+                                </validators:ValidationBehaviour>
+                            </rsControls:RSNumericEntry.Behaviors>
+                        </rsControls:RSNumericEntry>
+                        <rsControls:RSEnumPicker Grid.Row="0" Grid.Column="1"
                                          Style="{StaticResource Picker}"
                                          x:TypeArguments="enums:AlimentUnitEnum"
                                          Placeholder="Unit" 
                                          SelectedItem="{Binding CurrentAliment.Unit}"
                                          IsPlaceholderAlwaysFloating="True"/>
+                    </Grid>
+                </Frame>
 
-                <rsControls:RSEditor Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Description" Text="{Binding CurrentAliment.Description}" IsPlaceholderAlwaysFloating="True"/>
+                <Label Grid.Row="3" Grid.Column="0" Text="Ingredients" Style="{StaticResource LabelMediumBold}" IsVisible="{Binding IsAlimentsVisible}" Margin="10,0,0,0"/>
 
-                <!--<Button Grid.Row="4" Grid.Column="0" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="+ Add food" HorizontalOptions="Center" Command="{Binding AddFoodCommand}"/>
-                <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="Save" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Command="{Binding SaveCommand}"/>
-                <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource ButtonOutline}" CornerRadius="10" Text="Update" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Command="{Binding UpdateCommand}"/>-->
+                <Frame Grid.Row="4" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
+                    <StackLayout>
+                        <StackLayout BindableLayout.ItemsSource="{Binding CurrentAliment.Foods}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="models:Food">
+                                    <SwipeView Style="{StaticResource SwipeView}">
+                                        <SwipeView.RightItems>
+                                            <SwipeItems>
+                                                <SwipeItem Text="Delete" BackgroundColor="Red" Command="{Binding BindingContext.DeletteAlimentCommand, Source={x:Reference recipePage}}">
+                                                    <SwipeItem.CommandParameter>
+                                                        <MultiBinding Converter="{StaticResource MultiBindingConverter}">
+                                                            <Binding Path="BindingContext.CurrentAliment" Source="{x:Reference recipePage}"/>
+                                                            <Binding Path="."/>
+                                                        </MultiBinding>
+                                                    </SwipeItem.CommandParameter>
+                                                </SwipeItem>
+                                            </SwipeItems>
+                                        </SwipeView.RightItems>
+                                        <Grid  RowDefinitions="25, 25, 1" ColumnDefinitions="50,3*,*" Padding="0,0,10,0" Margin="0,0,-10,0">
+                                            <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" BackgroundColor="Gray" Source="{Binding ImageSource}" Aspect="AspectFill">
+                                                <Image.Clip>
+                                                    <RoundRectangleGeometry Rect="0,0,50,50" CornerRadius="12"/>
+                                                </Image.Clip>
+                                            </Image>
+                                            <Label Grid.Column="1" Style="{StaticResource LabelSmall}" LineBreakMode="TailTruncation" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
+                                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding ServingSizeWithUnit}" VerticalOptions="Center"/>
+                                            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding NutritionValuesString}" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalTextAlignment="End"/>
+                                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding CaloriesString}" Style="{StaticResource LabelSmall}" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold"/>
+                                            <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="LightGray"/>
+                                        </Grid>
+                                    </SwipeView>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                        <Button Text="Add food" 
+                                TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                Command="{Binding AddFoodCommand}"
+                                Margin="0,10,0,0"
+                                HorizontalOptions="Center">
+                            <Button.ImageSource>
+                                <FontImageSource Size="22" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+                        </Button>
+                    </StackLayout>
+                </Frame>
 
-                <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" BindableLayout.ItemsSource="{Binding CurrentAliment.Foods}">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate x:DataType="models:Food">
-                            <SwipeView Style="{StaticResource SwipeView}">
-                                <SwipeView.RightItems>
-                                    <SwipeItems>
-                                        <SwipeItem Text="Delete" BackgroundColor="Red" Command="{Binding BindingContext.DeletteAlimentCommand, Source={x:Reference recipePage}}">
-                                            <SwipeItem.CommandParameter>
-                                                <MultiBinding Converter="{StaticResource MultiBindingConverter}">
-                                                    <Binding Path="BindingContext.CurrentAliment" Source="{x:Reference recipePage}"/>
-                                                    <Binding Path="."/>
-                                                </MultiBinding>
-                                            </SwipeItem.CommandParameter>
-                                        </SwipeItem>
-                                    </SwipeItems>
-                                </SwipeView.RightItems>
-
-                                <Grid Margin="2" RowDefinitions="25, 25, 1" ColumnDefinitions="50,3*,*" Padding="5,0,5,0">
-                                    <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" BackgroundColor="Gray" Source="{Binding ImageSource}" Aspect="AspectFill">
-                                        <Image.Clip>
-                                            <RoundRectangleGeometry Rect="0,0,50,50" CornerRadius="12"/>
-                                        </Image.Clip>
-                                    </Image>
-                                    <Label Grid.Column="1" Style="{StaticResource LabelSmall}" LineBreakMode="TailTruncation" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
-                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding ServingSizeWithUnit}" VerticalOptions="Center"/>
-                                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding NutritionValuesString}" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalTextAlignment="End"/>
-                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding CaloriesString}" Style="{StaticResource LabelSmall}" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold"/>
-                                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="LightGray"/>
-                                </Grid>
-                            </SwipeView>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
+                <Frame Grid.Row="5" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
+                    <rsControls:RSEditor Placeholder="Description" Text="{Binding CurrentAliment.Description}" IsPlaceholderAlwaysFloating="True"/>
+                </Frame>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

@@ -81,39 +81,9 @@
 
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
-            <Grid ColumnDefinitions="*, *" RowDefinitions="180, Auto, Auto, Auto, Auto" Margin="0,10,0,10">
+            <Grid ColumnDefinitions="*" RowDefinitions="Auto, Auto, Auto, Auto, Auto" Margin="0,10,0,10">
 
-                <ImageButton Grid.Row="0" Grid.Column="0"
-                             CornerRadius="12" 
-                             WidthRequest="180"
-                             Margin="10"
-                             HorizontalOptions="FillAndExpand"
-                             Aspect="AspectFill"
-                             BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                             Source="{Binding CurrentAliment.ImageSource}"
-                             Command="{Binding AddImageCommand}" CommandParameter="{Binding CurrentAliment}"/>
-
-
-                <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="*, Auto" Margin="0,0,10,0" RowSpacing="4" VerticalOptions="CenterAndExpand">
-                    <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="{Binding CurrentAliment.Proteins}"/>
-                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding AlimentProteinPercentage}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
-                    <ProgressBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding AlimentProteinProgress}" VerticalOptions="Center"/>
-
-                    <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="{Binding CurrentAliment.Carbs}"/>
-                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding AlimentCarbsPercentage}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
-                    <ProgressBar Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding AlimentCarbsProgress}" VerticalOptions="Center"/>
-
-                    <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="{Binding CurrentAliment.Fats}"/>
-                    <Label Grid.Row="4" Grid.Column="1" Text="{Binding AlimentFatsPercentage}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
-                    <ProgressBar Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding AlimentFatsProgress}" VerticalOptions="Center"/>
-
-                    <Label Grid.Row="6" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Calories"/>
-                    <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding AlimentCaloriesRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
-                    <ProgressBar Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding CurrentAliment.CaloriesProgress}" VerticalOptions="Center"/>
-                </Grid>
-
-
-                <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource JournalTemplateCard}">
+                <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
                     <rsControls:RSEntry  
                                     x:Name="nameEntry"
                                     Style="{StaticResource Entry}" 
@@ -132,8 +102,24 @@
                     </rsControls:RSEntry>
                 </Frame>
 
+                <Frame Grid.Row="1" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
+                    <Grid RowDefinitions="30,30" RowSpacing="0" Margin="2,0,2,0">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Image" Style="{StaticResource LabelMediumBold}" HorizontalOptions="FillAndExpand" VerticalOptions="End" />
+                        <Label Grid.Row="1" Grid.Column="0" Text="Tap to take a photo" Style="{StaticResource LabelSmall}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                        <ImageButton Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"
+                                     CornerRadius="12"
+                                     WidthRequest="60"
+                                     HorizontalOptions="End"
+                                     Aspect="AspectFill"
+                                     BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                     Source="{Binding CurrentAliment.ImageSource}"/>
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddImageCommand}" CommandParameter="{Binding CurrentAliment}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
 
-                <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource JournalTemplateCard}">
+                <Frame Grid.Row="2" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
                     <Grid ColumnDefinitions="*,*">
                         <rsControls:RSNumericEntry Grid.Column="0"
                                                x:Name="servingSizeEntry"
@@ -156,8 +142,8 @@
                 </Frame>
 
 
-                <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource JournalTemplateCard}">
-                    <Grid ColumnDefinitions="*" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 35, Auto, Auto, Auto, Auto">
+                <Frame Grid.Row="3" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
+                    <Grid ColumnDefinitions="*" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 35, Auto">
                         <Label Grid.Row="0" Grid.Column="0" Text="{Binding CurrentAliment.ServingSize, StringFormat='Nutritional values in {0} g'}" LineBreakMode="TailTruncation" Style="{StaticResource LabelMediumBold}" Margin="0,0,20,10"/>
                         <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" Style="{StaticResource Entry}" FontAttributes="Bold" Placeholder="Calories" Value="{Binding CurrentAliment.Calories}" Helper="calories are calculated automatically if empty" IsPlaceholderAlwaysFloating="True"/>
                         <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Proteins" Value="{Binding CurrentAliment.Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
@@ -173,16 +159,18 @@
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.ChevronDown}" FontFamily="FA-Solid"/>
                             </Button.ImageSource>
                         </Button>
-                        <rsControls:RSNumericEntry Grid.Row="7" Grid.Column="0" IsVisible="{Binding AdditionalNutrimentsVisible}" Style="{StaticResource Entry}" Placeholder="Saturated Fat" Value="{Binding CurrentAliment.SaturatedFat}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSNumericEntry Grid.Row="8" Grid.Column="0" IsVisible="{Binding AdditionalNutrimentsVisible}" Style="{StaticResource Entry}" Placeholder="Sugars" Value="{Binding CurrentAliment.Sugars}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSNumericEntry Grid.Row="9" Grid.Column="0" IsVisible="{Binding AdditionalNutrimentsVisible}" Style="{StaticResource Entry}" Placeholder="Salts" Value="{Binding CurrentAliment.Salt}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSNumericEntry Grid.Row="10" Grid.Column="0" IsVisible="{Binding AdditionalNutrimentsVisible}" Style="{StaticResource Entry}" Placeholder="Sodium" Value="{Binding CurrentAliment.Sodium}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                        <Grid Grid.Row="7" Grid.Column="0" RowDefinitions="Auto,Auto,Auto,Auto" IsVisible="{Binding AdditionalNutrimentsVisible}">
+                            <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Saturated Fat" Value="{Binding CurrentAliment.SaturatedFat}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                            <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Sugars" Value="{Binding CurrentAliment.Sugars}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                            <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Salts" Value="{Binding CurrentAliment.Salt}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                            <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Sodium" Value="{Binding CurrentAliment.Sodium}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                        </Grid>
                     </Grid>
                 </Frame>
 
 
 
-                <Frame Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource JournalTemplateCard}">
+                <Frame Grid.Row="4" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
                     <Grid ColumnDefinitions="100, *" RowDefinitions="Auto, 100, Auto">
                         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding CurrentAliment.ServingSize, StringFormat='Dayily values for {0} g'}" LineBreakMode="TailTruncation" Style="{StaticResource LabelMediumBold}" Margin="0,0,20,10"/>
                         <controls:CircleCountdown Grid.Row="1" Grid.Column="0"
@@ -243,8 +231,23 @@
                     </Grid>
                 </Frame>
 
-                   
-                
+                <Frame Grid.Row="5" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
+                    <Grid RowDefinitions="30,30" RowSpacing="0" Margin="2,0,2,0">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Barcode" Style="{StaticResource LabelMediumBold}" HorizontalOptions="FillAndExpand" VerticalOptions="End" />
+                        <Label Grid.Row="1" Grid.Column="0" Text="Tap to scan a barcode" Style="{StaticResource LabelSmall}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                        <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"
+                               HorizontalOptions="EndAndExpand"
+                               BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Source>
+                                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" 
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Barcode}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                </Frame>
+
+
+
                 <!--<Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew}" Text="Save" Command="{Binding SaveCommand}"/>
                 <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource ButtonOutline}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding IsNew, Converter={StaticResource InverseBoolConverter}}" Text="Update" Command="{Binding UpdateCommand}"/>-->
 

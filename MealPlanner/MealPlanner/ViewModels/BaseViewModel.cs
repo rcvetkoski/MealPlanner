@@ -78,8 +78,11 @@ namespace MealPlanner.ViewModels
             try
             {
                 var photo = await MediaPicker.CapturePhotoAsync();
+                if (photo == null)
+                    return;
+
                 await LoadPhotoAsync(photo, currentAliment);
-                Console.WriteLine($"CapturePhotoAsync COMPLETED: {currentAliment.ImageSourcePath}");
+                //Console.WriteLine($"CapturePhotoAsync COMPLETED: {currentAliment.ImageSourcePath}");
             }
             catch (FeatureNotSupportedException fnsEx)
             {

@@ -362,7 +362,7 @@ namespace MealPlanner.Models
                     return ImageSource.FromStream(() => new MemoryStream(ImageBlob));
 
                 if(string.IsNullOrEmpty(ImageSourcePath))
-                    return null;    
+                    return new FontImageSource() { Glyph = FontAwesomeIcons.Image, FontFamily = "FA-Solid", Color = Color.Gray };    
 
                 if(imageSourcePath.Contains("https"))
                     return new UriImageSource() { Uri = new Uri(ImageSourcePath), CachingEnabled = true, CacheValidity = TimeSpan.FromDays(1) };
