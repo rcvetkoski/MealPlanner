@@ -708,30 +708,35 @@ namespace MealPlanner.Helpers
             {
                 Name = "Lose Weight 20%",
                 ObjectifType = ObjectifTypeEnum.Lose_Weight_20,
+                Description = "Decrease caloric intake by 20%",
                 Ratio = 0.8
-            });
+            }); ;
             Objectifs.Add(new ObjectifItem()
             {
                 Name = "Lose Weight slowly 10%",
                 ObjectifType = ObjectifTypeEnum.Lose_Weight_slowly_10,
+                Description = "Decrease caloric intake by 10%",
                 Ratio = 0.9
             });
             Objectifs.Add(new ObjectifItem()
             {
                 Name = "Maintain Weight",
                 ObjectifType = ObjectifTypeEnum.Maintain_Weight,
+                Description = "Keep the recommended caloric intake",
                 Ratio = 1
             });
             Objectifs.Add(new ObjectifItem()
             {
                 Name = "Gain Weight slowly 10%",
                 ObjectifType = ObjectifTypeEnum.Gain_Weight_slowly_10,
+                Description = "Increase caloric intake by 10%",
                 Ratio = 1.1
             });
             Objectifs.Add(new ObjectifItem()
             {
                 Name = "Gain Weight 20%",
                 ObjectifType = ObjectifTypeEnum.Gain_Weight_20,
+                Description = "Increase caloric intake by 20%",
                 Ratio = 1.2
             });
 
@@ -748,6 +753,8 @@ namespace MealPlanner.Helpers
                 User.SelectedTypeOfRegime = TypesOfRegime.FirstOrDefault(x => x.TypeOfRegime == User.SelectedTypeOfRegimeDB);
                 User.SelectedPhysicalActivityLevel = PhysicalActivityLevels.FirstOrDefault(x => x.PALItemType == User.SelectedPhysicalActivityLevelDB);
                 User.SelectedObjectif = Objectifs.FirstOrDefault(x => x.ObjectifType == User.SelectedObjectiflDB);
+                User.SelectedObjectif.IsSelected = true;
+                User.SelectedTypeOfRegime.IsSelected = true;    
             }
         }
 

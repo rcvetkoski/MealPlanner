@@ -184,7 +184,7 @@
             </Style>
 
             <Style x:Key="UserCard" TargetType="Frame">
-                <Setter Property="HasShadow" Value="{OnPlatform Android=false, iOS=false, Default=true}"/>
+                <Setter Property="HasShadow" Value="False"/>
                 <Setter Property="Padding" Value="15, 10, 15, 10"/>
                 <Setter Property="CornerRadius" Value="12"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>

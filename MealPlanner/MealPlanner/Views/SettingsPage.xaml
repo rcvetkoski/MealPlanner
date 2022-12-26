@@ -49,7 +49,7 @@
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.Crosshairs}" FontFamily="FA-Solid"/>
                             </Image.Source>
                         </Image>
-                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Objectif"/>
+                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Objectifs"/>
                         <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                             <Image.Source>
                                 <FontImageSource Size="22"  
@@ -58,7 +58,9 @@
                             </Image.Source>
                         </Image>
                     </StackLayout>
-
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenObjectifsPageCommand}" />
+                    </Frame.GestureRecognizers>
                 </Frame>
 
                 <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
@@ -67,7 +69,7 @@
                             <Image.Source>
                                 <FontImageSource Size="22"  
                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Crosshairs}" FontFamily="FA-Solid"/>
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChartPie}" FontFamily="FA-Solid"/>
                             </Image.Source>
                         </Image>
                         <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Macro intake goal"/>
@@ -79,7 +81,9 @@
                             </Image.Source>
                         </Image>
                     </StackLayout>
-
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenMacrosPageCommand}" />
+                    </Frame.GestureRecognizers>
                 </Frame>
 
 

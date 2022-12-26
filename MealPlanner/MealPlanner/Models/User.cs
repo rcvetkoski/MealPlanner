@@ -504,8 +504,10 @@ namespace MealPlanner.Models
         public class ObjectifItem
         {
             public string Name { get; set; }
+            public string Description { get; set; }     
             public ObjectifTypeEnum ObjectifType { get; set; }
             public double Ratio { get; set; }
+            public bool IsSelected { get; set; }
         }
         public enum ObjectifTypeEnum
         {
@@ -541,6 +543,7 @@ namespace MealPlanner.Models
             public double ProteinPercentage { get; set; }
             public double CarbsPercentage { get; set; }
             public double FatsPercentage { get; set; }
+            public bool IsSelected { get; set; }
         }
         public enum TypesOfRegimeEnum
         {
