@@ -23,18 +23,22 @@ namespace MealPlanner.ViewModels
         public ICommand OpenObjectifsPageCommand { get; set; }
         private async void OpenObjectifsPage()
         {
-            //await Shell.Current.GoToAsync($"{nameof(UserPage)}");
-            await App.Current.MainPage.Navigation.PushAsync(new ObjectifsPage());
+            await Shell.Current.GoToAsync($"{nameof(ObjectifsPage)}");
+            //await App.Current.MainPage.Navigation.PushAsync(new ObjectifsPage());
         }
 
         public ICommand OpenMacrosPageCommand { get; set; }
         private async void OpenMacrosPage()
         {
-            //await Shell.Current.GoToAsync($"{nameof(UserPage)}");
-            await App.Current.MainPage.Navigation.PushAsync(new MacrosPage());
+            await Shell.Current.GoToAsync($"{nameof(MacrosPage)}");
+            //await App.Current.MainPage.Navigation.PushAsync(new MacrosPage());
         }
 
-        
+        public ICommand OpenActivityLevelPageCommand { get; set; }
+        private async void OpenActivityLevelPage()
+        {
+            await Shell.Current.GoToAsync($"{nameof(ActivityLevelPage)}");
+        }
 
         public ICommand OpenJournalTemplatePageCommand { get; set; }
         private async void OpenJournalTemplatePage()
@@ -63,6 +67,7 @@ namespace MealPlanner.ViewModels
             OpenUnitsPageCommand = new Command(OpenUnitsPage);
             OpenObjectifsPageCommand = new Command(OpenObjectifsPage);
             OpenMacrosPageCommand = new Command(OpenMacrosPage);
+            OpenActivityLevelPageCommand = new Command(OpenActivityLevelPage);
         }
 
         ~SettingsViewModel()

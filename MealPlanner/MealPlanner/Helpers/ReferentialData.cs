@@ -676,7 +676,7 @@ namespace MealPlanner.Helpers
             PhysicalActivityLevels.Add(new PALItem()
             {
                 Name = "moderate exercise",
-                Description = "4 - 5 times / week",
+                Description = "3 - 4 times / week",
                 PALItemType = PALItemTypeEnum.Moderate_exercise,
                 Ratio = 1.55
             });
@@ -697,7 +697,7 @@ namespace MealPlanner.Helpers
             PhysicalActivityLevels.Add(new PALItem()
             {
                 Name = "professional athlete",
-                Description = "",
+                Description = "Extreme training",
                 PALItemType = PALItemTypeEnum.Professional_athelete,
                 Ratio = 2.4
             });
@@ -754,6 +754,7 @@ namespace MealPlanner.Helpers
                 User.SelectedPhysicalActivityLevel = PhysicalActivityLevels.FirstOrDefault(x => x.PALItemType == User.SelectedPhysicalActivityLevelDB);
                 User.SelectedObjectif = Objectifs.FirstOrDefault(x => x.ObjectifType == User.SelectedObjectiflDB);
                 User.SelectedObjectif.IsSelected = true;
+                User.SelectedPhysicalActivityLevel.IsSelected = true;
                 User.SelectedTypeOfRegime.IsSelected = true;    
             }
         }

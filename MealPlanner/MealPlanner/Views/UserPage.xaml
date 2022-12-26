@@ -27,11 +27,11 @@
 
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
-            <StackLayout Padding="15">
+            <StackLayout Margin="10">
 
                 <Label Style="{StaticResource LabelMedium}" Text="Profil"/>
                 <Frame Style="{StaticResource UserCard}">
-                    <Grid ColumnDefinitions="*, Auto">
+                    <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto">
                         <rsControls:RSEntry x:Name="nameEntry" 
                                             Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                                             ReturnType="Next" 
@@ -214,6 +214,26 @@
                                 </rsHelpers:RSEntryIcon>
                             </rsControls:RSEnumPicker.LeadingIcon>
                         </rsControls:RSEnumPicker>
+
+                        <rsControls:RSPicker Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
+                                             Placeholder="BMR Formula" 
+                                             Style="{StaticResource Picker}"
+                                             ItemsSource="{Binding RefData.BMRFormulas}" 
+                                             SelectedItem="{Binding RefData.User.SelectedBMRFormula}"
+                                             IsPlaceholderAlwaysFloating="True">
+                            <rsControls:RSPicker.LeadingIcon>
+                                <rsHelpers:RSEntryIcon>
+                                    <rsHelpers:RSEntryIcon.View>
+                                        <Image WidthRequest="15" HeightRequest="15">
+                                            <Image.Source>
+                                                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.List}" FontFamily="FA-Solid"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </rsHelpers:RSEntryIcon.View>
+                                </rsHelpers:RSEntryIcon>
+                            </rsControls:RSPicker.LeadingIcon>
+                        </rsControls:RSPicker>
                     </Grid>
                 </Frame>
 
@@ -243,7 +263,7 @@
                     </StackLayout>
                 </Frame>
 
-                <Label Style="{StaticResource LabelMedium}" Text="Parameters" Margin="0, 20, 0, 0"/>
+                <!--<Label Style="{StaticResource LabelMedium}" Text="Parameters" Margin="0, 20, 0, 0"/>
                 <Frame Style="{StaticResource UserCard}">
                     <StackLayout>
                         <rsControls:RSPicker Placeholder="BMR Formula" 
@@ -290,7 +310,7 @@
                             </rsControls:RSPicker.ItemTemplate>
                         </rsControls:RSPicker>
                     </StackLayout>
-                </Frame>
+                </Frame>-->
                 
             </StackLayout>
         </ScrollView>

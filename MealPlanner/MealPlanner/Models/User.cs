@@ -338,6 +338,7 @@ namespace MealPlanner.Models
                 if( selectedPhysicalActivityLevel != value )
                 {
                     selectedPhysicalActivityLevel = value;
+                    OnPropertyChanged("SelectedPhysicalActivityLevel");
                     Calcul();
                 }
             } 
@@ -356,6 +357,7 @@ namespace MealPlanner.Models
                 if(selectedBMRFormula != value)
                 {
                     selectedBMRFormula = value;
+                    OnPropertyChanged("SelectedBMRFormula");
                     Calcul();
                 }
             }
@@ -374,6 +376,7 @@ namespace MealPlanner.Models
                 if(selectedObjectif != value)
                 {
                     selectedObjectif = value;
+                    OnPropertyChanged("SelectedObjectif");
                     Calcul();
                 }
             }
@@ -524,6 +527,7 @@ namespace MealPlanner.Models
             public string Description { get; set; }
             public PALItemTypeEnum PALItemType { get; set; }
             public double Ratio { get; set; }
+            public bool IsSelected { get; set; }
         }
         public enum PALItemTypeEnum
         {
