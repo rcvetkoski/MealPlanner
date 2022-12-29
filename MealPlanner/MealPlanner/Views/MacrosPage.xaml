@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
+             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels" xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Name="macrosPage"
              Title="{Binding Title}"
@@ -33,7 +33,13 @@
                 </StackLayout>
 
 
-                <Label Style="{StaticResource LabelMedium}" HorizontalOptions="Center" Text="Graph here" Margin="0, 10, 0, 0"/>
+                <!--<Label Style="{StaticResource LabelMedium}" HorizontalOptions="Center" Text="Graph here" Margin="0, 10, 0, 0"/>-->
+                <microcharts:ChartView x:Name="chartView"
+                                       Margin="10"
+                                       VerticalOptions="FillAndExpand"
+                                       HorizontalOptions="FillAndExpand">
+                </microcharts:ChartView>
+
 
             </StackLayout>
         </ScrollView>
