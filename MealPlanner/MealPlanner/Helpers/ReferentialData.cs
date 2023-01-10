@@ -656,6 +656,15 @@ namespace MealPlanner.Helpers
                 ProteinPercentage = 0.3,
                 FatsPercentage = 0.65
             });
+            TypesOfRegime.Add(new TypeOfRegimeItem()
+            {
+                TypeOfRegime = TypesOfRegimeEnum.Custom,
+                Name = "Custom",
+                Description = "Carbs 35%, Proteins 35%, Fats 30%",
+                CarbsPercentage = 0.35,
+                ProteinPercentage = 0.35,
+                FatsPercentage = 0.30
+            });
 
             // PAL
             PhysicalActivityLevels = new List<PALItem>();

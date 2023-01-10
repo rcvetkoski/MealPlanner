@@ -555,7 +555,8 @@ namespace MealPlanner.Models
             Balanced,
             LowInFats,
             RichInProteins,
-            Keto
+            Keto,
+            Custom
         }
     }
 }

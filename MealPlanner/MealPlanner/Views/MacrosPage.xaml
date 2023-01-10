@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels" xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels" xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" xmlns:controls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Name="macrosPage"
              Title="{Binding Title}"
@@ -15,6 +15,7 @@
         <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
             <StackLayout Margin="0, 10, 0, 10">
 
+                <Label Style="{StaticResource LabelMedium}" Text="Types of regime" Margin="10,10,0,0"/>
                 <StackLayout BindableLayout.ItemsSource="{Binding RefData.TypesOfRegime}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
@@ -25,7 +26,7 @@
                                     <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" Text="{Binding Description}"/>
                                 </Grid>
                                 <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding BindingContext.SelectTypeOfRegimeCommand , Source={x:Reference macrosPage}}" CommandParameter="{Binding ., Source={x:Reference radioButton}}" />
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" Command="{Binding BindingContext.SelectTypeOfRegimeCommand , Source={x:Reference macrosPage}}" CommandParameter="{Binding ., Source={x:Reference radioButton}}" />
                                 </Frame.GestureRecognizers>
                             </Frame>
                         </DataTemplate>
@@ -33,13 +34,22 @@
                 </StackLayout>
 
 
-                <!--<Label Style="{StaticResource LabelMedium}" HorizontalOptions="Center" Text="Graph here" Margin="0, 10, 0, 0"/>-->
-                <microcharts:ChartView x:Name="chartView"
-                                       Margin="10"
-                                       VerticalOptions="FillAndExpand"
-                                       HorizontalOptions="FillAndExpand">
-                </microcharts:ChartView>
-
+                <Label Style="{StaticResource LabelMedium}" Text="Macro balance" Margin="10,10,0,0"/>
+                <Frame Style="{StaticResource JournalTemplateCard}">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout VerticalOptions="Center" WidthRequest="80">
+                            <controls:RSNumericEntry Placeholder="Prots" Value="{Binding RefData.User.SelectedTypeOfRegime.ProteinPercentage}" CustomUnit="%"/>
+                            <controls:RSNumericEntry Placeholder="Carbs" Value="{Binding RefData.User.SelectedTypeOfRegime.CarbsPercentage}" CustomUnit="%"/>
+                            <controls:RSNumericEntry Placeholder="Fats" Value="{Binding RefData.User.SelectedTypeOfRegime.FatsPercentage}" CustomUnit="%"/>
+                        </StackLayout>
+                        <microcharts:ChartView x:Name="chartView"
+                                               HeightRequest="{Binding Width, Source={x:Reference chartView}}"
+                                               Margin="10"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="FillAndExpand">
+                        </microcharts:ChartView>
+                    </StackLayout>
+                </Frame>
 
             </StackLayout>
         </ScrollView>

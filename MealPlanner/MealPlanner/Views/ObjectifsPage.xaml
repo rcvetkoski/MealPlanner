@@ -33,8 +33,10 @@
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
 
-                <Label Style="{StaticResource LabelMedium}" HorizontalOptions="Center" Text="Daily caloric intake (Kcal)" Margin="0, 10, 0, 0"/>
-                <Label Style="{StaticResource LabelLarge}" HorizontalOptions="Center" Text="{Binding RefData.User.TDEE}"/>
+                <Label Style="{StaticResource LabelMedium}" HorizontalOptions="Center" Text="You can adjust your daily goal manually" Margin="0, 10, 0, 0"/>
+                <Slider Value="0.25" MinimumTrackColor="{StaticResource Primary}" />
+                <Label Style="{StaticResource LabelMedium}" MaxLines="2" HorizontalOptions="Center" Text="Daily caloric intake (Kcal)" Margin="0, 20, 0, 0"/>
+                <Entry Keyboard="Numeric" Style="{StaticResource LabelLarge}" HorizontalOptions="Center" Text="{Binding RefData.User.TDEE}"/>
 
             </StackLayout>
         </ScrollView>
