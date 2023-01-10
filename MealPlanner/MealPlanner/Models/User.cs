@@ -178,6 +178,8 @@ namespace MealPlanner.Models
             }
         }
 
+        public double AdjustedCalories { get; set; }
+
         public int CurrentJournalTemplateId { get; set; }
 
         public bool AutoGenerateJournalEnabled { get; set; }
@@ -483,7 +485,7 @@ namespace MealPlanner.Models
                 }
             }
 
-            TDEE = Math.Round((BMR * SelectedPhysicalActivityLevel.Ratio * SelectedObjectif.Ratio), 0);
+            TDEE = Math.Round((BMR * SelectedPhysicalActivityLevel.Ratio * SelectedObjectif.Ratio) + AdjustedCalories, 0);
         }
 
         /// <summary>
