@@ -23,15 +23,23 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Margin="10">
-            <rsControls:RSNumericUpDown Placeholder="Number of meals" Text="{Binding TempTemplateCount}" IsPlaceholderAlwaysFloating="True"/>
-            <StackLayout BindableLayout.ItemsSource="{Binding TempTemplateMeals}">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <rsControls:RSEntry Placeholder="{Binding Order, StringFormat='Meal {0}'}" Text="{Binding Name}" IsPlaceholderAlwaysFloating="True"/>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never" Padding="0, 10, 0, 10">
+            <StackLayout Spacing="0">
+                <Label Style="{StaticResource LabelMedium}" Text="Meal names" Margin="10, 0, 0, 0"/>
+
+                <Frame Style="{StaticResource JournalTemplateCard}" VerticalOptions="Start">
+                    <StackLayout>
+                        <rsControls:RSNumericUpDown Placeholder="Number of meals" Text="{Binding TempTemplateCount}" IsPlaceholderAlwaysFloating="True"/>
+                        <StackLayout BindableLayout.ItemsSource="{Binding TempTemplateMeals}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <rsControls:RSEntry Placeholder="{Binding Order, StringFormat='Meal {0}'}" Text="{Binding Name}" IsPlaceholderAlwaysFloating="True"/>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

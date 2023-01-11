@@ -1,4 +1,7 @@
-﻿using SkiaSharp;
+﻿using MealPlanner.ViewModels;
+using Microcharts;
+using SkiaSharp.Views.Forms;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,32 +10,21 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Microcharts;
-using SkiaSharp.Views.Forms;
-using MealPlanner.ViewModels;
-using static MealPlanner.Models.User;
 
 namespace MealPlanner.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MacrosPage : ContentPage
+    public partial class EditMacrosPage : ContentPage
     {
-        public MacrosPage()
+        public EditMacrosPage()
         {
             InitializeComponent();
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            var vm = BindingContext as MacrosViewModel;
-            vm.InitProperties();
             InitChart();
         }
 
         public void InitChart()
         {
-            var vm = BindingContext as MacrosViewModel;
+            var vm = BindingContext as EditMacrosViewModel;
 
             var entries = new[]
             {
@@ -72,10 +64,33 @@ namespace MealPlanner.Views
             chartView.Chart = chart;
         }
 
-        private void radioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        private async void RSNumericEntry_Completed(object sender, EventArgs e)
         {
-            if(!(sender as RadioButton).IsChecked)
+            UpdateMacros();
+        }
+
+        private void RSNumericEntry_Unfocused(object sender, FocusEventArgs e)
+        {
+            UpdateMacros();
+        }
+
+        private async void UpdateMacros()
+        {
+            var vm = BindingContext as EditMacrosViewModel;
+            vm.OnPropertyChangedPercentageSum100();
+
+            if (vm.IsMacroPercentageSum100)
+            {
+                vm.RefData.User.SelectedTypeOfRegime.ProteinPercentage = vm.ProtsPercentage / 100;
+                vm.RefData.User.SelectedTypeOfRegime.CarbsPercentage = vm.CarbsPercentage / 100;
+                vm.RefData.User.SelectedTypeOfRegime.FatsPercentage = vm.FatsPercentage / 100;
+                vm.RefData.User.NotifyProgressBars();
+                vm.RefData.User.NotifyTargetValues();
+                //vm.InitProperties();
                 InitChart();
+
+                await App.DataBaseRepo.UpdateTypeOfRegimeItemAsync(vm.RefData.User.SelectedTypeOfRegime);
+            }
         }
     }
 }

@@ -17,7 +17,7 @@
         <ScrollView Orientation="Vertical">
             <StackLayout Margin="0,10,0,10">
 
-                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="35">
                     <StackLayout Orientation="Horizontal" Spacing="15">
                         <Image>
                             <Image.Source>
@@ -40,7 +40,7 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="35">
                     <StackLayout Orientation="Horizontal" Spacing="15">
                         <Image>
                             <Image.Source>
@@ -63,7 +63,7 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="35">
                     <StackLayout Orientation="Horizontal" Spacing="15">
                         <Image>
                             <Image.Source>
@@ -86,7 +86,7 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="35">
                     <StackLayout Orientation="Horizontal" Spacing="15">
                         <Image>
                             <Image.Source>
@@ -109,7 +109,7 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="35">
                     <StackLayout Orientation="Horizontal" Spacing="15">
                         <Image>
                             <Image.Source>
@@ -132,7 +132,7 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="35">
                     <StackLayout Orientation="Horizontal" Spacing="15">
                         <Image>
                             <Image.Source>
@@ -155,7 +155,7 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="35">
                     <StackLayout Orientation="Horizontal" Spacing="15">
                         <Image>
                             <Image.Source>
@@ -175,7 +175,7 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="40">
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="35">
                     <StackLayout Orientation="Horizontal" Spacing="15">
                         <Image>
                             <Image.Source>

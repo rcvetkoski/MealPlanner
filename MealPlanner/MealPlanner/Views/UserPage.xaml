@@ -237,7 +237,7 @@
                     </Grid>
                 </Frame>
 
-                <Label Style="{StaticResource LabelMedium}" Text="Daily caloric intake (Kcal)" Margin="0, 20, 0, 0"/>
+                <Label Style="{StaticResource LabelMedium}" Text="Daily caloric intake" Margin="0, 20, 0, 0"/>
                 <Frame Style="{StaticResource UserCard}">
                     <StackLayout>
                         <rsControls:RSNumericEntry Style="{StaticResource Entry}"
@@ -263,55 +263,6 @@
                     </StackLayout>
                 </Frame>
 
-                <!--<Label Style="{StaticResource LabelMedium}" Text="Parameters" Margin="0, 20, 0, 0"/>
-                <Frame Style="{StaticResource UserCard}">
-                    <StackLayout>
-                        <rsControls:RSPicker Placeholder="BMR Formula" 
-                                             Style="{StaticResource Picker}"
-                                             RSEntryStyle="Underline"
-                                             ItemsSource="{Binding RefData.BMRFormulas}" 
-                                             SelectedItem="{Binding RefData.User.SelectedBMRFormula}"/>
-                        <rsControls:RSPicker Placeholder="Physical Activity Level" 
-                                             Style="{StaticResource Picker}"
-                                             DisplayMemberPath="Name"
-                                             RsPopupSeparatorsEnabled="True"
-                                             RSEntryStyle="Underline"
-                                             ItemsSource="{Binding RefData.PhysicalActivityLevels}"
-                                             SelectedItem="{Binding RefData.User.SelectedPhysicalActivityLevel}">
-                            <rsControls:RSPicker.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid RowDefinitions="*,*" ColumnDefinitions="*">
-                                        <Label Grid.Row="0" Text="{Binding Name}" Style="{StaticResource LabelCaptionBold}"/>
-                                        <Label Grid.Row="1" Text="{Binding Description}" Style="{StaticResource LabelMicro}"/>
-                                    </Grid>
-                                </DataTemplate>
-                            </rsControls:RSPicker.ItemTemplate>
-                        </rsControls:RSPicker>
-                        <rsControls:RSPicker Placeholder="Objectif" 
-                                             Style="{StaticResource Picker}"
-                                             DisplayMemberPath="Name"
-                                             RSEntryStyle="Underline"
-                                             ItemsSource="{Binding RefData.Objectifs}"
-                                             SelectedItem="{Binding RefData.User.SelectedObjectif}"/>
-                        <rsControls:RSPicker Placeholder="Type of regime" 
-                                             Style="{StaticResource Picker}"
-                                             DisplayMemberPath="Name"
-                                             RsPopupSeparatorsEnabled="True"
-                                             RSEntryStyle="Underline"
-                                             ItemsSource="{Binding RefData.TypesOfRegime}"
-                                             SelectedItem="{Binding RefData.User.SelectedTypeOfRegime}">
-                            <rsControls:RSPicker.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid RowDefinitions="*,*" ColumnDefinitions="*">
-                                        <Label Grid.Row="0" Text="{Binding Name}" Style="{StaticResource LabelCaptionBold}"/>
-                                        <Label Grid.Row="1" Text="{Binding Description}" Style="{StaticResource LabelMicro}"/>
-                                    </Grid>
-                                </DataTemplate>
-                            </rsControls:RSPicker.ItemTemplate>
-                        </rsControls:RSPicker>
-                    </StackLayout>
-                </Frame>-->
-                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

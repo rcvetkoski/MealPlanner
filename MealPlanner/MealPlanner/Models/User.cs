@@ -398,13 +398,11 @@ namespace MealPlanner.Models
                 if(selectedTypeOfRegime != value)
                 {
                     selectedTypeOfRegime = value;
-                    OnPropertyChanged("SelectedTypeOfRegime");
-                    OnPropertyChanged(nameof(TargetProteins));
-                    OnPropertyChanged("TargetCarbs");
-                    OnPropertyChanged("TargetFats");
-                    OnPropertyChanged("DailyProteinsRatio");
-                    OnPropertyChanged("DailyCarbsRatio");
-                    OnPropertyChanged("DailyFatsRatio");
+                    OnPropertyChanged(nameof(SelectedTypeOfRegime));
+                    NotifyTargetValues();
+                    OnPropertyChanged(nameof(DailyProteinsRatio));
+                    OnPropertyChanged(nameof(DailyCarbsRatio));
+                    OnPropertyChanged(nameof(DailyFatsRatio));
                     NotifyProgressBars();
                 }
             }
@@ -503,7 +501,12 @@ namespace MealPlanner.Models
             OnPropertyChanged(nameof(DailyFatsRatio));
         }
 
-
+        public void NotifyTargetValues()
+        {
+            OnPropertyChanged(nameof(TargetProteins));
+            OnPropertyChanged(nameof(TargetCarbs));
+            OnPropertyChanged(nameof(TargetFats));
+        }
 
 
         public class ObjectifItem

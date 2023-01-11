@@ -542,6 +542,11 @@ namespace MealPlanner.Helpers
             User.NotifyProgressBars();
         }
 
+        public void UpdateTargetValues()
+        {
+
+        }
+
         public void UpdateMealValues(Meal meal, double ratio = 1)
         {
             double proteins = 0;

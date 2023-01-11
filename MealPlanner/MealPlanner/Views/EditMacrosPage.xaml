@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels" 
+             xmlns:controls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
+             xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
+             Title="{Binding Title}"
+             x:Class="MealPlanner.Views.EditMacrosPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:EditMacrosViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never" Padding="0, 10, 0, 10">
+            <StackLayout Spacing="0">
+                
+                <Label Style="{StaticResource LabelMedium}" Text="Macros" Margin="10, 0, 0, 0"/>
+                <Frame Style="{StaticResource JournalTemplateCard}" VerticalOptions="Start">
+                    <StackLayout VerticalOptions="Start">
+
+                        <controls:RSNumericEntry Placeholder="Prots"
+                                                 Unfocused="RSNumericEntry_Unfocused"
+                                                 Completed="RSNumericEntry_Completed"
+                                                 HorizontalOptions="FillAndExpand"
+                                                 Value="{Binding ProtsPercentage}"
+                                                 CustomUnit="%"/>
+                        <controls:RSNumericEntry Placeholder="Carbs"
+                                                 Unfocused="RSNumericEntry_Unfocused"
+                                                 Completed="RSNumericEntry_Completed"
+                                                 HorizontalOptions="FillAndExpand" 
+                                                 Value="{Binding CarbsPercentage}" 
+                                                 CustomUnit="%"/>
+                        <controls:RSNumericEntry Placeholder="Fats"
+                                                 Unfocused="RSNumericEntry_Unfocused"
+                                                 Completed="RSNumericEntry_Completed"
+                                                 HorizontalOptions="FillAndExpand"
+                                                 Value="{Binding FatsPercentage}" 
+                                                 CustomUnit="%"/>
+
+                        <Label Style="{StaticResource LabelSmallBold}" HorizontalOptions="Center" IsVisible="{Binding IsMacroPercentageSum100, Converter={StaticResource InverseBoolConverter}}" TextColor="Red" Text="Percentages must equal 100%"/>
+
+                    </StackLayout>
+                </Frame>
+
+                
+                <Label Style="{StaticResource LabelMedium}" Text="Macro balance" Margin="10, 10, 0, 0"/>
+                <Frame Style="{StaticResource JournalTemplateCard}">
+                    <StackLayout Orientation="Vertical">
+
+
+                        <microcharts:ChartView x:Name="chartView"
+                                               HeightRequest="160"
+                                               VerticalOptions="Center"
+                                               Margin="10,0,10,0"
+                                               HorizontalOptions="FillAndExpand">
+                        </microcharts:ChartView>
+
+                        <BoxView BackgroundColor="Gray" HeightRequest="1" Margin="0, 5, 0, 5"/>
+
+                        <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*, *, *" RowSpacing="0">
+                            <Label Grid.Row="0" Grid.Column="0" Text="Proteins" TextColor="#29aae3" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding RefData.User.TargetProteins, StringFormat='{0:N0} g'}" TextColor="#29aae3" HorizontalOptions="Center"/>
+                            <Label Grid.Row="2" Grid.Column="0" Text="{Binding ProtsCalories, StringFormat='{0:N0} kcal'}" TextColor="#29aae3" HorizontalOptions="Center"/>
+
+                            <Label Grid.Row="0" Grid.Column="1" Text="Carbs" TextColor="#77d065" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding RefData.User.TargetCarbs, StringFormat='{0:N0} g'}" TextColor="#77d065" HorizontalOptions="Center"/>
+                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding CarbsCalories, StringFormat='{0:N0} kcal'}" TextColor="#77d065" HorizontalOptions="Center"/>
+
+                            <Label Grid.Row="0" Grid.Column="2" Text="Fats" TextColor="#b455b6" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding RefData.User.TargetFats, StringFormat='{0:N0} g'}" TextColor="#b455b6" HorizontalOptions="Center"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="{Binding FatsCalories, StringFormat='{0:N0} kcal'}" TextColor="#b455b6" HorizontalOptions="Center"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

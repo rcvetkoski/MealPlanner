@@ -4,6 +4,7 @@ using System.Text;
 using static MealPlanner.Models.User;
 using System.Windows.Input;
 using Xamarin.Forms;
+using MealPlanner.Views;
 
 namespace MealPlanner.ViewModels
 {
@@ -14,19 +15,28 @@ namespace MealPlanner.ViewModels
             Title = "Macros";
             SelectTypeOfRegimeCommand = new Command<RadioButton>(TypeOfRegime);
             IsTypeOfRegimeItemCustom = RefData.User.SelectedTypeOfRegime.Name == "Custom" ? true : false;
-            InitProperties();
+            OpenEditMacrosPageCommand = new Command(OpenEditMacrosPage);
         }
 
         public ICommand SelectTypeOfRegimeCommand { get; set; }
         private async void TypeOfRegime(RadioButton radioButton)
         {
+            if (radioButton.IsChecked)
+                return;
+
             var typeOfRegimeItem = radioButton.BindingContext as TypeOfRegimeItem;
             radioButton.IsChecked = true;
             RefData.User.SelectedTypeOfRegime = typeOfRegimeItem;
             IsTypeOfRegimeItemCustom = RefData.User.SelectedTypeOfRegime.Name == "Custom" ? true : false;
             InitProperties();
-            OnPropertyChangedPercentageSum100();
             await App.DataBaseRepo.UpdateUserAsync(RefData.User);
+        }
+
+        public ICommand OpenEditMacrosPageCommand { get; set; }
+        private async void OpenEditMacrosPage()
+        {
+            //await Shell.Current.Navigation.PushModalAsync(new EditMacrosPage());
+            await Shell.Current.GoToAsync(nameof(EditMacrosPage));
         }
 
         private bool isTypeOfRegimeItemCustom;
@@ -46,41 +56,15 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        public double ProtsPercentage { get; set; }
-        public double CarbsPercentage { get; set; }
-        public double FatsPercentage { get; set; }
-
         public double ProtsCalories { get; set; }
         public double CarbsCalories { get; set; }
         public double FatsCalories { get; set; }
 
-        public bool IsMacroPercentageSum100
+        public void InitProperties()
         {
-            get
-            {
-                return (ProtsPercentage + CarbsPercentage + FatsPercentage) == 100;
-            }
-        }
-
-        public void OnPropertyChangedPercentageSum100()
-        {
-            OnPropertyChanged(nameof(IsMacroPercentageSum100));
-        }
-
-        private void InitProperties()
-        {
-            ProtsPercentage = RefData.User.SelectedTypeOfRegime.ProteinPercentage * 100;
-            CarbsPercentage = RefData.User.SelectedTypeOfRegime.CarbsPercentage * 100;
-            FatsPercentage = RefData.User.SelectedTypeOfRegime.FatsPercentage * 100;
-
             ProtsCalories = RefData.User.TDEE * RefData.User.SelectedTypeOfRegime.ProteinPercentage;
             CarbsCalories = RefData.User.TDEE * RefData.User.SelectedTypeOfRegime.CarbsPercentage;
             FatsCalories = RefData.User.TDEE * RefData.User.SelectedTypeOfRegime.FatsPercentage;
-
-
-            OnPropertyChanged(nameof(ProtsPercentage));
-            OnPropertyChanged(nameof(CarbsPercentage));
-            OnPropertyChanged(nameof(FatsPercentage));
 
             OnPropertyChanged(nameof(ProtsCalories));
             OnPropertyChanged(nameof(CarbsCalories));

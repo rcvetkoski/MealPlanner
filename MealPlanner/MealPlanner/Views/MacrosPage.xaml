@@ -20,7 +20,7 @@
 
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
-            <StackLayout Margin="0, 10, 0, 10">
+            <StackLayout Margin="0, 10, 0, 10" Spacing="0">
 
                 <Label Style="{StaticResource LabelMedium}" Text="Types of regime" Margin="10,0,0,0"/>
                 <StackLayout BindableLayout.ItemsSource="{Binding RefData.TypesOfRegime}">
@@ -28,12 +28,12 @@
                         <DataTemplate>
                             <Frame Style="{StaticResource JournalTemplateCard}">
                                 <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto, *" RowSpacing="0">
-                                    <RadioButton Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" x:Name="radioButton" GroupName="macros" IsChecked="{Binding IsSelected}" Style="{StaticResource RadioButton}"/>
+                                    <RadioButton Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" x:Name="radioButton" GroupName="macros" IsChecked="{Binding IsSelected}" CheckedChanged="radioButton_CheckedChanged" Style="{StaticResource RadioButton}"/>
                                     <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelMediumBold}" Text="{Binding Name}"/>
                                     <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" Text="{Binding Description}"/>
                                 </Grid>
                                 <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" Command="{Binding BindingContext.SelectTypeOfRegimeCommand , Source={x:Reference macrosPage}}" CommandParameter="{Binding ., Source={x:Reference radioButton}}" />
+                                    <TapGestureRecognizer Command="{Binding BindingContext.SelectTypeOfRegimeCommand , Source={x:Reference macrosPage}}" CommandParameter="{Binding ., Source={x:Reference radioButton}}" />
                                 </Frame.GestureRecognizers>
                             </Frame>
                         </DataTemplate>
@@ -54,8 +54,6 @@
                                                HorizontalOptions="FillAndExpand">
                         </microcharts:ChartView>
                         
-                        <Label Style="{StaticResource LabelSmallBold}" HorizontalOptions="Center" IsVisible="{Binding IsMacroPercentageSum100, Converter={StaticResource InverseBoolConverter}}" TextColor="Red" Text="Percentages must equal 100%"/>
-
                         <BoxView BackgroundColor="Gray" HeightRequest="1" Margin="0, 5, 0, 5"/>
 
                         <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*, *, *, Auto" RowSpacing="0">
@@ -74,6 +72,7 @@
                             <Button Grid.Row="0" Grid.RowSpan="3" Grid.Column="3" 
                                     WidthRequest="40"
                                     HorizontalOptions="Center"
+                                    Command="{Binding OpenEditMacrosPageCommand}"
                                     IsVisible="{Binding IsTypeOfRegimeItemCustom}"
                                     BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                                 <Button.ImageSource>
@@ -83,27 +82,6 @@
                                 </Button.ImageSource>
                             </Button>
                         </Grid>
-
-                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" IsVisible="False">
-                            <controls:RSNumericEntry Placeholder="Prots"
-                                                     HorizontalOptions="FillAndExpand"
-                                                     Completed="RSNumericEntry_Completed"
-                                                     IsEnabled="{Binding IsTypeOfRegimeItemCustom}"
-                                                     Value="{Binding ProtsPercentage}"
-                                                     CustomUnit="%"/>
-                            <controls:RSNumericEntry Placeholder="Carbs"
-                                                     HorizontalOptions="FillAndExpand" 
-                                                     Completed="RSNumericEntry_Completed"
-                                                     IsEnabled="{Binding IsTypeOfRegimeItemCustom}"
-                                                     Value="{Binding CarbsPercentage}" 
-                                                     CustomUnit="%"/>
-                            <controls:RSNumericEntry Placeholder="Fats"
-                                                     HorizontalOptions="FillAndExpand"
-                                                     Completed="RSNumericEntry_Completed"
-                                                     IsEnabled="{Binding IsTypeOfRegimeItemCustom}" 
-                                                     Value="{Binding FatsPercentage}" 
-                                                     CustomUnit="%"/>
-                        </StackLayout>
                     </StackLayout>
                 </Frame>
 
