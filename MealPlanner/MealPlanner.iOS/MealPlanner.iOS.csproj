@@ -72,6 +72,9 @@
     <EnableCodeSigning>True</EnableCodeSigning>
     <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="CustomRenderers\CustomShellRenderer.cs" />
     <Compile Include="Helpers\StatusBarColor.cs" />
