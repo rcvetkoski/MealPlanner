@@ -11,6 +11,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using static MealPlanner.Models.User;
 
 namespace MealPlanner.Services
 {
@@ -33,6 +34,7 @@ namespace MealPlanner.Services
 
         private Task CreateTables()
         {
+            dbConnection.CreateTableAsync<TypeOfRegimeItem>();
             dbConnection.CreateTableAsync<JournalTemplate>();
             dbConnection.CreateTableAsync<JournalTemplateMeal>();
             dbConnection.CreateTableAsync<Log>();
@@ -55,6 +57,51 @@ namespace MealPlanner.Services
                 return Path.Combine(basePath, DatabaseFilename);
             }
         }
+
+        #region TypeOfRegimeItem
+
+        /// <summary>
+        /// Returns a TypeOfRegimeItem object
+        /// </summary>
+        /// <returns></returns>
+        public Task<TypeOfRegimeItem> GetTypeOfRegimeItemAsync()
+        {
+            return dbConnection.Table<TypeOfRegimeItem>().FirstOrDefaultAsync();
+        }
+
+        /// <summary>
+        /// Inserts new TypeOfRegimeItem in database
+        /// </summary>
+        /// <param name="typeOfRegimeItem"></param>
+        /// <returns></returns>
+        public Task<int> AddTypeOfRegimeItemAsync(TypeOfRegimeItem typeOfRegimeItem)
+        {
+            return dbConnection.InsertAsync(typeOfRegimeItem);
+        }
+
+        /// <summary>
+        /// Updates a TypeOfRegimeItem in database if it exists
+        /// </summary>
+        /// <param name="typeOfRegimeItem"></param>
+        /// <returns></returns>
+        public Task<int> UpdateTypeOfRegimeItemAsync(TypeOfRegimeItem typeOfRegimeItem)
+        {
+            if (GetTypeOfRegimeItemAsync() != null)
+                return dbConnection.UpdateAsync(typeOfRegimeItem);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableTypeOfRegimeItem()
+        {
+            return dbConnection.DropTableAsync<TypeOfRegimeItem>();
+        }
+
+        #endregion
 
         #region JournalTemplate
 
@@ -349,7 +396,7 @@ namespace MealPlanner.Services
             user.SelectedPhysicalActivityLevelDB = user.SelectedPhysicalActivityLevel.PALItemType;
             user.SelectedObjectiflDB = user.SelectedObjectif.ObjectifType;
 
-            if (GetFoodAsync(user.Id) != null)
+            if (GetUserAsync() != null)
                 return dbConnection.UpdateAsync(user);
             else
                 return Task.FromResult(0);

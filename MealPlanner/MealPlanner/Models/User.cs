@@ -399,7 +399,7 @@ namespace MealPlanner.Models
                 {
                     selectedTypeOfRegime = value;
                     OnPropertyChanged("SelectedTypeOfRegime");
-                    OnPropertyChanged("TargetFats");
+                    OnPropertyChanged(nameof(TargetProteins));
                     OnPropertyChanged("TargetCarbs");
                     OnPropertyChanged("TargetFats");
                     OnPropertyChanged("DailyProteinsRatio");
@@ -541,14 +541,75 @@ namespace MealPlanner.Models
             Professional_athelete
         }
 
-        public class TypeOfRegimeItem
+        public class TypeOfRegimeItem : BaseModel
         {
+            [PrimaryKey, AutoIncrement]
+            public int Id { get; set; }
             public TypesOfRegimeEnum TypeOfRegime { get; set; }
             public string Name { get; set; }
-            public string Description { get; set; }
-            public double ProteinPercentage { get; set; }
-            public double CarbsPercentage { get; set; }
-            public double FatsPercentage { get; set; }
+            public string Description
+            {
+                get
+                {
+                    return $"Carbs {proteinPercentage * 100}%, Proteins {CarbsPercentage * 100}%, Fats {FatsPercentage * 100}%";
+                }
+            }
+
+            private double proteinPercentage;
+            public double ProteinPercentage 
+            {
+                get
+                {
+                    return proteinPercentage;
+                }
+                set
+                {
+                    if(proteinPercentage != value)
+                    {
+                        proteinPercentage = value;
+                        OnPropertyChanged(nameof(ProteinPercentage));
+                        OnPropertyChanged(nameof(Description));
+                    }
+                }
+            }
+
+            private double carbsPercentage;
+            public double CarbsPercentage 
+            { 
+                get
+                {
+                    return carbsPercentage;
+                }
+                set
+                {
+                    if(carbsPercentage != value)
+                    {
+                        carbsPercentage = value;
+                        OnPropertyChanged(nameof(CarbsPercentage));
+                        OnPropertyChanged(nameof(Description));
+                    }
+                }
+            }
+
+            private double fatsPercentage;
+            public double FatsPercentage 
+            { 
+                get
+                {
+                    return fatsPercentage;
+                }
+                set
+                {
+                    if(fatsPercentage != value)
+                    {
+                        fatsPercentage = value;
+                        OnPropertyChanged(nameof(FatsPercentage));
+                        OnPropertyChanged(nameof(Description));
+                    }
+                }
+            }
+
+            [Ignore]
             public bool IsSelected { get; set; }
         }
         public enum TypesOfRegimeEnum

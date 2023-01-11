@@ -615,7 +615,7 @@ namespace MealPlanner.Helpers
             {
                 TypeOfRegime = TypesOfRegimeEnum.Standard,
                 Name = "Standard",
-                Description = "Carbs 50%, Proteins 20%, Fats 30%",
+                //Description = "Carbs 50%, Proteins 20%, Fats 30%",
                 CarbsPercentage = 0.5,
                 ProteinPercentage = 0.2,
                 FatsPercentage = 0.3
@@ -624,7 +624,7 @@ namespace MealPlanner.Helpers
             {
                 TypeOfRegime = TypesOfRegimeEnum.Balanced,
                 Name = "Balanced",
-                Description = "Carbs 50%, Proteins 25%, Fats 25%",
+                //Description = "Carbs 50%, Proteins 25%, Fats 25%",
                 CarbsPercentage = 0.5,
                 ProteinPercentage = 0.25,
                 FatsPercentage = 0.35
@@ -633,7 +633,7 @@ namespace MealPlanner.Helpers
             {
                 TypeOfRegime = TypesOfRegimeEnum.LowInFats,
                 Name = "Low in fats",
-                Description = "Carbs 60%, Proteins 25%, Fats 15%",
+                //Description = "Carbs 60%, Proteins 25%, Fats 15%",
                 CarbsPercentage = 0.6,
                 ProteinPercentage = 0.25,
                 FatsPercentage = 0.15
@@ -642,7 +642,7 @@ namespace MealPlanner.Helpers
             {
                 TypeOfRegime = TypesOfRegimeEnum.RichInProteins,
                 Name = "Rich in proteins",
-                Description = "Carbs 25%, Proteins 40%, Fats 35%",
+                //Description = "Carbs 25%, Proteins 40%, Fats 35%",
                 CarbsPercentage = 0.25,
                 ProteinPercentage = 0.4,
                 FatsPercentage = 0.35
@@ -651,20 +651,29 @@ namespace MealPlanner.Helpers
             {
                 TypeOfRegime = TypesOfRegimeEnum.Keto,
                 Name = "Keto",
-                Description = "Carbs 5%, Proteins 30%, Fats 65%",
+                //Description = "Carbs 5%, Proteins 30%, Fats 65%",
                 CarbsPercentage = 0.05,
                 ProteinPercentage = 0.3,
                 FatsPercentage = 0.65
             });
-            TypesOfRegime.Add(new TypeOfRegimeItem()
+
+            TypeOfRegimeItem customTypeOfRegime = App.DataBaseRepo.GetTypeOfRegimeItemAsync().Result;
+            if (customTypeOfRegime == null)
             {
-                TypeOfRegime = TypesOfRegimeEnum.Custom,
-                Name = "Custom",
-                Description = "Carbs 35%, Proteins 35%, Fats 30%",
-                CarbsPercentage = 0.35,
-                ProteinPercentage = 0.35,
-                FatsPercentage = 0.30
-            });
+                customTypeOfRegime = new TypeOfRegimeItem()
+                {
+                    TypeOfRegime = TypesOfRegimeEnum.Custom,
+                    Name = "Custom",
+                    //Description = "Carbs 35%, Proteins 35%, Fats 30%",
+                    CarbsPercentage = 0.35,
+                    ProteinPercentage = 0.35,
+                    FatsPercentage = 0.30
+                };
+
+                App.DataBaseRepo.AddTypeOfRegimeItemAsync(customTypeOfRegime).Wait();
+            }
+            TypesOfRegime.Add(customTypeOfRegime);
+
 
             // PAL
             PhysicalActivityLevels = new List<PALItem>();

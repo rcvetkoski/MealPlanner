@@ -28,28 +28,28 @@ namespace MealPlanner.Views
 
             var entries = new[]
             {
-                new ChartEntry((float)vm.RefData.User.SelectedTypeOfRegime.ProteinPercentage * 100)
+                new ChartEntry((float)vm.ProtsPercentage)
                 {
                     Label = "Proteins",
-                    ValueLabel = (vm.RefData.User.SelectedTypeOfRegime.ProteinPercentage * 100).ToString(),
-                    ValueLabelColor = SKColor.Parse("#2c3e50"),
-                    TextColor = SKColor.Parse("#2c3e50"),
-                    Color = SKColor.Parse("#2c3e50")
+                    ValueLabel = $"{vm.RefData.User.SelectedTypeOfRegime.ProteinPercentage * 100} %",
+                    ValueLabelColor = SKColor.Parse("#29aae3"),
+                    TextColor = SKColor.Parse("#29aae3"),
+                    Color = SKColor.Parse("#29aae3")
                 },
-                new ChartEntry((float)vm.RefData.User.SelectedTypeOfRegime.CarbsPercentage * 100)
+                new ChartEntry((float)vm.CarbsPercentage)
                 {
                     Label = "Carbs",
-                    ValueLabel = (vm.RefData.User.SelectedTypeOfRegime.CarbsPercentage * 100).ToString(),
+                    ValueLabel = $"{vm.RefData.User.SelectedTypeOfRegime.CarbsPercentage * 100} %",
                     ValueLabelColor = SKColor.Parse("#77d065"),
                     TextColor = SKColor.Parse("#77d065"),
                     Color = SKColor.Parse("#77d065")
                 },
-                new ChartEntry((float)vm.RefData.User.SelectedTypeOfRegime.FatsPercentage * 100)
+                new ChartEntry((float)vm.FatsPercentage)
                 {
                     Label = "Fats",
                     ValueLabelColor = SKColor.Parse("#b455b6"),
                     TextColor = SKColor.Parse("#b455b6"),
-                    ValueLabel = (vm.RefData.User.SelectedTypeOfRegime.FatsPercentage * 100).ToString(),
+                    ValueLabel = $"{vm.RefData.User.SelectedTypeOfRegime.FatsPercentage * 100} %",
                     Color = SKColor.Parse("#b455b6")
                 }
             };
@@ -57,8 +57,8 @@ namespace MealPlanner.Views
             {
                 Entries = entries,
                 BackgroundColor = Color.Transparent.ToSKColor(),
-                LabelMode = LabelMode.RightOnly,
-                LabelTextSize = 38
+                LabelMode = LabelMode.LeftAndRight,
+                LabelTextSize = 40
 
             };
             chartView.Chart = chart;
@@ -66,6 +66,25 @@ namespace MealPlanner.Views
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
+            InitChart();
+        }
+
+        private async void RSNumericEntry_Completed(object sender, EventArgs e)
+        {
+            var vm = BindingContext as MacrosViewModel;
+            vm.OnPropertyChangedPercentageSum100();
+
+            if (vm.IsMacroPercentageSum100)
+            {
+                vm.RefData.User.SelectedTypeOfRegime.ProteinPercentage = vm.ProtsPercentage / 100;
+                vm.RefData.User.SelectedTypeOfRegime.CarbsPercentage = vm.CarbsPercentage / 100;
+                vm.RefData.User.SelectedTypeOfRegime.FatsPercentage = vm.FatsPercentage / 100;
+                vm.RefData.UpdateDailyValues();
+
+                //await App.DataBaseRepo.UpdateUserAsync(vm.RefData.User);
+                await App.DataBaseRepo.UpdateTypeOfRegimeItemAsync(vm.RefData.User.SelectedTypeOfRegime);
+            }
+
             InitChart();
         }
     }

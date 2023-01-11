@@ -4,11 +4,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using static MealPlanner.Models.User;
 
 namespace MealPlanner.Services
 {
     public interface IDataBase
     {
+        // TypeOfRegimeItem
+        Task<TypeOfRegimeItem> GetTypeOfRegimeItemAsync();
+        Task<int> AddTypeOfRegimeItemAsync(TypeOfRegimeItem typeOfRegimeItem);
+        Task<int> UpdateTypeOfRegimeItemAsync(TypeOfRegimeItem typeOfRegimeItem);
+        Task<int> DropTableTypeOfRegimeItem();
+
+
         // JournalTemplate
         Task<JournalTemplate> GetJournalTemplateAsync(int id);
         Task<List<JournalTemplate>> GetAllJournalTemplatesAsync();
