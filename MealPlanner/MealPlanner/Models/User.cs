@@ -307,7 +307,7 @@ namespace MealPlanner.Models
         {
             get 
             { 
-                return $"{Math.Round(DailyProteins, 0)}  /  {Math.Round(TargetProteins, 0)}";
+                return $"{Math.Round(DailyProteins, 0)}  /  {Math.Round(TargetProteins, 0)} g";
             } 
         }
         [Ignore]
@@ -315,7 +315,7 @@ namespace MealPlanner.Models
         {
             get
             { 
-                return $"{Math.Round(DailyCarbs, 0)}  /  {Math.Round(TargetCarbs, 0)}";
+                return $"{Math.Round(DailyCarbs, 0)}  /  {Math.Round(TargetCarbs, 0)} g";
             } 
         }
         [Ignore]
@@ -323,7 +323,7 @@ namespace MealPlanner.Models
         { 
             get
             { 
-                return $"{Math.Round(DailyFats, 0)}  /  {Math.Round(TargetFats, 0 )}";
+                return $"{Math.Round(DailyFats, 0)}  /  {Math.Round(TargetFats, 0 )} g";
             } 
         }
 

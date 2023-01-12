@@ -128,7 +128,7 @@
                     </Grid>
                 </Frame>
 
-                <StackLayout Style="{StaticResource BindableView}" BindableLayout.ItemsSource="{Binding RefData.Meals}">
+                <StackLayout Style="{StaticResource BindableView}" BindableLayout.ItemsSource="{Binding RefData.Meals}" Margin="0, 5, 0, 10">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:Meal">
                             <StackLayout x:Name="meal">

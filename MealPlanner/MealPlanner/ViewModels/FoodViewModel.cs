@@ -145,7 +145,7 @@ namespace MealPlanner.ViewModels
                 mealAlimentToUpdate.ServingSize = mealAliment.ServingSize;
             }
 
-            //await Shell.Current.Navigation.PopAsync();
+            await Shell.Current.Navigation.PopAsync();
         }
 
         public ICommand RemoveAlimentCommand { get; set; }
