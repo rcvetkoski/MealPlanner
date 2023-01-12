@@ -223,12 +223,12 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        private AddAlimentPage addAlimentPage;
+        //private AddAlimentPage addAlimentPage;
         public ICommand AddAlimentCommand { get; set; }
         private async void AddAliment(Meal meal)
         {
-            if(addAlimentPage == null)
-                addAlimentPage = new AddAlimentPage();
+            //if(addAlimentPage == null)
+            var addAlimentPage = new AddAlimentPage();
 
             (addAlimentPage.BindingContext as AddAlimentViewModel).SelectedMeal = meal;
             await App.Current.MainPage.Navigation.PushAsync(addAlimentPage);
