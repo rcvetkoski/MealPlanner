@@ -467,7 +467,7 @@ namespace MealPlanner.ViewModels
         public ICommand FilterAlimentsCommand { get; set; }
         private async void FilterAliments()
         {
-            var actionSheet = await Shell.Current.CurrentPage.DisplayActionSheet("", "Cancel", "", "Sort by Name", "Sort by Calories", "Sort by Proteins", "Sort by Carbs", "Sort by Fats");
+            var actionSheet = await Shell.Current.CurrentPage.DisplayActionSheet(null, "Cancel", null, "Sort by Name", "Sort by Calories", "Sort by Proteins", "Sort by Carbs", "Sort by Fats");
 
             switch (actionSheet)
             {

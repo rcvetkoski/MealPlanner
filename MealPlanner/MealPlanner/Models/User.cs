@@ -554,7 +554,7 @@ namespace MealPlanner.Models
             {
                 get
                 {
-                    return $"Carbs {proteinPercentage * 100}%, Proteins {CarbsPercentage * 100}%, Fats {FatsPercentage * 100}%";
+                    return $"Proteins {proteinPercentage * 100}%, Carbs {CarbsPercentage * 100}%, Fats {FatsPercentage * 100}%";
                 }
             }
 

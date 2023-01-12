@@ -16,8 +16,8 @@ namespace MealPlanner.ViewModels
         public ICommand OpenUserPageCommand { get; set; }
         private async void OpenUserPage()
         {
-            //await Shell.Current.GoToAsync($"{nameof(UserPage)}");
-            await App.Current.MainPage.Navigation.PushAsync(new UserPage());
+            await Shell.Current.GoToAsync($"{nameof(UserPage)}");
+            //await App.Current.MainPage.Navigation.PushAsync(new UserPage());
         }
 
         public ICommand OpenObjectifsPageCommand { get; set; }

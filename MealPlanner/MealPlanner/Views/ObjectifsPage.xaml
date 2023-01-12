@@ -19,8 +19,8 @@
                 <StackLayout BindableLayout.ItemsSource="{Binding RefData.Objectifs}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <Frame Style="{StaticResource JournalTemplateCard}">
-                                <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto, *" RowSpacing="0">
+                            <Frame Style="{StaticResource JournalTemplateCard}" VerticalOptions="Start" HeightRequest="{Binding Height, Source={x:Reference grid}}">
+                                <Grid x:Name="grid" RowDefinitions="Auto,Auto" ColumnDefinitions="Auto, *" RowSpacing="0">
                                     <RadioButton Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" x:Name="radioButton" GroupName="objectifs" IsChecked="{Binding IsSelected}" Style="{StaticResource RadioButton}"/>
                                     <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelMediumBold}" Text="{Binding Name}"/>
                                     <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" Text="{Binding Description}"/>

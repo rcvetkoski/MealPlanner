@@ -11,6 +11,7 @@ using Microcharts;
 using SkiaSharp.Views.Forms;
 using MealPlanner.ViewModels;
 using static MealPlanner.Models.User;
+using Xamarin.Essentials;
 
 namespace MealPlanner.Views
 {
@@ -61,21 +62,21 @@ namespace MealPlanner.Views
                     Color = SKColor.Parse("#b455b6")
                 }
             };
+
+            // Get Metrics
+            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
+            // Screen density
+            var density = mainDisplayInfo.Density;
+            var size = Device.GetNamedSize(NamedSize.Small, typeof(Label), useOldSizes: false) * density;
+
             var chart = new DonutChart()
             {
                 Entries = entries,
                 BackgroundColor = Color.Transparent.ToSKColor(),
                 LabelMode = LabelMode.LeftAndRight,
-                LabelTextSize = 40
-
+                LabelTextSize = (float)size
             };
             chartView.Chart = chart;
-        }
-
-        private void radioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-            if(!(sender as RadioButton).IsChecked)
-                InitChart();
         }
     }
 }

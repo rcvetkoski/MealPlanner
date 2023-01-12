@@ -119,7 +119,7 @@ namespace MealPlanner.Models
         { 
             get
             {
-                return $"P: {Math.Round(Proteins, 2)},  C: {Math.Round(Carbs, 2)},  F: {Math.Round(Fats, 2)}";
+                return $"P: {Math.Round(Proteins, 2)}  C: {Math.Round(Carbs, 2)}  F: {Math.Round(Fats, 2)}";
             } 
         }
         [Ignore]

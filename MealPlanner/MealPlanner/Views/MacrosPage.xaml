@@ -15,7 +15,8 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
-        </ResourceDictionary>
+            <converters:MultiBindingConverter x:Key="MultiBindingConverter"/>
+        </ResourceDictionary> 
     </ContentPage.Resources>
 
     <ContentPage.Content>
@@ -26,14 +27,21 @@
                 <StackLayout BindableLayout.ItemsSource="{Binding RefData.TypesOfRegime}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <Frame Style="{StaticResource JournalTemplateCard}">
-                                <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto, *" RowSpacing="0">
-                                    <RadioButton Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" x:Name="radioButton" GroupName="macros" IsChecked="{Binding IsSelected}" CheckedChanged="radioButton_CheckedChanged" Style="{StaticResource RadioButton}"/>
+                            <Frame Style="{StaticResource JournalTemplateCard}" VerticalOptions="Start" HeightRequest="{Binding Height, Source={x:Reference grid}}">
+                                <Grid x:Name="grid" RowDefinitions="Auto,Auto" ColumnDefinitions="Auto, *" RowSpacing="0">
+                                    <RadioButton Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" x:Name="radioButton" GroupName="macros" IsChecked="{Binding IsSelected}" Style="{StaticResource RadioButton}"/>
                                     <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelMediumBold}" Text="{Binding Name}"/>
                                     <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" Text="{Binding Description}"/>
                                 </Grid>
                                 <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding BindingContext.SelectTypeOfRegimeCommand , Source={x:Reference macrosPage}}" CommandParameter="{Binding ., Source={x:Reference radioButton}}" />
+                                    <TapGestureRecognizer Command="{Binding BindingContext.SelectTypeOfRegimeCommand , Source={x:Reference macrosPage}}">
+                                        <TapGestureRecognizer.CommandParameter>
+                                            <MultiBinding Converter="{StaticResource MultiBindingConverter}">
+                                                <Binding Path="." Source="{x:Reference radioButton}"/>
+                                                <Binding Path="." Source="{x:Reference macrosPage}"/>
+                                            </MultiBinding>
+                                        </TapGestureRecognizer.CommandParameter>
+                                    </TapGestureRecognizer>
                                 </Frame.GestureRecognizers>
                             </Frame>
                         </DataTemplate>
@@ -57,17 +65,17 @@
                         <BoxView BackgroundColor="Gray" HeightRequest="1" Margin="0, 5, 0, 5"/>
 
                         <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*, *, *, Auto" RowSpacing="0">
-                            <Label Grid.Row="0" Grid.Column="0" Text="Proteins" TextColor="#29aae3" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding RefData.User.TargetProteins, StringFormat='{0:N0} g'}" TextColor="#29aae3" HorizontalOptions="Center"/>
-                            <Label Grid.Row="2" Grid.Column="0" Text="{Binding ProtsCalories, StringFormat='{0:N0} kcal'}" TextColor="#29aae3" HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" Grid.Column="0" FontSize="Small" Text="Proteins" TextColor="#29aae3" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="0" FontSize="Small" Text="{Binding RefData.User.TargetProteins, StringFormat='{0:N0} g'}" TextColor="#29aae3" HorizontalOptions="Center"/>
+                            <Label Grid.Row="2" Grid.Column="0" FontSize="Small" Text="{Binding ProtsCalories, StringFormat='{0:N0} kcal'}" TextColor="#29aae3" HorizontalOptions="Center"/>
 
-                            <Label Grid.Row="0" Grid.Column="1" Text="Carbs" TextColor="#77d065" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding RefData.User.TargetCarbs, StringFormat='{0:N0} g'}" TextColor="#77d065" HorizontalOptions="Center"/>
-                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding CarbsCalories, StringFormat='{0:N0} kcal'}" TextColor="#77d065" HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" Grid.Column="1" FontSize="Small" Text="Carbs" TextColor="#77d065" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="1" FontSize="Small" Text="{Binding RefData.User.TargetCarbs, StringFormat='{0:N0} g'}" TextColor="#77d065" HorizontalOptions="Center"/>
+                            <Label Grid.Row="2" Grid.Column="1" FontSize="Small" Text="{Binding CarbsCalories, StringFormat='{0:N0} kcal'}" TextColor="#77d065" HorizontalOptions="Center"/>
 
-                            <Label Grid.Row="0" Grid.Column="2" Text="Fats" TextColor="#b455b6" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding RefData.User.TargetFats, StringFormat='{0:N0} g'}" TextColor="#b455b6" HorizontalOptions="Center"/>
-                            <Label Grid.Row="2" Grid.Column="2" Text="{Binding FatsCalories, StringFormat='{0:N0} kcal'}" TextColor="#b455b6" HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" Grid.Column="2" FontSize="Small" Text="Fats" TextColor="#b455b6" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="2" FontSize="Small" Text="{Binding RefData.User.TargetFats, StringFormat='{0:N0} g'}" TextColor="#b455b6" HorizontalOptions="Center"/>
+                            <Label Grid.Row="2" Grid.Column="2" FontSize="Small" Text="{Binding FatsCalories, StringFormat='{0:N0} kcal'}" TextColor="#b455b6" HorizontalOptions="Center"/>
 
                             <Button Grid.Row="0" Grid.RowSpan="3" Grid.Column="3" 
                                     WidthRequest="40"

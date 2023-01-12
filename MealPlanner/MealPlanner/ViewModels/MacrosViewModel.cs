@@ -13,14 +13,17 @@ namespace MealPlanner.ViewModels
         public MacrosViewModel()
         {
             Title = "Macros";
-            SelectTypeOfRegimeCommand = new Command<RadioButton>(TypeOfRegime);
+            SelectTypeOfRegimeCommand = new Command<object[]>(TypeOfRegime);
             IsTypeOfRegimeItemCustom = RefData.User.SelectedTypeOfRegime.Name == "Custom" ? true : false;
             OpenEditMacrosPageCommand = new Command(OpenEditMacrosPage);
         }
 
         public ICommand SelectTypeOfRegimeCommand { get; set; }
-        private async void TypeOfRegime(RadioButton radioButton)
+        private async void TypeOfRegime(object[] objects)
         {
+            RadioButton radioButton = objects[0] as RadioButton;
+            MacrosPage macrosPage = objects[1] as MacrosPage;
+
             if (radioButton.IsChecked)
                 return;
 
@@ -29,6 +32,7 @@ namespace MealPlanner.ViewModels
             RefData.User.SelectedTypeOfRegime = typeOfRegimeItem;
             IsTypeOfRegimeItemCustom = RefData.User.SelectedTypeOfRegime.Name == "Custom" ? true : false;
             InitProperties();
+            macrosPage.InitChart();
             await App.DataBaseRepo.UpdateUserAsync(RefData.User);
         }
 

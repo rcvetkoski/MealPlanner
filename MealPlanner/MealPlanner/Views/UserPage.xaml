@@ -31,7 +31,7 @@
 
                 <Label Style="{StaticResource LabelMedium}" Text="Profil"/>
                 <Frame Style="{StaticResource UserCard}">
-                    <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto">
+                    <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto">
                         <rsControls:RSEntry x:Name="nameEntry" 
                                             Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                                             ReturnType="Next" 
