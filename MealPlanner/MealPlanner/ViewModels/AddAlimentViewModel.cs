@@ -191,8 +191,6 @@ namespace MealPlanner.ViewModels
                 foodPageVm.IsNew = true;
                 foodPageVm.CurrentAliment = existingAliment;
                 foodPageVm.SelectedRecipe = CurrentRecipe;
-                //foodPageVm.InitProperties(existingAliment);
-                //foodPageVm.Title = $"{existingAliment.Name}";
                 foodPageVm.SelectedMeal = SelectedMeal;
                 foodPageVm.CurrentAliment.ServingSize = 100;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
@@ -209,8 +207,6 @@ namespace MealPlanner.ViewModels
                 FoodPage foodPage = new FoodPage();
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
                 foodPageVm.CurrentAliment = existingAliment;
-                //foodPageVm.InitProperties(existingAliment);
-                //foodPageVm.Title = $"{existingAliment.Name}";
                 foodPageVm.SelectedMeal = SelectedMeal;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
                 foodPageVm.SelectedRecipe = CurrentRecipe;
@@ -219,103 +215,6 @@ namespace MealPlanner.ViewModels
                 await Application.Current.MainPage.Navigation.PushAsync(foodPage);
                 return;
             }
-
-
-
-
-
-            RSPopup rSPopup = new RSPopup("", "", Xamarin.RSControls.Enums.RSPopupPositionEnum.Bottom);
-            rSPopup.SetPopupAnimation(Xamarin.RSControls.Enums.RSPopupAnimationEnum.BottomToTop);
-            rSPopup.Title = existingAliment.Name;
-            rSPopup.Style = Application.Current.Resources["RSPopup"] as Style;
-            AlimentPopUpViewModel rsPopupBindingContext;
-            RSPopupAlimentDetailPage rSPopupAlimentDetailPage = new RSPopupAlimentDetailPage();
-            rSPopupAlimentDetailPage.BindingContext = new AlimentPopUpViewModel(existingAliment);
-            rsPopupBindingContext = rSPopupAlimentDetailPage.BindingContext as AlimentPopUpViewModel;
-            rSPopup.SetCustomView(rSPopupAlimentDetailPage);
-            rSPopup.SetMargin(20, 20, 20, 20);
-
-            // Add
-            if (SelectedMeal != null)
-            {
-                rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(async () =>
-                {
-                    if (RecipeSwitchVisibility)
-                    {
-                        var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
-                        Aliment aliment = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio);
-                        aliment.ServingSize = rsPopupBindingContext.AlimentServingSize;
-
-                        // Add aliment
-                        RefData.AddAliment(aliment, SelectedMeal);
-                    }
-                    else // When adding food to recipe
-                    {
-                        var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
-                        Food food = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio) as Food;
-                        food.ServingSize = rsPopupBindingContext.AlimentServingSize;
-
-                        // Set RecipeFoodId to 0
-                        food.RecipeFoodId = 0;
-
-                        CurrentRecipe.Foods.Add(food);
-                    }
-
-                    //rSPopup.Close();
-                    //await Shell.Current.GoToAsync("..");
-                    await Shell.Current.Navigation.PopAsync();
-                    //await Application.Current.MainPage.Navigation.PopAsync();
-                }));
-            }
-            else if(CurrentRecipe != null)
-            {
-                rSPopup.AddAction("Add", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Positive, new Command(async () =>
-                {
-                    var ratio = rsPopupBindingContext.AlimentServingSize / existingAliment.OriginalServingSize;
-                    Food food = RefData.CreateAndCopyAlimentProperties(existingAliment, ratio) as Food;
-                    food.ServingSize = rsPopupBindingContext.AlimentServingSize;
-
-                    // Set RecipeFoodId to 0
-                    food.RecipeFoodId = 0;
-
-                    
-                    CurrentRecipe.Foods.Add(food);
-
-                    //rSPopup.Close();
-                    //await Shell.Current.GoToAsync("..");
-                    await Shell.Current.Navigation.PopAsync();
-                    //await Application.Current.MainPage.Navigation.PopAsync();
-                }));
-            }
-
-            // Edit
-            rSPopup.AddAction("Edit", Xamarin.RSControls.Enums.RSPopupButtonTypeEnum.Neutral, new Command(async () =>
-            {
-                if (existingAliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
-                {
-                    EditFoodPage foodPage = new EditFoodPage();
-                    (foodPage.BindingContext as EditFoodViewModel).CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
-                    (foodPage.BindingContext as EditFoodViewModel).IsNew = false;
-                    (foodPage.BindingContext as EditFoodViewModel).CopyOfFilteredAliments = FilteredAliments;
-
-                    await Shell.Current.Navigation.PushAsync(foodPage);
-                    //await App.Current.MainPage.Navigation.PushAsync(foodPage);
-                }
-                else
-                {
-                    RecipePage recipePage = new RecipePage();
-                    var recipePageBindingContext = recipePage.BindingContext as RecipeViewModel;
-                    recipePageBindingContext.SelectedMeal = SelectedMeal;
-                    recipePageBindingContext.CurrentAliment = RefData.CreateAndCopyAlimentProperties(existingAliment);
-                    recipePageBindingContext.IsNew = false;
-                    recipePageBindingContext.CopyOfFilteredAliments = FilteredAliments;
-
-                    await Shell.Current.Navigation.PushAsync(recipePage);
-                    //await App.Current.MainPage.Navigation.PushAsync(recipePage);
-                }
-                rSPopup.Close();
-            }));
-            rSPopup.Show();
         }
 
         public ICommand CreateNewAlimentCommand { get; set; }

@@ -28,6 +28,7 @@ namespace MealPlanner.ViewModels
             UpdateCommand = new Command<RecipePage>(UpdateRecipe);
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             DelettedRecipeFoods = new List<RecipeFood>();
+            AddStepCommand = new Command(AddStep);
         }
 
         public ObservableCollection<Aliment> CopyOfFilteredAliments { get; set; }
@@ -256,7 +257,18 @@ namespace MealPlanner.ViewModels
             (CurrentAliment as Recipe).Foods.Remove(food);
             var recipeFood = RefData.RecipeFoods.Where(x => x.Id == food.RecipeFoodId).FirstOrDefault();
             DelettedRecipeFoods.Add(recipeFood);
+            CurrentAliment.ServingSize -= food.ServingSize;
         }
         private List<RecipeFood> DelettedRecipeFoods { get; set; }
+
+
+        /// <summary>
+        /// Add preparation step description
+        /// </summary>
+        public ICommand AddStepCommand { get; set; }
+        private async void AddStep()
+        {
+            string result = await App.Current.MainPage.DisplayPromptAsync("Add step", null);
+        }
     }
 }

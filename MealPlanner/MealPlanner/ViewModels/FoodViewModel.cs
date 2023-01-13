@@ -102,6 +102,7 @@ namespace MealPlanner.ViewModels
                 // Set RecipeFoodId to 0
                 (aliment as Food).RecipeFoodId = 0;
                 SelectedRecipe.Foods.Add((aliment as Food));
+                SelectedRecipe.ServingSize += aliment.ServingSize;
             }
 
             await Shell.Current.Navigation.PopAsync();

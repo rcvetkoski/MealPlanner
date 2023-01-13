@@ -200,7 +200,7 @@
                         <Button Text="Add Step" 
                                 TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                                Command="{Binding AddFoodCommand}"
+                                Command="{Binding AddStepCommand}"
                                 HorizontalOptions="Center">
                             <Button.ImageSource>
                                 <FontImageSource Size="22" 
