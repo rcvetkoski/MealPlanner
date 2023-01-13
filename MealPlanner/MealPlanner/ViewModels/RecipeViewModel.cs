@@ -28,7 +28,9 @@ namespace MealPlanner.ViewModels
             UpdateCommand = new Command<RecipePage>(UpdateRecipe);
             DeletteAlimentCommand = new Command<object[]>(DeletteAliment);
             DelettedRecipeFoods = new List<RecipeFood>();
-            AddStepCommand = new Command(AddStep);
+            DelettedRecipeInstructions = new List<RecipeInstruction>();
+            AddRecipeInstructionCommand = new Command(AddRecipeInstruction);
+            RemoveRecipeInstructionCommand = new Command<RecipeInstruction>(RemoveRecipeInstruction);
         }
 
         public ObservableCollection<Aliment> CopyOfFilteredAliments { get; set; }
@@ -49,7 +51,7 @@ namespace MealPlanner.ViewModels
             CopyOfFilteredAliments?.Add(CurrentAliment as Recipe);
             await App.DataBaseRepo.AddRecipeAsync(CurrentAliment as Recipe);
 
-            //Save foods in db
+            // Save foods in db
             foreach (Food food in (CurrentAliment as Recipe).Foods)
             {
                 RecipeFood recipeFood = new RecipeFood();
@@ -59,6 +61,18 @@ namespace MealPlanner.ViewModels
                 await App.DataBaseRepo.AddRecipeFoodAsync(recipeFood);
                 food.RecipeFoodId = recipeFood.Id;
                 RefData.RecipeFoods.Add(recipeFood);
+            }
+
+            // Save RecipeInstructions in db
+            foreach (RecipeInstruction recipeInstruction in (CurrentAliment as Recipe).RecipeInstructions)
+            {
+                await App.DataBaseRepo.AddRecipeInstructionAsync(recipeInstruction);
+                RecipeRecipeInstruction recipeRecipeInstruction = new RecipeRecipeInstruction()
+                {
+                    RecipeId = CurrentAliment.Id,
+                    RecipeInstructionId = recipeInstruction.Id
+                };
+                await App.DataBaseRepo.AddRecipeRecipeInstructionAsync(recipeRecipeInstruction);
             }
 
             // Update recipe values
@@ -90,7 +104,7 @@ namespace MealPlanner.ViewModels
             var mealAliments = RefData.MealAliments.Where(x => x.AlimentId == originalRecipe.Id);
 
 
-            // If it si not used than just update otherwise we need to set archived flag on the used ones and create new recipe
+            // If it is not used than just update otherwise we need to set archived flag on the used ones and create new recipe
             if(!mealAliments.Any())
             {
                 originalRecipe.Name = CurrentAliment.Name;
@@ -104,6 +118,7 @@ namespace MealPlanner.ViewModels
                 originalRecipe.ServingSize = CurrentAliment.ServingSize;
                 originalRecipe.Unit = CurrentAliment.Unit;
                 originalRecipe.Foods = (CurrentAliment as Recipe).Foods;
+                originalRecipe.RecipeInstructions = (CurrentAliment as Recipe).RecipeInstructions;
 
                 // Remove deletted RecipeFoods
                 foreach (var recipeFood in DelettedRecipeFoods)
@@ -112,6 +127,17 @@ namespace MealPlanner.ViewModels
                     {
                         RefData.RecipeFoods.Remove(recipeFood);
                         await App.DataBaseRepo.DeleteRecipeFoodAsync(recipeFood);
+                    }
+                }
+                DelettedRecipeFoods.Clear();
+
+
+                // Remove deletted RecipeInstructions
+                foreach (var recipeInstruction in DelettedRecipeInstructions)
+                {
+                    if (recipeInstruction != null)
+                    {
+                        //await App.DataBaseRepo.recipein(recipeInstruction);
                     }
                 }
                 DelettedRecipeFoods.Clear();
@@ -177,6 +203,7 @@ namespace MealPlanner.ViewModels
 
                 // Create new recipe
                 Recipe recipe = RefData.CreateAndCopyAlimentProperties(CurrentAliment) as Recipe;
+                recipe.OriginalServingSize = CurrentAliment.ServingSize;
                 await App.DataBaseRepo.AddRecipeAsync(recipe);
                 RefData.Recipes.Add(recipe);
                 RefData.Aliments.Add(recipe);
@@ -192,6 +219,18 @@ namespace MealPlanner.ViewModels
                     await App.DataBaseRepo.AddRecipeFoodAsync(recipeFood);
                     food.RecipeFoodId = recipeFood.Id;
                     RefData.RecipeFoods.Add(recipeFood);
+                }
+
+                // Save RecipeInstructions in db
+                foreach (RecipeInstruction recipeInstruction in (CurrentAliment as Recipe).RecipeInstructions)
+                {
+                    await App.DataBaseRepo.AddRecipeInstructionAsync(recipeInstruction);
+                    RecipeRecipeInstruction recipeRecipeInstruction = new RecipeRecipeInstruction()
+                    {
+                        RecipeId = recipe.Id,
+                        RecipeInstructionId = recipeInstruction.Id
+                    };
+                    await App.DataBaseRepo.AddRecipeRecipeInstructionAsync(recipeRecipeInstruction);
                 }
 
                 // Update recipe values
@@ -227,7 +266,6 @@ namespace MealPlanner.ViewModels
                     }
                 }
 
-
                 await Shell.Current.Navigation.PopAsync();
             }
         }
@@ -260,15 +298,43 @@ namespace MealPlanner.ViewModels
             CurrentAliment.ServingSize -= food.ServingSize;
         }
         private List<RecipeFood> DelettedRecipeFoods { get; set; }
+        private List<RecipeInstruction> DelettedRecipeInstructions { get; set; }
 
 
         /// <summary>
         /// Add preparation step description
         /// </summary>
-        public ICommand AddStepCommand { get; set; }
-        private async void AddStep()
+        public ICommand AddRecipeInstructionCommand { get; set; }
+        private async void AddRecipeInstruction()
         {
-            string result = await App.Current.MainPage.DisplayPromptAsync("Add step", null);
+            string result = await App.Current.MainPage.DisplayPromptAsync("Add recipe instruction", null);
+
+            if (string.IsNullOrEmpty(result))
+                return;
+
+            int order = 1;
+            var lastRecipeInstruction = (CurrentAliment as Recipe).RecipeInstructions.OrderByDescending(x => x.Order).FirstOrDefault();
+            if (lastRecipeInstruction != null)
+                order = lastRecipeInstruction.Order + 1;
+
+            RecipeInstruction recipeInstruction = new RecipeInstruction()
+            {
+                Order = order,
+                Description = result
+            };
+
+            (CurrentAliment as Recipe).RecipeInstructions.Add(recipeInstruction);
+        }
+
+
+        /// <summary>
+        /// Remove preparation step description
+        /// </summary>
+        public ICommand RemoveRecipeInstructionCommand { get; set; }
+        private void RemoveRecipeInstruction(RecipeInstruction recipeInstruction)
+        {
+            (CurrentAliment as Recipe).RecipeInstructions.Remove(recipeInstruction);
+            DelettedRecipeInstructions.Add(recipeInstruction);
         }
     }
 }

@@ -41,6 +41,8 @@ namespace MealPlanner.Services
             dbConnection.CreateTableAsync<LogMeal>();
             dbConnection.CreateTableAsync<User>();
             dbConnection.CreateTableAsync<Recipe>();
+            dbConnection.CreateTableAsync<RecipeInstruction>();
+            dbConnection.CreateTableAsync<RecipeRecipeInstruction>();
             dbConnection.CreateTableAsync<Food>();
             dbConnection.CreateTableAsync<TemplateMeal>();
             dbConnection.CreateTableAsync<Meal>();
@@ -466,6 +468,103 @@ namespace MealPlanner.Services
         public Task<int> DropTableRecipe()
         {
             return dbConnection.DropTableAsync<Recipe>();
+        }
+
+        #endregion
+
+        #region RecipeInstruction
+
+        /// <summary>
+        /// Returns a RecipeInstruction object
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<RecipeInstruction> GetRecipeInstructionAsync(int id)
+        {
+            return dbConnection.GetAsync<RecipeInstruction>(id);
+        }
+
+        /// <summary>
+        /// Returns a list of RecipeInstructions
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<RecipeInstruction>> GetAllRecipeInstructionsAsync()
+        {
+            return dbConnection.Table<RecipeInstruction>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts new RecipeInstruction in database
+        /// </summary>
+        /// <param name="recipe"></param>
+        /// <returns></returns>
+        public Task<int> AddRecipeInstructionAsync(RecipeInstruction recipeInstruction)
+        {
+            return dbConnection.InsertAsync(recipeInstruction);
+        }
+
+        /// <summary>
+        /// Updates a RecipeInstruction in database if it exists
+        /// </summary>
+        /// <param name="recipeInstruction"></param>
+        /// <returns></returns>
+        public Task<int> UpdateRecipeInstructionAsync(RecipeInstruction recipeInstruction)
+        {
+            if (GetRecipeInstructionAsync(recipeInstruction.Id) != null)
+                return dbConnection.UpdateAsync(recipeInstruction);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableRecipeInstruction()
+        {
+            return dbConnection.DropTableAsync<RecipeInstruction>();
+        }
+
+        #endregion
+
+        #region RecipeRecipeInstruction
+
+        /// <summary>
+        /// Returns a RecipeRecipeInstruction object
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<RecipeRecipeInstruction> GetRecipeRecipeInstructionAsync(int id)
+        {
+            return dbConnection.GetAsync<RecipeRecipeInstruction>(id);
+        }
+
+        /// <summary>
+        /// Returns a list of RecipeRecipeInstruction
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<RecipeRecipeInstruction>> GetAllRecipeRecipeInstructionsAsync()
+        {
+            return dbConnection.Table<RecipeRecipeInstruction>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts new RecipeRecipeInstruction in database
+        /// </summary>
+        /// <param name="recipeRecipeInstruction"></param>
+        /// <returns></returns>
+        public Task<int> AddRecipeRecipeInstructionAsync(RecipeRecipeInstruction recipeRecipeInstruction)
+        {
+            return dbConnection.InsertAsync(recipeRecipeInstruction);
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableRecipeRecipeInstruction()
+        {
+            return dbConnection.DropTableAsync<RecipeRecipeInstruction>();
         }
 
         #endregion

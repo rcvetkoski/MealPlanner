@@ -192,7 +192,7 @@ namespace MealPlanner.ViewModels
                 foodPageVm.CurrentAliment = existingAliment;
                 foodPageVm.SelectedRecipe = CurrentRecipe;
                 foodPageVm.SelectedMeal = SelectedMeal;
-                foodPageVm.CurrentAliment.ServingSize = 100;
+                foodPageVm.CurrentAliment.ServingSize = existingAliment.ServingSize;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
                 foodPageVm.CanDeleteItem = false;
                 foodPageVm.CanAddItem = !RecipeSwitchVisibility || SelectedMeal != null ? true : false;
@@ -207,6 +207,7 @@ namespace MealPlanner.ViewModels
                 FoodPage foodPage = new FoodPage();
                 FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
                 foodPageVm.CurrentAliment = existingAliment;
+                foodPageVm.IsNew = false;
                 foodPageVm.SelectedMeal = SelectedMeal;
                 foodPageVm.CopyOfFilteredAliments = FilteredAliments;
                 foodPageVm.SelectedRecipe = CurrentRecipe;

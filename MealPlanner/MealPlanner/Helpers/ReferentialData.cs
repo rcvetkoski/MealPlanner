@@ -141,6 +141,22 @@ namespace MealPlanner.Helpers
                     recipe.Foods.Add(food);
             }
 
+            // Add RecipeInstruction to recipe
+            var recipeInstructions = App.DataBaseRepo.GetAllRecipeInstructionsAsync().Result;
+            var recipeRecipeInstructions = App.DataBaseRepo.GetAllRecipeRecipeInstructionsAsync().Result;
+            foreach (Recipe recipe in Recipes)
+            {
+                foreach(RecipeRecipeInstruction recipeRecipeInstruction in recipeRecipeInstructions)
+                {
+                    if(recipeRecipeInstruction.RecipeId == recipe.Id)
+                    {
+                        RecipeInstruction recipeInstruction = recipeInstructions.FirstOrDefault(x => x.Id == recipeRecipeInstruction.RecipeInstructionId);
+                        if (recipeInstruction != null)
+                            recipe.RecipeInstructions.Add(recipeInstruction);
+                    }
+                }
+            }
+
             // Meal Aliments
             MealAliments = App.DataBaseRepo.GetAllMealAlimentsAsync().Result.ToObservableCollection();
 
@@ -475,6 +491,9 @@ namespace MealPlanner.Helpers
                 (aliment as Recipe).Description = (existingAliment as Recipe).Description;
                 foreach(Food food in (existingAliment as Recipe).Foods)
                     (aliment as Recipe).Foods.Add(food);
+
+                foreach(RecipeInstruction recipeInstruction in (existingAliment as Recipe).RecipeInstructions)
+                    (aliment as Recipe).RecipeInstructions.Add(recipeInstruction);
             }
             else
             {

@@ -29,10 +29,29 @@ namespace MealPlanner.Models
             }
         }
 
+        private ObservableCollection<RecipeInstruction> recipeInstructions;
+        [Ignore]
+        public ObservableCollection<RecipeInstruction> RecipeInstructions
+        {
+            get
+            {
+                return recipeInstructions;
+            }
+            set
+            {
+                if (recipeInstructions != value)
+                {
+                    recipeInstructions = value;
+                    OnPropertyChanged("RecipeInstructions");
+                }
+            }
+        }
+
 
         public Recipe()
         {
             Foods = new ObservableCollection<Food>();
+            RecipeInstructions = new ObservableCollection<RecipeInstruction>();
         }
 
         private string description;

@@ -210,7 +210,7 @@
                                                 Text="Add item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                 Command="{Binding BindingContext.AddAlimentCommand, Source={x:Reference Home}}" CommandParameter="{Binding .}">
                                             <Button.ImageSource>
-                                                <FontImageSource Color="SteelBlue"
+                                                <FontImageSource Color="{StaticResource Primary}"
                                                                  Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
                                             </Button.ImageSource>
                                         </Button>

@@ -166,7 +166,23 @@
                     </StackLayout>
                 </Frame>
 
-                <!--<Label Text="Nutritional values" Style="{StaticResource LabelMediumBold}" Margin="20,0,0,0"/>-->
+                <Label Text="Preparation" Style="{StaticResource LabelMediumBold}" IsVisible="{Binding IsPreparationVisible}" Margin="10,0,0,0"/>
+                <Frame Style="{StaticResource JournalTemplateCard}" IsVisible="{Binding IsPreparationVisible}">
+                    <StackLayout BindableLayout.ItemsSource="{Binding CurrentAliment.RecipeInstructions}" Spacing="0">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="models:RecipeInstruction">
+                                <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, *" RowSpacing="0">
+                                    <BoxView Grid.Row="0" Grid.Column="0" VerticalOptions="Center" WidthRequest="28" HeightRequest="28" BackgroundColor="{StaticResource Primary}" CornerRadius="14"/>
+                                    <BoxView Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="Center" WidthRequest="3" BackgroundColor="{StaticResource Primary}"/>
+                                    <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Order}"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="CenterAndExpand" Text="{Binding Description}" Margin="5,0,5,0"/>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </Frame>
+
+
                 <Frame Style="{StaticResource JournalTemplateCard}">
                     <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto ,Auto ,Auto ,Auto ,Auto" ColumnDefinitions="*, auto, Auto" ColumnSpacing="15">
 

@@ -288,6 +288,8 @@ namespace MealPlanner.ViewModels
 
         public bool IsServingQuantityVisible { get; set; }
         public bool IsAlimentsVisible { get; set; }
+        public bool IsPreparationVisible { get; set; }
+
 
         // Calories
         private double alimentCalories;
@@ -472,7 +474,9 @@ namespace MealPlanner.ViewModels
             Title = $"{aliment.Name}";
             IsServingQuantityVisible = aliment.ServingQuantity <= 0 ? false : true;
             IsAlimentsVisible = (aliment.AlimentType == AlimentTypeEnum.Recipe && (aliment as Recipe).Foods.Any()) ? true : false;
+            IsPreparationVisible = (aliment.AlimentType == AlimentTypeEnum.Recipe && (aliment as Recipe).RecipeInstructions.Any()) ? true : false;
             OnPropertyChanged("IsAlimentsVisible");
+            OnPropertyChanged("IsPreparationVisible");
             OnPropertyChanged("IsServingQuantityVisible");
         }
     }
