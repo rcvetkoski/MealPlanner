@@ -517,6 +517,16 @@ namespace MealPlanner.Services
         }
 
         /// <summary>
+        /// Deletes a RecipeInstruction from database
+        /// </summary>
+        /// <param name="recipeInstruction"></param>
+        /// <returns></returns>
+        public Task<int> DeleteRecipeInstructionAsync(RecipeInstruction recipeInstruction)
+        {
+            return dbConnection.DeleteAsync(recipeInstruction);
+        }
+
+        /// <summary>
         /// Drops the table
         /// </summary>
         /// <returns></returns>
@@ -556,6 +566,16 @@ namespace MealPlanner.Services
         public Task<int> AddRecipeRecipeInstructionAsync(RecipeRecipeInstruction recipeRecipeInstruction)
         {
             return dbConnection.InsertAsync(recipeRecipeInstruction);
+        }
+
+        /// <summary>
+        /// Deletes a RecipeRecipeInstruction from database
+        /// </summary>
+        /// <param name="recipeRecipeInstruction"></param>
+        /// <returns></returns>
+        public Task<int> DeleteRecipeRecipeInstructionAsync(RecipeRecipeInstruction recipeRecipeInstruction)
+        {
+            return dbConnection.DeleteAsync(recipeRecipeInstruction);
         }
 
         /// <summary>

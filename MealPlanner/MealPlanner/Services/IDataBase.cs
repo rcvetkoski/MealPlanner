@@ -70,6 +70,8 @@ namespace MealPlanner.Services
         Task<List<RecipeInstruction>> GetAllRecipeInstructionsAsync();
         Task<int> AddRecipeInstructionAsync(RecipeInstruction recipeInstruction);
         Task<int> UpdateRecipeInstructionAsync(RecipeInstruction recipeInstruction);
+        Task<int> DeleteRecipeInstructionAsync(RecipeInstruction recipeInstruction);
+
         Task<int> DropTableRecipeInstruction();
 
 
@@ -77,6 +79,7 @@ namespace MealPlanner.Services
         Task<RecipeRecipeInstruction> GetRecipeRecipeInstructionAsync(int id);
         Task<List<RecipeRecipeInstruction>> GetAllRecipeRecipeInstructionsAsync();
         Task<int> AddRecipeRecipeInstructionAsync(RecipeRecipeInstruction recipeRecipeInstruction);
+        Task<int> DeleteRecipeRecipeInstructionAsync(RecipeRecipeInstruction recipeRecipeInstruction);
         Task<int> DropTableRecipeRecipeInstruction();
 
 

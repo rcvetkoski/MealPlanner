@@ -137,10 +137,10 @@ namespace MealPlanner.ViewModels
                 {
                     if (recipeInstruction != null)
                     {
-                        //await App.DataBaseRepo.recipein(recipeInstruction);
+                        await App.DataBaseRepo.DeleteRecipeInstructionAsync(recipeInstruction);
                     }
                 }
-                DelettedRecipeFoods.Clear();
+                DelettedRecipeInstructions.Clear();
 
 
                 // Update recipe values
@@ -267,6 +267,7 @@ namespace MealPlanner.ViewModels
                 }
 
                 await Shell.Current.Navigation.PopAsync();
+                //await Shell.Current.GoToAsync("../..");
             }
         }
 
