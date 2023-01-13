@@ -9,7 +9,8 @@ namespace MealPlanner.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        
+        public int RecipeId { get; set; }
+
         public int Order { get; set; }
 
         public string Description { get; set; }

@@ -75,14 +75,6 @@ namespace MealPlanner.Services
         Task<int> DropTableRecipeInstruction();
 
 
-        // RecipeRecipeInstruction
-        Task<RecipeRecipeInstruction> GetRecipeRecipeInstructionAsync(int id);
-        Task<List<RecipeRecipeInstruction>> GetAllRecipeRecipeInstructionsAsync();
-        Task<int> AddRecipeRecipeInstructionAsync(RecipeRecipeInstruction recipeRecipeInstruction);
-        Task<int> DeleteRecipeRecipeInstructionAsync(RecipeRecipeInstruction recipeRecipeInstruction);
-        Task<int> DropTableRecipeRecipeInstruction();
-
-
         // Food
         Task<Food> GetFoodAsync(int id);
         Task<List<Food>> GetAllFoodsAsync();

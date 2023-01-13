@@ -143,14 +143,12 @@ namespace MealPlanner.Helpers
 
             // Add RecipeInstruction to recipe
             var recipeInstructions = App.DataBaseRepo.GetAllRecipeInstructionsAsync().Result;
-            var recipeRecipeInstructions = App.DataBaseRepo.GetAllRecipeRecipeInstructionsAsync().Result;
             foreach (Recipe recipe in Recipes)
             {
-                foreach(RecipeRecipeInstruction recipeRecipeInstruction in recipeRecipeInstructions)
+                foreach(RecipeInstruction recipeInstruction in recipeInstructions)
                 {
-                    if(recipeRecipeInstruction.RecipeId == recipe.Id)
+                    if (recipeInstruction.RecipeId == recipe.Id)
                     {
-                        RecipeInstruction recipeInstruction = recipeInstructions.FirstOrDefault(x => x.Id == recipeRecipeInstruction.RecipeInstructionId);
                         if (recipeInstruction != null)
                             recipe.RecipeInstructions.Add(recipeInstruction);
                     }

@@ -66,13 +66,8 @@ namespace MealPlanner.ViewModels
             // Save RecipeInstructions in db
             foreach (RecipeInstruction recipeInstruction in (CurrentAliment as Recipe).RecipeInstructions)
             {
+                recipeInstruction.RecipeId = CurrentAliment.Id;
                 await App.DataBaseRepo.AddRecipeInstructionAsync(recipeInstruction);
-                RecipeRecipeInstruction recipeRecipeInstruction = new RecipeRecipeInstruction()
-                {
-                    RecipeId = CurrentAliment.Id,
-                    RecipeInstructionId = recipeInstruction.Id
-                };
-                await App.DataBaseRepo.AddRecipeRecipeInstructionAsync(recipeRecipeInstruction);
             }
 
             // Update recipe values
@@ -101,7 +96,7 @@ namespace MealPlanner.ViewModels
                 return;
 
             // Check if it is used in meal
-            var mealAliments = RefData.MealAliments.Where(x => x.AlimentId == originalRecipe.Id);
+            var mealAliments = RefData.MealAliments.Where(x => x.AlimentId == originalRecipe.Id && x.AlimentType == AlimentTypeEnum.Recipe);
 
 
             // If it is not used than just update otherwise we need to set archived flag on the used ones and create new recipe
@@ -161,6 +156,15 @@ namespace MealPlanner.ViewModels
                     await App.DataBaseRepo.AddRecipeFoodAsync(recipeFood);
                     food.RecipeFoodId = recipeFood.Id;
                     RefData.RecipeFoods.Add(recipeFood);
+                }
+
+
+                // Add RecipeInstruction to db if any new
+                var newRecipeInstructions = originalRecipe.RecipeInstructions.Where(x => x.Id == 0);
+                foreach (var recipeInstruction in newRecipeInstructions)
+                {
+                    recipeInstruction.RecipeId = originalRecipe.Id;
+                    await App.DataBaseRepo.AddRecipeInstructionAsync(recipeInstruction);    
                 }
 
 
@@ -225,12 +229,6 @@ namespace MealPlanner.ViewModels
                 foreach (RecipeInstruction recipeInstruction in (CurrentAliment as Recipe).RecipeInstructions)
                 {
                     await App.DataBaseRepo.AddRecipeInstructionAsync(recipeInstruction);
-                    RecipeRecipeInstruction recipeRecipeInstruction = new RecipeRecipeInstruction()
-                    {
-                        RecipeId = recipe.Id,
-                        RecipeInstructionId = recipeInstruction.Id
-                    };
-                    await App.DataBaseRepo.AddRecipeRecipeInstructionAsync(recipeRecipeInstruction);
                 }
 
                 // Update recipe values
@@ -321,6 +319,7 @@ namespace MealPlanner.ViewModels
             RecipeInstruction recipeInstruction = new RecipeInstruction()
             {
                 Order = order,
+                RecipeId = CurrentAliment.Id,
                 Description = result
             };
 

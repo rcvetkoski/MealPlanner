@@ -42,7 +42,6 @@ namespace MealPlanner.Services
             dbConnection.CreateTableAsync<User>();
             dbConnection.CreateTableAsync<Recipe>();
             dbConnection.CreateTableAsync<RecipeInstruction>();
-            dbConnection.CreateTableAsync<RecipeRecipeInstruction>();
             dbConnection.CreateTableAsync<Food>();
             dbConnection.CreateTableAsync<TemplateMeal>();
             dbConnection.CreateTableAsync<Meal>();
@@ -533,58 +532,6 @@ namespace MealPlanner.Services
         public Task<int> DropTableRecipeInstruction()
         {
             return dbConnection.DropTableAsync<RecipeInstruction>();
-        }
-
-        #endregion
-
-        #region RecipeRecipeInstruction
-
-        /// <summary>
-        /// Returns a RecipeRecipeInstruction object
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public Task<RecipeRecipeInstruction> GetRecipeRecipeInstructionAsync(int id)
-        {
-            return dbConnection.GetAsync<RecipeRecipeInstruction>(id);
-        }
-
-        /// <summary>
-        /// Returns a list of RecipeRecipeInstruction
-        /// </summary>
-        /// <returns></returns>
-        public Task<List<RecipeRecipeInstruction>> GetAllRecipeRecipeInstructionsAsync()
-        {
-            return dbConnection.Table<RecipeRecipeInstruction>().ToListAsync();
-        }
-
-        /// <summary>
-        /// Inserts new RecipeRecipeInstruction in database
-        /// </summary>
-        /// <param name="recipeRecipeInstruction"></param>
-        /// <returns></returns>
-        public Task<int> AddRecipeRecipeInstructionAsync(RecipeRecipeInstruction recipeRecipeInstruction)
-        {
-            return dbConnection.InsertAsync(recipeRecipeInstruction);
-        }
-
-        /// <summary>
-        /// Deletes a RecipeRecipeInstruction from database
-        /// </summary>
-        /// <param name="recipeRecipeInstruction"></param>
-        /// <returns></returns>
-        public Task<int> DeleteRecipeRecipeInstructionAsync(RecipeRecipeInstruction recipeRecipeInstruction)
-        {
-            return dbConnection.DeleteAsync(recipeRecipeInstruction);
-        }
-
-        /// <summary>
-        /// Drops the table
-        /// </summary>
-        /// <returns></returns>
-        public Task<int> DropTableRecipeRecipeInstruction()
-        {
-            return dbConnection.DropTableAsync<RecipeRecipeInstruction>();
         }
 
         #endregion

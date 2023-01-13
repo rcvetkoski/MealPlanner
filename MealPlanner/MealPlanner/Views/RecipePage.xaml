@@ -114,36 +114,8 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-
-                <Frame Grid.Row="2" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
-                    <Grid RowDefinitions="Auto" ColumnDefinitions="*,120" RowSpacing="0">
-                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" 
-                                           Style="{StaticResource Entry}"
-                                           x:Name="servingSizeEntry"
-                                           Placeholder="Serving Size" 
-                                           Value="{Binding CurrentAliment.ServingSize}" 
-                                           IsPlaceholderAlwaysFloating="True">
-                            <rsControls:RSNumericEntry.Behaviors>
-                                <validators:ValidationBehaviour PropertyName="Value">
-                                    <validators:ValidationBehaviour.Validators>
-                                        <validators:RequiredValidation/>
-                                        <validators:DifferentThanValidation x:TypeArguments="x:Double" Value="0"/>
-                                    </validators:ValidationBehaviour.Validators>
-                                </validators:ValidationBehaviour>
-                            </rsControls:RSNumericEntry.Behaviors>
-                        </rsControls:RSNumericEntry>
-                        <rsControls:RSEnumPicker Grid.Row="0" Grid.Column="1"
-                                         Style="{StaticResource Picker}"
-                                         x:TypeArguments="enums:AlimentUnitEnum"
-                                         Placeholder="Unit" 
-                                         SelectedItem="{Binding CurrentAliment.Unit}"
-                                         IsPlaceholderAlwaysFloating="True"/>
-                    </Grid>
-                </Frame>
-
-                <Label Grid.Row="3" Grid.Column="0" Text="Ingredients" Style="{StaticResource LabelMediumBold}" Margin="10,0,0,0"/>
-
-                <Frame Grid.Row="4" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
+                <Label Grid.Row="2" Grid.Column="0" Text="Ingredients" Style="{StaticResource LabelMediumBold}" Margin="10,0,0,0"/>
+                <Frame Grid.Row="3" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
                     <StackLayout>
                         <StackLayout BindableLayout.ItemsSource="{Binding CurrentAliment.Foods}">
                             <BindableLayout.ItemTemplate>
@@ -189,6 +161,33 @@
                             </Button.ImageSource>
                         </Button>
                     </StackLayout>
+                </Frame>
+
+
+                <Frame Grid.Row="4" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
+                    <Grid RowDefinitions="Auto" ColumnDefinitions="*,120" RowSpacing="0">
+                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" 
+                                           Style="{StaticResource Entry}"
+                                           x:Name="servingSizeEntry"
+                                           Placeholder="Serving Size" 
+                                           Value="{Binding CurrentAliment.ServingSize}" 
+                                           IsPlaceholderAlwaysFloating="True">
+                            <rsControls:RSNumericEntry.Behaviors>
+                                <validators:ValidationBehaviour PropertyName="Value">
+                                    <validators:ValidationBehaviour.Validators>
+                                        <validators:RequiredValidation/>
+                                        <validators:DifferentThanValidation x:TypeArguments="x:Double" Value="0"/>
+                                    </validators:ValidationBehaviour.Validators>
+                                </validators:ValidationBehaviour>
+                            </rsControls:RSNumericEntry.Behaviors>
+                        </rsControls:RSNumericEntry>
+                        <rsControls:RSEnumPicker Grid.Row="0" Grid.Column="1"
+                                         Style="{StaticResource Picker}"
+                                         x:TypeArguments="enums:AlimentUnitEnum"
+                                         Placeholder="Unit" 
+                                         SelectedItem="{Binding CurrentAliment.Unit}"
+                                         IsPlaceholderAlwaysFloating="True"/>
+                    </Grid>
                 </Frame>
 
                 <Label Grid.Row="5" Grid.Column="0" Text="Preparation" Style="{StaticResource LabelMediumBold}" Margin="10,0,0,0"/>
