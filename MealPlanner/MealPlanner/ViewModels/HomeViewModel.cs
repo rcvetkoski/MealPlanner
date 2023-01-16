@@ -133,6 +133,7 @@ namespace MealPlanner.ViewModels
                             continue;
 
                         recipe.Foods.Add(aliment as Food);
+                        recipe.ServingSize += aliment.ServingSize;
 
                         // Delete 
                     }

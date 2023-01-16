@@ -283,16 +283,41 @@ namespace MealPlanner.ViewModels
             try
             {
                 var aliment = await App.RestService.ScanBarCodeAsync(code);
+                var getitemByName = RefData.Aliments.FirstOrDefault(x => x.Name == aliment.Name && !x.Archived);
+                bool exists = getitemByName != null ? RefData.IsAlimentEqual(getitemByName, aliment) : false;
 
-                EditFoodPage foodPage = new EditFoodPage();
-                EditFoodViewModel foodPageVm = foodPage.BindingContext as EditFoodViewModel;
-                foodPageVm.CurrentAliment = RefData.CreateAndCopyAlimentProperties(aliment);
-                foodPageVm.CurrentAliment.ServingSize = 100;
-                foodPageVm.IsNew = true;
-                foodPageVm.CopyOfFilteredAliments = FilteredAliments;
+                if (!exists)
+                {
+                    FoodPage foodPage = new FoodPage();
+                    FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
+                    foodPageVm.IsNew = true;
+                    foodPageVm.CurrentAliment = aliment;
+                    foodPageVm.SelectedRecipe = CurrentRecipe;
+                    foodPageVm.SelectedMeal = SelectedMeal;
+                    foodPageVm.CurrentAliment.ServingSize = aliment.ServingSize;
+                    foodPageVm.CopyOfFilteredAliments = FilteredAliments;
+                    foodPageVm.CanDeleteItem = false;
+                    foodPageVm.CanAddItem = !RecipeSwitchVisibility || SelectedMeal != null ? true : false;
+                    foodPageVm.CanSaveItem = !foodPageVm.CanAddItem && SelectedMeal == null ? true : false;
 
-                //await Shell.Current.GoToAsync($"{nameof(EditFoodPage)}");
-                await Application.Current.MainPage.Navigation.PushAsync(foodPage);
+                    //await Shell.Current.GoToAsync($"{nameof(EditFoodPage)}");
+                    await Application.Current.MainPage.Navigation.PushAsync(foodPage);
+                    return;
+                }
+                else
+                {
+                    FoodPage foodPage = new FoodPage();
+                    FoodViewModel foodPageVm = foodPage.BindingContext as FoodViewModel;
+                    foodPageVm.CurrentAliment = aliment;
+                    foodPageVm.IsNew = false;
+                    foodPageVm.SelectedMeal = SelectedMeal;
+                    foodPageVm.CopyOfFilteredAliments = FilteredAliments;
+                    foodPageVm.SelectedRecipe = CurrentRecipe;
+                    foodPageVm.CanDeleteItem = true;
+                    foodPageVm.CanAddItem = !RecipeSwitchVisibility || SelectedMeal != null ? true : false;
+                    await Application.Current.MainPage.Navigation.PushAsync(foodPage);
+                    return;
+                }
 
             }
             catch (Exception ex)
