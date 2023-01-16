@@ -23,5 +23,13 @@ namespace MealPlanner.Views
         { 
             return (nameEntry.CheckIsValid() || servingSizeEntry.CheckIsValid()) == false ? false : true;
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var vm = BindingContext as RecipeViewModel;
+                vm.InitProperties(vm.CurrentAliment);
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace MealPlanner.Helpers.Enums
 {
     public enum EnergyUnitEnum
     {
-        cal,
+        kcal,
         kj
     }
 }

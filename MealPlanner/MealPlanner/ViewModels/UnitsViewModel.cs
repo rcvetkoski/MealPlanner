@@ -22,7 +22,7 @@ namespace MealPlanner.ViewModels
                     
                     if(isEnergyUnitCal)
                     {
-                        RefData.User.EnergyUnit = EnergyUnitEnum.cal;
+                        RefData.User.EnergyUnit = EnergyUnitEnum.kcal;
                         App.DataBaseRepo.UpdateUserAsync(RefData.User);
                         RefData.GetMealsAtDate(RefData.CurrentDay);
                     }
@@ -150,7 +150,7 @@ namespace MealPlanner.ViewModels
         public UnitsViewModel()
         {
             Title = "Units";
-            IsEnergyUnitCal = RefData.User.EnergyUnit == EnergyUnitEnum.cal;
+            IsEnergyUnitCal = RefData.User.EnergyUnit == EnergyUnitEnum.kcal;
             IsEnergyUnitKj = RefData.User.EnergyUnit == EnergyUnitEnum.kj;
 
             IsWeightUnitKg = RefData.User.WeightUnit == WeightUnitEnum.kg;

@@ -61,7 +61,7 @@
                         <Label Grid.Row="4" Grid.Column="1" Text="{Binding AlimentFatsPercentage}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
                         <ProgressBar Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding AlimentFatsProgress}" VerticalOptions="Center"/>
 
-                        <Label Grid.Row="6" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="Calories"/>
+                        <Label Grid.Row="6" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="End" Text="{Binding RefData.User.EnergyUnit, StringFormat='Calories ({0})'}"/>
                         <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding AlimentCaloriesRatio}" Style="{StaticResource LabelSmall}" VerticalOptions="End" HorizontalTextAlignment="End"/>
                         <ProgressBar Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Progress="{Binding AlimentCaloriesProgress}" VerticalOptions="Center"/>
                     </Grid>

@@ -17,7 +17,7 @@ using Xamarin.Forms;
 
 namespace MealPlanner.ViewModels
 {
-    public class RecipeViewModel : BaseViewModel
+    public class RecipeViewModel : AlimentStatsViewModel
     {
         public RecipeViewModel()
         {
