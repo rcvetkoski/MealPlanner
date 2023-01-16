@@ -16,7 +16,7 @@ using Xamarin.RSControls.Controls;
 
 namespace MealPlanner.ViewModels
 {
-    public class EditFoodViewModel : BaseViewModel
+    public class EditFoodViewModel : AlimentStatsViewModel
     {
         public EditFoodViewModel()
         {

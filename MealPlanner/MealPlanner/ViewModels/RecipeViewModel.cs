@@ -294,6 +294,8 @@ namespace MealPlanner.ViewModels
             (CurrentAliment as Recipe).Foods.Remove(food);
             var recipeFood = RefData.RecipeFoods.Where(x => x.Id == food.RecipeFoodId).FirstOrDefault();
             DelettedRecipeFoods.Add(recipeFood);
+            RefData.UpdateRecipeValues(CurrentAliment as Recipe);
+            InitProperties(CurrentAliment);
             CurrentAliment.ServingSize -= food.ServingSize;
         }
         private List<RecipeFood> DelettedRecipeFoods { get; set; }
