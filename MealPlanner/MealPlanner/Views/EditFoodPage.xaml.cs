@@ -86,5 +86,12 @@ namespace MealPlanner.Views
             };
             chartView.Chart = chart;
         }
+
+        private void RSNumericEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var vm = BindingContext as EditFoodViewModel;
+            vm.InitProperties(vm.CurrentAliment);
+            InitChart();
+        }
     }
 }

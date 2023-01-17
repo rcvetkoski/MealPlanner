@@ -150,11 +150,11 @@
                 <Frame Grid.Row="3" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
                     <Grid ColumnDefinitions="*" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
                         <Label Grid.Row="0" Grid.Column="0" Text="{Binding CurrentAliment.ServingSize, StringFormat='Nutritional values in {0} g'}" LineBreakMode="TailTruncation" Style="{StaticResource LabelMediumBold}" Margin="0,0,20,10"/>
-                        <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" Style="{StaticResource Entry}" FontAttributes="Bold" Placeholder="Calories" Value="{Binding CurrentAliment.Calories}" Helper="calories are calculated automatically if empty" IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Proteins" Value="{Binding CurrentAliment.Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Carbs" Value="{Binding CurrentAliment.Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSNumericEntry Grid.Row="4" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Fibers" Value="{Binding CurrentAliment.Fibers}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                        <rsControls:RSNumericEntry Grid.Row="5" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Fats" Value="{Binding CurrentAliment.Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                        <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" TextChanged="RSNumericEntry_TextChanged" Style="{StaticResource Entry}" FontAttributes="Bold" Placeholder="Calories" Value="{Binding CurrentAliment.Calories}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                        <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" TextChanged="RSNumericEntry_TextChanged" Style="{StaticResource Entry}" Placeholder="Proteins" Value="{Binding CurrentAliment.Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                        <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" TextChanged="RSNumericEntry_TextChanged" Style="{StaticResource Entry}" Placeholder="Carbs" Value="{Binding CurrentAliment.Carbs}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                        <rsControls:RSNumericEntry Grid.Row="4" Grid.Column="0" TextChanged="RSNumericEntry_TextChanged" Style="{StaticResource Entry}" Placeholder="Fibers" Value="{Binding CurrentAliment.Fibers}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                        <rsControls:RSNumericEntry Grid.Row="5" Grid.Column="0" TextChanged="RSNumericEntry_TextChanged" Style="{StaticResource Entry}" Placeholder="Fats" Value="{Binding CurrentAliment.Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
                         <Button Grid.Row="6" Grid.Column="0" 
                                 IsVisible="{Binding AdditionalNutrimentsVisible, Converter={StaticResource InverseBoolConverter}}"
                                 Command="{Binding ShowAdditionalNutrimentsCommand}"
@@ -166,10 +166,10 @@
                             </Button.ImageSource>
                         </Button>
                         <Grid Grid.Row="7" Grid.Column="0" RowDefinitions="Auto,Auto,Auto,Auto" IsVisible="{Binding AdditionalNutrimentsVisible}">
-                            <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Saturated Fat" Value="{Binding CurrentAliment.SaturatedFat}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                            <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Sugars" Value="{Binding CurrentAliment.Sugars}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                            <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Salts" Value="{Binding CurrentAliment.Salt}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
-                            <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Sodium" Value="{Binding CurrentAliment.Sodium}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
+                            <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Saturated Fat" Value="{Binding CurrentAliment.SaturatedFat}" Helper="Not required" IsPlaceholderAlwaysFloating="True"/>
+                            <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Sugars" Value="{Binding CurrentAliment.Sugars}" Helper="Not required" IsPlaceholderAlwaysFloating="True"/>
+                            <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Salts" Value="{Binding CurrentAliment.Salt}" Helper="Not required" IsPlaceholderAlwaysFloating="True"/>
+                            <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Sodium" Value="{Binding CurrentAliment.Sodium}" Helper="Not required" IsPlaceholderAlwaysFloating="True"/>
                         </Grid>
                         <Button Grid.Row="8" Grid.Column="0" 
                                 IsVisible="{Binding AdditionalNutrimentsVisible}"
