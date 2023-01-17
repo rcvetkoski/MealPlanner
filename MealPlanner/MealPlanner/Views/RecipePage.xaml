@@ -199,8 +199,8 @@
                                 <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource LabelCaption}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding AlimentFatsPercentage}"/>
                             </Grid>
                             <microcharts:ChartView x:Name="chartView"
-                                                   HeightRequest="100"
-                                                   WidthRequest="100"
+                                                   HeightRequest="120"
+                                                   WidthRequest="120"
                                                    VerticalOptions="FillAndExpand"
                                                    HorizontalOptions="FillAndExpand">
                             </microcharts:ChartView>
