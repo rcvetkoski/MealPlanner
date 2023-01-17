@@ -187,7 +187,7 @@
 
 
                 <Frame Grid.Row="4" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
-                    <Grid RowDefinitions="Auto, Auto, Auto, Auto" ColumnDefinitions="*, *, *, *" RowSpacing="0">
+                    <Grid RowDefinitions="Auto, Auto, Auto, Auto" ColumnDefinitions="*, *, *, *">
                         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Daily values" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,20"/>
 
                         <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelCaption}" VerticalOptions="End" Text="Proteins (g)"/>
