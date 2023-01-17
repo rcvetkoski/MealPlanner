@@ -74,7 +74,7 @@ namespace MealPlanner.Views
             var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
             // Screen density
             var density = mainDisplayInfo.Density;
-            var size = (Device.GetNamedSize(NamedSize.Micro, typeof(Label), useOldSizes: false) - 2) * density;
+            var size = (Device.GetNamedSize(NamedSize.Micro, typeof(Label), useOldSizes: false)) * density;
 
             var chart = new DonutChart()
             {
