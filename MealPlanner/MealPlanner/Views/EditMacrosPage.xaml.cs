@@ -27,31 +27,35 @@ namespace MealPlanner.Views
         {
             var vm = BindingContext as EditMacrosViewModel;
 
+            var proteinColor = (Color)Application.Current.Resources["ProteinColor"];
+            var carbsColor = (Color)Application.Current.Resources["CarbsColor"];
+            var fatsColor = (Color)Application.Current.Resources["FatsColor"];
+
             var entries = new[]
             {
                 new ChartEntry((float)vm.RefData.User.SelectedTypeOfRegime.ProteinPercentage * 100)
                 {
                     Label = "Proteins",
                     ValueLabel = $"{vm.RefData.User.SelectedTypeOfRegime.ProteinPercentage * 100} %",
-                    ValueLabelColor = SKColor.Parse("#29aae3"),
-                    TextColor = SKColor.Parse("#29aae3"),
-                    Color = SKColor.Parse("#29aae3")
+                    ValueLabelColor = proteinColor.ToSKColor(),
+                    TextColor = proteinColor.ToSKColor(),
+                    Color = proteinColor.ToSKColor()
                 },
                 new ChartEntry((float)vm.RefData.User.SelectedTypeOfRegime.CarbsPercentage * 100)
                 {
                     Label = "Carbs",
                     ValueLabel = $"{vm.RefData.User.SelectedTypeOfRegime.CarbsPercentage * 100} %",
-                    ValueLabelColor = SKColor.Parse("#77d065"),
-                    TextColor = SKColor.Parse("#77d065"),
-                    Color = SKColor.Parse("#77d065")
+                    ValueLabelColor = carbsColor.ToSKColor(),
+                    TextColor = carbsColor.ToSKColor(),
+                    Color = carbsColor.ToSKColor()
                 },
                 new ChartEntry((float)vm.RefData.User.SelectedTypeOfRegime.FatsPercentage * 100)
                 {
                     Label = "Fats",
-                    ValueLabelColor = SKColor.Parse("#b455b6"),
-                    TextColor = SKColor.Parse("#b455b6"),
+                    ValueLabelColor = fatsColor.ToSKColor(),
+                    TextColor =  fatsColor.ToSKColor(),
                     ValueLabel = $"{vm.RefData.User.SelectedTypeOfRegime.FatsPercentage * 100} %",
-                    Color = SKColor.Parse("#b455b6")
+                    Color =  fatsColor.ToSKColor()
                 }
             };
 

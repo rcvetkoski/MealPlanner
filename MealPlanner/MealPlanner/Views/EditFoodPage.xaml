@@ -6,7 +6,7 @@
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
              xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
-             xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls"
+             xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls" xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="MealPlanner.Views.EditFoodPage"
              x:Name="editFoodPage"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
@@ -148,7 +148,7 @@
 
 
                 <Frame Grid.Row="3" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
-                    <Grid ColumnDefinitions="*" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, 35, Auto">
+                    <Grid ColumnDefinitions="*" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
                         <Label Grid.Row="0" Grid.Column="0" Text="{Binding CurrentAliment.ServingSize, StringFormat='Nutritional values in {0} g'}" LineBreakMode="TailTruncation" Style="{StaticResource LabelMediumBold}" Margin="0,0,20,10"/>
                         <rsControls:RSNumericEntry Grid.Row="1" Grid.Column="0" Style="{StaticResource Entry}" FontAttributes="Bold" Placeholder="Calories" Value="{Binding CurrentAliment.Calories}" Helper="calories are calculated automatically if empty" IsPlaceholderAlwaysFloating="True"/>
                         <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Proteins" Value="{Binding CurrentAliment.Proteins}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
@@ -156,11 +156,12 @@
                         <rsControls:RSNumericEntry Grid.Row="4" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Fibers" Value="{Binding CurrentAliment.Fibers}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
                         <rsControls:RSNumericEntry Grid.Row="5" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Fats" Value="{Binding CurrentAliment.Fats}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
                         <Button Grid.Row="6" Grid.Column="0" 
+                                IsVisible="{Binding AdditionalNutrimentsVisible, Converter={StaticResource InverseBoolConverter}}"
                                 Command="{Binding ShowAdditionalNutrimentsCommand}"
                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                             <Button.ImageSource>
                                 <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                                 Size="22"
+                                                 Size="20"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.ChevronDown}" FontFamily="FA-Solid"/>
                             </Button.ImageSource>
                         </Button>
@@ -170,6 +171,16 @@
                             <rsControls:RSNumericEntry Grid.Row="2" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Salts" Value="{Binding CurrentAliment.Salt}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
                             <rsControls:RSNumericEntry Grid.Row="3" Grid.Column="0" Style="{StaticResource Entry}" Placeholder="Sodium" Value="{Binding CurrentAliment.Sodium}" Helper="Mandatory" IsPlaceholderAlwaysFloating="True"/>
                         </Grid>
+                        <Button Grid.Row="8" Grid.Column="0" 
+                                IsVisible="{Binding AdditionalNutrimentsVisible}"
+                                Command="{Binding ShowAdditionalNutrimentsCommand}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Button.ImageSource>
+                                <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Size="20"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChevronUp}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+                        </Button>
                     </Grid>
                 </Frame>
 
@@ -194,6 +205,29 @@
                         <Label Grid.Row="1" Grid.Column="3" Style="{StaticResource LabelCaptionBold}" VerticalOptions="End" Text="{Binding RefData.User.EnergyUnit, StringFormat='Cal ({0})'}"/>
                         <ProgressBar Grid.Row="2" Grid.Column="3"  Progress="{Binding CurrentAliment.CaloriesProgress}" VerticalOptions="Center"/>
                         <Label Grid.Row="3" Grid.Column="3" Style="{StaticResource LabelCaptionBold}" VerticalOptions="End" Text="{Binding AlimentCaloriesRatio}"/>
+
+                        <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" Margin="0,15,0,0">
+                            <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*, *, *" VerticalOptions="Center">
+
+                                <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelCaption}" TextColor="{StaticResource ProteinColor}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding AlimentProteins, StringFormat='{0:N0} g'}"/>
+                                <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelCaptionBold}" TextColor="{StaticResource ProteinColor}" VerticalOptions="Center" HorizontalOptions="Center" Text="Proteins"/>
+                                <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelCaption}" TextColor="{StaticResource ProteinColor}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding AlimentProteinPercentage}"/>
+
+                                <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelCaption}" TextColor="{StaticResource CarbsColor}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding AlimentCarbs, StringFormat='{0:N0} g'}"/>
+                                <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelCaptionBold}" TextColor="{StaticResource CarbsColor}" VerticalOptions="Center" HorizontalOptions="Center" Text="Carbs"/>
+                                <Label Grid.Row="2" Grid.Column="1" Style="{StaticResource LabelCaption}" TextColor="{StaticResource CarbsColor}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding AlimentCarbsPercentage}"/>
+
+                                <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelCaption}" TextColor="{StaticResource FatsColor}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding AlimentFats, StringFormat='{0:N0} g'}"/>
+                                <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource LabelCaptionBold}" TextColor="{StaticResource FatsColor}" VerticalOptions="Center" HorizontalOptions="Center" Text="Fats"/>
+                                <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource LabelCaption}" TextColor="{StaticResource FatsColor}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding AlimentFatsPercentage}"/>
+                            </Grid>
+                            <microcharts:ChartView x:Name="chartView"
+                                                   HeightRequest="120"
+                                                   WidthRequest="120"
+                                                   VerticalOptions="FillAndExpand"
+                                                   HorizontalOptions="FillAndExpand">
+                            </microcharts:ChartView>
+                        </StackLayout>
                     </Grid>
                 </Frame>
 

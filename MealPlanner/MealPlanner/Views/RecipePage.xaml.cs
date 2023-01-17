@@ -42,31 +42,35 @@ namespace MealPlanner.Views
         {
             var vm = BindingContext as RecipeViewModel;
 
+            var proteinColor = (Color)Application.Current.Resources["ProteinColor"];
+            var carbsColor = (Color)Application.Current.Resources["CarbsColor"];
+            var fatsColor = (Color)Application.Current.Resources["FatsColor"];
+
             var entries = new[]
             {
                 new ChartEntry((float)Math.Round(vm.AlimentProteinProgress * 100, 0))
                 {
                     Label = "Proteins",
                     ValueLabel = $"{Math.Round(vm.AlimentProteinProgress * 100, 0)} %",
-                    ValueLabelColor = SKColor.Parse("#29aae3"),
-                    TextColor = SKColor.Parse("#29aae3"),
-                    Color = SKColor.Parse("#29aae3")
+                    ValueLabelColor = proteinColor.ToSKColor(),
+                    TextColor = proteinColor.ToSKColor(),
+                    Color = proteinColor.ToSKColor()
                 },
                 new ChartEntry((float)Math.Round(vm.AlimentCarbsProgress * 100, 0))
                 {
                     Label = "Carbs",
                     ValueLabel = $"{Math.Round(vm.AlimentCarbsProgress * 100, 0)} %",
-                    ValueLabelColor = SKColor.Parse("#77d065"),
-                    TextColor = SKColor.Parse("#77d065"),
-                    Color = SKColor.Parse("#77d065")
+                    ValueLabelColor = carbsColor.ToSKColor(),
+                    TextColor = carbsColor.ToSKColor(),
+                    Color = carbsColor.ToSKColor()
                 },
                 new ChartEntry((float)Math.Round(vm.AlimentFatsProgress * 100, 0))
                 {
                     Label = "Fats",
-                    ValueLabelColor = SKColor.Parse("#b455b6"),
-                    TextColor = SKColor.Parse("#b455b6"),
+                    ValueLabelColor = fatsColor.ToSKColor(),
+                    TextColor = fatsColor.ToSKColor(),
                     ValueLabel = $"{Math.Round(vm.AlimentFatsProgress * 100, 0)} %",
-                    Color = SKColor.Parse("#b455b6")
+                    Color = fatsColor.ToSKColor()
                 }
             };
 
