@@ -290,6 +290,7 @@ namespace MealPlanner.ViewModels
         {
             Recipe recipe = objects[0] as Recipe;
             Food food = objects[1] as Food;
+            RecipePage recipePage = objects[2] as RecipePage;
 
             (CurrentAliment as Recipe).Foods.Remove(food);
             var recipeFood = RefData.RecipeFoods.Where(x => x.Id == food.RecipeFoodId).FirstOrDefault();
@@ -297,6 +298,7 @@ namespace MealPlanner.ViewModels
             RefData.UpdateRecipeValues(CurrentAliment as Recipe);
             InitProperties(CurrentAliment);
             CurrentAliment.ServingSize -= food.ServingSize;
+            recipePage.InitChart();
         }
         private List<RecipeFood> DelettedRecipeFoods { get; set; }
         private List<RecipeInstruction> DelettedRecipeInstructions { get; set; }

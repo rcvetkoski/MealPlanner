@@ -128,6 +128,7 @@
                                                         <MultiBinding Converter="{StaticResource MultiBindingConverter}">
                                                             <Binding Path="BindingContext.CurrentAliment" Source="{x:Reference recipePage}"/>
                                                             <Binding Path="."/>
+                                                            <Binding Path="." Source="{x:Reference recipePage}"/>
                                                         </MultiBinding>
                                                     </SwipeItem.CommandParameter>
                                                 </SwipeItem>
