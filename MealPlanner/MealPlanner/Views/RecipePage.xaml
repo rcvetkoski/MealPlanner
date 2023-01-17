@@ -76,7 +76,7 @@
 
 
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical">
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
             <Grid Margin="0,10,0,10" ColumnDefinitions="*" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
                 <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource JournalTemplateCard}">
