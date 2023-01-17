@@ -174,7 +174,7 @@
 
                         <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelCaption}" VerticalOptions="End" Text="Proteins (g)"/>
                         <ProgressBar Grid.Row="2" Grid.Column="0" Progress="{Binding CurrentAliment.ProteinsProgress}" VerticalOptions="Center"/>
-                        <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelCaption}" VerticalOptions="End" Text="{Binding AlimentProteinsRatio}"/>
+                        <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelCaption}" VerticalOptions="Start" Text="{Binding AlimentProteinsRatio}"/>
 
                         <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelCaption}" VerticalOptions="End" Text="Carbs (g)"/>
                         <ProgressBar Grid.Row="2" Grid.Column="1" Progress="{Binding CurrentAliment.CarbsProgress}" VerticalOptions="Center"/>

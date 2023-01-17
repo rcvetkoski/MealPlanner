@@ -104,6 +104,7 @@ namespace MealPlanner.ViewModels
                 SelectedRecipe.Foods.Add((aliment as Food));
                 RefData.UpdateRecipeValues(SelectedRecipe);
                 SelectedRecipe.ServingSize += aliment.ServingSize;
+                SelectedRecipe.OriginalServingSize = SelectedRecipe.ServingSize;
             }
 
             await Shell.Current.Navigation.PopAsync();
