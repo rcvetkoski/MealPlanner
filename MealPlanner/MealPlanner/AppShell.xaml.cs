@@ -12,6 +12,8 @@ namespace MealPlanner
         public AppShell()
         {
             InitializeComponent();
+            Routing.RegisterRoute(nameof(AddExercicePage), typeof(AddExercicePage));
+            Routing.RegisterRoute(nameof(ExercicePage), typeof(ExercicePage));
             Routing.RegisterRoute(nameof(EditFoodPage), typeof(EditFoodPage));
             Routing.RegisterRoute(nameof(FoodPage), typeof(FoodPage));
             Routing.RegisterRoute(nameof(RecipePage), typeof(RecipePage));

@@ -6,7 +6,8 @@
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
              xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
-             xmlns:rsControlsHelpers="clr-namespace:Xamarin.RSControls.Helpers;assembly=Xamarin.RSControls" xmlns:models="clr-namespace:MealPlanner.Models"
+             xmlns:rsControlsHelpers="clr-namespace:Xamarin.RSControls.Helpers;assembly=Xamarin.RSControls"
+             xmlns:models="clr-namespace:MealPlanner.Models"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding Title}"
              x:Name="addAlimentPage">

@@ -54,6 +54,23 @@ namespace MealPlanner.ViewModels
             } 
         }
 
+        private Exercice currentExercice;
+        public Exercice CurrentExercice
+        {
+            get
+            {
+                return currentExercice;
+            }
+            set
+            {
+                if (currentExercice != value)
+                {
+                    currentExercice = value;
+                    OnPropertyChanged("CurrentExercice");
+                }
+            }
+        }
+
         private bool isNew;
         public bool IsNew 
         { 

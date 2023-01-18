@@ -12,12 +12,13 @@ namespace MealPlanner.ViewModels
         public WorkoutJournalViewModel()
         {
             Title = "Workout Journal";
+            AddExerciceCommand = new Command(AddExercice);
         }
 
         public ICommand AddExerciceCommand { get; set; }
         private async void AddExercice()
         {
-            //await Shell.Current.GoToAsync(nameof())
+            await Shell.Current.GoToAsync(nameof(AddExercicePage));
         }
     }
 }

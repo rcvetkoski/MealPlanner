@@ -45,6 +45,8 @@ namespace MealPlanner.Models
             }
         }
         public int MuscleGroupId { get; set; }
+        [Ignore]
+        public MuscleGroup MuscleGroup { get; set; }
         private string imageSourcePath;
         public string ImageSourcePath
         {

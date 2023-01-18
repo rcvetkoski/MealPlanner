@@ -19,7 +19,7 @@
                 <StackLayout BindableLayout.ItemsSource="{Binding RefData.CurrentWorkout.Exercices}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:Exercice">
-                            <StackLayout x:Name="meal">
+                            <StackLayout>
                                 <Frame Style="{StaticResource MealCard}">
                                     <Grid RowDefinitions="30, Auto, Auto, 1, Auto" ColumnDefinitions="*, 30">
                                         <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" Style="{StaticResource LabelMediumBold}" VerticalOptions="Center"/>

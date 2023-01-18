@@ -214,6 +214,11 @@ namespace MealPlanner.Helpers
                     MuscleGroup muscleGroup = new MuscleGroup() { Name = muscleGroupEnum.ToString() };
                     App.DataBaseRepo.AddMuscleGroupAsync(muscleGroup).Wait();
                     MuscleGroups.Add(muscleGroup);
+
+                    // Set Muscle group dans Exercice
+                    var exercice = Exercices.FirstOrDefault(x => x.MuscleGroupId == muscleGroup.Id);
+                    if(exercice != null) 
+                        exercice.MuscleGroup = muscleGroup;
                 }
             }
 
