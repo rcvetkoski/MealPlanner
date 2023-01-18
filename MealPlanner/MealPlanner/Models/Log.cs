@@ -12,8 +12,11 @@ namespace MealPlanner.Models
         public DateTime Date { get; set; }    
         public double UserWeight { get; set; }  
         public double UserBodyFat { get; set; }
+        public int WorkoutId { get; set; }
 
         [Ignore]
         public List<Meal> Meals { get; set; }
+        [Ignore]
+        public Workout Workout { get; set; }
     }
 }

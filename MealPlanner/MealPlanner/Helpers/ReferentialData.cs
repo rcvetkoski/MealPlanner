@@ -31,6 +31,13 @@ namespace MealPlanner.Helpers
         public ObservableCollection<MealAliment> MealAliments { get; set; }
         public ObservableCollection<JournalTemplate> JournalTemplates { get; set; }
         public ObservableCollection<JournalTemplateMeal> JournalTemplateMeals { get; set; }
+        public ObservableCollection<Exercice> Exercices { get; set; }
+        public Workout CurrentWorkout { get; set; }
+        public ObservableCollection<Workout> Workouts { get; set; }
+        public ObservableCollection<Set> Sets { get; set; }
+        public ObservableCollection<MuscleGroup> MuscleGroups { get; set; }
+        public ObservableCollection<WorkoutExercice> WorkoutExercices { get; set; }
+
 
 
         public List<Meal> DefaultMeals { get; set; }
@@ -185,6 +192,32 @@ namespace MealPlanner.Helpers
                 CurrentJournalTemplate = JournalTemplates.FirstOrDefault(x => x.Id == User.CurrentJournalTemplateId);
 
 
+            // Exercices
+            Exercices = App.DataBaseRepo.GetAllExercicesAsync().Result.ToObservableCollection();
+
+            // Workouts
+            Workouts = App.DataBaseRepo.GetAllWorkoutsAsync().Result.ToObservableCollection();
+
+            // WorkoutExercices
+            WorkoutExercices = App.DataBaseRepo.GetAllWorkoutExercicesAsync().Result.ToObservableCollection();
+
+            // Sets
+            Sets = App.DataBaseRepo.GetAllSetsAsync().Result.ToObservableCollection();
+
+            // MuscleGroup
+            MuscleGroups = App.DataBaseRepo.GetAllMuscleGroupsAsync().Result.ToObservableCollection();
+            // Create default muscle goups if none
+            if(!MuscleGroups.Any())
+            {
+                foreach (MuscleGroupEnum muscleGroupEnum in (MuscleGroupEnum[])Enum.GetValues(typeof(MuscleGroupEnum)))
+                {
+                    MuscleGroup muscleGroup = new MuscleGroup() { Name = muscleGroupEnum.ToString() };
+                    App.DataBaseRepo.AddMuscleGroupAsync(muscleGroup).Wait();
+                    MuscleGroups.Add(muscleGroup);
+                }
+            }
+
+
             // Logs
             Logs = App.DataBaseRepo.GetAllLogsAsync().Result;
             LogMeals = App.DataBaseRepo.GetAllLogMealsAsync().Result;
@@ -207,6 +240,7 @@ namespace MealPlanner.Helpers
 
 
             GetMealsAtDate(DateTime.Now);
+            GetWorkoutAtDay(DateTime.Now);
         }
 
         /// <summary>
@@ -825,6 +859,40 @@ namespace MealPlanner.Helpers
                 return false;
         }
 
+
+        /// <summary>
+        /// Get and set the current workout for the given day
+        /// </summary>
+        /// <param name="date"></param>
+        public async void GetWorkoutAtDay(DateTime date)
+        {
+            Log currentLog = Logs.FirstOrDefault(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day);
+
+            if (currentLog != null && currentLog.WorkoutId != 0)
+            {
+                CurrentWorkout = Workouts.FirstOrDefault(x => x.Id == currentLog.WorkoutId);
+            }
+            else
+            {
+                // Add log
+                Log log = new Log() { Date = date, UserWeight = User.Weight, UserBodyFat = User.BodyFat };
+                log.Meals = new List<Meal>();
+
+                // Add log to db
+                await App.DataBaseRepo.AddLogAsync(log);
+                Logs.Add(log);
+
+                // Add workout
+                Workout workout = new Workout();
+                await App.DataBaseRepo.AddWorkoutAsync(workout);
+                Workouts.Add(workout);
+                log.WorkoutId = workout.Id;
+                log.Workout = workout;
+
+                // Update log
+                await App.DataBaseRepo.UpdateLogAsync(log);
+            }
+        }
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

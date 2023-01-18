@@ -10,6 +10,53 @@ namespace MealPlanner.Services
 {
     public interface IDataBase
     {
+        // Exercice
+        Task<Exercice> GetExerciceAsync(int id);
+        Task<List<Exercice>> GetAllExercicesAsync();
+        Task<int> AddExerciceAsync(Exercice exercice);
+        Task<int> UpdateExerciceAsync(Exercice exercice);
+        Task<int> DeleteExerciceAsync(Exercice exercice);
+        Task<int> DeleteAllExercicesAsync();
+        Task<int> DropTableExercice();
+
+        // Workout
+        Task<Workout> GetWorkoutAsync(int id);
+        Task<List<Workout>> GetAllWorkoutsAsync();
+        Task<int> AddWorkoutAsync(Workout workout);
+        Task<int> UpdateWorkoutAsync(Workout workout);
+        Task<int> DeleteWorkoutAsync(Workout workout);
+        Task<int> DeleteAllWorkoutsAsync();
+        Task<int> DropTableWorkout();
+
+        // MuscleGroup
+        Task<MuscleGroup> GetMuscleGroupAsync(int id);
+        Task<List<MuscleGroup>> GetAllMuscleGroupsAsync();
+        Task<int> AddMuscleGroupAsync(MuscleGroup muscleGroup);
+        Task<int> UpdateMuscleGroupAsync(MuscleGroup muscleGroup);
+        Task<int> DeleteMuscleGroupAsync(MuscleGroup muscleGroup);
+        Task<int> DeleteAllMuscleGroupsAsync();
+        Task<int> DropTableMuscleGroup();
+
+
+        // Set
+        Task<Set> GetSetAsync(int id);
+        Task<List<Set>> GetAllSetsAsync();
+        Task<int> AddSetAsync(Set set);
+        Task<int> UpdateSetAsync(Set set);
+        Task<int> DeleteSetAsync(Set set);
+        Task<int> DeleteAllSetsAsync();
+        Task<int> DropTableSet();
+
+        // WorkoutExercice
+        Task<WorkoutExercice> GetWorkoutExerciceAsync(int id);
+        Task<List<WorkoutExercice>> GetAllWorkoutExercicesAsync();
+        Task<int> AddWorkoutExerciceAsync(WorkoutExercice workoutExercice);
+        Task<int> UpdateWorkoutExerciceAsync(WorkoutExercice workoutExercice);
+        Task<int> DeleteWorkoutExerciceAsync(WorkoutExercice workoutExercice);
+        Task<int> DeleteAllWorkoutExercicesAsync();
+        Task<int> DropTableWorkoutExercice();
+
+
         // TypeOfRegimeItem
         Task<TypeOfRegimeItem> GetTypeOfRegimeItemAsync();
         Task<int> AddTypeOfRegimeItemAsync(TypeOfRegimeItem typeOfRegimeItem);

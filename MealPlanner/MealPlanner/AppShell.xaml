@@ -33,7 +33,7 @@
         <ShellContent Title="Home" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}">
             <ShellContent.Icon>
                 <FontImageSource Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.BowlFood}" FontFamily="FA-Solid"/>
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.House}" FontFamily="FA-Solid"/>
             </ShellContent.Icon>
         </ShellContent>
         <ShellContent Title="Workout" Route="WorkoutJournalPage" ContentTemplate="{DataTemplate local:WorkoutJournalPage}">
