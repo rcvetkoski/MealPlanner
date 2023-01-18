@@ -414,9 +414,10 @@ namespace MealPlanner.Helpers
             await App.DataBaseRepo.UpdateLogAsync(log);
         }
 
-        public void PopulateMeal(Meal meal, Meal copyFromMeal = null)
+        public void PopulateMeal(Meal meal, Meal copyFromMeal = null, bool updateDailyValues = true)
         {
             meal.Aliments.Clear();
+
             int mealId = copyFromMeal != null ? copyFromMeal.Id : meal.Id;
 
             foreach (MealAliment mealAliment in MealAliments.Where(x => x.MealId == mealId).ToList())
@@ -441,10 +442,13 @@ namespace MealPlanner.Helpers
                     }
 
                     // Update daily values
-                    User.DailyProteins += aliment.Proteins;
-                    User.DailyCarbs += aliment.Carbs;
-                    User.DailyFats += aliment.Fats;
-                    User.DailyCalories += aliment.Calories;
+                    if(updateDailyValues)
+                    {
+                        User.DailyProteins += aliment.Proteins;
+                        User.DailyCarbs += aliment.Carbs;
+                        User.DailyFats += aliment.Fats;
+                        User.DailyCalories += aliment.Calories;
+                    }
                 }
             }
 

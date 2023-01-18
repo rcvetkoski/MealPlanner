@@ -71,7 +71,7 @@ namespace MealPlanner.Views
                 //Populate meals
                 foreach (Meal meal in log.Meals)
                 {
-                    vm.RefData.PopulateMeal(meal);
+                    vm.RefData.PopulateMeal(meal, null, false);
                 }
 
                 calories = Math.Round(log.Meals.Sum(x => x.Calories), 0);
