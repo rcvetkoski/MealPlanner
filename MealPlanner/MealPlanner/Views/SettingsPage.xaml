@@ -113,6 +113,30 @@
                     <StackLayout Orientation="Horizontal" Spacing="15">
                         <Image>
                             <Image.Source>
+                                <FontImageSource Size="22"  
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.BowlFood}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                        <Label Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Aliments"/>
+                        <Image BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Source>
+                                <FontImageSource Size="22"  
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
+                            </Image.Source>
+                        </Image>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenAlimentsPageCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+
+                <Frame Style="{StaticResource JournalTemplateCard}" HeightRequest="35">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <Image>
+                            <Image.Source>
                                 <FontImageSource Size="22" 
                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.Ruler}" FontFamily="FA-Solid"/>

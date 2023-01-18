@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
+             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels" xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding Title}"
              x:Class="MealPlanner.Views.StatisticsPage">
@@ -11,10 +11,30 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Statistics !"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+            <StackLayout VerticalOptions="Start" Margin="0,10,0,10">
+                <Frame Style="{StaticResource JournalTemplateCard}">
+                    <StackLayout>
+                        <Label Text="Weight tracker" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,20"/>
+                        <microcharts:ChartView x:Name="chartView"
+                                           HeightRequest="150"
+                                           VerticalOptions="FillAndExpand"
+                                           HorizontalOptions="FillAndExpand">
+                        </microcharts:ChartView>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Style="{StaticResource JournalTemplateCard}">
+                    <StackLayout>
+                        <Label Text="Calories tracker" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,20"/>
+                        <microcharts:ChartView x:Name="chartViewCalories"
+                                               HeightRequest="150"
+                                               VerticalOptions="FillAndExpand"
+                                               HorizontalOptions="FillAndExpand">
+                        </microcharts:ChartView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

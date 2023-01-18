@@ -197,6 +197,8 @@ namespace MealPlanner.Helpers
                 {
                     foreach (Meal meal in AllMeals)
                     {
+                        //meal.Aliments.Clear();
+                        //PopulateMeal(meal);
                         if (meal.Id == logMeal.MealId)
                             log.Meals.Add(meal);
                     }
@@ -287,7 +289,7 @@ namespace MealPlanner.Helpers
                             continue;
 
                         // Add aliments to Meal if any
-                        meal.Aliments.Clear();
+                        //meal.Aliments.Clear();
                         PopulateMeal(meal);
                         Meals.Add(AllMeals.FirstOrDefault(x => x.Id == logMeal.MealId));
                     }
@@ -414,6 +416,7 @@ namespace MealPlanner.Helpers
 
         public void PopulateMeal(Meal meal, Meal copyFromMeal = null)
         {
+            meal.Aliments.Clear();
             int mealId = copyFromMeal != null ? copyFromMeal.Id : meal.Id;
 
             foreach (MealAliment mealAliment in MealAliments.Where(x => x.MealId == mealId).ToList())
@@ -437,9 +440,6 @@ namespace MealPlanner.Helpers
                         MealAliments.Add(newMealAliment);
                     }
 
-                    // Update meal values
-                    UpdateMealValues(meal);
-
                     // Update daily values
                     User.DailyProteins += aliment.Proteins;
                     User.DailyCarbs += aliment.Carbs;
@@ -447,6 +447,9 @@ namespace MealPlanner.Helpers
                     User.DailyCalories += aliment.Calories;
                 }
             }
+
+            // Update meal values
+            UpdateMealValues(meal);
         }
 
         public void AddAliment(Aliment aliment, Meal meal)
@@ -557,11 +560,6 @@ namespace MealPlanner.Helpers
             User.DailyCalories = calories;
 
             User.NotifyProgressBars();
-        }
-
-        public void UpdateTargetValues()
-        {
-
         }
 
         public void UpdateMealValues(Meal meal, double ratio = 1)

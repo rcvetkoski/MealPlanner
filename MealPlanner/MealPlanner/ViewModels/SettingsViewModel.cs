@@ -46,6 +46,12 @@ namespace MealPlanner.ViewModels
             await Shell.Current.GoToAsync($"{nameof(JournalTemplatePage)}");
         }
 
+        public ICommand OpenAlimentsPageCommand { get; set; }
+        private async void OpenAlimentsPage()
+        {
+            await Shell.Current.GoToAsync($"{nameof(AddAlimentPage)}");
+        }
+
         public ICommand OpenCustomizeMealsPageCommand { get; set; }
         private async void OpenCustomizeMealsPage()
         {
@@ -68,6 +74,7 @@ namespace MealPlanner.ViewModels
             OpenObjectifsPageCommand = new Command(OpenObjectifsPage);
             OpenMacrosPageCommand = new Command(OpenMacrosPage);
             OpenActivityLevelPageCommand = new Command(OpenActivityLevelPage);
+            OpenAlimentsPageCommand = new Command(OpenAlimentsPage);
         }
 
         ~SettingsViewModel()
