@@ -84,12 +84,26 @@ namespace MealPlanner.ViewModels
 
             // Create a copy of exercice
             Exercice exercice = RefData.CreateAndCopyExerciceProperties(CurrentExercice);
+
             // Add sets
             exercice.Sets = CopiedSets;
 
-            // Save sets to db
-            foreach(Set set in exercice.Sets)
+            // Create WorkoutExercice link
+            WorkoutExercice workoutExercice = new WorkoutExercice()
             {
+                WorkoutId = RefData.CurrentWorkout.Id,
+                ExerciceId = exercice.Id
+            };
+
+            await App.DataBaseRepo.AddWorkoutExerciceAsync(workoutExercice);
+            RefData.WorkoutExercices.Add(workoutExercice);
+
+            // Save sets to db
+            foreach (Set set in exercice.Sets)
+            {
+                // Set WorkoutExerciceId
+                set.WorkoutExerciceId = workoutExercice.Id;
+
                 await App.DataBaseRepo.AddSetAsync(set);
                 RefData.Sets.Add(set);
             }
@@ -127,7 +141,6 @@ namespace MealPlanner.ViewModels
         {
             Set set = new Set()
             {
-                ExerciceId = CurrentExercice.Id,
                 Order = CopiedSets.Count() + 1
             };
 

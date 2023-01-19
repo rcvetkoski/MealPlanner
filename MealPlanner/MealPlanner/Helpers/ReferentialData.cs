@@ -100,6 +100,7 @@ namespace MealPlanner.Helpers
             InitDB();
         }
 
+        public ICommand ResetDBCommand { get; set; }
         public void ResetDB()
         {
             var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
@@ -109,10 +110,16 @@ namespace MealPlanner.Helpers
                 File.Delete(path);
             }
         }
-        public ICommand ResetDBCommand { get; set; }
+
 
         private void InitDB()
         {
+            //App.DataBaseRepo.DropTableExercice().Wait();
+            //App.DataBaseRepo.DropTableMuscleGroup().Wait();
+            //App.DataBaseRepo.DropTableSet().Wait()  ;
+            //App.DataBaseRepo.DropTableWorkout().Wait();
+            //App.DataBaseRepo.DropTableWorkoutExercice().Wait();
+
             // User
             InitUser();
 
@@ -889,6 +896,9 @@ namespace MealPlanner.Helpers
                 }
 
                 CurrentWorkout = Workouts.FirstOrDefault(x => x.Id == currentLog.WorkoutId);
+
+                // Populate workout
+                PopulateWorkout(CurrentWorkout);
             }
             else
             {
@@ -909,7 +919,30 @@ namespace MealPlanner.Helpers
 
                 // Update log
                 await App.DataBaseRepo.UpdateLogAsync(log);
-                CurrentWorkout = Workouts.FirstOrDefault(x => x.Id == currentLog.WorkoutId);
+                CurrentWorkout = Workouts.FirstOrDefault(x => x.Id == log.WorkoutId);
+            }
+        }
+
+        public void PopulateWorkout(Workout workout)
+        {
+            foreach(WorkoutExercice workoutExercice in WorkoutExercices.Where(x=> x.WorkoutId == workout.Id))
+            {
+                Exercice existingExercice = Exercices.FirstOrDefault(x=> x.Id == workoutExercice.ExerciceId);
+
+                if (existingExercice == null)
+                    continue;
+
+                // Copy exercice
+                Exercice exercice = CreateAndCopyExerciceProperties(existingExercice);
+
+                // Add sets to exercice
+                foreach (var set in Sets)
+                {
+                    if (set.WorkoutExerciceId == workoutExercice.Id)
+                        exercice.Sets.Add(set);
+                }
+
+                workout.Exercices.Add(exercice);    
             }
         }
 
@@ -929,11 +962,15 @@ namespace MealPlanner.Helpers
                 MuscleGroupId = existingExercice.MuscleGroupId,
                 ImageSourcePath = existingExercice.ImageSourcePath,
                 ImageBlob = existingExercice.ImageBlob,
-                Sets = existingExercice.Sets
             };
+
+            foreach (Set set in existingExercice.Sets)
+                exercice.Sets.Add(set);
 
             return exercice;
         }
+
+
 
 
         #region INotifyPropertyChanged

@@ -28,6 +28,7 @@ namespace MealPlanner.ViewModels
                 {
                     await App.DataBaseRepo.AddUserAsync(RefData.User);
                     await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+                    currentUser = RefData.User;
                 }
                 else
                 {

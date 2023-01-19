@@ -20,6 +20,7 @@ namespace MealPlanner.ViewModels
         {
             RefData.Exercices.Add(CurrentExercice);
             await App.DataBaseRepo.AddExerciceAsync(CurrentExercice);
+            await Shell.Current.Navigation.PopAsync();
         }
 
         public ICommand EditExerciceCommand { get; set; }
