@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
@@ -100,7 +101,33 @@ namespace MealPlanner.Models
             }
         }
         [Ignore]
-        public ObservableCollection<Set> Sets { get; set; }
+        public int WorkoutExerciceId { get; set; }
+        [Ignore]
+        public double TotalWeight 
+        {
+            get
+            {
+                return Sets.Sum(x => (x.Weight * x.Reps));
+            }
+        }
+        private ObservableCollection<Set> sets;
+        [Ignore]
+        public ObservableCollection<Set> Sets
+        { 
+            get
+            {
+                return sets;
+            }
+            set
+            {
+                if(sets != value)
+                {
+                    sets = value;
+                    OnPropertyChanged(nameof(Sets));
+                    OnPropertyChanged(nameof(TotalWeight));
+                }
+            }
+        }
 
 
         public Exercice()

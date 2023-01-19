@@ -221,14 +221,15 @@ namespace MealPlanner.Helpers
                     MuscleGroup muscleGroup = new MuscleGroup() { Name = muscleGroupEnum.ToString() };
                     App.DataBaseRepo.AddMuscleGroupAsync(muscleGroup).Wait();
                     MuscleGroups.Add(muscleGroup);
-
-                    // Set Muscle group dans Exercice
-                    var exercice = Exercices.FirstOrDefault(x => x.MuscleGroupId == muscleGroup.Id);
-                    if(exercice != null) 
-                        exercice.MuscleGroup = muscleGroup;
                 }
             }
 
+            // Set Muscle group dans Exercice
+            foreach(Exercice exercice in Exercices)
+            {
+                MuscleGroup muscleGroup = MuscleGroups.FirstOrDefault(x => x.Id == exercice.MuscleGroupId);
+                exercice.MuscleGroup = muscleGroup;
+            }
 
             // Logs
             Logs = App.DataBaseRepo.GetAllLogsAsync().Result;
@@ -934,6 +935,7 @@ namespace MealPlanner.Helpers
 
                 // Copy exercice
                 Exercice exercice = CreateAndCopyExerciceProperties(existingExercice);
+                exercice.WorkoutExerciceId = workoutExercice.Id;
 
                 // Add sets to exercice
                 foreach (var set in Sets)

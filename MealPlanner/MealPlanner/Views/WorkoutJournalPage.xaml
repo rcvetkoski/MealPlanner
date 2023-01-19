@@ -57,7 +57,7 @@
                                         <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
                                             <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmallBold}" Text="Time: 15 m"/>
                                             <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmallBold}" Text="Rest: 60 s" HorizontalOptions="Center"/>
-                                            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelSmallBold}" Text="Total: 180 kg" HorizontalTextAlignment="End"/>
+                                            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelSmallBold}" Text="{Binding TotalWeight, StringFormat='Total: {0} kg'}" HorizontalTextAlignment="End"/>
                                         </Grid>
                                     </Grid>
                                     <Frame.GestureRecognizers>

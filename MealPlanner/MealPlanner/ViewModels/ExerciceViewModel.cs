@@ -21,11 +21,16 @@ namespace MealPlanner.ViewModels
             EditExerciceCommand = new Command(EditExercice);
             AddSetCommand = new Command(AddSet);
             DeleteSetCommand = new Command<Set>(DeleteSet);
-            UpdateExerciceCommand = new Command<Exercice>(UpdateExercice);
+            UpdateExerciceCommand = new Command(UpdateExercice);
             CopiedSets = new ObservableCollection<Set>();
+            AddedSets = new List<Set>();
+            DeletedSets = new List<Set>();
         }
 
         public ObservableCollection<Set> CopiedSets { get; set; }
+        private List<Set> AddedSets;
+        private List<Set> DeletedSets;
+
 
         private bool canAddItem;
         public bool CanAddItem
@@ -81,7 +86,6 @@ namespace MealPlanner.ViewModels
         public ICommand AddExerciceCommand { get; set; }
         private async void AddExercice()
         {
-
             // Create a copy of exercice
             Exercice exercice = RefData.CreateAndCopyExerciceProperties(CurrentExercice);
 
@@ -121,9 +125,38 @@ namespace MealPlanner.ViewModels
         }
 
         public ICommand UpdateExerciceCommand { get; set; }
-        private async void UpdateExercice(Exercice exercice)
+        private async void UpdateExercice()
         {
+            // Add sets in db
+            foreach (Set set in AddedSets)
+            {
+                WorkoutExercice workoutExercice = RefData.WorkoutExercices.FirstOrDefault(x => x.Id == CurrentExercice.WorkoutExerciceId);
 
+                // Set WorkoutExerciceId
+                set.WorkoutExerciceId = workoutExercice.Id;
+
+                await App.DataBaseRepo.AddSetAsync(set);
+                RefData.Sets.Add(set);
+            }
+
+            // Delete sets
+            foreach (Set set in DeletedSets)
+            {
+                await App.DataBaseRepo.DeleteSetAsync(set);
+                RefData.Sets.Add(set);
+            }
+
+            AddedSets.Clear();
+            DeletedSets.Clear();
+
+            // Update Sets
+            foreach (Set set in CopiedSets)
+                await App.DataBaseRepo.UpdateSetAsync(set);
+
+            // Set set to object
+            CurrentExercice.Sets = CopiedSets;
+
+            await App.DataBaseRepo.UpdateExerciceAsync(CurrentExercice);
         }
 
         public ICommand EditExerciceCommand { get; set; }
@@ -144,12 +177,14 @@ namespace MealPlanner.ViewModels
                 Order = CopiedSets.Count() + 1
             };
 
+            AddedSets.Add(set);
             CopiedSets.Add(set);
         }
 
         public ICommand DeleteSetCommand { get; set; }
         private void DeleteSet(Set set)
         {
+            DeletedSets.Add(set);
             CopiedSets.Remove(set);
         }
     }
