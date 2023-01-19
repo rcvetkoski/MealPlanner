@@ -27,22 +27,32 @@
         <CollectionView Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.Exercices}" Margin="0, 10, 0, 10">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Exercice">
-                    <StackLayout>
-                        <Frame Style="{StaticResource MealCard}">
-                            <Grid RowDefinitions="30" ColumnDefinitions="*, 30">
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" Style="{StaticResource LabelMediumBold}" VerticalOptions="Center"/>
+                    <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,40" Padding="7" RowSpacing="2">
+                        <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
+                                   Source="{Binding ImageSource}" 
+                                   Aspect="AspectFill"
+                                   HeightRequest="60"
+                                   BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Clip>
+                                <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
+                            </Image.Clip>
+                        </Image>
+                        <Label Grid.Column="1" Style="{StaticResource LabelSmall}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
+                        <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalTextAlignment="Center" Text="{Binding Description}"/>
+                        <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" BackgroundColor="Transparent">
+                            <Button.ImageSource>
+                                <FontImageSource Size="20" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
 
-                                <Button Grid.Row="0" Grid.Column="1" 
-                                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
-                                    <Button.ImageSource>
-                                        <FontImageSource Size="20" 
-                                                         Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                                         Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
-                                    </Button.ImageSource>
-                                </Button>
-                            </Grid>
-                        </Frame>
-                    </StackLayout>
+                        </Button>
+                        <BoxView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="#e6e6e6"/>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.SelectExerciceCommand, Source={x:Reference addExercicePage}}" CommandParameter="{Binding .}"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

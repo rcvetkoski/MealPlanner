@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace MealPlanner.Models
 {
-    public class Exercice : BaseModel
+    public class Exercice : BaseModel, IHaveImage
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

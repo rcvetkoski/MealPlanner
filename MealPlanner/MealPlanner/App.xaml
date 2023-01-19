@@ -129,6 +129,11 @@
                 <Setter Property="PlaceholderColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
             </Style>
 
+            <Style x:Key="NumericEntry" TargetType="Entry" BasedOn="{StaticResource BaseEntry}">
+                <Setter Property="PlaceholderColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
+                <Setter Property="Keyboard" Value="Numeric"/>
+            </Style>
+
             <Style x:Key="EntrySearch" TargetType="Entry" BasedOn="{StaticResource BaseEntry}">
                 <Setter Property="FontSize" Value="Body"/>
                 <Setter Property="PlaceholderColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />

@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace MealPlanner.Models
 {
-    public abstract class Aliment : BaseModel
+    public abstract class Aliment : BaseModel, IHaveImage
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -371,5 +371,14 @@ namespace MealPlanner.Models
                     return ImageSource.FromFile(ImageSourcePath);
             }
         } 
+    }
+
+    public interface IHaveImage
+    {
+        int Id { get; set; }
+        string Name { get; set; }
+
+        string ImageSourcePath { get; set; }
+        byte[] ImageBlob { get; set; }
     }
 }

@@ -4,10 +4,10 @@
              xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels" 
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls"
-             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:models="clr-namespace:MealPlanner.Models"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:models="clr-namespace:MealPlanner.Models" xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
              x:Name="exercicePage"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
-             Title="{Binding Title}"
+             Title="{Binding CurrentExercice.Name}"
              x:Class="MealPlanner.Views.ExercicePage">
 
     <ContentPage.BindingContext>
@@ -15,11 +15,11 @@
     </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Default" Priority="0" Command="{Binding SaveExerciceCommand}">
+        <ToolbarItem Order="Default" Priority="0" Command="{Binding EditExerciceCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Size="20"
                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.Check}" FontFamily="FA-Solid"/>
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.Pen}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
@@ -29,95 +29,77 @@
         <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
             <StackLayout Margin="0,10,0,10">
 
-                <Frame Style="{StaticResource JournalTemplateCard}">
-                    <rsControls:RSEntry  
-                                    x:Name="nameEntry"
-                                    Style="{StaticResource Entry}" 
-                                    Helper="Mandatory" 
-                                    Placeholder="Name" 
-                                    Text="{Binding CurrentExercice.Name}" 
-                                    FontAttributes="Bold" 
-                                    IsPlaceholderAlwaysFloating="True">
-                        <rsControls:RSEntry.Behaviors>
-                            <validators:ValidationBehaviour PropertyName="Text">
-                                <validators:ValidationBehaviour.Validators>
-                                    <validators:RequiredValidation/>
-                                </validators:ValidationBehaviour.Validators>
-                            </validators:ValidationBehaviour>
-                        </rsControls:RSEntry.Behaviors>
-                    </rsControls:RSEntry>
-                </Frame>
+                <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto">
+                    <ImageButton Grid.Row="0" Grid.Column="0"
+                                 x:Name="image"
+                                 Source="{Binding CurrentExercice.ImageSource}"
+                                 CornerRadius="12"
+                                 HeightRequest="{Binding Width, Source={x:Reference image}}"
+                                 HorizontalOptions="FillAndExpand"
+                                 Aspect="AspectFill" 
+                                 Margin="10"
+                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" >
+                    </ImageButton>
 
-                <Frame Style="{StaticResource JournalTemplateCard}">
-                    <Grid RowDefinitions="30,30" RowSpacing="0" Margin="2,0,2,0">
-                        <Label Grid.Row="0" Grid.Column="0" Text="Image" Style="{StaticResource LabelMediumBold}" HorizontalOptions="FillAndExpand" VerticalOptions="End" />
-                        <Label Grid.Row="1" Grid.Column="0" Text="Tap to take a photo" Style="{StaticResource LabelSmall}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
-                        <ImageButton Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"
-                                     CornerRadius="12"
-                                     WidthRequest="60"
-                                     HorizontalOptions="End"
-                                     Aspect="AspectFill"
-                                     BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                                     Source="{Binding CurrentExercice.ImageSource}"/>
+                    <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding CurrentExercice.Description}"/>
+
+                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto" ColumnDefinitions="*, *" Margin="10">
+                        <Button Grid.Row="0" Grid.Column="0" 
+                                IsVisible="{Binding CanDeleteItem}"
+                                CornerRadius="8"
+                                Command="{Binding DeleteExerciceCommand}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                Text="Delette item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}">
+                            <Button.ImageSource>
+                                <FontImageSource Color="Red"
+                                                 Size="22"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Trash}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+                        </Button>
+                        <Button Grid.Row="0" Grid.Column="1" 
+                                CornerRadius="8"
+                                IsVisible="{Binding CanAddItem}"
+                                Command="{Binding AddExerciceCommand}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                Text="Add item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}">
+                            <Button.ImageSource>
+                                <FontImageSource Color="SteelBlue"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+                        </Button>
+                        <Button Grid.Row="0" Grid.Column="1" 
+                                CornerRadius="8"
+                                IsVisible="{Binding CanUpdateItem}"
+                                Command="{Binding UpdateExerciceCommand}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                Text="Update item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}">
+                            <Button.ImageSource>
+                                <FontImageSource Size="22"
+                                                 Color="SteelBlue"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Pen}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+                        </Button>
                     </Grid>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding AddImageCommand}" CommandParameter="{Binding CurrentExercice}"/>
-                    </Frame.GestureRecognizers>
-                </Frame>
+                </Grid>
 
-                <Frame Style="{StaticResource JournalTemplateCard}">
-                    <rsControls:RSEntry  
-                                    x:Name="descriptionEntry"
-                                    Style="{StaticResource Entry}" 
-                                    Helper="Mandatory" 
-                                    Placeholder="Description" 
-                                    Text="{Binding CurrentExercice.Name}" 
-                                    FontAttributes="Bold" 
-                                    IsPlaceholderAlwaysFloating="True">
-                        <rsControls:RSEntry.Behaviors>
-                            <validators:ValidationBehaviour PropertyName="Text">
-                                <validators:ValidationBehaviour.Validators>
-                                    <validators:RequiredValidation/>
-                                </validators:ValidationBehaviour.Validators>
-                            </validators:ValidationBehaviour>
-                        </rsControls:RSEntry.Behaviors>
-                    </rsControls:RSEntry>
-                </Frame>
-
-                <Frame Style="{StaticResource JournalTemplateCard}">
-                    <rsControls:RSPicker x:Name="muscleGroupEntry"
-                                         Style="{StaticResource Picker}" 
-                                         Helper="Mandatory" 
-                                         ItemsSource="{Binding RefData.MuscleGroups}"
-                                         Placeholder="MuscleGroup" 
-                                         DisplayMemberPath="Name"
-                                         SelectedItem="{Binding CurrentExercice.MuscleGroup}" 
-                                         FontAttributes="Bold" 
-                                         IsPlaceholderAlwaysFloating="True">
-                        <rsControls:RSPicker.Behaviors>
-                            <validators:ValidationBehaviour PropertyName="SelectedItem">
-                                <validators:ValidationBehaviour.Validators>
-                                    <validators:RequiredValidation/>
-                                </validators:ValidationBehaviour.Validators>
-                            </validators:ValidationBehaviour>
-                        </rsControls:RSPicker.Behaviors>
-                    </rsControls:RSPicker>
-                </Frame>
 
                 <Frame Style="{StaticResource JournalTemplateCard}">
                     <StackLayout>
                         <Label Text="Sets" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,10"/>
-                        <StackLayout BindableLayout.ItemsSource="{Binding CurrentExercice.Sets}" Spacing="0">
+                        <StackLayout BindableLayout.ItemsSource="{Binding CopiedSets}" Spacing="0">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate x:DataType="models:Set">
-                                    <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, *, 35" RowSpacing="0">
+                                    <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, Auto, *, Auto, *, 35">
                                         <BoxView Grid.Row="0" Grid.Column="0" VerticalOptions="Center" WidthRequest="28" HeightRequest="28" BackgroundColor="{StaticResource Primary}" CornerRadius="14"/>
                                         <BoxView Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="Center" WidthRequest="3" BackgroundColor="{StaticResource Primary}"/>
-                                        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Reps}"/>
-                                        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="CenterAndExpand" Text="{Binding Weight}" Margin="5,0,5,0"/>
-                                        <Button Grid.Row="0" Grid.Column="2"
+                                        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Order}"/>
+                                        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="{Binding BindingContext.RefData.User.WeightUnit, Source={x:Reference exercicePage}}" Margin="10,0,0,0"/>
+                                        <Entry Grid.Row="0" Grid.Column="2" Style="{StaticResource NumericEntry}" VerticalOptions="Center" Text="{Binding Weight}"/>
+                                        <Label Grid.Row="0" Grid.Column="3" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="Reps" Margin="10,0,0,0"/>
+                                        <Entry Grid.Row="0" Grid.Column="4" Style="{StaticResource NumericEntry}" VerticalOptions="Center" Text="{Binding Reps}"/>
+                                        <Button Grid.Row="0" Grid.Column="5"
                                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                                                Command="{Binding BindingContext.RemoveRecipeInstructionCommand, Source={x:Reference exercicePage}}" 
+                                                Command="{Binding BindingContext.DeleteSetCommand, Source={x:Reference exercicePage}}" 
                                                 CommandParameter="{Binding .}"
                                                 HorizontalOptions="Center">
                                             <Button.ImageSource>

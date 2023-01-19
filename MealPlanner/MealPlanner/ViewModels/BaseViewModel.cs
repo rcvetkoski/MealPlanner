@@ -20,7 +20,7 @@ namespace MealPlanner.ViewModels
     {
         public BaseViewModel()
         {
-            AddImageCommand = new Command<Aliment>(AddImage);
+            AddImageCommand = new Command<IHaveImage>(AddImage);
         }
 
         string title = string.Empty;
@@ -53,6 +53,8 @@ namespace MealPlanner.ViewModels
                 }
             } 
         }
+
+        public Workout SelectedWorkout { get; set; }
 
         private Exercice currentExercice;
         public Exercice CurrentExercice
@@ -90,7 +92,7 @@ namespace MealPlanner.ViewModels
 
         public ICommand AddImageCommand { get; set; }
 
-        private async void AddImage(Aliment currentAliment)
+        private async void AddImage(IHaveImage currentAliment)
         {
             try
             {
@@ -115,7 +117,7 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        async Task LoadPhotoAsync(FileResult photo, Aliment currentAliment)
+        async Task LoadPhotoAsync(FileResult photo, IHaveImage currentAliment)
         {
             // canceled
             if (photo == null)

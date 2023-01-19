@@ -21,10 +21,19 @@
                         <DataTemplate x:DataType="models:Exercice">
                             <StackLayout>
                                 <Frame Style="{StaticResource MealCard}">
-                                    <Grid RowDefinitions="30, Auto, Auto, 1, Auto" ColumnDefinitions="*, 30">
-                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" Style="{StaticResource LabelMediumBold}" VerticalOptions="Center"/>
-
-                                        <Button Grid.Row="0" Grid.Column="1" 
+                                    <Grid RowDefinitions="30, Auto, Auto, 1" ColumnDefinitions="60, *, 30">
+                                        <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
+                                               Source="{Binding ImageSource}" 
+                                               Aspect="AspectFill"
+                                               VerticalOptions="Start"
+                                               HeightRequest="60"
+                                               BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                                            <Image.Clip>
+                                                <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
+                                            </Image.Clip>
+                                        </Image>
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Style="{StaticResource LabelMediumBold}" VerticalOptions="Center"/>
+                                        <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" 
                                                 Command="{Binding BindingContext.MealOptionsCommand, Source={x:Reference workoutJournalPage}}" CommandParameter="{Binding .}"
                                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                                             <Button.ImageSource>
@@ -33,33 +42,44 @@
                                                                  Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
                                             </Button.ImageSource>
                                         </Button>
+                                        <FlexLayout Direction="Row" Wrap="Wrap" AlignItems="Start" JustifyContent="Start" Grid.Row="1" Grid.Column="1" BindableLayout.ItemsSource="{Binding Sets}">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate x:DataType="models:Set">
+                                                    <StackLayout Orientation="Horizontal" Spacing="2">
+                                                        <Label Text="{Binding Weight}"/>
+                                                        <Label Text="x"/>
+                                                        <Label Text="{Binding Reps}" Margin="0,0,5,0"/>
+                                                    </StackLayout>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </FlexLayout>
+                                        <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="1" BackgroundColor="LightGray"/>
 
-                                        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center"
-                                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                                                Text="Add item" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                                Command="{Binding BindingContext.AddAlimentCommand, Source={x:Reference workoutJournalPage}}" CommandParameter="{Binding .}">
-                                            <Button.ImageSource>
-                                                <FontImageSource Color="{StaticResource Primary}"
-                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
-                                            </Button.ImageSource>
-                                        </Button>
-
-                                        <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="LightGray"/>
+                                        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="*,*,*">
+                                            <Label Grid.Column="0" Style="{StaticResource LabelSmallBold}" Text="Time: 15 m" VerticalOptions="Center"/>
+                                            <Label Grid.Column="1" Style="{StaticResource LabelSmallBold}" Text="Rest: 60 s" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <Label Grid.Column="2" Style="{StaticResource LabelSmallBold}" Text="Total: 180 kg" HorizontalTextAlignment="End" VerticalOptions="Center"/>
+                                        </Grid>
                                     </Grid>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.UpdateExerciceCommand, Source={x:Reference workoutJournalPage}}"
+                                                              CommandParameter="{Binding .}">
+                                        </TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
                                 </Frame>
                             </StackLayout>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-                    <Button HorizontalOptions="Center"
+                </StackLayout>
+                <Button HorizontalOptions="Center"
                             BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                             Text="Add exercice" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                             Command="{Binding BindingContext.AddExerciceCommand, Source={x:Reference workoutJournalPage}}">
-                        <Button.ImageSource>
-                            <FontImageSource Color="{StaticResource Primary}"
-                                             Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
-                        </Button.ImageSource>
-                    </Button>
-                </StackLayout>
+                    <Button.ImageSource>
+                        <FontImageSource Color="{StaticResource Primary}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -873,8 +873,21 @@ namespace MealPlanner.Helpers
         {
             Log currentLog = Logs.FirstOrDefault(x => x.Date.Year == date.Year && x.Date.Month == date.Month && x.Date.Day == date.Day);
 
-            if (currentLog != null && currentLog.WorkoutId != 0)
+            if (currentLog != null)
             {
+                if(currentLog.WorkoutId == 0)
+                {
+                    // Add workout
+                    Workout workout = new Workout();
+                    await App.DataBaseRepo.AddWorkoutAsync(workout);
+                    Workouts.Add(workout);
+                    currentLog.WorkoutId = workout.Id;
+                    currentLog.Workout = workout;
+
+                    // Update log
+                    await App.DataBaseRepo.UpdateLogAsync(currentLog);
+                }
+
                 CurrentWorkout = Workouts.FirstOrDefault(x => x.Id == currentLog.WorkoutId);
             }
             else
@@ -896,8 +909,32 @@ namespace MealPlanner.Helpers
 
                 // Update log
                 await App.DataBaseRepo.UpdateLogAsync(log);
+                CurrentWorkout = Workouts.FirstOrDefault(x => x.Id == currentLog.WorkoutId);
             }
         }
+
+        /// <summary>
+        /// Creates a copy from existing exercice
+        /// </summary>
+        /// <param name="existingExercice"></param>
+        /// <returns></returns>
+        public Exercice CreateAndCopyExerciceProperties(Exercice existingExercice)
+        {
+            Exercice exercice = new Exercice()
+            {
+                Id = existingExercice.Id,
+                Name = existingExercice.Name,
+                Description = existingExercice.Description,
+                MuscleGroup = existingExercice.MuscleGroup,
+                MuscleGroupId = existingExercice.MuscleGroupId,
+                ImageSourcePath = existingExercice.ImageSourcePath,
+                ImageBlob = existingExercice.ImageBlob,
+                Sets = existingExercice.Sets
+            };
+
+            return exercice;
+        }
+
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
