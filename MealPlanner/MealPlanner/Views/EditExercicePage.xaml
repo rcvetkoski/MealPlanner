@@ -15,7 +15,7 @@
     </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Default" Priority="0" Command="{Binding SaveExerciceCommand}">
+        <ToolbarItem Order="Default" Priority="0" Command="{Binding SaveOrEditExerciceCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Size="20"
                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"

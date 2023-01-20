@@ -46,8 +46,24 @@ namespace MealPlanner.Models
             }
         }
         public int MuscleGroupId { get; set; }
+        private MuscleGroup muscleGroup;
         [Ignore]
-        public MuscleGroup MuscleGroup { get; set; }
+        public MuscleGroup MuscleGroup
+        { 
+            get
+            {
+                return muscleGroup;
+            }
+            set
+            {
+                if(muscleGroup != value)
+                {
+                    muscleGroup = value;
+                    MuscleGroupId = muscleGroup.Id;
+                    OnPropertyChanged(nameof(MuscleGroup));
+                }
+            }
+        }
         private string imageSourcePath;
         public string ImageSourcePath
         {

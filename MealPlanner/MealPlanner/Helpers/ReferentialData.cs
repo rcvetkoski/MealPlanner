@@ -926,7 +926,9 @@ namespace MealPlanner.Helpers
 
         public void PopulateWorkout(Workout workout)
         {
-            foreach(WorkoutExercice workoutExercice in WorkoutExercices.Where(x=> x.WorkoutId == workout.Id))
+            workout.Exercices.Clear();
+
+            foreach (WorkoutExercice workoutExercice in WorkoutExercices.Where(x=> x.WorkoutId == workout.Id))
             {
                 Exercice existingExercice = Exercices.FirstOrDefault(x=> x.Id == workoutExercice.ExerciceId);
 

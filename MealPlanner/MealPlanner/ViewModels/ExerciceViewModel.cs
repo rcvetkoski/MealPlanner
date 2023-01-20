@@ -121,6 +121,26 @@ namespace MealPlanner.ViewModels
         public ICommand DeleteExerciceCommand { get; set; }
         private async void DeleteExercice()
         {
+            // Delete link betwen Workout and exercice
+            var workoutExercice = RefData.WorkoutExercices.FirstOrDefault(x => x.Id == CurrentExercice.WorkoutExerciceId);
+
+            if (workoutExercice == null)
+                return;
+
+            // Remove from list
+            RefData.CurrentWorkout.Exercices.Remove(CurrentExercice);
+
+            // Remove sets
+            foreach(Set set in CurrentExercice.Sets)
+            {
+                RefData.Sets.Remove(set);
+                await App.DataBaseRepo.DeleteSetAsync(set);
+            }
+
+            // Delete fro mdb
+            await App.DataBaseRepo.DeleteWorkoutExerciceAsync(workoutExercice);
+
+            // Go back
             await Shell.Current.Navigation.PopAsync();
         }
 
@@ -165,6 +185,7 @@ namespace MealPlanner.ViewModels
             EditExercicePage editExercicePage = new EditExercicePage();
             var vm = editExercicePage.BindingContext as EditExerciceViewModel;
             vm.CurrentExercice = CurrentExercice;
+            vm.IsNew = false;
 
             await Shell.Current.Navigation.PushAsync(editExercicePage);
         }
