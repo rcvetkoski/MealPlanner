@@ -238,6 +238,7 @@ namespace MealPlanner.Helpers
             foreach (Log log in Logs)
             {
                 log.Meals = new List<Meal>();
+                log.Workout = Workouts.FirstOrDefault(x => x.Id == log.WorkoutId);
 
                 foreach (LogMeal logMeal in LogMeals.Where(x => x.LogId == log.Id))
                 {
@@ -336,7 +337,6 @@ namespace MealPlanner.Helpers
                             continue;
 
                         // Add aliments to Meal if any
-                        //meal.Aliments.Clear();
                         PopulateMeal(meal);
                         Meals.Add(AllMeals.FirstOrDefault(x => x.Id == logMeal.MealId));
                     }
@@ -344,10 +344,25 @@ namespace MealPlanner.Helpers
             }
             else
             {
+                // Add new log
+                Log log = new Log()
+                {
+                    Date = date,
+                    UserWeight = User.Weight,
+                    UserBodyFat = User.BodyFat
+                };
+                log.Meals = new List<Meal>();
+
+                // Add log to db
+                App.DataBaseRepo.AddLogAsync(log).Wait();
+                Logs.Add(log);
+
+
+
                 if (User.AutoGenerateJournalEnabled && isCurrentOrFutureDay)
-                    AutoGenerateMeals(date);
+                     AutoGenerateMeals(date, log);
                 else
-                    GenerateDefaultMeals(date);
+                     GenerateDefaultMeals(date, log);
             }
         }
 
@@ -387,21 +402,8 @@ namespace MealPlanner.Helpers
         /// Generate meals using template
         /// </summary>
         /// <param name="date"></param>
-        private async void AutoGenerateMeals(DateTime date)
+        private async void AutoGenerateMeals(DateTime date, Log log)
         {
-            // Add log
-            Log log = new Log() 
-            { 
-                Date = date, 
-                UserWeight = User.Weight,
-                UserBodyFat = User.BodyFat
-            };
-            log.Meals = new List<Meal>();
-
-            // Add log to db
-            await App.DataBaseRepo.AddLogAsync(log);
-            Logs.Add(log);
-
             // Get template for the given day
             DayOfWeekHelper dayOfWeekHelper = CurrentJournalTemplate.DaysOfWeek.FirstOrDefault(x => x.DayOfWeek == date.DayOfWeek);
             if (dayOfWeekHelper == null)
@@ -434,16 +436,8 @@ namespace MealPlanner.Helpers
             UpdateDailyValues();
         }
 
-        private async void GenerateDefaultMeals(DateTime date)
+        private async void GenerateDefaultMeals(DateTime date, Log log)
         {
-            // Add log
-            Log log = new Log() { Date = date, UserWeight = User.Weight, UserBodyFat = User.BodyFat };
-            log.Meals = new List<Meal>();
-
-            // Add log to db
-            await App.DataBaseRepo.AddLogAsync(log);
-            Logs.Add(log);
-
             // Add meals
             foreach (TemplateMeal templateMeal in TemplateMeals)
             {
