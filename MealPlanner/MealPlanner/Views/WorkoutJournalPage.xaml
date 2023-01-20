@@ -46,9 +46,9 @@
                                             <BindableLayout.ItemTemplate>
                                                 <DataTemplate x:DataType="models:Set">
                                                     <StackLayout Orientation="Horizontal" Spacing="2" Margin="2,0,2,0">
-                                                        <Label Text="{Binding Weight}"/>
-                                                        <Label Text="x"/>
-                                                        <Label Text="{Binding Reps}" Margin="0,0,5,0"/>
+                                                        <Label Text="{Binding Weight}" Style="{StaticResource LabelSmall}"/>
+                                                        <Label Text="x" Style="{StaticResource LabelSmall}"/>
+                                                        <Label Text="{Binding Reps}" Margin="0,0,5,0" Style="{StaticResource LabelSmall}"/>
                                                     </StackLayout>
                                                 </DataTemplate>
                                             </BindableLayout.ItemTemplate>
