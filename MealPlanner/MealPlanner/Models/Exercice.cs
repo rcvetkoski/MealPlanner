@@ -64,6 +64,7 @@ namespace MealPlanner.Models
                 }
             }
         }
+        public bool Archived { get; set; }
         private string imageSourcePath;
         public string ImageSourcePath
         {

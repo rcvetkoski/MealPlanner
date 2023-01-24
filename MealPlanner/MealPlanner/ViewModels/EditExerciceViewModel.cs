@@ -52,6 +52,9 @@ namespace MealPlanner.ViewModels
 
             // Save Changes to db
             await App.DataBaseRepo.UpdateExerciceAsync(CurrentExercice);
+
+            // Go back
+            await Shell.Current.Navigation.PopAsync();
         }
 
         public ICommand AddSetCommand { get; set; }

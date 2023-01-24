@@ -25,8 +25,10 @@ namespace MealPlanner.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            var vm = (BindingContext as HomeViewModel);
 
             datePicker.DateSelected += DateSelected;
+            vm.SetTitle();
         }
 
         protected override void OnDisappearing()
@@ -37,9 +39,11 @@ namespace MealPlanner.Views
 
         private void DateSelected(object sender, DateChangedEventArgs e)
         {
-            (BindingContext as HomeViewModel).SetTitle();
-            (BindingContext as HomeViewModel).RefData.GetMealsAtDate(e.NewDate);
-            (BindingContext as HomeViewModel).RefData.UpdateDailyValues();
+            var vm = (BindingContext as HomeViewModel);
+            vm.SetTitle();
+            vm.RefData.GetMealsAtDate(e.NewDate);
+            vm.RefData.GetWorkoutAtDay(e.NewDate);
+            vm.RefData.UpdateDailyValues();
         }
     }
 }

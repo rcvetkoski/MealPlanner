@@ -13,6 +13,60 @@
         <viewmodels:WorkoutJournalViewModel/>
     </ContentPage.BindingContext>
 
+    <Shell.TitleView>
+        <ContentView>
+            <Grid x:Name="gridToolbar"
+                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="Auto, Auto, *, Auto"
+                  HeightRequest="{OnPlatform iOS=44}"
+                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Button Grid.Row="0" Grid.Column="0"
+                        WidthRequest="50"
+                        HorizontalOptions="End"
+                        Margin="{OnPlatform Android='10,0,0,0'}"
+                        Command="{Binding PreviousDayCommand}"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                    <Button.ImageSource>
+                        <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.CaretLeft}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="{Binding Title}"
+                       Style="{StaticResource NavigationBarLabel}"
+                       HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ResetCurrentDayCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Button Grid.Row="0" Grid.Column="2"
+                        HorizontalOptions="Start"
+                        Command="{Binding NextDayCommand}"
+                        IsVisible="{Binding NextDayCommandVisible}"
+                        WidthRequest="50"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                    <Button.ImageSource>
+                        <FontImageSource Size="Title" Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.CaretRight}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button x:Name="imageButton"
+                             Grid.Row="0" Grid.Column="3"
+                             WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
+                             VerticalOptions="FillAndExpand" 
+                             BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                             Command="{Binding OpenCalendarCommand}" CommandParameter="{x:Reference datePicker}">
+                    <Button.ImageSource>
+                        <FontImageSource Size="22"
+                                         Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.CalendarDays}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+                <DatePicker x:Name="datePicker" IsVisible="false" Date="{Binding RefData.CurrentDay}" MaximumDate="{Binding MaximumDate}"/>
+            </Grid>
+        </ContentView>
+    </Shell.TitleView>
+
+
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
             <StackLayout Margin="0, 10, 0, 10">
@@ -34,7 +88,6 @@
                                         </Image>
                                         <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Style="{StaticResource LabelMediumBold}" VerticalOptions="Center"/>
                                         <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" 
-                                                Command="{Binding BindingContext.MealOptionsCommand, Source={x:Reference workoutJournalPage}}" CommandParameter="{Binding .}"
                                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                                             <Button.ImageSource>
                                                 <FontImageSource Size="20" 

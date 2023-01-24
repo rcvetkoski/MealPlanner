@@ -100,6 +100,7 @@ namespace MealPlanner.ViewModels
             };
 
             await App.DataBaseRepo.AddWorkoutExerciceAsync(workoutExercice);
+            exercice.WorkoutExerciceId = workoutExercice.Id;
             RefData.WorkoutExercices.Add(workoutExercice);
 
             // Save sets to db
@@ -121,6 +122,14 @@ namespace MealPlanner.ViewModels
         public ICommand DeleteExerciceCommand { get; set; }
         private async void DeleteExercice()
         {
+
+            if (CurrentExercice.WorkoutExerciceId == 0) // if WorkoutExerciceId == 0 it means it's not linked to a workout so we want to delete it from exercices list
+                DeleteOriginalExercice();
+            else
+                DeleteExerciceFromWorkout();
+        }
+        private async void DeleteExerciceFromWorkout()
+        {
             // Delete link betwen Workout and exercice
             var workoutExercice = RefData.WorkoutExercices.FirstOrDefault(x => x.Id == CurrentExercice.WorkoutExerciceId);
 
@@ -131,7 +140,7 @@ namespace MealPlanner.ViewModels
             RefData.CurrentWorkout.Exercices.Remove(CurrentExercice);
 
             // Remove sets
-            foreach(Set set in CurrentExercice.Sets)
+            foreach (Set set in CurrentExercice.Sets)
             {
                 RefData.Sets.Remove(set);
                 await App.DataBaseRepo.DeleteSetAsync(set);
@@ -139,6 +148,19 @@ namespace MealPlanner.ViewModels
 
             // Delete fro mdb
             await App.DataBaseRepo.DeleteWorkoutExerciceAsync(workoutExercice);
+
+            // Go back
+            await Shell.Current.Navigation.PopAsync();
+        }
+        private async void DeleteOriginalExercice()
+        {
+            var response = await Shell.Current.CurrentPage.DisplayAlert("Warning !", "The selected exercice will be archived and will no longer be visible in your exrcices list !!!", "Ok", "Cancel");
+            if (!response)
+                return;
+
+            // Remove from list
+            CurrentExercice.Archived = true;
+            RefData.Exercices.Remove(CurrentExercice);
 
             // Go back
             await Shell.Current.Navigation.PopAsync();
@@ -177,6 +199,9 @@ namespace MealPlanner.ViewModels
             CurrentExercice.Sets = CopiedSets;
 
             await App.DataBaseRepo.UpdateExerciceAsync(CurrentExercice);
+
+            // Go back
+            await Shell.Current.Navigation.PopAsync();
         }
 
         public ICommand EditExerciceCommand { get; set; }
@@ -193,9 +218,21 @@ namespace MealPlanner.ViewModels
         public ICommand AddSetCommand { get; set; }
         private void AddSet()
         {
+            double weight = 0;
+            int reps = 0;
+            var lastSet = CurrentExercice.Sets.LastOrDefault();
+
+            if(lastSet != null)
+            {
+                weight = lastSet.Weight;    
+                reps = lastSet.Reps;    
+            }
+
             Set set = new Set()
             {
-                Order = CopiedSets.Count() + 1
+                Order = CopiedSets.Count() + 1,
+                Weight = weight,
+                Reps = reps
             };
 
             AddedSets.Add(set);

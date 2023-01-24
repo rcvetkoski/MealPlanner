@@ -32,7 +32,23 @@ namespace MealPlanner.Helpers
         public ObservableCollection<JournalTemplate> JournalTemplates { get; set; }
         public ObservableCollection<JournalTemplateMeal> JournalTemplateMeals { get; set; }
         public ObservableCollection<Exercice> Exercices { get; set; }
-        public Workout CurrentWorkout { get; set; }
+
+        private Workout currentWorkout;
+        public Workout CurrentWorkout 
+        {
+            get
+            {
+                return currentWorkout;
+            }
+            set
+            {
+                if(currentWorkout != value)
+                {
+                    currentWorkout = value;
+                    OnPropertyChanged(nameof(CurrentWorkout));
+                }
+            }
+        }
         public ObservableCollection<Workout> Workouts { get; set; }
         public ObservableCollection<Set> Sets { get; set; }
         public ObservableCollection<MuscleGroup> MuscleGroups { get; set; }
@@ -897,6 +913,8 @@ namespace MealPlanner.Helpers
             }
             else
             {
+                CurrentWorkout.Exercices.Clear();
+
                 // Add log
                 Log log = new Log() { Date = date, UserWeight = User.Weight, UserBodyFat = User.BodyFat };
                 log.Meals = new List<Meal>();
@@ -920,7 +938,7 @@ namespace MealPlanner.Helpers
 
         public void PopulateWorkout(Workout workout)
         {
-            workout.Exercices.Clear();
+            CurrentWorkout.Exercices.Clear();
 
             foreach (WorkoutExercice workoutExercice in WorkoutExercices.Where(x=> x.WorkoutId == workout.Id))
             {

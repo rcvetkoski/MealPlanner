@@ -12,9 +12,58 @@ namespace MealPlanner.ViewModels
     {
         public WorkoutJournalViewModel()
         {
-            Title = "Workout Journal";
+            SetTitle();
+            MaximumDate = RefData.CurrentDay.AddDays(7);
             AddExerciceCommand = new Command(AddExercice);
             UpdateExerciceCommand = new Command<Exercice>(UpdateExercice);
+            OpenCalendarCommand = new Command<DatePicker>(OpenCalendar);
+            PreviousDayCommand = new Command(PreviousDay);
+            NextDayCommand = new Command(NextDay);
+            ResetCurrentDayCommand = new Command(ResetCurrentDay);
+        }
+
+        public void SetTitle()
+        {
+            Title = RefData.CurrentDay.Day == DateTime.Now.Day ? "Today" : RefData.CurrentDay.ToString(("dd MMM"));
+        }
+
+        public DateTime MaximumDate { get; set; }
+        public bool NextDayCommandVisible
+        {
+            get
+            {
+                return MaximumDate > RefData.CurrentDay.AddDays(1);
+            }
+        }
+
+        public ICommand OpenCalendarCommand { get; set; }
+        private void OpenCalendar(DatePicker datePicker)
+        {
+            datePicker.Focus();
+        }
+
+        public ICommand PreviousDayCommand { get; set; }
+        private void PreviousDay()
+        {
+            RefData.CurrentDay = RefData.CurrentDay.Subtract(TimeSpan.FromDays(1));
+            SetTitle();
+            OnPropertyChanged(nameof(NextDayCommandVisible));
+        }
+
+        public ICommand NextDayCommand { get; set; }
+        private void NextDay()
+        {
+            RefData.CurrentDay = RefData.CurrentDay.AddDays(1);
+            SetTitle();
+            OnPropertyChanged(nameof(NextDayCommandVisible));
+        }
+
+        public ICommand ResetCurrentDayCommand { get; set; }
+        private void ResetCurrentDay()
+        {
+            RefData.CurrentDay = DateTime.Now;
+            SetTitle();
+            OnPropertyChanged(nameof(NextDayCommandVisible));
         }
 
         public ICommand AddExerciceCommand { get; set; }
