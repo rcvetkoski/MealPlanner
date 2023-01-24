@@ -950,6 +950,7 @@ namespace MealPlanner.Helpers
                 // Copy exercice
                 Exercice exercice = CreateAndCopyExerciceProperties(existingExercice);
                 exercice.WorkoutExerciceId = workoutExercice.Id;
+                exercice.Sets.Clear();
 
                 // Add sets to exercice
                 foreach (var set in Sets)
