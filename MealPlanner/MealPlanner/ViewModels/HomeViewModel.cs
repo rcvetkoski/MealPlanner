@@ -48,6 +48,7 @@ namespace MealPlanner.ViewModels
         public void SetTitle()
         {
             Title = RefData.CurrentDay.Day == DateTime.Now.Day ? "Today" : RefData.CurrentDay.ToString(("dd MMM"));
+            OnPropertyChanged(nameof(NextDayCommandVisible));
         }
 
         public ICommand MealOptionsCommand { get; set; }
