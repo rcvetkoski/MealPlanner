@@ -220,7 +220,7 @@ namespace MealPlanner.ViewModels
         {
             double weight = 0;
             int reps = 0;
-            var lastSet = CurrentExercice.Sets.LastOrDefault();
+            var lastSet = CopiedSets.LastOrDefault();
 
             if(lastSet != null)
             {
