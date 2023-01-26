@@ -5,7 +5,7 @@
 
 
 
-
+        
 
 
 ![FoodPage](https://user-images.githubusercontent.com/50323773/214878882-45a6cdc9-4ee3-4ee8-abe9-21c9e7190f41.png)
@@ -13,7 +13,7 @@
 
 
 
-
+      
 
 
 ![EditFood2](https://user-images.githubusercontent.com/50323773/214878901-aa1c981b-2026-4308-923a-18ae72c09302.png)
@@ -21,7 +21,7 @@
 
 
 
-
+     
 
 
 
