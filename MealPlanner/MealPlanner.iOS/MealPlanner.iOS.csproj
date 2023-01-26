@@ -27,7 +27,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-    <EnableCodeSigning>False</EnableCodeSigning>
+    <EnableCodeSigning>True</EnableCodeSigning>
     <CodesignProvision>iOS Team Provisioning Profile: com.companyname.MealPlanner</CodesignProvision>
     <CodesignKey>Apple Development: rade_te_fr@hotmail.com (WQ6N3VG99D)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -40,7 +40,7 @@
     <WarningLevel>4</WarningLevel>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
-    <EnableCodeSigning>False</EnableCodeSigning>
+    <EnableCodeSigning>True</EnableCodeSigning>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,7 +56,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
     <MtouchInterpreter>-all</MtouchInterpreter>
-    <EnableCodeSigning>False</EnableCodeSigning>
+    <EnableCodeSigning>True</EnableCodeSigning>
     <CodesignProvision>Automatic</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -68,7 +68,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <EnableCodeSigning>False</EnableCodeSigning>
+    <EnableCodeSigning>True</EnableCodeSigning>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchVerbosity>2</MtouchVerbosity>
     <MtouchVerbosity>2</MtouchVerbosity>
