@@ -30,18 +30,16 @@
                   RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, Auto"
                   HeightRequest="{OnPlatform iOS=44}"
                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <rsControls:RSEntry x:Name="entry"
+                <Entry x:Name="entry"
                                     Grid.Row="0" Grid.Column="0"
-                                    RSEntryStyle="Underline"
                                     Placeholder="Search" 
                                     Style="{StaticResource Entry}" 
                                     HorizontalOptions="FillAndExpand"
-                                    BorderFillColor="Transparent"
                                     Keyboard="Chat"
                                     Text="{Binding Query}"
                                     ReturnCommand="{Binding SearchAlimentsCommand}"
                                     ReturnCommandParameter="{Binding Text, Source={x:Reference entry}}">
-                </rsControls:RSEntry>
+                </Entry>
                 <Button x:Name="cancelButton"
                         Grid.Row="0" Grid.Column="1"
                         Command="{Binding ClearSearchCommand}"
