@@ -74,7 +74,7 @@ namespace MealPlanner.ViewModels
             //var vm = addExercicePage.BindingContext as AddExerciceViewModel;
             //vm.SelectedWorkout = RefData.CurrentWorkout;
 
-            await Shell.Current.GoToAsync(nameof(AddExercicePage));
+            await Shell.Current.GoToAsync(nameof(ExerciceGroupPage));
         }
 
         public ICommand UpdateExerciceCommand { get; set; }

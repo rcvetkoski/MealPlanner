@@ -15,6 +15,7 @@ namespace MealPlanner.ViewModels
             Title = "Add Exercice";
             CreateNewExerciceCommand = new Command(CreateNewExercice);
             SelectExerciceCommand = new Command<Exercice>(SelectExercice);
+            ClearSearchCommand = new Command<Exercice>(ClearSearch);
         }
 
         public ICommand CreateNewExerciceCommand { get; set; }
@@ -42,6 +43,13 @@ namespace MealPlanner.ViewModels
             vm.CanDeleteItem = true;
 
             await Shell.Current.Navigation.PushAsync(exercicePage);
+        }
+
+        public ICommand ClearSearchCommand { get; set; }
+        private async void ClearSearch(Exercice exercice)
+        {
+
+            //await Shell.Current.Navigation.PushAsync(exercicePage);
         }
     }
 }

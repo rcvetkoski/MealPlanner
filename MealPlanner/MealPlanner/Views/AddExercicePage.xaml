@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
              xmlns:helpers="clr-namespace:MealPlanner.Helpers" 
-             xmlns:models="clr-namespace:MealPlanner.Models"
+             xmlns:models="clr-namespace:MealPlanner.Models" xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Name="addExercicePage"
              Title="{Binding Title}"
@@ -13,7 +13,43 @@
         <viewmodels:AddExerciceViewModel/>
     </ContentPage.BindingContext>
 
-    <ContentPage.ToolbarItems>
+    <Shell.TitleView>
+        <ContentView>
+            <Grid x:Name="gridToolbar"
+                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, 40"
+                  HeightRequest="{OnPlatform iOS=44}"
+                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+                <rsControls:RSEntry 
+                                    Grid.Row="0" Grid.Column="0"
+                                    RSEntryStyle="Underline"
+                                    Placeholder="Search" 
+                                    Style="{StaticResource Entry}" 
+                                    HorizontalOptions="FillAndExpand"
+                                    BorderFillColor="Transparent"
+                                    Keyboard="Chat"
+                                    Text="{Binding Query}"
+                                    ReturnCommand="{Binding SearchAlimentsCommand}"
+                                    ReturnCommandParameter="{Binding Text, Source={x:Reference entry}}">
+                </rsControls:RSEntry>
+                <Button 
+                        Grid.Row="0" Grid.Column="1"
+                        Command="{Binding ClearSearchCommand}"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                        WidthRequest="40" HeightRequest="40"
+                        VerticalOptions="Center">
+                    <Button.ImageSource>
+                        <FontImageSource Size="14" 
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.X}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+            </Grid>
+        </ContentView>
+    </Shell.TitleView>
+
+
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Priority="0" Command="{Binding CreateNewExerciceCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Size="20" 
@@ -21,40 +57,67 @@
                                  Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
 
     <ContentPage.Content>
-        <CollectionView Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.Exercices}" Margin="0, 10, 0, 10">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Exercice">
-                    <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,40" Padding="7" RowSpacing="2">
-                        <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
+        <StackLayout>
+            <StackLayout IsVisible="False" BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" Orientation="Horizontal" Padding="10, 0, 0, 0">
+                <rsControls:RSEntry x:Name="entry"
+                                    RSEntryStyle="Underline"
+                                    Placeholder="Search" 
+                                    Style="{StaticResource Entry}" 
+                                    HorizontalOptions="FillAndExpand"
+                                    BorderFillColor="Transparent"
+                                    Keyboard="Chat"
+                                    Text="{Binding Query}"
+                                    ReturnCommand="{Binding SearchAlimentsCommand}"
+                                    ReturnCommandParameter="{Binding Text, Source={x:Reference entry}}">
+                </rsControls:RSEntry>
+                <Button x:Name="cancelButton"
+                        Command="{Binding ClearSearchCommand}"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                        WidthRequest="40" HeightRequest="40"
+                        VerticalOptions="Center">
+                    <Button.ImageSource>
+                        <FontImageSource Size="14" 
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.X}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+            </StackLayout>
+
+            <CollectionView Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.Exercices}" Margin="0, 10, 0, 10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Exercice">
+                        <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,40" Padding="7" RowSpacing="2">
+                            <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
                                    Source="{Binding ImageSource}" 
                                    Aspect="AspectFill"
                                    HeightRequest="60"
                                    BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
-                            <Image.Clip>
-                                <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
-                            </Image.Clip>
-                        </Image>
-                        <Label Grid.Column="1" Style="{StaticResource LabelSmall}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
-                        <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalTextAlignment="Center" Text="{Binding Description}"/>
-                        <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" BackgroundColor="Transparent">
-                            <Button.ImageSource>
-                                <FontImageSource Size="20" 
+                                <Image.Clip>
+                                    <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
+                                </Image.Clip>
+                            </Image>
+                            <Label Grid.Column="1" Style="{StaticResource LabelSmall}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
+                            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalTextAlignment="Center" Text="{Binding Description}"/>
+                            <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" BackgroundColor="Transparent">
+                                <Button.ImageSource>
+                                    <FontImageSource Size="20" 
                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
-                            </Button.ImageSource>
+                                </Button.ImageSource>
 
-                        </Button>
-                        <BoxView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="#e6e6e6"/>
+                            </Button>
+                            <BoxView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="#e6e6e6"/>
 
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding BindingContext.SelectExerciceCommand, Source={x:Reference addExercicePage}}" CommandParameter="{Binding .}"/>
-                        </Grid.GestureRecognizers>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.SelectExerciceCommand, Source={x:Reference addExercicePage}}" CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

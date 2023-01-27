@@ -94,9 +94,9 @@
                                         <BoxView Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="Center" WidthRequest="3" BackgroundColor="{StaticResource Primary}"/>
                                         <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Order}"/>
                                         <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="{Binding BindingContext.RefData.User.WeightUnit, Source={x:Reference exercicePage}}" Margin="10,0,0,0"/>
-                                        <Entry Grid.Row="0" Grid.Column="2" Style="{StaticResource NumericEntry}" VerticalOptions="Center" Text="{Binding Weight}"/>
+                                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="2" Style="{StaticResource Entry}" VerticalOptions="Center" Value="{Binding Weight}"/>
                                         <Label Grid.Row="0" Grid.Column="3" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="Reps" Margin="10,0,0,0"/>
-                                        <Entry Grid.Row="0" Grid.Column="4" Style="{StaticResource NumericEntry}" VerticalOptions="Center" Text="{Binding Reps}"/>
+                                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="4" Style="{StaticResource Entry}" VerticalOptions="Center" Value="{Binding Reps}"/>
                                         <Button Grid.Row="0" Grid.Column="5"
                                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                                                 Command="{Binding BindingContext.DeleteSetCommand, Source={x:Reference exercicePage}}" 
@@ -125,6 +125,7 @@
                         </Button>
                     </StackLayout>
                 </Frame>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

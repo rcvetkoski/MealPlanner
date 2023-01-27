@@ -35,6 +35,8 @@ namespace MealPlanner.Services
                 aliment.Carbs = product.carbohydrates_100g;
                 aliment.Fats = product.fat_100g;
                 aliment.Calories = product.EnergyKcal100g;
+
+                aliment.OriginalServingSize = 100;
                 aliment.ServingSize = 100;
             }
             else
