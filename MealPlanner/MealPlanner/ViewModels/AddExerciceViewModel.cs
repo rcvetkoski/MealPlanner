@@ -48,7 +48,7 @@ namespace MealPlanner.ViewModels
         public ICommand ClearSearchCommand { get; set; }
         private async void ClearSearch(Exercice exercice)
         {
-
+            await Shell.Current.Navigation.PopAsync();
             //await Shell.Current.Navigation.PushAsync(exercicePage);
         }
     }

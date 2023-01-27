@@ -6,50 +6,14 @@
              xmlns:models="clr-namespace:MealPlanner.Models" xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Name="addExercicePage"
-             Title="{Binding Title}"
+             Title="{Binding Title}" Shell.NavBarIsVisible="False"
              x:Class="MealPlanner.Views.AddExercicePage">
 
     <ContentPage.BindingContext>
         <viewmodels:AddExerciceViewModel/>
     </ContentPage.BindingContext>
 
-    <Shell.TitleView>
-        <ContentView>
-            <Grid x:Name="gridToolbar"
-                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, 40"
-                  HeightRequest="{OnPlatform iOS=44}"
-                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                
-                <rsControls:RSEntry 
-                                    Grid.Row="0" Grid.Column="0"
-                                    RSEntryStyle="Underline"
-                                    Placeholder="Search" 
-                                    Style="{StaticResource Entry}" 
-                                    HorizontalOptions="FillAndExpand"
-                                    BorderFillColor="Transparent"
-                                    Keyboard="Chat"
-                                    Text="{Binding Query}"
-                                    ReturnCommand="{Binding SearchAlimentsCommand}"
-                                    ReturnCommandParameter="{Binding Text, Source={x:Reference entry}}">
-                </rsControls:RSEntry>
-                <Button 
-                        Grid.Row="0" Grid.Column="1"
-                        Command="{Binding ClearSearchCommand}"
-                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                        WidthRequest="40" HeightRequest="40"
-                        VerticalOptions="Center">
-                    <Button.ImageSource>
-                        <FontImageSource Size="14" 
-                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.X}" FontFamily="FA-Solid"/>
-                    </Button.ImageSource>
-                </Button>
-            </Grid>
-        </ContentView>
-    </Shell.TitleView>
-
-
-    <!--<ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Priority="0" Command="{Binding CreateNewExerciceCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Size="20" 
@@ -57,11 +21,22 @@
                                  Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-    </ContentPage.ToolbarItems>-->
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout IsVisible="False" BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" Orientation="Horizontal" Padding="10, 0, 0, 0">
+            <StackLayout BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" Orientation="Horizontal" Padding="10, 0, 0, 0">
+                <Button x:Name="backButton"
+                        Command="{Binding ClearSearchCommand}"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                        WidthRequest="40" HeightRequest="40"
+                        VerticalOptions="Center">
+                    <Button.ImageSource>
+                        <FontImageSource Size="20" 
+                                         Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.ArrowLeft}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
                 <rsControls:RSEntry x:Name="entry"
                                     RSEntryStyle="Underline"
                                     Placeholder="Search" 
@@ -80,8 +55,31 @@
                         VerticalOptions="Center">
                     <Button.ImageSource>
                         <FontImageSource Size="14" 
-                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.X}" FontFamily="FA-Solid"/>
+                                         Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.X}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+
+                <Button x:Name="searchButton"
+                        Command="{Binding ClearSearchCommand}"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                        WidthRequest="40" HeightRequest="40"
+                        VerticalOptions="Center">
+                    <Button.ImageSource>
+                        <FontImageSource Size="16" 
+                                         Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.MagnifyingGlass}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button x:Name="addButton"
+                        Command="{Binding ClearSearchCommand}"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                        WidthRequest="40" HeightRequest="40"
+                        VerticalOptions="Center">
+                    <Button.ImageSource>
+                        <FontImageSource Size="20" 
+                                         Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
             </StackLayout>
