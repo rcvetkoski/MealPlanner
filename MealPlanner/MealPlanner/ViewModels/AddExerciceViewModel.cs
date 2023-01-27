@@ -67,7 +67,7 @@ namespace MealPlanner.ViewModels
             if (string.IsNullOrEmpty(MuscleGroupName))
                 sortedList = RefData.Exercices.ToList();
             else
-                sortedList = RefData.Exercices.Where(x => x.MuscleGroup.Name == MuscleGroupName).ToList();
+                sortedList = RefData.Exercices.Where(x => x.MuscleGroup?.Name == MuscleGroupName).ToList();
 
             FillFilteredExercices(sortedList);
             TempFilteredExercices = FilteredExercices.ToList();
