@@ -16,7 +16,7 @@
     <Shell.TitleView>
         <ContentView>
             <Grid x:Name="gridToolbar"
-                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="Auto, Auto, *, Auto"
+                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="Auto, Auto, *, Auto, Auto"
                   HeightRequest="{OnPlatform iOS=44}"
                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Button Grid.Row="0" Grid.Column="0"
@@ -59,6 +59,18 @@
                         <FontImageSource Size="22"
                                          Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                          Glyph="{x:Static helpers:FontAwesomeIcons.CalendarDays}" FontFamily="FA-Solid"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button x:Name="addButton"
+                        Grid.Row="0" Grid.Column="4"
+                        WidthRequest="{Binding Height, Source={x:Reference gridToolbar}}"
+                        VerticalOptions="FillAndExpand" 
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                        Command="{Binding AddExerciceCommand}">
+                    <Button.ImageSource>
+                        <FontImageSource Size="22"
+                                         Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
                 <DatePicker x:Name="datePicker" IsVisible="false" Date="{Binding RefData.CurrentDay}" MaximumDate="{Binding MaximumDate}"/>

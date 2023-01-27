@@ -90,10 +90,10 @@
     </Shell.TitleView>
 
     <ContentPage.Content>
-        <CollectionView Style="{StaticResource CollectionView}" ItemsSource="{Binding FilteredExercices}" Margin="0, 10, 0, 10">
+        <CollectionView Style="{StaticResource CollectionView}" ItemsSource="{Binding FilteredExercices}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Exercice">
-                        <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,*,40" Padding="7">
+                    <Grid RowDefinitions="30, 30, 9" ColumnDefinitions="60,*,40" Padding="8, 8, 8, 0" RowSpacing="0">
                             <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
                                    Source="{Binding ImageSource}" 
                                    Aspect="AspectFill"
@@ -113,7 +113,7 @@
                                 </Button.ImageSource>
 
                             </Button>
-                            <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#e6e6e6"/>
+                            <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="1" VerticalOptions="End" BackgroundColor="#e6e6e6"/>
 
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding BindingContext.SelectExerciceCommand, Source={x:Reference addExercicePage}}" CommandParameter="{Binding .}"/>

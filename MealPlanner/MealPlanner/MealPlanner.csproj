@@ -13,14 +13,28 @@
     <None Remove="Resources\Fonts\Font Awesome 6 Brands-Regular-400.otf" />
     <None Remove="Resources\Fonts\Font Awesome 6 Free-Regular-400.otf" />
     <None Remove="Resources\Fonts\Font Awesome 6 Free-Solid-900.otf" />
+    <None Remove="Resources\Images\Arms.jpg" />
+    <None Remove="Resources\Images\Back.jpg" />
+    <None Remove="Resources\Images\Cardio.jpg" />
+    <None Remove="Resources\Images\Chest.jpg" />
+    <None Remove="Resources\Images\Core.jpg" />
     <None Remove="Resources\Images\image.png" />
+    <None Remove="Resources\Images\Legs.jpg" />
+    <None Remove="Resources\Images\Shoulder.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\FA6Brands-Regular-400.otf" />
     <EmbeddedResource Include="Resources\Fonts\FA6Free-Regular-400.otf" />
     <EmbeddedResource Include="Resources\Fonts\FA6Free-Solid-900.otf" />
+    <EmbeddedResource Include="Resources\Images\Arms.jpg" />
+    <EmbeddedResource Include="Resources\Images\Back.jpg" />
+    <EmbeddedResource Include="Resources\Images\Cardio.jpg" />
+    <EmbeddedResource Include="Resources\Images\Chest.jpg" />
+    <EmbeddedResource Include="Resources\Images\Core.jpg" />
     <EmbeddedResource Include="Resources\Images\image.png" />
+    <EmbeddedResource Include="Resources\Images\Legs.jpg" />
+    <EmbeddedResource Include="Resources\Images\Shoulder.jpg" />
   </ItemGroup>
 
   <ItemGroup>
