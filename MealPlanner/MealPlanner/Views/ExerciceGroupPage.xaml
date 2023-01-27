@@ -36,6 +36,7 @@
                 <DataTemplate x:DataType="models:MuscleGroup">
                     <Grid RowDefinitions="60, 1" ColumnDefinitions="60,*,40" Padding="7" RowSpacing="2">
                         <Image Grid.Row="0" Grid.Column="0" 
+                               Source="{Binding ImageSource}"
                                Aspect="AspectFill"
                                HeightRequest="60"
                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">

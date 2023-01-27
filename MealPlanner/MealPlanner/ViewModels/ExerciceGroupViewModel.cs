@@ -1,4 +1,5 @@
-﻿using MealPlanner.Views;
+﻿using MealPlanner.Models;
+using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,15 +13,18 @@ namespace MealPlanner.ViewModels
         public ExerciceGroupViewModel()
         {
             Title = "Exercices";
-            SelectExerciceGroupCommand = new Command(SelectExerciceGroup);
+            SelectExerciceGroupCommand = new Command<MuscleGroup>(SelectExerciceGroup);
             CreateNewExerciceGroupCommand = new Command(CreateNewExerciceGroup);
             SearchExerciceCommand = new Command(SearchExercice);
         }
 
         public ICommand SelectExerciceGroupCommand { get; set; }
-        private async void SelectExerciceGroup()
+        private async void SelectExerciceGroup(MuscleGroup muscleGroup)
         {
-            await Shell.Current.GoToAsync(nameof(AddExercicePage));
+            AddExercicePage addExercicePage = new AddExercicePage();
+            var vm = addExercicePage.BindingContext as AddExerciceViewModel;
+            vm.RefreshFilteredExercices(muscleGroup.Name);
+            await Shell.Current.Navigation.PushAsync(addExercicePage);
         }
 
         public ICommand CreateNewExerciceGroupCommand { get; set; }
@@ -33,9 +37,11 @@ namespace MealPlanner.ViewModels
         private async void SearchExercice()
         {
             AddExercicePage addExercicePage = new AddExercicePage();
-
-            //await Shell.Current.Navigation.PushModalAsync(addExercicePage);
-            await Shell.Current.GoToAsync(nameof(AddExercicePage));
+            var vm = addExercicePage.BindingContext as AddExerciceViewModel;
+            vm.IsSearchVisible = true;
+            vm.RefreshFilteredExercices(string.Empty);
+            await Shell.Current.Navigation.PushAsync(addExercicePage);
+            addExercicePage.SearchEntry.Focus();
         }
     }
 }

@@ -1,11 +1,13 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using Xamarin.Forms;
 
 namespace MealPlanner.Models
 {
-    public class MuscleGroup : BaseModel
+    public class MuscleGroup : BaseModel, IHaveImage
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -23,6 +25,58 @@ namespace MealPlanner.Models
                     name = value;
                     OnPropertyChanged("Name");
                 }
+            }
+        }
+        private string imageSourcePath;
+        public string ImageSourcePath
+        {
+            get
+            {
+                return imageSourcePath;
+            }
+            set
+            {
+                if (imageSourcePath != value)
+                {
+                    imageSourcePath = value;
+                    OnPropertyChanged("ImageSourcePath");
+                    OnPropertyChanged("ImageSource");
+                }
+            }
+        }
+        private byte[] imageBlob;
+        public byte[] ImageBlob
+        {
+            get
+            {
+                return imageBlob;
+            }
+            set
+            {
+                if (imageBlob != value)
+                {
+                    imageBlob = value;
+                    OnPropertyChanged("ImageBlob");
+                    OnPropertyChanged("ImageSource");
+                }
+            }
+        }
+        [Ignore]
+        public ImageSource ImageSource
+        {
+            get
+            {
+                if (ImageBlob != null)
+                    return ImageSource.FromStream(() => new MemoryStream(ImageBlob));
+
+                if (string.IsNullOrEmpty(ImageSourcePath))
+                    //return new FontImageSource() { Glyph = FontAwesomeIcons.Image, FontFamily = "FA-Solid", Color = Color.Gray, Size = 120 };
+                    return ImageSource.FromResource("MealPlanner.Resources.Images.image.png");
+
+                if (imageSourcePath.Contains("https"))
+                    return new UriImageSource() { Uri = new Uri(ImageSourcePath), CachingEnabled = true, CacheValidity = TimeSpan.FromDays(1) };
+                else
+                    return ImageSource.FromFile(ImageSourcePath);
             }
         }
     }

@@ -2,6 +2,8 @@
 using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -15,7 +17,74 @@ namespace MealPlanner.ViewModels
             Title = "Add Exercice";
             CreateNewExerciceCommand = new Command(CreateNewExercice);
             SelectExerciceCommand = new Command<Exercice>(SelectExercice);
-            ClearSearchCommand = new Command<Exercice>(ClearSearch);
+            ClearSearchCommand = new Command(ClearSearch);
+            SearchCommand = new Command<Entry>(Search);
+            FilteredExercices = new ObservableCollection<Exercice>();
+            TempFilteredExercices = new List<Exercice>();
+        }
+
+        private bool isSearchVisible;
+        public bool IsSearchVisible
+        {
+            get
+            {
+                return isSearchVisible;
+            }
+            set
+            {
+                if(isSearchVisible != value)
+                {
+                    isSearchVisible = value;
+                    OnPropertyChanged(nameof(IsSearchVisible));
+                }
+            }
+        }
+
+        private string query;
+        public string Query
+        {
+            get
+            {
+                return query;
+            }
+            set
+            {
+                if (value != query)
+                {
+                    query = value;
+                    OnPropertyChanged(nameof(Query));
+                }
+            }
+        }
+
+        public ObservableCollection<Exercice> FilteredExercices { get; set; }
+        private List<Exercice> TempFilteredExercices;
+
+        public void RefreshFilteredExercices(string MuscleGroupName)
+        {
+            List<Exercice> sortedList = null;
+
+            if (string.IsNullOrEmpty(MuscleGroupName))
+                sortedList = RefData.Exercices.ToList();
+            else
+                sortedList = RefData.Exercices.Where(x => x.MuscleGroup.Name == MuscleGroupName).ToList();
+
+            FillFilteredExercices(sortedList);
+            TempFilteredExercices = FilteredExercices.ToList();
+        }
+
+        public void SearchExercices()
+        {
+            var searchedList = TempFilteredExercices.Where(x => !x.Archived && x.Name.ToLower().Contains(Query.ToLower())).ToList();
+            FillFilteredExercices(searchedList);
+        }
+
+        private void FillFilteredExercices(List<Exercice> sortedList)
+        {
+            FilteredExercices.Clear();
+
+            foreach(Exercice exercice in sortedList)
+                FilteredExercices.Add(exercice);
         }
 
         public ICommand CreateNewExerciceCommand { get; set; }
@@ -46,10 +115,21 @@ namespace MealPlanner.ViewModels
         }
 
         public ICommand ClearSearchCommand { get; set; }
-        private async void ClearSearch(Exercice exercice)
+        private void ClearSearch()
         {
-            await Shell.Current.Navigation.PopAsync();
-            //await Shell.Current.Navigation.PushAsync(exercicePage);
+            IsSearchVisible = false;
+            if(!string.IsNullOrEmpty(Query))
+            {
+                Query = string.Empty;
+                SearchExercices();
+            }
+        }
+
+        public ICommand SearchCommand { get; set; }
+        private async void Search(Entry entry)
+        {
+            entry.Focus();
+            IsSearchVisible = true;
         }
     }
 }

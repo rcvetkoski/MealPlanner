@@ -360,16 +360,6 @@ namespace MealPlanner.ViewModels
             Helpers.Enums.AlimentTypeEnum type = IsFoodChecked ? Helpers.Enums.AlimentTypeEnum.Food : Helpers.Enums.AlimentTypeEnum.Recipe;
             var searchedList = RefData.Aliments.Where(x => x.AlimentType == type && !x.Archived && x.Name.ToLower().Contains(Query.ToLower())).OrderBy(x=> x.Name).ToList();
             FillFilteredAliments(searchedList);
-
-            //FilteredAliments.Clear();
-
-            //foreach (Aliment aliment in searchedList)
-            //{
-            //    if (IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Recipe)
-            //        FilteredAliments.Add(aliment);
-            //    else if (!IsRecipeChecked && aliment.AlimentType == Helpers.Enums.AlimentTypeEnum.Food)
-            //        FilteredAliments.Add(aliment);
-            //}
         }
 
         public void Search()

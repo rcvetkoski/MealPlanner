@@ -135,7 +135,7 @@
                 </CollectionView.HeaderTemplate>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Aliment">
-                        <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,3*,*" Padding="7" RowSpacing="2">
+                        <Grid RowDefinitions="30, 30, 1" ColumnDefinitions="60,3*,*" Padding="7">
                             <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
                                    Source="{Binding ImageSource}" 
                                    Aspect="AspectFill"
@@ -149,7 +149,7 @@
                             <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelSmall}" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Text="{Binding ServingSizeWithUnit}"/>
                             <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalTextAlignment="Center" Text="{Binding NutritionValuesString}"/>
                             <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource LabelSmall}" VerticalTextAlignment="Center" Text="{Binding CaloriesString}" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                            <BoxView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="#e6e6e6"/>
+                            <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#e6e6e6"/>
 
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding BindingContext.SelectAlimentCommand, Source={x:Reference addAlimentPage}}" CommandParameter="{Binding .}"/>

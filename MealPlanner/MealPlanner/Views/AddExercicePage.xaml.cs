@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MealPlanner.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,16 @@ namespace MealPlanner.Views
         public AddExercicePage()
         {
             InitializeComponent();
+
+            SearchEntry = this.searchEntry;
+        }
+
+        public Entry SearchEntry;
+
+        private void searchEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var vm = BindingContext as AddExerciceViewModel;
+            vm.SearchExercices();
         }
     }
 }
