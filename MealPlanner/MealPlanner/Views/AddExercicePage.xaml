@@ -23,20 +23,45 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
 
-    <ContentPage.Content>
-        <StackLayout>
-            <StackLayout BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" Orientation="Horizontal">
-                <Button x:Name="backButton"
+    <Shell.TitleView>
+        <ContentView>
+            <Grid x:Name="gridToolbar"
+                  Grid.Row="0" Grid.Column="0"
+                  RowDefinitions="{OnPlatform iOS=44, Android=*}" ColumnDefinitions="*, Auto"
+                  HeightRequest="{OnPlatform iOS=44}"
+                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <rsControls:RSEntry x:Name="entry"
+                                    Grid.Row="0" Grid.Column="0"
+                                    RSEntryStyle="Underline"
+                                    Placeholder="Search" 
+                                    Style="{StaticResource Entry}" 
+                                    HorizontalOptions="FillAndExpand"
+                                    BorderFillColor="Transparent"
+                                    Keyboard="Chat"
+                                    Text="{Binding Query}"
+                                    ReturnCommand="{Binding SearchAlimentsCommand}"
+                                    ReturnCommandParameter="{Binding Text, Source={x:Reference entry}}">
+                </rsControls:RSEntry>
+                <Button x:Name="cancelButton"
+                        Grid.Row="0" Grid.Column="1"
                         Command="{Binding ClearSearchCommand}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                         WidthRequest="40" HeightRequest="40"
                         VerticalOptions="Center">
                     <Button.ImageSource>
-                        <FontImageSource Size="20" 
+                        <FontImageSource Size="14" 
                                          Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                         Glyph="{x:Static helpers:FontAwesomeIcons.ArrowLeft}" FontFamily="FA-Solid"/>
+                                         Glyph="{x:Static helpers:FontAwesomeIcons.X}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
+            </Grid>
+        </ContentView>
+    </Shell.TitleView>
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<StackLayout BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" Orientation="Horizontal">
                 <rsControls:RSEntry x:Name="entry"
                                     RSEntryStyle="Underline"
                                     Placeholder="Search" 
@@ -82,7 +107,7 @@
                                          Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
                     </Button.ImageSource>
                 </Button>
-            </StackLayout>
+            </StackLayout>-->
 
             <CollectionView Style="{StaticResource CollectionView}" ItemsSource="{Binding RefData.Exercices}" Margin="0, 10, 0, 10">
                 <CollectionView.ItemTemplate>
