@@ -6,7 +6,7 @@
              xmlns:models="clr-namespace:MealPlanner.Models" xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Name="addExercicePage"
-             Title="{Binding Title}" Shell.NavBarIsVisible="False"
+             Title="{Binding Title}"
              x:Class="MealPlanner.Views.AddExercicePage">
 
     <ContentPage.BindingContext>
@@ -25,7 +25,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" Orientation="Horizontal" Padding="10, 0, 0, 0">
+            <StackLayout BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" Orientation="Horizontal">
                 <Button x:Name="backButton"
                         Command="{Binding ClearSearchCommand}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
