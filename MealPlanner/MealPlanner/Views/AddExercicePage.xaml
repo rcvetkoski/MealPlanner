@@ -93,17 +93,17 @@
         <CollectionView Style="{StaticResource CollectionView}" ItemsSource="{Binding FilteredExercices}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Exercice">
-                    <Grid RowDefinitions="30, 30, 9" ColumnDefinitions="60,*,40" Padding="8, 8, 8, 0" RowSpacing="0">
+                    <Grid RowDefinitions="35, 35, 9" ColumnDefinitions="70,*,40" Padding="8, 8, 8, 0" RowSpacing="0">
                             <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
                                    Source="{Binding ImageSource}" 
                                    Aspect="AspectFill"
-                                   HeightRequest="60"
+                                   HeightRequest="70"
                                    BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                                 <Image.Clip>
-                                    <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
+                                    <RoundRectangleGeometry Rect="0,0,70,70" CornerRadius="12"/>
                                 </Image.Clip>
                             </Image>
-                            <Label Grid.Column="1" Style="{StaticResource LabelSmall}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
+                            <Label Grid.Column="1" Style="{StaticResource LabelSmallBold}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
                             <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalTextAlignment="Center" Text="{Binding Description}"/>
                             <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" BackgroundColor="Transparent">
                                 <Button.ImageSource>

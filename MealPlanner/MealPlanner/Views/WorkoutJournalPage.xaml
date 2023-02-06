@@ -87,7 +87,7 @@
                         <DataTemplate x:DataType="models:Exercice">
                             <StackLayout>
                                 <Frame Style="{StaticResource MealCard}">
-                                    <Grid RowDefinitions="30, 50, 11, Auto" ColumnDefinitions="80, *, 30">
+                                    <Grid RowDefinitions="30, 50, 11, Auto" ColumnDefinitions="80, *, 20">
                                         <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
                                                Source="{Binding ImageSource}" 
                                                Aspect="AspectFill"
@@ -98,8 +98,8 @@
                                                 <RoundRectangleGeometry Rect="0,0,80,80" CornerRadius="12"/>
                                             </Image.Clip>
                                         </Image>
-                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Style="{StaticResource LabelMediumBold}" VerticalOptions="Center"/>
-                                        <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" 
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Style="{StaticResource LabelMediumBold}" LineBreakMode="TailTruncation" VerticalOptions="Center"/>
+                                        <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2"
                                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                                             <Button.ImageSource>
                                                 <FontImageSource Size="20" 

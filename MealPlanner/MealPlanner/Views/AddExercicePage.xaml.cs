@@ -27,13 +27,5 @@ namespace MealPlanner.Views
             var vm = BindingContext as AddExerciceViewModel;
             vm.SearchExercices();
         }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            var vm = BindingContext as AddExerciceViewModel;
-
-            vm.RefreshFilteredExercices(vm.MuscleGroupName);
-        }
     }
 }

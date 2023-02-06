@@ -1,4 +1,5 @@
 ﻿using MealPlanner.Helpers;
+using MealPlanner.Helpers.Extensions;
 using MealPlanner.Models;
 using MealPlanner.Services;
 using MealPlanner.Views;
@@ -72,7 +73,22 @@ namespace MealPlanner.ViewModels
         public FontAttributes RecipeButtonAtributtes { get; set; }
 
 
-        public ObservableCollection<Aliment> FilteredAliments { get; set; }
+        private ObservableCollection<Aliment> filteredAliments;
+        public ObservableCollection<Aliment> FilteredAliments
+        { 
+            get
+            {
+                return filteredAliments;
+            }
+            set
+            {
+                if(filteredAliments != value)
+                {
+                    filteredAliments = value;
+                    OnPropertyChanged(nameof(FilteredAliments));
+                }
+            }
+        }
 
         private RSPopup rSPopupFilter;
 
@@ -341,12 +357,13 @@ namespace MealPlanner.ViewModels
 
                 rSPopup.Close();
 
-                FilteredAliments.Clear();
+                FillFilteredAliments(aliments);
 
-                foreach (Aliment aliment in aliments)
-                {
-                    FilteredAliments.Add(aliment);
-                }
+                //FilteredAliments.Clear();
+                //foreach (Aliment aliment in aliments)
+                //{
+                //    FilteredAliments.Add(aliment);
+                //}
             }
             catch (Exception ex)
             {
@@ -406,10 +423,12 @@ namespace MealPlanner.ViewModels
 
         private void FillFilteredAliments(List<Aliment> sortedList)
         {
-            FilteredAliments.Clear();
-
-            foreach (Aliment aliment in sortedList)
-                FilteredAliments.Add(aliment);
+            //FilteredAliments.Clear();
+            FilteredAliments = null;
+            FilteredAliments = sortedList.ToObservableCollection();
+            
+            //foreach (Aliment aliment in sortedList)
+            //    FilteredAliments.Add(aliment);
         }
 
         ~AddAlimentViewModel()

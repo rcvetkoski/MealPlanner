@@ -59,8 +59,6 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        public string MuscleGroupName = string.Empty;
-
         private ObservableCollection<Exercice> filteredExercices;
         public ObservableCollection<Exercice> FilteredExercices 
         { 
@@ -101,7 +99,7 @@ namespace MealPlanner.ViewModels
         private void FillFilteredExercices(List<Exercice> sortedList)
         {
             FilteredExercices.Clear();
-
+            FilteredExercices = null;
             FilteredExercices = sortedList.ToObservableCollection();
 
             //foreach (Exercice exercice in sortedList)
@@ -114,6 +112,7 @@ namespace MealPlanner.ViewModels
             EditExercicePage editExercicePage = new EditExercicePage();
             var vm = editExercicePage.BindingContext as EditExerciceViewModel;
             vm.CurrentExercice = new Exercice();
+            vm.CopiedFilteredExercices = FilteredExercices;
             vm.IsNew = true;
 
             await Shell.Current.Navigation.PushAsync(editExercicePage);

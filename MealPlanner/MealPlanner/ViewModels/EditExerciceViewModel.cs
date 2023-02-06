@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MealPlanner.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
@@ -15,6 +17,8 @@ namespace MealPlanner.ViewModels
             AddSetCommand = new Command(AddSet);
         }
 
+        public ObservableCollection<Exercice> CopiedFilteredExercices { get; set; }
+
         public ICommand SaveOrEditExerciceCommand { get; set; }
         private async void SaveOrEditExercice()
         {
@@ -27,6 +31,7 @@ namespace MealPlanner.ViewModels
         private async void SaveExercice()
         {
             RefData.Exercices.Add(CurrentExercice);
+            CopiedFilteredExercices?.Add(CurrentExercice);  
             await App.DataBaseRepo.AddExerciceAsync(CurrentExercice);
             await Shell.Current.Navigation.PopAsync();
         }
