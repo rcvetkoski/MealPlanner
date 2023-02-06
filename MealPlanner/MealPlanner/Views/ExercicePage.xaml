@@ -126,6 +126,38 @@
                     </StackLayout>
                 </Frame>
 
+                <Frame Style="{StaticResource JournalTemplateCard}">
+                    <StackLayout>
+                        <Label Text="Previous Sets" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,10"/>
+                        <StackLayout BindableLayout.ItemsSource="{Binding PreviousSets}" Spacing="0">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="models:Set">
+                                    <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, Auto, *, Auto, *, 40">
+                                        <BoxView Grid.Row="0" Grid.Column="0" VerticalOptions="Center" WidthRequest="28" HeightRequest="28" BackgroundColor="{StaticResource Primary}" CornerRadius="14"/>
+                                        <BoxView Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="Center" WidthRequest="3" BackgroundColor="{StaticResource Primary}"/>
+                                        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Order}"/>
+                                        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="{Binding BindingContext.RefData.User.WeightUnit, Source={x:Reference exercicePage}}" Margin="10,0,0,0"/>
+                                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="2" IsEnabled="False" Style="{StaticResource Entry}" VerticalOptions="Center" Value="{Binding Weight}"/>
+                                        <Label Grid.Row="0" Grid.Column="3" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="Reps" Margin="10,0,0,0"/>
+                                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="4" IsEnabled="False" Style="{StaticResource Entry}" VerticalOptions="Center" Value="{Binding Reps}"/>
+                                        <Button Grid.Row="0" Grid.Column="5"
+                                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                                Command="{Binding BindingContext.AddPreviousSetCommand, Source={x:Reference exercicePage}}" 
+                                                CommandParameter="{Binding .}"
+                                                HorizontalOptions="Center">
+                                            <Button.ImageSource>
+                                                <FontImageSource Color="{StaticResource Primary}"
+                                                                 Size="22"
+                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Check}" FontFamily="FA-Solid"/>
+                                            </Button.ImageSource>
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

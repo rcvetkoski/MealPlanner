@@ -1,6 +1,7 @@
 ﻿using MealPlanner.Helpers.Enums;
 using MealPlanner.Models;
 using MealPlanner.Views;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,13 +22,16 @@ namespace MealPlanner.ViewModels
             EditExerciceCommand = new Command(EditExercice);
             AddSetCommand = new Command(AddSet);
             DeleteSetCommand = new Command<Set>(DeleteSet);
+            AddPreviousSetCommand = new Command<Set>(AddPreviousSet);
             UpdateExerciceCommand = new Command(UpdateExercice);
             CopiedSets = new ObservableCollection<Set>();
             AddedSets = new List<Set>();
             DeletedSets = new List<Set>();
+            PreviousSets = new ObservableCollection<Set>();
         }
 
         public ObservableCollection<Set> CopiedSets { get; set; }
+        public ObservableCollection<Set> PreviousSets { get; set; }
         private List<Set> AddedSets;
         private List<Set> DeletedSets;
 
@@ -244,6 +248,20 @@ namespace MealPlanner.ViewModels
         {
             DeletedSets.Add(set);
             CopiedSets.Remove(set);
+        }
+
+        public ICommand AddPreviousSetCommand { get; set; }
+        private void AddPreviousSet(Set set)
+        {
+            Set newSet = new Set()
+            {
+                Order = set.Order,
+                Weight = set.Weight,
+                Reps = set.Reps
+            };
+
+            AddedSets.Add(newSet);
+            CopiedSets.Add(newSet);
         }
     }
 }

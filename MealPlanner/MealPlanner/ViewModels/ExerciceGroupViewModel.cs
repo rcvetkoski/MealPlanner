@@ -23,14 +23,19 @@ namespace MealPlanner.ViewModels
         {
             AddExercicePage addExercicePage = new AddExercicePage();
             var vm = addExercicePage.BindingContext as AddExerciceViewModel;
-            vm.RefreshFilteredExercices(muscleGroup.Name);
+            vm.MuscleGroupName = muscleGroup.Name;
             await Shell.Current.Navigation.PushAsync(addExercicePage);
         }
 
         public ICommand CreateNewExerciceGroupCommand { get; set; }
         private async void CreateNewExerciceGroup()
         {
-            //await Shell.Current.GoToAsync(nameof(AddExercicePage));
+            EditExercicePage editExercicePage = new EditExercicePage();
+            var vm = editExercicePage.BindingContext as EditExerciceViewModel;
+            vm.CurrentExercice = new Exercice();
+            vm.IsNew = true;
+
+            await Shell.Current.Navigation.PushAsync(editExercicePage);
         }
 
         public ICommand SearchExerciceCommand { get; set; }
@@ -39,7 +44,6 @@ namespace MealPlanner.ViewModels
             AddExercicePage addExercicePage = new AddExercicePage();
             var vm = addExercicePage.BindingContext as AddExerciceViewModel;
             vm.IsSearchVisible = true;
-            vm.RefreshFilteredExercices(string.Empty);
             await Shell.Current.Navigation.PushAsync(addExercicePage);
             addExercicePage.SearchEntry.Focus();
         }

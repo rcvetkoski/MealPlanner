@@ -1,4 +1,6 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers;
+using MealPlanner.Helpers.Extensions;
+using MealPlanner.Models;
 using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
@@ -57,7 +59,24 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        public ObservableCollection<Exercice> FilteredExercices { get; set; }
+        public string MuscleGroupName = string.Empty;
+
+        private ObservableCollection<Exercice> filteredExercices;
+        public ObservableCollection<Exercice> FilteredExercices 
+        { 
+            get
+            {
+                return filteredExercices;
+            }
+            set
+            {
+                if(filteredExercices != value)
+                {
+                    filteredExercices = value;
+                    OnPropertyChanged(nameof(FilteredExercices));
+                }
+            }
+        }
         private List<Exercice> TempFilteredExercices;
 
         public void RefreshFilteredExercices(string MuscleGroupName)
@@ -83,8 +102,10 @@ namespace MealPlanner.ViewModels
         {
             FilteredExercices.Clear();
 
-            foreach(Exercice exercice in sortedList)
-                FilteredExercices.Add(exercice);
+            FilteredExercices = sortedList.ToObservableCollection();
+
+            //foreach (Exercice exercice in sortedList)
+            //    FilteredExercices.Add(exercice);
         }
 
         public ICommand CreateNewExerciceCommand { get; set; }
@@ -108,6 +129,24 @@ namespace MealPlanner.ViewModels
             {
                 vm.CopiedSets.Add(set);
             }
+
+            // Fill Previous sets if any
+            foreach (Log log in RefData.Logs.Where(x=> x.Date.Date != DateTime.Now.Date).OrderByDescending(x => x.Date))
+            {
+                var workoutExercice = RefData.WorkoutExercices.SingleOrDefault(x => x.WorkoutId == log.WorkoutId && x.ExerciceId == exercice.Id);
+
+                if (workoutExercice == null)
+                    continue;
+                else
+                {
+                    foreach (Set set in RefData.Sets.Where(x => x.WorkoutExerciceId == workoutExercice.Id))
+                        vm.PreviousSets.Add(set);
+
+                    break;
+                }
+            }
+
+
             vm.CanAddItem = true;
             vm.CanDeleteItem = true;
 
