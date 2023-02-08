@@ -987,6 +987,70 @@ namespace MealPlanner.Helpers
             return exercice;
         }
 
+        /// <summary>
+        /// Returns WorkoutExercice where the exercice was last performed
+        /// </summary>
+        /// <param name="exercice"></param>
+        /// <returns></returns>
+        public WorkoutExercice GetExerciceLastPerformance(Exercice exercice)
+        {
+            foreach (Log log in Logs.Where(x => x.Date.Date != DateTime.Now.Date).OrderByDescending(x => x.Date))
+            {
+                foreach (WorkoutExercice workoutExercice in WorkoutExercices.Where(x => x.WorkoutId == log.WorkoutId && x.ExerciceId == exercice.Id))
+                    if (workoutExercice != null)
+                        return workoutExercice;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Returns a Enumerable<set> for the last time performance of an exercice
+        /// </summary>
+        /// <param name="workoutExercice"></param>
+        /// <returns></returns>
+        public IEnumerable<Set> GetExerciceSetsOfLastPerformance(Exercice exercice)
+        {
+            var workoutExercice = GetExerciceLastPerformance(exercice);
+            if (workoutExercice != null)
+                return Sets.Where(x => x.WorkoutExerciceId == workoutExercice.Id);
+            else
+                return null;
+        }
+
+        /// <summary>
+        /// Returns all WorkoutExercices for the given exercice and timeframe
+        /// </summary>
+        /// <param name="days"></param>
+        /// <param name="exercice"></param>
+        /// <returns></returns>
+        public List<WorkoutExercice> GetExercicePerformanceOverPeriod(int days, Exercice exercice)
+        {
+            List<WorkoutExercice> workoutExerciceList = new List<WorkoutExercice>();
+
+            foreach (Log log in Logs.Where(x => x.Date.Date >= DateTime.Now.Date.AddDays(-days) && x.Date.Date < DateTime.Now.Date).OrderByDescending(x => x.Date))
+            {
+                foreach(WorkoutExercice workoutExercice in WorkoutExercices.Where(x => x.WorkoutId == log.WorkoutId && x.ExerciceId == exercice.Id))
+                    workoutExerciceList.Add(workoutExercice);
+            }
+
+            return workoutExerciceList;
+        }
+
+        public List<Set> GetExerciceSetsOfLAsPerformanceOverPeriod(int days, Exercice exercice)
+        {
+            List<Set> sets = new List<Set>();   
+            var workoutExercices = GetExercicePerformanceOverPeriod(days, exercice);
+            if (workoutExercices != null)
+            {
+                foreach(WorkoutExercice workoutExercice in workoutExercices)
+                    sets.AddRange(Sets.Where(x => x.WorkoutExerciceId == workoutExercice.Id));
+
+                return sets;
+            }
+            else
+                return null;
+        }
 
 
 

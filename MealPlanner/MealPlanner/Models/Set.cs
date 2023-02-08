@@ -13,5 +13,6 @@ namespace MealPlanner.Models
         public int Reps { get; set; }
         public double Weight { get; set; }
         public int WorkoutExerciceId { get; set; }
+        public DateTime Date { get; set; }
     }
 }

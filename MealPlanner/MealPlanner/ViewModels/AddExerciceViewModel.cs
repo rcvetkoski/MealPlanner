@@ -2,6 +2,7 @@
 using MealPlanner.Helpers.Extensions;
 using MealPlanner.Models;
 using MealPlanner.Views;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using static MealPlanner.ViewModels.ExerciceViewModel;
 
 namespace MealPlanner.ViewModels
 {
@@ -130,21 +132,7 @@ namespace MealPlanner.ViewModels
             }
 
             // Fill Previous sets if any
-            foreach (Log log in RefData.Logs.Where(x=> x.Date.Date != DateTime.Now.Date).OrderByDescending(x => x.Date))
-            {
-                var workoutExercice = RefData.WorkoutExercices.SingleOrDefault(x => x.WorkoutId == log.WorkoutId && x.ExerciceId == exercice.Id);
-
-                if (workoutExercice == null)
-                    continue;
-                else
-                {
-                    foreach (Set set in RefData.Sets.Where(x => x.WorkoutExerciceId == workoutExercice.Id))
-                        vm.PreviousSets.Add(set);
-
-                    break;
-                }
-            }
-
+            vm.PreviousSets = RefData.GetExerciceSetsOfLastPerformance(exercice)?.ToList();
 
             vm.CanAddItem = true;
             vm.CanDeleteItem = true;

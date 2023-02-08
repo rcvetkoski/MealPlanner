@@ -4,7 +4,7 @@
              xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels" 
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls"
-             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:models="clr-namespace:MealPlanner.Models" xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:models="clr-namespace:MealPlanner.Models" xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Name="exercicePage"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding CurrentExercice.Name}"
@@ -128,7 +128,7 @@
 
                 <Frame Style="{StaticResource JournalTemplateCard}">
                     <StackLayout>
-                        <Label Text="Previous Sets" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,10"/>
+                        <Label Text="Last time" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,10"/>
                         <StackLayout BindableLayout.ItemsSource="{Binding PreviousSets}" Spacing="0">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate x:DataType="models:Set">
@@ -158,6 +158,27 @@
                     </StackLayout>
                 </Frame>
 
+                <Frame Style="{StaticResource JournalTemplateCard}">
+                    <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*, *">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Progress" Style="{StaticResource LabelMediumBold}"/>
+                        <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" x:TypeArguments="enums:ExerciceStatEnum" SelectedIndexChanged="RSEnumPickerStat_SelectedIndexChanged" SelectedItem="{Binding SelectedExerciceStat}"/>
+                        <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" x:TypeArguments="enums:PeriodEnum" SelectedIndexChanged="RSEnumPicker_SelectedIndexChanged" SelectedItem="{Binding SelectedPeriod}"/>
+                        <microcharts:ChartView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                               x:Name="chartViewMaxReps"
+                                               IsVisible="False"
+                                               HeightRequest="150"
+                                               VerticalOptions="FillAndExpand"
+                                               HorizontalOptions="FillAndExpand">
+                        </microcharts:ChartView>
+                        <microcharts:ChartView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                               x:Name="chartViewMaxWeight"
+                                               HeightRequest="150"
+                                               IsVisible="False"
+                                               VerticalOptions="FillAndExpand"
+                                               HorizontalOptions="FillAndExpand">
+                        </microcharts:ChartView>
+                    </Grid>
+                </Frame>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

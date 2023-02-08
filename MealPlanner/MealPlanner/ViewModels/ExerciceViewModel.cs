@@ -27,13 +27,31 @@ namespace MealPlanner.ViewModels
             CopiedSets = new ObservableCollection<Set>();
             AddedSets = new List<Set>();
             DeletedSets = new List<Set>();
-            PreviousSets = new ObservableCollection<Set>();
+            PreviousSets = new List<Set>();
         }
 
         public ObservableCollection<Set> CopiedSets { get; set; }
-        public ObservableCollection<Set> PreviousSets { get; set; }
+
+        private List<Set> previousSets;
+        public List<Set> PreviousSets 
+        { 
+            get
+            {
+                return previousSets;
+            }
+            set
+            {
+                if(previousSets != value)
+                {
+                    previousSets = value;
+                    OnPropertyChanged(nameof(PreviousSets));
+                }
+            }
+        }
         private List<Set> AddedSets;
         private List<Set> DeletedSets;
+        public PeriodEnum SelectedPeriod { get; set; } = PeriodEnum.Week;
+        public ExerciceStatEnum SelectedExerciceStat { get; set; } = ExerciceStatEnum.MaxWeight;
 
 
         private bool canAddItem;
