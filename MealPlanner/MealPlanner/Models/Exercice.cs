@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using MealPlanner.Helpers;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -145,7 +146,23 @@ namespace MealPlanner.Models
                 }
             }
         }
-
+        private List<ExerciceHistoryHelper> history;
+        [Ignore]
+        public List<ExerciceHistoryHelper> History 
+        { 
+            get
+            {
+                return history;
+            }
+            set
+            {
+                if(history != value)
+                {
+                    history = value;
+                    OnPropertyChanged(nameof(History));
+                }
+            }
+        }
 
         public Exercice()
         {

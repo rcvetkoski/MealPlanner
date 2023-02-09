@@ -1,4 +1,5 @@
-﻿using MealPlanner.Helpers.Enums;
+﻿using MealPlanner.Helpers;
+using MealPlanner.Helpers.Enums;
 using MealPlanner.Models;
 using MealPlanner.Views;
 using SkiaSharp;
@@ -24,6 +25,7 @@ namespace MealPlanner.ViewModels
             DeleteSetCommand = new Command<Set>(DeleteSet);
             AddPreviousSetCommand = new Command<Set>(AddPreviousSet);
             UpdateExerciceCommand = new Command(UpdateExercice);
+            OpenExerciceStatisticsPageCommand = new Command(OpenExerciceStatisticsPage);
             CopiedSets = new ObservableCollection<Set>();
             AddedSets = new List<Set>();
             DeletedSets = new List<Set>();
@@ -50,8 +52,25 @@ namespace MealPlanner.ViewModels
         }
         private List<Set> AddedSets;
         private List<Set> DeletedSets;
-        public PeriodEnum SelectedPeriod { get; set; } = PeriodEnum.Week;
+        public PeriodEnum SelectedPeriod { get; set; } = PeriodEnum.Month;
         public ExerciceStatEnum SelectedExerciceStat { get; set; } = ExerciceStatEnum.MaxWeight;
+
+        private ExerciceHistoryHelper lastTimePerformance;
+        public ExerciceHistoryHelper LastTimePerformance 
+        { 
+            get
+            {
+                return lastTimePerformance;
+            }
+            set
+            {
+                if(lastTimePerformance != value)
+                {
+                    lastTimePerformance = value;
+                    OnPropertyChanged(nameof(LastTimePerformance));
+                }
+            }
+        }  
 
 
         private bool canAddItem;
@@ -118,7 +137,8 @@ namespace MealPlanner.ViewModels
             WorkoutExercice workoutExercice = new WorkoutExercice()
             {
                 WorkoutId = RefData.CurrentWorkout.Id,
-                ExerciceId = exercice.Id
+                ExerciceId = exercice.Id,
+                Date = RefData.CurrentWorkout.Date
             };
 
             await App.DataBaseRepo.AddWorkoutExerciceAsync(workoutExercice);
@@ -207,7 +227,7 @@ namespace MealPlanner.ViewModels
             foreach (Set set in DeletedSets)
             {
                 await App.DataBaseRepo.DeleteSetAsync(set);
-                RefData.Sets.Add(set);
+                RefData.Sets.Remove(set);
             }
 
             AddedSets.Clear();
@@ -242,7 +262,14 @@ namespace MealPlanner.ViewModels
         {
             double weight = 0;
             int reps = 0;
-            var lastSet = CopiedSets.LastOrDefault();
+
+            Set lastSet = null;
+            int index = CopiedSets.Any() ? CopiedSets.Count() : 0;
+
+            if(LastTimePerformance != null && LastTimePerformance.Sets.Any() && index < LastTimePerformance.Sets.Count)
+                lastSet = LastTimePerformance.Sets.ElementAt(index);        
+            else
+                lastSet = CopiedSets.LastOrDefault();
 
             if(lastSet != null)
             {
@@ -265,6 +292,10 @@ namespace MealPlanner.ViewModels
         private void DeleteSet(Set set)
         {
             DeletedSets.Add(set);
+
+            for (int i = set.Order - 1; i < CopiedSets.Count; i++)
+                CopiedSets[i].Order--;
+
             CopiedSets.Remove(set);
         }
 
@@ -280,6 +311,16 @@ namespace MealPlanner.ViewModels
 
             AddedSets.Add(newSet);
             CopiedSets.Add(newSet);
+        }
+
+        public ICommand OpenExerciceStatisticsPageCommand { get; set; }
+        private async void OpenExerciceStatisticsPage()
+        {
+            ExerciceSatisticsPage exerciceSatisticsPage = new ExerciceSatisticsPage();
+            var vm = exerciceSatisticsPage.BindingContext as ExerciceSatisticsViewModel;
+            vm.CurrentExercice = CurrentExercice;
+
+            await Shell.Current.Navigation.PushAsync(exerciceSatisticsPage); 
         }
     }
 }

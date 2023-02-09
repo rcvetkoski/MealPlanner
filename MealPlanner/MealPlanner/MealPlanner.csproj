@@ -62,6 +62,9 @@
     <Compile Update="Views\EditFoodPage.xaml.cs">
       <DependentUpon>EditFoodPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ExerciceSatisticsPage.xaml.cs">
+      <DependentUpon>ExerciceSatisticsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ExercicePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ExerciceSatisticsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\FoodPage.xaml">

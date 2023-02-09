@@ -1,4 +1,5 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers.Enums;
+using MealPlanner.Models;
 using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
@@ -90,7 +91,8 @@ namespace MealPlanner.ViewModels
             }
 
             // Fill Previous sets if any
-            vm.PreviousSets = RefData.GetExerciceSetsOfLastPerformance(exercice)?.ToList();
+            vm.LastTimePerformance = RefData.GetExerciceHistoryLastTime(exercice);
+            vm.CurrentExercice.History = RefData.GetExerciceHistory((int)PeriodEnum.AllTime, exercice);
 
             vm.CanDeleteItem = true;
             vm.CanUpdateItem = true;

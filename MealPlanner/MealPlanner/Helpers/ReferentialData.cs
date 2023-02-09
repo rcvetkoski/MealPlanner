@@ -268,6 +268,8 @@ namespace MealPlanner.Helpers
                 }
             }
 
+            // TODO remove when clean install
+            UpdateDb();
 
             GetMealsAtDate(DateTime.Now);
             GetWorkoutAtDay(DateTime.Now);
@@ -896,7 +898,7 @@ namespace MealPlanner.Helpers
                 if(currentLog.WorkoutId == 0)
                 {
                     // Add workout
-                    Workout workout = new Workout();
+                    Workout workout = new Workout() { Date = currentLog.Date };
                     await App.DataBaseRepo.AddWorkoutAsync(workout);
                     Workouts.Add(workout);
                     currentLog.WorkoutId = workout.Id;
@@ -924,7 +926,7 @@ namespace MealPlanner.Helpers
                 Logs.Add(log);
 
                 // Add workout
-                Workout workout = new Workout();
+                Workout workout = new Workout() { Date = log.Date };
                 await App.DataBaseRepo.AddWorkoutAsync(workout);
                 Workouts.Add(workout);
                 log.WorkoutId = workout.Id;
@@ -992,7 +994,7 @@ namespace MealPlanner.Helpers
         /// </summary>
         /// <param name="exercice"></param>
         /// <returns></returns>
-        public WorkoutExercice GetExerciceLastPerformance(Exercice exercice)
+        private WorkoutExercice GetLastWorkoutExercice(Exercice exercice)
         {
             foreach (Log log in Logs.Where(x => x.Date.Date != DateTime.Now.Date).OrderByDescending(x => x.Date))
             {
@@ -1009,13 +1011,21 @@ namespace MealPlanner.Helpers
         /// </summary>
         /// <param name="workoutExercice"></param>
         /// <returns></returns>
-        public IEnumerable<Set> GetExerciceSetsOfLastPerformance(Exercice exercice)
+        public ExerciceHistoryHelper GetExerciceHistoryLastTime(Exercice exercice)
         {
-            var workoutExercice = GetExerciceLastPerformance(exercice);
+            var workoutExercice = GetLastWorkoutExercice(exercice);
             if (workoutExercice != null)
-                return Sets.Where(x => x.WorkoutExerciceId == workoutExercice.Id);
-            else
-                return null;
+            {
+                ExerciceHistoryHelper exerciceHistoryHelper = new ExerciceHistoryHelper()
+                {
+                    Date = workoutExercice.Date,
+                    Sets = Sets.Where(x => x.WorkoutExerciceId == workoutExercice.Id).ToList()
+                };
+
+                return exerciceHistoryHelper;
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -1024,7 +1034,7 @@ namespace MealPlanner.Helpers
         /// <param name="days"></param>
         /// <param name="exercice"></param>
         /// <returns></returns>
-        public List<WorkoutExercice> GetExercicePerformanceOverPeriod(int days, Exercice exercice)
+        private List<WorkoutExercice> GetWorkoutExercicesOverPeriod(int days, Exercice exercice)
         {
             List<WorkoutExercice> workoutExerciceList = new List<WorkoutExercice>();
 
@@ -1037,22 +1047,51 @@ namespace MealPlanner.Helpers
             return workoutExerciceList;
         }
 
-        public List<Set> GetExerciceSetsOfLAsPerformanceOverPeriod(int days, Exercice exercice)
+        /// <summary>
+        /// Return a list of ExerciceHistoryHelper which reprsent the exercice history over given period
+        /// </summary>
+        /// <param name="days"></param>
+        /// <param name="exercice"></param>
+        /// <returns></returns>
+        public List<ExerciceHistoryHelper> GetExerciceHistory(int days, Exercice exercice)
         {
-            List<Set> sets = new List<Set>();   
-            var workoutExercices = GetExercicePerformanceOverPeriod(days, exercice);
+            List<ExerciceHistoryHelper> history = new List<ExerciceHistoryHelper>();   
+
+            var workoutExercices = GetWorkoutExercicesOverPeriod(days, exercice);
             if (workoutExercices != null)
             {
-                foreach(WorkoutExercice workoutExercice in workoutExercices)
-                    sets.AddRange(Sets.Where(x => x.WorkoutExerciceId == workoutExercice.Id));
+                foreach (WorkoutExercice workoutExercice in workoutExercices)
+                {
+                    ExerciceHistoryHelper exerciceHistoryHelper = new ExerciceHistoryHelper()
+                    {
+                        Date = workoutExercice.Date,
+                        Sets = Sets.Where(x => x.WorkoutExerciceId == workoutExercice.Id).ToList()
+                    };
 
-                return sets;
+                    history.Add(exerciceHistoryHelper);
+                }
+                return history;
             }
             else
                 return null;
         }
 
+        private void UpdateDb()
+        {
+            foreach(Log log in Logs)
+            {
+                if (log.WorkoutId == 0)
+                    continue;
 
+                var workout = Workouts.Single(x => x.Id == log.WorkoutId);
+                workout.Date = log.Date;
+
+                foreach(WorkoutExercice workoutExercice in WorkoutExercices.Where(x=> x.WorkoutId == workout.Id))
+                {
+                    workoutExercice.Date = workout.Date;
+                }
+            }
+        }
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

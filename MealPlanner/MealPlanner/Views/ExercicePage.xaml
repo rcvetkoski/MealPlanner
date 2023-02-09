@@ -15,6 +15,13 @@
     </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Default" Priority="0" Command="{Binding OpenExerciceStatisticsPageCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Size="20"
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.ChartPie}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
         <ToolbarItem Order="Default" Priority="0" Command="{Binding EditExerciceCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Size="20"
@@ -82,7 +89,6 @@
                     </Grid>
                 </Grid>
 
-
                 <Frame Style="{StaticResource JournalTemplateCard}">
                     <StackLayout>
                         <Label Text="Sets" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,10"/>
@@ -93,10 +99,10 @@
                                         <BoxView Grid.Row="0" Grid.Column="0" VerticalOptions="Center" WidthRequest="28" HeightRequest="28" BackgroundColor="{StaticResource Primary}" CornerRadius="14"/>
                                         <BoxView Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="Center" WidthRequest="3" BackgroundColor="{StaticResource Primary}"/>
                                         <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Order}"/>
-                                        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="{Binding BindingContext.RefData.User.WeightUnit, Source={x:Reference exercicePage}}" Margin="10,0,0,0"/>
-                                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="2" Style="{StaticResource Entry}" VerticalOptions="Center" Value="{Binding Weight}"/>
-                                        <Label Grid.Row="0" Grid.Column="3" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="Reps" Margin="10,0,0,0"/>
-                                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="4" Style="{StaticResource Entry}" VerticalOptions="Center" Value="{Binding Reps}"/>
+                                        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="Reps" Margin="10,0,0,0"/>
+                                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="2" ReturnType="Next" Style="{StaticResource Entry}" VerticalOptions="Center" Value="{Binding Reps}"/>
+                                        <Label Grid.Row="0" Grid.Column="3" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="{Binding BindingContext.RefData.User.WeightUnit, Source={x:Reference exercicePage}}" Margin="10,0,0,0"/>
+                                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="4" Style="{StaticResource Entry}" VerticalOptions="Center" Value="{Binding Weight}"/>
                                         <Button Grid.Row="0" Grid.Column="5"
                                                 BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
                                                 Command="{Binding BindingContext.DeleteSetCommand, Source={x:Reference exercicePage}}" 
@@ -126,43 +132,31 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame Style="{StaticResource JournalTemplateCard}">
-                    <StackLayout>
-                        <Label Text="Last time" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,10"/>
-                        <StackLayout BindableLayout.ItemsSource="{Binding PreviousSets}" Spacing="0">
+                <!--<Frame Style="{StaticResource JournalTemplateCard}">
+                    <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Last time" Style="{StaticResource LabelMediumBold}"/>
+                        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmallBold}" Text="{Binding LastTimePerformance.Date, StringFormat='{0:dd MMMM yyyy}'}"/>
+                        <StackLayout Grid.Row="2" Grid.Column="0" BindableLayout.ItemsSource="{Binding LastTimePerformance.Sets}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate x:DataType="models:Set">
-                                    <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, Auto, *, Auto, *, 40">
-                                        <BoxView Grid.Row="0" Grid.Column="0" VerticalOptions="Center" WidthRequest="28" HeightRequest="28" BackgroundColor="{StaticResource Primary}" CornerRadius="14"/>
-                                        <BoxView Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="Center" WidthRequest="3" BackgroundColor="{StaticResource Primary}"/>
-                                        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Order}"/>
-                                        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="{Binding BindingContext.RefData.User.WeightUnit, Source={x:Reference exercicePage}}" Margin="10,0,0,0"/>
-                                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="2" IsEnabled="False" Style="{StaticResource Entry}" VerticalOptions="Center" Value="{Binding Weight}"/>
-                                        <Label Grid.Row="0" Grid.Column="3" Style="{StaticResource LabelSmall}" VerticalOptions="Center" Text="Reps" Margin="10,0,0,0"/>
-                                        <rsControls:RSNumericEntry Grid.Row="0" Grid.Column="4" IsEnabled="False" Style="{StaticResource Entry}" VerticalOptions="Center" Value="{Binding Reps}"/>
-                                        <Button Grid.Row="0" Grid.Column="5"
-                                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                                                Command="{Binding BindingContext.AddPreviousSetCommand, Source={x:Reference exercicePage}}" 
-                                                CommandParameter="{Binding .}"
-                                                HorizontalOptions="Center">
-                                            <Button.ImageSource>
-                                                <FontImageSource Color="{StaticResource Primary}"
-                                                                 Size="22"
-                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Check}" FontFamily="FA-Solid"/>
-                                            </Button.ImageSource>
-                                        </Button>
-                                    </Grid>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Order}" HorizontalOptions="Center" Margin="0,0,10,0" Style="{StaticResource LabelSmall}"/>
+                                        <Label Text="{Binding Reps}" HorizontalOptions="Center" Style="{StaticResource LabelSmall}"/>
+                                        <Label Text="x" HorizontalOptions="Center" Style="{StaticResource LabelSmall}"/>
+                                        <Label Text="{Binding Weight}" HorizontalOptions="Center" Style="{StaticResource LabelSmall}"/>
+                                        <Label Text="{Binding BindingContext.RefData.User.WeightUnit, Source={x:Reference exercicePage}}" HorizontalOptions="Center" Style="{StaticResource LabelSmall}"/>
+                                    </StackLayout>
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
                         </StackLayout>
-                    </StackLayout>
-                </Frame>
+                    </Grid>
+                </Frame>-->
 
                 <Frame Style="{StaticResource JournalTemplateCard}">
                     <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*, *">
                         <Label Grid.Row="0" Grid.Column="0" Text="Progress" Style="{StaticResource LabelMediumBold}"/>
-                        <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" x:TypeArguments="enums:ExerciceStatEnum" SelectedIndexChanged="RSEnumPickerStat_SelectedIndexChanged" SelectedItem="{Binding SelectedExerciceStat}"/>
-                        <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" x:TypeArguments="enums:PeriodEnum" SelectedIndexChanged="RSEnumPicker_SelectedIndexChanged" SelectedItem="{Binding SelectedPeriod}"/>
+                        <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" Style="{StaticResource Picker}" x:TypeArguments="enums:ExerciceStatEnum" SelectedIndexChanged="RSEnumPickerStat_SelectedIndexChanged" SelectedItem="{Binding SelectedExerciceStat}"/>
+                        <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" Style="{StaticResource Picker}" x:TypeArguments="enums:PeriodEnum" SelectedIndexChanged="RSEnumPicker_SelectedIndexChanged" SelectedItem="{Binding SelectedPeriod}"/>
                         <microcharts:ChartView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                                                x:Name="chartViewMaxReps"
                                                IsVisible="False"

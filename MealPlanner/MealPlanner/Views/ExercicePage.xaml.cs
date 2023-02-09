@@ -1,4 +1,5 @@
-﻿using MealPlanner.Models;
+﻿using MealPlanner.Helpers;
+using MealPlanner.Models;
 using MealPlanner.ViewModels;
 using Microcharts;
 using SkiaSharp.Views.Forms;
@@ -32,16 +33,16 @@ namespace MealPlanner.Views
         {
             var vm = BindingContext as ExerciceViewModel;
             var proteinColor = Color.LightGray;
-            double maxWeight = 0;
-            double totalWeight = 0;
             List<ChartEntry> chartEntries = new List<ChartEntry>();
 
-            foreach (WorkoutExercice workoutExercice in vm.RefData.GetExercicePerformanceOverPeriod((int)vm.SelectedPeriod, vm.CurrentExercice))
+            foreach (ExerciceHistoryHelper exerciceHistoryHelper in vm.RefData.GetExerciceHistory((int)vm.SelectedPeriod, vm.CurrentExercice))
             {
+                double maxWeight = 0;
+                double totalWeight = 0;
                 double maxWeightTemp = 0;
                 double totalWeightTemp = 0;
 
-                foreach (Set set in vm.RefData.Sets.Where(x => x.WorkoutExerciceId == workoutExercice.Id))
+                foreach (Set set in exerciceHistoryHelper.Sets)
                 {
                     //vm.PreviousSets.Add(set);
                     maxWeightTemp = maxWeightTemp < set.Weight ? set.Weight : maxWeightTemp;
@@ -56,7 +57,7 @@ namespace MealPlanner.Views
                 // Max Weight
                 ChartEntry chartEntry = new ChartEntry((float)maxWeight)
                 {
-                    Label = "02/01",
+                    Label = exerciceHistoryHelper.Date.ToString("MMM dd"),
                     ValueLabel = $"{(float)maxWeight} {vm.RefData.User.WeightUnit}",
                     ValueLabelColor = proteinColor.ToSKColor(),
                     TextColor = proteinColor.ToSKColor(),
@@ -98,12 +99,12 @@ namespace MealPlanner.Views
             double totalReps = 0;
             List<ChartEntry> chartEntries = new List<ChartEntry>();
 
-            foreach (WorkoutExercice workoutExercice in vm.RefData.GetExercicePerformanceOverPeriod((int)vm.SelectedPeriod, vm.CurrentExercice))
+            foreach (ExerciceHistoryHelper exerciceHistoryHelper in vm.RefData.GetExerciceHistory((int)vm.SelectedPeriod, vm.CurrentExercice))
             {
                 double maxRepsTemp = 0;
                 double totalRepsTemp = 0;
 
-                foreach (Set set in vm.RefData.Sets.Where(x => x.WorkoutExerciceId == workoutExercice.Id))
+                foreach (Set set in exerciceHistoryHelper.Sets)
                 {
                     maxRepsTemp = maxRepsTemp < set.Reps ? set.Reps : maxRepsTemp;
                     totalRepsTemp += set.Reps;
@@ -127,7 +128,7 @@ namespace MealPlanner.Views
 
                 ChartEntry chartEntry = new ChartEntry(value)
                 {
-                    Label = "02/01",
+                    Label = exerciceHistoryHelper.Date.ToString("MMM dd"),
                     ValueLabel = ValueLabel,
                     ValueLabelColor = proteinColor.ToSKColor(),
                     TextColor = proteinColor.ToSKColor(),

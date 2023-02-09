@@ -10,6 +10,8 @@ namespace MealPlanner.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+        public DateTime Date { get; set; }
+
         [Ignore]
         public ObservableCollection<Exercice> Exercices { get; set; }
 

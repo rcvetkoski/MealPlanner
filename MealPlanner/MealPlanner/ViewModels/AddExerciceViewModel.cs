@@ -1,4 +1,5 @@
 ﻿using MealPlanner.Helpers;
+using MealPlanner.Helpers.Enums;
 using MealPlanner.Helpers.Extensions;
 using MealPlanner.Models;
 using MealPlanner.Views;
@@ -126,13 +127,11 @@ namespace MealPlanner.ViewModels
             ExercicePage exercicePage = new ExercicePage();
             var vm = exercicePage.BindingContext as ExerciceViewModel;
             vm.CurrentExercice = exercice;
-            foreach(Set set in exercice.Sets)
-            {
-                vm.CopiedSets.Add(set);
-            }
+            vm.CurrentExercice.History = RefData.GetExerciceHistory((int)PeriodEnum.AllTime, exercice);
+            vm.LastTimePerformance = RefData.GetExerciceHistoryLastTime(exercice);
 
-            // Fill Previous sets if any
-            vm.PreviousSets = RefData.GetExerciceSetsOfLastPerformance(exercice)?.ToList();
+            foreach (Set set in exercice.Sets)
+                vm.CopiedSets.Add(set);
 
             vm.CanAddItem = true;
             vm.CanDeleteItem = true;
