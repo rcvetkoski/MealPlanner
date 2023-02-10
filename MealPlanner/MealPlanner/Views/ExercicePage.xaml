@@ -91,7 +91,7 @@
 
                 <Frame Style="{StaticResource JournalTemplateCard}">
                     <StackLayout>
-                        <Label Text="Sets" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,10"/>
+                        <Label Text="Sets" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,15"/>
                         <StackLayout BindableLayout.ItemsSource="{Binding CopiedSets}" Spacing="0">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate x:DataType="models:Set">
@@ -129,6 +129,11 @@
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
                             </Button.ImageSource>
                         </Button>
+                        <Grid ColumnDefinitions="Auto, *, *" Margin="0, 10, 0, 0">
+                            <Label Grid.Column="0" Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="Center" Text="Rest time :"/>
+                            <rsControls:RSPicker Grid.Column="1" Placeholder="Minutes" ItemsSource="{Binding RestTimeList}" SelectedItem="{Binding SelectedMinutes}"/>
+                            <rsControls:RSPicker Grid.Column="2" Placeholder="Seconds" ItemsSource="{Binding RestTimeList}" SelectedItem="{Binding SelectedSecondes}"/>
+                        </Grid>
                     </StackLayout>
                 </Frame>
 
@@ -154,7 +159,7 @@
 
                 <Frame Style="{StaticResource JournalTemplateCard}">
                     <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*, *">
-                        <Label Grid.Row="0" Grid.Column="0" Text="Progress" Style="{StaticResource LabelMediumBold}"/>
+                        <Label Grid.Row="0" Grid.Column="0" Text="Progress" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,15"/>
                         <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" Style="{StaticResource Picker}" x:TypeArguments="enums:ExerciceStatEnum" SelectedIndexChanged="RSEnumPickerStat_SelectedIndexChanged" SelectedItem="{Binding SelectedExerciceStat}"/>
                         <rsControls:RSEnumPicker Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" Style="{StaticResource Picker}" x:TypeArguments="enums:PeriodEnum" SelectedIndexChanged="RSEnumPicker_SelectedIndexChanged" SelectedItem="{Binding SelectedPeriod}"/>
                         <microcharts:ChartView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"

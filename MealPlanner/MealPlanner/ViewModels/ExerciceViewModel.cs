@@ -30,6 +30,10 @@ namespace MealPlanner.ViewModels
             AddedSets = new List<Set>();
             DeletedSets = new List<Set>();
             PreviousSets = new List<Set>();
+            RestTimeList = new List<int>();
+
+            for(int i = 0; i < 60; i++)
+                RestTimeList.Add(i);
         }
 
         public ObservableCollection<Set> CopiedSets { get; set; }
@@ -72,6 +76,9 @@ namespace MealPlanner.ViewModels
             }
         }  
 
+        public List<int> RestTimeList { get; set; }
+        public int SelectedMinutes { get; set; } = 1;
+        public int SelectedSecondes { get; set; } = 0;
 
         private bool canAddItem;
         public bool CanAddItem
