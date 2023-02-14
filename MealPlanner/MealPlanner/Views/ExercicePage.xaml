@@ -50,14 +50,16 @@
 
 
                     <Grid Grid.Row="0" Grid.Column="1"
-                          RowDefinitions="Auto, *" 
+                          RowDefinitions="*, *" 
                           ColumnDefinitions="*, *"
                           HeightRequest="{Binding Width, Source={x:Reference image}}"
                           Margin="0, 10, 10, 10">
 
+                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0" CornerRadius="13" Style="{StaticResource JournalTemplateCard}"/>
+
                         <!--<Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource LabelSmall}" HorizontalOptions="Center" Text="{Binding CurrentExercice.Description}"/>-->
 
-                        <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HasShadow="False" Padding="8" CornerRadius="12" BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                        <!--<Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HasShadow="False" Padding="8" CornerRadius="12" BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                             <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*">
                                 <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                                        FontFamily="FA-Solid"
@@ -81,12 +83,12 @@
                                                      ItemsSource="{Binding RestTimeList}"
                                                      SelectedItem="{Binding SelectedSecondes}"/>
                             </Grid>
-                        </Frame>
+                        </Frame>-->
 
-                        <ImageButton Grid.Row="1" Grid.Column="0"
+                        <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                                      x:Name="google"
-                                     HeightRequest="45"
-                                     WidthRequest="60"
+                                     HeightRequest="50"
+                                     WidthRequest="65"
                                      Aspect="AspectFill" 
                                      HorizontalOptions="Center"
                                      VerticalOptions="Center"
@@ -94,20 +96,16 @@
                                      CornerRadius="12"
                                      Command="{Binding OpenYoutubeCommand}">
                         </ImageButton>
-                        <ImageButton Grid.Row="1" Grid.Column="1"
-                                     HeightRequest="45"
-                                     WidthRequest="60"
+                        <ImageButton Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                     HeightRequest="65"
+                                     WidthRequest="65"
                                      Aspect="AspectFit" 
                                      VerticalOptions="Center"
                                      HorizontalOptions="Center"
+                                     Source="{extensions:ImageResourceExtension Source=MealPlanner.Resources.Images.googleLogo.png}"
                                      CornerRadius="12"
                                      BackgroundColor="Transparent"
                                      Command="{Binding OpenBrowserCommand}">
-                            <ImageButton.Source>
-                                <FontImageSource 
-                                                 Color="{StaticResource ProteinColor}"
-                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Globe}" FontFamily="FA-Solid"/>
-                            </ImageButton.Source>
                         </ImageButton>
                     </Grid>
 
@@ -193,25 +191,39 @@
                     </StackLayout>
                 </Frame>
 
-                <!--<Frame Style="{StaticResource JournalTemplateCard}">
-                    <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*">
-                        <Label Grid.Row="0" Grid.Column="0" Text="Last time" Style="{StaticResource LabelMediumBold}"/>
-                        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmallBold}" Text="{Binding LastTimePerformance.Date, StringFormat='{0:dd MMMM yyyy}'}"/>
-                        <StackLayout Grid.Row="2" Grid.Column="0" BindableLayout.ItemsSource="{Binding LastTimePerformance.Sets}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate x:DataType="models:Set">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding Order}" HorizontalOptions="Center" Margin="0,0,10,0" Style="{StaticResource LabelSmall}"/>
-                                        <Label Text="{Binding Reps}" HorizontalOptions="Center" Style="{StaticResource LabelSmall}"/>
-                                        <Label Text="x" HorizontalOptions="Center" Style="{StaticResource LabelSmall}"/>
-                                        <Label Text="{Binding Weight}" HorizontalOptions="Center" Style="{StaticResource LabelSmall}"/>
-                                        <Label Text="{Binding BindingContext.RefData.User.WeightUnit, Source={x:Reference exercicePage}}" HorizontalOptions="Center" Style="{StaticResource LabelSmall}"/>
-                                    </StackLayout>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </StackLayout>
+                <Frame HasShadow="False" Padding="8" CornerRadius="12" Margin="10" BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                    <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*">
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                               FontFamily="FA-Solid"
+                               Style="{StaticResource LabelMediumBold}" 
+                               VerticalOptions="Center" HorizontalOptions="Start" 
+                               Text="{x:Static helpers:FontAwesomeIcons.Clock}" Margin="0, 0, 0, 0"/>
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                               Style="{StaticResource LabelMediumBold}"
+                               VerticalOptions="Center" HorizontalOptions="Start"
+                               Margin="30, 0, 0, 0"
+                               Text="Rest time between sets"/>
+                        <rsControls:RSPicker Grid.Row="1" Grid.Column="0"
+                                                     IsPlaceholderAlwaysFloating="True" 
+                                                     Style="{StaticResource Picker}" 
+                                                     Placeholder="Minutes" 
+                                                     ItemsSource="{Binding RestTimeList}"
+                                                     SelectedItem="{Binding SelectedMinutes}"/>
+                        <rsControls:RSPicker Grid.Row="1" Grid.Column="1"
+                                                     IsPlaceholderAlwaysFloating="True" 
+                                                     Style="{StaticResource Picker}"
+                                                     Placeholder="Seconds"
+                                                     ItemsSource="{Binding RestTimeList}"
+                                                     SelectedItem="{Binding SelectedSecondes}"/>
                     </Grid>
-                </Frame>-->
+                </Frame>
+
+                <Frame Style="{StaticResource JournalTemplateCard}">
+                    <StackLayout>
+                        <Label Text="Description" Style="{StaticResource LabelMediumBold}" Margin="0,0,0,15"/>
+                        <Label Style="{StaticResource LabelMedium}" Text="{Binding CurrentExercice.Description}"/>
+                    </StackLayout>
+                </Frame>
 
                 <Frame Style="{StaticResource JournalTemplateCard}">
                     <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*, *">

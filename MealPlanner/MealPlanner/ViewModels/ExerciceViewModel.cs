@@ -202,6 +202,9 @@ namespace MealPlanner.ViewModels
             // Add exercice to Exercies list
             RefData.CurrentWorkout.Exercices.Add(exercice);
 
+            // Update fields
+            RefData.CurrentWorkout.SetAndNotifyMainProperties();
+
             await Shell.Current.Navigation.PopAsync();
         }
 
@@ -233,6 +236,9 @@ namespace MealPlanner.ViewModels
 
             // Delete fro mdb
             await App.DataBaseRepo.DeleteWorkoutExerciceAsync(workoutExercice);
+
+            // Update fields
+            RefData.CurrentWorkout.SetAndNotifyMainProperties();
 
             // Go back
             await Shell.Current.Navigation.PopAsync();

@@ -81,8 +81,18 @@
 
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
-            <StackLayout Margin="0, 10, 0, 10">
-                <StackLayout BindableLayout.ItemsSource="{Binding RefData.CurrentWorkout.Exercices}">
+            <StackLayout>
+                <Grid Margin="10, 10, 10, 0" ColumnDefinitions="*,*,*" HorizontalOptions="Center" RowSpacing="4">
+                    <Label Grid.Row="0" Grid.Column="0" FontSize="Small" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Text="{Binding RefData.CurrentWorkout.Exercices.Count}"/>
+                    <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmall}" HorizontalOptions="Center" Text="Exercices"/>
+
+                    <Label Grid.Row="0" Grid.Column="1" FontSize="Small" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalOptions="Center" Text="{Binding RefData.CurrentWorkout.TotalTime, StringFormat='{}{0:mm\\:ss}'}"/>
+                    <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" HorizontalOptions="Center" Text="Duration"/>
+
+                    <Label Grid.Row="0" Grid.Column="2" FontSize="Small" FontAttributes="Bold" TextColor="{StaticResource Primary}" Text="{Binding RefData.CurrentWorkout.TotalVolume, StringFormat='{0} kg'}" HorizontalOptions="Center"/>
+                    <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource LabelSmall}" HorizontalOptions="Center" Text="Volume"/>
+                </Grid>
+                <StackLayout BindableLayout.ItemsSource="{Binding RefData.CurrentWorkout.Exercices}" Margin="0, 5, 0, 10">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:Exercice">
                             <StackLayout>

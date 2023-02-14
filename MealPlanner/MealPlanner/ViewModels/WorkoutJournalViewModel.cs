@@ -99,6 +99,9 @@ namespace MealPlanner.ViewModels
             vm.CanDeleteItem = true;
             vm.CanUpdateItem = true;
 
+            // Update fields
+            RefData.CurrentWorkout.SetAndNotifyMainProperties();
+
             await Shell.Current.Navigation.PushAsync(exercicePage);
         }
     }

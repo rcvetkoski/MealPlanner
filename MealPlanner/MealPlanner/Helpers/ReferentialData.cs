@@ -962,8 +962,10 @@ namespace MealPlanner.Helpers
                         exercice.Sets.Add(set);
                 }
 
-                workout.Exercices.Add(exercice);    
+                workout.Exercices.Add(exercice);
             }
+
+            workout.SetAndNotifyMainProperties();
         }
 
         /// <summary>
