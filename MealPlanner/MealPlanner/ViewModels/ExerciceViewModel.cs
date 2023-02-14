@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MealPlanner.ViewModels
@@ -31,12 +32,15 @@ namespace MealPlanner.ViewModels
             DeletedSets = new List<Set>();
             PreviousSets = new List<Set>();
             RestTimeList = new List<int>();
+            OpenYoutubeCommand = new Command(OpenYoutube);
+            OpenBrowserCommand = new Command(OpenBrowser);
 
-            for(int i = 0; i < 60; i++)
+            for (int i = 0; i < 60; i++)
                 RestTimeList.Add(i);
         }
 
         public ObservableCollection<Set> CopiedSets { get; set; }
+        public ObservableCollection<Exercice> CopiedFilteredExercices { get; set; }
 
         private List<Set> previousSets;
         public List<Set> PreviousSets 
@@ -77,8 +81,40 @@ namespace MealPlanner.ViewModels
         }  
 
         public List<int> RestTimeList { get; set; }
-        public int SelectedMinutes { get; set; } = 1;
-        public int SelectedSecondes { get; set; } = 0;
+        private int selectedMinutes;
+        public int SelectedMinutes 
+        {
+            get
+            {
+                return selectedMinutes;
+            }
+            set
+            {
+                if(selectedMinutes !=value)
+                {
+                    selectedMinutes = value;
+                    CurrentExercice.RestTimeBetweenSets = new TimeSpan(0, 0, selectedMinutes, CurrentExercice.RestTimeBetweenSets.Seconds);
+                    OnPropertyChanged(nameof(SelectedMinutes));
+                }
+            }
+        } 
+        private int selectedSeconds;    
+        public int SelectedSecondes 
+        {
+            get
+            {
+                return selectedSeconds;
+            }
+            set
+            {
+                if(selectedSeconds != value)
+                {
+                    selectedSeconds = value;
+                    CurrentExercice.RestTimeBetweenSets = new TimeSpan(0, 0, CurrentExercice.RestTimeBetweenSets.Minutes, selectedSeconds);
+                    OnPropertyChanged(nameof(SelectedSecondes));
+                }
+            }
+        }
 
         private bool canAddItem;
         public bool CanAddItem
@@ -145,7 +181,8 @@ namespace MealPlanner.ViewModels
             {
                 WorkoutId = RefData.CurrentWorkout.Id,
                 ExerciceId = exercice.Id,
-                Date = RefData.CurrentWorkout.Date
+                Date = RefData.CurrentWorkout.Date,
+                RestTimeBetweenSets = new TimeSpan(0, CurrentExercice.RestTimeBetweenSets.Minutes, CurrentExercice.RestTimeBetweenSets.Seconds),
             };
 
             await App.DataBaseRepo.AddWorkoutExerciceAsync(workoutExercice);
@@ -169,9 +206,8 @@ namespace MealPlanner.ViewModels
         }
 
         public ICommand DeleteExerciceCommand { get; set; }
-        private async void DeleteExercice()
+        private void DeleteExercice()
         {
-
             if (CurrentExercice.WorkoutExerciceId == 0) // if WorkoutExerciceId == 0 it means it's not linked to a workout so we want to delete it from exercices list
                 DeleteOriginalExercice();
             else
@@ -209,7 +245,10 @@ namespace MealPlanner.ViewModels
 
             // Remove from list
             CurrentExercice.Archived = true;
+            await App.DataBaseRepo.UpdateExerciceAsync(CurrentExercice);
+
             RefData.Exercices.Remove(CurrentExercice);
+            CopiedFilteredExercices.Remove(CurrentExercice);
 
             // Go back
             await Shell.Current.Navigation.PopAsync();
@@ -218,11 +257,12 @@ namespace MealPlanner.ViewModels
         public ICommand UpdateExerciceCommand { get; set; }
         private async void UpdateExercice()
         {
+            // Get workout exercice
+            WorkoutExercice workoutExercice = RefData.WorkoutExercices.FirstOrDefault(x => x.Id == CurrentExercice.WorkoutExerciceId);
+
             // Add sets in db
             foreach (Set set in AddedSets)
             {
-                WorkoutExercice workoutExercice = RefData.WorkoutExercices.FirstOrDefault(x => x.Id == CurrentExercice.WorkoutExerciceId);
-
                 // Set WorkoutExerciceId
                 set.WorkoutExerciceId = workoutExercice.Id;
 
@@ -247,6 +287,11 @@ namespace MealPlanner.ViewModels
             // Set set to object
             CurrentExercice.Sets = CopiedSets;
 
+            // Update WorkoutExercice for the rest time
+            workoutExercice.RestTimeBetweenSets = CurrentExercice.RestTimeBetweenSets;
+            await App.DataBaseRepo.UpdateWorkoutExerciceAsync(workoutExercice);
+
+            // Update Exercice in db
             await App.DataBaseRepo.UpdateExerciceAsync(CurrentExercice);
 
             // Go back
@@ -328,6 +373,25 @@ namespace MealPlanner.ViewModels
             vm.CurrentExercice = CurrentExercice;
 
             await Shell.Current.Navigation.PushAsync(exerciceSatisticsPage); 
+        }
+
+        public ICommand OpenYoutubeCommand { get; set; }
+        private async void OpenYoutube()
+        {
+             await Launcher.OpenAsync(new Uri($"vnd.youtube://results?search_query={CurrentExercice.Name}"));
+        }
+
+        public ICommand OpenBrowserCommand { get; set; }
+        private async void OpenBrowser()
+        {
+            try
+            {
+                await Browser.OpenAsync($"https://www.google.com/search?q={CurrentExercice.Name}", BrowserLaunchMode.SystemPreferred);
+            }
+            catch (Exception ex)
+            {
+                // An unexpected error occured. No browser may be installed on the device.
+            }
         }
     }
 }

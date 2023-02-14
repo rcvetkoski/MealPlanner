@@ -12,5 +12,6 @@ namespace MealPlanner.Models
         public int WorkoutId { get; set; }
         public int ExerciceId { get; set; }
         public DateTime Date { get; set; }
+        public TimeSpan RestTimeBetweenSets { get; set; }
     }
 }

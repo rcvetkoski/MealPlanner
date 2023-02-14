@@ -4,7 +4,7 @@
              xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels" 
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls"
              xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls"
-             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:models="clr-namespace:MealPlanner.Models" xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:models="clr-namespace:MealPlanner.Models" xmlns:enums="clr-namespace:MealPlanner.Helpers.Enums" xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" xmlns:extensions="clr-namespace:MealPlanner.Helpers.Extensions"
              x:Name="exercicePage"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              Title="{Binding CurrentExercice.Name}"
@@ -44,11 +44,72 @@
                                  HeightRequest="{Binding Width, Source={x:Reference image}}"
                                  HorizontalOptions="FillAndExpand"
                                  Aspect="AspectFill" 
-                                 Margin="10"
+                                 Margin="10, 10, 0, 10"
                                  BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" >
                     </ImageButton>
 
-                    <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding CurrentExercice.Description}"/>
+
+                    <Grid Grid.Row="0" Grid.Column="1"
+                          RowDefinitions="Auto, *" 
+                          ColumnDefinitions="*, *"
+                          HeightRequest="{Binding Width, Source={x:Reference image}}"
+                          Margin="0, 10, 10, 10">
+
+                        <!--<Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource LabelSmall}" HorizontalOptions="Center" Text="{Binding CurrentExercice.Description}"/>-->
+
+                        <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HasShadow="False" Padding="8" CornerRadius="12" BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*">
+                                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                       FontFamily="FA-Solid"
+                                       Style="{StaticResource LabelSmallBold}" 
+                                       VerticalOptions="Center" HorizontalOptions="Start" 
+                                       Text="{x:Static helpers:FontAwesomeIcons.Clock}" Margin="20, 0, 0, 0"/>
+                                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                       Style="{StaticResource LabelSmallBold}"
+                                       HorizontalOptions="Center" 
+                                       Text="Rest time"/>
+                                <rsControls:RSPicker Grid.Row="1" Grid.Column="0"
+                                                     IsPlaceholderAlwaysFloating="True" 
+                                                     Style="{StaticResource Picker}" 
+                                                     Placeholder="Min" 
+                                                     ItemsSource="{Binding RestTimeList}"
+                                                     SelectedItem="{Binding SelectedMinutes}"/>
+                                <rsControls:RSPicker Grid.Row="1" Grid.Column="1"
+                                                     IsPlaceholderAlwaysFloating="True" 
+                                                     Style="{StaticResource Picker}"
+                                                     Placeholder="Sec"
+                                                     ItemsSource="{Binding RestTimeList}"
+                                                     SelectedItem="{Binding SelectedSecondes}"/>
+                            </Grid>
+                        </Frame>
+
+                        <ImageButton Grid.Row="1" Grid.Column="0"
+                                     x:Name="google"
+                                     HeightRequest="45"
+                                     WidthRequest="60"
+                                     Aspect="AspectFill" 
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     Source="{extensions:ImageResourceExtension Source=MealPlanner.Resources.Images.youtubeLogo.png}"
+                                     CornerRadius="12"
+                                     Command="{Binding OpenYoutubeCommand}">
+                        </ImageButton>
+                        <ImageButton Grid.Row="1" Grid.Column="1"
+                                     HeightRequest="45"
+                                     WidthRequest="60"
+                                     Aspect="AspectFit" 
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center"
+                                     CornerRadius="12"
+                                     BackgroundColor="Transparent"
+                                     Command="{Binding OpenBrowserCommand}">
+                            <ImageButton.Source>
+                                <FontImageSource 
+                                                 Color="{StaticResource ProteinColor}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.Globe}" FontFamily="FA-Solid"/>
+                            </ImageButton.Source>
+                        </ImageButton>
+                    </Grid>
 
                     <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto" ColumnDefinitions="*, *" Margin="10">
                         <Button Grid.Row="0" Grid.Column="0" 
@@ -129,11 +190,6 @@
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
                             </Button.ImageSource>
                         </Button>
-                        <Grid ColumnDefinitions="Auto, *, *" Margin="0, 10, 0, 0">
-                            <Label Grid.Column="0" Style="{StaticResource LabelMedium}" VerticalOptions="Center" HorizontalOptions="Center" Text="Rest time :"/>
-                            <rsControls:RSPicker Grid.Column="1" Placeholder="Minutes" ItemsSource="{Binding RestTimeList}" SelectedItem="{Binding SelectedMinutes}"/>
-                            <rsControls:RSPicker Grid.Column="2" Placeholder="Seconds" ItemsSource="{Binding RestTimeList}" SelectedItem="{Binding SelectedSecondes}"/>
-                        </Grid>
                     </StackLayout>
                 </Frame>
 

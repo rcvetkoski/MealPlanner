@@ -65,6 +65,23 @@ namespace MealPlanner.Models
                 }
             }
         }
+        private TimeSpan restTimeBetweenSets;
+        [Ignore]
+        public TimeSpan RestTimeBetweenSets
+        {
+            get
+            {
+                return restTimeBetweenSets;
+            }
+            set
+            {
+                if(restTimeBetweenSets != value)
+                {
+                    restTimeBetweenSets = value;
+                    OnPropertyChanged(nameof(RestTimeBetweenSets));
+                }
+            }
+        }
         public bool Archived { get; set; }
         private string imageSourcePath;
         public string ImageSourcePath

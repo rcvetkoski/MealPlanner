@@ -21,6 +21,7 @@
     <None Remove="Resources\Images\image.png" />
     <None Remove="Resources\Images\Legs.jpg" />
     <None Remove="Resources\Images\Shoulder.jpg" />
+    <None Remove="Resources\Images\youtubeLogo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +36,7 @@
     <EmbeddedResource Include="Resources\Images\image.png" />
     <EmbeddedResource Include="Resources\Images\Legs.jpg" />
     <EmbeddedResource Include="Resources\Images\Shoulder.jpg" />
+    <EmbeddedResource Include="Resources\Images\youtubeLogo.png" />
   </ItemGroup>
 
   <ItemGroup>

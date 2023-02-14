@@ -85,9 +85,9 @@ namespace MealPlanner.ViewModels
             List<Exercice> sortedList = null;
 
             if (string.IsNullOrEmpty(MuscleGroupName))
-                sortedList = RefData.Exercices.ToList();
+                sortedList = RefData.Exercices.Where(x=> !x.Archived).ToList();
             else
-                sortedList = RefData.Exercices.Where(x => x.MuscleGroup?.Name == MuscleGroupName).ToList();
+                sortedList = RefData.Exercices.Where(x => x.MuscleGroup?.Name == MuscleGroupName && !x.Archived).ToList();
 
             FillFilteredExercices(sortedList);
             TempFilteredExercices = FilteredExercices.ToList();
@@ -129,6 +129,7 @@ namespace MealPlanner.ViewModels
             vm.CurrentExercice = exercice;
             vm.CurrentExercice.History = RefData.GetExerciceHistory((int)PeriodEnum.AllTime, exercice);
             vm.LastTimePerformance = RefData.GetExerciceHistoryLastTime(exercice);
+            vm.CopiedFilteredExercices = FilteredExercices;
 
             foreach (Set set in exercice.Sets)
                 vm.CopiedSets.Add(set);

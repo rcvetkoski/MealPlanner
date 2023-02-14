@@ -952,6 +952,7 @@ namespace MealPlanner.Helpers
                 // Copy exercice
                 Exercice exercice = CreateAndCopyExerciceProperties(existingExercice);
                 exercice.WorkoutExerciceId = workoutExercice.Id;
+                exercice.RestTimeBetweenSets = workoutExercice.RestTimeBetweenSets;
                 exercice.Sets.Clear();
 
                 // Add sets to exercice
@@ -981,6 +982,7 @@ namespace MealPlanner.Helpers
                 MuscleGroupId = existingExercice.MuscleGroupId,
                 ImageSourcePath = existingExercice.ImageSourcePath,
                 ImageBlob = existingExercice.ImageBlob,
+                RestTimeBetweenSets= existingExercice.RestTimeBetweenSets
             };
 
             foreach (Set set in existingExercice.Sets)

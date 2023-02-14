@@ -11,14 +11,14 @@
     <ContentPage.BindingContext>
         <viewmodels:ExerciceSatisticsViewModel/>
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
-            <StackLayout>
-                <Label Text="History" Style="{StaticResource LabelMediumBold}" Margin="10, 10, 0, 0"/>
-                <StackLayout BindableLayout.ItemsSource="{Binding CurrentExercice.History}" Spacing="0">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate x:DataType="helpers:ExerciceHistoryHelper">
+        <StackLayout>
+            <Label Text="History" Style="{StaticResource LabelMediumBold}" Margin="10, 10, 0, 0"/>
+            <CollectionView ItemsSource="{Binding CurrentExercice.History}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="helpers:ExerciceHistoryHelper">
+                        <StackLayout>
                             <Frame Style="{StaticResource JournalTemplateCard}">
                                 <Grid RowDefinitions="Auto" ColumnDefinitions="Auto">
                                     <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmallBold}" Text="{Binding Date, StringFormat='{0:dd MMMM yyyy}'}"/>
@@ -36,10 +36,10 @@
                                     </StackLayout>
                                 </Grid>
                             </Frame>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
-            </StackLayout>
-        </ScrollView>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

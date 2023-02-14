@@ -85,6 +85,8 @@ namespace MealPlanner.ViewModels
             ExercicePage exercicePage = new ExercicePage();
             var vm = exercicePage.BindingContext as ExerciceViewModel;
             vm.CurrentExercice = exercice;
+            vm.SelectedMinutes = exercice.RestTimeBetweenSets.Minutes;
+            vm.SelectedSecondes = exercice.RestTimeBetweenSets.Seconds;
             foreach (Set set in exercice.Sets)
             {
                 vm.CopiedSets.Add(set);
