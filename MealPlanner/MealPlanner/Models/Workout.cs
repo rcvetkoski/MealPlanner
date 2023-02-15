@@ -20,9 +20,12 @@ namespace MealPlanner.Models
         public TimeSpan TotalTime { get; set; }
         [Ignore]
         public double TotalVolume { get; set; }
+        [Ignore]
+        public List<MuscleGroup> MuscleGroups { get; set; }
 
         public void SetAndNotifyMainProperties()
         {
+            MuscleGroups = new List<MuscleGroup>();
             TotalTime = new TimeSpan();
             TotalVolume = 0;
 
@@ -30,10 +33,14 @@ namespace MealPlanner.Models
             {
                 TotalTime = TotalTime.Add(exercice.RestTimeBetweenSets);
                 TotalVolume += exercice.TotalWeight;
+
+                if (!MuscleGroups.Contains(exercice.MuscleGroup))
+                    MuscleGroups.Add(exercice.MuscleGroup);
             }
 
             OnPropertyChanged(nameof(TotalTime));
             OnPropertyChanged(nameof(TotalVolume));
+            OnPropertyChanged(nameof(MuscleGroups));
         }
 
         public Workout()
