@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:models="clr-namespace:MealPlanner.Models"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
+             Title="{Binding CurrentWorkoutRoutine.Name}"
+             x:Name="workoutRoutinePage"
+             x:Class="MealPlanner.Views.WorkoutRoutinePage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:WorkoutRoutineViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Priority="0" Command="{Binding AddExerciceCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Size="20" 
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        <ToolbarItem Order="Primary" Priority="0" Command="{Binding EditWorkoutRoutineCommand}" CommandParameter="{Binding CurrentWorkoutProgram}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Size="20" 
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.Pen}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+            <StackLayout Margin="0, 10, 0, 10">
+                <Label Text="{Binding CurrentWorkoutRoutine.Name}" HorizontalOptions="CenterAndExpand" />
+                <StackLayout BindableLayout.ItemsSource="{Binding CurrentWorkoutRoutine.Exercices}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="models:Exercice">
+                            <StackLayout>
+                                <Frame Style="{StaticResource MealCard}">
+                                    <Grid RowDefinitions="30, 50, 11, Auto" ColumnDefinitions="80, *, 20">
+                                        <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
+                                               Source="{Binding ImageSource}" 
+                                               Aspect="AspectFill"
+                                               VerticalOptions="Center"
+                                               HeightRequest="80"
+                                               BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                                            <Image.Clip>
+                                                <RoundRectangleGeometry Rect="0,0,80,80" CornerRadius="12"/>
+                                            </Image.Clip>
+                                        </Image>
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Style="{StaticResource LabelMediumBold}" LineBreakMode="TailTruncation" VerticalOptions="Center"/>
+                                        <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2"
+                                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                                            <Button.ImageSource>
+                                                <FontImageSource Size="20" 
+                                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                                 Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
+                                            </Button.ImageSource>
+                                        </Button>
+                                        <FlexLayout Grid.Row="1" Grid.Column="1" Direction="Row" Wrap="Wrap" AlignItems="Start" JustifyContent="Start" BindableLayout.ItemsSource="{Binding Sets}">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate x:DataType="models:Set">
+                                                    <StackLayout Orientation="Horizontal" Spacing="2" Margin="2,0,2,0">
+                                                        <Label Text="{Binding Weight}" Style="{StaticResource LabelSmall}"/>
+                                                        <Label Text="x" Style="{StaticResource LabelSmall}"/>
+                                                        <Label Text="{Binding Reps}" Margin="0,0,5,0" Style="{StaticResource LabelSmall}"/>
+                                                    </StackLayout>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </FlexLayout>
+                                        <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="1" BackgroundColor="LightGray" Margin="0, 5, 0, 5"/>
+                                        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
+                                            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmallBold}" Text="{Binding MuscleGroup.Name}"/>
+                                            <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmallBold}" Text="{Binding RestTimeBetweenSets, StringFormat='{}{0:mm\\:ss}'}" HorizontalOptions="Center"/>
+                                            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelSmallBold}" Text="{Binding TotalWeight, StringFormat='{0} kg'}" HorizontalTextAlignment="End"/>
+                                        </Grid>
+                                    </Grid>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.UpdateExerciceCommand, Source={x:Reference workoutRoutinePage}}"
+                                                              CommandParameter="{Binding .}">
+                                        </TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

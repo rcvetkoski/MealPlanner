@@ -15,7 +15,8 @@ namespace MealPlanner
             Routing.RegisterRoute(nameof(AddExercicePage), typeof(AddExercicePage));
             Routing.RegisterRoute(nameof(EditExercicePage), typeof(EditExercicePage));
             Routing.RegisterRoute(nameof(ExerciceGroupPage), typeof(ExerciceGroupPage));
-            Routing.RegisterRoute(nameof(ExerciceSatisticsPage), typeof(ExerciceSatisticsPage));
+            Routing.RegisterRoute(nameof(ExerciceSatisticsPage), typeof(ExerciceSatisticsPage)); 
+            Routing.RegisterRoute(nameof(WorkoutProgramsPage), typeof(WorkoutProgramsPage));
             Routing.RegisterRoute(nameof(ExercicePage), typeof(ExercicePage));
             Routing.RegisterRoute(nameof(EditFoodPage), typeof(EditFoodPage));
             Routing.RegisterRoute(nameof(FoodPage), typeof(FoodPage));

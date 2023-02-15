@@ -16,6 +16,7 @@ namespace MealPlanner.ViewModels
             SelectExerciceGroupCommand = new Command<MuscleGroup>(SelectExerciceGroup);
             CreateNewExerciceGroupCommand = new Command(CreateNewExerciceGroup);
             SearchExerciceCommand = new Command(SearchExercice);
+            SelectExerciceFromProgramCommand = new Command(SelectExerciceFromProgram);
         }
 
         public ICommand SelectExerciceGroupCommand { get; set; }
@@ -47,6 +48,12 @@ namespace MealPlanner.ViewModels
             vm.RefreshFilteredExercices(string.Empty);
             await Shell.Current.Navigation.PushAsync(addExercicePage);
             addExercicePage.SearchEntry.Focus();
+        }
+
+        public ICommand SelectExerciceFromProgramCommand { get; set; }
+        private async void SelectExerciceFromProgram()
+        {
+            await Shell.Current.GoToAsync(nameof(WorkoutProgramsPage));
         }
     }
 }

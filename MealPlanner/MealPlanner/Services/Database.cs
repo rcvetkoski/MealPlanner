@@ -44,6 +44,11 @@ namespace MealPlanner.Services
             dbConnection.CreateTableAsync<Set>();
             dbConnection.CreateTableAsync<MuscleGroup>();
             dbConnection.CreateTableAsync<WorkoutExercice>();
+            dbConnection.CreateTableAsync<WorkoutProgram>();
+            dbConnection.CreateTableAsync<WorkoutRoutine>();
+            dbConnection.CreateTableAsync<WorkoutProgramRoutine>();
+            dbConnection.CreateTableAsync<WorkoutRoutineExercice>();
+
 
             // Meal
             dbConnection.CreateTableAsync<TypeOfRegimeItem>();
@@ -436,6 +441,302 @@ namespace MealPlanner.Services
         public Task<int> DropTableWorkoutExercice()
         {
             return dbConnection.DropTableAsync<WorkoutExercice>();
+        }
+
+        #endregion
+
+        #region WorkoutProgram
+
+        /// <summary>
+        /// Returns a WorkoutProgram from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<WorkoutProgram> GetWorkoutProgramAsync(int id)
+        {
+            return dbConnection.GetAsync<WorkoutProgram>(id);
+        }
+
+        /// <summary>
+        /// Returns all WorkoutProgram from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<WorkoutProgram>> GetAllWorkoutProgramsAsync()
+        {
+            return dbConnection.Table<WorkoutProgram>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts a WorkoutProgram in database
+        /// </summary>
+        /// <param name="workoutProgram"></param>
+        /// <returns></returns>
+        public Task<int> AddWorkoutProgramAsync(WorkoutProgram workoutProgram)
+        {
+            return dbConnection.InsertAsync(workoutProgram);
+        }
+
+        /// <summary>
+        /// Updates a WorkoutProgram from database
+        /// </summary>
+        /// <param name="workoutProgram"></param>
+        /// <returns></returns>
+        public Task<int> UpdateWorkoutProgramAsync(WorkoutProgram workoutProgram)
+        {
+            if (GetWorkoutProgramAsync(workoutProgram.Id) != null)
+                return dbConnection.UpdateAsync(workoutProgram);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Deletes a WorkoutProgram from database
+        /// </summary>
+        /// <param name="workoutProgram"></param>
+        /// <returns></returns>
+        public Task<int> DeleteWorkoutProgramAsync(WorkoutProgram workoutProgram)
+        {
+            return dbConnection.DeleteAsync(workoutProgram);
+        }
+
+        /// <summary>
+        /// Deletes all WorkoutProgram from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DeleteAllWorkoutProgramsAsync()
+        {
+            return dbConnection.DeleteAllAsync<WorkoutProgram>();
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableWorkoutProgram()
+        {
+            return dbConnection.DropTableAsync<WorkoutProgram>();
+        }
+
+        #endregion
+
+        #region WorkoutRoutine
+
+        /// <summary>
+        /// Returns a WorkoutRoutine from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<WorkoutRoutine> GetWorkoutRoutineAsync(int id)
+        {
+            return dbConnection.GetAsync<WorkoutRoutine>(id);
+        }
+
+        /// <summary>
+        /// Returns all WorkoutRoutine from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<WorkoutRoutine>> GetAllWorkoutRoutinesAsync()
+        {
+            return dbConnection.Table<WorkoutRoutine>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts a WorkoutRoutine in database
+        /// </summary>
+        /// <param name="workoutRoutine"></param>
+        /// <returns></returns>
+        public Task<int> AddWorkoutRoutineAsync(WorkoutRoutine workoutRoutine)
+        {
+            return dbConnection.InsertAsync(workoutRoutine);
+        }
+
+        /// <summary>
+        /// Updates a WorkoutRoutine from database
+        /// </summary>
+        /// <param name="workoutRoutine"></param>
+        /// <returns></returns>
+        public Task<int> UpdateWorkoutRoutineAsync(WorkoutRoutine workoutRoutine)
+        {
+            if (GetWorkoutRoutineAsync(workoutRoutine.Id) != null)
+                return dbConnection.UpdateAsync(workoutRoutine);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Deletes a WorkoutRoutine from database
+        /// </summary>
+        /// <param name="workoutRoutine"></param>
+        /// <returns></returns>
+        public Task<int> DeleteWorkoutRoutineAsync(WorkoutRoutine workoutRoutine)
+        {
+            return dbConnection.DeleteAsync(workoutRoutine);
+        }
+
+        /// <summary>
+        /// Deletes all WorkoutRoutine from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DeleteAllWorkoutRoutinesAsync()
+        {
+            return dbConnection.DeleteAllAsync<WorkoutRoutine>();
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableWorkoutRoutine()
+        {
+            return dbConnection.DropTableAsync<WorkoutRoutine>();
+        }
+
+        #endregion
+
+        #region WorkoutProgramRoutine
+
+        /// <summary>
+        /// Returns a WorkoutProgramRoutine from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<WorkoutProgramRoutine> GetWorkoutProgramRoutineAsync(int id)
+        {
+            return dbConnection.GetAsync<WorkoutProgramRoutine>(id);
+        }
+
+        /// <summary>
+        /// Returns all WorkoutProgramRoutine from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<WorkoutProgramRoutine>> GetAllWorkoutProgramRoutinesAsync()
+        {
+            return dbConnection.Table<WorkoutProgramRoutine>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts a WorkoutProgramRoutine in database
+        /// </summary>
+        /// <param name="workoutProgramRoutine"></param>
+        /// <returns></returns>
+        public Task<int> AddWorkoutProgramRoutineAsync(WorkoutProgramRoutine workoutProgramRoutine)
+        {
+            return dbConnection.InsertAsync(workoutProgramRoutine);
+        }
+
+        /// <summary>
+        /// Updates a WorkoutProgramRoutine from database
+        /// </summary>
+        /// <param name="workoutProgramRoutine"></param>
+        /// <returns></returns>
+        public Task<int> UpdateWorkoutProgramRoutineAsync(WorkoutProgramRoutine workoutProgramRoutine)
+        {
+            if (GetWorkoutProgramRoutineAsync(workoutProgramRoutine.Id) != null)
+                return dbConnection.UpdateAsync(workoutProgramRoutine);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Deletes a WorkoutProgramRoutine from database
+        /// </summary>
+        /// <param name="workoutProgramRoutine"></param>
+        /// <returns></returns>
+        public Task<int> DeleteWorkoutProgramRoutineAsync(WorkoutProgramRoutine workoutProgramRoutine)
+        {
+            return dbConnection.DeleteAsync(workoutProgramRoutine);
+        }
+
+        /// <summary>
+        /// Deletes all WorkoutProgramRoutine from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DeleteAllWorkoutProgramRoutinesAsync()
+        {
+            return dbConnection.DeleteAllAsync<WorkoutProgramRoutine>();
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableWorkoutProgramRoutine()
+        {
+            return dbConnection.DropTableAsync<WorkoutProgramRoutine>();
+        }
+
+        #endregion
+
+        #region WorkoutRoutineExercice
+
+        /// <summary>
+        /// Returns a WorkoutRoutineExercice from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<WorkoutRoutineExercice> GetWorkoutRoutineExerciceAsync(int id)
+        {
+            return dbConnection.GetAsync<WorkoutRoutineExercice>(id);
+        }
+
+        /// <summary>
+        /// Returns all WorkoutRoutineExercice from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<WorkoutRoutineExercice>> GetAllWorkoutRoutineExercicesAsync()
+        {
+            return dbConnection.Table<WorkoutRoutineExercice>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Inserts a WorkoutRoutineExercice in database
+        /// </summary>
+        /// <param name="workoutRoutineExercice"></param>
+        /// <returns></returns>
+        public Task<int> AddWorkoutRoutineExerciceAsync(WorkoutRoutineExercice workoutRoutineExercice)
+        {
+            return dbConnection.InsertAsync(workoutRoutineExercice);
+        }
+
+        /// <summary>
+        /// Updates a WorkoutRoutineExercice from database
+        /// </summary>
+        /// <param name="workoutRoutineExercice"></param>
+        /// <returns></returns>
+        public Task<int> UpdateWorkoutRoutineExerciceAsync(WorkoutRoutineExercice workoutRoutineExercice)
+        {
+            if (GetWorkoutRoutineExerciceAsync(workoutRoutineExercice.Id) != null)
+                return dbConnection.UpdateAsync(workoutRoutineExercice);
+            else
+                return Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Deletes a WorkoutRoutineExercice from database
+        /// </summary>
+        /// <param name="workoutRoutineExercice"></param>
+        /// <returns></returns>
+        public Task<int> DeleteWorkoutRoutineExerciceAsync(WorkoutRoutineExercice workoutRoutineExercice)
+        {
+            return dbConnection.DeleteAsync(workoutRoutineExercice);
+        }
+
+        /// <summary>
+        /// Deletes all WorkoutRoutineExercice from database
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DeleteAllWorkoutRoutineExercicesAsync()
+        {
+            return dbConnection.DeleteAllAsync<WorkoutRoutineExercice>();
+        }
+
+        /// <summary>
+        /// Drops the table
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DropTableWorkoutRoutineExercice()
+        {
+            return dbConnection.DropTableAsync<WorkoutRoutineExercice>();
         }
 
         #endregion

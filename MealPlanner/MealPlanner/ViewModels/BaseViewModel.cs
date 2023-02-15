@@ -73,6 +73,40 @@ namespace MealPlanner.ViewModels
             }
         }
 
+        private WorkoutProgram currentWorkoutProgram;
+        public WorkoutProgram CurrentWorkoutProgram
+        {
+            get
+            {
+                return currentWorkoutProgram;
+            }
+            set
+            {
+                if (currentWorkoutProgram != value)
+                {
+                    currentWorkoutProgram = value;
+                    OnPropertyChanged(nameof(CurrentWorkoutProgram));
+                }
+            }
+        }
+
+        private WorkoutRoutine currentWorkoutRoutine;
+        public WorkoutRoutine CurrentWorkoutRoutine
+        {
+            get
+            {
+                return currentWorkoutRoutine;
+            }
+            set
+            {
+                if (currentWorkoutRoutine != value)
+                {
+                    currentWorkoutRoutine = value;
+                    OnPropertyChanged(nameof(CurrentWorkoutRoutine));
+                }
+            }
+        }
+
         private bool isNew;
         public bool IsNew 
         { 

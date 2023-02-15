@@ -47,6 +47,7 @@ namespace MealPlanner.Services
         Task<int> DeleteAllSetsAsync();
         Task<int> DropTableSet();
 
+
         // WorkoutExercice
         Task<WorkoutExercice> GetWorkoutExerciceAsync(int id);
         Task<List<WorkoutExercice>> GetAllWorkoutExercicesAsync();
@@ -55,6 +56,46 @@ namespace MealPlanner.Services
         Task<int> DeleteWorkoutExerciceAsync(WorkoutExercice workoutExercice);
         Task<int> DeleteAllWorkoutExercicesAsync();
         Task<int> DropTableWorkoutExercice();
+
+
+        // WorkoutProgram
+        Task<WorkoutProgram> GetWorkoutProgramAsync(int id);
+        Task<List<WorkoutProgram>> GetAllWorkoutProgramsAsync();
+        Task<int> AddWorkoutProgramAsync(WorkoutProgram workoutProgram);
+        Task<int> UpdateWorkoutProgramAsync(WorkoutProgram workoutProgram);
+        Task<int> DeleteWorkoutProgramAsync(WorkoutProgram workoutProgram);
+        Task<int> DeleteAllWorkoutProgramsAsync();
+        Task<int> DropTableWorkoutProgram();
+
+
+        // WorkoutRoutine
+        Task<WorkoutRoutine> GetWorkoutRoutineAsync(int id);
+        Task<List<WorkoutRoutine>> GetAllWorkoutRoutinesAsync();
+        Task<int> AddWorkoutRoutineAsync(WorkoutRoutine workoutRoutine);
+        Task<int> UpdateWorkoutRoutineAsync(WorkoutRoutine workoutRoutine);
+        Task<int> DeleteWorkoutRoutineAsync(WorkoutRoutine workoutRoutine);
+        Task<int> DeleteAllWorkoutRoutinesAsync();
+        Task<int> DropTableWorkoutRoutine();
+
+
+        // WorkoutProgramRoutine
+        Task<WorkoutProgramRoutine> GetWorkoutProgramRoutineAsync(int id);
+        Task<List<WorkoutProgramRoutine>> GetAllWorkoutProgramRoutinesAsync();
+        Task<int> AddWorkoutProgramRoutineAsync(WorkoutProgramRoutine workoutProgramRoutine);
+        Task<int> UpdateWorkoutProgramRoutineAsync(WorkoutProgramRoutine workoutProgramRoutine);
+        Task<int> DeleteWorkoutProgramRoutineAsync(WorkoutProgramRoutine workoutProgramRoutine);
+        Task<int> DeleteAllWorkoutProgramRoutinesAsync();
+        Task<int> DropTableWorkoutProgramRoutine();
+
+
+        // WorkoutRoutineExercice
+        Task<WorkoutRoutineExercice> GetWorkoutRoutineExerciceAsync(int id);
+        Task<List<WorkoutRoutineExercice>> GetAllWorkoutRoutineExercicesAsync();
+        Task<int> AddWorkoutRoutineExerciceAsync(WorkoutRoutineExercice workoutRoutineExercice);
+        Task<int> UpdateWorkoutRoutineExerciceAsync(WorkoutRoutineExercice workoutRoutineExercice);
+        Task<int> DeleteWorkoutRoutineExerciceAsync(WorkoutRoutineExercice workoutRoutineExercice);
+        Task<int> DeleteAllWorkoutRoutineExercicesAsync();
+        Task<int> DropTableWorkoutRoutineExercice();
 
 
         // TypeOfRegimeItem

@@ -32,6 +32,9 @@ namespace MealPlanner.Helpers
         public ObservableCollection<JournalTemplate> JournalTemplates { get; set; }
         public ObservableCollection<JournalTemplateMeal> JournalTemplateMeals { get; set; }
         public ObservableCollection<Exercice> Exercices { get; set; }
+        public ObservableCollection<WorkoutProgram> WorkoutPrograms { get; set; }
+        public ObservableCollection<WorkoutRoutine> WorkoutRoutines { get; set; }
+
 
         private Workout currentWorkout;
         public Workout CurrentWorkout 
@@ -270,6 +273,13 @@ namespace MealPlanner.Helpers
 
             // TODO remove when clean install
             UpdateDb();
+
+            // WorkoutPrograms
+            WorkoutPrograms = App.DataBaseRepo.GetAllWorkoutProgramsAsync().Result.ToObservableCollection();
+
+            // WorkoutRoutines
+            WorkoutRoutines = App.DataBaseRepo.GetAllWorkoutRoutinesAsync().Result.ToObservableCollection();
+
 
             GetMealsAtDate(DateTime.Now);
             GetWorkoutAtDay(DateTime.Now);

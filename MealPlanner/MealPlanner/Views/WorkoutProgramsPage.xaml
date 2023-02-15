@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels" 
+             xmlns:models="clr-namespace:MealPlanner.Models"
+             xmlns:helpers="clr-namespace:MealPlanner.Helpers"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
+             Title="{Binding Title}"
+             x:Name="workoutProgramsPage"
+             x:Class="MealPlanner.Views.WorkoutProgramsPage">
+    
+    <ContentPage.BindingContext>
+        <viewmodels:WorkoutProgramsViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Priority="0" Command="{Binding CreateNewWorkoutProgramCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Size="20" 
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding RefData.WorkoutPrograms}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:WorkoutProgram">
+                    <Grid RowDefinitions="60, 9" ColumnDefinitions="60,*,40" Padding="8, 8, 8, 0" RowSpacing="0">
+                        <Image Grid.Row="0" Grid.Column="0" 
+                               Aspect="AspectFill"
+                               HeightRequest="60" 
+                               BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                            <Image.Clip>
+                                <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
+                            </Image.Clip>
+                        </Image>
+                        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelMediumBold}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
+                        <Button Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent">
+                            <Button.ImageSource>
+                                <FontImageSource Size="20" 
+                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+
+                        </Button>
+                        <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="1" VerticalOptions="End" BackgroundColor="#e6e6e6"/>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.SelectWorkoutProgramCommand, Source={x:Reference workoutProgramsPage}}" CommandParameter="{Binding .}"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>
