@@ -10,6 +10,6 @@ namespace MealPlanner.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public int WorkoutProgramId { get; set; }
-        public int WorkoutRoutineId { get; set; }
+        public int WorkoutId { get; set; }
     }
 }

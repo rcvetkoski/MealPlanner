@@ -24,20 +24,17 @@ namespace MealPlanner.ViewModels
             if (string.IsNullOrEmpty(result))
                 return;
 
+            // Create new program
             WorkoutProgram workoutProgram = new WorkoutProgram()
             {
                 Name = result
             };
 
+            // Add to db
+            await App.DataBaseRepo.AddWorkoutProgramAsync(workoutProgram);
 
-            //EditWorkoutProgramPage editWorkoutProgramPage = new EditWorkoutProgramPage();
-            //var vm = editWorkoutProgramPage.BindingContext as EditWorkoutProgramViewModel;
-            //vm.CurrentWorkoutProgram = workoutProgram;
-
-
+            // Add to Collection
             RefData.WorkoutPrograms.Add(workoutProgram);
-
-            //await Shell.Current.Navigation.PushAsync(editWorkoutProgramPage);
         }
 
         public ICommand SelectWorkoutProgramCommand { get; set; }

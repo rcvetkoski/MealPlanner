@@ -90,19 +90,19 @@ namespace MealPlanner.ViewModels
             }
         }
 
-        private WorkoutRoutine currentWorkoutRoutine;
-        public WorkoutRoutine CurrentWorkoutRoutine
+        private Workout currentWorkout;
+        public Workout CurrentWorkout
         {
             get
             {
-                return currentWorkoutRoutine;
+                return currentWorkout;
             }
             set
             {
-                if (currentWorkoutRoutine != value)
+                if (currentWorkout != value)
                 {
-                    currentWorkoutRoutine = value;
-                    OnPropertyChanged(nameof(CurrentWorkoutRoutine));
+                    currentWorkout = value;
+                    OnPropertyChanged(nameof(CurrentWorkout));
                 }
             }
         }

@@ -34,18 +34,12 @@
     <ContentPage.Content>
         <CollectionView ItemsSource="{Binding CurrentWorkoutProgram.WorkoutRoutines}">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:WorkoutRoutine">
-                    <Grid RowDefinitions="60, 9" ColumnDefinitions="60,*,40" Padding="8, 8, 8, 0" RowSpacing="0">
-                        <Image Grid.Row="0" Grid.Column="0" 
-                               Aspect="AspectFill"
-                               HeightRequest="60" 
-                               BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
-                            <Image.Clip>
-                                <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
-                            </Image.Clip>
-                        </Image>
-                        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelMediumBold}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
-                        <Button Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent">
+                <DataTemplate x:DataType="models:Workout">
+                    <Grid RowDefinitions="Auto, Auto, 9" ColumnDefinitions="*,40" Padding="8, 8, 8, 0" RowSpacing="0">
+                        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelMediumBold}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation"/>
+                        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmall}" Text="{Binding TotalVolume, StringFormat='{0} kg'}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation"/>
+
+                        <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent">
                             <Button.ImageSource>
                                 <FontImageSource Size="20" 
                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
@@ -53,7 +47,7 @@
                             </Button.ImageSource>
 
                         </Button>
-                        <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="1" VerticalOptions="End" BackgroundColor="#e6e6e6"/>
+                        <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="1" VerticalOptions="End" BackgroundColor="#e6e6e6"/>
 
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding BindingContext.SelectWorkoutRoutineCommand, Source={x:Reference workoutProgramPage}}" CommandParameter="{Binding .}"/>

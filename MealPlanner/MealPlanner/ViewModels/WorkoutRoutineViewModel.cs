@@ -20,12 +20,11 @@ namespace MealPlanner.ViewModels
         public ICommand AddExerciceCommand { get; set; }
         private async void AddExercice()
         {
-            Exercice exercice = new Exercice()
-            {
-                Name = "Exercice"
-            };
+            ExerciceGroupPage exerciceGroupPage = new ExerciceGroupPage();
+            var vm = exerciceGroupPage.BindingContext as ExerciceGroupViewModel;
+            vm.CurrentWorkout = CurrentWorkout;
 
-            CurrentWorkoutRoutine.Exercices.Add(exercice);
+            await Shell.Current.Navigation.PushAsync(exerciceGroupPage);
         }
 
         public ICommand UpdateExerciceCommand { get; set; }
@@ -33,6 +32,7 @@ namespace MealPlanner.ViewModels
         {
             ExercicePage exercicePage = new ExercicePage();
             var vm = exercicePage.BindingContext as ExerciceViewModel;
+            vm.CurrentWorkout = CurrentWorkout;
             vm.CurrentExercice = exercice;
             vm.SelectedMinutes = exercice.RestTimeBetweenSets.Minutes;
             vm.SelectedSecondes = exercice.RestTimeBetweenSets.Seconds;

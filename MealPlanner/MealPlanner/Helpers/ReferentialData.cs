@@ -33,8 +33,6 @@ namespace MealPlanner.Helpers
         public ObservableCollection<JournalTemplateMeal> JournalTemplateMeals { get; set; }
         public ObservableCollection<Exercice> Exercices { get; set; }
         public ObservableCollection<WorkoutProgram> WorkoutPrograms { get; set; }
-        public ObservableCollection<WorkoutRoutine> WorkoutRoutines { get; set; }
-
 
         private Workout currentWorkout;
         public Workout CurrentWorkout 
@@ -56,7 +54,7 @@ namespace MealPlanner.Helpers
         public ObservableCollection<Set> Sets { get; set; }
         public ObservableCollection<MuscleGroup> MuscleGroups { get; set; }
         public ObservableCollection<WorkoutExercice> WorkoutExercices { get; set; }
-
+        public List<WorkoutProgramRoutine> WorkoutProgramRoutines { get; set; }
 
 
         public List<Meal> DefaultMeals { get; set; }
@@ -277,8 +275,28 @@ namespace MealPlanner.Helpers
             // WorkoutPrograms
             WorkoutPrograms = App.DataBaseRepo.GetAllWorkoutProgramsAsync().Result.ToObservableCollection();
 
-            // WorkoutRoutines
-            WorkoutRoutines = App.DataBaseRepo.GetAllWorkoutRoutinesAsync().Result.ToObservableCollection();
+            // WorkoutProgramRoutines
+            WorkoutProgramRoutines = App.DataBaseRepo.GetAllWorkoutProgramRoutinesAsync().Result;
+
+            // Fill WorkoutPrograms
+            foreach(WorkoutProgram workoutProgram in WorkoutPrograms)
+            {
+                foreach(WorkoutProgramRoutine workoutProgramRoutine in WorkoutProgramRoutines)
+                {
+                    if(workoutProgramRoutine.WorkoutProgramId == workoutProgram.Id)
+                    {
+                        Workout workout = Workouts.SingleOrDefault(x => x.Id == workoutProgramRoutine.WorkoutId);
+
+                        if (workout == null)
+                            continue;
+
+                        // fill workout routine with exercices
+                        PopulateWorkout(workout);
+
+                        workoutProgram.WorkoutRoutines.Add(workout);
+                    }
+                }
+            }
 
 
             GetMealsAtDate(DateTime.Now);
@@ -950,7 +968,7 @@ namespace MealPlanner.Helpers
 
         public void PopulateWorkout(Workout workout)
         {
-            CurrentWorkout.Exercices.Clear();
+            workout.Exercices.Clear();
 
             foreach (WorkoutExercice workoutExercice in WorkoutExercices.Where(x=> x.WorkoutId == workout.Id))
             {

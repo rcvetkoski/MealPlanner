@@ -179,9 +179,9 @@ namespace MealPlanner.ViewModels
             // Create WorkoutExercice link
             WorkoutExercice workoutExercice = new WorkoutExercice()
             {
-                WorkoutId = RefData.CurrentWorkout.Id,
+                WorkoutId = CurrentWorkout.Id,
                 ExerciceId = exercice.Id,
-                Date = RefData.CurrentWorkout.Date,
+                Date = CurrentWorkout.Date,
                 RestTimeBetweenSets = new TimeSpan(0, CurrentExercice.RestTimeBetweenSets.Minutes, CurrentExercice.RestTimeBetweenSets.Seconds),
             };
 
@@ -200,10 +200,10 @@ namespace MealPlanner.ViewModels
             }
 
             // Add exercice to Exercies list
-            RefData.CurrentWorkout.Exercices.Add(exercice);
+            CurrentWorkout.Exercices.Add(exercice);
 
             // Update fields
-            RefData.CurrentWorkout.SetAndNotifyMainProperties();
+            CurrentWorkout.SetAndNotifyMainProperties();
 
             await Shell.Current.Navigation.PopAsync();
         }
@@ -225,7 +225,7 @@ namespace MealPlanner.ViewModels
                 return;
 
             // Remove from list
-            RefData.CurrentWorkout.Exercices.Remove(CurrentExercice);
+            CurrentWorkout.Exercices.Remove(CurrentExercice);
 
             // Remove sets
             foreach (Set set in CurrentExercice.Sets)
@@ -238,7 +238,7 @@ namespace MealPlanner.ViewModels
             await App.DataBaseRepo.DeleteWorkoutExerciceAsync(workoutExercice);
 
             // Update fields
-            RefData.CurrentWorkout.SetAndNotifyMainProperties();
+            CurrentWorkout.SetAndNotifyMainProperties();
 
             // Go back
             await Shell.Current.Navigation.PopAsync();
@@ -299,6 +299,9 @@ namespace MealPlanner.ViewModels
 
             // Update Exercice in db
             await App.DataBaseRepo.UpdateExerciceAsync(CurrentExercice);
+
+            // Update fields
+            CurrentWorkout.SetAndNotifyMainProperties();
 
             // Go back
             await Shell.Current.Navigation.PopAsync();

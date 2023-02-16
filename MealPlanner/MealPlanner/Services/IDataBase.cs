@@ -68,15 +68,6 @@ namespace MealPlanner.Services
         Task<int> DropTableWorkoutProgram();
 
 
-        // WorkoutRoutine
-        Task<WorkoutRoutine> GetWorkoutRoutineAsync(int id);
-        Task<List<WorkoutRoutine>> GetAllWorkoutRoutinesAsync();
-        Task<int> AddWorkoutRoutineAsync(WorkoutRoutine workoutRoutine);
-        Task<int> UpdateWorkoutRoutineAsync(WorkoutRoutine workoutRoutine);
-        Task<int> DeleteWorkoutRoutineAsync(WorkoutRoutine workoutRoutine);
-        Task<int> DeleteAllWorkoutRoutinesAsync();
-        Task<int> DropTableWorkoutRoutine();
-
 
         // WorkoutProgramRoutine
         Task<WorkoutProgramRoutine> GetWorkoutProgramRoutineAsync(int id);
@@ -87,15 +78,6 @@ namespace MealPlanner.Services
         Task<int> DeleteAllWorkoutProgramRoutinesAsync();
         Task<int> DropTableWorkoutProgramRoutine();
 
-
-        // WorkoutRoutineExercice
-        Task<WorkoutRoutineExercice> GetWorkoutRoutineExerciceAsync(int id);
-        Task<List<WorkoutRoutineExercice>> GetAllWorkoutRoutineExercicesAsync();
-        Task<int> AddWorkoutRoutineExerciceAsync(WorkoutRoutineExercice workoutRoutineExercice);
-        Task<int> UpdateWorkoutRoutineExerciceAsync(WorkoutRoutineExercice workoutRoutineExercice);
-        Task<int> DeleteWorkoutRoutineExerciceAsync(WorkoutRoutineExercice workoutRoutineExercice);
-        Task<int> DeleteAllWorkoutRoutineExercicesAsync();
-        Task<int> DropTableWorkoutRoutineExercice();
 
 
         // TypeOfRegimeItem

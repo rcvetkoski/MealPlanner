@@ -72,11 +72,11 @@ namespace MealPlanner.ViewModels
         public ICommand AddExerciceCommand { get; set; }
         private async void AddExercice()
         {
-            //AddExercicePage addExercicePage = new AddExercicePage();
-            //var vm = addExercicePage.BindingContext as AddExerciceViewModel;
-            //vm.SelectedWorkout = RefData.CurrentWorkout;
+            ExerciceGroupPage exerciceGroupPage = new ExerciceGroupPage();
+            var vm = exerciceGroupPage.BindingContext as ExerciceGroupViewModel;
+            vm.CurrentWorkout = RefData.CurrentWorkout;
 
-            await Shell.Current.GoToAsync(nameof(ExerciceGroupPage));
+            await Shell.Current.Navigation.PushAsync(exerciceGroupPage);
         }
 
         public ICommand UpdateExerciceCommand { get; set; }
@@ -84,6 +84,7 @@ namespace MealPlanner.ViewModels
         {
             ExercicePage exercicePage = new ExercicePage();
             var vm = exercicePage.BindingContext as ExerciceViewModel;
+            vm.CurrentWorkout = RefData.CurrentWorkout;
             vm.CurrentExercice = exercice;
             vm.SelectedMinutes = exercice.RestTimeBetweenSets.Minutes;
             vm.SelectedSecondes = exercice.RestTimeBetweenSets.Seconds;
@@ -98,9 +99,6 @@ namespace MealPlanner.ViewModels
 
             vm.CanDeleteItem = true;
             vm.CanUpdateItem = true;
-
-            // Update fields
-            RefData.CurrentWorkout.SetAndNotifyMainProperties();
 
             await Shell.Current.Navigation.PushAsync(exercicePage);
         }

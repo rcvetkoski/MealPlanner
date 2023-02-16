@@ -126,6 +126,7 @@ namespace MealPlanner.ViewModels
         {
             ExercicePage exercicePage = new ExercicePage();
             var vm = exercicePage.BindingContext as ExerciceViewModel;
+            vm.CurrentWorkout = CurrentWorkout;
             vm.CurrentExercice = exercice;
             vm.CurrentExercice.History = RefData.GetExerciceHistory((int)PeriodEnum.AllTime, exercice);
             vm.LastTimePerformance = RefData.GetExerciceHistoryLastTime(exercice);

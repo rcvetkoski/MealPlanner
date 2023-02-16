@@ -4,7 +4,7 @@
              xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
              xmlns:helpers="clr-namespace:MealPlanner.Helpers" xmlns:models="clr-namespace:MealPlanner.Models"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
-             Title="{Binding CurrentWorkoutRoutine.Name}"
+             Title="{Binding CurrentWorkout.Name}"
              x:Name="workoutRoutinePage"
              x:Class="MealPlanner.Views.WorkoutRoutinePage">
 
@@ -32,13 +32,13 @@
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
             <StackLayout Margin="0, 10, 0, 10">
-                <Label Text="{Binding CurrentWorkoutRoutine.Name}" HorizontalOptions="CenterAndExpand" />
-                <StackLayout BindableLayout.ItemsSource="{Binding CurrentWorkoutRoutine.Exercices}">
+                <Label Text="{Binding CurrentWorkout.Name}" HorizontalOptions="CenterAndExpand" />
+                <StackLayout BindableLayout.ItemsSource="{Binding CurrentWorkout.Exercices}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:Exercice">
                             <StackLayout>
                                 <Frame Style="{StaticResource MealCard}">
-                                    <Grid RowDefinitions="30, 50, 11, Auto" ColumnDefinitions="80, *, 20">
+                                    <Grid RowDefinitions="30, 40" ColumnDefinitions="70, *, 20">
                                         <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
                                                Source="{Binding ImageSource}" 
                                                Aspect="AspectFill"
@@ -46,7 +46,7 @@
                                                HeightRequest="80"
                                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                                             <Image.Clip>
-                                                <RoundRectangleGeometry Rect="0,0,80,80" CornerRadius="12"/>
+                                                <RoundRectangleGeometry Rect="0,0,70,70" CornerRadius="12"/>
                                             </Image.Clip>
                                         </Image>
                                         <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Style="{StaticResource LabelMediumBold}" LineBreakMode="TailTruncation" VerticalOptions="Center"/>
@@ -69,12 +69,6 @@
                                                 </DataTemplate>
                                             </BindableLayout.ItemTemplate>
                                         </FlexLayout>
-                                        <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="1" BackgroundColor="LightGray" Margin="0, 5, 0, 5"/>
-                                        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
-                                            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSmallBold}" Text="{Binding MuscleGroup.Name}"/>
-                                            <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelSmallBold}" Text="{Binding RestTimeBetweenSets, StringFormat='{}{0:mm\\:ss}'}" HorizontalOptions="Center"/>
-                                            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelSmallBold}" Text="{Binding TotalWeight, StringFormat='{0} kg'}" HorizontalTextAlignment="End"/>
-                                        </Grid>
                                     </Grid>
                                     <Frame.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding BindingContext.UpdateExerciceCommand, Source={x:Reference workoutRoutinePage}}"

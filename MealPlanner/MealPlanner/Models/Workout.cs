@@ -13,6 +13,8 @@ namespace MealPlanner.Models
         public int Id { get; set; }
         public DateTime Date { get; set; }
 
+        public string Name { get; set; }
+
         [Ignore]
         public ObservableCollection<Exercice> Exercices { get; set; }
 
@@ -31,7 +33,9 @@ namespace MealPlanner.Models
 
             foreach (Exercice exercice in Exercices)
             {
-                TotalTime = TotalTime.Add(exercice.RestTimeBetweenSets);
+                foreach(Set set in exercice.Sets)
+                    TotalTime = TotalTime.Add(exercice.RestTimeBetweenSets);
+
                 TotalVolume += exercice.TotalWeight;
 
                 if (!MuscleGroups.Contains(exercice.MuscleGroup))
