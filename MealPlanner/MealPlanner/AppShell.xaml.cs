@@ -32,6 +32,7 @@ namespace MealPlanner
             Routing.RegisterRoute(nameof(EditJournalTemplatePage), typeof(EditJournalTemplatePage));
             Routing.RegisterRoute(nameof(JournalTemplatePage), typeof(JournalTemplatePage));
             Routing.RegisterRoute(nameof(StatisticsPage), typeof(StatisticsPage));
+            Routing.RegisterRoute(nameof(TestPage), typeof(TestPage));
         }
     }
 }

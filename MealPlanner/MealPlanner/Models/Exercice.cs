@@ -126,7 +126,6 @@ namespace MealPlanner.Models
                     return ImageSource.FromStream(() => new MemoryStream(ImageBlob));
 
                 if (string.IsNullOrEmpty(ImageSourcePath))
-                    //return new FontImageSource() { Glyph = FontAwesomeIcons.Image, FontFamily = "FA-Solid", Color = Color.Gray, Size = 120 };
                     return ImageSource.FromResource("MealPlanner.Resources.Images.image.png");
 
                 if (imageSourcePath.Contains("https"))

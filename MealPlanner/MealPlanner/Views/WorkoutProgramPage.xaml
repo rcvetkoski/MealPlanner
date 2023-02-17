@@ -32,8 +32,8 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <CollectionView ItemsLayout="HorizontalGrid" Margin="10, 10, 10, 5" HeightRequest="45" SelectionMode="Single">
+        <StackLayout Spacing="0">
+            <CollectionView ItemsLayout="HorizontalGrid" Margin="10, 10, 10, 10" HeightRequest="45" SelectionMode="Single">
                 <CollectionView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Week1</x:String>
@@ -87,7 +87,6 @@
                     <Label Style="{StaticResource LabelMedium}" Text="+ Add Routines" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                 </CollectionView.EmptyView>
             </CollectionView>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

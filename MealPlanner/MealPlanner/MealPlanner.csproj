@@ -18,6 +18,7 @@
     <None Remove="Resources\Images\Cardio.jpg" />
     <None Remove="Resources\Images\Chest.jpg" />
     <None Remove="Resources\Images\Core.jpg" />
+    <None Remove="Resources\Images\dumbbell.jpg" />
     <None Remove="Resources\Images\googleLogo.png" />
     <None Remove="Resources\Images\image.png" />
     <None Remove="Resources\Images\Legs.jpg" />
@@ -34,6 +35,7 @@
     <EmbeddedResource Include="Resources\Images\Cardio.jpg" />
     <EmbeddedResource Include="Resources\Images\Chest.jpg" />
     <EmbeddedResource Include="Resources\Images\Core.jpg" />
+    <EmbeddedResource Include="Resources\Images\dumbbell.jpg" />
     <EmbeddedResource Include="Resources\Images\googleLogo.png" />
     <EmbeddedResource Include="Resources\Images\image.png" />
     <EmbeddedResource Include="Resources\Images\Legs.jpg" />

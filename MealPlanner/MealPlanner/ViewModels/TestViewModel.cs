@@ -18,6 +18,23 @@ namespace MealPlanner.ViewModels
 
         }
 
+        private Rectangle rect;
+        public Rectangle Rect
+        { 
+            get
+            {
+                return rect;
+            }
+            set
+            {
+                if(rect != value)
+                {
+                    rect = value;
+                    OnPropertyChanged(nameof(Rect));
+                }
+            }
+        }
+
         private string testPropertie;
         public string TestPropertie { get { return testPropertie; } 
             set

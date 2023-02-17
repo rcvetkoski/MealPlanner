@@ -1,4 +1,5 @@
-﻿using MealPlanner.Helpers.Enums;
+﻿using MealPlanner.Helpers;
+using MealPlanner.Helpers.Enums;
 using MealPlanner.Models;
 using MealPlanner.Views;
 using SkiaSharp;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace MealPlanner.ViewModels
 {
@@ -20,7 +22,7 @@ namespace MealPlanner.ViewModels
             UpdateExerciceCommand = new Command<Exercice>(UpdateExercice);
             EditWorkoutRoutineCommand = new Command<Workout>(EditWorkoutRoutine);
             SelectionChangedCommand = new Command<CollectionView>(SelectionChanged);
-            AddExercicesFromRoutineCommand = new Command(AddExercicesFromRoutine); 
+            AddExercicesFromRoutineCommand = new Command<Button>(AddExercicesFromRoutine); 
             SelectedExercices = new List<object>();
         }
 
@@ -93,9 +95,11 @@ namespace MealPlanner.ViewModels
         }
 
         public ICommand AddExercicesFromRoutineCommand { get; set; }
-        private async void AddExercicesFromRoutine()
+        private async void AddExercicesFromRoutine(Button button)
         {
-            await Shell.Current.GoToAsync("../../../..");
+            //await Shell.Current.GoToAsync(nameof(TestPage));
+            await Shell.Current.Navigation.PushModalAsync(new TestPage(button.Bounds), true);
+            //await Shell.Current.GoToAsync("../../../..");
         }
     }
 }

@@ -2,39 +2,44 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MealPlanner.ViewModels"
-             BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
-             Title="{Binding Title}"
+             BackgroundColor="#50000000"
+             Title="{Binding Title}" 
              x:Class="MealPlanner.Views.TestPage">
 
     <ContentPage.BindingContext>
         <vm:TestViewModel/>
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical">
+        <Frame x:Name="popup" VerticalOptions="End" HeightRequest="350" CornerRadius="12" HorizontalOptions="FillAndExpand" 
+               BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" >
             <StackLayout x:Name="stack">
-                <Label Text="Recipe aliments" />
-                <CollectionView ItemsSource="{Binding RefData.MealAliments}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Label Text="{Binding Id}"/>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+
+                <BoxView BackgroundColor="LightGray" WidthRequest="40" HeightRequest="1" HorizontalOptions="Center" VerticalOptions="Start" Margin="0, 0, 0, 10"/>
+                <Label Text="Recipe aliments" Style="{StaticResource Label15}"/>
+                <Entry Placeholder="wfwefwewe" Style="{StaticResource Entry}" VerticalOptions="EndAndExpand"/>
+                <!--<CollectionView ItemsSource="{Binding RefData.MealAliments}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Id}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
 
-                <Label Text="Recipe foods" />
-                <CollectionView ItemsSource="{Binding RefData.RecipeFoods}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Label Text="{Binding Id}"/>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+            <Label Text="Recipe foods" />
+            <CollectionView ItemsSource="{Binding RefData.RecipeFoods}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Id}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-                <Button Text="Reset data base" Command="{Binding RefData.ResetDBCommand}" Margin="30"/>
+            <Button Text="Reset data base" Command="{Binding RefData.ResetDBCommand}" Margin="30"/>-->
+
+                <!--#80000000-->
             </StackLayout>
-        </ScrollView>
-
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

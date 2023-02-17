@@ -91,7 +91,7 @@
             </CollectionView>
             <Button BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                     TextColor="{AppThemeBinding Dark={StaticResource TextColor}, Light={StaticResource TextColorDark}}"
-                    Command="{Binding AddExercicesFromRoutineCommand}"
+                    Command="{Binding AddExercicesFromRoutineCommand}" CommandParameter="{Binding ., Source={x:Reference button}}" x:Name="button"
                     HorizontalOptions="End" VerticalOptions="End" Text="{Binding SelectedExerciceCounter}" CornerRadius="12" Margin="15"/>
         </Grid>
     </ContentPage.Content>
