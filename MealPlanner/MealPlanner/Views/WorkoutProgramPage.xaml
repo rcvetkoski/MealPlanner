@@ -15,6 +15,13 @@
     </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Priority="0" Command="{Binding EditWorkoutProgramCommand}" CommandParameter="{Binding CurrentWorkoutProgram}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Size="18" 
+                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.Pen}" FontFamily="FA-Solid"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
         <ToolbarItem Order="Primary" Priority="0" Command="{Binding CreateNewWorkoutRoutineCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Size="20" 
@@ -22,40 +29,65 @@
                                  Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-        <ToolbarItem Order="Primary" Priority="0" Command="{Binding EditWorkoutProgramCommand}" CommandParameter="{Binding CurrentWorkoutProgram}">
-            <ToolbarItem.IconImageSource>
-                <FontImageSource Size="20" 
-                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.Pen}" FontFamily="FA-Solid"/>
-            </ToolbarItem.IconImageSource>
-        </ToolbarItem>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <CollectionView ItemsSource="{Binding CurrentWorkoutProgram.WorkoutRoutines}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Workout">
-                    <Grid RowDefinitions="Auto, Auto, 9" ColumnDefinitions="*,40" Padding="8, 8, 8, 0" RowSpacing="0">
-                        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelMediumBold}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation"/>
-                        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSmall}" Text="{Binding TotalVolume, StringFormat='{0} kg'}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation"/>
+        <StackLayout>
+            <CollectionView ItemsLayout="HorizontalGrid" Margin="10, 10, 10, 5" HeightRequest="45" SelectionMode="Single">
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Week1</x:String>
+                        <x:String>Week2</x:String>
+                        <x:String>Week3</x:String>
+                        <x:String>Week4</x:String>
+                        <x:String>Week5</x:String>
+                        <x:String>Week6</x:String>
+                        <x:String>Week7</x:String>
+                        <x:String>Week8</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding .}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Style="{StaticResource LabelSmallBold}" Margin="10"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <BoxView HeightRequest="1" VerticalOptions="End" BackgroundColor="#e6e6e6" Margin="8, 0, 8, 0"/>
+            <CollectionView ItemsSource="{Binding CurrentWorkoutProgram.WorkoutRoutines}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Workout">
+                        <Grid RowDefinitions="Auto, Auto, 9" ColumnDefinitions="60, *, 40" Padding="8, 8, 8, 0" RowSpacing="0">
+                            <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
+                                   Aspect="AspectFill"
+                                   VerticalOptions="Center"
+                                   HeightRequest="60"
+                                   BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                                <Image.Clip>
+                                    <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
+                                </Image.Clip>
+                            </Image>
 
-                        <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent">
-                            <Button.ImageSource>
-                                <FontImageSource Size="20" 
+                            <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource Label15Bold}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation"/>
+                            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource Label15}" Text="{Binding TotalVolume, StringFormat='{0} kg'}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation"/>
+                            <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" BackgroundColor="Transparent">
+                                <Button.ImageSource>
+                                    <FontImageSource Size="20" 
                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
-                            </Button.ImageSource>
+                                </Button.ImageSource>
+                            </Button>
+                            <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="1" VerticalOptions="End" BackgroundColor="#e6e6e6"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.SelectWorkoutRoutineCommand, Source={x:Reference workoutProgramPage}}" CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <Label Style="{StaticResource LabelMedium}" Text="+ Add Routines" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                </CollectionView.EmptyView>
+            </CollectionView>
 
-                        </Button>
-                        <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="1" VerticalOptions="End" BackgroundColor="#e6e6e6"/>
-
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding BindingContext.SelectWorkoutRoutineCommand, Source={x:Reference workoutProgramPage}}" CommandParameter="{Binding .}"/>
-                        </Grid.GestureRecognizers>
-                    </Grid>
-                </DataTemplate>
-
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

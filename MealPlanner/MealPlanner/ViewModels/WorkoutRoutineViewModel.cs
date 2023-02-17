@@ -1,8 +1,11 @@
 ﻿using MealPlanner.Helpers.Enums;
 using MealPlanner.Models;
 using MealPlanner.Views;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -15,7 +18,30 @@ namespace MealPlanner.ViewModels
         {
             AddExerciceCommand = new Command(AddExercice);
             UpdateExerciceCommand = new Command<Exercice>(UpdateExercice);
+            EditWorkoutRoutineCommand = new Command<Workout>(EditWorkoutRoutine);
+            SelectionChangedCommand = new Command<CollectionView>(SelectionChanged);
+            AddExercicesFromRoutineCommand = new Command(AddExercicesFromRoutine); 
+            SelectedExercices = new List<object>();
         }
+
+        public List<object> SelectedExercices { get; set; }
+
+        private string selectedExerciceCounter;
+        public string SelectedExerciceCounter 
+        { 
+            get
+            {
+                return selectedExerciceCounter;
+            }
+            set
+            {
+                if(selectedExerciceCounter != value)
+                {
+                    selectedExerciceCounter = value;
+                    OnPropertyChanged(nameof(SelectedExerciceCounter));
+                }
+            }
+        } 
 
         public ICommand AddExerciceCommand { get; set; }
         private async void AddExercice()
@@ -52,6 +78,24 @@ namespace MealPlanner.ViewModels
             RefData.CurrentWorkout.SetAndNotifyMainProperties();
 
             await Shell.Current.Navigation.PushAsync(exercicePage);
+        }
+
+        public ICommand EditWorkoutRoutineCommand { get; set; }
+        private async void EditWorkoutRoutine(Workout workoutRoutine)
+        {
+
+        }
+
+        public ICommand SelectionChangedCommand { get; set; }
+        private void SelectionChanged(CollectionView collectionView)
+        {
+            SelectedExerciceCounter = $"Add - {SelectedExercices.Count}";
+        }
+
+        public ICommand AddExercicesFromRoutineCommand { get; set; }
+        private async void AddExercicesFromRoutine()
+        {
+            await Shell.Current.GoToAsync("../../../..");
         }
     }
 }

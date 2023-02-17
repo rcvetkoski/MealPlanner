@@ -37,7 +37,7 @@
                                 <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
                             </Image.Clip>
                         </Image>
-                        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelMediumBold}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
+                        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource Label15Bold}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
                         <Button Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent">
                             <Button.ImageSource>
                                 <FontImageSource Size="20" 

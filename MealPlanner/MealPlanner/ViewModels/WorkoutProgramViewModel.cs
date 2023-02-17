@@ -67,6 +67,11 @@ namespace MealPlanner.ViewModels
             WorkoutRoutinePage workoutRoutinePage = new WorkoutRoutinePage();
             var vm = workoutRoutinePage.BindingContext as WorkoutRoutineViewModel;
             vm.CurrentWorkout = workoutRoutine;
+            foreach (Exercice exercice in workoutRoutine.Exercices)
+                vm.SelectedExercices.Add(exercice);
+
+            vm.SelectedExerciceCounter = $"Add - {vm.SelectedExercices.Count}";
+
 
             await Shell.Current.Navigation.PushAsync(workoutRoutinePage);
         }

@@ -103,8 +103,8 @@
                                     <RoundRectangleGeometry Rect="0,0,70,70" CornerRadius="12"/>
                                 </Image.Clip>
                             </Image>
-                            <Label Grid.Column="1" Style="{StaticResource LabelSmallBold}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
-                            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalTextAlignment="Center" Text="{Binding Description}"/>
+                            <Label Grid.Column="1" Style="{StaticResource LabelSmallBold}" Text="{Binding Name}" VerticalTextAlignment="End" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
+                            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelSmall}" VerticalTextAlignment="Start" Text="{Binding MuscleGroup.Name}"/>
                             <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" BackgroundColor="Transparent">
                                 <Button.ImageSource>
                                     <FontImageSource Size="20" 
