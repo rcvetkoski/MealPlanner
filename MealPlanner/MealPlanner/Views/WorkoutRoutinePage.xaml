@@ -20,20 +20,6 @@
                                  Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-        <ToolbarItem Order="Primary" Priority="0" Command="{Binding EditWorkoutRoutineCommand}" CommandParameter="{Binding CurrentWorkoutProgram}">
-            <ToolbarItem.IconImageSource>
-                <FontImageSource Size="18" 
-                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.Pen}" FontFamily="FA-Solid"/>
-            </ToolbarItem.IconImageSource>
-        </ToolbarItem>
-        <ToolbarItem Order="Primary" Priority="0">
-            <ToolbarItem.IconImageSource>
-                <FontImageSource Size="20" 
-                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.SquareCheck}" FontFamily="FA-Solid"/>
-            </ToolbarItem.IconImageSource>
-        </ToolbarItem>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -41,32 +27,32 @@
             <CollectionView x:Name="collectionView" ItemsSource="{Binding CurrentWorkout.Exercices}" SelectionChangedCommand="{Binding SelectionChangedCommand}" SelectionChangedCommandParameter="{Binding ., Source={x:Reference collectionView}}" SelectionMode="Multiple" SelectedItems="{Binding SelectedExercices, Mode=TwoWay}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Exercice" x:Name="cell">
-                        <Grid RowDefinitions="Auto, Auto, 11" ColumnDefinitions="60, *, 30" Padding="8, 10, 8, 0" RowSpacing="0">
+                        <Grid RowDefinitions="30, 30, 11" ColumnDefinitions="60, *, 30" Padding="8, 10, 8, 0" RowSpacing="0">
                             <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
-                               Source="{Binding ImageSource}" 
-                               Aspect="AspectFill"
-                               VerticalOptions="Center"
-                               HeightRequest="60"
-                               BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                                   Source="{Binding ImageSource}" 
+                                   Aspect="AspectFill"
+                                   VerticalOptions="Center"
+                                   HeightRequest="60"
+                                   BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                                 <Image.Clip>
                                     <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
                                 </Image.Clip>
                             </Image>
-                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Style="{StaticResource LabelSmallBold}" LineBreakMode="TailTruncation" VerticalOptions="Center"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Style="{StaticResource LabelSmallBold}" LineBreakMode="TailTruncation" VerticalOptions="End"/>
                             <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2"
-                                BackgroundColor="Transparent"
-                                Command="{Binding BindingContext.UpdateExerciceCommand, Source={x:Reference workoutRoutinePage}}"
-                                CommandParameter="{Binding .}">
+                                    BackgroundColor="Transparent"
+                                    Command="{Binding BindingContext.UpdateExerciceCommand, Source={x:Reference workoutRoutinePage}}"
+                                    CommandParameter="{Binding .}">
                                 <Button.ImageSource>
                                     <FontImageSource Size="20" 
                                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
                                 </Button.ImageSource>
                             </Button>
-                            <FlexLayout Grid.Row="1" Grid.Column="1" Direction="Row" Wrap="Wrap" AlignItems="Start" JustifyContent="Start" BindableLayout.ItemsSource="{Binding Sets}">
+                            <FlexLayout Grid.Row="1" Grid.Column="1" Direction="Row" Wrap="Wrap" AlignItems="Start" JustifyContent="Start" VerticalOptions="Start" BindableLayout.ItemsSource="{Binding Sets}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate x:DataType="models:Set">
-                                        <StackLayout Orientation="Horizontal" Spacing="2">
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="2">
                                             <Label Text="{Binding Weight}" Style="{StaticResource LabelSmall}"/>
                                             <Label Text="x" Style="{StaticResource LabelSmall}"/>
                                             <Label Text="{Binding Reps}" Margin="0,0,5,0" Style="{StaticResource LabelSmall}"/>
@@ -80,7 +66,7 @@
                                     <VisualState Name="Normal" />
                                     <VisualState Name="Selected">
                                         <VisualState.Setters>
-                                            <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+                                            <Setter Property="BackgroundColor" Value="Transparent"/>
                                         </VisualState.Setters>
                                     </VisualState>
                                 </VisualStateGroup>
@@ -88,6 +74,20 @@
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <Button HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                Text="Add exercice" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                Command="{Binding BindingContext.AddExerciceCommand, Source={x:Reference workoutRoutinePage}}">
+                            <Button.ImageSource>
+                                <FontImageSource Color="{StaticResource Primary}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+                        </Button>
+                    </StackLayout>
+                </CollectionView.EmptyView>
             </CollectionView>
             <Button BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                     TextColor="{AppThemeBinding Dark={StaticResource TextColor}, Light={StaticResource TextColorDark}}"

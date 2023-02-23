@@ -33,6 +33,9 @@ namespace MealPlanner.Helpers
         public ObservableCollection<JournalTemplateMeal> JournalTemplateMeals { get; set; }
         public ObservableCollection<Exercice> Exercices { get; set; }
         public ObservableCollection<WorkoutProgram> WorkoutPrograms { get; set; }
+        public ObservableCollection<WorkoutWeek> WorkoutWeeks { get; set; }
+        public ObservableCollection<WorkoutWeekProgram> WorkoutWeekPrograms { get; set; }
+
 
         private Workout currentWorkout;
         public Workout CurrentWorkout 
@@ -54,8 +57,9 @@ namespace MealPlanner.Helpers
         public ObservableCollection<Set> Sets { get; set; }
         public ObservableCollection<MuscleGroup> MuscleGroups { get; set; }
         public ObservableCollection<WorkoutExercice> WorkoutExercices { get; set; }
-        public List<WorkoutProgramRoutine> WorkoutProgramRoutines { get; set; }
+        public ObservableCollection<WorkoutWeekRoutine> WorkoutWeekRoutines { get; set; }
 
+        
 
         public List<Meal> DefaultMeals { get; set; }
         public List<TemplateMeal> TemplateMeals { get; set; }
@@ -275,17 +279,24 @@ namespace MealPlanner.Helpers
             // WorkoutPrograms
             WorkoutPrograms = App.DataBaseRepo.GetAllWorkoutProgramsAsync().Result.ToObservableCollection();
 
-            // WorkoutProgramRoutines
-            WorkoutProgramRoutines = App.DataBaseRepo.GetAllWorkoutProgramRoutinesAsync().Result;
+            // WorkoutWeeks
+            WorkoutWeeks = App.DataBaseRepo.GetAllWorkoutWeeksAsync().Result.ToObservableCollection();
 
-            // Fill WorkoutPrograms
-            foreach(WorkoutProgram workoutProgram in WorkoutPrograms)
+            // WorkoutWeekPrograms
+            WorkoutWeekPrograms = App.DataBaseRepo.GetAllWorkoutWeekProgramsAsync().Result.ToObservableCollection();
+
+            // WorkoutWeekRoutines
+            WorkoutWeekRoutines = App.DataBaseRepo.GetAllWorkoutWeekRoutinesAsync().Result.ToObservableCollection();
+
+
+            // Fill WorkoutWeeks
+            foreach (WorkoutWeek workoutWeek in WorkoutWeeks)
             {
-                foreach(WorkoutProgramRoutine workoutProgramRoutine in WorkoutProgramRoutines)
+                foreach (WorkoutWeekRoutine workoutWeekRoutine in WorkoutWeekRoutines)
                 {
-                    if(workoutProgramRoutine.WorkoutProgramId == workoutProgram.Id)
+                    if (workoutWeek.Id == workoutWeekRoutine.WorkoutWeekId)
                     {
-                        Workout workout = Workouts.SingleOrDefault(x => x.Id == workoutProgramRoutine.WorkoutId);
+                        Workout workout = Workouts.SingleOrDefault(x => x.Id == workoutWeekRoutine.WorkoutId);
 
                         if (workout == null)
                             continue;
@@ -293,9 +304,29 @@ namespace MealPlanner.Helpers
                         // fill workout routine with exercices
                         PopulateWorkout(workout);
 
-                        workoutProgram.WorkoutRoutines.Add(workout);
+                        workoutWeek.Workouts.Add(workout);
                     }
                 }
+            }
+
+            // Fill WorkoutPrograms
+            foreach (WorkoutProgram workoutProgram in WorkoutPrograms)
+            {
+                foreach (WorkoutWeekProgram workoutWeekProgram in WorkoutWeekPrograms)
+                {
+                    if (workoutWeekProgram.WorkoutProgramId == workoutProgram.Id)
+                    {
+                        WorkoutWeek workoutWeek = WorkoutWeeks.SingleOrDefault(x => x.Id == workoutWeekProgram.WorkoutWeekId);
+
+                        if (workoutWeek == null)
+                            continue;
+
+                        workoutProgram.WorkoutWeeks.Add(workoutWeek);
+                    }
+                }
+
+                // Set SelectedWorkoutWeek
+                workoutProgram.SelectedWorkoutWeek = workoutProgram.WorkoutWeeks.FirstOrDefault();
             }
 
 

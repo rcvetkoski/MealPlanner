@@ -70,11 +70,29 @@ namespace MealPlanner.Models
         }
 
         [Ignore]
-        public ObservableCollection<Workout> WorkoutRoutines { get; set; }
+        public ObservableCollection<WorkoutWeek> WorkoutWeeks { get; set; }
+
+        private WorkoutWeek selectedWorkoutWeek;
+        [Ignore]
+        public WorkoutWeek SelectedWorkoutWeek
+        {
+            get
+            {
+                return selectedWorkoutWeek;
+            }
+            set
+            {
+                if(selectedWorkoutWeek != value)
+                {
+                    selectedWorkoutWeek = value;
+                    OnPropertyChanged(nameof(SelectedWorkoutWeek));
+                }
+            }
+        }
 
         public WorkoutProgram()
         {
-            WorkoutRoutines = new ObservableCollection<Workout>();
+            WorkoutWeeks = new ObservableCollection<WorkoutWeek>();
         }
     }
 }

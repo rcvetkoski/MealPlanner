@@ -13,6 +13,8 @@
             <Color x:Key="TextColor">#000000</Color>
             <Color x:Key="TextColorDark">White</Color>
 
+            <!--26282d-->
+
             <Color x:Key="WindowBackgroundColor">#f2f2f7</Color>
             <Color x:Key="WindowBackgroundColorDark">Black</Color>
 
@@ -191,7 +193,7 @@
 
             <Style x:Key="MealCard" TargetType="Frame">
                 <Setter Property="HasShadow" Value="{OnPlatform Android=true, iOS=false, Default=true}"/>
-                <Setter Property="Margin" Value="10, 5, 10, 5"/>
+                <Setter Property="Margin" Value="10"/>
                 <Setter Property="Padding" Value="10"/>
                 <Setter Property="CornerRadius" Value="10"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
@@ -199,7 +201,7 @@
 
             <Style x:Key="JournalTemplateCard" TargetType="Frame">
                 <Setter Property="HasShadow" Value="False"/>
-                <Setter Property="Margin" Value="10,5,10,5"/>
+                <Setter Property="Margin" Value="10"/>
                 <Setter Property="Padding" Value="10"/>
                 <Setter Property="CornerRadius" Value="10"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>

@@ -97,8 +97,10 @@ namespace MealPlanner.ViewModels
         public ICommand AddExercicesFromRoutineCommand { get; set; }
         private async void AddExercicesFromRoutine(Button button)
         {
+
+            //App.StatusBarColor.SetStatusBarColor(Color.FromHex("#545456"), false);
             //await Shell.Current.GoToAsync(nameof(TestPage));
-            await Shell.Current.Navigation.PushModalAsync(new TestPage(button.Bounds), true);
+            await Shell.Current.Navigation.PushModalAsync(new TestPage(button.Bounds));
             //await Shell.Current.GoToAsync("../../../..");
         }
     }

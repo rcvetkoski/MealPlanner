@@ -5,11 +5,11 @@ using System.Text;
 
 namespace MealPlanner.Models
 {
-    public class WorkoutProgramRoutine
+    public class WorkoutWeekRoutine
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public int WorkoutProgramId { get; set; }
+        public int WorkoutWeekId { get; set; }
         public int WorkoutId { get; set; }
     }
 }

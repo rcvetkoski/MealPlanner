@@ -68,16 +68,34 @@ namespace MealPlanner.Services
         Task<int> DropTableWorkoutProgram();
 
 
+        // WorkoutWeek
+        Task<WorkoutWeek> GetWorkoutWeekAsync(int id);
+        Task<List<WorkoutWeek>> GetAllWorkoutWeeksAsync();
+        Task<int> AddWorkoutWeekAsync(WorkoutWeek workoutWeek);
+        Task<int> UpdateWorkoutWeekAsync(WorkoutWeek workoutWeek);
+        Task<int> DeleteWorkoutWeekAsync(WorkoutWeek workoutWeek);
+        Task<int> DeleteAllWorkoutWeeksAsync();
+        Task<int> DropTableWorkoutWeek();
 
-        // WorkoutProgramRoutine
-        Task<WorkoutProgramRoutine> GetWorkoutProgramRoutineAsync(int id);
-        Task<List<WorkoutProgramRoutine>> GetAllWorkoutProgramRoutinesAsync();
-        Task<int> AddWorkoutProgramRoutineAsync(WorkoutProgramRoutine workoutProgramRoutine);
-        Task<int> UpdateWorkoutProgramRoutineAsync(WorkoutProgramRoutine workoutProgramRoutine);
-        Task<int> DeleteWorkoutProgramRoutineAsync(WorkoutProgramRoutine workoutProgramRoutine);
-        Task<int> DeleteAllWorkoutProgramRoutinesAsync();
-        Task<int> DropTableWorkoutProgramRoutine();
 
+        // WorkoutWeekProgram
+        Task<WorkoutWeekProgram> GetWorkoutWeekProgramAsync(int id);
+        Task<List<WorkoutWeekProgram>> GetAllWorkoutWeekProgramsAsync();
+        Task<int> AddWorkoutWeekProgramAsync(WorkoutWeekProgram workoutWeekProgram);
+        Task<int> UpdateWorkoutWeekProgramAsync(WorkoutWeekProgram workoutWeekProgram);
+        Task<int> DeleteWorkoutWeekProgramAsync(WorkoutWeekProgram workoutWeekProgram);
+        Task<int> DeleteAllWorkoutWeekProgramsAsync();
+        Task<int> DropTableWorkoutWeekProgram();
+
+
+        // WorkoutWeekRoutine
+        Task<WorkoutWeekRoutine> GetWorkoutWeekRoutineAsync(int id);
+        Task<List<WorkoutWeekRoutine>> GetAllWorkoutWeekRoutinesAsync();
+        Task<int> AddWorkoutWeekRoutineAsync(WorkoutWeekRoutine workoutWeekRoutine);
+        Task<int> UpdateWorkoutWeekRoutineAsync(WorkoutWeekRoutine workoutWeekRoutine);
+        Task<int> DeleteWorkoutWeekRoutineAsync(WorkoutWeekRoutine workoutWeekRoutine);
+        Task<int> DeleteAllWorkoutWeekRoutinesAsync();
+        Task<int> DropTableWorkoutWeekRoutine();
 
 
         // TypeOfRegimeItem

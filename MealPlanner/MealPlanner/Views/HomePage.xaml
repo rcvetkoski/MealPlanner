@@ -160,7 +160,6 @@
                                                                         </MultiBinding>
                                                                     </SwipeItem.CommandParameter>
                                                                 </SwipeItem>
-
                                                             </SwipeItems>
                                                         </SwipeView.RightItems>
                                                         <!-- Content -->

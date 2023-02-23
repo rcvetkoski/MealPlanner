@@ -4,7 +4,9 @@
              xmlns:viewmodels="clr-namespace:MealPlanner.ViewModels"
              xmlns:helpers="clr-namespace:MealPlanner.Helpers"
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
-             xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls" xmlns:models="clr-namespace:MealPlanner.Models"
+             xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls" 
+             xmlns:models="clr-namespace:MealPlanner.Models" 
+             xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Name="workoutProgramPage"
              Title="{Binding CurrentWorkoutProgram.Name}"
@@ -14,49 +16,73 @@
         <viewmodels:WorkoutProgramViewModel/>
     </ContentPage.BindingContext>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:HasItemsToBooleanConverter x:Key="HasItemsToBooleanConverter"/>
+            <converters:InverseHasItemsToBooleanConverter x:Key="InverseHasItemsToBooleanConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Priority="0" Command="{Binding EditWorkoutProgramCommand}" CommandParameter="{Binding CurrentWorkoutProgram}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource Size="18" 
+                <FontImageSource Size="20" 
                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                 Glyph="{x:Static helpers:FontAwesomeIcons.Pen}" FontFamily="FA-Solid"/>
+                                 Glyph="{x:Static helpers:FontAwesomeIcons.Gear}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-        <ToolbarItem Order="Primary" Priority="0" Command="{Binding CreateNewWorkoutRoutineCommand}">
+        <!--<ToolbarItem Order="Primary" Priority="0" Command="{Binding CreateNewWorkoutWeekRoutineCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource Size="20" 
                                  Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                  Glyph="{x:Static helpers:FontAwesomeIcons.Plus}" FontFamily="FA-Solid"/>
             </ToolbarItem.IconImageSource>
-        </ToolbarItem>
+        </ToolbarItem>-->
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout Spacing="0">
-            <CollectionView ItemsLayout="HorizontalGrid" Margin="10, 10, 10, 10" HeightRequest="45" SelectionMode="Single">
-                <CollectionView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Week1</x:String>
-                        <x:String>Week2</x:String>
-                        <x:String>Week3</x:String>
-                        <x:String>Week4</x:String>
-                        <x:String>Week5</x:String>
-                        <x:String>Week6</x:String>
-                        <x:String>Week7</x:String>
-                        <x:String>Week8</x:String>
-                    </x:Array>
-                </CollectionView.ItemsSource>
+
+            <CollectionView IsVisible="{Binding CurrentWorkoutProgram.WorkoutWeeks.Count, Converter={StaticResource HasItemsToBooleanConverter}}" ItemsLayout="HorizontalList" ItemsSource="{Binding CurrentWorkoutProgram.WorkoutWeeks}" SelectedItem="{Binding CurrentWorkoutProgram.SelectedWorkoutWeek}" HeightRequest="60" SelectionMode="Single">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Label Text="{Binding .}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Style="{StaticResource LabelSmallBold}" Margin="10"/>
+                        <Label Text="{Binding Name}" Style="{StaticResource LabelSmallBold}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="10">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal"/>
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Transparent"/>
+                                            <Setter Property="FontSize" Value="15"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Label>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <BoxView HeightRequest="1" VerticalOptions="End" BackgroundColor="#e6e6e6" Margin="8, 0, 8, 0"/>
-            <CollectionView ItemsSource="{Binding CurrentWorkoutProgram.WorkoutRoutines}">
+
+            <BoxView HeightRequest="1" VerticalOptions="Start" Margin="10, 0, 10, 14" BackgroundColor="#e6e6e6"/>
+
+
+            <Button HorizontalOptions="Center"
+                    Margin="10"
+                    IsVisible="{Binding CurrentWorkoutProgram.WorkoutWeeks.Count, Converter={StaticResource InverseHasItemsToBooleanConverter}}"
+                    BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                    Text="Add Week" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                    Command="{Binding BindingContext.EditWorkoutProgramCommand, Source={x:Reference workoutProgramPage}}"
+                    CommandParameter="{Binding CurrentWorkoutProgram}">
+                <Button.ImageSource>
+                    <FontImageSource Color="{StaticResource Primary}"
+                                     Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
+                </Button.ImageSource>
+            </Button>
+
+            <!--<CollectionView IsVisible="{Binding CurrentWorkoutProgram.WorkoutWeeks.Count, Converter={StaticResource HasItemsToBooleanConverter}}" ItemsSource="{Binding CurrentWorkoutProgram.SelectedWorkoutWeek.Workouts}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Workout">
-                        <Grid RowDefinitions="Auto, Auto, 9" ColumnDefinitions="60, *, 40" Padding="8, 8, 8, 0" RowSpacing="0">
+                        <Grid RowDefinitions="30, 30, 9" ColumnDefinitions="65, *, 40" Padding="14, 0, 14, 8">
                             <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
                                    Aspect="AspectFill"
                                    VerticalOptions="Center"
@@ -66,17 +92,16 @@
                                     <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
                                 </Image.Clip>
                             </Image>
-
-                            <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource Label15Bold}" Text="{Binding Name}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation"/>
-                            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource Label15}" Text="{Binding TotalVolume, StringFormat='{0} kg'}" VerticalTextAlignment="Center" LineBreakMode="TailTruncation"/>
+                            <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource Label15Bold}" Text="{Binding Name}" VerticalTextAlignment="End" LineBreakMode="TailTruncation"/>
+                            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource Label15}" Text="{Binding TotalTime, StringFormat='{}{0:mm\\:ss}'}" VerticalTextAlignment="Start" LineBreakMode="TailTruncation"/>
                             <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" BackgroundColor="Transparent">
                                 <Button.ImageSource>
-                                    <FontImageSource Size="20" 
-                                                 Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                                 Glyph="{x:Static helpers:FontAwesomeIcons.EllipsisVertical}" FontFamily="FA-Solid"/>
+                                    <FontImageSource Size="18" 
+                                                     Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                     Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
                                 </Button.ImageSource>
                             </Button>
-                            <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="1" VerticalOptions="End" BackgroundColor="#e6e6e6"/>
+                            <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="1" VerticalOptions="Center" BackgroundColor="#e6e6e6"/>
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding BindingContext.SelectWorkoutRoutineCommand, Source={x:Reference workoutProgramPage}}" CommandParameter="{Binding .}"/>
                             </Grid.GestureRecognizers>
@@ -84,9 +109,59 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
                 <CollectionView.EmptyView>
-                    <Label Style="{StaticResource LabelMedium}" Text="+ Add Routines" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <StackLayout>
+                        <Button HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                Margin="10" 
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                Text="Add routine" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                Command="{Binding BindingContext.EditWorkoutProgramCommand, Source={x:Reference workoutProgramPage}}"
+                                CommandParameter="{Binding CurrentWorkoutProgram}">
+                            <Button.ImageSource>
+                                <FontImageSource Color="{StaticResource Primary}"
+                                                 Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
+                            </Button.ImageSource>
+                        </Button>
+                    </StackLayout>
                 </CollectionView.EmptyView>
-            </CollectionView>
+            </CollectionView>-->
+
+            <CarouselView ItemsSource="{Binding CurrentWorkoutProgram.WorkoutWeeks}" Loop="False" CurrentItem="{Binding CurrentWorkoutProgram.SelectedWorkoutWeek}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout BindableLayout.ItemsSource="{Binding Workouts}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="models:Workout">
+                                    <Grid RowDefinitions="30, 30, 9" ColumnDefinitions="65, *, 40" Padding="14, 0, 14, 8">
+                                        <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
+                                               Aspect="AspectFill"
+                                               VerticalOptions="Center"
+                                               HeightRequest="60"
+                                               BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
+                                            <Image.Clip>
+                                                <RoundRectangleGeometry Rect="0,0,60,60" CornerRadius="12"/>
+                                            </Image.Clip>
+                                        </Image>
+                                        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource Label15Bold}" Text="{Binding Name}" VerticalTextAlignment="End" LineBreakMode="TailTruncation"/>
+                                        <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource Label15}" Text="{Binding TotalTime, StringFormat='{}{0:mm\\:ss}'}" VerticalTextAlignment="Start" LineBreakMode="TailTruncation"/>
+                                        <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" BackgroundColor="Transparent">
+                                            <Button.ImageSource>
+                                                <FontImageSource Size="18" 
+                                                     Color="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                                     Glyph="{x:Static helpers:FontAwesomeIcons.ChevronRight}" FontFamily="FA-Solid"/>
+                                            </Button.ImageSource>
+                                        </Button>
+                                        <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="1" VerticalOptions="Center" BackgroundColor="#e6e6e6"/>
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding BindingContext.SelectWorkoutRoutineCommand, Source={x:Reference workoutProgramPage}}" CommandParameter="{Binding .}"/>
+                                        </Grid.GestureRecognizers>
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -39,8 +39,9 @@
                                          BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}">
                             </ImageButton>
                             <Label FontSize="16" TextColor="White" FontAttributes="Bold" Margin="10" Text="{Binding Name}" VerticalTextAlignment="Start" LineBreakMode="TailTruncation"/>
-                            <Label FontSize="14" TextColor="White" Margin="10, 0, 0, 10" Text="12 weeks" VerticalTextAlignment="End" LineBreakMode="TailTruncation"/>
-                            <Label FontSize="14" TextColor="White" Margin="10, 0, 0, 10" Text="0 % Completed" VerticalTextAlignment="End" LineBreakMode="TailTruncation"/>
+                            <Label FontSize="14" TextColor="White" Margin="10, 35, 0, 0" Text="{Binding WorkoutWeeks.Count, StringFormat='{0} Weeks'}" VerticalTextAlignment="Start" LineBreakMode="TailTruncation"/>
+                            <Label FontSize="14" TextColor="White" Margin="10, 0, 0, 22" Text="0 % Completed" VerticalTextAlignment="End" LineBreakMode="TailTruncation"/>
+                            <ProgressBar Margin="10, 0, 10, 5" Progress="0.25" VerticalOptions="End"/>
                             <Button BackgroundColor="Transparent" VerticalOptions="Start" Margin="0, 5, 0, 0" WidthRequest="30" HeightRequest="30" HorizontalOptions="End">
                                 <Button.ImageSource>
                                     <FontImageSource Size="20" 
