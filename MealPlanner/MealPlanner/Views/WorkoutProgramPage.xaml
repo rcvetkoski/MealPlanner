@@ -6,7 +6,8 @@
              xmlns:rsControls="clr-namespace:Xamarin.RSControls.Controls;assembly=Xamarin.RSControls" 
              xmlns:validators="clr-namespace:Xamarin.RSControls.Validators;assembly=Xamarin.RSControls" 
              xmlns:models="clr-namespace:MealPlanner.Models" 
-             xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters"
+             xmlns:converters="clr-namespace:MealPlanner.Helpers.Converters" 
+             xmlns:controls="clr-namespace:MealPlanner.Controls"
              BackgroundColor="{AppThemeBinding Dark={StaticResource WindowBackgroundColorDark}, Light={StaticResource WindowBackgroundColor}}"
              x:Name="workoutProgramPage"
              Title="{Binding CurrentWorkoutProgram.Name}"
@@ -41,32 +42,31 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Spacing="0">
+        <Grid RowDefinitions="Auto, Auto, Auto" RowSpacing="0">
 
-            <CollectionView IsVisible="{Binding CurrentWorkoutProgram.WorkoutWeeks.Count, Converter={StaticResource HasItemsToBooleanConverter}}" ItemsLayout="HorizontalList" ItemsSource="{Binding CurrentWorkoutProgram.WorkoutWeeks}" SelectedItem="{Binding CurrentWorkoutProgram.SelectedWorkoutWeek}" HeightRequest="60" SelectionMode="Single">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Label Text="{Binding Name}" Style="{StaticResource LabelSmallBold}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="10">
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup Name="CommonStates">
-                                    <VisualState Name="Normal"/>
-                                    <VisualState Name="Selected">
-                                        <VisualState.Setters>
-                                            <Setter Property="BackgroundColor" Value="Transparent"/>
-                                            <Setter Property="FontSize" Value="15"/>
-                                        </VisualState.Setters>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                        </Label>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
-            <BoxView HeightRequest="1" VerticalOptions="Start" Margin="10, 0, 10, 14" BackgroundColor="#e6e6e6"/>
+            <controls:CustomScrollView x:Name="scrollView" Scrolled="scrollView_Scrolled" Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                <Grid RowDefinitions="Auto" ColumnDefinitions="*" VerticalOptions="Start">
+                    <StackLayout Grid.Row="0" Grid.Column="0" x:Name="weeks" Spacing="0" Orientation="Horizontal" IsVisible="{Binding CurrentWorkoutProgram.WorkoutWeeks.Count, Converter={StaticResource HasItemsToBooleanConverter}}"
+                                 BindableLayout.ItemsSource="{Binding Test}" HeightRequest="45" >
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding .}" Style="{StaticResource LabelSmallBold}" Padding="10" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                    <BoxView x:Name="slider" Grid.Row="0" Grid.Column="0" WidthRequest="75" HeightRequest="2" HorizontalOptions="Start" VerticalOptions="End" BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"/>
+                </Grid>
+            </controls:CustomScrollView>
 
 
-            <Button HorizontalOptions="Center"
+            <BoxView Grid.Row="1" Grid.Column="0" HeightRequest="1" VerticalOptions="Start" Margin="0, 0, 0, 14" BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"/>
+
+            <Button Grid.Row="0" Grid.Column="0"
+                    HorizontalOptions="Center"
                     Margin="10"
                     IsVisible="{Binding CurrentWorkoutProgram.WorkoutWeeks.Count, Converter={StaticResource InverseHasItemsToBooleanConverter}}"
                     BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
@@ -126,11 +126,13 @@
                 </CollectionView.EmptyView>
             </CollectionView>-->
 
-            <CarouselView ItemsSource="{Binding CurrentWorkoutProgram.WorkoutWeeks}" Loop="False" CurrentItem="{Binding CurrentWorkoutProgram.SelectedWorkoutWeek}">
+            <CarouselView Grid.Row="2" Grid.Column="0" x:Name="carouselView" Scrolled="CarouselView_Scrolled" CurrentItemChanged="CarouselView_CurrentItemChanged" ItemsSource="{Binding Test}" Loop="False" >
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout BindableLayout.ItemsSource="{Binding Workouts}">
-                            <BindableLayout.ItemTemplate>
+                        <Label Style="{StaticResource Label15Bold}" Text="{Binding .}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" LineBreakMode="TailTruncation"/>
+
+                        <!--<CollectionView ItemsSource="{Binding Workouts}">
+                            <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="models:Workout">
                                     <Grid RowDefinitions="30, 30, 9" ColumnDefinitions="65, *, 40" Padding="14, 0, 14, 8">
                                         <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
@@ -157,11 +159,11 @@
                                         </Grid.GestureRecognizers>
                                     </Grid>
                                 </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </StackLayout>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>-->
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

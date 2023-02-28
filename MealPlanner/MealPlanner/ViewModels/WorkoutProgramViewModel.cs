@@ -2,6 +2,7 @@
 using MealPlanner.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -15,8 +16,17 @@ namespace MealPlanner.ViewModels
             Title = "Program";
             EditWorkoutProgramCommand = new Command<WorkoutProgram>(EditWorkoutProgram);
             SelectWorkoutRoutineCommand = new Command<Workout>(SelectWorkoutRoutine);
+
+            Test = new ObservableCollection<string>();
+            Test.Add("Trwol wefl ");
+            Test.Add("Trl ");
+            Test.Add("Trwol wefl tz ztjt");
+            Test.Add("Trwol  ");
+            Test.Add("T");
+            Test.Add("Trwol ergergerg ");
         }
 
+        public ObservableCollection<string> Test { get; set; }
 
         public ICommand EditWorkoutProgramCommand { get; set; }
         private async void EditWorkoutProgram(WorkoutProgram workoutProgram)

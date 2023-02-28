@@ -148,4 +148,27 @@ namespace MealPlanner.Controls
             }
         }
     }
+
+    public class CustomScrollView : ScrollView
+    {
+        public double SCROLLX { get; set; }
+
+        private Meheinjection _meheinjection;
+
+        public void SetMeheInjection(Meheinjection inj)
+        {
+            _meheinjection = inj;
+        }
+
+        public Meheinjection GetMeheInjection()
+        {
+            return _meheinjection;
+        }
+    }
+
+    public interface Meheinjection
+    {
+
+        void DoScroll(double x, double y);
+    }
 }

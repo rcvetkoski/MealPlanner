@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MealPlanner.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static MealPlanner.Views.WorkoutProgramPage;
 
 namespace MealPlanner.Views
 {
@@ -15,6 +17,104 @@ namespace MealPlanner.Views
         public WorkoutProgramPage()
         {
             InitializeComponent();
+            currentPosition = carouselView.Position;
+        }
+
+        int currentPosition = 0;
+        double scrollRatio = 0;
+
+        private void CarouselView_CurrentItemChanged(object sender, CurrentItemChangedEventArgs e)
+        {
+            //var item = weeks.Children.ElementAt((sender as CarouselView).Position);
+            //var size = item.Measure(double.PositiveInfinity, double.PositiveInfinity, MeasureFlags.IncludeMargins); 
+            //slider.WidthRequest = size.Request.Width;
+            //slider.TranslateTo(item.X - (size.Request.Width - item.Width) / 2, 0, 100);
+            //scrollView.ScrollToAsync(item.X, scrollView.ScrollY, true);
+        }
+
+        private void CarouselView_Scrolled(object sender, ItemsViewScrolledEventArgs e)
+        {
+            var sign = Math.Sign(e.HorizontalOffset - carouselView.Width * currentPosition);  
+            var currentItem = weeks.Children.ElementAt(currentPosition);
+            var nextItem = weeks.Children.Count > (currentPosition + sign) && (currentPosition + sign) >= 0 ? weeks.Children.ElementAt(currentPosition + sign) : null;
+
+            // scrollRatio
+            scrollRatio = (e.HorizontalOffset - carouselView.Width * currentPosition) / carouselView.Width;
+
+            double currentItemWidth = currentItem.Width;
+            double nextItemWidth = nextItem != null ? nextItem.Width : currentItem.Width;
+
+            //Set slider X position
+            double translateX;
+
+            if(sign > 0)
+                translateX = currentItem.Bounds.X + scrollRatio * currentItemWidth;
+            else
+                translateX = currentItem.Bounds.X + scrollRatio * nextItemWidth;
+
+            slider.TranslationX = translateX;
+
+            //Set slider width
+            slider.WidthRequest = currentItemWidth - (currentItemWidth - nextItemWidth) * Math.Abs(scrollRatio);
+
+            // Force scrollview to update position if needed
+            Console.WriteLine($"{currentPosition}  ratio {scrollRatio}  offset {e.HorizontalOffset}");
+            //Console.WriteLine($"f {e.FirstVisibleItemIndex}  c {e.CenterItemIndex}  l {e.LastVisibleItemIndex}");
+
+            double scrollX = currentPosition == 0 ? translateX / 2 : translateX;
+            (scrollView as CustomScrollView).GetMeheInjection().DoScroll(translateX, 0);
+
+
+            //// Change currentPositon
+            //if (Math.Abs(scrollRatio) >= 1)
+            //{
+            //    if (scrollRatio > 0)
+            //        currentPosition++;
+            //    else
+            //        currentPosition--;
+            //}
+
+            if (scrollRatio > 0)
+                currentPosition = e.FirstVisibleItemIndex;
+            else
+                currentPosition = e.LastVisibleItemIndex;
+
+
+            //if (e.FirstVisibleItemIndex == e.CenterItemIndex && e.CenterItemIndex == e.LastVisibleItemIndex && currentPosition != e.LastVisibleItemIndex)
+            //{
+            //    if (sign > 0)
+            //        currentPosition++;
+            //    else
+            //        currentPosition--;
+            //}
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            var position = weeks.Children.IndexOf(sender as View);
+            this.carouselView.Position = position;
+        }
+
+        private void scrollView_Scrolled(object sender, ScrolledEventArgs e)
+        {
+            //var item = weeks.Children.ElementAt(carouselView.Position);
+            //slider.TranslationX = item.Bounds.X;
+            //Console.WriteLine(scrollView.Content.TranslationX + "  " + scrollView.TranslationX);
+            //Console.WriteLine(e.ScrollX);
+
+        }
+
+        public class MyEvent : ScrolledEventArgs
+        {
+            public MyEvent(double x, double y) : base(x, y)
+            {
+                
+            }
+        }
+
+        public class Scroll : ScrollView
+        {
+
         }
     }
 }
