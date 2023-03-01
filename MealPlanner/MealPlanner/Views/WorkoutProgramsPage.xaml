@@ -29,7 +29,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:WorkoutProgram">
                     <StackLayout>
-                        <Grid x:Name="grid" Margin="5, 5, 5, 5">
+                        <Grid x:Name="grid" Margin="5, 5, 5, 5" VerticalOptions="Start" >
                             <ImageButton Source="{extensions:ImageResourceExtension Source=MealPlanner.Resources.Images.dumbbell.jpg}"
                                          CommandParameter="{Binding .}"
                                          Aspect="AspectFill"

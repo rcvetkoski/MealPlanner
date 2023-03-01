@@ -58,7 +58,7 @@ namespace MealPlanner.Views
             slider.WidthRequest = currentItemWidth - (currentItemWidth - nextItemWidth) * Math.Abs(scrollRatio);
 
             // Force scrollview to update position if needed
-            Console.WriteLine($"{currentPosition}  ratio {scrollRatio}  offset {e.HorizontalOffset}");
+            //Console.WriteLine($"{currentPosition}  ratio {scrollRatio}  offset {e.HorizontalOffset}");
             //Console.WriteLine($"f {e.FirstVisibleItemIndex}  c {e.CenterItemIndex}  l {e.LastVisibleItemIndex}");
 
             double scrollX = currentPosition == 0 ? translateX / 2 : translateX;
