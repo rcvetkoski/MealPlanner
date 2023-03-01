@@ -66,15 +66,26 @@ namespace MealPlanner.Views
 
             //Console.WriteLine($"translateX {translateX}  scrollX {scrollView.ScrollX}");
 
+
             var scx = currentItem.Bounds.X + currentItemWidth;
             if (scx > maxScrollX)
                 scx = maxScrollX;
 
-            Console.WriteLine($"scrollX {(scrollView as CustomScrollView).SCROLLX + (scx * scrollRatio)}");
+            //Console.WriteLine($"scrollX {(scrollView as CustomScrollView).SCROLLX + (scx * scrollRatio)}");
             IsAutoScroll = true;
+            double ppp = 0;
             if ((scx * scrollRatio + (scrollView as CustomScrollView).SCROLLX) <= maxScrollX)
+            {
+                ppp = (scx * scrollRatio + (scrollView as CustomScrollView).SCROLLX);
                 (scrollView as CustomScrollView).GetMeheInjection().DoScroll((scrollView as CustomScrollView).SCROLLX + (scx * scrollRatio), 0);
+            }
+            else
+            {
+                (scrollView as CustomScrollView).GetMeheInjection().DoScroll(maxScrollX, 0);
 
+            }
+
+            Console.WriteLine($"ppp {ppp}");
 
 
             //// Change currentPositon
@@ -89,14 +100,21 @@ namespace MealPlanner.Views
             if (scrollRatio > 0)
             {
                 if (currentPosition != e.FirstVisibleItemIndex)
+                {
+                    Console.WriteLine($"Position {e.FirstVisibleItemIndex}");
                     (scrollView as CustomScrollView).SCROLLX = scrollView.ScrollX;
+
+                }
 
                 currentPosition = e.FirstVisibleItemIndex;
             }
             else
             {
                 if (currentPosition != e.LastVisibleItemIndex)
+                {
+                    Console.WriteLine($"Position {e.LastVisibleItemIndex}");
                     (scrollView as CustomScrollView).SCROLLX = scrollView.ScrollX;
+                }
 
                 currentPosition = e.LastVisibleItemIndex;
             }
