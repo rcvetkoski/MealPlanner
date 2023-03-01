@@ -22,6 +22,7 @@ namespace MealPlanner.Views
 
         int currentPosition = 0;
         double scrollRatio = 0;
+        bool IsAutoScroll = false;
 
         private void CarouselView_CurrentItemChanged(object sender, CurrentItemChangedEventArgs e)
         {
@@ -61,8 +62,19 @@ namespace MealPlanner.Views
             //Console.WriteLine($"{currentPosition}  ratio {scrollRatio}  offset {e.HorizontalOffset}");
             //Console.WriteLine($"f {e.FirstVisibleItemIndex}  c {e.CenterItemIndex}  l {e.LastVisibleItemIndex}");
 
-            double scrollX = currentPosition == 0 ? translateX / 2 : translateX;
-            (scrollView as CustomScrollView).GetMeheInjection().DoScroll(translateX, 0);
+            double maxScrollX = scrollView.ContentSize.Width - scrollView.Width;
+
+            //Console.WriteLine($"translateX {translateX}  scrollX {scrollView.ScrollX}");
+
+            var scx = currentItem.Bounds.X + currentItemWidth;
+            if (scx > maxScrollX)
+                scx = maxScrollX;
+
+            Console.WriteLine($"scrollX {(scrollView as CustomScrollView).SCROLLX + (scx * scrollRatio)}");
+            IsAutoScroll = true;
+            if ((scx * scrollRatio + (scrollView as CustomScrollView).SCROLLX) <= maxScrollX)
+                (scrollView as CustomScrollView).GetMeheInjection().DoScroll((scrollView as CustomScrollView).SCROLLX + (scx * scrollRatio), 0);
+
 
 
             //// Change currentPositon
@@ -75,9 +87,20 @@ namespace MealPlanner.Views
             //}
 
             if (scrollRatio > 0)
+            {
+                if (currentPosition != e.FirstVisibleItemIndex)
+                    (scrollView as CustomScrollView).SCROLLX = scrollView.ScrollX;
+
                 currentPosition = e.FirstVisibleItemIndex;
+            }
             else
+            {
+                if (currentPosition != e.LastVisibleItemIndex)
+                    (scrollView as CustomScrollView).SCROLLX = scrollView.ScrollX;
+
                 currentPosition = e.LastVisibleItemIndex;
+            }
+
 
 
             //if (e.FirstVisibleItemIndex == e.CenterItemIndex && e.CenterItemIndex == e.LastVisibleItemIndex && currentPosition != e.LastVisibleItemIndex)
@@ -97,24 +120,10 @@ namespace MealPlanner.Views
 
         private void scrollView_Scrolled(object sender, ScrolledEventArgs e)
         {
-            //var item = weeks.Children.ElementAt(carouselView.Position);
-            //slider.TranslationX = item.Bounds.X;
-            //Console.WriteLine(scrollView.Content.TranslationX + "  " + scrollView.TranslationX);
-            //Console.WriteLine(e.ScrollX);
+            if(!IsAutoScroll)
+                (sender as CustomScrollView).SCROLLX = e.ScrollX;
 
-        }
-
-        public class MyEvent : ScrolledEventArgs
-        {
-            public MyEvent(double x, double y) : base(x, y)
-            {
-                
-            }
-        }
-
-        public class Scroll : ScrollView
-        {
-
+            IsAutoScroll = false;
         }
     }
 }
