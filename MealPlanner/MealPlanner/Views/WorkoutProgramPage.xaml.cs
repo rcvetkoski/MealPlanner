@@ -77,12 +77,15 @@ namespace MealPlanner.Views
             if ((scx * scrollRatio + (scrollView as CustomScrollView).SCROLLX) <= maxScrollX)
             {
                 ppp = (scx * scrollRatio + (scrollView as CustomScrollView).SCROLLX);
-                (scrollView as CustomScrollView).GetMeheInjection().DoScroll((scrollView as CustomScrollView).SCROLLX + (scx * scrollRatio), 0);
+
+                if(ppp < 0)
+                    (scrollView as CustomScrollView).GetMeheInjection().DoScroll(0, 0);
+                else
+                    (scrollView as CustomScrollView).GetMeheInjection().DoScroll((scrollView as CustomScrollView).SCROLLX + (scx * scrollRatio), 0);
             }
             else
             {
                 (scrollView as CustomScrollView).GetMeheInjection().DoScroll(maxScrollX, 0);
-
             }
 
             Console.WriteLine($"ppp {ppp}");
