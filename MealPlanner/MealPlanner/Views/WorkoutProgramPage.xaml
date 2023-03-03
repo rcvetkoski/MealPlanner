@@ -126,7 +126,7 @@
                 </CollectionView.EmptyView>
             </CollectionView>-->
 
-            <CarouselView Grid.Row="2" Grid.Column="0" x:Name="carouselView" Scrolled="CarouselView_Scrolled" CurrentItemChanged="CarouselView_CurrentItemChanged" ItemsSource="{Binding Test}" Loop="False" >
+            <CarouselView Grid.Row="2" Grid.Column="0" PositionChanged="carouselView_PositionChanged" x:Name="carouselView" Scrolled="CarouselView_Scrolled" CurrentItemChanged="CarouselView_CurrentItemChanged" ItemsSource="{Binding Test}" Loop="False" >
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Label Style="{StaticResource Label15Bold}" Text="{Binding .}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" LineBreakMode="TailTruncation"/>

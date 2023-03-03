@@ -88,7 +88,7 @@ namespace MealPlanner.Views
                 (scrollView as CustomScrollView).GetMeheInjection().DoScroll(maxScrollX, 0);
             }
 
-            Console.WriteLine($"ppp {ppp}");
+            //Console.WriteLine($"ppp {ppp}");
 
 
             //// Change currentPositon
@@ -121,16 +121,6 @@ namespace MealPlanner.Views
 
                 currentPosition = e.LastVisibleItemIndex;
             }
-
-
-
-            //if (e.FirstVisibleItemIndex == e.CenterItemIndex && e.CenterItemIndex == e.LastVisibleItemIndex && currentPosition != e.LastVisibleItemIndex)
-            //{
-            //    if (sign > 0)
-            //        currentPosition++;
-            //    else
-            //        currentPosition--;
-            //}
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
