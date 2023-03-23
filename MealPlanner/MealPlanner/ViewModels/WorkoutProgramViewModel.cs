@@ -20,10 +20,21 @@ namespace MealPlanner.ViewModels
             Test = new ObservableCollection<string>();
             Test.Add("Trwol wefl ");
             Test.Add("Trl ");
+            Test.Add("Trl ");
             Test.Add("Trwol wefl tz ztjt");
             Test.Add("Trwol  ");
             Test.Add("T");
             Test.Add("Trwol ergergerg ");
+
+            //Test.Add("1");
+            //Test.Add("2");
+            //Test.Add("3");
+            //Test.Add("4");
+            //Test.Add("5");
+            //Test.Add("6");
+            //Test.Add("7");
+            //Test.Add("8");
+            //Test.Add("9");
         }
 
         public ObservableCollection<string> Test { get; set; }
