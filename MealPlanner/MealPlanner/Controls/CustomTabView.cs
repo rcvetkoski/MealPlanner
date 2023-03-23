@@ -343,9 +343,7 @@ namespace MealPlanner.Controls
         private async void Tap(View item) 
         {
             var position = tabsContent.Children.IndexOf(item);
-            //content.Position = position;
-
-            content.ScrollTo(position);
+            content.Position = position;
 
             //item.Opacity = 0;   
             //item.BackgroundColor = Color.LightGray;
