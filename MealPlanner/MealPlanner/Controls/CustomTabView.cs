@@ -308,27 +308,27 @@ namespace MealPlanner.Controls
             else
                 toScrollX = currentItem.Bounds.X + tx;
 
-
-            if (toScrollX <= maxScrollX)
+            if (toScrollX < 0)
             {
-                tabs.GetMeheInjection().DoScroll(toScrollX, 0);
+                tabs.GetMeheInjection().DoScroll(0, 0);
             }
             else if (toScrollX > maxScrollX)
             {
                 tabs.GetMeheInjection().DoScroll(maxScrollX, 0);
             }
-            else if(toScrollX < 0)
+            else if (toScrollX <= maxScrollX)
             {
-                tabs.GetMeheInjection().DoScroll(0, 0);
+                tabs.GetMeheInjection().DoScroll(toScrollX, 0);
             }
+
         }
 
         private ICommand TapCommand;
         private async void Tap(View item) 
         {
             var position = tabsContent.Children.IndexOf(item);
-            //content.Position = position;
-            content.ScrollTo(position);
+            content.Position = position;
+
 
             //item.Opacity = 0;   
             //item.BackgroundColor = Color.LightGray;
