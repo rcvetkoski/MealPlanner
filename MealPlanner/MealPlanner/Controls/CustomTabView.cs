@@ -160,6 +160,8 @@ namespace MealPlanner.Controls
             content = new CarouselView()
             {
                 Loop = false,
+                HorizontalScrollBarVisibility = ScrollBarVisibility.Never,
+                VerticalScrollBarVisibility = ScrollBarVisibility.Never,
                 ItemTemplate = ContentItemTemplate != null ? ContentItemTemplate : null
             };
 
