@@ -25,6 +25,23 @@ namespace MealPlanner.Controls
         }
         private static void OnPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
+            //ObservableCollection<object> source = new ObservableCollection<object>();
+
+            //foreach (var item in (IEnumerable)newValue)
+            //{
+            //    if (item is string)
+            //    {
+            //        char[] charArray = new char[(item as string).Length];
+
+            //        for (int i = 0; i < (item as string).Length; i++)
+            //            charArray[i] = (item as string)[i];
+
+            //        string newObject = new string(charArray);
+            //        source.Add(newObject);
+            //    }
+            //}
+
+
             (bindable as CustomTabView).content.ItemsSource = (IEnumerable)newValue;
             BindableLayout.SetItemsSource((bindable as CustomTabView).tabsContent, (IEnumerable)newValue);
         }
@@ -267,13 +284,13 @@ namespace MealPlanner.Controls
         private void Content_Scrolled(object sender, ItemsViewScrolledEventArgs e)
         {
             IsAutoScroll = true;
-            //var first = content.VisibleViews.Count > 0 ? content.VisibleViews[0] as Label : null;
+            var first = content.VisibleViews.Count > 0 ? content.VisibleViews[0] : null;
             //var FirstIndex = first != null ? contentItems.IndexOf(first) : 0;
-            //var FirstIndex2 = first != null ? tabsContent.Children.IndexOf(tabsContent.Children.FirstOrDefault(x => (x as Label).Text == first.Text)) : 0;
+            var FirstIndex2 = first != null ? tabsContent.Children.IndexOf(tabsContent.Children.FirstOrDefault(x => (x as View).BindingContext == first.BindingContext)) : 0;
+
+            Console.WriteLine($" FirstIndex2 {FirstIndex2}");
 
             var currentIndex = FirstIndex > 0 ? FirstIndex : 0;
-            //Console.WriteLine($" currentIndex {currentIndex}        FirstIndex2 {FirstIndex2}");
-
             sign = Math.Sign(e.HorizontalOffset - content.Width * currentIndex);
             var currentItem = tabsContent.Children.ElementAt(currentIndex);
             var nextItem = tabsContent.Children.Count > (currentIndex + sign) && (currentIndex + sign) >= 0 ? tabsContent.Children.ElementAt(currentIndex + sign) : null;
@@ -284,19 +301,14 @@ namespace MealPlanner.Controls
             double currentItemWidth = currentItem.Width;
             double nextItemWidth = nextItem != null ? nextItem.Width : currentItem.Width;
 
-            //Set slider X position
-            //double translateX;
 
             if (sign > 0)
                 translateX = currentItem.Bounds.X + scrollRatio * currentItemWidth;
             else
                 translateX = currentItem.Bounds.X + scrollRatio * nextItemWidth;
 
-            //slider.TranslationX = translateX;
-
             //Set slider width
             slider.WidthRequest = currentItemWidth - (currentItemWidth - nextItemWidth) * Math.Abs(scrollRatio);
-            //slider.Layout(new Rectangle(slider.Bounds.Location, new Size(currentItemWidth - (currentItemWidth - nextItemWidth) * Math.Abs(scrollRatio), slider.Height)));
 
             double maxScrollX = tabs.ContentSize.Width - tabs.Width;
             var tx = sign > 0 ? scrollRatio * currentItemWidth : scrollRatio * nextItemWidth;
@@ -323,6 +335,7 @@ namespace MealPlanner.Controls
                 tabs.GetMeheInjection().DoScroll(toScrollX, 0);
             }
 
+            //Set slider X position
             slider.TranslationX = translateX - tabs.ScrollX;
         }
 
@@ -330,8 +343,9 @@ namespace MealPlanner.Controls
         private async void Tap(View item) 
         {
             var position = tabsContent.Children.IndexOf(item);
-            content.Position = position;
+            //content.Position = position;
 
+            content.ScrollTo(position);
 
             //item.Opacity = 0;   
             //item.BackgroundColor = Color.LightGray;

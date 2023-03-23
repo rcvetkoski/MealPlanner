@@ -15,7 +15,7 @@
             <controls:CustomTabView ItemsSource="{Binding Test}" SliderColor="Red">
                 <controls:CustomTabView.ContentItemTemplate>
                     <DataTemplate>
-                        <Label Style="{StaticResource Label15Bold}" Text="{Binding .}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" LineBreakMode="TailTruncation"/>
+                        <Entry Style="{StaticResource Label15Bold}" Text="{Binding .}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                     </DataTemplate>
                 </controls:CustomTabView.ContentItemTemplate>
             </controls:CustomTabView>
