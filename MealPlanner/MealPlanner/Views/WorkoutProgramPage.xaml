@@ -56,7 +56,7 @@
                 </controls:CustomTabView.TabsItemTemplate>
                 <controls:CustomTabView.ContentItemTemplate>
                     <DataTemplate>
-                        <CollectionView ItemsSource="{Binding BindingContext.CurrentWorkoutProgram.SelectedWorkoutWeek.Workouts, Source={x:Reference workoutProgramPage}}">
+                        <CollectionView ItemsSource="{Binding Workouts}">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="models:Workout">
                                     <Grid RowDefinitions="30, 30, 9" ColumnDefinitions="65, *, 40" Padding="14, 0, 14, 8">
@@ -88,12 +88,12 @@
                             <CollectionView.EmptyView>
                                 <StackLayout>
                                     <Button HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="CenterAndExpand"
-                                Margin="10" 
-                                BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
-                                Text="Add routine" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
-                                Command="{Binding BindingContext.EditWorkoutProgramCommand, Source={x:Reference workoutProgramPage}}"
-                                CommandParameter="{Binding BindingContext.CurrentWorkoutProgram, Source={x:Reference workoutProgramPage}}">
+                                            VerticalOptions="CenterAndExpand"
+                                            Margin="10" 
+                                            BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                            Text="Add routine" FontSize="Caption" TextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
+                                            Command="{Binding BindingContext.EditWorkoutProgramCommand, Source={x:Reference workoutProgramPage}}"
+                                            CommandParameter="{Binding BindingContext.CurrentWorkoutProgram, Source={x:Reference workoutProgramPage}}">
                                         <Button.ImageSource>
                                             <FontImageSource Color="{StaticResource Primary}"
                                                  Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
