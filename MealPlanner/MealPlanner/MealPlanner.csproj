@@ -4,6 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <UserSecretsId>4252b284-68c6-481c-900a-33ba363fd831</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
