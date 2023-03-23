@@ -88,9 +88,7 @@ namespace MealPlanner.Controls
 
         private object tempVisualElement;
         private CustomScrollView tabs;
-        private Grid tabsGrid;
         private BoxView slider;
-        private BoxView slider2;
         private StackLayout tabsContent;
         private CarouselView content;
         private BoxView separator;
@@ -99,6 +97,7 @@ namespace MealPlanner.Controls
         private bool IsAutoScroll = false;
         private int FirstIndex = -1;
         private int sign = 0;
+        double translateX = 0;
         private double currentScrollX = 0;
 
 
@@ -131,16 +130,16 @@ namespace MealPlanner.Controls
             ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
 
             SetContent();
-            SetSeparator();
             SetTabs();
+            SetSlider();
+            SetSeparator();
 
 
             // Add to main grid
             Children.Add(tabs, 0, 0);
             Children.Add(separator, 0, 1);
+            Children.Add(slider, 0, 1);
             Children.Add(content, 0, 2);
-            Children.Add(slider2, 0, 1);
-
 
             RowSpacing = 0;
         }
@@ -200,6 +199,18 @@ namespace MealPlanner.Controls
             }
         }
 
+        private void SetSlider()
+        {
+            // Slider
+            slider = new BoxView()
+            {
+                HeightRequest = 2,
+                HorizontalOptions = LayoutOptions.Start,
+                BackgroundColor = Color.White,
+                VerticalOptions = LayoutOptions.Start
+            };
+        }
+
         private void SetTabs()
         {
             // Tabs scrollView
@@ -209,22 +220,6 @@ namespace MealPlanner.Controls
                 HorizontalScrollBarVisibility = ScrollBarVisibility.Never
             };
 
-
-            // main tabs holder
-            tabsGrid = new Grid()
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition() { Height = GridLength.Auto }
-                },
-
-                ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition() { Width = GridLength.Star }  
-                }
-            };
-
-
             // tabs content not recycled
             tabsContent = new StackLayout()
             {
@@ -233,29 +228,9 @@ namespace MealPlanner.Controls
             };
             TabsItemTemplate = DefaultTabsItemTemplate;
 
-            // Slider
-            slider = new BoxView()
-            {
-                HeightRequest = 2,
-                HorizontalOptions = LayoutOptions.Start,
-                BackgroundColor = Color.White,
-                VerticalOptions = LayoutOptions.End
-            };
-
-            // Slider2
-            slider2 = new BoxView()
-            {
-                HeightRequest = 2,
-                HorizontalOptions = LayoutOptions.Start,
-                BackgroundColor = Color.Red,
-                VerticalOptions = LayoutOptions.End
-            };
 
             // Add content and slider to grid
-            tabs.Content = tabsGrid;
-            tabsGrid.Children.Add(tabsContent, 0, 0);
-            tabsGrid.Children.Add(slider, 0, 0);
-
+            tabs.Content = tabsContent;
 
             tabs.Scrolled += Tabs_Scrolled;
             tabsContent.ChildAdded += Tabs_ChildAdded;
@@ -265,17 +240,29 @@ namespace MealPlanner.Controls
         {
             var item = (sender as StackLayout).Children.Last();
             item.GestureRecognizers.Add(new TapGestureRecognizer() { Command = TapCommand, CommandParameter = item });
+
+            if ((sender as StackLayout).Children.IndexOf(item) == currentPosition)
+                item.SizeChanged += Item_MeasureInvalidated;
+        }
+
+        private void Item_MeasureInvalidated(object sender, EventArgs e)
+        {
+            slider.WidthRequest = (sender as View).Width;
+            (sender as View).SizeChanged -= Item_MeasureInvalidated;
         }
 
         private void Tabs_Scrolled(object sender, ScrolledEventArgs e)
         {
             if (!IsAutoScroll)
-                (sender as CustomScrollView).SCROLLX = e.ScrollX;
+            {
+                tabs.SCROLLX = e.ScrollX;
+                slider.TranslationX = translateX - tabs.ScrollX;
+            }
 
             IsAutoScroll = false;
         }
 
-        private async void Content_Scrolled(object sender, ItemsViewScrolledEventArgs e)
+        private void Content_Scrolled(object sender, ItemsViewScrolledEventArgs e)
         {
             IsAutoScroll = true;
             //var first = content.VisibleViews.Count > 0 ? content.VisibleViews[0] as Label : null;
@@ -296,20 +283,18 @@ namespace MealPlanner.Controls
             double nextItemWidth = nextItem != null ? nextItem.Width : currentItem.Width;
 
             //Set slider X position
-            double translateX;
+            //double translateX;
 
             if (sign > 0)
                 translateX = currentItem.Bounds.X + scrollRatio * currentItemWidth;
             else
                 translateX = currentItem.Bounds.X + scrollRatio * nextItemWidth;
 
-
             //slider.TranslationX = translateX;
 
             //Set slider width
             slider.WidthRequest = currentItemWidth - (currentItemWidth - nextItemWidth) * Math.Abs(scrollRatio);
-            slider2.WidthRequest = currentItemWidth - (currentItemWidth - nextItemWidth) * Math.Abs(scrollRatio);
-
+            //slider.Layout(new Rectangle(slider.Bounds.Location, new Size(currentItemWidth - (currentItemWidth - nextItemWidth) * Math.Abs(scrollRatio), slider.Height)));
 
             double maxScrollX = tabs.ContentSize.Width - tabs.Width;
             var tx = sign > 0 ? scrollRatio * currentItemWidth : scrollRatio * nextItemWidth;
@@ -321,6 +306,7 @@ namespace MealPlanner.Controls
                 toScrollX = currentItem.Bounds.X + tx - tabsContent.Children.ElementAt(0).Bounds.Width / 2;
             else
                 toScrollX = currentItem.Bounds.X + tx;
+
 
             if (toScrollX < 0)
             {
@@ -336,8 +322,6 @@ namespace MealPlanner.Controls
             }
 
             slider.TranslationX = translateX - tabs.ScrollX;
-
-            slider2.TranslationX = translateX - tabs.ScrollX;
         }
 
         private ICommand TapCommand;
