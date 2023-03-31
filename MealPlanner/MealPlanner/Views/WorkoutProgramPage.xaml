@@ -43,17 +43,14 @@
 
     <ContentPage.Content>
         <Grid RowDefinitions="*" RowSpacing="0">
-            <controls:CustomTabView Grid.Row="0" Grid.Column="0" 
+            <controls:CustomTabView Grid.Row="0" Grid.Column="0" x:Name="mehe"
                                     IsVisible="{Binding CurrentWorkoutProgram.WorkoutWeeks.Count, Converter={StaticResource HasItemsToBooleanConverter}}"
                                     ItemsSource="{Binding CurrentWorkoutProgram.WorkoutWeeks}" 
+                                    TabsItemBindingPath="Name"
                                     SelectedItem="{Binding CurrentWorkoutProgram.SelectedWorkoutWeek}"
                                     SeparatorColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
+                                    TabTextColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}"
                                     SliderColor="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}">
-                <controls:CustomTabView.TabsItemTemplate>
-                    <DataTemplate>
-                        <Label Style="{StaticResource Label15Bold}" Text="{Binding Name}" Padding="10, 15, 10, 15" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" LineBreakMode="TailTruncation"/>
-                    </DataTemplate>
-                </controls:CustomTabView.TabsItemTemplate>
                 <controls:CustomTabView.ContentItemTemplate>
                     <DataTemplate>
                         <CollectionView ItemsSource="{Binding Workouts}">
@@ -108,6 +105,7 @@
 
             <Button Grid.Row="0" Grid.Column="0"
                     HorizontalOptions="Center"
+                    VerticalOptions="Center"
                     Margin="10"
                     IsVisible="{Binding CurrentWorkoutProgram.WorkoutWeeks.Count, Converter={StaticResource InverseHasItemsToBooleanConverter}}"
                     BackgroundColor="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}"
@@ -118,6 +116,10 @@
                     <FontImageSource Color="{StaticResource Primary}"
                                      Glyph="{x:Static helpers:FontAwesomeIcons.SquarePlus}" FontFamily="FA-Solid"/>
                 </Button.ImageSource>
+            </Button>
+
+            <Button Text="Add week" VerticalOptions="End" Margin="10" Clicked="Button_Clicked">
+                
             </Button>
         </Grid>
     </ContentPage.Content>

@@ -78,6 +78,7 @@ namespace MealPlanner.ViewModels
                 Name = $"WEEK {workoutProgram.WorkoutWeeks.Count + 1}"
             };
 
+
             // Add week to program
             workoutProgram.WorkoutWeeks.Add(workoutWeek);
 

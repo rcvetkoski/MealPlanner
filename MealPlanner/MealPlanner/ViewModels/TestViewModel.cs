@@ -19,14 +19,7 @@ namespace MealPlanner.ViewModels
             TestPropertie = "Mehe";
             Test = new ObservableCollection<string>();
             Test.Add("Trwol wefl ");
-            Test.Add("Trl thrth");
-            Test.Add("Trl ");
-            Test.Add("Trl ");
-            Test.Add("Trwol wefl tz ztjt");
-            Test.Add("Trwol  ");
-            Test.Add("T");
-            Test.Add("Rwwgwwggrw");
-            Test.Add("Trwol ergergerg ");
+
 
             //Test.Add("1");
             //Test.Add("2");

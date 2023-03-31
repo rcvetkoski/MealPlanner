@@ -12,12 +12,19 @@
 
     <ContentPage.Content>
         <StackLayout Margin="0, 30, 0 ,0">
-            <controls:CustomTabView ItemsSource="{Binding Test}" SliderColor="Red">
-                <controls:CustomTabView.ContentItemTemplate>
+            <ListView ItemsSource="{Binding Test}">
+
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Entry Style="{StaticResource Label15Bold}" Text="{Binding .}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        <ViewCell>
+                            <Grid BackgroundColor="Green" ColumnDefinitions="*" HorizontalOptions="FillAndExpand">
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding .}" Padding="15" BackgroundColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="Start" HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </ViewCell>
                     </DataTemplate>
-                </controls:CustomTabView.ContentItemTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <controls:CustomTabView ItemsSource="{Binding Test}">
             </controls:CustomTabView>
             <Button Command="{Binding TestCommand}"/>
         </StackLayout>

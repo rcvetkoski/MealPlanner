@@ -20,11 +20,16 @@ namespace MealPlanner.Controls
         {
             return _meheinjection;
         }
+
+        public void Update()
+        {
+            this.InvalidateLayout();
+            this.ForceLayout();
+        }
     }
 
     public interface Meheinjection
     {
-
         void DoScroll(double x, double y);
     }
 }

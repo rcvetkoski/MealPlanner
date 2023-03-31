@@ -11,11 +11,10 @@ using System.Xml;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MealPlanner.Controls
 {
-    public class CustomTabView : Grid
+    public class CustomTabView : Grid, IDisposable
     {
         public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create(nameof(ItemsSource), typeof(IEnumerable), typeof(CustomTabView), null, propertyChanged: OnPropertyChanged);
         public IEnumerable ItemsSource
@@ -41,11 +40,9 @@ namespace MealPlanner.Controls
             //    }
             //}
 
-
             (bindable as CustomTabView).content.ItemsSource = (IEnumerable)newValue;
             BindableLayout.SetItemsSource((bindable as CustomTabView).tabsContent, (IEnumerable)newValue);
         }
-
 
         public static readonly BindableProperty SelectedItemProperty = BindableProperty.Create(nameof(SelectedItem), typeof(object), typeof(CustomTabView), null, BindingMode.TwoWay);
         public object SelectedItem
@@ -78,28 +75,40 @@ namespace MealPlanner.Controls
             BindableLayout.SetItemTemplate((bindable as CustomTabView).tabsContent, (DataTemplate)newValue);
         }
 
+        public static readonly BindableProperty TabTextColorProperty = BindableProperty.Create(nameof(TabTextColor), typeof(Color), typeof(CustomTabView), Color.White);
+        public Color TabTextColor
+        {
+            get { return (Color)GetValue(TabTextColorProperty); }
+            set { SetValue(TabTextColorProperty, value); }
+        }
 
-        public static readonly BindableProperty SliderColorProperty = BindableProperty.Create(nameof(SliderColor), typeof(Color), typeof(CustomTabView), Color.White, propertyChanged: OnSliderColorPropertyChanged);
+        public static readonly BindableProperty SliderColorProperty = BindableProperty.Create(nameof(SliderColor), typeof(Color), typeof(CustomTabView), Color.White);
         public Color SliderColor
         {
             get { return (Color)GetValue(SliderColorProperty); }
             set { SetValue(SliderColorProperty, value); }
         }
-        private static void OnSliderColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            (bindable as CustomTabView).slider.BackgroundColor = (Color)newValue;   
-        }
 
 
-        public static readonly BindableProperty SeparatorColorProperty = BindableProperty.Create(nameof(SeparatorColor), typeof(Color), typeof(CustomTabView), Color.White, propertyChanged: OnSeparatorColorPropertyChanged);
+        public static readonly BindableProperty SeparatorColorProperty = BindableProperty.Create(nameof(SeparatorColor), typeof(Color), typeof(CustomTabView), Color.White);
         public Color SeparatorColor
         {
             get { return (Color)GetValue(SeparatorColorProperty); }
             set { SetValue(SeparatorColorProperty, value); }
         }
-        private static void OnSeparatorColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+
+        public static readonly BindableProperty TabsItemBindingPathProperty = BindableProperty.Create(nameof(TabsItemBindingPath), typeof(string), typeof(CustomTabView), ".");
+        public string TabsItemBindingPath
         {
-            (bindable as CustomTabView).separator.BackgroundColor = (Color)newValue;
+            get { return (string)GetValue(TabsItemBindingPathProperty); }
+            set { SetValue(TabsItemBindingPathProperty, value); }
+        }
+
+        public static readonly BindableProperty ContentItemBindingPathProperty = BindableProperty.Create(nameof(ContentItemBindingPath), typeof(string), typeof(CustomTabView), ".");
+        public string ContentItemBindingPath
+        {
+            get { return (string)GetValue(ContentItemBindingPathProperty); }
+            set { SetValue(ContentItemBindingPathProperty, value); }
         }
 
 
@@ -109,13 +118,16 @@ namespace MealPlanner.Controls
         private StackLayout tabsContent;
         private CarouselView content;
         private BoxView separator;
+        private DataTemplate DefaultTabsItemTemplate;
+        private DataTemplate DefaultContentItemTemplate;
         private int currentPosition = 0;
         private double scrollRatio = 0;
         private bool IsAutoScroll = false;
         private int FirstIndex = -1;
         private int sign = 0;
         double translateX = 0;
-        private double currentScrollX = 0;
+        VisualElement previousSelected = null;
+        private ICommand TapCommand;
 
 
 
@@ -123,21 +135,9 @@ namespace MealPlanner.Controls
         {
             currentPosition = 0;
             TapCommand = new Command<View>(Tap);
-            DefaultTabsItemTemplate = new DataTemplate(() =>
-            {
-                var label = new Label()
-                {
-                    Padding = new Thickness(10,15,10,15),
-                    FontAttributes = FontAttributes.Bold,   
-                    HorizontalOptions = LayoutOptions.FillAndExpand,
-                    HorizontalTextAlignment = TextAlignment.Center,
-                    VerticalOptions = LayoutOptions.Center
-                };
 
-                label.SetBinding(Label.TextProperty, ".");
-
-                return label;
-            });
+            SetDefaultTabsItemTemplate();
+            SetDefaultContentItemTemplate();
 
 
             // Main Grid
@@ -161,15 +161,81 @@ namespace MealPlanner.Controls
             RowSpacing = 0;
         }
 
+        private void SetDefaultTabsItemTemplate()
+        {
+            DefaultTabsItemTemplate = new DataTemplate(() =>
+            {
+                var label = new Label()
+                {
+                    Padding = new Thickness(10, 13, 10, 13),
+                    HorizontalTextAlignment = TextAlignment.Center,
+                };
+
+                label.SetBinding(Label.TextProperty, TabsItemBindingPath);
+
+                Binding binding = new Binding("TabTextColor", source: this);
+                label.SetBinding(Label.TextColorProperty, binding);
+
+
+                // Visual states
+                var visualStateGroup = new VisualStateGroup();
+                var visualStateSelected = new VisualState() { Name = "selected" };
+                var visualStateNormal = new VisualState() { Name = "normal" };
+                visualStateSelected.Setters.Add
+                (
+                    new Setter()
+                    {
+                        Property = Label.FontAttributesProperty,
+                        Value = FontAttributes.Bold
+                    }
+                );
+                visualStateGroup.States.Add(visualStateSelected);
+                visualStateNormal.Setters.Add
+                (
+                    new Setter()
+                    {
+                        Property = Label.FontAttributesProperty,
+                        Value = FontAttributes.None
+                    }
+                );
+                visualStateGroup.States.Add(visualStateNormal);
+                VisualStateManager.GetVisualStateGroups(label).Add(visualStateGroup);
+
+                return label;
+            });
+
+        }
+
+        private void SetDefaultContentItemTemplate()
+        {
+            DefaultContentItemTemplate = new DataTemplate(() =>
+            {
+                var label = new Label()
+                {
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalTextAlignment = TextAlignment.Center,
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    VerticalTextAlignment = TextAlignment.Center
+                };
+
+                label.SetBinding(Label.TextProperty, ContentItemBindingPath);
+
+                return label;
+            });
+        }
+
         private void SetSeparator()
         {
             separator = new BoxView()
             {
                 HeightRequest = 1,
-                Margin = new Thickness(0, 0, 0, 14),
+                Margin = new Thickness(0, 2, 0, 12),
                 BackgroundColor = SeparatorColor,
                 VerticalOptions = LayoutOptions.Start
             };
+
+            Binding binding = new Binding("SeparatorColor", source: this);
+            separator.SetBinding(BoxView.BackgroundColorProperty, binding);
         }
 
         private void SetContent()
@@ -182,6 +248,8 @@ namespace MealPlanner.Controls
                 ItemTemplate = ContentItemTemplate != null ? ContentItemTemplate : null
             };
 
+            ContentItemTemplate = DefaultContentItemTemplate;
+
             content.Scrolled += Content_Scrolled;
             content.CurrentItemChanged += Content_CurrentItemChanged;
             content.VisibleViews.CollectionChanged += VisibleViews_CollectionChanged;
@@ -190,6 +258,17 @@ namespace MealPlanner.Controls
         private void Content_CurrentItemChanged(object sender, CurrentItemChangedEventArgs e)
         {
             SelectedItem = e.CurrentItem;
+
+            return;
+
+            var item = tabsContent.Children.Single(x => x.BindingContext == e.CurrentItem);
+            VisualStateManager.GoToState(item, "selected");
+
+            if(previousSelected != null)
+                VisualStateManager.GoToState(previousSelected, "normal");
+
+
+            previousSelected = item;    
         }
 
         private void VisibleViews_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -208,10 +287,6 @@ namespace MealPlanner.Controls
                 if (currentPosition != currentIndex)
                 {
                     currentPosition = currentIndex;
-                    currentScrollX = tabs.ScrollX;
-                    //tabs.SCROLLX = tabs.ScrollX;
-
-                    //Console.WriteLine($"currentScrollX {currentScrollX}");
                 }
 
                 tempVisualElement = first;
@@ -228,6 +303,9 @@ namespace MealPlanner.Controls
                 BackgroundColor = Color.White,
                 VerticalOptions = LayoutOptions.Start
             };
+
+            Binding binding = new Binding("SliderColor", source: this);
+            slider.SetBinding(BoxView.BackgroundColorProperty, binding);
         }
 
         private void SetTabs()
@@ -236,7 +314,7 @@ namespace MealPlanner.Controls
             tabs = new CustomScrollView()
             {
                 Orientation = ScrollOrientation.Horizontal,
-                HorizontalScrollBarVisibility = ScrollBarVisibility.Never
+                HorizontalScrollBarVisibility = ScrollBarVisibility.Never,
             };
 
             // tabs content not recycled
@@ -250,9 +328,18 @@ namespace MealPlanner.Controls
 
             // Add content and slider to grid
             tabs.Content = tabsContent;
-
+            tabsContent.SizeChanged += TabsContent_SizeChanged;
             tabs.Scrolled += Tabs_Scrolled;
             tabsContent.ChildAdded += Tabs_ChildAdded;
+        }
+
+        private void TabsContent_SizeChanged(object sender, EventArgs e)
+        {
+            if (tabsContent.Children.Count > 0 && tabsContent.Children.Count >= currentPosition)
+            {
+                slider.WidthRequest = tabsContent.Children[currentPosition].Width;
+                slider.TranslationX = tabsContent.Children[currentPosition].Bounds.X - tabs.ScrollX;
+            }
         }
 
         private void Tabs_ChildAdded(object sender, ElementEventArgs e)
@@ -260,13 +347,22 @@ namespace MealPlanner.Controls
             var item = (sender as StackLayout).Children.Last();
             item.GestureRecognizers.Add(new TapGestureRecognizer() { Command = TapCommand, CommandParameter = item });
 
-            if ((sender as StackLayout).Children.IndexOf(item) == currentPosition)
-                item.SizeChanged += Item_MeasureInvalidated;
+            // Set HorizontalOptions to FillAndExpand otherwise calculations won't work properly
+            item.HorizontalOptions = LayoutOptions.FillAndExpand;
+            item.VerticalOptions = LayoutOptions.Center; 
+
+            // Used to set slider's width at appearing
+            item.SizeChanged += Item_MeasureInvalidated;
         }
 
         private void Item_MeasureInvalidated(object sender, EventArgs e)
         {
-            slider.WidthRequest = (sender as View).Width;
+            if (tabsContent.Children.Count > 0 && tabsContent.Children.Count >= currentPosition)
+            {
+                slider.WidthRequest = tabsContent.Children[currentPosition].Width;
+                slider.TranslationX = tabsContent.Children[currentPosition].Bounds.X - tabs.ScrollX;
+            }
+
             (sender as View).SizeChanged -= Item_MeasureInvalidated;
         }
 
@@ -288,7 +384,7 @@ namespace MealPlanner.Controls
             //var FirstIndex = first != null ? contentItems.IndexOf(first) : 0;
             var FirstIndex2 = first != null ? tabsContent.Children.IndexOf(tabsContent.Children.FirstOrDefault(x => (x as View).BindingContext == first.BindingContext)) : 0;
 
-            Console.WriteLine($" FirstIndex2 {FirstIndex2}");
+            //Console.WriteLine($" FirstIndex2 {FirstIndex2}");
 
             var currentIndex = FirstIndex > 0 ? FirstIndex : 0;
             sign = Math.Sign(e.HorizontalOffset - content.Width * currentIndex);
@@ -326,11 +422,11 @@ namespace MealPlanner.Controls
             {
                 tabs.GetMeheInjection().DoScroll(0, 0);
             }
-            else if (toScrollX > maxScrollX)
+            else if (toScrollX > maxScrollX && sign > 0)
             {
                 tabs.GetMeheInjection().DoScroll(maxScrollX, 0);
             }
-            else if (toScrollX <= maxScrollX)
+            else 
             {
                 tabs.GetMeheInjection().DoScroll(toScrollX, 0);
             }
@@ -339,12 +435,11 @@ namespace MealPlanner.Controls
             slider.TranslationX = translateX - tabs.ScrollX;
         }
 
-        private ICommand TapCommand;
-        private async void Tap(View item) 
+        private void Tap(View item) 
         {
             var position = tabsContent.Children.IndexOf(item);
             content.Position = position;
-
+            
             //item.Opacity = 0;   
             //item.BackgroundColor = Color.LightGray;
             //await item.FadeTo(1);
@@ -355,6 +450,14 @@ namespace MealPlanner.Controls
             //await item.ScaleTo(1, 120);
         }
 
-        private DataTemplate DefaultTabsItemTemplate;
+        public void Dispose()
+        {
+            content.Scrolled -= Content_Scrolled;
+            content.CurrentItemChanged -= Content_CurrentItemChanged;
+            content.VisibleViews.CollectionChanged -= VisibleViews_CollectionChanged;
+            tabs.Scrolled -= Tabs_Scrolled;
+            tabsContent.ChildAdded -= Tabs_ChildAdded;
+            tabsContent.SizeChanged -= TabsContent_SizeChanged;
+        }
     }
 }
